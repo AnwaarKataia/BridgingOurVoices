@@ -1,0 +1,3390 @@
+{
+  "site": {
+    "en": {
+      "brandName": "Bridging Our Voices",
+      "a11y": {
+        "skipToContent": "Skip to content",
+        "menu": "Menu",
+        "language": "Language",
+        "footerNav": "Footer",
+        "sectionNav": "Section pages"
+      },
+      "next": "Next",
+      "nav": [
+        {
+          "key": "home",
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "key": "about",
+          "label": "About",
+          "href": "/about/who-we-are",
+          "children": [
+            {
+              "label": "Who we are",
+              "href": "/about/who-we-are"
+            },
+            {
+              "label": "Vision",
+              "href": "/about/vision"
+            },
+            {
+              "label": "Mission",
+              "href": "/about/mission"
+            },
+            {
+              "label": "Goals",
+              "href": "/about/goals"
+            }
+          ]
+        },
+        {
+          "key": "activities",
+          "label": "Activities",
+          "href": "/activities/training",
+          "children": [
+            {
+              "label": "Training programmes",
+              "href": "/activities/training"
+            },
+            {
+              "label": "Seminars",
+              "href": "/activities/seminars"
+            },
+            {
+              "label": "Conferences",
+              "href": "/activities/conferences"
+            },
+            {
+              "label": "Fellowship",
+              "href": "/activities/fellowship"
+            }
+          ]
+        },
+        {
+          "key": "agenda",
+          "label": "Agenda",
+          "href": "/agenda"
+        },
+        {
+          "key": "network",
+          "label": "Network",
+          "href": "/network/membership",
+          "children": [
+            {
+              "label": "Membership",
+              "href": "/network/membership"
+            },
+            {
+              "label": "Add your voice to ours",
+              "href": "/network/join"
+            },
+            {
+              "label": "Our members",
+              "href": "/network/members"
+            }
+          ]
+        },
+        {
+          "key": "contact",
+          "label": "Contact us",
+          "href": "/contact"
+        }
+      ],
+      "footer": {
+        "tagline": "Women leading dialogue and peacebuilding.",
+        "newsletter": "Newsletter",
+        "emailPlaceholder": "Your email",
+        "subscribe": "Subscribe",
+        "subscribed": "Thank you, you're subscribed.",
+        "error": "Something went wrong, please try again.",
+        "copyright": "© 2026 Bridging Our Voices"
+      },
+      "comingSoon": "Coming soon",
+      "privacy": {
+        "label": "Privacy policy",
+        "formNote": "How we use and protect your data:",
+        "formLink": "privacy policy"
+      }
+    },
+    "fr": {
+      "brandName": "Bridging Our Voices",
+      "a11y": {
+        "skipToContent": "Aller au contenu",
+        "menu": "Menu",
+        "language": "Langue",
+        "footerNav": "Pied de page",
+        "sectionNav": "Pages de la rubrique"
+      },
+      "next": "Suivant",
+      "nav": [
+        {
+          "key": "home",
+          "label": "Accueil",
+          "href": "/"
+        },
+        {
+          "key": "about",
+          "label": "Qui sommes-nous",
+          "href": "/about/who-we-are",
+          "children": [
+            {
+              "label": "Qui sommes-nous",
+              "href": "/about/who-we-are"
+            },
+            {
+              "label": "Vision",
+              "href": "/about/vision"
+            },
+            {
+              "label": "Mission",
+              "href": "/about/mission"
+            },
+            {
+              "label": "Objectifs",
+              "href": "/about/goals"
+            }
+          ]
+        },
+        {
+          "key": "activities",
+          "label": "Activités",
+          "href": "/activities/training",
+          "children": [
+            {
+              "label": "Programmes de formation",
+              "href": "/activities/training"
+            },
+            {
+              "label": "Séminaires",
+              "href": "/activities/seminars"
+            },
+            {
+              "label": "Congrès",
+              "href": "/activities/conferences"
+            },
+            {
+              "label": "Bourse (Fellowship)",
+              "href": "/activities/fellowship"
+            }
+          ]
+        },
+        {
+          "key": "agenda",
+          "label": "Agenda",
+          "href": "/agenda"
+        },
+        {
+          "key": "network",
+          "label": "Réseau",
+          "href": "/network/membership",
+          "children": [
+            {
+              "label": "Adhésion",
+              "href": "/network/membership"
+            },
+            {
+              "label": "Joignez votre voix à la nôtre",
+              "href": "/network/join"
+            },
+            {
+              "label": "Nos membres",
+              "href": "/network/members"
+            }
+          ]
+        },
+        {
+          "key": "contact",
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ],
+      "footer": {
+        "tagline": "Les femmes au cœur du dialogue et de la consolidation de la paix.",
+        "newsletter": "Newsletter",
+        "emailPlaceholder": "Votre e-mail",
+        "subscribe": "S’abonner",
+        "subscribed": "Merci, votre inscription est confirmée.",
+        "error": "Une erreur s’est produite, veuillez réessayer.",
+        "copyright": "© 2026 Bridging Our Voices"
+      },
+      "comingSoon": "Bientôt",
+      "privacy": {
+        "label": "Politique de confidentialité",
+        "formNote": "Comment nous utilisons et protégeons vos données :",
+        "formLink": "politique de confidentialité"
+      }
+    },
+    "ar": {
+      "brandName": "Bridging Our Voices",
+      "a11y": {
+        "skipToContent": "انتقل إلى المحتوى",
+        "menu": "القائمة",
+        "language": "اللغة",
+        "footerNav": "روابط التذييل",
+        "sectionNav": "صفحات القسم"
+      },
+      "next": "التالي",
+      "nav": [
+        {
+          "key": "home",
+          "label": "الرئيسية",
+          "href": "/"
+        },
+        {
+          "key": "about",
+          "label": "من نحن",
+          "href": "/about/who-we-are",
+          "children": [
+            {
+              "label": "من نحن",
+              "href": "/about/who-we-are"
+            },
+            {
+              "label": "الرؤية",
+              "href": "/about/vision"
+            },
+            {
+              "label": "الرسالة",
+              "href": "/about/mission"
+            },
+            {
+              "label": "الأهداف",
+              "href": "/about/goals"
+            }
+          ]
+        },
+        {
+          "key": "activities",
+          "label": "الأنشطة",
+          "href": "/activities/training",
+          "children": [
+            {
+              "label": "برامج تدريبية",
+              "href": "/activities/training"
+            },
+            {
+              "label": "ندوات",
+              "href": "/activities/seminars"
+            },
+            {
+              "label": "مؤتمرات",
+              "href": "/activities/conferences"
+            },
+            {
+              "label": "زمالة",
+              "href": "/activities/fellowship"
+            }
+          ]
+        },
+        {
+          "key": "agenda",
+          "label": "الأجندة",
+          "href": "/agenda"
+        },
+        {
+          "key": "network",
+          "label": "الشبكة",
+          "href": "/network/membership",
+          "children": [
+            {
+              "label": "عناصر الانضمام",
+              "href": "/network/membership"
+            },
+            {
+              "label": "ضم صوتك لصوتنا",
+              "href": "/network/join"
+            },
+            {
+              "label": "أعضاؤنا",
+              "href": "/network/members"
+            }
+          ]
+        },
+        {
+          "key": "contact",
+          "label": "تواصل معنا",
+          "href": "/contact"
+        }
+      ],
+      "footer": {
+        "tagline": "المرأة لقيادة الحوار وبناء السلام.",
+        "newsletter": "النشرة البريدية",
+        "emailPlaceholder": "بريدك الإلكتروني",
+        "subscribe": "اشتركي",
+        "subscribed": "شكرًا لكِ، تم اشتراككِ بنجاح.",
+        "error": "حدث خطأ، يُرجى المحاولة مرة أخرى.",
+        "copyright": "© ٢٠٢٦ Bridging Our Voices"
+      },
+      "comingSoon": "قريبًا",
+      "privacy": {
+        "label": "سياسة الخصوصية",
+        "formNote": "كيف نستخدم بياناتك ونحميها:",
+        "formLink": "سياسة الخصوصية"
+      }
+    }
+  },
+  "home": {
+    "en": {
+      "meta": {
+        "title": "Bridging Our Voices — Women leading dialogue and peacebuilding",
+        "description": "A regional and international initiative empowering women peacemakers and community leaders across the Arab region and Africa to lead dialogue, conflict resolution and the prevention of violent extremism."
+      },
+      "hero": {
+        "eyebrow": "Regional & international initiative",
+        "title": "Women leading dialogue and peacebuilding",
+        "lead": "A distinctive regional and international initiative empowering women peacemakers and community leaders, moving them from informal roles into recognised, influential leadership in peacebuilding and interfaith and intercultural dialogue.",
+        "primary": "Explore our activities",
+        "secondary": "Contact us"
+      },
+      "ticker": {
+        "label": "Latest",
+        "items": [
+          "Registration open: first Arabic-language cohort of our digital training, deadline 12 Nov 2026",
+          "Officially launching Bridging Our Voices: Women Leading Dialogue and Peacebuilding",
+          "Free one-month course on Zoom · certificate of participation",
+          "Join the Bridging Our Voices network of women peacebuilders"
+        ]
+      },
+      "announcement": {
+        "badge": "Registration open",
+        "deadline": "Deadline: 12 November 2026",
+        "title": "First Arabic-language cohort of our digital training course",
+        "body": "A complete digital training programme delivered entirely in Arabic over Zoom for one full month, giving participants core skills and practical tools in dialogue facilitation, community mediation, diversity management and conflict transformation.",
+        "chips": [
+          "Free of charge",
+          "Online · Zoom",
+          "One month",
+          "Ages 25+",
+          "Certificate"
+        ],
+        "primary": "Register now",
+        "secondary": "Programme details →",
+        "image": "/banner-fellows.png",
+        "bannerAlt": "Bridging Our Voices fellows from the Philippines, Nigeria, South Africa and Egypt, with partner logos"
+      },
+      "vision": {
+        "eyebrow": "Our vision",
+        "quote": "To establish an inclusive regional and international dialogue ecosystem where women and young leaders possess legitimate, recognised authority as primary facilitators and mediators in resolving community conflicts and sustaining peace.",
+        "link": "More about us →"
+      },
+      "pathway": {
+        "eyebrow": "The pathway",
+        "title": "From community voice to accredited leader",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Learn",
+            "body": "Bilingual modules led by practitioners from the region."
+          },
+          {
+            "num": "02",
+            "title": "Practise",
+            "body": "Facilitate real dialogue circles in your own community."
+          },
+          {
+            "num": "03",
+            "title": "Accredit",
+            "body": "Earn a recognised certification in dialogue and peacebuilding."
+          },
+          {
+            "num": "04",
+            "title": "Lead",
+            "body": "Join an international network and mentor the next cohort."
+          }
+        ]
+      },
+      "activities": {
+        "title": "Our activities",
+        "items": [
+          {
+            "title": "Training programmes",
+            "body": "Accredited learning tracks, led by interfaith dialogue.",
+            "href": "/activities/training"
+          },
+          {
+            "title": "Seminars",
+            "body": "Open sessions with practitioners and scholars.",
+            "href": "/activities/seminars"
+          },
+          {
+            "title": "Conferences",
+            "body": "Regional and international gatherings.",
+            "href": "/activities/conferences"
+          },
+          {
+            "title": "Fellowship",
+            "body": "A year of mentoring, accreditation and leadership.",
+            "href": "/activities/fellowship"
+          }
+        ]
+      }
+    },
+    "fr": {
+      "meta": {
+        "title": "Bridging Our Voices — Les femmes au cœur du dialogue et de la consolidation de la paix",
+        "description": "Une initiative régionale et internationale qui renforce les femmes artisanes de paix et les leaders communautaires du monde arabe et de l’Afrique pour conduire le dialogue, la résolution des conflits et la prévention de l’extrémisme violent."
+      },
+      "hero": {
+        "eyebrow": "Initiative régionale et internationale",
+        "title": "Les femmes au cœur du dialogue et de la consolidation de la paix",
+        "lead": "Une initiative régionale et internationale qui renforce les femmes artisanes de paix et les leaders communautaires, pour les faire passer de rôles informels à un leadership reconnu et influent dans la consolidation de la paix et le dialogue interreligieux et interculturel.",
+        "primary": "Découvrir nos activités",
+        "secondary": "Nous contacter"
+      },
+      "ticker": {
+        "label": "À la une",
+        "items": [
+          "Inscriptions ouvertes : première promotion en arabe de notre formation numérique, date limite 12 nov. 2026",
+          "Lancement officiel de Bridging Our Voices",
+          "Formation gratuite d’un mois sur Zoom · certificat de participation",
+          "Rejoignez le réseau des artisanes de paix Bridging Our Voices"
+        ]
+      },
+      "announcement": {
+        "badge": "Inscriptions ouvertes",
+        "deadline": "Date limite : 12 novembre 2026",
+        "title": "Première promotion en arabe de notre formation numérique",
+        "body": "Un programme de formation numérique complet, entièrement en arabe sur Zoom pendant un mois, qui donne aux participants les compétences de base et des outils pratiques en facilitation du dialogue, médiation communautaire, gestion de la diversité et transformation des conflits.",
+        "chips": [
+          "Gratuit",
+          "En ligne · Zoom",
+          "Un mois",
+          "25 ans et plus",
+          "Certificat"
+        ],
+        "primary": "S’inscrire",
+        "secondary": "Détails du programme →",
+        "image": "/banner-fellows.png",
+        "bannerAlt": "Fellows de Bridging Our Voices (Philippines, Nigeria, Afrique du Sud, Égypte) et logos des partenaires"
+      },
+      "vision": {
+        "eyebrow": "Notre vision",
+        "quote": "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme facilitatrices et médiatrices principales dans la résolution des conflits communautaires et le maintien de la paix.",
+        "link": "En savoir plus sur nous →"
+      },
+      "pathway": {
+        "eyebrow": "Le parcours",
+        "title": "De la voix communautaire au leadership certifié",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Apprendre",
+            "body": "Des modules bilingues animés par des praticiens de la région."
+          },
+          {
+            "num": "02",
+            "title": "Pratiquer",
+            "body": "Animer de vrais cercles de dialogue dans sa propre communauté."
+          },
+          {
+            "num": "03",
+            "title": "Être certifiée",
+            "body": "Obtenir une certification reconnue en dialogue et consolidation de la paix."
+          },
+          {
+            "num": "04",
+            "title": "Diriger",
+            "body": "Rejoindre un réseau international et accompagner la promotion suivante."
+          }
+        ]
+      },
+      "activities": {
+        "title": "Nos activités",
+        "items": [
+          {
+            "title": "Programmes de formation",
+            "body": "Des parcours certifiants, portés par le dialogue interreligieux.",
+            "href": "/activities/training"
+          },
+          {
+            "title": "Séminaires",
+            "body": "Des sessions ouvertes avec praticiens et chercheurs.",
+            "href": "/activities/seminars"
+          },
+          {
+            "title": "Congrès",
+            "body": "Des rencontres régionales et internationales.",
+            "href": "/activities/conferences"
+          },
+          {
+            "title": "Bourse (Fellowship)",
+            "body": "Une année de mentorat, de certification et de leadership.",
+            "href": "/activities/fellowship"
+          }
+        ]
+      }
+    },
+    "ar": {
+      "meta": {
+        "title": "Bridging Our Voices — المرأة لقيادة الحوار وبناء السلام",
+        "description": "مبادرة إقليمية ودولية متميزة تهدف إلى تمكين صانعات السلام والقيادات المجتمعية في المنطقة العربية وأفريقيا، ونقلهن إلى قيادات معترف بها في الحوار وحل النزاعات والوقاية من التطرف العنيف."
+      },
+      "hero": {
+        "eyebrow": "مبادرة إقليمية ودولية",
+        "title": "المرأة لقيادة الحوار وبناء السلام",
+        "lead": "مبادرة إقليمية ودولية متميزة تهدف إلى تمكين صانعات السلام والقيادات المجتمعية، ونقلهن من أدوار غير رسمية إلى قيادات معترف بها ومؤثرة في بناء السلام والحوار بين الأديان والثقافات.",
+        "primary": "تعرّفي على أنشطتنا",
+        "secondary": "تواصلي معنا"
+      },
+      "ticker": {
+        "label": "آخر الأخبار",
+        "items": [
+          "فتح باب التسجيل في الدفعة الأولى باللغة العربية من دوراتنا التدريبية الرقمية، آخر موعد ١٢ نوفمبر ٢٠٢٦",
+          "الإطلاق الرسمي لمبادرة «أصواتنا جسور: المرأة لقيادة الحوار وبناء السلام»",
+          "دورة مجانية لمدة شهر عبر Zoom · شهادة مشاركة معتمدة",
+          "انضمي إلى شبكة «أصواتنا جسور» لصانعات السلام"
+        ]
+      },
+      "announcement": {
+        "badge": "التسجيل مفتوح",
+        "deadline": "آخر موعد للتسجيل: ١٢ نوفمبر ٢٠٢٦",
+        "title": "فتح باب التسجيل في الدفعة الأولى باللغة العربية من دوراتنا التدريبية الرقمية",
+        "body": "برنامج تدريبي رقمي متكامل يُقدَّم بالكامل باللغة العربية عبر منصة Zoom على مدار شهر كامل، يهدف إلى تزويد المشاركين بالمهارات الأساسية والأدوات العملية في التيسير الحواري، والوساطة المجتمعية، وإدارة التنوع، وتفكيك النزاعات.",
+        "chips": [
+          "مجاني بالكامل",
+          "أونلاين · Zoom",
+          "شهر كامل",
+          "من سن ٢٥ عامًا",
+          "شهادة مشاركة"
+        ],
+        "primary": "سجّل/ي الآن",
+        "secondary": "تفاصيل البرنامج ←",
+        "image": "/banner-fellows.png",
+        "bannerAlt": "زميلات «أصواتنا جسور» من الفلبين ونيجيريا وجنوب أفريقيا ومصر، مع شعارات الشركاء"
+      },
+      "vision": {
+        "eyebrow": "رؤيتنا",
+        "quote": "إرساء منظومة حوار إقليمية ودولية شاملة، تمتلك فيها النساء والقيادات الشابة سلطة شرعية ومعترفًا بها بوصفهن الميسِّرات والوسيطات الأساسيات في حل النزاعات المجتمعية واستدامة السلام.",
+        "link": "المزيد عنّا ←"
+      },
+      "pathway": {
+        "eyebrow": "المسار",
+        "title": "من صوت مجتمعي إلى قيادة معتمدة",
+        "steps": [
+          {
+            "num": "٠١",
+            "title": "تعلّمي",
+            "body": "وحدات ثنائية اللغة يقدّمها ممارسون من المنطقة."
+          },
+          {
+            "num": "٠٢",
+            "title": "مارسي",
+            "body": "أديري حلقات حوار حقيقية داخل مجتمعك."
+          },
+          {
+            "num": "٠٣",
+            "title": "احصلي على الاعتماد",
+            "body": "شهادة معترف بها في الحوار وبناء السلام."
+          },
+          {
+            "num": "٠٤",
+            "title": "قودي",
+            "body": "انضمي إلى شبكة دولية ورافقي الدفعة التالية."
+          }
+        ]
+      },
+      "activities": {
+        "title": "أنشطتنا",
+        "items": [
+          {
+            "title": "برامج تدريبية",
+            "body": "مسارات تعليمية معتمدة يتصدرها الحوار بين الأديان.",
+            "href": "/activities/training"
+          },
+          {
+            "title": "ندوات",
+            "body": "جلسات مفتوحة مع ممارسين وباحثين.",
+            "href": "/activities/seminars"
+          },
+          {
+            "title": "مؤتمرات",
+            "body": "لقاءات إقليمية ودولية.",
+            "href": "/activities/conferences"
+          },
+          {
+            "title": "زمالة",
+            "body": "عام من الإرشاد والاعتماد والقيادة.",
+            "href": "/activities/fellowship"
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "en": {
+      "meta": {
+        "title": "Who we are",
+        "description": "Bridging Our Voices is a cross-regional, interreligious and intercultural initiative led by KAICIID Fellows alumni, moving women peacebuilders from informal roles to recognised, certified facilitators and mediators."
+      },
+      "header": {
+        "eyebrow": "About",
+        "title": "Who we are",
+        "lead": "Our story, vision, mission and goals."
+      },
+      "who": {
+        "eyebrow": "Who we are",
+        "title": "Women have always mediated. It’s time it was recognised.",
+        "paragraphs": [
+          "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It empowers women peacebuilders, community leaders and young female change-makers across the Arab World, Africa and Southeast Asia, transitioning them from informal community observers into recognised, certified facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
+          "Supported by the KAICIID Fellows Alumni Network (KFAN), the project operates in strategic partnership with organisations across three regions and with expert international consultants from South Africa."
+        ],
+        "partnersLabel": "Strategic partners",
+        "partners": [
+          "KAICIID Fellows Alumni Network (KFAN)",
+          "Dialogue for Citizenship and Countering Hate Speech",
+          "Hayat Foundation for Development and Social Inclusion, Egypt",
+          "Adyan Foundation, Lebanon",
+          "Xavier University, Ateneo de Cagayan, Philippines",
+          "LEGASI Initiative, Nigeria"
+        ]
+      },
+      "vision": {
+        "eyebrow": "Our vision",
+        "text": "To establish an inclusive regional and international dialogue ecosystem where women and young leaders possess legitimate, recognised authority as primary facilitators and mediators in resolving community conflicts and sustaining peace."
+      },
+      "mission": {
+        "eyebrow": "Our mission",
+        "text": "To equip women and youth with practical skills in conflict analysis, dialogue facilitation, community mediation, trauma resilience and hate-speech deconstruction, providing documented digital and field platforms that enable them to lead peacebuilding and active citizenship."
+      },
+      "goals": {
+        "eyebrow": "Strategic objectives",
+        "title": "Five objectives guide our work",
+        "items": [
+          {
+            "num": "01",
+            "title": "Bridge the recognition gap",
+            "body": "Elevate female grassroots actors from informal observers to certified, recognised peace facilitators and mediators."
+          },
+          {
+            "num": "02",
+            "title": "Develop technical competencies",
+            "body": "Provide specialised training in conflict analysis, early warning, interreligious dialogue facilitation and counter-hate speech."
+          },
+          {
+            "num": "03",
+            "title": "Strengthen resilience & healing",
+            "body": "Integrate mindfulness, trauma healing and inner-peace practices to sustain facilitators working in high-conflict settings."
+          },
+          {
+            "num": "04",
+            "title": "Institutionalise youth engagement",
+            "body": "Empower refugee, displaced and student youth to actively lead community dialogue and social integration."
+          },
+          {
+            "num": "05",
+            "title": "Sustain cross-regional collaboration",
+            "body": "Build the permanent “Bridging Our Voices Network” connecting female peacebuilders across Asia, Africa and the Arab region."
+          }
+        ]
+      }
+    },
+    "fr": {
+      "meta": {
+        "title": "Qui sommes-nous",
+        "description": "Bridging Our Voices est une initiative transrégionale, interreligieuse et interculturelle portée par des anciens fellows du KAICIID, qui fait des femmes artisanes de paix des facilitatrices et médiatrices reconnues et certifiées."
+      },
+      "header": {
+        "eyebrow": "Qui sommes-nous",
+        "title": "Qui sommes-nous",
+        "lead": "Notre histoire, notre vision, notre mission et nos objectifs."
+      },
+      "who": {
+        "eyebrow": "Qui sommes-nous",
+        "title": "Les femmes ont toujours été médiatrices. Il est temps de le reconnaître.",
+        "paragraphs": [
+          "« Bridging Our Voices : les femmes au cœur du dialogue et de la consolidation de la paix » est une initiative phare transrégionale, interreligieuse et interculturelle portée par des anciens du Programme international de fellows du KAICIID. Elle renforce les femmes artisanes de paix, les leaders communautaires et les jeunes femmes actrices de changement dans le monde arabe, en Afrique et en Asie du Sud-Est, pour les faire passer d’observatrices informelles à facilitatrices et médiatrices reconnues et certifiées du dialogue interreligieux, de la transformation des conflits et de la cohésion sociale.",
+          "Soutenu par le réseau des anciens fellows du KAICIID (KFAN), le projet est mené en partenariat stratégique avec des organisations de trois régions et des consultants internationaux d’Afrique du Sud."
+        ],
+        "partnersLabel": "Partenaires stratégiques",
+        "partners": [
+          "Réseau des anciens fellows du KAICIID (KFAN)",
+          "Dialogue pour la citoyenneté et la lutte contre les discours de haine",
+          "Fondation Hayat pour le développement et l’inclusion sociale, Égypte",
+          "Fondation Adyan, Liban",
+          "Xavier University, Ateneo de Cagayan, Philippines",
+          "LEGASI Initiative, Nigeria"
+        ]
+      },
+      "vision": {
+        "eyebrow": "Notre vision",
+        "text": "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme facilitatrices et médiatrices principales dans la résolution des conflits communautaires et le maintien de la paix."
+      },
+      "mission": {
+        "eyebrow": "Notre mission",
+        "text": "Doter les femmes et les jeunes de compétences pratiques en analyse des conflits, facilitation du dialogue, médiation communautaire, résilience face au trauma et déconstruction des discours de haine, grâce à des plateformes numériques et de terrain documentées qui leur permettent de conduire la consolidation de la paix et la citoyenneté active."
+      },
+      "goals": {
+        "eyebrow": "Objectifs stratégiques",
+        "title": "Cinq objectifs guident notre action",
+        "items": [
+          {
+            "num": "01",
+            "title": "Combler le déficit de reconnaissance",
+            "body": "Faire passer les actrices de terrain d’observatrices informelles à facilitatrices et médiatrices de paix certifiées et reconnues."
+          },
+          {
+            "num": "02",
+            "title": "Développer les compétences techniques",
+            "body": "Offrir des formations spécialisées en analyse des conflits, alerte précoce, facilitation du dialogue interreligieux et lutte contre les discours de haine."
+          },
+          {
+            "num": "03",
+            "title": "Renforcer la résilience et la guérison",
+            "body": "Intégrer pleine conscience, guérison des traumatismes et paix intérieure pour soutenir les facilitatrices en contextes de fort conflit."
+          },
+          {
+            "num": "04",
+            "title": "Institutionnaliser l’engagement des jeunes",
+            "body": "Permettre aux jeunes réfugiés, déplacés et étudiants de mener activement le dialogue communautaire et l’intégration sociale."
+          },
+          {
+            "num": "05",
+            "title": "Pérenniser la collaboration transrégionale",
+            "body": "Créer le réseau permanent « Bridging Our Voices » reliant les artisanes de paix d’Asie, d’Afrique et du monde arabe."
+          }
+        ]
+      }
+    },
+    "ar": {
+      "meta": {
+        "title": "من نحن",
+        "description": "«أصواتنا جسور» مبادرة رائدة عابرة للأقاليم بين الأديان والثقافات، يقودها خريجو برنامج الزمالة الدولية لكايسيد، تنقل صانعات السلام إلى ميسِّرات ووسيطات معترف بهن ومعتمدات."
+      },
+      "header": {
+        "eyebrow": "من نحن",
+        "title": "تعرّفي علينا",
+        "lead": "قصتنا ورؤيتنا ورسالتنا وأهدافنا."
+      },
+      "who": {
+        "eyebrow": "من نحن",
+        "title": "لطالما كانت المرأة وسيطة. حان وقت الاعتراف بذلك.",
+        "paragraphs": [
+          "«أصواتنا جسور: المرأة لقيادة الحوار وبناء السلام» مبادرة رائدة عابرة للأقاليم، بين الأديان والثقافات، يقودها خريجو برنامج الزمالة الدولية لمركز الملك عبدالله العالمي للحوار (كايسيد). تمكّن المبادرة صانعات السلام والقيادات المجتمعية والشابات صانعات التغيير في العالم العربي وأفريقيا وجنوب شرق آسيا، وتنقلهن من موقع المراقِبات غير الرسميات إلى ميسِّرات ووسيطات معترف بهن ومعتمدات في الحوار بين الأديان وتحويل النزاعات والتماسك الاجتماعي.",
+          "بدعم من شبكة خريجي زمالة كايسيد (KFAN)، يعمل المشروع بشراكة استراتيجية مع مؤسسات في ثلاثة أقاليم ومع مستشارين دوليين خبراء من جنوب أفريقيا."
+        ],
+        "partnersLabel": "الشركاء الاستراتيجيون",
+        "partners": [
+          "شبكة خريجي زمالة كايسيد (KFAN)",
+          "الحوار من أجل المواطنة ومواجهة خطاب الكراهية",
+          "مؤسسة حياة للتنمية والدمج المجتمعي، مصر",
+          "مؤسسة أديان، لبنان",
+          "جامعة كزافييه، أتينيو دي كاغايان، الفلبين",
+          "مبادرة LEGASI، نيجيريا"
+        ]
+      },
+      "vision": {
+        "eyebrow": "رؤيتنا",
+        "text": "إرساء منظومة حوار إقليمية ودولية شاملة، تمتلك فيها النساء والقيادات الشابة سلطة شرعية ومعترفًا بها بوصفهن الميسِّرات والوسيطات الأساسيات في حل النزاعات المجتمعية واستدامة السلام."
+      },
+      "mission": {
+        "eyebrow": "رسالتنا",
+        "text": "تزويد النساء والشباب بمهارات عملية في تحليل النزاعات وتيسير الحوار والوساطة المجتمعية والصمود أمام الصدمات وتفكيك خطاب الكراهية، وتوفير منصات رقمية وميدانية موثّقة تمكّنهم من قيادة بناء السلام والمواطنة الفاعلة."
+      },
+      "goals": {
+        "eyebrow": "الأهداف الاستراتيجية",
+        "title": "خمسة أهداف توجّه عملنا",
+        "items": [
+          {
+            "num": "٠١",
+            "title": "سدّ فجوة الاعتراف",
+            "body": "الارتقاء بالفاعلات القاعديات من مراقِبات غير رسميات إلى ميسِّرات ووسيطات سلام معتمدات ومعترف بهن."
+          },
+          {
+            "num": "٠٢",
+            "title": "تطوير الكفاءات الفنية",
+            "body": "تقديم تدريب متخصص في تحليل النزاعات والإنذار المبكر وتيسير الحوار بين الأديان ومواجهة خطاب الكراهية."
+          },
+          {
+            "num": "٠٣",
+            "title": "تعزيز الصمود والتعافي",
+            "body": "دمج ممارسات اليقظة الذهنية والتعافي من الصدمات والسلام الداخلي لدعم الميسِّرات العاملات في بيئات شديدة النزاع."
+          },
+          {
+            "num": "٠٤",
+            "title": "مأسسة مشاركة الشباب",
+            "body": "تمكين الشباب من اللاجئين والنازحين والطلاب من قيادة الحوار المجتمعي والاندماج الاجتماعي بفاعلية."
+          },
+          {
+            "num": "٠٥",
+            "title": "استدامة التعاون العابر للأقاليم",
+            "body": "بناء «شبكة أصواتنا جسور» الدائمة التي تربط صانعات السلام في آسيا وأفريقيا والمنطقة العربية."
+          }
+        ]
+      }
+    }
+  },
+  "activities": {
+    "en": {
+      "meta": {
+        "title": "Activities",
+        "description": "Training programmes, seminars, conferences and a fellowship: four ways for women peacebuilders to learn, connect and lead with Bridging Our Voices."
+      },
+      "header": {
+        "eyebrow": "Activities",
+        "title": "How we build peace leaders",
+        "lead": "Training programmes, seminars, conferences and a fellowship, four ways to learn, connect and lead."
+      },
+      "training": {
+        "index": "01",
+        "eyebrow": "Training programmes",
+        "title": "Accredited training in dialogue and peacebuilding"
+      },
+      "course": {
+        "badge": "Current programme",
+        "deadline": "Deadline: 12 November 2026",
+        "title": "Bridging Our Voices: Women Leading Dialogue and Peacebuilding",
+        "body": "A complete digital training programme delivered entirely in Arabic over Zoom for one full month, giving participants core skills and practical tools in dialogue facilitation, community mediation, diversity management and conflict transformation.",
+        "eligibility": "Open to everyone aged 25 and over, no previous peacebuilding experience required.",
+        "whyTitle": "Why take part",
+        "why": [
+          "Completely free online training",
+          "Certificate of participation from the initiative on meeting the attendance requirement",
+          "Regional and international networking, and membership of the Bridging Our Voices network of women peacebuilders"
+        ],
+        "cta": "Register now",
+        "modulesLabel": "Core modules",
+        "modules": [
+          {
+            "num": "1",
+            "text": "Foundations of dialogue, effective communication and deep listening"
+          },
+          {
+            "num": "2",
+            "text": "Conflict-analysis tools and understanding the roots of community conflict"
+          },
+          {
+            "num": "3",
+            "text": "Activating the Women, Peace and Security (WPS) agenda"
+          },
+          {
+            "num": "4",
+            "text": "Community mediation skills and deconstructing stereotypes"
+          },
+          {
+            "num": "5",
+            "text": "Gender and conflict transformation"
+          },
+          {
+            "num": "6",
+            "text": "Religious and cultural diversity and the conflict map in Asia and Africa"
+          },
+          {
+            "num": "7",
+            "text": "Designing and developing applied community initiatives"
+          }
+        ],
+        "extra": "Live interactive sessions with international experts and specialists"
+      },
+      "flagship": {
+        "eyebrow": "Flagship programme · Interfaith dialogue",
+        "title": "Many faiths, many cultures, one shared table.",
+        "body": "Women are often the first bridges between families of different faiths and backgrounds. Our interfaith and intercultural dialogue programme gives that everyday bridging structure, skills and recognition.",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Encounter",
+            "body": "Facilitated dialogue circles that bring women of different faiths and cultures together."
+          },
+          {
+            "num": "02",
+            "title": "Understanding",
+            "body": "Religious and cultural literacy to replace stereotypes with knowledge."
+          },
+          {
+            "num": "03",
+            "title": "Joint action",
+            "body": "Shared community initiatives that turn dialogue into everyday cooperation."
+          }
+        ],
+        "tags": [
+          "#InterfaithDialogue",
+          "#InterculturalDialogue"
+        ],
+        "image": "",
+        "photoAlt": "Women of different faiths in dialogue",
+        "quote": "“Dialogue begins when we listen to understand, not to reply.”"
+      },
+      "tracks": [
+        {
+          "num": "02",
+          "title": "Women in Peacebuilding",
+          "body": "Mediation, negotiation and women’s place in lasting peace processes.",
+          "tag": "#WomenInPeacebuilding"
+        },
+        {
+          "num": "03",
+          "title": "Countering Hate Speech",
+          "body": "Recognise, respond to and reframe divisive narratives online and offline.",
+          "tag": "#CounteringHateSpeech"
+        },
+        {
+          "num": "04",
+          "title": "Conflict Analysis & Management",
+          "body": "Map actors, causes and dynamics to manage disputes before they escalate.",
+          "tag": "#ConflictManagement"
+        },
+        {
+          "num": "05",
+          "title": "Citizenship & Leadership",
+          "body": "Civic participation and the confidence to lead in public life.",
+          "tag": "#Citizenship #Leadership"
+        }
+      ],
+      "seminars": {
+        "index": "02",
+        "eyebrow": "Seminars",
+        "title": "Open seminars and webinars",
+        "lead": "Short, open sessions with practitioners and scholars, online and in person, in Arabic and English.",
+        "items": [
+          {
+            "image": "",
+            "meta": "Webinar series · Online",
+            "title": "Women, faith and the making of peace",
+            "body": "A four-part series on women’s roles in interreligious peace work.",
+            "cta": "Register →"
+          },
+          {
+            "image": "",
+            "meta": "Seminar · In person",
+            "title": "Hate speech: from recognition to response",
+            "body": "Case studies and tools for community leaders and educators.",
+            "cta": "Register →"
+          },
+          {
+            "image": "",
+            "meta": "Seminar · Online",
+            "title": "Citizenship and women’s public voice",
+            "body": "How civic participation opens paths to leadership.",
+            "cta": "Watch the recording →"
+          }
+        ]
+      },
+      "conferences": {
+        "index": "03",
+        "eyebrow": "Conferences",
+        "title": "Launch conference",
+        "lead": "Our regional and international conference brings together participants, partners and experts to share practice and set the agenda.",
+        "playLabel": "Play video",
+        "featured": {
+          "image": "",
+          "kind": "Opening address",
+          "title": "Why women’s voices matter in peacebuilding"
+        },
+        "sessions": [
+          {
+            "image": "",
+            "kind": "Panel",
+            "title": "From informal mediation to recognised leadership"
+          },
+          {
+            "image": "",
+            "kind": "Keynote",
+            "title": "Interfaith and intercultural dialogue in practice"
+          },
+          {
+            "image": "",
+            "kind": "Workshop",
+            "title": "Countering hate speech in local communities"
+          },
+          {
+            "image": "",
+            "kind": "Testimony",
+            "title": "A community leader’s journey"
+          },
+          {
+            "image": "",
+            "kind": "Panel",
+            "title": "Conflict analysis and early response"
+          },
+          {
+            "image": "",
+            "kind": "Closing",
+            "title": "The road ahead for the network"
+          }
+        ]
+      },
+      "fellowship": {
+        "index": "04",
+        "eyebrow": "Fellowship",
+        "title": "The Bridging Our Voices Fellowship",
+        "lead": "A year-long fellowship for women already active in their communities: mentoring, accreditation and the support to lead their own dialogue initiative.",
+        "cta": "Apply for the fellowship",
+        "status": "Applications open now",
+        "benefits": [
+          {
+            "title": "Mentoring",
+            "body": "One-to-one guidance from experienced peacebuilders."
+          },
+          {
+            "title": "Accreditation",
+            "body": "A recognised certificate in dialogue and peacebuilding."
+          },
+          {
+            "title": "Community project",
+            "body": "Support to design and run your own dialogue initiative."
+          },
+          {
+            "title": "Network",
+            "body": "Lasting ties with fellows across the region and beyond."
+          }
+        ]
+      }
+    },
+    "fr": {
+      "meta": {
+        "title": "Activités",
+        "description": "Programmes de formation, séminaires, congrès et bourse : quatre manières d’apprendre, de se relier et de diriger avec Bridging Our Voices."
+      },
+      "header": {
+        "eyebrow": "Activités",
+        "title": "Comment nous formons des leaders de la paix",
+        "lead": "Programmes de formation, séminaires, congrès et bourse, quatre manières d’apprendre, de se relier et de diriger."
+      },
+      "training": {
+        "index": "01",
+        "eyebrow": "Programmes de formation",
+        "title": "Formations certifiantes en dialogue et consolidation de la paix"
+      },
+      "course": {
+        "badge": "Programme en cours",
+        "deadline": "Date limite : 12 novembre 2026",
+        "title": "Bridging Our Voices : les femmes au cœur du dialogue et de la consolidation de la paix",
+        "body": "Un programme de formation numérique complet, entièrement en arabe sur Zoom pendant un mois, qui donne aux participants les compétences de base et des outils pratiques en facilitation du dialogue, médiation communautaire, gestion de la diversité et transformation des conflits.",
+        "eligibility": "Ouvert à toutes et tous à partir de 25 ans, aucune expérience préalable en consolidation de la paix requise.",
+        "whyTitle": "Pourquoi participer",
+        "why": [
+          "Formation en ligne entièrement gratuite",
+          "Certificat de participation délivré par l’initiative selon le taux de présence requis",
+          "Mise en réseau régionale et internationale et adhésion au réseau des artisanes de paix Bridging Our Voices"
+        ],
+        "cta": "S’inscrire",
+        "modulesLabel": "Modules principaux",
+        "modules": [
+          {
+            "num": "1",
+            "text": "Fondements du dialogue, communication efficace et écoute profonde"
+          },
+          {
+            "num": "2",
+            "text": "Outils d’analyse des conflits et compréhension des racines des conflits communautaires"
+          },
+          {
+            "num": "3",
+            "text": "Mise en œuvre de l’agenda Femmes, paix et sécurité (FPS)"
+          },
+          {
+            "num": "4",
+            "text": "Médiation communautaire et déconstruction des stéréotypes"
+          },
+          {
+            "num": "5",
+            "text": "Genre et transformation des conflits"
+          },
+          {
+            "num": "6",
+            "text": "Diversité religieuse et culturelle et carte des conflits en Asie et en Afrique"
+          },
+          {
+            "num": "7",
+            "text": "Conception et développement d’initiatives communautaires appliquées"
+          }
+        ],
+        "extra": "Rencontres interactives en direct avec des experts internationaux"
+      },
+      "flagship": {
+        "eyebrow": "Programme phare · Dialogue interreligieux",
+        "title": "Plusieurs religions, plusieurs cultures, une même table.",
+        "body": "Les femmes sont souvent les premiers ponts entre des familles de religions et d’horizons différents. Notre programme de dialogue interreligieux et interculturel donne à ce rôle quotidien une méthode, des compétences et une reconnaissance.",
+        "steps": [
+          {
+            "num": "01",
+            "title": "Rencontre",
+            "body": "Des cercles de dialogue animés réunissant des femmes de religions et de cultures différentes."
+          },
+          {
+            "num": "02",
+            "title": "Compréhension",
+            "body": "Une culture religieuse et interculturelle pour remplacer les stéréotypes par la connaissance."
+          },
+          {
+            "num": "03",
+            "title": "Action commune",
+            "body": "Des initiatives communautaires partagées qui font du dialogue une coopération quotidienne."
+          }
+        ],
+        "tags": [
+          "#InterfaithDialogue",
+          "#InterculturalDialogue"
+        ],
+        "image": "",
+        "photoAlt": "Femmes de différentes religions en dialogue",
+        "quote": "« Le dialogue commence quand on écoute pour comprendre, et non pour répondre. »"
+      },
+      "tracks": [
+        {
+          "num": "02",
+          "title": "Les femmes et la consolidation de la paix",
+          "body": "Médiation, négociation et place des femmes dans les processus de paix durables.",
+          "tag": "#WomenInPeacebuilding"
+        },
+        {
+          "num": "03",
+          "title": "Contrer les discours de haine",
+          "body": "Repérer, répondre et reformuler les récits qui divisent, en ligne et hors ligne.",
+          "tag": "#CounteringHateSpeech"
+        },
+        {
+          "num": "04",
+          "title": "Analyse et gestion des conflits",
+          "body": "Cartographier acteurs, causes et dynamiques pour gérer les tensions avant qu’elles ne s’aggravent.",
+          "tag": "#ConflictManagement"
+        },
+        {
+          "num": "05",
+          "title": "Citoyenneté et leadership",
+          "body": "Participation civique et confiance pour agir dans la vie publique.",
+          "tag": "#Citizenship #Leadership"
+        }
+      ],
+      "seminars": {
+        "index": "02",
+        "eyebrow": "Séminaires",
+        "title": "Séminaires et webinaires ouverts",
+        "lead": "Des sessions courtes et ouvertes avec praticiens et chercheurs, en ligne et en présentiel, en arabe, anglais et français.",
+        "items": [
+          {
+            "image": "",
+            "meta": "Cycle de webinaires · En ligne",
+            "title": "Femmes, foi et construction de la paix",
+            "body": "Un cycle en quatre séances sur le rôle des femmes dans la paix interreligieuse.",
+            "cta": "S’inscrire →"
+          },
+          {
+            "image": "",
+            "meta": "Séminaire · Présentiel",
+            "title": "Discours de haine : du repérage à la réponse",
+            "body": "Études de cas et outils pour leaders communautaires et éducateurs.",
+            "cta": "S’inscrire →"
+          },
+          {
+            "image": "",
+            "meta": "Séminaire · En ligne",
+            "title": "Citoyenneté et voix publique des femmes",
+            "body": "Comment la participation civique ouvre la voie au leadership.",
+            "cta": "Voir l’enregistrement →"
+          }
+        ]
+      },
+      "conferences": {
+        "index": "03",
+        "eyebrow": "Congrès",
+        "title": "Congrès de lancement",
+        "lead": "Notre congrès régional et international réunit participantes, partenaires et experts pour partager les pratiques et fixer les priorités.",
+        "playLabel": "Lire la vidéo",
+        "featured": {
+          "image": "",
+          "kind": "Discours d’ouverture",
+          "title": "Pourquoi la voix des femmes compte dans la consolidation de la paix"
+        },
+        "sessions": [
+          {
+            "image": "",
+            "kind": "Table ronde",
+            "title": "De la médiation informelle au leadership reconnu"
+          },
+          {
+            "image": "",
+            "kind": "Conférence",
+            "title": "Le dialogue interreligieux et interculturel en pratique"
+          },
+          {
+            "image": "",
+            "kind": "Atelier",
+            "title": "Contrer les discours de haine au niveau local"
+          },
+          {
+            "image": "",
+            "kind": "Témoignage",
+            "title": "Le parcours d’une leader communautaire"
+          },
+          {
+            "image": "",
+            "kind": "Table ronde",
+            "title": "Analyse des conflits et réponse précoce"
+          },
+          {
+            "image": "",
+            "kind": "Clôture",
+            "title": "Les perspectives du réseau"
+          }
+        ]
+      },
+      "fellowship": {
+        "index": "04",
+        "eyebrow": "Bourse",
+        "title": "La bourse Bridging Our Voices",
+        "lead": "Une bourse d’un an pour les femmes déjà engagées dans leurs communautés : mentorat, certification et accompagnement pour mener leur propre initiative de dialogue.",
+        "cta": "Candidater à la bourse",
+        "status": "Candidatures ouvertes",
+        "benefits": [
+          {
+            "title": "Mentorat",
+            "body": "Un accompagnement individuel par des artisanes de paix expérimentées."
+          },
+          {
+            "title": "Certification",
+            "body": "Un certificat reconnu en dialogue et consolidation de la paix."
+          },
+          {
+            "title": "Projet communautaire",
+            "body": "Un soutien pour concevoir et mener votre propre initiative de dialogue."
+          },
+          {
+            "title": "Réseau",
+            "body": "Des liens durables avec des boursières de la région et d’ailleurs."
+          }
+        ]
+      }
+    },
+    "ar": {
+      "meta": {
+        "title": "الأنشطة",
+        "description": "برامج تدريبية وندوات ومؤتمرات وزمالة: أربعة طرق للتعلّم والتواصل والقيادة مع مبادرة «أصواتنا جسور» لصانعات السلام."
+      },
+      "header": {
+        "eyebrow": "الأنشطة",
+        "title": "كيف نصنع قيادات السلام",
+        "lead": "برامج تدريبية وندوات ومؤتمرات وزمالة، أربعة طرق للتعلّم والتواصل والقيادة."
+      },
+      "training": {
+        "index": "01",
+        "eyebrow": "برامج تدريبية",
+        "title": "تدريب معتمد في الحوار وبناء السلام"
+      },
+      "course": {
+        "badge": "البرنامج الحالي",
+        "deadline": "آخر موعد للتسجيل: ١٢ نوفمبر ٢٠٢٦",
+        "title": "«أصواتنا جسور: نساء لقيادة الحوار وبناء السلام»",
+        "body": "برنامج تدريبي رقمي متكامل يُقدَّم بالكامل باللغة العربية عبر منصة Zoom على مدار شهر كامل، يهدف إلى تزويد المشاركين بالمهارات الأساسية والأدوات العملية في التيسير الحواري، والوساطة المجتمعية، وإدارة التنوع، وتفكيك النزاعات.",
+        "eligibility": "الدورة مفتوحة لجميع المهتمين (من سن ٢٥ عامًا فأكثر) دون اشتراط خبرة سابقة في بناء السلام.",
+        "whyTitle": "مميزات المشاركة",
+        "why": [
+          "تدريب إلكتروني مجاني بالكامل",
+          "شهادة مشاركة معتمدة من المبادرة عند استكمال نسبة الحضور المطلوبة",
+          "فرصة للتشبيك الإقليمي والدولي والانضمام لشبكة «أصواتنا جسور» لصانعات السلام"
+        ],
+        "cta": "سجّل/ي الآن",
+        "modulesLabel": "المحاور الرئيسية",
+        "modules": [
+          {
+            "num": "١",
+            "text": "أسس الحوار ومهارات التواصل الفعّال والإنصات العميق"
+          },
+          {
+            "num": "٢",
+            "text": "أدوات تحليل الصراعات وفهم جذور النزاع المجتمعي"
+          },
+          {
+            "num": "٣",
+            "text": "تفعيل أجندة المرأة والسلام والأمن (WPS)"
+          },
+          {
+            "num": "٤",
+            "text": "مهارات الوساطة المجتمعية وتفكيك الصور النمطية"
+          },
+          {
+            "num": "٥",
+            "text": "النوع الاجتماعي وتحويل النزاعات"
+          },
+          {
+            "num": "٦",
+            "text": "التنوع الديني والثقافي وخريطة الصراعات في آسيا وإفريقيا"
+          },
+          {
+            "num": "٧",
+            "text": "تصميم وتطوير المبادرات المجتمعية التطبيقية"
+          }
+        ],
+        "extra": "لقاءات تفاعلية مباشرة مع خبراء ومتخصصين دوليين"
+      },
+      "flagship": {
+        "eyebrow": "البرنامج الرئيسي · الحوار بين الأديان",
+        "title": "أديان كثيرة، وثقافات متعددة، ومائدة واحدة.",
+        "body": "كثيرًا ما تكون المرأة الجسر الأول بين أسر من أديان وخلفيات مختلفة. يمنح برنامج الحوار بين الأديان والثقافات هذا الدور اليومي منهجيةً ومهاراتٍ واعترافًا.",
+        "steps": [
+          {
+            "num": "٠١",
+            "title": "اللقاء",
+            "body": "حلقات حوار مُيسَّرة تجمع نساءً من أديان وثقافات مختلفة."
+          },
+          {
+            "num": "٠٢",
+            "title": "الفهم",
+            "body": "معرفة دينية وثقافية تستبدل الصور النمطية بالمعرفة."
+          },
+          {
+            "num": "٠٣",
+            "title": "العمل المشترك",
+            "body": "مبادرات مجتمعية مشتركة تحوّل الحوار إلى تعاون يومي."
+          }
+        ],
+        "tags": [
+          "#InterfaithDialogue",
+          "#InterculturalDialogue"
+        ],
+        "image": "",
+        "photoAlt": "نساء من أديان مختلفة في حوار",
+        "quote": "«يبدأ الحوار حين نُصغي لنفهم، لا لنرد.»"
+      },
+      "tracks": [
+        {
+          "num": "٠٢",
+          "title": "المرأة وبناء السلام",
+          "body": "الوساطة والتفاوض ومكانة المرأة في عمليات السلام المستدامة.",
+          "tag": "#WomenInPeacebuilding"
+        },
+        {
+          "num": "٠٣",
+          "title": "مواجهة خطاب الكراهية",
+          "body": "رصد الخطابات المُفرِّقة والرد عليها وإعادة صياغتها رقميًا وواقعيًا.",
+          "tag": "#CounteringHateSpeech"
+        },
+        {
+          "num": "٠٤",
+          "title": "تحليل النزاعات وإدارتها",
+          "body": "تحديد الأطراف والأسباب والديناميكيات لإدارة الخلاف قبل تصاعده.",
+          "tag": "#ConflictManagement"
+        },
+        {
+          "num": "٠٥",
+          "title": "المواطنة والقيادة",
+          "body": "المشاركة المدنية والثقة للقيادة في الحياة العامة.",
+          "tag": "#Citizenship #Leadership"
+        }
+      ],
+      "seminars": {
+        "index": "02",
+        "eyebrow": "ندوات",
+        "title": "ندوات مفتوحة وندوات أونلاين",
+        "lead": "جلسات قصيرة ومفتوحة مع ممارسين وباحثين، أونلاين وحضوريًا، بالعربية والإنجليزية.",
+        "items": [
+          {
+            "image": "",
+            "meta": "سلسلة ندوات · أونلاين",
+            "title": "المرأة والإيمان وصناعة السلام",
+            "body": "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان.",
+            "cta": "سجّلي ←"
+          },
+          {
+            "image": "",
+            "meta": "ندوة · حضوري",
+            "title": "خطاب الكراهية: من الرصد إلى الرد",
+            "body": "دراسات حالة وأدوات للقيادات المجتمعية والمربّين.",
+            "cta": "سجّلي ←"
+          },
+          {
+            "image": "",
+            "meta": "ندوة · أونلاين",
+            "title": "المواطنة وصوت المرأة في الشأن العام",
+            "body": "كيف تفتح المشاركة المدنية طرقًا نحو القيادة.",
+            "cta": "شاهدي التسجيل ←"
+          }
+        ]
+      },
+      "conferences": {
+        "index": "03",
+        "eyebrow": "مؤتمرات",
+        "title": "مؤتمر الإطلاق",
+        "lead": "يجمع مؤتمرنا الإقليمي والدولي المشاركات والشركاء والخبراء لتبادل الممارسات ورسم الأولويات.",
+        "playLabel": "تشغيل الفيديو",
+        "featured": {
+          "image": "",
+          "kind": "الكلمة الافتتاحية",
+          "title": "لماذا يهمّ صوت المرأة في بناء السلام"
+        },
+        "sessions": [
+          {
+            "image": "",
+            "kind": "جلسة نقاش",
+            "title": "من الوساطة غير الرسمية إلى القيادة المعترف بها"
+          },
+          {
+            "image": "",
+            "kind": "كلمة رئيسية",
+            "title": "الحوار بين الأديان والثقافات عمليًا"
+          },
+          {
+            "image": "",
+            "kind": "ورشة",
+            "title": "مواجهة خطاب الكراهية في المجتمعات المحلية"
+          },
+          {
+            "image": "",
+            "kind": "شهادة",
+            "title": "رحلة قائدة مجتمعية"
+          },
+          {
+            "image": "",
+            "kind": "جلسة نقاش",
+            "title": "تحليل النزاعات والاستجابة المبكرة"
+          },
+          {
+            "image": "",
+            "kind": "الختام",
+            "title": "الطريق أمام الشبكة"
+          }
+        ]
+      },
+      "fellowship": {
+        "index": "04",
+        "eyebrow": "زمالة",
+        "title": "زمالة «أصواتنا جسور»",
+        "lead": "زمالة لمدة عام للنساء الفاعلات في مجتمعاتهن: إرشاد واعتماد ودعم لقيادة مبادرة حوار خاصة بهن.",
+        "cta": "قدّمي على الزمالة",
+        "status": "باب التقديم مفتوح الآن",
+        "benefits": [
+          {
+            "title": "الإرشاد",
+            "body": "توجيه فردي من صانعات سلام ذوات خبرة."
+          },
+          {
+            "title": "الاعتماد",
+            "body": "شهادة معترف بها في الحوار وبناء السلام."
+          },
+          {
+            "title": "مشروع مجتمعي",
+            "body": "دعم لتصميم وتنفيذ مبادرة حوار خاصة بك."
+          },
+          {
+            "title": "الشبكة",
+            "body": "روابط دائمة مع زميلات من المنطقة وخارجها."
+          }
+        ]
+      }
+    }
+  },
+  "agenda": {
+    "en": {
+      "meta": {
+        "title": "Agenda",
+        "description": "Upcoming Bridging Our Voices events: dialogue circles, workshops, trainings and ceremonies, plus the international days for dialogue and peace."
+      },
+      "header": {
+        "eyebrow": "Agenda",
+        "title": "Upcoming events",
+        "lead": "Dialogue circles, workshops, trainings and ceremonies, online and across the region."
+      },
+      "calendar": {
+        "prev": "Previous month",
+        "next": "Next month",
+        "legendEvent": "Event",
+        "legendObservance": "International day",
+        "legendToday": "Today",
+        "empty": "No events on this day.",
+        "showMonth": "Show the whole month",
+        "monthLabel": "This month",
+        "dayLabel": "Selected day"
+      },
+      "featured": {
+        "image": "",
+        "kind": "Webinar series · Online",
+        "title": "Women, faith and the making of peace",
+        "dates": "26 Nov to 17 Dec",
+        "register": "Register",
+        "body": "A four-part series on women’s roles in interreligious peace work."
+      },
+      "eventPage": {
+        "date": "Date",
+        "place": "Place",
+        "type": "Type",
+        "sessions": "Sessions",
+        "details": "Times and joining details will be shared with registered participants.",
+        "register": "Register",
+        "addToCalendar": "Add to Google Calendar",
+        "back": "Back to the agenda",
+        "others": "Other upcoming events"
+      },
+      "upcomingTitle": "All upcoming events",
+      "deadline": {
+        "kind": "Deadline",
+        "title": "Last day to register for the digital training course"
+      },
+      "seriesPlace": "Online",
+      "events": [
+        {
+          "kind": "Dialogue circle",
+          "title": "Faith, culture and the role of women",
+          "place": "Online · Arabic & English"
+        },
+        {
+          "kind": "Workshop",
+          "title": "Conflict analysis for community leaders",
+          "place": "Regional hub"
+        },
+        {
+          "kind": "Training",
+          "title": "Responding to hate speech online",
+          "place": "Online"
+        },
+        {
+          "kind": "Round table",
+          "title": "Citizenship, leadership and women’s participation",
+          "place": "To be announced"
+        },
+        {
+          "kind": "Ceremony",
+          "title": "First cohort accreditation",
+          "place": "To be announced"
+        }
+      ],
+      "observances": {
+        "eyebrow": "International days",
+        "title": "Global dates for dialogue and peace",
+        "lead": "The United Nations days that shape our year, from peaceful coexistence in January to Human Rights Day in December. They recur every year.",
+        "kind": "International day",
+        "items": [
+          {
+            "start": "01-28",
+            "title": "International Day of Peaceful Coexistence",
+            "url": "https://www.un.org/en/observances/peaceful-coexistence-day"
+          },
+          {
+            "start": "02-01",
+            "end": "02-07",
+            "title": "World Interfaith Harmony Week",
+            "url": "https://www.un.org/en/observances/interfaith-harmony-week"
+          },
+          {
+            "start": "02-04",
+            "title": "International Day of Human Fraternity",
+            "url": "https://www.un.org/en/observances/human-fraternity"
+          },
+          {
+            "start": "02-20",
+            "title": "World Day of Social Justice",
+            "url": "https://www.un.org/en/observances/social-justice-day"
+          },
+          {
+            "start": "03-08",
+            "title": "International Women’s Day",
+            "url": "https://www.un.org/en/observances/womens-day"
+          },
+          {
+            "start": "03-15",
+            "title": "International Day to Combat Islamophobia",
+            "url": "https://www.un.org/en/observances/anti-islamophobia-day"
+          },
+          {
+            "start": "03-21",
+            "title": "International Day for the Elimination of Racial Discrimination",
+            "url": "https://www.un.org/en/observances/end-racism-day"
+          },
+          {
+            "start": "04-05",
+            "title": "International Day of Conscience",
+            "url": "https://www.un.org/en/observances/conscience-day"
+          },
+          {
+            "start": "04-24",
+            "title": "International Day of Multilateralism and Diplomacy for Peace",
+            "url": "https://www.un.org/en/observances/Multilateralism-for-Peace-day"
+          },
+          {
+            "start": "05-16",
+            "title": "International Day of Living Together in Peace",
+            "url": "https://www.un.org/en/observances/living-in-peace-day"
+          },
+          {
+            "start": "05-21",
+            "title": "World Day for Cultural Diversity for Dialogue and Development",
+            "url": "https://www.un.org/en/observances/cultural-diversity-day"
+          },
+          {
+            "start": "05-29",
+            "title": "International Day of UN Peacekeepers",
+            "url": "https://www.un.org/en/observances/peacekeepers-day"
+          },
+          {
+            "start": "06-18",
+            "title": "International Day for Countering Hate Speech",
+            "url": "https://www.un.org/en/observances/countering-hate-speech"
+          },
+          {
+            "start": "06-19",
+            "title": "International Day for the Elimination of Sexual Violence in Conflict",
+            "url": "https://www.un.org/en/observances/end-sexual-violence-in-conflict-day"
+          },
+          {
+            "start": "06-24",
+            "title": "International Day of Women in Diplomacy",
+            "url": "https://www.un.org/en/observances/women-in-diplomacy-day"
+          },
+          {
+            "start": "07-30",
+            "title": "International Day of Friendship",
+            "url": "https://www.un.org/en/observances/friendship-day"
+          },
+          {
+            "start": "08-12",
+            "title": "International Youth Day",
+            "url": "https://www.un.org/en/observances/youth-day"
+          },
+          {
+            "start": "08-21",
+            "title": "International Day of Remembrance and Tribute to the Victims of Terrorism",
+            "url": "https://www.un.org/en/observances/terrorism-victims-day"
+          },
+          {
+            "start": "08-22",
+            "title": "International Day Commemorating the Victims of Acts of Violence Based on Religion or Belief",
+            "url": "https://www.un.org/en/observances/religious-based-violence-victims-day"
+          },
+          {
+            "start": "09-21",
+            "title": "International Day of Peace",
+            "url": "https://www.un.org/en/observances/international-day-peace"
+          },
+          {
+            "start": "10-02",
+            "title": "International Day of Non-Violence",
+            "url": "https://www.un.org/en/observances/non-violence-day"
+          },
+          {
+            "start": "10-31",
+            "title": "Anniversary of Security Council Resolution 1325 on Women, Peace and Security",
+            "url": "https://undocs.org/en/S/RES/1325(2000)"
+          },
+          {
+            "start": "11-16",
+            "title": "International Day for Tolerance",
+            "url": "https://www.unesco.org/en/days/tolerance"
+          },
+          {
+            "start": "11-25",
+            "title": "International Day for the Elimination of Violence against Women",
+            "url": "https://www.un.org/en/observances/ending-violence-against-women-day"
+          },
+          {
+            "start": "11-25",
+            "end": "12-10",
+            "title": "16 Days of Activism against Gender-Based Violence",
+            "url": "https://www.unwomen.org/en/what-we-do/ending-violence-against-women/unite/16-days-of-activism"
+          },
+          {
+            "start": "12-10",
+            "title": "Human Rights Day",
+            "url": "https://www.un.org/en/observances/human-rights-day"
+          }
+        ]
+      }
+    },
+    "fr": {
+      "meta": {
+        "title": "Agenda",
+        "description": "Les prochains événements de Bridging Our Voices : cercles de dialogue, ateliers, formations et cérémonies, et les journées internationales du dialogue et de la paix."
+      },
+      "header": {
+        "eyebrow": "Agenda",
+        "title": "Événements à venir",
+        "lead": "Cercles de dialogue, ateliers, formations et cérémonies, en ligne et dans toute la région."
+      },
+      "calendar": {
+        "prev": "Mois précédent",
+        "next": "Mois suivant",
+        "legendEvent": "Événement",
+        "legendObservance": "Journée internationale",
+        "legendToday": "Aujourd’hui",
+        "empty": "Aucun événement ce jour-là.",
+        "showMonth": "Afficher tout le mois",
+        "monthLabel": "Ce mois-ci",
+        "dayLabel": "Jour sélectionné"
+      },
+      "featured": {
+        "image": "",
+        "kind": "Série de webinaires · En ligne",
+        "title": "Femmes, foi et construction de la paix",
+        "dates": "26 nov. au 17 déc.",
+        "register": "S’inscrire",
+        "body": "Un cycle en quatre séances sur le rôle des femmes dans la paix interreligieuse."
+      },
+      "eventPage": {
+        "date": "Date",
+        "place": "Lieu",
+        "type": "Format",
+        "sessions": "Séances",
+        "details": "Les horaires et les modalités de participation seront communiqués aux personnes inscrites.",
+        "register": "S’inscrire",
+        "addToCalendar": "Ajouter à Google Agenda",
+        "back": "Retour à l’agenda",
+        "others": "Autres événements à venir"
+      },
+      "upcomingTitle": "Tous les événements à venir",
+      "deadline": {
+        "kind": "Date limite",
+        "title": "Dernier jour d’inscription à la formation numérique"
+      },
+      "seriesPlace": "En ligne",
+      "events": [
+        {
+          "kind": "Cercle de dialogue",
+          "title": "Religion, culture et rôle des femmes",
+          "place": "En ligne · arabe et anglais"
+        },
+        {
+          "kind": "Atelier",
+          "title": "Analyse des conflits pour leaders communautaires",
+          "place": "Pôle régional"
+        },
+        {
+          "kind": "Formation",
+          "title": "Répondre aux discours de haine en ligne",
+          "place": "En ligne"
+        },
+        {
+          "kind": "Table ronde",
+          "title": "Citoyenneté, leadership et participation des femmes",
+          "place": "À confirmer"
+        },
+        {
+          "kind": "Cérémonie",
+          "title": "Certification de la première promotion",
+          "place": "À confirmer"
+        }
+      ],
+      "observances": {
+        "eyebrow": "Journées internationales",
+        "title": "Les dates mondiales du dialogue et de la paix",
+        "lead": "Les journées des Nations Unies qui rythment notre année, de la coexistence pacifique en janvier à la Journée des droits de l’homme en décembre. Elles reviennent chaque année.",
+        "kind": "Journée internationale",
+        "items": [
+          {
+            "start": "01-28",
+            "title": "Journée internationale de la coexistence pacifique",
+            "url": "https://www.un.org/fr/observances/peaceful-coexistence-day"
+          },
+          {
+            "start": "02-01",
+            "end": "02-07",
+            "title": "Semaine mondiale de l’harmonie interconfessionnelle",
+            "url": "https://www.un.org/fr/observances/interfaith-harmony-week"
+          },
+          {
+            "start": "02-04",
+            "title": "Journée internationale de la fraternité humaine",
+            "url": "https://www.un.org/fr/observances/human-fraternity"
+          },
+          {
+            "start": "02-20",
+            "title": "Journée mondiale de la justice sociale",
+            "url": "https://www.un.org/fr/observances/social-justice-day"
+          },
+          {
+            "start": "03-08",
+            "title": "Journée internationale des femmes",
+            "url": "https://www.un.org/fr/observances/womens-day"
+          },
+          {
+            "start": "03-15",
+            "title": "Journée internationale de lutte contre l’islamophobie",
+            "url": "https://www.un.org/fr/observances/anti-islamophobia-day"
+          },
+          {
+            "start": "03-21",
+            "title": "Journée internationale pour l’élimination de la discrimination raciale",
+            "url": "https://www.un.org/fr/observances/end-racism-day"
+          },
+          {
+            "start": "04-05",
+            "title": "Journée internationale de la conscience",
+            "url": "https://www.un.org/fr/observances/conscience-day"
+          },
+          {
+            "start": "04-24",
+            "title": "Journée internationale du multilatéralisme et de la diplomatie au service de la paix",
+            "url": "https://www.un.org/fr/observances/Multilateralism-for-Peace-day"
+          },
+          {
+            "start": "05-16",
+            "title": "Journée internationale du vivre-ensemble en paix",
+            "url": "https://www.un.org/fr/observances/living-in-peace-day"
+          },
+          {
+            "start": "05-21",
+            "title": "Journée mondiale de la diversité culturelle pour le dialogue et le développement",
+            "url": "https://www.un.org/fr/observances/cultural-diversity-day"
+          },
+          {
+            "start": "05-29",
+            "title": "Journée internationale des Casques bleus des Nations Unies",
+            "url": "https://www.un.org/fr/observances/peacekeepers-day"
+          },
+          {
+            "start": "06-18",
+            "title": "Journée internationale de la lutte contre les discours de haine",
+            "url": "https://www.un.org/fr/observances/countering-hate-speech"
+          },
+          {
+            "start": "06-19",
+            "title": "Journée internationale pour l’élimination de la violence sexuelle en temps de conflit",
+            "url": "https://www.un.org/fr/observances/end-sexual-violence-in-conflict-day"
+          },
+          {
+            "start": "06-24",
+            "title": "Journée internationale des femmes dans la diplomatie",
+            "url": "https://www.un.org/fr/observances/women-in-diplomacy-day"
+          },
+          {
+            "start": "07-30",
+            "title": "Journée internationale de l’amitié",
+            "url": "https://www.un.org/fr/observances/friendship-day"
+          },
+          {
+            "start": "08-12",
+            "title": "Journée internationale de la jeunesse",
+            "url": "https://www.un.org/fr/observances/youth-day"
+          },
+          {
+            "start": "08-21",
+            "title": "Journée internationale du souvenir, en hommage aux victimes du terrorisme",
+            "url": "https://www.un.org/fr/observances/terrorism-victims-day"
+          },
+          {
+            "start": "08-22",
+            "title": "Journée internationale de commémoration des personnes victimes de violences en raison de leur religion ou de leurs convictions",
+            "url": "https://www.un.org/fr/observances/religious-based-violence-victims-day"
+          },
+          {
+            "start": "09-21",
+            "title": "Journée internationale de la paix",
+            "url": "https://www.un.org/fr/observances/international-day-peace"
+          },
+          {
+            "start": "10-02",
+            "title": "Journée internationale de la non-violence",
+            "url": "https://www.un.org/fr/observances/non-violence-day"
+          },
+          {
+            "start": "10-31",
+            "title": "Anniversaire de la résolution 1325 du Conseil de sécurité sur les femmes, la paix et la sécurité",
+            "url": "https://undocs.org/fr/S/RES/1325(2000)"
+          },
+          {
+            "start": "11-16",
+            "title": "Journée mondiale de la tolérance",
+            "url": "https://www.unesco.org/fr/days/tolerance"
+          },
+          {
+            "start": "11-25",
+            "title": "Journée internationale pour l’élimination de la violence à l’égard des femmes",
+            "url": "https://www.un.org/fr/observances/ending-violence-against-women-day"
+          },
+          {
+            "start": "11-25",
+            "end": "12-10",
+            "title": "16 jours d’activisme contre la violence basée sur le genre",
+            "url": "https://www.unwomen.org/en/what-we-do/ending-violence-against-women/unite/16-days-of-activism"
+          },
+          {
+            "start": "12-10",
+            "title": "Journée des droits de l’homme",
+            "url": "https://www.un.org/fr/observances/human-rights-day"
+          }
+        ]
+      }
+    },
+    "ar": {
+      "meta": {
+        "title": "الأجندة",
+        "description": "فعاليات Bridging Our Voices القادمة: حلقات حوار وورش وتدريبات واحتفالات، والأيام الدولية للحوار والسلام."
+      },
+      "header": {
+        "eyebrow": "الأجندة",
+        "title": "الفعاليات القادمة",
+        "lead": "حلقات حوار وورش وتدريبات واحتفالات، أونلاين وفي أنحاء المنطقة."
+      },
+      "calendar": {
+        "prev": "الشهر السابق",
+        "next": "الشهر التالي",
+        "legendEvent": "فعالية",
+        "legendObservance": "يوم دولي",
+        "legendToday": "اليوم",
+        "empty": "لا توجد فعاليات في هذا اليوم.",
+        "showMonth": "عرض الشهر كاملًا",
+        "monthLabel": "هذا الشهر",
+        "dayLabel": "اليوم المحدد"
+      },
+      "featured": {
+        "image": "",
+        "kind": "سلسلة ندوات · أونلاين",
+        "title": "المرأة والإيمان وصناعة السلام",
+        "dates": "من ٢٦ نوفمبر إلى ١٧ ديسمبر",
+        "register": "سجّلي الآن",
+        "body": "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان."
+      },
+      "eventPage": {
+        "date": "التاريخ",
+        "place": "المكان",
+        "type": "النوع",
+        "sessions": "الحلقات",
+        "details": "سيتم إرسال المواعيد وتفاصيل الانضمام للمسجّلين.",
+        "register": "سجّلي الآن",
+        "addToCalendar": "أضيفي إلى تقويم جوجل",
+        "back": "العودة إلى الأجندة",
+        "others": "فعاليات قادمة أخرى"
+      },
+      "upcomingTitle": "كل الفعاليات القادمة",
+      "deadline": {
+        "kind": "آخر موعد",
+        "title": "آخر يوم للتسجيل في الدورة التدريبية الرقمية"
+      },
+      "seriesPlace": "أونلاين",
+      "events": [
+        {
+          "kind": "حلقة حوار",
+          "title": "الدين والثقافة ودور المرأة",
+          "place": "أونلاين · عربي وإنجليزي"
+        },
+        {
+          "kind": "ورشة",
+          "title": "تحليل النزاعات للقيادات المجتمعية",
+          "place": "المركز الإقليمي"
+        },
+        {
+          "kind": "تدريب",
+          "title": "الرد على خطاب الكراهية رقميًا",
+          "place": "أونلاين"
+        },
+        {
+          "kind": "طاولة مستديرة",
+          "title": "المواطنة والقيادة ومشاركة المرأة",
+          "place": "يُعلن لاحقًا"
+        },
+        {
+          "kind": "حفل",
+          "title": "اعتماد الدفعة الأولى",
+          "place": "يُعلن لاحقًا"
+        }
+      ],
+      "observances": {
+        "eyebrow": "الأيام الدولية",
+        "title": "المواعيد العالمية للحوار والسلام",
+        "lead": "أيام الأمم المتحدة التي ترسم عامنا، من التعايش السلمي في يناير إلى يوم حقوق الإنسان في ديسمبر. تتكرر كل عام.",
+        "kind": "يوم دولي",
+        "items": [
+          {
+            "start": "01-28",
+            "title": "اليوم الدولي للتعايش السلمي",
+            "url": "https://www.un.org/ar/observances/peaceful-coexistence-day"
+          },
+          {
+            "start": "02-01",
+            "end": "02-07",
+            "title": "أسبوع الوئام العالمي بين الأديان",
+            "url": "https://www.un.org/ar/observances/interfaith-harmony-week"
+          },
+          {
+            "start": "02-04",
+            "title": "اليوم الدولي للأخوة الإنسانية",
+            "url": "https://www.un.org/ar/observances/human-fraternity"
+          },
+          {
+            "start": "02-20",
+            "title": "اليوم العالمي للعدالة الاجتماعية",
+            "url": "https://www.un.org/ar/observances/social-justice-day"
+          },
+          {
+            "start": "03-08",
+            "title": "اليوم الدولي للمرأة",
+            "url": "https://www.un.org/ar/observances/womens-day"
+          },
+          {
+            "start": "03-15",
+            "title": "اليوم الدولي لمكافحة كراهية الإسلام",
+            "url": "https://www.un.org/ar/observances/anti-islamophobia-day"
+          },
+          {
+            "start": "03-21",
+            "title": "اليوم الدولي للقضاء على التمييز العنصري",
+            "url": "https://www.un.org/ar/observances/end-racism-day"
+          },
+          {
+            "start": "04-05",
+            "title": "اليوم الدولي للضمير",
+            "url": "https://www.un.org/ar/observances/conscience-day"
+          },
+          {
+            "start": "04-24",
+            "title": "اليوم الدولي لتعددية الأطراف والدبلوماسية من أجل السلام",
+            "url": "https://www.un.org/ar/observances/Multilateralism-for-Peace-day"
+          },
+          {
+            "start": "05-16",
+            "title": "اليوم الدولي للعيش معاً في سلام",
+            "url": "https://www.un.org/ar/observances/living-in-peace-day"
+          },
+          {
+            "start": "05-21",
+            "title": "اليوم العالمي للتنوع الثقافي من أجل الحوار والتنمية",
+            "url": "https://www.un.org/ar/observances/cultural-diversity-day"
+          },
+          {
+            "start": "05-29",
+            "title": "اليوم الدولي لحفظة السلام",
+            "url": "https://www.un.org/ar/observances/peacekeepers-day"
+          },
+          {
+            "start": "06-18",
+            "title": "اليوم الدولي لمكافحة خطاب الكراهية",
+            "url": "https://www.un.org/ar/observances/countering-hate-speech"
+          },
+          {
+            "start": "06-19",
+            "title": "اليوم الدولي للقضاء على العنف الجنسي في حالات النزاع",
+            "url": "https://www.un.org/ar/observances/end-sexual-violence-in-conflict-day"
+          },
+          {
+            "start": "06-24",
+            "title": "اليوم الدولي للمرأة في العمل الدبلوماسي",
+            "url": "https://www.un.org/ar/observances/women-in-diplomacy-day"
+          },
+          {
+            "start": "07-30",
+            "title": "اليوم الدولي للصداقة",
+            "url": "https://www.un.org/ar/observances/friendship-day"
+          },
+          {
+            "start": "08-12",
+            "title": "يوم الشباب الدولي",
+            "url": "https://www.un.org/ar/observances/youth-day"
+          },
+          {
+            "start": "08-21",
+            "title": "اليوم الدولي لإحياء ذكرى ضحايا الإرهاب وإجلالهم",
+            "url": "https://www.un.org/ar/observances/terrorism-victims-day"
+          },
+          {
+            "start": "08-22",
+            "title": "اليوم الدولي لإحياء ذكرى ضحايا أعمال العنف القائمة على أساس الدين أو المعتقد",
+            "url": "https://www.un.org/ar/observances/religious-based-violence-victims-day"
+          },
+          {
+            "start": "09-21",
+            "title": "اليوم الدولي للسلام",
+            "url": "https://www.un.org/ar/observances/international-day-peace"
+          },
+          {
+            "start": "10-02",
+            "title": "اليوم الدولي للاعنف",
+            "url": "https://www.un.org/ar/observances/non-violence-day"
+          },
+          {
+            "start": "10-31",
+            "title": "ذكرى قرار مجلس الأمن ١٣٢٥ بشأن المرأة والسلام والأمن",
+            "url": "https://undocs.org/ar/S/RES/1325(2000)"
+          },
+          {
+            "start": "11-16",
+            "title": "اليوم الدولي للتسامح",
+            "url": "https://www.unesco.org/ar/days/tolerance"
+          },
+          {
+            "start": "11-25",
+            "title": "اليوم الدولي للقضاء على العنف ضد المرأة",
+            "url": "https://www.un.org/ar/observances/ending-violence-against-women"
+          },
+          {
+            "start": "11-25",
+            "end": "12-10",
+            "title": "حملة الـ١٦ يومًا لمناهضة العنف القائم على النوع الاجتماعي",
+            "url": "https://www.unwomen.org/en/what-we-do/ending-violence-against-women/unite/16-days-of-activism"
+          },
+          {
+            "start": "12-10",
+            "title": "يوم حقوق الإنسان",
+            "url": "https://www.un.org/ar/observances/human-rights-day"
+          }
+        ]
+      }
+    }
+  },
+  "network": {
+    "en": {
+      "header": {
+        "eyebrow": "Network",
+        "lead": "Our advisory board and a growing network of women peace leaders."
+      },
+      "membership": {
+        "meta": {
+          "title": "Membership",
+          "description": "Who can join the Bridging Our Voices network of women peacebuilders, what members gain and what we ask of them."
+        },
+        "title": "Who can join, and what membership means",
+        "columns": [
+          {
+            "title": "Who can join",
+            "items": [
+              "Women peacebuilders and community leaders",
+              "Religious leaders and interfaith dialogue practitioners",
+              "Young people aged 18+, including refugee, displaced and student youth",
+              "Trainers, researchers and partner organisations"
+            ]
+          },
+          {
+            "title": "What you gain",
+            "items": [
+              "Priority access to training programmes and seminars",
+              "Certification pathways in dialogue and mediation",
+              "A regional and international peer network",
+              "Opportunities to co-lead community initiatives"
+            ]
+          },
+          {
+            "title": "What we ask",
+            "items": [
+              "Commit to the network’s code of conduct",
+              "Take part in at least one activity each year",
+              "Share your practice and learning with peers",
+              "Champion dialogue and reject hate speech"
+            ]
+          }
+        ]
+      },
+      "join": {
+        "meta": {
+          "title": "Add your voice to ours",
+          "description": "Membership of the Bridging Our Voices network is free. Share a few details and a message of support, and our team will contact you."
+        },
+        "title": "Add your voice to ours",
+        "lead": "Membership is free. Share a few details and a message of support, our team will review it and contact you.",
+        "legend": "Your details",
+        "name": "Full name",
+        "gender": "Gender",
+        "genders": [
+          {
+            "value": "female",
+            "label": "Female"
+          },
+          {
+            "value": "male",
+            "label": "Male"
+          },
+          {
+            "value": "na",
+            "label": "Prefer not to say"
+          }
+        ],
+        "job": "Job title",
+        "org": "Affiliated organisation",
+        "country": "Country",
+        "countryPlaceholder": "Select…",
+        "email": "Email",
+        "religion": "Official religion",
+        "subreligion": "Denomination / sub-religion",
+        "fields": "Fields of work",
+        "fieldOptions": [
+          {
+            "value": "interfaith",
+            "label": "Interfaith dialogue"
+          },
+          {
+            "value": "intercultural",
+            "label": "Intercultural dialogue"
+          },
+          {
+            "value": "mediation",
+            "label": "Community mediation"
+          },
+          {
+            "value": "conflict-analysis",
+            "label": "Conflict analysis"
+          },
+          {
+            "value": "hate-speech",
+            "label": "Countering hate speech"
+          },
+          {
+            "value": "wps",
+            "label": "Women, Peace & Security"
+          },
+          {
+            "value": "youth",
+            "label": "Youth engagement"
+          },
+          {
+            "value": "healing",
+            "label": "Trauma healing & resilience"
+          },
+          {
+            "value": "citizenship",
+            "label": "Citizenship & leadership"
+          },
+          {
+            "value": "education",
+            "label": "Education & training"
+          },
+          {
+            "value": "research",
+            "label": "Research"
+          },
+          {
+            "value": "media",
+            "label": "Media"
+          }
+        ],
+        "quote": "A message of support for the initiative",
+        "article": "Share an article (optional)",
+        "photo": "Your photo (optional)",
+        "photoButton": "Upload photo",
+        "photoHint": "JPG or PNG, shown with your message if published.",
+        "photoTooBig": "Please choose a JPG or PNG under 3 MB.",
+        "consent": "I agree to the network’s code of conduct and to my data being used to process my application.",
+        "submit": "Submit application",
+        "sending": "Sending…",
+        "success": "Thank you, your application has been received. Our team will review it and contact you.",
+        "error": "Something went wrong, please check the form and try again."
+      },
+      "members": {
+        "meta": {
+          "title": "Our members",
+          "description": "Meet the leadership and core team of Bridging Our Voices: KAICIID Fellows from Egypt, the Philippines, Nigeria and South Africa."
+        },
+        "title": "Project leadership & core team",
+        "people": [
+          {
+            "image": "/team/anwaar-kataia.jpg",
+            "name": "Dr. Anwaar Kataia",
+            "role": "General Project Coordinator & Lead Fellow",
+            "country": "Egypt",
+            "bio": [
+              "KAICIID International Fellow and faculty member at Al-Azhar University.",
+              "PhD researcher in Political & Strategic Studies and National Security; Diploma in Political Communication (Cairo University); National Defense College Fellow.",
+              "15+ years as expert trainer and consultant; trained ~4,000 religious and community leaders; led regional UNESCO / Arab League projects reaching 500k+ beneficiaries."
+            ]
+          },
+          {
+            "image": "/team/mona-lisa.jpg",
+            "name": "Mona Lisa D. Pangan",
+            "role": "Co-Founder & Partner Representative",
+            "country": "Philippines",
+            "bio": [
+              "KAICIID Fellow (2023) and Assistant to the Director, Campus Ministries Office, Xavier University, Ateneo de Cagayan.",
+              "MA in Religious Education; certified retreat director, interreligious dialogue practitioner and intercultural peace facilitator in Southeast Asia."
+            ]
+          },
+          {
+            "image": "/team/kaltumi-abdulazeez.jpg",
+            "name": "Kaltumi Abdulazeez",
+            "role": "Co-Founder & Partner Representative",
+            "country": "Nigeria",
+            "bio": [
+              "KAICIID Fellow; Founder and Executive Director of LEGASI Initiative (Ladies Empowerment Goals and Support Initiative).",
+              "International expert in countering violent extremism, community mediation, gender inclusion and grassroots peacebuilding in West Africa."
+            ]
+          },
+          {
+            "image": "/team/jenny-canau.jpg",
+            "name": "Jenny Canau",
+            "role": "Project Consultant & Healing Specialist",
+            "country": "South Africa",
+            "bio": [
+              "KAICIID Fellow; co-founder of Mindfulness Africa and Peace & Healing Circles South Africa.",
+              "Former human-rights lawyer with 20+ years training magistrates and prosecutors in compassion, resilience and values-based decision-making.",
+              "Certified trainer (Stanford Applied Compassion Academy, UN UPEACE); Tibetan Buddhist representative, Cape Town Interfaith Initiative."
+            ]
+          }
+        ],
+        "networkTitle": "Our network",
+        "networkLead": "Women peacemakers and community leaders across the region and beyond, learning, practising and leading together.",
+        "networkCta": "Join the network"
+      }
+    },
+    "fr": {
+      "header": {
+        "eyebrow": "Réseau",
+        "lead": "Notre comité consultatif et un réseau grandissant de femmes leaders de la paix."
+      },
+      "membership": {
+        "meta": {
+          "title": "Adhésion",
+          "description": "Qui peut rejoindre le réseau des artisanes de paix Bridging Our Voices, ce que l’adhésion apporte et ce que nous demandons."
+        },
+        "title": "Qui peut adhérer, et ce que l’adhésion implique",
+        "columns": [
+          {
+            "title": "Qui peut adhérer",
+            "items": [
+              "Femmes artisanes de paix et leaders communautaires",
+              "Responsables religieux et praticiens du dialogue interreligieux",
+              "Jeunes de 18 ans et plus, y compris réfugiés, déplacés et étudiants",
+              "Formateurs, chercheurs et organisations partenaires"
+            ]
+          },
+          {
+            "title": "Ce que vous y gagnez",
+            "items": [
+              "Accès prioritaire aux formations et séminaires",
+              "Parcours de certification en dialogue et médiation",
+              "Un réseau de pairs régional et international",
+              "La possibilité de co-porter des initiatives communautaires"
+            ]
+          },
+          {
+            "title": "Ce que nous demandons",
+            "items": [
+              "Respecter le code de conduite du réseau",
+              "Participer à au moins une activité par an",
+              "Partager vos pratiques et apprentissages",
+              "Promouvoir le dialogue et rejeter les discours de haine"
+            ]
+          }
+        ]
+      },
+      "join": {
+        "meta": {
+          "title": "Joignez votre voix à la nôtre",
+          "description": "L’adhésion au réseau Bridging Our Voices est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera."
+        },
+        "title": "Joignez votre voix à la nôtre",
+        "lead": "L’adhésion est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera.",
+        "legend": "Vos informations",
+        "name": "Nom complet",
+        "gender": "Genre",
+        "genders": [
+          {
+            "value": "female",
+            "label": "Femme"
+          },
+          {
+            "value": "male",
+            "label": "Homme"
+          },
+          {
+            "value": "na",
+            "label": "Je préfère ne pas répondre"
+          }
+        ],
+        "job": "Fonction",
+        "org": "Organisation d’appartenance",
+        "country": "Pays",
+        "countryPlaceholder": "Choisir…",
+        "email": "E-mail",
+        "religion": "Religion officielle",
+        "subreligion": "Confession / courant",
+        "fields": "Domaines d’activité",
+        "fieldOptions": [
+          {
+            "value": "interfaith",
+            "label": "Dialogue interreligieux"
+          },
+          {
+            "value": "intercultural",
+            "label": "Dialogue interculturel"
+          },
+          {
+            "value": "mediation",
+            "label": "Médiation communautaire"
+          },
+          {
+            "value": "conflict-analysis",
+            "label": "Analyse des conflits"
+          },
+          {
+            "value": "hate-speech",
+            "label": "Discours de haine"
+          },
+          {
+            "value": "wps",
+            "label": "Femmes, paix et sécurité"
+          },
+          {
+            "value": "youth",
+            "label": "Engagement des jeunes"
+          },
+          {
+            "value": "healing",
+            "label": "Guérison et résilience"
+          },
+          {
+            "value": "citizenship",
+            "label": "Citoyenneté et leadership"
+          },
+          {
+            "value": "education",
+            "label": "Éducation et formation"
+          },
+          {
+            "value": "research",
+            "label": "Recherche"
+          },
+          {
+            "value": "media",
+            "label": "Médias"
+          }
+        ],
+        "quote": "Un message de soutien à l’initiative",
+        "article": "Partager un article (facultatif)",
+        "photo": "Votre photo (facultatif)",
+        "photoButton": "Ajouter une photo",
+        "photoHint": "JPG ou PNG, affichée avec votre message en cas de publication.",
+        "photoTooBig": "Veuillez choisir un JPG ou PNG de moins de 3 Mo.",
+        "consent": "J’accepte le code de conduite du réseau et l’utilisation de mes données pour traiter ma candidature.",
+        "submit": "Envoyer ma candidature",
+        "sending": "Envoi…",
+        "success": "Merci, votre candidature a bien été reçue. Notre équipe l’examinera et vous recontactera.",
+        "error": "Une erreur s’est produite, veuillez vérifier le formulaire et réessayer."
+      },
+      "members": {
+        "meta": {
+          "title": "Nos membres",
+          "description": "La direction et l’équipe principale de Bridging Our Voices : des fellows du KAICIID d’Égypte, des Philippines, du Nigeria et d’Afrique du Sud."
+        },
+        "title": "Direction du projet et équipe principale",
+        "people": [
+          {
+            "image": "/team/anwaar-kataia.jpg",
+            "name": "Dr. Anwaar Kataia",
+            "role": "Coordinatrice générale du projet et fellow principale",
+            "country": "Égypte",
+            "bio": [
+              "Fellow internationale du KAICIID et membre du corps enseignant de l’Université Al-Azhar.",
+              "Doctorante en études politiques et stratégiques et sécurité nationale ; diplôme en communication politique (Université du Caire) ; fellow du Collège de défense nationale.",
+              "Plus de 15 ans de formation et de conseil ; environ 4 000 leaders religieux et communautaires formés ; projets régionaux UNESCO / Ligue arabe touchant plus de 500 000 bénéficiaires."
+            ]
+          },
+          {
+            "image": "/team/mona-lisa.jpg",
+            "name": "Mona Lisa D. Pangan",
+            "role": "Cofondatrice et représentante partenaire",
+            "country": "Philippines",
+            "bio": [
+              "Fellow du KAICIID (2023) et assistante du directeur, Campus Ministries Office, Xavier University, Ateneo de Cagayan.",
+              "Master en éducation religieuse ; directrice de retraites certifiée, praticienne du dialogue interreligieux et facilitatrice de paix interculturelle en Asie du Sud-Est."
+            ]
+          },
+          {
+            "image": "/team/kaltumi-abdulazeez.jpg",
+            "name": "Kaltumi Abdulazeez",
+            "role": "Cofondatrice et représentante partenaire",
+            "country": "Nigeria",
+            "bio": [
+              "Fellow du KAICIID ; fondatrice et directrice exécutive de LEGASI Initiative.",
+              "Experte internationale en prévention de l’extrémisme violent, médiation communautaire, inclusion du genre et consolidation de la paix en Afrique de l’Ouest."
+            ]
+          },
+          {
+            "image": "/team/jenny-canau.jpg",
+            "name": "Jenny Canau",
+            "role": "Consultante du projet et spécialiste de la guérison",
+            "country": "Afrique du Sud",
+            "bio": [
+              "Fellow du KAICIID ; cofondatrice de Mindfulness Africa et des Peace & Healing Circles South Africa.",
+              "Ancienne avocate des droits humains ; plus de 20 ans de formation des magistrats et procureurs à la compassion, la résilience et la décision fondée sur les valeurs.",
+              "Formatrice certifiée (Stanford Applied Compassion Academy, UPEACE) ; représentante bouddhiste tibétaine, Cape Town Interfaith Initiative."
+            ]
+          }
+        ],
+        "networkTitle": "Notre réseau",
+        "networkLead": "Des femmes artisanes de paix et leaders communautaires de la région et d’ailleurs, qui apprennent, pratiquent et dirigent ensemble.",
+        "networkCta": "Rejoindre le réseau"
+      }
+    },
+    "ar": {
+      "header": {
+        "eyebrow": "الشبكة",
+        "lead": "مجلسنا الاستشاري وشبكة متنامية من قيادات السلام النسائية."
+      },
+      "membership": {
+        "meta": {
+          "title": "عناصر الانضمام",
+          "description": "من يمكنه الانضمام إلى شبكة Bridging Our Voices لصانعات السلام، وماذا تكسب العضوات، وماذا نطلب منهن."
+        },
+        "title": "من يمكنه الانضمام، وماذا تعني العضوية",
+        "columns": [
+          {
+            "title": "من يمكنه الانضمام",
+            "items": [
+              "صانعات السلام والقيادات المجتمعية",
+              "القيادات الدينية وممارسو الحوار بين الأديان",
+              "الشباب من سن ١٨ عامًا، بمن فيهم اللاجئون والنازحون والطلاب",
+              "المدربون والباحثون والمؤسسات الشريكة"
+            ]
+          },
+          {
+            "title": "ماذا تكسب",
+            "items": [
+              "أولوية الالتحاق بالبرامج التدريبية والندوات",
+              "مسارات للاعتماد في الحوار والوساطة",
+              "شبكة نظراء إقليمية ودولية",
+              "فرص للمشاركة في قيادة مبادرات مجتمعية"
+            ]
+          },
+          {
+            "title": "ماذا نطلب منك",
+            "items": [
+              "الالتزام بميثاق سلوك الشبكة",
+              "المشاركة في نشاط واحد على الأقل سنويًا",
+              "تبادل خبراتك وتجاربك مع الزملاء",
+              "مناصرة الحوار ونبذ خطاب الكراهية"
+            ]
+          }
+        ]
+      },
+      "join": {
+        "meta": {
+          "title": "ضم صوتك لصوتنا",
+          "description": "العضوية في شبكة Bridging Our Voices مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك."
+        },
+        "title": "ضم صوتك لصوتنا",
+        "lead": "العضوية مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك.",
+        "legend": "بياناتك",
+        "name": "الاسم بالكامل",
+        "gender": "النوع",
+        "genders": [
+          {
+            "value": "female",
+            "label": "أنثى"
+          },
+          {
+            "value": "male",
+            "label": "ذكر"
+          },
+          {
+            "value": "na",
+            "label": "أفضّل عدم الإجابة"
+          }
+        ],
+        "job": "الوظيفة",
+        "org": "المؤسسة التي تنتمي إليها",
+        "country": "الدولة",
+        "countryPlaceholder": "اختر/ي…",
+        "email": "البريد الإلكتروني",
+        "religion": "الديانة الرسمية",
+        "subreligion": "المذهب / الطائفة",
+        "fields": "مجالات العمل",
+        "fieldOptions": [
+          {
+            "value": "interfaith",
+            "label": "الحوار بين الأديان"
+          },
+          {
+            "value": "intercultural",
+            "label": "الحوار بين الثقافات"
+          },
+          {
+            "value": "mediation",
+            "label": "الوساطة المجتمعية"
+          },
+          {
+            "value": "conflict-analysis",
+            "label": "تحليل النزاعات"
+          },
+          {
+            "value": "hate-speech",
+            "label": "مواجهة خطاب الكراهية"
+          },
+          {
+            "value": "wps",
+            "label": "المرأة والسلام والأمن"
+          },
+          {
+            "value": "youth",
+            "label": "إشراك الشباب"
+          },
+          {
+            "value": "healing",
+            "label": "التعافي والصمود"
+          },
+          {
+            "value": "citizenship",
+            "label": "المواطنة والقيادة"
+          },
+          {
+            "value": "education",
+            "label": "التعليم والتدريب"
+          },
+          {
+            "value": "research",
+            "label": "البحث العلمي"
+          },
+          {
+            "value": "media",
+            "label": "الإعلام"
+          }
+        ],
+        "quote": "مقولة تدعمنا بها",
+        "article": "شارك/ي بمقال (اختياري)",
+        "photo": "صورتك (اختياري)",
+        "photoButton": "رفع صورة",
+        "photoHint": "JPG أو PNG، تظهر مع مقولتك عند النشر.",
+        "photoTooBig": "يُرجى اختيار صورة JPG أو PNG أقل من ٣ ميجابايت.",
+        "consent": "أوافق على ميثاق سلوك الشبكة وعلى استخدام بياناتي لمعالجة طلب الانضمام.",
+        "submit": "إرسال طلب الانضمام",
+        "sending": "جارٍ الإرسال…",
+        "success": "شكرًا لك، تم استلام طلب انضمامك وسيراجعه فريقنا ويتواصل معك.",
+        "error": "حدث خطأ، يُرجى مراجعة البيانات والمحاولة مرة أخرى."
+      },
+      "members": {
+        "meta": {
+          "title": "أعضاؤنا",
+          "description": "تعرّفي على قيادة مشروع Bridging Our Voices وفريقه: زميلات كايسيد من مصر والفلبين ونيجيريا وجنوب أفريقيا."
+        },
+        "title": "قيادة المشروع وفريق الإدارة",
+        "people": [
+          {
+            "image": "/team/anwaar-kataia.jpg",
+            "name": "د. أنوار قطايا",
+            "role": "المنسقة العامة للمشروع والزميلة الرئيسية",
+            "country": "مصر",
+            "bio": [
+              "زميلة دولية في كايسيد وعضو هيئة تدريس بجامعة الأزهر.",
+              "باحثة دكتوراه في الدراسات السياسية والاستراتيجية والأمن القومي؛ دبلوم الاتصال السياسي (جامعة القاهرة)؛ زميلة كلية الدفاع الوطني.",
+              "أكثر من ١٥ عامًا مدربة ومستشارة؛ درّبت نحو ٤٠٠٠ من القيادات الدينية والمجتمعية؛ قادت مشروعات إقليمية مع اليونسكو وجامعة الدول العربية وصلت لأكثر من ٥٠٠ ألف مستفيد."
+            ]
+          },
+          {
+            "image": "/team/mona-lisa.jpg",
+            "name": "منى ليزا د. بانجان",
+            "role": "شريكة مؤسسة وممثلة الشريك",
+            "country": "الفلبين",
+            "bio": [
+              "زميلة كايسيد (٢٠٢٣) ومساعدة المدير بمكتب الخدمات الروحية بجامعة كزافييه، أتينيو دي كاغايان.",
+              "ماجستير في التربية الدينية؛ مديرة خلوات معتمدة وممارسة للحوار بين الأديان وميسّرة للسلام بين الثقافات في جنوب شرق آسيا."
+            ]
+          },
+          {
+            "image": "/team/kaltumi-abdulazeez.jpg",
+            "name": "كلثومي عبدالعزيز",
+            "role": "شريكة مؤسسة وممثلة الشريك",
+            "country": "نيجيريا",
+            "bio": [
+              "زميلة كايسيد ومؤسِّسة ومديرة تنفيذية لمبادرة LEGASI لتمكين المرأة ودعمها.",
+              "خبيرة دولية في مكافحة التطرف العنيف والوساطة المجتمعية وإدماج النوع الاجتماعي وبناء السلام القاعدي في غرب أفريقيا."
+            ]
+          },
+          {
+            "image": "/team/jenny-canau.jpg",
+            "name": "جيني كاناو",
+            "role": "مستشارة المشروع وأخصائية التعافي",
+            "country": "جنوب أفريقيا",
+            "bio": [
+              "زميلة كايسيد وشريكة مؤسِّسة لـ Mindfulness Africa ودوائر السلام والتعافي بجنوب أفريقيا.",
+              "محامية سابقة في حقوق الإنسان بخبرة تتجاوز ٢٠ عامًا في تدريب القضاة ووكلاء النيابة على التعاطف والصمود واتخاذ القرار القائم على القيم.",
+              "مدربة معتمدة (أكاديمية التعاطف التطبيقي بستانفورد، جامعة السلام الأممية)؛ ممثلة البوذية التبتية في مبادرة كيب تاون بين الأديان."
+            ]
+          }
+        ],
+        "networkTitle": "شبكتنا",
+        "networkLead": "صانعات سلام وقيادات مجتمعية من المنطقة وخارجها، يتعلّمن ويمارسن ويقدن معًا.",
+        "networkCta": "انضمي إلى الشبكة"
+      }
+    }
+  },
+  "contact": {
+    "en": {
+      "meta": {
+        "title": "Contact us",
+        "description": "Questions about the Bridging Our Voices programmes, partnerships or media? Send us a message and we’ll get back to you."
+      },
+      "header": {
+        "eyebrow": "Contact us",
+        "title": "Let’s talk",
+        "lead": "Questions about the programmes, partnerships or media? Send us a message and we’ll get back to you."
+      },
+      "form": {
+        "name": "Full name",
+        "email": "Email",
+        "topic": "Subject",
+        "topics": [
+          {
+            "value": "general",
+            "label": "General enquiry"
+          },
+          {
+            "value": "training",
+            "label": "Training programmes"
+          },
+          {
+            "value": "fellowship",
+            "label": "Fellowship"
+          },
+          {
+            "value": "partnerships",
+            "label": "Partnerships"
+          },
+          {
+            "value": "media",
+            "label": "Media"
+          }
+        ],
+        "message": "Message",
+        "submit": "Send message",
+        "sending": "Sending…",
+        "success": "Thank you, your message has been sent. We’ll get back to you soon.",
+        "error": "Something went wrong, please try again or email us directly."
+      },
+      "info": {
+        "emailLabel": "Email",
+        "phoneLabel": "Phone",
+        "addressLabel": "Address",
+        "followLabel": "Follow us"
+      }
+    },
+    "fr": {
+      "meta": {
+        "title": "Contact",
+        "description": "Une question sur les programmes de Bridging Our Voices, les partenariats ou la presse ? Écrivez-nous, nous vous répondrons."
+      },
+      "header": {
+        "eyebrow": "Contact",
+        "title": "Parlons-en",
+        "lead": "Une question sur les programmes, les partenariats ou la presse ? Écrivez-nous, nous vous répondrons."
+      },
+      "form": {
+        "name": "Nom complet",
+        "email": "E-mail",
+        "topic": "Objet",
+        "topics": [
+          {
+            "value": "general",
+            "label": "Demande générale"
+          },
+          {
+            "value": "training",
+            "label": "Programmes de formation"
+          },
+          {
+            "value": "fellowship",
+            "label": "Bourse"
+          },
+          {
+            "value": "partnerships",
+            "label": "Partenariats"
+          },
+          {
+            "value": "media",
+            "label": "Presse"
+          }
+        ],
+        "message": "Message",
+        "submit": "Envoyer",
+        "sending": "Envoi…",
+        "success": "Merci, votre message a bien été envoyé. Nous vous répondrons rapidement.",
+        "error": "Une erreur s’est produite, veuillez réessayer ou nous écrire directement."
+      },
+      "info": {
+        "emailLabel": "E-mail",
+        "phoneLabel": "Téléphone",
+        "addressLabel": "Adresse",
+        "followLabel": "Suivez-nous"
+      }
+    },
+    "ar": {
+      "meta": {
+        "title": "تواصل معنا",
+        "description": "لديك سؤال عن برامج Bridging Our Voices أو الشراكات أو الإعلام؟ أرسلي رسالتك وسنعود إليك."
+      },
+      "header": {
+        "eyebrow": "تواصل معنا",
+        "title": "يسعدنا تواصلك",
+        "lead": "لديك سؤال عن البرامج أو الشراكات أو الإعلام؟ أرسلي رسالتك وسنعود إليك."
+      },
+      "form": {
+        "name": "الاسم بالكامل",
+        "email": "البريد الإلكتروني",
+        "topic": "الموضوع",
+        "topics": [
+          {
+            "value": "general",
+            "label": "استفسار عام"
+          },
+          {
+            "value": "training",
+            "label": "البرامج التدريبية"
+          },
+          {
+            "value": "fellowship",
+            "label": "الزمالة"
+          },
+          {
+            "value": "partnerships",
+            "label": "الشراكات"
+          },
+          {
+            "value": "media",
+            "label": "الإعلام"
+          }
+        ],
+        "message": "الرسالة",
+        "submit": "إرسال الرسالة",
+        "sending": "جارٍ الإرسال…",
+        "success": "شكرًا لكِ، تم إرسال رسالتك وسنعود إليكِ قريبًا.",
+        "error": "حدث خطأ، يُرجى المحاولة مرة أخرى أو مراسلتنا مباشرة عبر البريد الإلكتروني."
+      },
+      "info": {
+        "emailLabel": "البريد الإلكتروني",
+        "phoneLabel": "الهاتف",
+        "addressLabel": "العنوان",
+        "followLabel": "تابعونا"
+      }
+    }
+  },
+  "privacy": {
+    "en": {
+      "meta": {
+        "title": "Privacy policy",
+        "description": "How Bridging Our Voices collects, uses and protects the personal data you share through the newsletter, contact and membership forms."
+      },
+      "header": {
+        "eyebrow": "Privacy",
+        "title": "Privacy policy",
+        "lead": "What we collect through this website, why we need it, how long we keep it, and how you can see, change or delete it."
+      },
+      "updatedLabel": "Last updated",
+      "updated": "6 November 2026",
+      "tocLabel": "On this page",
+      "sections": [
+        {
+          "id": "who",
+          "title": "Who we are",
+          "blocks": [
+            {
+              "p": "Bridging Our Voices is a women’s platform for dialogue and peacebuilding, led by Dr. Anwaar Kataia (Lead Fellow and Project Manager). We are responsible for the personal data collected through this website."
+            },
+            {
+              "p": "For any question about your data, write to b.our.voices@gmail.com."
+            }
+          ]
+        },
+        {
+          "id": "collect",
+          "title": "What we collect",
+          "blocks": [
+            {
+              "p": "We only collect what you type into our forms. Each form asks for the following:"
+            },
+            {
+              "h": "Newsletter"
+            },
+            {
+              "list": [
+                "Your email address."
+              ]
+            },
+            {
+              "h": "Contact form"
+            },
+            {
+              "list": [
+                "Your name and email address.",
+                "The subject you choose and your message."
+              ]
+            },
+            {
+              "h": "Membership application (“Add your voice to ours”)"
+            },
+            {
+              "list": [
+                "Your name, gender, job title, organisation (optional), country and email address.",
+                "Your religion, and your denomination if you choose to give it.",
+                "Your fields of work, your message of support and, if you wish, an article.",
+                "A photo, if you choose to upload one.",
+                "The language of the page you used."
+              ]
+            },
+            {
+              "h": "When you visit the site"
+            },
+            {
+              "p": "This website does not use advertising or tracking cookies, and it does not use analytics tools. Like every website, our hosting provider may record technical information (such as your IP address and browser) in server logs, to keep the site secure and working."
+            }
+          ]
+        },
+        {
+          "id": "use",
+          "title": "Why we use it",
+          "blocks": [
+            {
+              "list": [
+                "Newsletter: to send you news about our programmes and events, because you asked us to.",
+                "Contact form: to answer your message.",
+                "Membership application: to review your application, contact you about it and, if you join, keep you connected to the network. You give your consent when you tick the box before sending."
+              ]
+            },
+            {
+              "p": "We never sell your data, and we never use it for advertising."
+            }
+          ]
+        },
+        {
+          "id": "sensitive",
+          "title": "Religion and other sensitive information",
+          "blocks": [
+            {
+              "p": "The membership form asks for your religion and gender. This is sensitive information. We ask for it only because our network is built on interreligious and intercultural dialogue, and we want to keep it diverse and balanced."
+            },
+            {
+              "p": "Only our team sees this information. We use it to review applications, and we never publish it."
+            }
+          ]
+        },
+        {
+          "id": "publish",
+          "title": "What we may publish",
+          "blocks": [
+            {
+              "p": "If your application is accepted, we may show your name, role, country, message of support and photo on the “Our members” page. We will only do this after our team has reviewed it and you have agreed. You can ask us to remove it at any time."
+            }
+          ]
+        },
+        {
+          "id": "share",
+          "title": "Who can see your data",
+          "blocks": [
+            {
+              "list": [
+                "The Bridging Our Voices team, who need it to answer you or review your application.",
+                "The service providers that host our website and email. They process data only on our behalf."
+              ]
+            },
+            {
+              "p": "We do not share your data with our partners or anyone else without your permission, unless the law requires it."
+            }
+          ]
+        },
+        {
+          "id": "retention",
+          "title": "How long we keep it",
+          "blocks": [
+            {
+              "list": [
+                "Newsletter: until you unsubscribe.",
+                "Contact messages: up to 12 months after our last reply.",
+                "Membership applications: for as long as you are a member. If an application is not accepted, or you withdraw it, we delete it, and any photo, within 6 months.",
+                "Server logs: for the short period our hosting provider keeps them."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "Your rights",
+          "blocks": [
+            {
+              "p": "You can ask us at any time to:"
+            },
+            {
+              "list": [
+                "Show you the data we hold about you.",
+                "Correct it.",
+                "Delete it, or remove your profile from the site.",
+                "Withdraw your consent or unsubscribe from the newsletter."
+              ]
+            },
+            {
+              "p": "Write to b.our.voices@gmail.com. We will reply within 30 days. You can also complain to the data-protection authority in your country."
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "How we protect it",
+          "blocks": [
+            {
+              "p": "The site uses an encrypted connection (HTTPS). Only our team can open the data, and photos are checked to make sure they are real images before they are stored."
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "title": "Age",
+          "blocks": [
+            {
+              "p": "Our forms are meant for adults aged 18 and over. Some programmes have their own minimum age; the digital training course, for example, is for ages 25 and over."
+            }
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "Changes to this policy",
+          "blocks": [
+            {
+              "p": "If we change how we use your data, we will update this page and the date at the top."
+            }
+          ]
+        }
+      ]
+    },
+    "fr": {
+      "meta": {
+        "title": "Politique de confidentialité",
+        "description": "Comment Bridging Our Voices collecte, utilise et protège les données personnelles que vous partagez via la newsletter, le formulaire de contact et le formulaire d’adhésion."
+      },
+      "header": {
+        "eyebrow": "Confidentialité",
+        "title": "Politique de confidentialité",
+        "lead": "Ce que nous collectons sur ce site, pourquoi, combien de temps nous le gardons, et comment le consulter, le modifier ou le supprimer."
+      },
+      "updatedLabel": "Dernière mise à jour",
+      "updated": "6 novembre 2026",
+      "tocLabel": "Sur cette page",
+      "sections": [
+        {
+          "id": "who",
+          "title": "Qui sommes-nous",
+          "blocks": [
+            {
+              "p": "Bridging Our Voices est une plateforme de femmes pour le dialogue et la consolidation de la paix, dirigée par la Dr Anwaar Kataia (Lead Fellow et cheffe de projet). Nous sommes responsables des données personnelles collectées sur ce site."
+            },
+            {
+              "p": "Pour toute question sur vos données, écrivez à b.our.voices@gmail.com."
+            }
+          ]
+        },
+        {
+          "id": "collect",
+          "title": "Ce que nous collectons",
+          "blocks": [
+            {
+              "p": "Nous collectons uniquement ce que vous saisissez dans nos formulaires. Chaque formulaire demande les informations suivantes :"
+            },
+            {
+              "h": "Newsletter"
+            },
+            {
+              "list": [
+                "Votre adresse e-mail."
+              ]
+            },
+            {
+              "h": "Formulaire de contact"
+            },
+            {
+              "list": [
+                "Votre nom et votre adresse e-mail.",
+                "L’objet choisi et votre message."
+              ]
+            },
+            {
+              "h": "Demande d’adhésion (« Joignez votre voix à la nôtre »)"
+            },
+            {
+              "list": [
+                "Votre nom, genre, fonction, organisation (facultatif), pays et adresse e-mail.",
+                "Votre religion, et votre confession si vous choisissez de l’indiquer.",
+                "Vos domaines d’action, votre message de soutien et, si vous le souhaitez, un article.",
+                "Une photo, si vous choisissez d’en ajouter une.",
+                "La langue de la page utilisée."
+              ]
+            },
+            {
+              "h": "Lorsque vous visitez le site"
+            },
+            {
+              "p": "Ce site n’utilise ni cookies publicitaires ou de suivi, ni outils d’analyse d’audience. Comme pour tout site, notre hébergeur peut enregistrer des informations techniques (adresse IP, navigateur) dans des journaux serveur, pour assurer la sécurité et le bon fonctionnement du site."
+            }
+          ]
+        },
+        {
+          "id": "use",
+          "title": "Pourquoi nous les utilisons",
+          "blocks": [
+            {
+              "list": [
+                "Newsletter : pour vous envoyer nos actualités sur les programmes et événements, à votre demande.",
+                "Formulaire de contact : pour répondre à votre message.",
+                "Demande d’adhésion : pour examiner votre candidature, vous contacter à ce sujet et, si vous nous rejoignez, vous relier au réseau. Vous donnez votre consentement en cochant la case avant l’envoi."
+              ]
+            },
+            {
+              "p": "Nous ne vendons jamais vos données et ne les utilisons jamais à des fins publicitaires."
+            }
+          ]
+        },
+        {
+          "id": "sensitive",
+          "title": "Religion et autres informations sensibles",
+          "blocks": [
+            {
+              "p": "Le formulaire d’adhésion demande votre religion et votre genre. Ce sont des informations sensibles. Nous les demandons uniquement parce que notre réseau repose sur le dialogue interreligieux et interculturel, et que nous voulons qu’il reste divers et équilibré."
+            },
+            {
+              "p": "Seule notre équipe voit ces informations. Elles servent à examiner les candidatures et ne sont jamais publiées."
+            }
+          ]
+        },
+        {
+          "id": "publish",
+          "title": "Ce que nous pouvons publier",
+          "blocks": [
+            {
+              "p": "Si votre candidature est acceptée, nous pouvons afficher votre nom, votre fonction, votre pays, votre message de soutien et votre photo sur la page « Nos membres ». Nous ne le faisons qu’après examen par notre équipe et avec votre accord. Vous pouvez demander leur retrait à tout moment."
+            }
+          ]
+        },
+        {
+          "id": "share",
+          "title": "Qui peut voir vos données",
+          "blocks": [
+            {
+              "list": [
+                "L’équipe de Bridging Our Voices, qui en a besoin pour vous répondre ou examiner votre candidature.",
+                "Les prestataires qui hébergent notre site et notre messagerie. Ils traitent les données uniquement pour notre compte."
+              ]
+            },
+            {
+              "p": "Nous ne partageons pas vos données avec nos partenaires ni avec quiconque sans votre accord, sauf obligation légale."
+            }
+          ]
+        },
+        {
+          "id": "retention",
+          "title": "Durée de conservation",
+          "blocks": [
+            {
+              "list": [
+                "Newsletter : jusqu’à votre désinscription.",
+                "Messages de contact : jusqu’à 12 mois après notre dernière réponse.",
+                "Demandes d’adhésion : tant que vous êtes membre. Si une candidature n’est pas retenue, ou si vous la retirez, nous la supprimons, photo comprise, sous 6 mois.",
+                "Journaux serveur : pendant la courte durée fixée par notre hébergeur."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "Vos droits",
+          "blocks": [
+            {
+              "p": "Vous pouvez à tout moment nous demander de :"
+            },
+            {
+              "list": [
+                "Vous montrer les données que nous détenons sur vous.",
+                "Les corriger.",
+                "Les supprimer, ou retirer votre profil du site.",
+                "Retirer votre consentement ou vous désinscrire de la newsletter."
+              ]
+            },
+            {
+              "p": "Écrivez à b.our.voices@gmail.com. Nous répondrons sous 30 jours. Vous pouvez aussi déposer une plainte auprès de l’autorité de protection des données de votre pays."
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Comment nous les protégeons",
+          "blocks": [
+            {
+              "p": "Le site utilise une connexion chiffrée (HTTPS). Seule notre équipe peut accéder aux données, et les photos sont vérifiées pour s’assurer qu’il s’agit de vraies images avant d’être enregistrées."
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "title": "Âge",
+          "blocks": [
+            {
+              "p": "Nos formulaires s’adressent aux adultes de 18 ans et plus. Certains programmes ont leur propre âge minimum ; la formation numérique, par exemple, est ouverte à partir de 25 ans."
+            }
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "Modifications de cette politique",
+          "blocks": [
+            {
+              "p": "Si nous changeons la façon dont nous utilisons vos données, nous mettrons à jour cette page et la date indiquée en haut."
+            }
+          ]
+        }
+      ]
+    },
+    "ar": {
+      "meta": {
+        "title": "سياسة الخصوصية",
+        "description": "كيف تجمع Bridging Our Voices البيانات الشخصية التي تشاركها عبر النشرة البريدية ونموذج التواصل ونموذج الانضمام، وكيف تستخدمها وتحميها."
+      },
+      "header": {
+        "eyebrow": "الخصوصية",
+        "title": "سياسة الخصوصية",
+        "lead": "ما نجمعه عبر هذا الموقع، ولماذا نحتاجه، وإلى متى نحتفظ به، وكيف يمكنك الاطلاع عليه أو تعديله أو حذفه."
+      },
+      "updatedLabel": "آخر تحديث",
+      "updated": "٦ نوفمبر ٢٠٢٦",
+      "tocLabel": "في هذه الصفحة",
+      "sections": [
+        {
+          "id": "who",
+          "title": "من نحن",
+          "blocks": [
+            {
+              "p": "Bridging Our Voices منصة نسائية للحوار وبناء السلام، تقودها د. أنوار قطايا (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع."
+            },
+            {
+              "p": "لأي سؤال عن بياناتك، راسلنا على b.our.voices@gmail.com."
+            }
+          ]
+        },
+        {
+          "id": "collect",
+          "title": "ما الذي نجمعه",
+          "blocks": [
+            {
+              "p": "نجمع فقط ما تكتبه في نماذجنا. ويطلب كل نموذج ما يلي:"
+            },
+            {
+              "h": "النشرة البريدية"
+            },
+            {
+              "list": [
+                "بريدك الإلكتروني."
+              ]
+            },
+            {
+              "h": "نموذج التواصل"
+            },
+            {
+              "list": [
+                "اسمك وبريدك الإلكتروني.",
+                "الموضوع الذي تختاره ورسالتك."
+              ]
+            },
+            {
+              "h": "طلب الانضمام («ضم صوتك لصوتنا»)"
+            },
+            {
+              "list": [
+                "اسمك، والنوع، والمسمى الوظيفي، والمؤسسة (اختياري)، والدولة، والبريد الإلكتروني.",
+                "ديانتك، والمذهب إذا اخترت ذكره.",
+                "مجالات عملك، ومقولتك الداعمة، ومقالًا إذا رغبت.",
+                "صورة، إذا اخترت رفعها.",
+                "لغة الصفحة التي استخدمتها."
+              ]
+            },
+            {
+              "h": "عند زيارتك للموقع"
+            },
+            {
+              "p": "لا يستخدم هذا الموقع ملفات تعريف ارتباط (كوكيز) إعلانية أو للتتبع، ولا أدوات لتحليل الزيارات. وكأي موقع، قد تسجّل جهة الاستضافة معلومات تقنية (مثل عنوان IP ونوع المتصفح) في سجلات الخادم، لحماية الموقع وضمان عمله."
+            }
+          ]
+        },
+        {
+          "id": "use",
+          "title": "لماذا نستخدمه",
+          "blocks": [
+            {
+              "list": [
+                "النشرة البريدية: لنرسل إليك أخبار برامجنا وفعالياتنا، بناءً على طلبك.",
+                "نموذج التواصل: للرد على رسالتك.",
+                "طلب الانضمام: لمراجعة طلبك والتواصل معك بشأنه، وإذا انضممت، لربطك بالشبكة. وتعطي موافقتك عندما تضع علامة في المربع قبل الإرسال."
+              ]
+            },
+            {
+              "p": "لا نبيع بياناتك أبدًا، ولا نستخدمها للإعلانات."
+            }
+          ]
+        },
+        {
+          "id": "sensitive",
+          "title": "الديانة والمعلومات الحساسة",
+          "blocks": [
+            {
+              "p": "يطلب نموذج الانضمام ديانتك ونوعك، وهي معلومات حساسة. نطلبها فقط لأن شبكتنا قائمة على الحوار بين الأديان والثقافات، ونريدها متنوعة ومتوازنة."
+            },
+            {
+              "p": "لا يطّلع على هذه المعلومات إلا فريقنا. نستخدمها لمراجعة الطلبات، ولا ننشرها أبدًا."
+            }
+          ]
+        },
+        {
+          "id": "publish",
+          "title": "ما قد ننشره",
+          "blocks": [
+            {
+              "p": "إذا قُبل طلبك، قد نعرض اسمك ودورك ودولتك ومقولتك الداعمة وصورتك في صفحة «أعضاؤنا». ولا نفعل ذلك إلا بعد مراجعة فريقنا وبموافقتك، ويمكنك أن تطلب حذفها في أي وقت."
+            }
+          ]
+        },
+        {
+          "id": "share",
+          "title": "من يمكنه رؤية بياناتك",
+          "blocks": [
+            {
+              "list": [
+                "فريق Bridging Our Voices، لأنه يحتاجها للرد عليك أو لمراجعة طلبك.",
+                "مقدمو الخدمة الذين يستضيفون موقعنا وبريدنا الإلكتروني، ويعالجون البيانات نيابةً عنا فقط."
+              ]
+            },
+            {
+              "p": "لا نشارك بياناتك مع شركائنا أو مع أي جهة أخرى دون إذنك، إلا إذا ألزمنا القانون بذلك."
+            }
+          ]
+        },
+        {
+          "id": "retention",
+          "title": "مدة الاحتفاظ بالبيانات",
+          "blocks": [
+            {
+              "list": [
+                "النشرة البريدية: حتى تلغي اشتراكك.",
+                "رسائل التواصل: حتى ١٢ شهرًا بعد آخر رد منا.",
+                "طلبات الانضمام: طوال مدة عضويتك. وإذا لم يُقبل الطلب أو سحبته، نحذفه هو والصورة خلال ٦ أشهر.",
+                "سجلات الخادم: للمدة القصيرة التي تحددها جهة الاستضافة."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "حقوقك",
+          "blocks": [
+            {
+              "p": "يمكنك في أي وقت أن تطلب منا:"
+            },
+            {
+              "list": [
+                "أن نعرض عليك البيانات التي نحتفظ بها عنك.",
+                "أن نصححها.",
+                "أن نحذفها، أو نحذف ملفك من الموقع.",
+                "سحب موافقتك أو إلغاء الاشتراك في النشرة البريدية."
+              ]
+            },
+            {
+              "p": "راسلنا على b.our.voices@gmail.com، وسنرد خلال ٣٠ يومًا. ويمكنك أيضًا تقديم شكوى إلى جهة حماية البيانات في بلدك."
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "كيف نحميها",
+          "blocks": [
+            {
+              "p": "يستخدم الموقع اتصالًا مشفرًا (HTTPS). ولا يصل إلى البيانات إلا فريقنا، ونتحقق من أن الصور المرفوعة صور حقيقية قبل حفظها."
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "title": "السن",
+          "blocks": [
+            {
+              "p": "نماذجنا موجهة للبالغين من سن ١٨ عامًا فأكثر. ولبعض البرامج حد أدنى خاص للسن؛ فالدورة التدريبية الرقمية مثلًا لمن هم في سن ٢٥ عامًا فأكثر."
+            }
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "التغييرات على هذه السياسة",
+          "blocks": [
+            {
+              "p": "إذا غيّرنا طريقة استخدامنا لبياناتك، سنحدّث هذه الصفحة والتاريخ المكتوب في أعلاها."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

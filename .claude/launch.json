@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5500"],
+      "port": 5500
+    },
+    {
+      "name": "portal",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["apps/portal/node_modules/next/dist/bin/next", "dev", "apps/portal", "-p", "3000"],
+      "port": 3000
+    },
+    {
+      "name": "dashboard",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["apps/dashboard/node_modules/next/dist/bin/next", "dev", "apps/dashboard", "-p", "3002"],
+      "port": 3002
+    },
+    {
+      "name": "api",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["apps/api/node_modules/tsx/dist/cli.mjs", "watch", "apps/api/src/server.ts"],
+      "port": 4000
+    }
+  ]
+}

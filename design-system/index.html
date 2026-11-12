@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOV Design System</title>
+  <link rel="icon" href="../assets/logo.png" />
+
+  <!-- Brand fonts: copy this block into every page -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Design system: tokens first, then components -->
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="components.css" />
+
+  <!-- Styles for this catalogue page only (not part of the system) -->
+  <style>
+    .ds-intro { padding: 64px 0 40px; border-bottom: var(--bov-hairline) solid var(--bov-line); }
+    .ds-section { padding: 56px 0; border-bottom: var(--bov-hairline) solid var(--bov-line); }
+    .ds-section > .bov-container > header { margin-bottom: 28px; }
+    .ds-label { font: 500 12px/1.4 var(--bov-font-mono); color: var(--bov-text-soft); letter-spacing: .04em; }
+    .ds-toc { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 24px; font-size: 14px; }
+
+    .ds-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
+    .ds-swatch { border: var(--bov-hairline) solid var(--bov-line); border-radius: 2px; overflow: hidden; background: #fff; }
+    .ds-swatch i { display: block; height: 84px; }
+    .ds-swatch div { padding: 10px 12px; }
+    .ds-swatch b { display: block; font-size: 14px; }
+    .ds-group-title { font: 600 13px/1 var(--bov-font-body); color: var(--bov-text-soft); margin: 28px 0 12px; }
+
+    .ds-type-row { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline; padding: 18px 0; border-top: var(--bov-hairline) solid var(--bov-line); }
+    .ds-type-row:first-of-type { border-top: 0; }
+
+    .ds-stage { padding: 32px; border: var(--bov-hairline) solid var(--bov-line); background: #fff; border-radius: 2px; }
+    .ds-stage--navy { background: var(--bov-navy); border-color: var(--bov-navy); }
+    .ds-stage--flush { padding: 0; overflow: hidden; }
+    .ds-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    .ds-spacing { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-end; }
+    .ds-spacing span { display: block; background: var(--bov-sky-tint); border: 1px solid var(--bov-sky); }
+
+    .ds-rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .ds-rule { padding: 18px 20px; background: #fff; border: var(--bov-hairline) solid var(--bov-line); border-inline-start: 3px solid var(--bov-gold); font-size: 14px; }
+    .ds-rule.dont { border-inline-start-color: #B4473B; }
+    .ds-rule strong { display: block; margin-bottom: 4px; }
+
+    @media (max-width: 700px) { .ds-type-row { grid-template-columns: 1fr; gap: 6px; } .ds-stage { padding: 20px; } }
+  </style>
+</head>
+<body>
+
+  <!-- ================= Intro ================= -->
+  <div class="ds-intro">
+    <div class="bov-container">
+      <span class="bov-eyebrow">Bridging Our Voices · v1.0</span>
+      <h1 class="bov-display">BOV Design System</h1>
+      <p class="bov-lead" style="max-width:760px">Tokens and components for every page of the BOV website, taken from the brand file <code>reference/bov-brand.html</code>. Pages link <code>tokens.css</code> and <code>components.css</code> and use the <code>.bov-</code> classes shown here.</p>
+      <nav class="ds-toc">
+        <a href="#colour">Colour</a><a href="#type">Typography</a><a href="#space">Spacing &amp; shape</a>
+        <a href="#buttons">Buttons</a><a href="#labels">Labels &amp; chips</a><a href="#header">Header</a>
+        <a href="#hero">Hero &amp; ticker</a><a href="#announce">Announcement</a><a href="#quote">Vision quote</a>
+        <a href="#steps">Pathway steps</a><a href="#cards">Cards</a><a href="#forms">Forms</a>
+        <a href="#footer">Footer</a><a href="#rtl">Arabic / RTL</a><a href="#rules">Rules</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ================= Colour ================= -->
+  <section class="ds-section" id="colour">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">01 · Colour</span><h2 class="bov-h2">Colour</h2></header>
+
+      <p class="ds-group-title">Core brand</p>
+      <div class="ds-swatches">
+        <div class="ds-swatch"><i style="background:var(--bov-navy)"></i><div><b>Navy</b><span class="ds-label">--bov-navy · #08163A</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-navy-deep)"></i><div><b>Navy deep</b><span class="ds-label">--bov-navy-deep · #050E28</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-gold)"></i><div><b>Gold</b><span class="ds-label">--bov-gold · #C9A25A</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-gold-deep)"></i><div><b>Gold deep</b><span class="ds-label">--bov-gold-deep · #8A6A22</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-sky)"></i><div><b>Sky (wing)</b><span class="ds-label">--bov-sky · #4DB6DD</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-blue)"></i><div><b>Blue</b><span class="ds-label">--bov-blue · #1C64A8</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-blue-deep)"></i><div><b>Blue deep</b><span class="ds-label">--bov-blue-deep · #154F87</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-navy-line)"></i><div><b>Navy line</b><span class="ds-label">--bov-navy-line · #3A4D78</span></div></div>
+      </div>
+
+      <p class="ds-group-title">Surfaces</p>
+      <div class="ds-swatches">
+        <div class="ds-swatch"><i style="background:var(--bov-paper)"></i><div><b>Paper</b><span class="ds-label">--bov-paper · #FAF7F0</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-sand)"></i><div><b>Sand</b><span class="ds-label">--bov-sand · #F1EBDD</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-sky-tint)"></i><div><b>Sky tint</b><span class="ds-label">--bov-sky-tint · #E3F3FA</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-line)"></i><div><b>Line</b><span class="ds-label">--bov-line · #E2DACB</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-white)"></i><div><b>White</b><span class="ds-label">--bov-white · #FFFFFF</span></div></div>
+      </div>
+
+      <p class="ds-group-title">Text</p>
+      <div class="ds-swatches">
+        <div class="ds-swatch"><i style="background:var(--bov-text)"></i><div><b>Text</b><span class="ds-label">--bov-text · #08163A</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-text-soft)"></i><div><b>Text soft</b><span class="ds-label">--bov-text-soft · #3A4560</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-on-dark-soft)"></i><div><b>On dark soft</b><span class="ds-label">--bov-on-dark-soft · #DCE3EF</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-on-dark-muted)"></i><div><b>On dark muted</b><span class="ds-label">--bov-on-dark-muted · #B9C3D6</span></div></div>
+        <div class="ds-swatch"><i style="background:var(--bov-on-dark-faint)"></i><div><b>On dark faint</b><span class="ds-label">--bov-on-dark-faint · #8C9AB8</span></div></div>
+      </div>
+
+      <p class="ds-group-title">Signature gradient (ticker &amp; footer top rule)</p>
+      <div class="bov-rule" style="height:10px"></div>
+      <p class="ds-label" style="margin-top:8px">--bov-gradient-rule · #1C64A8 → #4DB6DD 55% → #C9A25A</p>
+    </div>
+  </section>
+
+  <!-- ================= Typography ================= -->
+  <section class="ds-section" id="type">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">02 · Typography</span><h2 class="bov-h2">Typography</h2>
+        <p class="bov-small">Newsreader for headings (always regular weight) · IBM Plex Sans Arabic for body (covers Latin + Arabic) · IBM Plex Mono for labels · Noto Naskh Arabic for Arabic headings.</p></header>
+
+      <div class="ds-type-row"><span class="ds-label">.bov-display<br>Newsreader 48 / 400 / -0.02em</span><p class="bov-display" style="margin:0">Women leading dialogue and peacebuilding</p></div>
+      <div class="ds-type-row"><span class="ds-label">.bov-h2<br>Newsreader 35 / 400</span><p class="bov-h2" style="margin:0">From community voice to accredited leader</p></div>
+      <div class="ds-type-row"><span class="ds-label">.bov-h3<br>Newsreader 31 / 400</span><p class="bov-h3" style="margin:0">First Arabic-language cohort</p></div>
+      <div class="ds-type-row"><span class="ds-label">.bov-card-title<br>Newsreader 26 / 400</span><p class="bov-card-title" style="margin:0">Training programmes</p></div>
+      <div class="ds-type-row"><span class="ds-label">.bov-h4<br>Plex Sans 19 / 600</span><p class="bov-h4" style="margin:0">Learn</p></div>
+      <div class="ds-type-row"><span class="ds-label">.bov-lead<br>Plex Sans 18 / 1.75</span><p class="bov-lead" style="margin:0">A distinctive regional and international initiative empowering women peacemakers and community leaders.</p></div>
+      <div class="ds-type-row"><span class="ds-label">body<br>Plex Sans 15 / 1.7</span><p style="margin:0">A complete digital training programme delivered entirely in Arabic over Zoom for one full month.</p></div>
+      <div class="ds-type-row"><span class="ds-label">.bov-small<br>Plex Sans 14 / 1.6</span><p class="bov-small" style="margin:0">Bilingual modules led by practitioners from the region.</p></div>
+      <div class="ds-type-row"><span class="ds-label">.bov-eyebrow<br>Plex Mono 13 / caps / 0.08em</span><span class="bov-eyebrow" style="margin:0">Regional &amp; international initiative</span></div>
+    </div>
+  </section>
+
+  <!-- ================= Spacing & shape ================= -->
+  <section class="ds-section" id="space">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">03 · Spacing &amp; shape</span><h2 class="bov-h2">Spacing &amp; shape</h2></header>
+      <div class="ds-spacing">
+        <div><span style="width:4px;height:4px"></span><p class="ds-label">1 · 4</p></div>
+        <div><span style="width:8px;height:8px"></span><p class="ds-label">2 · 8</p></div>
+        <div><span style="width:12px;height:12px"></span><p class="ds-label">3 · 12</p></div>
+        <div><span style="width:16px;height:16px"></span><p class="ds-label">4 · 16</p></div>
+        <div><span style="width:24px;height:24px"></span><p class="ds-label">6 · 24</p></div>
+        <div><span style="width:32px;height:32px"></span><p class="ds-label">8 · 32</p></div>
+        <div><span style="width:48px;height:48px"></span><p class="ds-label">12 · 48</p></div>
+        <div><span style="width:64px;height:64px"></span><p class="ds-label">16 · 64</p></div>
+      </div>
+      <p class="bov-small" style="margin-top:24px">Container 1280px · gutter 32px (20px mobile) · section padding 64–104px · radius 2px everywhere, 999px for chips only · card top rule 2.4px gold · shadow <code>0 18px 40px rgba(8,22,58,.18)</code> for the feature banner and card hover only.</p>
+    </div>
+  </section>
+
+  <!-- ================= Buttons ================= -->
+  <section class="ds-section" id="buttons">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">04 · Buttons &amp; links</span><h2 class="bov-h2">Buttons &amp; links</h2></header>
+      <div class="ds-stage ds-stage--navy bov-on-dark">
+        <div class="ds-row">
+          <a href="#" class="bov-btn bov-btn--gold">Explore our activities</a>
+          <a href="#" class="bov-btn bov-btn--outline-light">Contact us</a>
+          <a href="#" class="bov-link">More about us →</a>
+        </div>
+        <p class="ds-label" style="color:var(--bov-on-dark-faint);margin:16px 0 0">On navy: .bov-btn--gold (primary) · .bov-btn--outline-light (secondary)</p>
+      </div>
+      <div class="ds-stage" style="margin-top:16px">
+        <div class="ds-row">
+          <a href="#" class="bov-btn bov-btn--navy">Register now</a>
+          <a href="#" class="bov-btn bov-btn--outline-dark">Learn more</a>
+          <a href="#" class="bov-btn bov-btn--gold bov-btn--sm">Subscribe</a>
+          <a href="#" class="bov-link">Programme details →</a>
+        </div>
+        <p class="ds-label" style="margin:16px 0 0">On light: .bov-btn--navy (primary) · .bov-btn--outline-dark · .bov-btn--sm · .bov-link</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Labels ================= -->
+  <section class="ds-section" id="labels">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">05 · Labels &amp; chips</span><h2 class="bov-h2">Labels &amp; chips</h2></header>
+      <div class="ds-stage">
+        <div class="ds-row"><span class="bov-badge">Registration open</span><span class="bov-meta">Deadline: 12 November 2026</span></div>
+        <ul class="bov-chips" style="margin-top:18px">
+          <li class="bov-chip">Free of charge</li><li class="bov-chip">Online · Zoom</li><li class="bov-chip">One month</li><li class="bov-chip">Ages 25+</li><li class="bov-chip">Certificate</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Header ================= -->
+  <section class="ds-section" id="header">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">06 · Header</span><h2 class="bov-h2">Header</h2>
+        <p class="bov-small">Navy bar, logo-dark.jpg (navy background version of the logo), wordmark in Newsreader, EN / FR / AR switcher, nav links with gold ▾ for dropdowns.</p></header>
+    </div>
+    <div class="bov-header" style="position:relative">
+      <div class="bov-container bov-header__inner">
+        <a href="#" class="bov-brand"><img src="../assets/logo-dark.jpg" alt="Bridging Our Voices" /><span>Bridging Our Voices</span></a>
+        <div class="bov-lang" role="group" aria-label="Language">
+          <button aria-pressed="true">EN</button><button aria-pressed="false">FR</button><button aria-pressed="false">AR</button>
+        </div>
+        <button class="bov-nav-toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('is-open')">☰</button>
+        <nav class="bov-nav">
+          <a href="#" class="has-menu" aria-current="page">About</a><a href="#" class="has-menu">Activities</a><a href="#">Agenda</a><a href="#" class="has-menu">Network</a><a href="#">Contact us</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Hero + ticker ================= -->
+  <section class="ds-section" id="hero" style="padding-bottom:0;border:0">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">07 · Hero &amp; ticker</span><h2 class="bov-h2">Hero &amp; "Latest" ticker</h2></header>
+    </div>
+  </section>
+  <div class="bov-hero bov-on-dark">
+    <div class="bov-container">
+      <span class="bov-eyebrow">Regional &amp; international initiative</span>
+      <h1 class="bov-display">Women leading dialogue and peacebuilding</h1>
+      <p class="bov-lead">A distinctive regional and international initiative empowering women peacemakers and community leaders, moving them from informal roles into recognised, influential leadership in peacebuilding and interfaith and intercultural dialogue.</p>
+      <div class="bov-actions"><a href="#" class="bov-btn bov-btn--gold">Explore our activities</a><a href="#" class="bov-btn bov-btn--outline-light">Contact us</a></div>
+    </div>
+  </div>
+  <div class="bov-rule"></div>
+  <div class="bov-ticker">
+    <span class="bov-ticker__label">LATEST</span>
+    <div class="bov-ticker__track">
+      <span>Registration open: first Arabic-language cohort, deadline 12 Nov 2026</span><span>Officially launching Bridging Our Voices</span><span>Free one-month course on Zoom · certificate of participation</span>
+      <span>Registration open: first Arabic-language cohort, deadline 12 Nov 2026</span><span>Officially launching Bridging Our Voices</span><span>Free one-month course on Zoom · certificate of participation</span>
+    </div>
+  </div>
+
+  <!-- ================= Announcement ================= -->
+  <section class="ds-section bov-announce" id="announce">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">08 · Announcement</span><h2 class="bov-h2">Banner &amp; announcement</h2></header>
+      <figure class="bov-banner" style="margin:0"><img src="../assets/banner-fellows.png" alt="Bridging Our Voices fellows and partners" /></figure>
+      <div class="bov-announce__meta"><span class="bov-badge">Registration open</span><span class="bov-meta">Deadline: 12 November 2026</span></div>
+      <h3 class="bov-h3">First Arabic-language cohort of our digital training course</h3>
+      <p>A complete digital training programme delivered entirely in Arabic over Zoom for one full month, giving participants core skills and practical tools in dialogue facilitation, community mediation, diversity management and conflict transformation.</p>
+      <ul class="bov-chips"><li class="bov-chip">Free of charge</li><li class="bov-chip">Online · Zoom</li><li class="bov-chip">One month</li><li class="bov-chip">Ages 25+</li><li class="bov-chip">Certificate</li></ul>
+      <div class="bov-actions" style="gap:24px"><a href="#" class="bov-btn bov-btn--navy">Register now</a><a href="#" class="bov-link">Programme details →</a></div>
+    </div>
+  </section>
+
+  <!-- ================= Quote ================= -->
+  <section class="ds-section bov-center" id="quote">
+    <div class="bov-container">
+      <span class="bov-eyebrow">09 · Our vision</span>
+      <p class="bov-quote">To establish an inclusive regional and international dialogue ecosystem where women and young leaders possess legitimate, recognised authority as primary facilitators and mediators.</p>
+      <a href="#" class="bov-link">More about us →</a>
+    </div>
+  </section>
+
+  <!-- ================= Steps ================= -->
+  <section class="bov-section bov-section--sand" id="steps">
+    <div class="bov-container">
+      <span class="bov-eyebrow">10 · The pathway</span>
+      <h2 class="bov-h2">From community voice to accredited leader</h2>
+      <ol class="bov-steps">
+        <li class="bov-step"><span class="bov-step__num">01</span><h3 class="bov-h4">Learn</h3><p>Bilingual modules led by practitioners from the region.</p></li>
+        <li class="bov-step"><span class="bov-step__num">02</span><h3 class="bov-h4">Practise</h3><p>Facilitate real dialogue circles in your own community.</p></li>
+        <li class="bov-step"><span class="bov-step__num">03</span><h3 class="bov-h4">Accredit</h3><p>Earn a recognised certification in dialogue and peacebuilding.</p></li>
+        <li class="bov-step"><span class="bov-step__num">04</span><h3 class="bov-h4">Lead</h3><p>Join an international network and mentor the next cohort.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= Cards ================= -->
+  <section class="ds-section" id="cards">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">11 · Cards</span><h2 class="bov-h2">Our activities</h2></header>
+      <div class="bov-cards">
+        <a href="#" class="bov-card"><span class="bov-card__num">01</span><h3 class="bov-card-title">Training programmes</h3><p>Accredited learning tracks, led by interfaith dialogue.</p><span class="bov-card__arrow">→</span></a>
+        <a href="#" class="bov-card"><span class="bov-card__num">02</span><h3 class="bov-card-title">Seminars</h3><p>Open sessions with practitioners and scholars.</p><span class="bov-card__arrow">→</span></a>
+        <a href="#" class="bov-card bov-card--light"><span class="bov-card__num">03</span><h3 class="bov-card-title">Light variant</h3><p>.bov-card--light for content-heavy pages.</p><span class="bov-card__arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Forms ================= -->
+  <section class="ds-section" id="forms">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">12 · Forms</span><h2 class="bov-h2">Forms</h2></header>
+      <div class="ds-row" style="align-items:flex-start;gap:24px">
+        <div class="ds-stage" style="flex:1 1 300px">
+          <div class="bov-field"><label for="ds-name">Full name</label><input id="ds-name" class="bov-input" placeholder="Your name" /></div>
+        </div>
+        <div class="ds-stage ds-stage--navy bov-on-dark" style="flex:1 1 300px">
+          <h4 class="bov-h4" style="font-size:15px">Newsletter</h4>
+          <form class="bov-inline-form" onsubmit="return false"><input class="bov-input bov-input--dark" placeholder="Your email" /><button class="bov-btn bov-btn--gold bov-btn--sm">Subscribe</button></form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RTL ================= -->
+  <section class="ds-section" id="rtl">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">13 · Arabic / RTL</span><h2 class="bov-h2">Arabic / RTL</h2>
+        <p class="bov-small">Put <code>dir="rtl" lang="ar"</code> on &lt;html&gt;. Headings switch to Noto Naskh Arabic, layout mirrors automatically.</p></header>
+      <div class="ds-stage ds-stage--navy bov-on-dark" dir="rtl" lang="ar">
+        <span class="bov-eyebrow">مبادرة إقليمية ودولية</span>
+        <h3 class="bov-display">نساء يقدن الحوار وبناء السلام</h3>
+        <p class="bov-lead">مبادرة إقليمية ودولية متميزة لتمكين النساء صانعات السلام والقيادات المجتمعية.</p>
+        <div class="bov-actions"><a href="#" class="bov-btn bov-btn--gold">استكشفي أنشطتنا</a><a href="#" class="bov-btn bov-btn--outline-light">تواصلي معنا</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Rules ================= -->
+  <section class="ds-section" id="rules">
+    <div class="bov-container">
+      <header><span class="bov-eyebrow">14 · Rules</span><h2 class="bov-h2">Do &amp; don't</h2></header>
+      <div class="ds-rules">
+        <div class="ds-rule"><strong>Do: logo on navy → logo-dark.jpg</strong>Header, footer and any navy block use the navy-background logo.</div>
+        <div class="ds-rule"><strong>Do: logo on light → logo.png</strong>Transparent version for paper / white backgrounds.</div>
+        <div class="ds-rule"><strong>Do: gold as accent</strong>Primary CTAs, numbers, eyebrows, card top rules.</div>
+        <div class="ds-rule"><strong>Do: headings regular weight</strong>Newsreader 400, one colour per heading.</div>
+        <div class="ds-rule dont"><strong>Don't: bold or italic display</strong>No highlighted words inside headings.</div>
+        <div class="ds-rule dont"><strong>Don't: rounded corners</strong>2px radius only; pills are for chips.</div>
+        <div class="ds-rule dont"><strong>Don't: gold text on paper</strong>Use --bov-gold-deep for readable gold text on light backgrounds.</div>
+        <div class="ds-rule dont"><strong>Don't: new colours</strong>Add a token to tokens.css first, then log it in SPEC.md.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <div id="footer"></div>
+  <div class="bov-rule"></div>
+  <footer class="bov-footer">
+    <div class="bov-container bov-footer__grid">
+      <div><img class="bov-footer__logo" src="../assets/logo-dark.jpg" alt="BOV" /><p class="bov-footer__tagline">Women leading dialogue and peacebuilding.</p></div>
+      <ul class="bov-footer__links"><li><a href="#">About</a></li><li><a href="#">Activities</a></li><li><a href="#">Agenda</a></li><li><a href="#">Network</a></li><li><a href="#">Contact us</a></li></ul>
+      <div><h4>Newsletter</h4><form class="bov-inline-form" onsubmit="return false"><input class="bov-input bov-input--dark" placeholder="Your email" /><button class="bov-btn bov-btn--gold bov-btn--sm">Subscribe</button></form></div>
+    </div>
+    <div class="bov-container bov-footer__copy">© 2026 Bridging Our Voices</div>
+  </footer>
+
+</body>
+</html>

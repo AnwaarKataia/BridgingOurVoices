@@ -1,0 +1,13 @@
+{
+  "name": "bov-platform",
+  "private": true,
+  "packageManager": "pnpm@10.34.9",
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter \"./apps/*\" dev",
+    "dev:portal": "pnpm --filter @bov/portal dev",
+    "dev:dashboard": "pnpm --filter @bov/dashboard dev",
+    "dev:api": "pnpm --filter @bov/api dev",
+    "build": "pnpm -r --filter \"./apps/*\" build",
+    "typecheck": "pnpm -r typecheck"
+  }
+}

@@ -1,0 +1,118 @@
+/* =========================================================
+   BOV Design System — Tokens
+   Source of truth: reference/bov-brand.html (BOV Website brand file)
+   Every page links this file first, then components.css.
+   Change a value here and it updates across the whole site.
+   ========================================================= */
+
+/* Fonts: Newsreader (display), IBM Plex Sans Arabic (body, Latin + Arabic),
+   IBM Plex Mono (labels), Noto Naskh Arabic (Arabic display).
+   Loaded in each page <head> — see design-system/index.html. */
+
+:root {
+  /* ---------- Colour: core brand ---------- */
+  --bov-navy:        #08163A;  /* primary dark — header, hero, cards */
+  --bov-navy-deep:   #050E28;  /* footer */
+  --bov-navy-line:   #3A4D78;  /* borders / inputs on navy */
+  --bov-gold:        #C9A25A;  /* primary accent — CTA, numbers, rules */
+  --bov-gold-deep:   #8A6A22;  /* gold text on light backgrounds (AA contrast) */
+  --bov-sky:         #4DB6DD;  /* wing blue — arrows, highlights on navy */
+  --bov-blue:        #1C64A8;  /* links on light backgrounds */
+  --bov-blue-deep:   #154F87;  /* chip text */
+
+  /* ---------- Colour: surfaces ---------- */
+  --bov-paper:       #FAF7F0;  /* default page background */
+  --bov-sand:        #F1EBDD;  /* alternate section background */
+  --bov-sky-tint:    #E3F3FA;  /* chip background */
+  --bov-line:        #E2DACB;  /* hairlines on light backgrounds */
+  --bov-line-strong: #D9CFB9;  /* partner tags border */
+  --bov-line-input:  #C9C2B2;  /* form field borders */
+  --bov-danger:      #B3412F;  /* required-field asterisk, form errors */
+  --bov-navy-divider:#2A3D68;  /* vertical divider on navy (vision | mission) */
+  --bov-navy-raised: #12254D;  /* raised panel (flagship programme, fellowship cards) */
+  --bov-gold-pale:   #E8D3A0;  /* hashtag text on navy */
+  --bov-white:       #FFFFFF;
+
+  /* ---------- Colour: text ---------- */
+  --bov-text:            #08163A;  /* headings + body on light */
+  --bov-text-soft:       #3A4560;  /* secondary text on light */
+  --bov-on-dark:         #FAF7F0;  /* headings on navy */
+  --bov-on-dark-soft:    #DCE3EF;  /* nav links on navy */
+  --bov-on-dark-muted:   #B9C3D6;  /* body text on navy */
+  --bov-on-dark-faint:   #8C9AB8;  /* captions / copyright on navy */
+
+  /* ---------- Signature gradient (wing blue → sky → gold) ---------- */
+  --bov-gradient-rule: linear-gradient(90deg, #1C64A8, #4DB6DD 55%, #C9A25A);
+
+  /* ---------- Typography: families ---------- */
+  --bov-font-display: "Newsreader", Georgia, serif;
+  --bov-font-body:    "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --bov-font-mono:    "IBM Plex Mono", ui-monospace, monospace;
+  --bov-font-display-ar: "Noto Naskh Arabic", "IBM Plex Sans Arabic", serif;
+
+  /* ---------- Typography: scale ---------- */
+  --bov-fs-page:    clamp(2.5rem, 5.5vw, 3.5rem);    /* inner page title 56px */
+  --bov-fs-h2-lg:   clamp(2rem, 3.6vw, 2.625rem);    /* large section title 42px */
+  --bov-fs-h2-xl:   clamp(2.1rem, 4vw, 2.875rem);    /* section title on navy 46px */
+  --bov-fs-feature: clamp(1.6rem, 2.8vw, 2.24rem);   /* featured card title 36px */
+  --bov-fs-statement: clamp(1.5rem, 2.6vw, 2rem);    /* vision / mission 32px */
+  --bov-fs-num:     1.375rem;                        /* list numbers 22px */
+  --bov-fs-body-lg: 1.0625rem;                       /* long-form paragraphs 17px */
+  --bov-fs-display: clamp(2.25rem, 4.6vw, 3rem);     /* hero h1 ≈ 47–48px */
+  --bov-fs-h2:      clamp(1.9rem, 3.4vw, 2.18rem);   /* section titles ≈ 35px */
+  --bov-fs-h3:      clamp(1.5rem, 2.4vw, 1.92rem);   /* sub-sections ≈ 31px */
+  --bov-fs-card:    1.625rem;                        /* card titles 26px */
+  --bov-fs-h4:      1.1875rem;                       /* sans subheads 19px */
+  --bov-fs-lead:    1.125rem;                        /* 18px */
+  --bov-fs-body:    0.9375rem;                       /* 15px */
+  --bov-fs-small:   0.875rem;                        /* 14px */
+  --bov-fs-label:   0.8125rem;                       /* 13px mono labels */
+  --bov-fs-tag:     0.75rem;                         /* 12px badges */
+
+  --bov-fw-display: 400;   /* Newsreader is always regular — never bold */
+  --bov-fw-body:    400;
+  --bov-fw-medium:  500;
+  --bov-fw-strong:  600;
+
+  --bov-lh-tight:   1.08;
+  --bov-lh-heading: 1.15;
+  --bov-lh-body:    1.7;
+  --bov-lh-lead:    1.75;
+
+  --bov-ls-display: -0.02em;
+  --bov-ls-label:   0.08em;
+
+  /* ---------- Layout ---------- */
+  --bov-container:        1280px;
+  --bov-container-narrow: 720px;
+  --bov-gutter:           32px;
+  --bov-gutter-mobile:    20px;
+  --bov-section-y:        clamp(64px, 8vw, 104px);
+  --bov-header-h:         85px;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --bov-space-1: 4px;
+  --bov-space-2: 8px;
+  --bov-space-3: 12px;
+  --bov-space-4: 16px;
+  --bov-space-5: 20px;
+  --bov-space-6: 24px;
+  --bov-space-7: 28px;
+  --bov-space-8: 32px;
+  --bov-space-10: 40px;
+  --bov-space-12: 48px;
+  --bov-space-16: 64px;
+
+  /* ---------- Shape ---------- */
+  --bov-radius:      2px;    /* buttons, cards, inputs, badges — crisp, institutional */
+  --bov-radius-pill: 999px;  /* chips only */
+  --bov-rule:        2.4px;  /* gold top-rule on cards */
+  --bov-hairline:    0.8px;
+
+  /* ---------- Elevation ---------- */
+  --bov-shadow: 0 18px 40px rgba(8, 22, 58, 0.18);
+
+  /* ---------- Motion ---------- */
+  --bov-ease: cubic-bezier(.2, .7, .2, 1);
+  --bov-dur:  .2s;
+}

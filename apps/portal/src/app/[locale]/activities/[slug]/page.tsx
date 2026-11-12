@@ -1,0 +1,115 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { isPublishedLocale, publishedLocales, type Locale } from "@/i18n/config";
+import { getActivitiesContent, type ActivitiesContent } from "@/content/activities";
+import { getSiteContent, sectionTabs } from "@/content/site";
+import { pageMetadata } from "@/lib/seo";
+import { siteUrl } from "@/lib/site";
+import { PageShell } from "@/components/PageShell";
+import { PageHeader } from "@/components/PageHeader";
+import { NextPage } from "@/components/NextPage";
+import { Training } from "@/components/activities/Training";
+import { Seminars } from "@/components/activities/Seminars";
+import { Conferences } from "@/components/activities/Conferences";
+import { Fellowship } from "@/components/activities/Fellowship";
+
+/** Activities section: each dropdown item is its own page. Order = tab order. */
+const slugs = ["training", "seminars", "conferences", "fellowship"] as const;
+type Slug = (typeof slugs)[number];
+
+type Params = { params: Promise<{ locale: string; slug: string }> };
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return publishedLocales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
+}
+
+const clip = (s: string, n = 158) => (s.length > n ? `${s.slice(0, n - 1).trimEnd()}…` : s);
+
+/** Title, lead, description and body for one Activities page. */
+function page(slug: Slug, c: ActivitiesContent) {
+  switch (slug) {
+    case "training":
+      return {
+        title: c.training.title,
+        lead: c.header.lead,
+        description: clip(c.course.body),
+        body: <Training course={c.course} flagship={c.flagship} tracks={c.tracks} />,
+      };
+    case "seminars":
+      return { title: c.seminars.title, lead: c.seminars.lead, description: clip(c.seminars.lead), body: <Seminars seminars={c.seminars} /> };
+    case "conferences":
+      return {
+        title: c.conferences.title,
+        lead: c.conferences.lead,
+        description: clip(c.conferences.lead),
+        body: <Conferences conferences={c.conferences} />,
+      };
+    case "fellowship":
+      return {
+        title: c.fellowship.title,
+        lead: c.fellowship.lead,
+        description: clip(c.fellowship.lead),
+        body: <Fellowship fellowship={c.fellowship} />,
+      };
+  }
+}
+
+async function resolve(params: Params["params"]) {
+  const { locale, slug } = await params;
+  if (!isPublishedLocale(locale) || !(slugs as readonly string[]).includes(slug)) return null;
+  return { locale: locale as Locale, slug: slug as Slug };
+}
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const r = await resolve(params);
+  if (!r) return {};
+  const p = page(r.slug, await getActivitiesContent(r.locale));
+  return pageMetadata(r.locale, `/activities/${r.slug}`, { title: p.title, description: p.description });
+}
+
+export default async function ActivitiesSubPage({ params }: Params) {
+  const r = await resolve(params);
+  if (!r) notFound();
+  const { locale, slug } = r;
+  const c = await getActivitiesContent(locale);
+  const site = await getSiteContent(locale);
+  const p = page(slug, c);
+  const path = `/activities/${slug}`;
+  const pageUrl = `${siteUrl}/${locale}${path}`;
+  const tabs = sectionTabs(site, locale, "activities", path);
+  const homeLabel = site.nav.find((n) => n.key === "home")?.label ?? site.brandName;
+
+  const graph: object[] = [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: homeLabel, item: `${siteUrl}/${locale}` },
+        { "@type": "ListItem", position: 2, name: c.header.eyebrow, item: `${siteUrl}/${locale}/activities/${slugs[0]}` },
+        { "@type": "ListItem", position: 3, name: p.title, item: pageUrl },
+      ],
+    },
+  ];
+  if (slug === "training") {
+    graph.push({
+      "@type": "Course",
+      name: c.course.title,
+      description: c.course.body,
+      inLanguage: "ar",
+      isAccessibleForFree: true,
+      url: `${pageUrl}#course`,
+      provider: { "@id": `${siteUrl}/#organization` },
+      hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", courseWorkload: "P1M" },
+    });
+  }
+
+  return (
+    <PageShell locale={locale} path={path} current="activities">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }) }} />
+      <PageHeader eyebrow={c.header.eyebrow} title={p.title} lead={p.lead} tabs={tabs} tabsLabel={site.a11y.sectionNav} />
+      {p.body}
+      <NextPage tabs={tabs} label={site.next} />
+    </PageShell>
+  );
+}

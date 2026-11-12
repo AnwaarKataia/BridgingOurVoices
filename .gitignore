@@ -1,0 +1,32 @@
+# Dependencies and build output
+node_modules/
+.next/
+dist/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Secrets and environment files (keep only examples)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local data: database, uploaded photos and images, temporary passwords — never upload
+apps/api/data/
+*.local.txt
+*.local.json
+
+# Personal / office documents in the project folder
+*.docx
+*.xlsx
+*.pptx
+
+# Editor, OS and tool files
+.claude/settings.local.json
+.vscode/
+.idea/
+*.log
+Thumbs.db
+.DS_Store

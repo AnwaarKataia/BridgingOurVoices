@@ -1,0 +1,179 @@
+/* =========================================================
+   BOV Design System — Tailwind v4 theme
+   Mirrors design-system/tokens.css (source: reference/bov-brand.html).
+   Change a value in both files, then log it in SPEC.md.
+   Import after "tailwindcss":  @import "@bov/ui/theme.css";
+   ========================================================= */
+
+@theme {
+  /* Colour: core brand */
+  --color-navy: #08163a;
+  --color-navy-deep: #050e28;
+  --color-navy-line: #3a4d78;
+  --color-navy-hover: #10245a;
+  --color-gold: #c9a25a;
+  --color-gold-hover: #d6b272;
+  --color-gold-deep: #8a6a22;
+  --color-sky: #4db6dd;
+  --color-blue: #1c64a8;
+  --color-blue-deep: #154f87;
+
+  /* Colour: surfaces */
+  --color-paper: #faf7f0;
+  --color-sand: #f1ebdd;
+  --color-sky-tint: #e3f3fa;
+  --color-line: #e2dacb;
+  --color-line-strong: #d9cfb9; /* partner tags */
+  --color-line-input: #c9c2b2; /* form field borders */
+  --color-danger: #b3412f; /* required-field asterisk, form errors */
+  --color-navy-divider: #2a3d68; /* vertical divider on navy (vision | mission) */
+  --color-navy-raised: #12254d; /* raised panel on paper or navy (flagship programme, fellowship cards) */
+  --color-gold-pale: #e8d3a0; /* hashtag text on navy */
+
+  /* Colour: text */
+  --color-ink: #08163a;
+  --color-ink-soft: #3a4560;
+  --color-on-dark: #faf7f0;
+  --color-on-dark-soft: #dce3ef;
+  --color-on-dark-muted: #b9c3d6;
+  --color-on-dark-faint: #8c9ab8;
+
+  /* Type scale (Newsreader sizes always weight 400) */
+  --text-page: clamp(2.5rem, 5.5vw, 3.5rem); /* inner page title, 56px */
+  --text-page--line-height: 1.08;
+  --text-page--letter-spacing: -0.02em;
+  --text-h2-lg: clamp(2rem, 3.6vw, 2.625rem); /* large section title, 42px */
+  --text-h2-lg--line-height: 1.15;
+  --text-h2-xl: clamp(2.1rem, 4vw, 2.875rem); /* section title on navy (fellowship), 46px */
+  --text-h2-xl--line-height: 1.12;
+  --text-feature: clamp(1.6rem, 2.8vw, 2.24rem); /* featured card title (current programme), 36px */
+  --text-feature--line-height: 1.18;
+  --text-statement: clamp(1.5rem, 2.6vw, 2rem); /* vision / mission statements, 32px */
+  --text-statement--line-height: 1.15;
+  --text-num: 1.375rem; /* list numbers, 22px */
+  --text-body-lg: 1.0625rem; /* long-form paragraphs, 17px */
+  --text-body-lg--line-height: 1.8;
+  --text-display: clamp(2.25rem, 4.6vw, 3rem);
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.02em;
+  --text-h2: clamp(1.9rem, 3.4vw, 2.18rem);
+  --text-h2--line-height: 1.15;
+  --text-h3: clamp(1.5rem, 2.4vw, 1.92rem);
+  --text-h3--line-height: 1.15;
+  --text-card: 1.625rem;
+  --text-card--line-height: 1.25;
+  --text-h4: 1.1875rem;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.75;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.7;
+  --text-label: 0.8125rem;
+  --text-tag: 0.75rem;
+
+  --tracking-label: 0.08em;
+
+  /* Shape & layout */
+  --radius-bov: 2px;
+  --shadow-bov: 0 18px 40px rgba(8, 22, 58, 0.18);
+  --container-site: 1280px;
+  --container-narrow: 720px;
+
+  /* Motion */
+  --animate-tick: bov-tick 40s linear infinite;
+  --animate-tick-rtl: bov-tick-rtl 40s linear infinite;
+  @keyframes bov-tick {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes bov-tick-rtl {
+    from { transform: translateX(0); }
+    to { transform: translateX(50%); }
+  }
+}
+
+/* Fonts come from next/font CSS variables set on <html> */
+@theme inline {
+  --font-display: var(--font-newsreader), Georgia, serif;
+  --font-sans: var(--font-plex-arabic), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-display-ar: var(--font-naskh), var(--font-plex-arabic), serif;
+}
+
+/* Signature gradient rule: blue → sky → gold */
+@utility bg-rule {
+  background-image: linear-gradient(90deg, #1c64a8, #4db6dd 55%, #c9a25a);
+}
+
+/* Shared page shell: centred 1280px with 32px gutter (20px mobile) */
+@utility container-site {
+  width: 100%;
+  max-width: var(--container-site);
+  margin-inline: auto;
+  padding-inline: 20px;
+  @media (width >= 48rem) {
+    padding-inline: 32px;
+  }
+}
+
+/* Striped placeholders shown where a photo or video will go (as in the brand file) */
+@utility bg-stripes-light {
+  background-image: repeating-linear-gradient(135deg, #efeae0 0 10px, #f6f2ea 10px 20px);
+}
+@utility bg-stripes-dark {
+  background-image: repeating-linear-gradient(135deg, #1a2f5c 0 10px, #15284f 10px 20px);
+}
+
+/* Mono caps label above section titles */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+@layer base {
+  /* In-page anchors (#goals, #seminars...) stop below the sticky header (80px mobile, 96px desktop) */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-size: var(--text-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible { outline: 2px solid var(--color-sky); outline-offset: 2px; }
+}
+
+/* ---------- Arabic (RTL) typography — values from the brand file's AR mode ----------
+   Unlayered on purpose so they override the Tailwind utilities above. */
+[dir="rtl"] .font-display {
+  font-family: var(--font-display-ar);
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+[dir="rtl"] .text-display {
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.45;
+}
+[dir="rtl"] .text-h3 { font-weight: 600; }
+[dir="rtl"] .text-page { font-weight: 600; line-height: 1.45; }
+[dir="rtl"] .text-h2-lg { font-weight: 600; line-height: 1.5; }
+[dir="rtl"] .text-statement { line-height: 1.5; }
+[dir="rtl"] .text-h2-xl,
+[dir="rtl"] .text-feature { font-weight: 600; line-height: 1.5; }
+[dir="rtl"] .text-display + p,
+[dir="rtl"] .text-lead { line-height: 1.9; }
+/* English text inside Arabic pages (the untranslated project name) keeps the English display face */
+.font-display[lang="en"] {
+  font-family: var(--font-newsreader), Georgia, serif;
+}
+/* IBM Plex Mono has no Arabic glyphs: labels use the body face, no tracking or caps */
+[dir="rtl"] .eyebrow {
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
