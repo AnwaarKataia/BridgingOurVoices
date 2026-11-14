@@ -6,7 +6,9 @@ import { getDict } from "@/lib/i18n";
 export const metadata: Metadata = { title: "Applications" };
 
 type Status = "pending" | "approved" | "rejected";
-type Item = { id: string; name: string; email: string; country: string; job: string; status: Status; hasCv: boolean; createdAt: string };
+type Kind = "member" | "voice";
+type Item = { id: string; kind: Kind; name: string; email: string; country: string; job: string; status: Status; hasCv: boolean; createdAt: string };
+type Data = { kind: Kind; items: Item[]; counts: Record<Status, number>; pending: Record<Kind, number> };
 
 const statusTone: Record<Status, string> = {
   pending: "bg-gold/20 text-gold-deep",
@@ -14,13 +16,17 @@ const statusTone: Record<Status, string> = {
   rejected: "bg-danger/10 text-danger",
 };
 
-/** Membership applications, by status (pending first). */
-export default async function ApplicationsPage({ searchParams }: { searchParams: Promise<{ status?: string }> }) {
-  const { status: raw } = await searchParams;
-  const status = raw === "approved" || raw === "rejected" || raw === "all" ? raw : "pending";
+/**
+ * Two kinds of submissions, each with status tabs (owner, 2026-11-14):
+ * membership applications (Membership page) and "Add your voice to ours" (Join page).
+ */
+export default async function ApplicationsPage({ searchParams }: { searchParams: Promise<{ status?: string; kind?: string }> }) {
+  const { status: rawStatus, kind: rawKind } = await searchParams;
+  const kind: Kind = rawKind === "voice" ? "voice" : "member";
+  const status = rawStatus === "approved" || rawStatus === "rejected" || rawStatus === "all" ? rawStatus : "pending";
   const [{ lang, t }, { data, status: code }] = await Promise.all([
     getDict(),
-    apiGet<{ items: Item[]; counts: Record<Status, number> }>(`/admin/applications${status === "all" ? "" : `?status=${status}`}`),
+    apiGet<Data>(`/admin/applications?kind=${kind}${status === "all" ? "" : `&status=${status}`}`),
   ]);
   const a = t.apps;
   const loc = lang === "ar" ? "ar-EG" : "en-GB";
@@ -43,12 +49,30 @@ export default async function ApplicationsPage({ searchParams }: { searchParams:
         <p className="mt-2 max-w-[720px] text-ink-soft">{a.lead}</p>
       </div>
 
-      <nav aria-label={a.title}>
+      {/* The two kinds of submissions */}
+      <nav aria-label={a.title} className="border-b border-line">
+        <ul className="-mb-px flex flex-wrap gap-x-6">
+          {(["member", "voice"] as const).map((k) => (
+            <li key={k}>
+              <Link
+                href={`/applications?kind=${k}`}
+                aria-current={kind === k ? "page" : undefined}
+                className={`flex items-center gap-2 border-b-2 py-3 font-display text-lg ${kind === k ? "border-gold text-ink" : "border-transparent text-ink-soft hover:text-ink"}`}
+              >
+                {a.kinds[k]}
+                {!!data?.pending[k] && <span className="rounded-full bg-gold px-2 text-xs font-semibold text-navy">{nf.format(data.pending[k])}</span>}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-label={a.kinds[kind]}>
         <ul className="flex flex-wrap gap-2">
           {tabs.map((tab) => (
             <li key={tab.key}>
               <Link
-                href={`/applications?status=${tab.key}`}
+                href={`/applications?kind=${kind}&status=${tab.key}`}
                 aria-current={status === tab.key ? "page" : undefined}
                 className={`flex h-10 items-center gap-2 rounded-bov border px-4 text-sm font-semibold ${
                   status === tab.key ? "border-navy bg-navy text-on-dark" : "border-line bg-white text-ink hover:border-navy"

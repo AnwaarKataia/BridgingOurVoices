@@ -1,7 +1,7 @@
 import { apiGet, getCurrentUser } from "@/lib/api";
 import { getDict } from "@/lib/i18n";
 
-type Stats = { newMessages: number; pendingApplications: number; subscribers: number };
+type Stats = { newMessages: number; pendingMembers: number; pendingVoices: number; subscribers: number };
 
 /** Overview: welcome + the three numbers from /admin/stats. */
 export default async function OverviewPage() {
@@ -9,7 +9,8 @@ export default async function OverviewPage() {
   const nf = new Intl.NumberFormat(lang === "ar" ? "ar-EG" : "en-GB");
   const cards: { key: keyof Stats; label: string }[] = [
     { key: "newMessages", label: t.stats.newMessages },
-    { key: "pendingApplications", label: t.stats.pendingApplications },
+    { key: "pendingMembers", label: t.stats.pendingMembers },
+    { key: "pendingVoices", label: t.stats.pendingVoices },
     { key: "subscribers", label: t.stats.subscribers },
   ];
 
@@ -23,7 +24,7 @@ export default async function OverviewPage() {
         <p className="mt-2 text-ink-soft">{t.overviewLead}</p>
       </div>
       {data ? (
-        <ul className="grid gap-4 sm:grid-cols-3">
+        <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {cards.map((c) => (
             <li key={c.key} className="flex flex-col gap-2 rounded-bov border border-t-[2.4px] border-line border-t-gold bg-white p-5">
               <span className="font-display text-[2.5rem] leading-none text-navy">{nf.format(data.stats[c.key])}</span>

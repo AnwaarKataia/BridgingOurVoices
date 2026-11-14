@@ -11,6 +11,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { NextPage } from "@/components/NextPage";
 import { Membership } from "@/components/network/Membership";
 import { JoinForm } from "@/components/network/JoinForm";
+import { MembershipForm } from "@/components/network/MembershipForm";
 import { Members } from "@/components/network/Members";
 
 /** Network section: each dropdown item is its own page. Order = tab order. */
@@ -29,7 +30,8 @@ export function generateStaticParams() {
 function page(slug: Slug, c: NetworkContent, locale: Locale, site: SiteContent) {
   switch (slug) {
     case "membership":
-      // Owner, 2026-11-14: the application form also sits on the Membership page, under the three cards
+      // Owner, 2026-11-14: the membership application form sits under the three cards. It is NOT the
+      // "Add your voice to ours" form (that one stays on the Join page) and doesn't use its title.
       return {
         title: c.membership.title,
         lead: c.header.lead,
@@ -40,11 +42,11 @@ function page(slug: Slug, c: NetworkContent, locale: Locale, site: SiteContent) 
             <section id="apply" aria-labelledby="apply-title" className="bg-sand">
               <div className="container-site flex flex-col gap-6 py-12 md:py-20">
                 <div className="flex max-w-[760px] flex-col gap-2.5">
-                  <h2 id="apply-title" className="font-display text-h2 font-normal text-ink">{c.join.title}</h2>
-                  <p className="text-body text-ink-soft">{c.join.lead}</p>
+                  <h2 id="apply-title" className="font-display text-h2 font-normal text-ink">{c.membership.form.title}</h2>
+                  <p className="text-body text-ink-soft">{c.membership.form.lead}</p>
                 </div>
                 <div className="max-w-[920px]">
-                  <JoinForm locale={locale} join={c.join} countries={countryOptions(locale)} privacy={site.privacy} />
+                  <MembershipForm locale={locale} join={c.join} form={c.membership.form} countries={countryOptions(locale)} privacy={site.privacy} />
                 </div>
               </div>
             </section>

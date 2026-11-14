@@ -14,6 +14,31 @@ export type NetworkContent = {
     meta: { title: string; description: string };
     title: string;
     columns: { title: string; items: string[] }[];
+    /**
+     * Membership application form (owner, 2026-11-14), under the three cards. Separate from "Add your voice
+     * to ours": same personal details (labels from `join`), but instead of the statement and article it asks
+     * for an experience summary (max 150 words), a CV (PDF, max 4 pages), motivation, activities and the
+     * organisations the applicant could connect us with. `wordCount` uses {count} and {max}.
+     */
+    form: {
+      title: string;
+      lead: string;
+      experience: string;
+      experienceHint: string;
+      wordCount: string;
+      experienceTooLong: string;
+      cv: string;
+      cvButton: string;
+      cvHint: string;
+      cvError: string;
+      motivation: string;
+      activities: string;
+      connections: string;
+      connectionsHint: string;
+      photoHint: string;
+      submit: string;
+      success: string;
+    };
   };
   join: {
     meta: { title: string; description: string };
@@ -32,18 +57,8 @@ export type NetworkContent = {
     subreligion: string;
     fields: string;
     fieldOptions: { value: string; label: string }[];
-    /** Experience summary (max 150 words, owner 2026-11-14). `wordCount` uses {count} and {max}. */
-    experience: string;
-    experienceHint: string;
-    wordCount: string;
-    experienceTooLong: string;
-    /** CV upload: PDF, max 4 pages and 5 MB (checked again by the API). */
-    cv: string;
-    cvButton: string;
-    cvHint: string;
-    cvError: string;
-    motivation: string;
-    activities: string;
+    quote: string;
+    article: string;
     photo: string;
     photoButton: string;
     photoHint: string;
@@ -79,20 +94,20 @@ const photos = {
 };
 
 const en: NetworkContent = {
-  header: { eyebrow: "Network", lead: "Our advisory board and a growing network of women peace leaders." },
+  header: { eyebrow: "Network", lead: "Our advisory board and a growing network of peacebuilders and community leaders." },
   membership: {
     meta: {
       title: "Membership",
-      description: "Who can join the Bridging Our Voices network of women peacebuilders, what members gain and what we ask of them.",
+      description: "Who can join the Bridging Our Voices network of peacebuilders, what members gain and what we ask of them.",
     },
     title: "Who can join, and what membership means",
     columns: [
       {
         title: "Who can join",
         items: [
-          "Women peacebuilders and community leaders",
+          "Peacebuilders and community leaders",
           "Religious leaders and interfaith dialogue practitioners",
-          "Young people aged 18+, including refugee, displaced and student youth",
+          "Leaders aged 30 and over who have started working in peacebuilding and have experience in it",
           "Trainers, researchers and partner organisations",
         ],
       },
@@ -115,14 +130,33 @@ const en: NetworkContent = {
         ],
       },
     ],
+    form: {
+      title: "Membership application form",
+      lead: "Fill in this form to apply to join the network. Our team will review your application and contact you.",
+      experience: "Summary of your experience",
+      experienceHint: "One paragraph, up to 150 words.",
+      wordCount: "{count} / {max} words",
+      experienceTooLong: "Please keep the summary to 150 words or fewer.",
+      cv: "Your CV",
+      cvButton: "Upload CV",
+      cvHint: "PDF only, up to 4 pages and 5 MB.",
+      cvError: "Please choose a PDF of up to 4 pages and 5 MB.",
+      motivation: "What motivates you to join us?",
+      activities: "Which activities could you carry out with us?",
+      connections: "Which organisations or networks could you connect us with?",
+      connectionsHint: "Optional: institutions, community groups, media or partners in your country.",
+      photoHint: "JPG or PNG, up to 3 MB.",
+      submit: "Send application",
+      success: "Thank you, your application has been received. Our team will review it and contact you.",
+    },
   },
   join: {
     meta: {
       title: "Add your voice to ours",
-      description: "Membership of the Bridging Our Voices network is free. Share your details, a summary of your experience and your CV, and our team will contact you.",
+      description: "Membership of the Bridging Our Voices network is free. Share a few details and a message of support, and our team will contact you.",
     },
     title: "Add your voice to ours",
-    lead: "Membership is free. Share your details, a summary of your experience and your CV, and our team will review your application and contact you.",
+    lead: "Membership is free. Share a few details and a message of support, our team will review it and contact you.",
     legend: "Your details",
     name: "Full name",
     gender: "Gender",
@@ -140,19 +174,11 @@ const en: NetworkContent = {
       "Women, Peace & Security", "Youth engagement", "Trauma healing & resilience", "Citizenship & leadership",
       "Education & training", "Research", "Media",
     ]),
-    experience: "Summary of your experience",
-    experienceHint: "One paragraph, up to 150 words.",
-    wordCount: "{count} / {max} words",
-    experienceTooLong: "Please keep the summary to 150 words or fewer.",
-    cv: "Your CV",
-    cvButton: "Upload CV",
-    cvHint: "PDF only, up to 4 pages and 5 MB.",
-    cvError: "Please choose a PDF of up to 4 pages and 5 MB.",
-    motivation: "What motivates you to join us?",
-    activities: "Which activities could you carry out with us?",
+    quote: "A message of support for the initiative",
+    article: "Share an article (optional)",
     photo: "Your photo (optional)",
     photoButton: "Upload photo",
-    photoHint: "JPG or PNG, up to 3 MB.",
+    photoHint: "JPG or PNG, shown with your message if published.",
     photoTooBig: "Please choose a JPG or PNG under 3 MB.",
     consent: "I agree to the network’s code of conduct and to my data being used to process my application.",
     submit: "Submit application",
@@ -211,26 +237,26 @@ const en: NetworkContent = {
       },
     ],
     networkTitle: "Our network",
-    networkLead: "Women peacemakers and community leaders across the region and beyond, learning, practising and leading together.",
+    networkLead: "Peacemakers and community leaders across the region and beyond, learning, practising and leading together.",
     networkCta: "Join the network",
   },
 };
 
 const fr: NetworkContent = {
-  header: { eyebrow: "Réseau", lead: "Notre comité consultatif et un réseau grandissant de femmes leaders de la paix." },
+  header: { eyebrow: "Réseau", lead: "Notre comité consultatif et un réseau grandissant d’artisans de la paix et de leaders communautaires." },
   membership: {
     meta: {
       title: "Adhésion",
-      description: "Qui peut rejoindre le réseau des artisanes de paix Bridging Our Voices, ce que l’adhésion apporte et ce que nous demandons.",
+      description: "Qui peut rejoindre le réseau d’artisans de la paix Bridging Our Voices, ce que l’adhésion apporte et ce que nous demandons.",
     },
     title: "Qui peut adhérer, et ce que l’adhésion implique",
     columns: [
       {
         title: "Qui peut adhérer",
         items: [
-          "Femmes artisanes de paix et leaders communautaires",
+          "Artisans de la paix et leaders communautaires",
           "Responsables religieux et praticiens du dialogue interreligieux",
-          "Jeunes de 18 ans et plus, y compris réfugiés, déplacés et étudiants",
+          "Leaders de 30 ans et plus ayant commencé à travailler dans la consolidation de la paix et disposant d’une expérience dans ce domaine",
           "Formateurs, chercheurs et organisations partenaires",
         ],
       },
@@ -253,14 +279,33 @@ const fr: NetworkContent = {
         ],
       },
     ],
+    form: {
+      title: "Formulaire de demande d’adhésion",
+      lead: "Remplissez ce formulaire pour demander à rejoindre le réseau. Notre équipe examinera votre candidature et vous recontactera.",
+      experience: "Résumé de votre expérience",
+      experienceHint: "Un paragraphe de 150 mots maximum.",
+      wordCount: "{count} / {max} mots",
+      experienceTooLong: "Merci de limiter le résumé à 150 mots.",
+      cv: "Votre CV",
+      cvButton: "Ajouter votre CV",
+      cvHint: "PDF uniquement, 4 pages et 5 Mo maximum.",
+      cvError: "Veuillez choisir un PDF de 4 pages et 5 Mo maximum.",
+      motivation: "Qu’est-ce qui vous motive à nous rejoindre ?",
+      activities: "Quelles activités pourriez-vous mener avec nous ?",
+      connections: "Avec quelles organisations ou quels réseaux pourriez-vous nous mettre en relation ?",
+      connectionsHint: "Facultatif : institutions, groupes communautaires, médias ou partenaires dans votre pays.",
+      photoHint: "JPG ou PNG, 3 Mo maximum.",
+      submit: "Envoyer la demande",
+      success: "Merci, votre demande a bien été reçue. Notre équipe l’examinera et vous recontactera.",
+    },
   },
   join: {
     meta: {
       title: "Joignez votre voix à la nôtre",
-      description: "L’adhésion au réseau Bridging Our Voices est gratuite. Partagez vos informations, un résumé de votre expérience et votre CV : notre équipe vous recontactera.",
+      description: "L’adhésion au réseau Bridging Our Voices est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera.",
     },
     title: "Joignez votre voix à la nôtre",
-    lead: "L’adhésion est gratuite. Partagez vos informations, un résumé de votre expérience et votre CV : notre équipe examinera votre candidature et vous recontactera.",
+    lead: "L’adhésion est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera.",
     legend: "Vos informations",
     name: "Nom complet",
     gender: "Genre",
@@ -278,19 +323,11 @@ const fr: NetworkContent = {
       "Femmes, paix et sécurité", "Engagement des jeunes", "Guérison et résilience", "Citoyenneté et leadership",
       "Éducation et formation", "Recherche", "Médias",
     ]),
-    experience: "Résumé de votre expérience",
-    experienceHint: "Un paragraphe de 150 mots maximum.",
-    wordCount: "{count} / {max} mots",
-    experienceTooLong: "Merci de limiter le résumé à 150 mots.",
-    cv: "Votre CV",
-    cvButton: "Ajouter votre CV",
-    cvHint: "PDF uniquement, 4 pages et 5 Mo maximum.",
-    cvError: "Veuillez choisir un PDF de 4 pages et 5 Mo maximum.",
-    motivation: "Qu’est-ce qui vous motive à nous rejoindre ?",
-    activities: "Quelles activités pourriez-vous mener avec nous ?",
+    quote: "Un message de soutien à l’initiative",
+    article: "Partager un article (facultatif)",
     photo: "Votre photo (facultatif)",
     photoButton: "Ajouter une photo",
-    photoHint: "JPG ou PNG, 3 Mo maximum.",
+    photoHint: "JPG ou PNG, affichée avec votre message en cas de publication.",
     photoTooBig: "Veuillez choisir un JPG ou PNG de moins de 3 Mo.",
     consent: "J’accepte le code de conduite du réseau et l’utilisation de mes données pour traiter ma candidature.",
     submit: "Envoyer ma candidature",
@@ -349,26 +386,26 @@ const fr: NetworkContent = {
       },
     ],
     networkTitle: "Notre réseau",
-    networkLead: "Des femmes artisanes de paix et leaders communautaires de la région et d’ailleurs, qui apprennent, pratiquent et dirigent ensemble.",
+    networkLead: "Des artisans de la paix et des leaders communautaires de la région et d’ailleurs, qui apprennent, pratiquent et dirigent ensemble.",
     networkCta: "Rejoindre le réseau",
   },
 };
 
 const ar: NetworkContent = {
-  header: { eyebrow: "الشبكة", lead: "مجلسنا الاستشاري وشبكة متنامية من قيادات السلام النسائية." },
+  header: { eyebrow: "الشبكة", lead: "مجلسنا الاستشاري وشبكة متنامية من صناع السلام والقيادات المجتمعية." },
   membership: {
     meta: {
       title: "عناصر الانضمام",
-      description: "من يمكنه الانضمام إلى شبكة Bridging Our Voices لصانعات السلام، وماذا تكسب العضوات، وماذا نطلب منهن.",
+      description: "من يمكنه الانضمام إلى شبكة Bridging Our Voices لصناع السلام، وماذا يكسب الأعضاء، وماذا نطلب منهم.",
     },
     title: "من يمكنه الانضمام، وماذا تعني العضوية",
     columns: [
       {
         title: "من يمكنه الانضمام",
         items: [
-          "صانعات السلام والقيادات المجتمعية",
+          "صناع السلام والقيادات المجتمعية",
           "القيادات الدينية وممارسو الحوار بين الأديان",
-          "الشباب من سن ١٨ عامًا، بمن فيهم اللاجئون والنازحون والطلاب",
+          "القيادات من سن ٣٠ عامًا فأكثر، ممن بدأوا العمل في بناء السلام ولديهم خبرة فيه",
           "المدربون والباحثون والمؤسسات الشريكة",
         ],
       },
@@ -391,14 +428,33 @@ const ar: NetworkContent = {
         ],
       },
     ],
+    form: {
+      title: "استمارة طلب العضوية",
+      lead: "املأ/ي هذه الاستمارة للتقدم لعضوية الشبكة، وسيراجع فريقنا طلبك ويتواصل معك.",
+      experience: "ملخص خبرتك",
+      experienceHint: "فقرة واحدة لا تزيد على ١٥٠ كلمة.",
+      wordCount: "{count} / {max} كلمة",
+      experienceTooLong: "يرجى ألا يزيد الملخص على ١٥٠ كلمة.",
+      cv: "السيرة الذاتية",
+      cvButton: "رفع السيرة الذاتية",
+      cvHint: "ملف PDF فقط، لا يزيد على ٤ صفحات و٥ ميجابايت.",
+      cvError: "يرجى اختيار ملف PDF لا يزيد على ٤ صفحات و٥ ميجابايت.",
+      motivation: "ما الذي يدفعك للانضمام إلينا؟",
+      activities: "ما الأنشطة التي يمكنك تنفيذها معنا؟",
+      connections: "ما الجهات أو المؤسسات التي يمكنك أن توصلنا بها؟",
+      connectionsHint: "اختياري: مؤسسات أو مجموعات مجتمعية أو وسائل إعلام أو شركاء في بلدك.",
+      photoHint: "JPG أو PNG، حتى ٣ ميجابايت.",
+      submit: "إرسال طلب العضوية",
+      success: "شكرًا لك، تم استلام طلبك، وسيراجعه فريقنا ويتواصل معك.",
+    },
   },
   join: {
     meta: {
       title: "ضم صوتك لصوتنا",
-      description: "العضوية في شبكة Bridging Our Voices مجانية. شاركنا بياناتك وملخص خبرتك وسيرتك الذاتية، وسيتواصل معك فريقنا.",
+      description: "العضوية في شبكة Bridging Our Voices مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك.",
     },
     title: "ضم صوتك لصوتنا",
-    lead: "العضوية مجانية. شاركنا بياناتك وملخص خبرتك وسيرتك الذاتية، وسيراجع فريقنا طلبك ويتواصل معك.",
+    lead: "العضوية مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك.",
     legend: "بياناتك",
     name: "الاسم بالكامل",
     gender: "النوع",
@@ -416,19 +472,11 @@ const ar: NetworkContent = {
       "المرأة والسلام والأمن", "إشراك الشباب", "التعافي والصمود", "المواطنة والقيادة",
       "التعليم والتدريب", "البحث العلمي", "الإعلام",
     ]),
-    experience: "ملخص خبرتك",
-    experienceHint: "فقرة واحدة لا تزيد على ١٥٠ كلمة.",
-    wordCount: "{count} / {max} كلمة",
-    experienceTooLong: "يرجى ألا يزيد الملخص على ١٥٠ كلمة.",
-    cv: "السيرة الذاتية",
-    cvButton: "رفع السيرة الذاتية",
-    cvHint: "ملف PDF فقط، لا يزيد على ٤ صفحات و٥ ميجابايت.",
-    cvError: "يرجى اختيار ملف PDF لا يزيد على ٤ صفحات و٥ ميجابايت.",
-    motivation: "ما الذي يدفعك للانضمام إلينا؟",
-    activities: "ما الأنشطة التي يمكنك تنفيذها معنا؟",
+    quote: "مقولة تدعمنا بها",
+    article: "شارك/ي بمقال (اختياري)",
     photo: "صورتك (اختياري)",
     photoButton: "رفع صورة",
-    photoHint: "JPG أو PNG، حتى ٣ ميجابايت.",
+    photoHint: "JPG أو PNG، تظهر مع مقولتك عند النشر.",
     photoTooBig: "يُرجى اختيار صورة JPG أو PNG أقل من ٣ ميجابايت.",
     consent: "أوافق على ميثاق سلوك الشبكة وعلى استخدام بياناتي لمعالجة طلب الانضمام.",
     submit: "إرسال طلب الانضمام",
@@ -487,7 +535,7 @@ const ar: NetworkContent = {
       },
     ],
     networkTitle: "شبكتنا",
-    networkLead: "صانعات سلام وقيادات مجتمعية من المنطقة وخارجها، يتعلّمن ويمارسن ويقدن معًا.",
+    networkLead: "صناع سلام وقيادات مجتمعية من المنطقة وخارجها، يتعلّمون ويمارسون ويقودون معًا.",
     networkCta: "انضمي إلى الشبكة",
   },
 };

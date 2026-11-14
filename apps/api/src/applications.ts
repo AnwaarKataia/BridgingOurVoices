@@ -2,26 +2,31 @@ import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import { join } from "node:path";
 import type { FastifyInstance } from "fastify";
-import { count, desc, eq } from "drizzle-orm";
+import { and, count, desc, eq } from "drizzle-orm";
 import { dataDir, db, schema } from "./db/client.js";
 import { requireUser } from "./auth/session.js";
 
 /**
- * Dashboard: membership applications ("Add your voice to ours").
+ * Dashboard: submissions from the two network forms — kind "member" (membership applications, Membership
+ * page) and kind "voice" ("Add your voice to ours", Join page).
  * The CV and photo are private: only signed-in team members can open them, through these routes.
  */
 const STATUSES = ["pending", "approved", "rejected"] as const;
 type Status = (typeof STATUSES)[number];
+const KINDS = ["member", "voice"] as const;
+type Kind = (typeof KINDS)[number];
 const uploadsDir = join(dataDir, "uploads");
 const ID = /^[0-9a-f-]{36}$/;
 
 export async function applicationRoutes(app: FastifyInstance) {
-  /** List, newest first, optionally by status; with counts per status for the tabs. */
-  app.get<{ Querystring: { status?: string } }>("/admin/applications", { preHandler: requireUser }, async (req) => {
+  /** List of one kind (default "member"), newest first, optionally by status; with counts for the tabs. */
+  app.get<{ Querystring: { status?: string; kind?: string } }>("/admin/applications", { preHandler: requireUser }, async (req) => {
     const status = STATUSES.includes(req.query.status as Status) ? (req.query.status as Status) : null;
+    const kind: Kind = KINDS.includes(req.query.kind as Kind) ? (req.query.kind as Kind) : "member";
     const items = await db
       .select({
         id: schema.applications.id,
+        kind: schema.applications.kind,
         name: schema.applications.name,
         email: schema.applications.email,
         country: schema.applications.country,
@@ -31,17 +36,21 @@ export async function applicationRoutes(app: FastifyInstance) {
         createdAt: schema.applications.createdAt,
       })
       .from(schema.applications)
-      .where(status ? eq(schema.applications.status, status) : undefined)
+      .where(and(eq(schema.applications.kind, kind), status ? eq(schema.applications.status, status) : undefined))
       .orderBy(desc(schema.applications.createdAt))
       .limit(500);
     const counts = await db
-      .select({ status: schema.applications.status, n: count() })
+      .select({ kind: schema.applications.kind, status: schema.applications.status, n: count() })
       .from(schema.applications)
-      .groupBy(schema.applications.status);
+      .groupBy(schema.applications.kind, schema.applications.status);
+    const n = (k: Kind, s?: Status) => counts.filter((c) => c.kind === k && (!s || c.status === s)).reduce((a, c) => a + c.n, 0);
     return {
       ok: true,
+      kind,
       items: items.map((i) => ({ ...i, hasCv: !!i.hasCv })),
-      counts: Object.fromEntries(STATUSES.map((s) => [s, counts.find((c) => c.status === s)?.n ?? 0])),
+      counts: Object.fromEntries(STATUSES.map((s) => [s, n(kind, s)])),
+      // Pending per kind, for the badges on the two kinds
+      pending: Object.fromEntries(KINDS.map((k) => [k, n(k, "pending")])),
     };
   });
 

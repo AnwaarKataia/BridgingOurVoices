@@ -80,7 +80,7 @@ const en: ActivitiesContent = {
     why: [
       "Completely free online training",
       "Certificate of participation from the initiative on meeting the attendance requirement",
-      "Regional and international networking, and membership of the Bridging Our Voices network of women peacebuilders",
+      "Regional and international networking, and membership of the Bridging Our Voices network of peacebuilders",
     ],
     cta: "Register now",
     modulesLabel: "Core modules",
@@ -179,7 +179,7 @@ const fr: ActivitiesContent = {
     why: [
       "Formation en ligne entièrement gratuite",
       "Certificat de participation délivré par l’initiative selon le taux de présence requis",
-      "Mise en réseau régionale et internationale et adhésion au réseau des artisanes de paix Bridging Our Voices",
+      "Mise en réseau régionale et internationale et adhésion au réseau d’artisans de la paix Bridging Our Voices",
     ],
     cta: "S’inscrire",
     modulesLabel: "Modules principaux",
@@ -278,7 +278,7 @@ const ar: ActivitiesContent = {
     why: [
       "تدريب إلكتروني مجاني بالكامل",
       "شهادة مشاركة معتمدة من المبادرة عند استكمال نسبة الحضور المطلوبة",
-      "فرصة للتشبيك الإقليمي والدولي والانضمام لشبكة «أصواتنا جسور» لصانعات السلام",
+      "فرصة للتشبيك الإقليمي والدولي والانضمام لشبكة «أصواتنا جسور» لصناع السلام",
     ],
     cta: "سجّل/ي الآن",
     modulesLabel: "المحاور الرئيسية",

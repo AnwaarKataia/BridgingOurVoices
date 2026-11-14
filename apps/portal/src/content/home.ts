@@ -45,7 +45,7 @@ const en: HomeContent = {
       "Registration open: first Arabic-language cohort of our digital training, deadline 12 Nov 2026",
       "Officially launching Bridging Our Voices: Women Leading Dialogue and Peacebuilding",
       "Free one-month course on Zoom · certificate of participation",
-      "Join the Bridging Our Voices network of women peacebuilders",
+      "Join the Bridging Our Voices network of peacebuilders",
     ],
   },
   announcement: {
@@ -105,7 +105,7 @@ const fr: HomeContent = {
       "Inscriptions ouvertes : première promotion en arabe de notre formation numérique, date limite 12 nov. 2026",
       "Lancement officiel de Bridging Our Voices",
       "Formation gratuite d’un mois sur Zoom · certificat de participation",
-      "Rejoignez le réseau des artisanes de paix Bridging Our Voices",
+      "Rejoignez le réseau d’artisans de la paix Bridging Our Voices",
     ],
   },
   announcement: {
@@ -165,7 +165,7 @@ const ar: HomeContent = {
       "فتح باب التسجيل في الدفعة الأولى باللغة العربية من دوراتنا التدريبية الرقمية، آخر موعد ١٢ نوفمبر ٢٠٢٦",
       "الإطلاق الرسمي لمبادرة «أصواتنا جسور: المرأة لقيادة الحوار وبناء السلام»",
       "دورة مجانية لمدة شهر عبر Zoom · شهادة مشاركة معتمدة",
-      "انضمي إلى شبكة «أصواتنا جسور» لصانعات السلام",
+      "انضم/ي إلى شبكة «أصواتنا جسور» لصناع السلام",
     ],
   },
   announcement: {

@@ -57,14 +57,22 @@ const en: PrivacyContent = {
         { list: ["Your email address."] },
         { h: "Contact form" },
         { list: ["Your name and email address.", "The subject you choose and your message."] },
-        { h: "Membership application (“Add your voice to ours”)" },
+        { h: "“Add your voice to ours”" },
         {
           list: [
             "Your name, gender, job title, organisation (optional), country and email address.",
             "Your religion, and your denomination if you choose to give it.",
-            "Your fields of work, a summary of your experience (up to 150 words), your CV (PDF), what motivates you to join, and the activities you could carry out with us.",
+            "Your fields of work, your statement of support and, if you wish, an article.",
             "A photo, if you choose to upload one.",
             "The language of the page you used.",
+          ],
+        },
+        { h: "Membership application" },
+        {
+          list: [
+            "The same personal details as above (name, gender, job title, organisation, country, email, religion and fields of work).",
+            "A summary of your experience (up to 150 words), your CV (PDF), what motivates you to join, the activities you could carry out with us and, if you wish, the organisations you could connect us with.",
+            "A photo, if you choose to upload one.",
           ],
         },
         { h: "When you visit the site" },
@@ -94,7 +102,7 @@ const en: PrivacyContent = {
     {
       title: "What we may publish",
       blocks: [
-        { p: "If your application is accepted, we may show your name, role, country, photo and a short summary of your experience on the “Our members” page. We will only do this after our team has reviewed it and you have agreed. You can ask us to remove it at any time. Your CV is only read by our team and is never published." },
+        { p: "If your statement or application is accepted, we may show your name, role, country, photo and your statement (or a short summary of your experience) on the site. We will only do this after our team has reviewed it and you have agreed. You can ask us to remove it at any time. Your CV is only read by our team and is never published." },
       ],
     },
     {
@@ -183,14 +191,22 @@ const fr: PrivacyContent = {
         { list: ["Votre adresse e-mail."] },
         { h: "Formulaire de contact" },
         { list: ["Votre nom et votre adresse e-mail.", "L’objet choisi et votre message."] },
-        { h: "Demande d’adhésion (« Joignez votre voix à la nôtre »)" },
+        { h: "« Joignez votre voix à la nôtre »" },
         {
           list: [
             "Votre nom, genre, fonction, organisation (facultatif), pays et adresse e-mail.",
             "Votre religion, et votre confession si vous choisissez de l’indiquer.",
-            "Vos domaines d’action, un résumé de votre expérience (150 mots maximum), votre CV (PDF), ce qui vous motive à nous rejoindre et les activités que vous pourriez mener avec nous.",
+            "Vos domaines d’action, votre message de soutien et, si vous le souhaitez, un article.",
             "Une photo, si vous choisissez d’en ajouter une.",
             "La langue de la page utilisée.",
+          ],
+        },
+        { h: "Demande d’adhésion" },
+        {
+          list: [
+            "Les mêmes informations personnelles que ci-dessus (nom, genre, fonction, organisation, pays, e-mail, religion et domaines d’action).",
+            "Un résumé de votre expérience (150 mots maximum), votre CV (PDF), ce qui vous motive à nous rejoindre, les activités que vous pourriez mener avec nous et, si vous le souhaitez, les organisations avec lesquelles vous pourriez nous mettre en relation.",
+            "Une photo, si vous choisissez d’en ajouter une.",
           ],
         },
         { h: "Lorsque vous visitez le site" },
@@ -220,7 +236,7 @@ const fr: PrivacyContent = {
     {
       title: "Ce que nous pouvons publier",
       blocks: [
-        { p: "Si votre candidature est acceptée, nous pouvons afficher votre nom, votre fonction, votre pays, votre photo et un court résumé de votre expérience sur la page « Nos membres ». Nous ne le faisons qu’après examen par notre équipe et avec votre accord. Vous pouvez demander leur retrait à tout moment. Votre CV n’est lu que par notre équipe et n’est jamais publié." },
+        { p: "Si votre message ou votre candidature est accepté, nous pouvons afficher sur le site votre nom, votre fonction, votre pays, votre photo et votre message (ou un court résumé de votre expérience). Nous ne le faisons qu’après examen par notre équipe et avec votre accord. Vous pouvez demander leur retrait à tout moment. Votre CV n’est lu que par notre équipe et n’est jamais publié." },
       ],
     },
     {
@@ -309,14 +325,22 @@ const ar: PrivacyContent = {
         { list: ["بريدك الإلكتروني."] },
         { h: "نموذج التواصل" },
         { list: ["اسمك وبريدك الإلكتروني.", "الموضوع الذي تختاره ورسالتك."] },
-        { h: "طلب الانضمام («ضم صوتك لصوتنا»)" },
+        { h: "«ضم صوتك لصوتنا»" },
         {
           list: [
             "اسمك، والنوع، والمسمى الوظيفي، والمؤسسة (اختياري)، والدولة، والبريد الإلكتروني.",
             "ديانتك، والمذهب إذا اخترت ذكره.",
-            "مجالات عملك، وملخص خبرتك (حتى ١٥٠ كلمة)، وسيرتك الذاتية (PDF)، وما يدفعك للانضمام إلينا، والأنشطة التي يمكنك تنفيذها معنا.",
+            "مجالات عملك، ومقولتك الداعمة، ومقالًا إذا رغبت.",
             "صورة، إذا اخترت رفعها.",
             "لغة الصفحة التي استخدمتها.",
+          ],
+        },
+        { h: "طلب العضوية" },
+        {
+          list: [
+            "نفس البيانات الشخصية المذكورة أعلاه (الاسم، والنوع، والمسمى الوظيفي، والمؤسسة، والدولة، والبريد الإلكتروني، والديانة، ومجالات العمل).",
+            "ملخص خبرتك (حتى ١٥٠ كلمة)، وسيرتك الذاتية (PDF)، وما يدفعك للانضمام إلينا، والأنشطة التي يمكنك تنفيذها معنا، والجهات التي يمكنك أن توصلنا بها إذا رغبت.",
+            "صورة، إذا اخترت رفعها.",
           ],
         },
         { h: "عند زيارتك للموقع" },
@@ -346,7 +370,7 @@ const ar: PrivacyContent = {
     {
       title: "ما قد ننشره",
       blocks: [
-        { p: "إذا قُبل طلبك، قد نعرض اسمك ودورك ودولتك وصورتك وملخصًا قصيرًا لخبرتك في صفحة «أعضاؤنا». ولا نفعل ذلك إلا بعد مراجعة فريقنا وبموافقتك، ويمكنك أن تطلب حذفها في أي وقت. أما سيرتك الذاتية فلا يطّلع عليها إلا فريقنا، ولا تُنشر أبدًا." },
+        { p: "إذا قُبلت مقولتك أو طلبك، قد نعرض على الموقع اسمك ودورك ودولتك وصورتك ومقولتك (أو ملخصًا قصيرًا لخبرتك). ولا نفعل ذلك إلا بعد مراجعة فريقنا وبموافقتك، ويمكنك أن تطلب حذفها في أي وقت. أما سيرتك الذاتية فلا يطّلع عليها إلا فريقنا، ولا تُنشر أبدًا." },
       ],
     },
     {

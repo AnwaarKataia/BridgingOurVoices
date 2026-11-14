@@ -17,10 +17,6 @@ type Props = {
 };
 
 const MAX_PHOTO = 3 * 1024 * 1024;
-/** Same limits as the API (apps/api/src/network.ts): the API also checks the PDF's page count. */
-const MAX_CV = 5 * 1024 * 1024;
-const MAX_WORDS = 150;
-const countWords = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 const input =
   "w-full rounded-bov border border-line-input bg-white px-3.5 text-[15px] text-ink transition focus:border-sky focus:outline-2 focus:outline-sky";
 
@@ -33,19 +29,11 @@ function Label({ text, required }: { text: string; required?: boolean }) {
   );
 }
 
-/**
- * "Add your voice to ours" membership application (multipart): details, experience summary (max 150 words),
- * CV (PDF, max 4 pages), motivation, activities, optional photo. Shown on the Membership and Join pages.
- */
+/** "Add your voice to ours" membership application (multipart, with optional photo). */
 export function JoinForm({ locale, join, countries, privacy }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [preview, setPreview] = useState<string | null>(null);
   const [photoError, setPhotoError] = useState(false);
-  const [words, setWords] = useState(0);
-  const [cvName, setCvName] = useState("");
-  const [cvError, setCvError] = useState(false);
-  const [errorText, setErrorText] = useState("");
-  const nf = new Intl.NumberFormat(locale === "ar" ? "ar-EG" : locale);
 
   useEffect(() => () => { if (preview) URL.revokeObjectURL(preview); }, [preview]);
 
@@ -63,50 +51,19 @@ export function JoinForm({ locale, join, countries, privacy }: Props) {
     setPreview(URL.createObjectURL(file));
   }
 
-  function onCv(e: ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    setCvError(false);
-    setCvName("");
-    if (!file) return;
-    const isPdf = file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf");
-    if (!isPdf || file.size > MAX_CV) {
-      setCvError(true);
-      e.target.value = "";
-      return;
-    }
-    setCvName(file.name);
-  }
-
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const el = e.currentTarget;
     const data = new FormData(el);
-    if (countWords(String(data.get("experience") ?? "")) > MAX_WORDS) {
-      setStatus("error");
-      setErrorText(join.experienceTooLong);
-      return;
-    }
     data.set("locale", locale);
     setStatus("sending");
-    setErrorText("");
     try {
       const res = await fetch(`${apiUrl}/network/apply`, { method: "POST", body: data });
-      if (!res.ok) {
-        // Point to the field the API rejected when it is one the visitor can fix
-        const body = (await res.json().catch(() => ({}))) as { errors?: string[] };
-        const errs = body.errors ?? [];
-        if (errs.includes("cv") || errs.includes("cv_pages")) setCvError(true);
-        setErrorText(errs.includes("cv") || errs.includes("cv_pages") ? join.cvError : errs.includes("experience") ? join.experienceTooLong : join.error);
-        setStatus("error");
-        return;
-      }
+      if (!res.ok) throw new Error(String(res.status));
       setStatus("done");
       el.reset();
       setPreview(null);
-      setWords(0);
-      setCvName("");
     } catch {
-      setErrorText(join.error);
       setStatus("error");
     }
   }
@@ -188,48 +145,14 @@ export function JoinForm({ locale, join, countries, privacy }: Props) {
           </div>
         </fieldset>
 
-        {/* Experience summary: one paragraph of at most 150 words, with a live word count */}
         <label className="flex flex-col gap-2">
-          <Label text={join.experience} required />
-          <textarea
-            name="experience"
-            required
-            minLength={10}
-            maxLength={2000}
-            rows={6}
-            aria-describedby="experience-hint"
-            onChange={(e) => setWords(countWords(e.target.value))}
-            className={`${input} py-3 leading-relaxed ${words > MAX_WORDS ? "border-danger" : ""}`}
-          />
-          <span id="experience-hint" className="flex flex-wrap justify-between gap-x-4 text-label">
-            <span className="text-ink-soft">{join.experienceHint}</span>
-            <span aria-live="polite" className={words > MAX_WORDS ? "font-semibold text-danger" : "text-ink-soft"}>
-              {join.wordCount.replace("{count}", nf.format(words)).replace("{max}", nf.format(MAX_WORDS))}
-            </span>
-          </span>
-        </label>
-
-        {/* CV: PDF only, up to 4 pages and 5 MB */}
-        <div className="flex flex-col gap-2">
-          <Label text={join.cv} required />
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <label className="flex h-10 w-fit cursor-pointer items-center rounded-bov border border-navy px-[18px] text-sm font-semibold text-navy transition hover:bg-navy hover:text-on-dark has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-sky">
-              {join.cvButton}
-              <input type="file" name="cv" required accept="application/pdf,.pdf" onChange={onCv} className="sr-only" />
-            </label>
-            {cvName && <span dir="ltr" className="max-w-full truncate text-sm text-ink">{cvName}</span>}
-          </div>
-          <span className={`text-label ${cvError ? "text-danger" : "text-ink-soft"}`}>{cvError ? join.cvError : join.cvHint}</span>
-        </div>
-
-        <label className="flex flex-col gap-2">
-          <Label text={join.motivation} required />
-          <textarea name="motivation" required minLength={10} maxLength={2000} rows={4} className={`${input} py-3 leading-relaxed`} />
+          <Label text={join.quote} required />
+          <textarea name="quote" required minLength={10} maxLength={600} rows={4} className={`${input} py-3 leading-relaxed`} />
         </label>
 
         <label className="flex flex-col gap-2">
-          <Label text={join.activities} required />
-          <textarea name="activities" required minLength={10} maxLength={2000} rows={4} className={`${input} py-3 leading-relaxed`} />
+          <Label text={join.article} />
+          <textarea name="article" maxLength={10000} rows={8} className={`${input} py-3 leading-relaxed`} />
         </label>
 
         <div className="flex flex-col gap-2">
@@ -269,7 +192,7 @@ export function JoinForm({ locale, join, countries, privacy }: Props) {
             {status === "sending" ? join.sending : join.submit}
           </button>
           <p role="status" className={`m-0 text-sm empty:hidden ${status === "error" ? "text-danger" : "text-blue-deep"}`}>
-            {status === "done" ? join.success : status === "error" ? errorText || join.error : ""}
+            {status === "done" ? join.success : status === "error" ? join.error : ""}
           </p>
         </div>
       </div>

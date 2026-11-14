@@ -58,11 +58,18 @@ export const contactMessages = pgTable(
   (t) => [index("contact_messages_status_idx").on(t.status)],
 );
 
-/** Membership applications (portal /network/join). */
+/**
+ * Submissions from the two network forms (owner, 2026-11-14):
+ *  - kind "voice": "Add your voice to ours" (Join page): details + statement (quote) + optional article,
+ *    which may be published on the site;
+ *  - kind "member": membership application (Membership page): details + experience, CV, motivation,
+ *    activities, organisations they could connect us with.
+ */
 export const applications = pgTable(
   "applications",
   {
     id: uuid("id").primaryKey(),
+    kind: text("kind", { enum: ["voice", "member"] }).notNull().default("voice"),
     name: text("name").notNull(),
     gender: text("gender").notNull(),
     job: text("job").notNull(),
@@ -72,14 +79,14 @@ export const applications = pgTable(
     religion: text("religion").notNull(),
     subreligion: text("subreligion").notNull().default(""),
     fields: jsonb("fields").$type<string[]>().notNull().default(sql`'[]'::jsonb`),
-    /** Old form fields (before 2026-11-14), kept for earlier applications. */
+    /** "voice" only: statement of support and optional article. */
     quote: text("quote").notNull().default(""),
     article: text("article").notNull().default(""),
-    /** Summary of experience, max 150 words (owner 2026-11-14). */
+    /** "member" only: experience summary (max 150 words), motivation, activities, organisations they could connect us with. */
     experience: text("experience").notNull().default(""),
     motivation: text("motivation").notNull().default(""),
-    /** Activities the applicant could carry out with the network. */
     activities: text("activities").notNull().default(""),
+    connections: text("connections").notNull().default(""),
     /** Private files in apps/api/data/uploads (served only to signed-in dashboard users). */
     photo: text("photo"),
     cv: text("cv"),
@@ -89,7 +96,7 @@ export const applications = pgTable(
     reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
     createdAt: createdAt(),
   },
-  (t) => [index("applications_status_idx").on(t.status)],
+  (t) => [index("applications_status_idx").on(t.status), index("applications_kind_idx").on(t.kind)],
 );
 
 /**

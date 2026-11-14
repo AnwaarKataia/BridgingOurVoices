@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { count, eq, isNull } from "drizzle-orm";
+import { and, count, eq, isNull } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
 import { dummyHash, hashPassword, passwordProblem, verifyPassword } from "./password.js";
 import { endOtherSessions, endSession, publicUser, requireUser, sessionUser, startSession } from "./session.js";
@@ -94,11 +94,14 @@ export async function authRoutes(app: FastifyInstance) {
   /** Overview numbers for the dashboard home. */
   app.get("/admin/stats", { preHandler: requireUser }, async () => {
     const one = async (q: Promise<{ n: number }[]>) => (await q)[0]?.n ?? 0;
-    const [newMessages, pendingApplications, subscribers] = await Promise.all([
+    const pending = (kind: "member" | "voice") =>
+      one(db.select({ n: count() }).from(schema.applications).where(and(eq(schema.applications.status, "pending"), eq(schema.applications.kind, kind))));
+    const [newMessages, pendingMembers, pendingVoices, subscribers] = await Promise.all([
       one(db.select({ n: count() }).from(schema.contactMessages).where(eq(schema.contactMessages.status, "new"))),
-      one(db.select({ n: count() }).from(schema.applications).where(eq(schema.applications.status, "pending"))),
+      pending("member"),
+      pending("voice"),
       one(db.select({ n: count() }).from(schema.subscribers).where(isNull(schema.subscribers.unsubscribedAt))),
     ]);
-    return { ok: true, stats: { newMessages, pendingApplications, subscribers } };
+    return { ok: true, stats: { newMessages, pendingMembers, pendingVoices, subscribers } };
   });
 }

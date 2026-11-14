@@ -10,6 +10,7 @@ export const metadata: Metadata = { title: "Application" };
 type Status = "pending" | "approved" | "rejected";
 type Application = {
   id: string;
+  kind: "member" | "voice";
   name: string;
   gender: string;
   job: string;
@@ -24,6 +25,7 @@ type Application = {
   experience: string;
   motivation: string;
   activities: string;
+  connections: string;
   locale: string;
   status: Status;
   reviewedAt: string | null;
@@ -72,24 +74,31 @@ export default async function ApplicationPage({ params }: { params: Promise<{ id
     { k: a.labels.locale, v: langNames[app.locale] ?? app.locale },
     { k: a.labels.date, v: fmt.format(new Date(app.createdAt)) },
   ];
-  // Long answers; the two old-form fields only show for applications sent before 2026-11-14
-  const texts = [
-    { k: a.labels.experience, v: app.experience, extra: app.experience ? `${nf.format(words)} ${a.words}` : "" },
-    { k: a.labels.motivation, v: app.motivation },
-    { k: a.labels.activities, v: app.activities },
-    { k: a.labels.quote, v: app.quote },
-    { k: a.labels.article, v: app.article },
-  ].filter((x) => x.v);
+  // Long answers: membership applications vs "Add your voice to ours" (statement + article)
+  const texts = (
+    app.kind === "member"
+      ? [
+          { k: a.labels.experience, v: app.experience, extra: app.experience ? `${nf.format(words)} ${a.words}` : "" },
+          { k: a.labels.motivation, v: app.motivation },
+          { k: a.labels.activities, v: app.activities },
+          { k: a.labels.connections, v: app.connections },
+        ]
+      : [
+          { k: a.labels.quote, v: app.quote },
+          { k: a.labels.article, v: app.article },
+        ]
+  ).filter((x) => x.v);
 
   return (
     <div className="flex flex-col gap-6">
-      <Link href="/applications" className="self-start text-sm font-semibold text-blue hover:text-navy">
+      <Link href={`/applications?kind=${app.kind}`} className="self-start text-sm font-semibold text-blue hover:text-navy">
         <span aria-hidden className="me-1 inline-block rtl:-scale-x-100">←</span>
         {a.back}
       </Link>
 
       <div className="flex flex-wrap items-center gap-3">
         <h1 className="font-display text-h2 font-normal">{app.name}</h1>
+        <span className="rounded-bov border border-line px-2 py-1 text-xs font-semibold text-ink-soft">{a.kinds[app.kind]}</span>
         <span className={`rounded-bov px-2 py-1 text-xs font-semibold ${statusTone[app.status]}`}>{a.status[app.status]}</span>
       </div>
 
@@ -139,6 +148,8 @@ export default async function ApplicationPage({ params }: { params: Promise<{ id
             )}
           </section>
 
+          {/* Only membership applications have a CV */}
+          {app.kind === "member" && (
           <section className="flex flex-col gap-3 rounded-bov border border-line bg-white p-5">
             <h2 className="text-sm font-semibold text-ink">{a.cv}</h2>
             {app.hasCv ? (
@@ -154,6 +165,7 @@ export default async function ApplicationPage({ params }: { params: Promise<{ id
               <p className="text-sm text-ink-soft">{a.noCv}</p>
             )}
           </section>
+          )}
 
           <section className="flex flex-col gap-3 rounded-bov border border-line bg-white p-5">
             <h2 className="text-sm font-semibold text-ink">{a.photo}</h2>
