@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { PDFDocument } from "pdf-lib";
 import { addNetworkApplication, saveUpload } from "./store.js";
+import { loadSeed } from "./content/seed.js";
 
 /**
  * The two network forms (owner, 2026-11-14):
@@ -22,6 +23,15 @@ const MAX_PHOTO = 3 * 1024 * 1024;
 const MAX_CV = 5 * 1024 * 1024;
 const MAX_CV_PAGES = 4;
 export const MAX_EXPERIENCE_WORDS = 150;
+/** Fields of work: at most 3 (owner, 2026-11-14). */
+export const MAX_FIELDS = 3;
+
+/** religion code → its denomination codes, from the site content (network.join.religions). */
+type ReligionList = Map<string, Set<string>>;
+async function loadReligions(): Promise<ReligionList> {
+  const seed = (await loadSeed()) as unknown as { network: { en: { join: { religions: { value: string; denominations: { value: string }[] }[] } } } };
+  return new Map(seed.network.en.join.religions.map((r) => [r.value, new Set(r.denominations.map((d) => d.value))]));
+}
 
 const isEmail = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s) && s.length <= 254;
 const len = (s: string, min: number, max: number) => s.trim().length >= min && s.trim().length <= max;
@@ -70,7 +80,7 @@ async function parse(req: FastifyRequest): Promise<Parsed | null> {
 }
 
 /** The personal details both forms share; pushes field names that fail into `errors`. */
-function checkDetails({ fields, work, files }: Parsed, errors: string[]) {
+function checkDetails({ fields, work, files }: Parsed, errors: string[], religions: ReligionList) {
   const f = (k: string) => (fields[k] ?? "").trim();
   if (!len(f("name"), 2, 120)) errors.push("name");
   if (!genders.includes(f("gender"))) errors.push("gender");
@@ -78,9 +88,22 @@ function checkDetails({ fields, work, files }: Parsed, errors: string[]) {
   if (f("org").length > 160) errors.push("org");
   if (!/^[A-Z]{2}$/.test(f("country"))) errors.push("country");
   if (!isEmail(f("email"))) errors.push("email");
-  if (!len(f("religion"), 2, 80)) errors.push("religion");
-  if (f("subreligion").length > 80) errors.push("subreligion");
-  if (work.some((w) => !workFields.includes(w))) errors.push("fields");
+  // Religion from the list ("other" → the typed name); denomination from that religion's list or typed
+  let religion = f("religion");
+  let subreligion = f("subreligion");
+  if (!religions.has(religion)) errors.push("religion");
+  else if (religion === "other") {
+    if (!len(f("religionOther"), 2, 80)) errors.push("religionOther");
+    religion = f("religionOther");
+  }
+  const denominations = religions.get(f("religion"));
+  if (subreligion && !denominations?.has(subreligion)) errors.push("subreligion");
+  else if (subreligion === "other") {
+    if (f("subreligionOther").length > 80) errors.push("subreligionOther");
+    subreligion = f("subreligionOther");
+  }
+  const chosen = [...new Set(work)];
+  if (chosen.some((w) => !workFields.includes(w)) || chosen.length > MAX_FIELDS) errors.push("fields");
   if (f("consent") !== "yes") errors.push("consent");
   const photo = files.photo;
   const ext = photo ? imageType(photo) : null;
@@ -95,10 +118,12 @@ function checkDetails({ fields, work, files }: Parsed, errors: string[]) {
       org: f("org"),
       country: f("country"),
       email: f("email"),
-      religion: f("religion"),
-      subreligion: f("subreligion"),
-      fields: [...new Set(work)],
+      religion,
+      subreligion,
+      fields: chosen,
       locale: ["en", "fr", "ar"].includes(f("locale")) ? f("locale") : "en",
+      // Optional box "may be published on the site": publishing in the dashboard needs it
+      publishConsent: f("publish") === "yes",
     },
   };
 }
@@ -106,6 +131,7 @@ function checkDetails({ fields, work, files }: Parsed, errors: string[]) {
 const reject = (reply: FastifyReply, errors: string[]) => reply.code(400).send({ ok: false, errors });
 
 export async function networkRoutes(app: FastifyInstance) {
+  const religions = await loadReligions();
   /** "Add your voice to ours": statement of support (required) + optional article. */
   app.post("/network/apply", async (req, reply) => {
     const parsed = await parse(req);
@@ -114,7 +140,7 @@ export async function networkRoutes(app: FastifyInstance) {
     if (parsed.fields.website) return reply.code(201).send({ ok: true });
 
     const errors: string[] = [];
-    const { f, ext, details } = checkDetails(parsed, errors);
+    const { f, ext, details } = checkDetails(parsed, errors, religions);
     if (!len(f("quote"), 10, 600)) errors.push("quote");
     if (f("article").length > 10000) errors.push("article");
     if (errors.length) return reject(reply, errors);
@@ -132,7 +158,7 @@ export async function networkRoutes(app: FastifyInstance) {
     if (parsed.fields.website) return reply.code(201).send({ ok: true });
 
     const errors: string[] = [];
-    const { f, ext, details } = checkDetails(parsed, errors);
+    const { f, ext, details } = checkDetails(parsed, errors, religions);
     if (!len(f("experience"), 10, 2000) || wordCount(f("experience")) > MAX_EXPERIENCE_WORDS) errors.push("experience");
     if (!len(f("motivation"), 10, 2000)) errors.push("motivation");
     if (!len(f("activities"), 10, 2000)) errors.push("activities");

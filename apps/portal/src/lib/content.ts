@@ -47,5 +47,5 @@ export async function loadContent<T>(key: string, locale: Locale, fallback: T): 
   }
 }
 
-/** Image paths: uploads live on the API (/media/…, proxied by the portal) and are served as-is. */
-export const isUploaded = (src: string) => src.startsWith("/media/");
+/** Image paths: uploads and published photos live on the API (proxied by the portal) and are served as-is. */
+export const isUploaded = (src: string) => src.startsWith("/media/") || src.startsWith("/public-photo/");

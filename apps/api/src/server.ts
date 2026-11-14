@@ -8,6 +8,7 @@ import { addContactMessage, addSubscriber } from "./store.js";
 import { multipartLimits, networkRoutes } from "./network.js";
 import { authRoutes } from "./auth/routes.js";
 import { applicationRoutes } from "./applications.js";
+import { inboxRoutes } from "./inbox.js";
 import { contentRoutes } from "./content/routes.js";
 import { mediaRoutes } from "./content/media.js";
 import { syncSeed } from "./content/seed.js";
@@ -34,6 +35,7 @@ await app.register(multipart, { limits: multipartLimits, throwFileSizeLimit: tru
 await app.register(networkRoutes);
 await app.register(authRoutes);
 await app.register(applicationRoutes);
+await app.register(inboxRoutes);
 // Page content (seeded from apps/api/seed/content.json on first run) + images
 await syncSeed((m) => app.log.info(m));
 await app.register(contentRoutes);

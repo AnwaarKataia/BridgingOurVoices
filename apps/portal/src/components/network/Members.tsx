@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { ContentImage } from "../ContentImage";
 import type { NetworkContent } from "@/content/network";
@@ -7,7 +8,7 @@ import { btn } from "../ui";
 const tileShades = ["bg-navy-raised", "bg-navy-deep", "bg-navy-divider/60", "bg-navy-divider", "bg-navy-line/60"];
 
 /** Our members page body: team cards with arched portraits, then the "Our network" band. */
-export function Members({ members, joinHref }: { members: NetworkContent["members"]; joinHref: string }) {
+export function Members({ members, joinHref, published }: { members: NetworkContent["members"]; joinHref: string; published?: ReactNode }) {
   return (
     <>
       <section>
@@ -42,6 +43,9 @@ export function Members({ members, joinHref }: { members: NetworkContent["member
           </ul>
         </div>
       </section>
+
+      {/* Accepted members published from the dashboard (hidden when none) */}
+      {published}
 
       <section className="bg-navy" aria-labelledby="network-band-title">
         <div className="container-site flex flex-col gap-8 py-14 md:py-[88px]">

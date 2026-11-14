@@ -188,6 +188,12 @@ The language switcher (EN / FR / AR) is in the thin language bar at the top of e
 | GET | `/admin/applications?kind=&status=` | Signed in. `kind`: `member` (default) or `voice`. Newest first, plus counts per status for that kind, and pending per kind |
 | GET / PATCH | `/admin/applications/:id` | Signed in. One application · `{ status }` sets the decision, with who and when (`pending` clears it) |
 | GET | `/admin/applications/:id/cv` · `/photo` | Signed in. Private files (`?download=1` to save), never cached |
+| PATCH | `/admin/applications/:id` | Signed in. `{ status?, note?, published? }`. Statuses: `pending` (new), `review`, `hold` (comment later), `approved`, `rejected`. `published: true` needs the sender's `publishConsent` (otherwise 409 `no_consent`) and also sets `approved`; rejecting removes it from the site; any publish change refreshes the portal |
+| GET | `/public/voices` · `/public/members` | Public. Published "Add your voice" statements / members, without email, religion or CV. The photo is at `/public/photo/:id`, only while published (the portal proxies `/public-photo/:id`) |
+| GET / PATCH | `/admin/messages` · `/admin/messages/:id` | Signed in. Contact messages by status (`new`, `review`, `hold`, `replied`, `archived`) with counts · `{ status?, note? }` (who and when are saved) |
+| GET / DELETE | `/admin/subscribers` · `/admin/subscribers/:id` | Signed in. Active or unsubscribed (`?show=unsubscribed`, `?q=` search) · unsubscribe, or `?remove=1` to delete completely |
+| GET | `/admin/subscribers.csv` | Signed in. Active subscribers as a CSV file for Excel (UTF-8 with BOM; cells starting with `= + - @` are neutralised) |
+| GET | `/admin/recent` | Signed in. The latest 12 submissions of every kind, for the overview |
 
 **Database tables** (`apps/api/src/db/schema.ts`):
 - `users`: email, name, role `admin|editor`, scrypt password hash, disabled, last_login_at.
@@ -234,9 +240,10 @@ Field rules:
 - `org`: optional.
 - `country`: an ISO code, e.g. `EG`.
 - `email`: a valid email address.
-- `religion`: required.
-- `subreligion`: optional.
-- `fields`: repeated, each value from the 12 fixed fields of work.
+- `religion`: required, a code from `network.join.religions` (in `content/religions.ts`: 20 religions, including "No religious affiliation", "Prefer not to say" and "Other"). With `other`, `religionOther` (2–80 characters) is stored instead.
+- `subreligion`: optional, a denomination code of **that** religion, or `other` + `subreligionOther`.
+- `fields`: repeated, each value from the 12 fixed fields of work, **at most 3** (`MAX_FIELDS`).
+- `publish`: optional, `yes` means the sender agrees to be published on the site (`publishConsent`). The membership form has the same box.
 - `quote`: the statement, required, 10–600 characters.
 - `article`: optional, up to 10,000 characters.
 - `photo`: optional, JPG/PNG up to 3MB. The file type is checked from its contents, not the extension.
@@ -808,6 +815,53 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - 13 pages × 3 languages × 5 widths = 195 checks, all passing.
   - The build passes.
 
+
+### 2026-11-14: Dashboard inbox (everything people send) + publishing + clearer forms
+- **The owner couldn't open submissions, only see numbers.** Now every submission can be opened and acted on:
+  - **Overview:** the four numbers are links to their lists, and there is a "Latest submissions" feed of all kinds (message, membership request, "Add your voice", subscriber).
+  - **Messages** (`/messages`):
+    - Tabs: new / under review / on hold / replied / archived / all. A new message shows in bold with a gold bar.
+    - The message page shows the full text, the sender, the subject and the language.
+    - **"Reply by email"** opens the mail app with a ready reply.
+    - Buttons: under review, on hold (comment later), replied, archive, back to new.
+    - An **internal note**.
+  - **Membership requests and "Add your voice to ours"** (`/applications`):
+    - Each kind has tabs: new / under review / on hold / accepted / rejected / all.
+    - Buttons: **"إضافة للموقع" (publish)**, "قيد المراجعة", "تأجيل للتعليق لاحقًا", accept without publishing, reject, remove from the site, back to new.
+    - An **internal note**, with a 📝 in the list when there is one, and a "published" badge.
+  - **Subscribers** (`/subscribers`):
+    - The list, with subscribed / unsubscribed tabs and search.
+    - **Download as Excel** (CSV).
+    - Unsubscribe, or delete permanently (each after a confirmation).
+- **Publishing on the site needs consent:**
+  - Both network forms have a new optional box, "I agree that my statement/details may be published on the site".
+  - Without it the dashboard can't publish (the button is disabled, with an explanation).
+  - Published "Add your voice" statements appear under the form on the Join page ("Voices that joined ours": quote, optional article, name, job, country, photo).
+  - Published members appear on "Our members" under the team ("Members of the network").
+  - The photo is public only while published. No email, religion or CV ever leaves the dashboard.
+- **Database:** migration `0005`.
+  - `contact_messages`: `note`, `handled_by`, `updated_at`; statuses `new|review|hold|replied|archived`.
+  - `applications`: `note`, `publish_consent`, `published`, `published_at`; statuses `pending|review|hold|approved|rejected`.
+- **Forms** (owner): "when something is missing or wrong, show it to the person".
+  - All three forms (contact, "Add your voice", membership) now check every field at once.
+  - Each problem shows a red message under the field (red border too).
+  - A summary near the send button lists the fields to fix by name, and the cursor jumps to the first one.
+  - Errors the API returns are shown the same way.
+  - Messages are in EN/FR/AR (`site.forms`); the code is in `components/forms/FormHelpers.tsx`.
+- **Fields of work: at most 3** (owner). After 3 are chosen the other chips are disabled, and the API rejects more than 3.
+- **Religion and denomination as lists** (owner, "like the countries"):
+  - 20 religions, each with its own denominations. For example, Christianity: Coptic Orthodox, Greek Orthodox, Armenian, Syriac, Tewahedo, Catholic, Maronite, Melkite… Islam: Sunni, Shia, Ismaili, Zaydi, Ibadi, Sufi. Judaism, Hinduism, Buddhism and Jainism also have denominations.
+  - Also on the list: Druze, Baháʼí, Yazidi, Mandaean, Zoroastrian, Sikh, Shinto, Taoist, Confucian, African traditional and indigenous beliefs, "No religious affiliation" and "Prefer not to say".
+  - "Other" opens a text box.
+  - The labels are part of the site content (editable in the dashboard, the codes are fixed). The API checks the codes against the same list, and the dashboard shows the names in AR/EN.
+- **Tested** with temporary example.com data, all deleted afterwards:
+  - Every dashboard page and action works. Publishing without consent is refused (409); with consent it appears on the site in all 3 languages within seconds; a submission without consent never appears; the photo route returns 404 when unpublished.
+  - CSV export works.
+  - Religion rules: valid codes are accepted. An unknown code, a denomination from another religion, "Other" with nothing typed, and 4 fields are all rejected.
+  - The forms sent empty in AR show every message, the summary, and the focus on the first field.
+  - Responsive: the site's Join, Members, Membership and Contact pages × 3 languages × 5 widths (90 checks). The dashboard pages were checked at 320/768/1280.
+  - The owner's own test submission ("Add your voice", 14 November) was **kept**.
+
 ---
 
 ## 9. Open items
@@ -820,7 +874,7 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - the rule that members are only published after review and with their agreement.
   - "18+" as the age for the forms.
   - A legal review is recommended before launch, and the "HTTPS" sentence must be true at launch.
-- [ ] Consider making religion optional (or adding "Prefer not to say") in the join form. It is sensitive data and is currently required.
+- [x] Religion now comes from a list that includes "Prefer not to say" and "No religious affiliation" (2026-11-14).
 - [ ] Decide how applications get reviewed and published (dashboard approval, then show approved members' messages and photos on the site).
 - [ ] The real phone number and address for the Contact page. Also decide how messages from the contact form reach the team (email notification and/or the dashboard).
 - [ ] Real photos for the placeholders: the flagship programme arch, the 3 seminar cards, and the conference video + 6 session thumbnails. Also links for "Register", "Apply for the fellowship" and "Watch the recording".
@@ -830,7 +884,8 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
 - [ ] **Owner:** sign in with the temporary password, change it in "My account", then delete `apps/api/data/b.our.voices@gmail.com.password.local.txt`.
 - [ ] Dashboard phase 2:
   - Messages inbox + email alert (which address?).
-  - Applications: review is done (2026-11-14). Still to do: publishing accepted members to "Our members", an email to the applicant, and an Excel export.
+  - Done on 2026-11-14: messages inbox, applications review and publishing, subscribers with Excel export.
+  - Still to do: an email alert to the team for new submissions, and an email to the applicant when their request is accepted.
   - Subscribers list + CSV export.
   - User management (admin).
 - [ ] Dashboard phase 3: agenda and announcement editing, and course/event registration.

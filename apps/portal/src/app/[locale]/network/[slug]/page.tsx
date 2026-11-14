@@ -12,6 +12,9 @@ import { NextPage } from "@/components/NextPage";
 import { Membership } from "@/components/network/Membership";
 import { JoinForm } from "@/components/network/JoinForm";
 import { MembershipForm } from "@/components/network/MembershipForm";
+import { PublishedVoices } from "@/components/network/PublishedVoices";
+import { PublishedMembers } from "@/components/network/PublishedMembers";
+import { getPublishedMembers, getPublishedVoices, type PublishedMember, type PublishedVoice } from "@/lib/published";
 import { Members } from "@/components/network/Members";
 
 /** Network section: each dropdown item is its own page. Order = tab order. */
@@ -27,7 +30,9 @@ export function generateStaticParams() {
 }
 
 /** Title, lead, meta and body for one Network page. */
-function page(slug: Slug, c: NetworkContent, locale: Locale, site: SiteContent) {
+type Published = { voices: PublishedVoice[]; members: PublishedMember[] };
+
+function page(slug: Slug, c: NetworkContent, locale: Locale, site: SiteContent, pub: Published = { voices: [], members: [] }) {
   switch (slug) {
     case "membership":
       // Owner, 2026-11-14: the membership application form sits under the three cards. It is NOT the
@@ -46,7 +51,7 @@ function page(slug: Slug, c: NetworkContent, locale: Locale, site: SiteContent) 
                   <p className="text-body text-ink-soft">{c.membership.form.lead}</p>
                 </div>
                 <div className="max-w-[920px]">
-                  <MembershipForm locale={locale} join={c.join} form={c.membership.form} countries={countryOptions(locale)} privacy={site.privacy} />
+                  <MembershipForm locale={locale} join={c.join} form={c.membership.form} countries={countryOptions(locale)} privacy={site.privacy} forms={site.forms} />
                 </div>
               </div>
             </section>
@@ -59,13 +64,17 @@ function page(slug: Slug, c: NetworkContent, locale: Locale, site: SiteContent) 
         lead: c.join.lead,
         meta: c.join.meta,
         body: (
-          <section>
-            <div className="container-site py-12 md:py-20">
-              <div className="max-w-[920px]">
-                <JoinForm locale={locale} join={c.join} countries={countryOptions(locale)} privacy={site.privacy} />
+          <>
+            <section>
+              <div className="container-site py-12 md:py-20">
+                <div className="max-w-[920px]">
+                  <JoinForm locale={locale} join={c.join} countries={countryOptions(locale)} privacy={site.privacy} forms={site.forms} />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+            {/* Statements published from the dashboard */}
+            <PublishedVoices voices={pub.voices} title={c.join.voicesTitle} readArticle={c.join.readArticle} locale={locale} />
+          </>
         ),
       };
     case "members":
@@ -73,7 +82,13 @@ function page(slug: Slug, c: NetworkContent, locale: Locale, site: SiteContent) 
         title: c.members.title,
         lead: c.header.lead,
         meta: c.members.meta,
-        body: <Members members={c.members} joinHref={`/${locale}/network/join`} />,
+        body: (
+          <Members
+            members={c.members}
+            joinHref={`/${locale}/network/join`}
+            published={<PublishedMembers members={pub.members} title={c.members.networkMembersTitle} locale={locale} />}
+          />
+        ),
       };
   }
 }
@@ -97,7 +112,12 @@ export default async function NetworkSubPage({ params }: Params) {
   const { locale, slug } = r;
   const c = await getNetworkContent(locale);
   const site = await getSiteContent(locale);
-  const p = page(slug, c, locale, site);
+  // Published submissions, only on the pages that show them
+  const pub: Published = {
+    voices: slug === "join" ? await getPublishedVoices() : [],
+    members: slug === "members" ? await getPublishedMembers() : [],
+  };
+  const p = page(slug, c, locale, site, pub);
   const path = `/network/${slug}`;
   const pageUrl = `${siteUrl}/${locale}${path}`;
   const tabs = sectionTabs(site, locale, "network", path);

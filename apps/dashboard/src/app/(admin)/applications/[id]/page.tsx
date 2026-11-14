@@ -3,11 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { apiGet } from "@/lib/api";
 import { getDict } from "@/lib/i18n";
-import { ApplicationDecision } from "@/components/ApplicationDecision";
+import { ApplicationActions } from "@/components/ApplicationActions";
+import { NoteEditor } from "@/components/NoteEditor";
+import { appTone, type AppStatus } from "@/lib/status";
 
 export const metadata: Metadata = { title: "Application" };
 
-type Status = "pending" | "approved" | "rejected";
+type Status = AppStatus;
 type Application = {
   id: string;
   kind: "member" | "voice";
@@ -30,17 +32,15 @@ type Application = {
   status: Status;
   reviewedAt: string | null;
   reviewerName: string | null;
+  note: string;
+  publishConsent: boolean;
+  published: boolean;
   createdAt: string;
   hasPhoto: boolean;
   hasCv: boolean;
 };
 type Option = { value: string; label: string };
 
-const statusTone: Record<Status, string> = {
-  pending: "bg-gold/20 text-gold-deep",
-  approved: "bg-sky-tint text-blue-deep",
-  rejected: "bg-danger/10 text-danger",
-};
 const langNames: Record<string, string> = { en: "English", fr: "Français", ar: "العربية" };
 
 export default async function ApplicationPage({ params }: { params: Promise<{ id: string }> }) {
@@ -49,7 +49,7 @@ export default async function ApplicationPage({ params }: { params: Promise<{ id
   const [{ data, status }, { data: network }] = await Promise.all([
     apiGet<{ application: Application }>(`/admin/applications/${encodeURIComponent(id)}`),
     // Labels for gender and fields of work, in the dashboard's language, from the site content
-    apiGet<{ data: { join: { genders: Option[]; fieldOptions: Option[] } } }>(`/content/network/${lang}`),
+    apiGet<{ data: { join: { genders: Option[]; fieldOptions: Option[]; religions?: (Option & { denominations: Option[] })[] } } }>(`/content/network/${lang}`),
   ]);
   if (status === 404) notFound();
   const a = t.apps;
@@ -69,8 +69,12 @@ export default async function ApplicationPage({ params }: { params: Promise<{ id
     { k: a.labels.job, v: app.job },
     { k: a.labels.org, v: app.org || a.none },
     { k: a.labels.country, v: country },
-    { k: a.labels.religion, v: app.religion },
-    { k: a.labels.subreligion, v: app.subreligion || a.none },
+    // Codes from the lists → names; a typed "Other" answer is shown as written
+    { k: a.labels.religion, v: label(network?.data.join.religions, app.religion) },
+    {
+      k: a.labels.subreligion,
+      v: app.subreligion ? label(network?.data.join.religions?.find((r) => r.value === app.religion)?.denominations, app.subreligion) : a.none,
+    },
     { k: a.labels.locale, v: langNames[app.locale] ?? app.locale },
     { k: a.labels.date, v: fmt.format(new Date(app.createdAt)) },
   ];
@@ -99,7 +103,8 @@ export default async function ApplicationPage({ params }: { params: Promise<{ id
       <div className="flex flex-wrap items-center gap-3">
         <h1 className="font-display text-h2 font-normal">{app.name}</h1>
         <span className="rounded-bov border border-line px-2 py-1 text-xs font-semibold text-ink-soft">{a.kinds[app.kind]}</span>
-        <span className={`rounded-bov px-2 py-1 text-xs font-semibold ${statusTone[app.status]}`}>{a.status[app.status]}</span>
+        <span className={`rounded-bov px-2 py-1 text-xs font-semibold ${appTone[app.status]}`}>{a.status[app.status]}</span>
+        {app.published && <span className="rounded-bov bg-gold px-2 py-1 text-xs font-semibold text-navy">{a.published}</span>}
       </div>
 
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
@@ -135,12 +140,20 @@ export default async function ApplicationPage({ params }: { params: Promise<{ id
               <p dir="auto" className="whitespace-pre-line leading-relaxed text-ink-soft">{x.v}</p>
             </section>
           ))}
+          <section className="rounded-bov border border-line bg-white p-5">
+            <NoteEditor endpoint={`/api/admin/applications/${app.id}`} initial={app.note} t={{ ...a, error: t.error }} />
+          </section>
         </div>
 
         <aside className="flex flex-col gap-4 lg:sticky lg:top-6">
           <section className="flex flex-col gap-3 rounded-bov border border-t-[2.4px] border-line border-t-gold bg-white p-5">
             <h2 className="text-sm font-semibold text-ink">{a.decision}</h2>
-            <ApplicationDecision id={app.id} status={app.status} t={a} />
+            {/* Whether the applicant ticked "may be published on the site" */}
+            <p className={`rounded-bov px-3 py-2 text-xs font-semibold ${app.publishConsent ? "bg-sky-tint text-blue-deep" : "bg-sand text-ink-soft"}`}>
+              {a.consent}: {app.publishConsent ? a.consentYes : a.consentNo}
+            </p>
+            {app.published && <p className="text-xs text-ink-soft">{app.kind === "voice" ? a.publishedOn : a.publishedOnMember}</p>}
+            <ApplicationActions id={app.id} status={app.status} published={app.published} consent={app.publishConsent} t={{ ...a, error: t.error }} />
             {app.reviewerName && app.reviewedAt && (
               <p className="text-xs text-ink-soft">
                 {a.reviewedBy} {app.reviewerName} · {fmt.format(new Date(app.reviewedAt))}

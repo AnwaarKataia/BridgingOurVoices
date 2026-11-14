@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import "@bov/ui/theme.css";
+
+/* Form fields with a problem (see components/forms/FormHelpers.tsx) */
+[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}

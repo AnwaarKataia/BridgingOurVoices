@@ -4,26 +4,7 @@ import { db, schema } from "../db/client.js";
 import { requireUser } from "../auth/session.js";
 import { checkEdit, type Json } from "./rules.js";
 import { contentKeys, LOCALES, type Locale } from "./seed.js";
-
-const portalUrl = process.env.PORTAL_URL ?? "http://localhost:3000";
-// The development default is public (the code is on GitHub); production must set REVALIDATE_SECRET
-const revalidateSecret = process.env.REVALIDATE_SECRET ?? (process.env.NODE_ENV === "production" ? "" : "dev-revalidate-secret");
-
-/** Asks the portal to drop its cached content so published edits show within seconds. */
-async function revalidatePortal(log: (msg: string) => void) {
-  if (!revalidateSecret) return log("REVALIDATE_SECRET is not set: the portal refreshes on its 5-minute timer");
-  try {
-    const res = await fetch(`${portalUrl}/api/revalidate`, {
-      method: "POST",
-      headers: { "x-revalidate-secret": revalidateSecret },
-      signal: AbortSignal.timeout(5000),
-    });
-    if (!res.ok) log(`portal revalidate answered ${res.status}`);
-  } catch (err) {
-    // The portal still refreshes on its own timer (see apps/portal/src/lib/content.ts)
-    log(`portal revalidate failed: ${(err as Error).message}`);
-  }
-}
+import { revalidatePortal } from "../revalidate.js";
 
 const isLocale = (l: string): l is Locale => (LOCALES as readonly string[]).includes(l);
 

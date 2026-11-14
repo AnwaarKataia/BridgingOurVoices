@@ -1,5 +1,6 @@
 import type { Locale } from "@/i18n/config";
 import { loadContent } from "@/lib/content";
+import { religionsFor, type Religion } from "./religions";
 
 /**
  * Network section copy, taken word for word from the brand file's Network page (EN / FR / AR modes).
@@ -36,6 +37,8 @@ export type NetworkContent = {
       connections: string;
       connectionsHint: string;
       photoHint: string;
+      /** Optional box: may appear on "Our members" if accepted (needed to publish from the dashboard). */
+      publishConsent: string;
       submit: string;
       success: string;
     };
@@ -55,7 +58,15 @@ export type NetworkContent = {
     email: string;
     religion: string;
     subreligion: string;
+    /** Religions with their denominations, chosen from lists (owner, 2026-11-14). */
+    religions: Religion[];
+    religionPlaceholder: string;
+    denominationPlaceholder: string;
+    otherReligion: string;
+    otherDenomination: string;
     fields: string;
+    /** At most 3 fields of work (owner, 2026-11-14). */
+    fieldsHint: string;
     fieldOptions: { value: string; label: string }[];
     quote: string;
     article: string;
@@ -64,15 +75,22 @@ export type NetworkContent = {
     photoHint: string;
     photoTooBig: string;
     consent: string;
+    /** Optional box: the statement may be published on the site (needed to publish it from the dashboard). */
+    publishConsent: string;
     submit: string;
     sending: string;
     success: string;
     error: string;
+    /** Published statements, shown under the form. */
+    voicesTitle: string;
+    readArticle: string;
   };
   members: {
     meta: { title: string; description: string };
     title: string;
     people: Member[];
+    /** Accepted applicants published from the dashboard, under the team. */
+    networkMembersTitle: string;
     networkTitle: string;
     networkLead: string;
     networkCta: string;
@@ -146,6 +164,7 @@ const en: NetworkContent = {
       connections: "Which organisations or networks could you connect us with?",
       connectionsHint: "Optional: institutions, community groups, media or partners in your country.",
       photoHint: "JPG or PNG, up to 3 MB.",
+      publishConsent: "If my application is accepted, I agree that my name, job title, country, photo and a short summary of my experience may appear on the “Our members” page.",
       submit: "Send application",
       success: "Thank you, your application has been received. Our team will review it and contact you.",
     },
@@ -168,6 +187,12 @@ const en: NetworkContent = {
     email: "Email",
     religion: "Official religion",
     subreligion: "Denomination / sub-religion",
+    religions: religionsFor("en"),
+    religionPlaceholder: "Select your religion",
+    denominationPlaceholder: "Select the denomination (optional)",
+    otherReligion: "Your religion",
+    otherDenomination: "Your denomination",
+    fieldsHint: "Choose up to 3 fields.",
     fields: "Fields of work",
     fieldOptions: zip(fieldValues, [
       "Interfaith dialogue", "Intercultural dialogue", "Community mediation", "Conflict analysis", "Countering hate speech",
@@ -181,10 +206,13 @@ const en: NetworkContent = {
     photoHint: "JPG or PNG, shown with your message if published.",
     photoTooBig: "Please choose a JPG or PNG under 3 MB.",
     consent: "I agree to the network’s code of conduct and to my data being used to process my application.",
+    publishConsent: "I agree that my statement, name, job title, country and photo may be published on the site.",
     submit: "Submit application",
     sending: "Sending…",
     success: "Thank you, your application has been received. Our team will review it and contact you.",
     error: "Something went wrong, please check the form and try again.",
+    voicesTitle: "Voices that joined ours",
+    readArticle: "Read the article",
   },
   members: {
     meta: {
@@ -236,6 +264,7 @@ const en: NetworkContent = {
         ],
       },
     ],
+    networkMembersTitle: "Members of the network",
     networkTitle: "Our network",
     networkLead: "Peacemakers and community leaders across the region and beyond, learning, practising and leading together.",
     networkCta: "Join the network",
@@ -295,6 +324,7 @@ const fr: NetworkContent = {
       connections: "Avec quelles organisations ou quels réseaux pourriez-vous nous mettre en relation ?",
       connectionsHint: "Facultatif : institutions, groupes communautaires, médias ou partenaires dans votre pays.",
       photoHint: "JPG ou PNG, 3 Mo maximum.",
+      publishConsent: "Si ma candidature est acceptée, j’accepte que mon nom, ma fonction, mon pays, ma photo et un court résumé de mon expérience figurent sur la page « Nos membres ».",
       submit: "Envoyer la demande",
       success: "Merci, votre demande a bien été reçue. Notre équipe l’examinera et vous recontactera.",
     },
@@ -317,6 +347,12 @@ const fr: NetworkContent = {
     email: "E-mail",
     religion: "Religion officielle",
     subreligion: "Confession / courant",
+    religions: religionsFor("fr"),
+    religionPlaceholder: "Choisissez votre religion",
+    denominationPlaceholder: "Choisissez la confession (facultatif)",
+    otherReligion: "Votre religion",
+    otherDenomination: "Votre confession",
+    fieldsHint: "Choisissez jusqu’à 3 domaines.",
     fields: "Domaines d’activité",
     fieldOptions: zip(fieldValues, [
       "Dialogue interreligieux", "Dialogue interculturel", "Médiation communautaire", "Analyse des conflits", "Discours de haine",
@@ -330,10 +366,13 @@ const fr: NetworkContent = {
     photoHint: "JPG ou PNG, affichée avec votre message en cas de publication.",
     photoTooBig: "Veuillez choisir un JPG ou PNG de moins de 3 Mo.",
     consent: "J’accepte le code de conduite du réseau et l’utilisation de mes données pour traiter ma candidature.",
+    publishConsent: "J’accepte que mon message, mon nom, ma fonction, mon pays et ma photo soient publiés sur le site.",
     submit: "Envoyer ma candidature",
     sending: "Envoi…",
     success: "Merci, votre candidature a bien été reçue. Notre équipe l’examinera et vous recontactera.",
     error: "Une erreur s’est produite, veuillez vérifier le formulaire et réessayer.",
+    voicesTitle: "Les voix qui ont rejoint la nôtre",
+    readArticle: "Lire l’article",
   },
   members: {
     meta: {
@@ -385,6 +424,7 @@ const fr: NetworkContent = {
         ],
       },
     ],
+    networkMembersTitle: "Membres du réseau",
     networkTitle: "Notre réseau",
     networkLead: "Des artisans de la paix et des leaders communautaires de la région et d’ailleurs, qui apprennent, pratiquent et dirigent ensemble.",
     networkCta: "Rejoindre le réseau",
@@ -444,6 +484,7 @@ const ar: NetworkContent = {
       connections: "ما الجهات أو المؤسسات التي يمكنك أن توصلنا بها؟",
       connectionsHint: "اختياري: مؤسسات أو مجموعات مجتمعية أو وسائل إعلام أو شركاء في بلدك.",
       photoHint: "JPG أو PNG، حتى ٣ ميجابايت.",
+      publishConsent: "في حال قبول طلبي، أوافق على ظهور اسمي ووظيفتي ودولتي وصورتي وملخص قصير لخبرتي في صفحة «أعضاؤنا».",
       submit: "إرسال طلب العضوية",
       success: "شكرًا لك، تم استلام طلبك، وسيراجعه فريقنا ويتواصل معك.",
     },
@@ -466,6 +507,12 @@ const ar: NetworkContent = {
     email: "البريد الإلكتروني",
     religion: "الديانة الرسمية",
     subreligion: "المذهب / الطائفة",
+    religions: religionsFor("ar"),
+    religionPlaceholder: "اختر/ي الديانة",
+    denominationPlaceholder: "اختر/ي المذهب أو الطائفة (اختياري)",
+    otherReligion: "اكتب/ي الديانة",
+    otherDenomination: "اكتب/ي المذهب أو الطائفة",
+    fieldsHint: "اختر/ي حتى ٣ مجالات.",
     fields: "مجالات العمل",
     fieldOptions: zip(fieldValues, [
       "الحوار بين الأديان", "الحوار بين الثقافات", "الوساطة المجتمعية", "تحليل النزاعات", "مواجهة خطاب الكراهية",
@@ -479,10 +526,13 @@ const ar: NetworkContent = {
     photoHint: "JPG أو PNG، تظهر مع مقولتك عند النشر.",
     photoTooBig: "يُرجى اختيار صورة JPG أو PNG أقل من ٣ ميجابايت.",
     consent: "أوافق على ميثاق سلوك الشبكة وعلى استخدام بياناتي لمعالجة طلب الانضمام.",
+    publishConsent: "أوافق على نشر مقولتي واسمي ووظيفتي ودولتي وصورتي على الموقع.",
     submit: "إرسال طلب الانضمام",
     sending: "جارٍ الإرسال…",
     success: "شكرًا لك، تم استلام طلب انضمامك وسيراجعه فريقنا ويتواصل معك.",
     error: "حدث خطأ، يُرجى مراجعة البيانات والمحاولة مرة أخرى.",
+    voicesTitle: "أصوات انضمت لصوتنا",
+    readArticle: "قراءة المقال",
   },
   members: {
     meta: {
@@ -534,6 +584,7 @@ const ar: NetworkContent = {
         ],
       },
     ],
+    networkMembersTitle: "أعضاء الشبكة",
     networkTitle: "شبكتنا",
     networkLead: "صناع سلام وقيادات مجتمعية من المنطقة وخارجها، يتعلّمون ويمارسون ويقودون معًا.",
     networkCta: "انضم/ي إلى الشبكة",

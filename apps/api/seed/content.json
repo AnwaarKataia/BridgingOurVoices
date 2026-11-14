@@ -102,6 +102,17 @@
         "copyright": "© 2026 Bridging Our Voices"
       },
       "comingSoon": "Coming soon",
+      "forms": {
+        "summary": "Please check the highlighted fields:",
+        "required": "This field is required.",
+        "email": "Please enter a valid email, e.g. name@example.com.",
+        "tooShort": "Please write at least {min} characters.",
+        "tooLong": "Please shorten this text.",
+        "choose": "Please choose an option.",
+        "fieldsMax": "Choose up to 3 fields.",
+        "consent": "Please tick this box to continue.",
+        "file": "Please check the attached file."
+      },
       "privacy": {
         "label": "Privacy policy",
         "formNote": "How we use and protect your data:",
@@ -210,6 +221,17 @@
         "copyright": "© 2026 Bridging Our Voices"
       },
       "comingSoon": "Bientôt",
+      "forms": {
+        "summary": "Veuillez vérifier les champs signalés :",
+        "required": "Ce champ est obligatoire.",
+        "email": "Veuillez saisir une adresse e-mail valide, par ex. nom@exemple.com.",
+        "tooShort": "Veuillez écrire au moins {min} caractères.",
+        "tooLong": "Veuillez raccourcir ce texte.",
+        "choose": "Veuillez choisir une option.",
+        "fieldsMax": "Choisissez jusqu’à 3 domaines.",
+        "consent": "Veuillez cocher cette case pour continuer.",
+        "file": "Veuillez vérifier le fichier joint."
+      },
       "privacy": {
         "label": "Politique de confidentialité",
         "formNote": "Comment nous utilisons et protégeons vos données :",
@@ -318,6 +340,17 @@
         "copyright": "© ٢٠٢٦ Bridging Our Voices"
       },
       "comingSoon": "قريبًا",
+      "forms": {
+        "summary": "يرجى مراجعة الحقول المحددة:",
+        "required": "هذا الحقل مطلوب.",
+        "email": "يرجى كتابة بريد إلكتروني صحيح، مثل name@example.com.",
+        "tooShort": "يرجى كتابة {min} أحرف على الأقل.",
+        "tooLong": "يرجى تقصير هذا النص.",
+        "choose": "يرجى اختيار أحد الخيارات.",
+        "fieldsMax": "اختر/ي ٣ مجالات على الأكثر.",
+        "consent": "يرجى وضع علامة في هذا المربع للمتابعة.",
+        "file": "يرجى مراجعة الملف المرفق."
+      },
       "privacy": {
         "label": "سياسة الخصوصية",
         "formNote": "كيف نستخدم بياناتك ونحميها:",
@@ -2166,6 +2199,7 @@
           "connections": "Which organisations or networks could you connect us with?",
           "connectionsHint": "Optional: institutions, community groups, media or partners in your country.",
           "photoHint": "JPG or PNG, up to 3 MB.",
+          "publishConsent": "If my application is accepted, I agree that my name, job title, country, photo and a short summary of my experience may appear on the “Our members” page.",
           "submit": "Send application",
           "success": "Thank you, your application has been received. Our team will review it and contact you."
         }
@@ -2201,6 +2235,295 @@
         "email": "Email",
         "religion": "Official religion",
         "subreligion": "Denomination / sub-religion",
+        "religions": [
+          {
+            "value": "islam",
+            "label": "Islam",
+            "denominations": [
+              {
+                "value": "sunni",
+                "label": "Sunni"
+              },
+              {
+                "value": "shia-twelver",
+                "label": "Shia (Twelver)"
+              },
+              {
+                "value": "ismaili",
+                "label": "Ismaili"
+              },
+              {
+                "value": "zaydi",
+                "label": "Zaydi"
+              },
+              {
+                "value": "ibadi",
+                "label": "Ibadi"
+              },
+              {
+                "value": "sufi",
+                "label": "Sufi"
+              },
+              {
+                "value": "other",
+                "label": "Other"
+              }
+            ]
+          },
+          {
+            "value": "christianity",
+            "label": "Christianity",
+            "denominations": [
+              {
+                "value": "coptic-orthodox",
+                "label": "Coptic Orthodox"
+              },
+              {
+                "value": "eastern-orthodox",
+                "label": "Eastern (Greek) Orthodox"
+              },
+              {
+                "value": "armenian-apostolic",
+                "label": "Armenian Apostolic"
+              },
+              {
+                "value": "syriac-orthodox",
+                "label": "Syriac Orthodox"
+              },
+              {
+                "value": "tewahedo",
+                "label": "Ethiopian / Eritrean Orthodox Tewahedo"
+              },
+              {
+                "value": "catholic",
+                "label": "Roman Catholic"
+              },
+              {
+                "value": "maronite",
+                "label": "Maronite"
+              },
+              {
+                "value": "melkite",
+                "label": "Melkite Greek Catholic"
+              },
+              {
+                "value": "coptic-catholic",
+                "label": "Coptic Catholic"
+              },
+              {
+                "value": "chaldean",
+                "label": "Chaldean Catholic"
+              },
+              {
+                "value": "assyrian",
+                "label": "Assyrian Church of the East"
+              },
+              {
+                "value": "evangelical",
+                "label": "Evangelical / Protestant"
+              },
+              {
+                "value": "anglican",
+                "label": "Anglican / Episcopal"
+              },
+              {
+                "value": "lutheran",
+                "label": "Lutheran"
+              },
+              {
+                "value": "presbyterian",
+                "label": "Presbyterian / Reformed"
+              },
+              {
+                "value": "methodist",
+                "label": "Methodist"
+              },
+              {
+                "value": "baptist",
+                "label": "Baptist"
+              },
+              {
+                "value": "pentecostal",
+                "label": "Pentecostal"
+              },
+              {
+                "value": "adventist",
+                "label": "Seventh-day Adventist"
+              },
+              {
+                "value": "other",
+                "label": "Other"
+              }
+            ]
+          },
+          {
+            "value": "judaism",
+            "label": "Judaism",
+            "denominations": [
+              {
+                "value": "orthodox",
+                "label": "Orthodox"
+              },
+              {
+                "value": "conservative",
+                "label": "Conservative / Masorti"
+              },
+              {
+                "value": "reform",
+                "label": "Reform / Liberal"
+              },
+              {
+                "value": "karaite",
+                "label": "Karaite"
+              },
+              {
+                "value": "other",
+                "label": "Other"
+              }
+            ]
+          },
+          {
+            "value": "druze",
+            "label": "Druze faith",
+            "denominations": []
+          },
+          {
+            "value": "bahai",
+            "label": "Baháʼí Faith",
+            "denominations": []
+          },
+          {
+            "value": "yazidi",
+            "label": "Yazidism",
+            "denominations": []
+          },
+          {
+            "value": "mandaean",
+            "label": "Mandaeism (Sabians)",
+            "denominations": []
+          },
+          {
+            "value": "zoroastrianism",
+            "label": "Zoroastrianism",
+            "denominations": []
+          },
+          {
+            "value": "hinduism",
+            "label": "Hinduism",
+            "denominations": [
+              {
+                "value": "vaishnavism",
+                "label": "Vaishnavism"
+              },
+              {
+                "value": "shaivism",
+                "label": "Shaivism"
+              },
+              {
+                "value": "shaktism",
+                "label": "Shaktism"
+              },
+              {
+                "value": "smartism",
+                "label": "Smartism"
+              },
+              {
+                "value": "other",
+                "label": "Other"
+              }
+            ]
+          },
+          {
+            "value": "buddhism",
+            "label": "Buddhism",
+            "denominations": [
+              {
+                "value": "theravada",
+                "label": "Theravada"
+              },
+              {
+                "value": "mahayana",
+                "label": "Mahayana"
+              },
+              {
+                "value": "vajrayana",
+                "label": "Vajrayana (Tibetan)"
+              },
+              {
+                "value": "other",
+                "label": "Other"
+              }
+            ]
+          },
+          {
+            "value": "sikhism",
+            "label": "Sikhism",
+            "denominations": []
+          },
+          {
+            "value": "jainism",
+            "label": "Jainism",
+            "denominations": [
+              {
+                "value": "digambara",
+                "label": "Digambara"
+              },
+              {
+                "value": "svetambara",
+                "label": "Svetambara"
+              },
+              {
+                "value": "other",
+                "label": "Other"
+              }
+            ]
+          },
+          {
+            "value": "shinto",
+            "label": "Shinto",
+            "denominations": []
+          },
+          {
+            "value": "taoism",
+            "label": "Taoism",
+            "denominations": []
+          },
+          {
+            "value": "confucianism",
+            "label": "Confucianism",
+            "denominations": []
+          },
+          {
+            "value": "african-traditional",
+            "label": "African traditional religions",
+            "denominations": []
+          },
+          {
+            "value": "indigenous",
+            "label": "Indigenous / traditional beliefs",
+            "denominations": []
+          },
+          {
+            "value": "none",
+            "label": "No religious affiliation",
+            "denominations": []
+          },
+          {
+            "value": "prefer-not",
+            "label": "Prefer not to say",
+            "denominations": []
+          },
+          {
+            "value": "other",
+            "label": "Other",
+            "denominations": []
+          }
+        ],
+        "religionPlaceholder": "Select your religion",
+        "denominationPlaceholder": "Select the denomination (optional)",
+        "otherReligion": "Your religion",
+        "otherDenomination": "Your denomination",
+        "fieldsHint": "Choose up to 3 fields.",
         "fields": "Fields of work",
         "fieldOptions": [
           {
@@ -2259,10 +2582,13 @@
         "photoHint": "JPG or PNG, shown with your message if published.",
         "photoTooBig": "Please choose a JPG or PNG under 3 MB.",
         "consent": "I agree to the network’s code of conduct and to my data being used to process my application.",
+        "publishConsent": "I agree that my statement, name, job title, country and photo may be published on the site.",
         "submit": "Submit application",
         "sending": "Sending…",
         "success": "Thank you, your application has been received. Our team will review it and contact you.",
-        "error": "Something went wrong, please check the form and try again."
+        "error": "Something went wrong, please check the form and try again.",
+        "voicesTitle": "Voices that joined ours",
+        "readArticle": "Read the article"
       },
       "members": {
         "meta": {
@@ -2314,6 +2640,7 @@
             ]
           }
         ],
+        "networkMembersTitle": "Members of the network",
         "networkTitle": "Our network",
         "networkLead": "Peacemakers and community leaders across the region and beyond, learning, practising and leading together.",
         "networkCta": "Join the network"
@@ -2375,6 +2702,7 @@
           "connections": "Avec quelles organisations ou quels réseaux pourriez-vous nous mettre en relation ?",
           "connectionsHint": "Facultatif : institutions, groupes communautaires, médias ou partenaires dans votre pays.",
           "photoHint": "JPG ou PNG, 3 Mo maximum.",
+          "publishConsent": "Si ma candidature est acceptée, j’accepte que mon nom, ma fonction, mon pays, ma photo et un court résumé de mon expérience figurent sur la page « Nos membres ».",
           "submit": "Envoyer la demande",
           "success": "Merci, votre demande a bien été reçue. Notre équipe l’examinera et vous recontactera."
         }
@@ -2410,6 +2738,295 @@
         "email": "E-mail",
         "religion": "Religion officielle",
         "subreligion": "Confession / courant",
+        "religions": [
+          {
+            "value": "islam",
+            "label": "Islam",
+            "denominations": [
+              {
+                "value": "sunni",
+                "label": "Sunnite"
+              },
+              {
+                "value": "shia-twelver",
+                "label": "Chiite (duodécimain)"
+              },
+              {
+                "value": "ismaili",
+                "label": "Ismaélien"
+              },
+              {
+                "value": "zaydi",
+                "label": "Zaïdite"
+              },
+              {
+                "value": "ibadi",
+                "label": "Ibadite"
+              },
+              {
+                "value": "sufi",
+                "label": "Soufi"
+              },
+              {
+                "value": "other",
+                "label": "Autre"
+              }
+            ]
+          },
+          {
+            "value": "christianity",
+            "label": "Christianisme",
+            "denominations": [
+              {
+                "value": "coptic-orthodox",
+                "label": "Copte orthodoxe"
+              },
+              {
+                "value": "eastern-orthodox",
+                "label": "Orthodoxe (grec)"
+              },
+              {
+                "value": "armenian-apostolic",
+                "label": "Apostolique arménien"
+              },
+              {
+                "value": "syriac-orthodox",
+                "label": "Syriaque orthodoxe"
+              },
+              {
+                "value": "tewahedo",
+                "label": "Orthodoxe éthiopien / érythréen (Tewahedo)"
+              },
+              {
+                "value": "catholic",
+                "label": "Catholique romain"
+              },
+              {
+                "value": "maronite",
+                "label": "Maronite"
+              },
+              {
+                "value": "melkite",
+                "label": "Grec-catholique melkite"
+              },
+              {
+                "value": "coptic-catholic",
+                "label": "Copte catholique"
+              },
+              {
+                "value": "chaldean",
+                "label": "Chaldéen catholique"
+              },
+              {
+                "value": "assyrian",
+                "label": "Église assyrienne de l’Orient"
+              },
+              {
+                "value": "evangelical",
+                "label": "Évangélique / protestant"
+              },
+              {
+                "value": "anglican",
+                "label": "Anglican / épiscopalien"
+              },
+              {
+                "value": "lutheran",
+                "label": "Luthérien"
+              },
+              {
+                "value": "presbyterian",
+                "label": "Presbytérien / réformé"
+              },
+              {
+                "value": "methodist",
+                "label": "Méthodiste"
+              },
+              {
+                "value": "baptist",
+                "label": "Baptiste"
+              },
+              {
+                "value": "pentecostal",
+                "label": "Pentecôtiste"
+              },
+              {
+                "value": "adventist",
+                "label": "Adventiste du septième jour"
+              },
+              {
+                "value": "other",
+                "label": "Autre"
+              }
+            ]
+          },
+          {
+            "value": "judaism",
+            "label": "Judaïsme",
+            "denominations": [
+              {
+                "value": "orthodox",
+                "label": "Orthodoxe"
+              },
+              {
+                "value": "conservative",
+                "label": "Massorti (conservateur)"
+              },
+              {
+                "value": "reform",
+                "label": "Réformé / libéral"
+              },
+              {
+                "value": "karaite",
+                "label": "Karaïte"
+              },
+              {
+                "value": "other",
+                "label": "Autre"
+              }
+            ]
+          },
+          {
+            "value": "druze",
+            "label": "Druze",
+            "denominations": []
+          },
+          {
+            "value": "bahai",
+            "label": "Foi baha’ie",
+            "denominations": []
+          },
+          {
+            "value": "yazidi",
+            "label": "Yézidisme",
+            "denominations": []
+          },
+          {
+            "value": "mandaean",
+            "label": "Mandéisme (sabéens)",
+            "denominations": []
+          },
+          {
+            "value": "zoroastrianism",
+            "label": "Zoroastrisme",
+            "denominations": []
+          },
+          {
+            "value": "hinduism",
+            "label": "Hindouisme",
+            "denominations": [
+              {
+                "value": "vaishnavism",
+                "label": "Vishnouisme"
+              },
+              {
+                "value": "shaivism",
+                "label": "Shivaïsme"
+              },
+              {
+                "value": "shaktism",
+                "label": "Shaktisme"
+              },
+              {
+                "value": "smartism",
+                "label": "Smartisme"
+              },
+              {
+                "value": "other",
+                "label": "Autre"
+              }
+            ]
+          },
+          {
+            "value": "buddhism",
+            "label": "Bouddhisme",
+            "denominations": [
+              {
+                "value": "theravada",
+                "label": "Theravada"
+              },
+              {
+                "value": "mahayana",
+                "label": "Mahayana"
+              },
+              {
+                "value": "vajrayana",
+                "label": "Vajrayana (tibétain)"
+              },
+              {
+                "value": "other",
+                "label": "Autre"
+              }
+            ]
+          },
+          {
+            "value": "sikhism",
+            "label": "Sikhisme",
+            "denominations": []
+          },
+          {
+            "value": "jainism",
+            "label": "Jaïnisme",
+            "denominations": [
+              {
+                "value": "digambara",
+                "label": "Digambara"
+              },
+              {
+                "value": "svetambara",
+                "label": "Svetambara"
+              },
+              {
+                "value": "other",
+                "label": "Autre"
+              }
+            ]
+          },
+          {
+            "value": "shinto",
+            "label": "Shintoïsme",
+            "denominations": []
+          },
+          {
+            "value": "taoism",
+            "label": "Taoïsme",
+            "denominations": []
+          },
+          {
+            "value": "confucianism",
+            "label": "Confucianisme",
+            "denominations": []
+          },
+          {
+            "value": "african-traditional",
+            "label": "Religions traditionnelles africaines",
+            "denominations": []
+          },
+          {
+            "value": "indigenous",
+            "label": "Croyances autochtones / traditionnelles",
+            "denominations": []
+          },
+          {
+            "value": "none",
+            "label": "Sans appartenance religieuse",
+            "denominations": []
+          },
+          {
+            "value": "prefer-not",
+            "label": "Je préfère ne pas répondre",
+            "denominations": []
+          },
+          {
+            "value": "other",
+            "label": "Autre",
+            "denominations": []
+          }
+        ],
+        "religionPlaceholder": "Choisissez votre religion",
+        "denominationPlaceholder": "Choisissez la confession (facultatif)",
+        "otherReligion": "Votre religion",
+        "otherDenomination": "Votre confession",
+        "fieldsHint": "Choisissez jusqu’à 3 domaines.",
         "fields": "Domaines d’activité",
         "fieldOptions": [
           {
@@ -2468,10 +3085,13 @@
         "photoHint": "JPG ou PNG, affichée avec votre message en cas de publication.",
         "photoTooBig": "Veuillez choisir un JPG ou PNG de moins de 3 Mo.",
         "consent": "J’accepte le code de conduite du réseau et l’utilisation de mes données pour traiter ma candidature.",
+        "publishConsent": "J’accepte que mon message, mon nom, ma fonction, mon pays et ma photo soient publiés sur le site.",
         "submit": "Envoyer ma candidature",
         "sending": "Envoi…",
         "success": "Merci, votre candidature a bien été reçue. Notre équipe l’examinera et vous recontactera.",
-        "error": "Une erreur s’est produite, veuillez vérifier le formulaire et réessayer."
+        "error": "Une erreur s’est produite, veuillez vérifier le formulaire et réessayer.",
+        "voicesTitle": "Les voix qui ont rejoint la nôtre",
+        "readArticle": "Lire l’article"
       },
       "members": {
         "meta": {
@@ -2523,6 +3143,7 @@
             ]
           }
         ],
+        "networkMembersTitle": "Membres du réseau",
         "networkTitle": "Notre réseau",
         "networkLead": "Des artisans de la paix et des leaders communautaires de la région et d’ailleurs, qui apprennent, pratiquent et dirigent ensemble.",
         "networkCta": "Rejoindre le réseau"
@@ -2584,6 +3205,7 @@
           "connections": "ما الجهات أو المؤسسات التي يمكنك أن توصلنا بها؟",
           "connectionsHint": "اختياري: مؤسسات أو مجموعات مجتمعية أو وسائل إعلام أو شركاء في بلدك.",
           "photoHint": "JPG أو PNG، حتى ٣ ميجابايت.",
+          "publishConsent": "في حال قبول طلبي، أوافق على ظهور اسمي ووظيفتي ودولتي وصورتي وملخص قصير لخبرتي في صفحة «أعضاؤنا».",
           "submit": "إرسال طلب العضوية",
           "success": "شكرًا لك، تم استلام طلبك، وسيراجعه فريقنا ويتواصل معك."
         }
@@ -2619,6 +3241,295 @@
         "email": "البريد الإلكتروني",
         "religion": "الديانة الرسمية",
         "subreligion": "المذهب / الطائفة",
+        "religions": [
+          {
+            "value": "islam",
+            "label": "الإسلام",
+            "denominations": [
+              {
+                "value": "sunni",
+                "label": "سني"
+              },
+              {
+                "value": "shia-twelver",
+                "label": "شيعي (اثنا عشري)"
+              },
+              {
+                "value": "ismaili",
+                "label": "إسماعيلي"
+              },
+              {
+                "value": "zaydi",
+                "label": "زيدي"
+              },
+              {
+                "value": "ibadi",
+                "label": "إباضي"
+              },
+              {
+                "value": "sufi",
+                "label": "صوفي"
+              },
+              {
+                "value": "other",
+                "label": "أخرى"
+              }
+            ]
+          },
+          {
+            "value": "christianity",
+            "label": "المسيحية",
+            "denominations": [
+              {
+                "value": "coptic-orthodox",
+                "label": "قبطي أرثوذكسي"
+              },
+              {
+                "value": "eastern-orthodox",
+                "label": "روم أرثوذكس"
+              },
+              {
+                "value": "armenian-apostolic",
+                "label": "أرمني رسولي"
+              },
+              {
+                "value": "syriac-orthodox",
+                "label": "سرياني أرثوذكسي"
+              },
+              {
+                "value": "tewahedo",
+                "label": "أرثوذكسي إثيوبي / إريتري (تواحدو)"
+              },
+              {
+                "value": "catholic",
+                "label": "كاثوليكي (لاتيني)"
+              },
+              {
+                "value": "maronite",
+                "label": "ماروني"
+              },
+              {
+                "value": "melkite",
+                "label": "روم كاثوليك (ملكي)"
+              },
+              {
+                "value": "coptic-catholic",
+                "label": "قبطي كاثوليكي"
+              },
+              {
+                "value": "chaldean",
+                "label": "كلداني كاثوليكي"
+              },
+              {
+                "value": "assyrian",
+                "label": "كنيسة المشرق الآشورية"
+              },
+              {
+                "value": "evangelical",
+                "label": "إنجيلي / بروتستانتي"
+              },
+              {
+                "value": "anglican",
+                "label": "أنجليكاني / أسقفي"
+              },
+              {
+                "value": "lutheran",
+                "label": "لوثري"
+              },
+              {
+                "value": "presbyterian",
+                "label": "مشيخي / مُصلَح"
+              },
+              {
+                "value": "methodist",
+                "label": "ميثودي"
+              },
+              {
+                "value": "baptist",
+                "label": "معمداني"
+              },
+              {
+                "value": "pentecostal",
+                "label": "خمسيني"
+              },
+              {
+                "value": "adventist",
+                "label": "سبتي (الأدفنتست)"
+              },
+              {
+                "value": "other",
+                "label": "أخرى"
+              }
+            ]
+          },
+          {
+            "value": "judaism",
+            "label": "اليهودية",
+            "denominations": [
+              {
+                "value": "orthodox",
+                "label": "أرثوذكسي"
+              },
+              {
+                "value": "conservative",
+                "label": "محافظ (ماسورتي)"
+              },
+              {
+                "value": "reform",
+                "label": "إصلاحي / ليبرالي"
+              },
+              {
+                "value": "karaite",
+                "label": "قرائي"
+              },
+              {
+                "value": "other",
+                "label": "أخرى"
+              }
+            ]
+          },
+          {
+            "value": "druze",
+            "label": "الموحدون الدروز",
+            "denominations": []
+          },
+          {
+            "value": "bahai",
+            "label": "البهائية",
+            "denominations": []
+          },
+          {
+            "value": "yazidi",
+            "label": "الإيزيدية",
+            "denominations": []
+          },
+          {
+            "value": "mandaean",
+            "label": "الصابئة المندائيون",
+            "denominations": []
+          },
+          {
+            "value": "zoroastrianism",
+            "label": "الزرادشتية",
+            "denominations": []
+          },
+          {
+            "value": "hinduism",
+            "label": "الهندوسية",
+            "denominations": [
+              {
+                "value": "vaishnavism",
+                "label": "الفيشنوية"
+              },
+              {
+                "value": "shaivism",
+                "label": "الشيفية"
+              },
+              {
+                "value": "shaktism",
+                "label": "الشاكتية"
+              },
+              {
+                "value": "smartism",
+                "label": "السمارتية"
+              },
+              {
+                "value": "other",
+                "label": "أخرى"
+              }
+            ]
+          },
+          {
+            "value": "buddhism",
+            "label": "البوذية",
+            "denominations": [
+              {
+                "value": "theravada",
+                "label": "ثيرافادا"
+              },
+              {
+                "value": "mahayana",
+                "label": "ماهايانا"
+              },
+              {
+                "value": "vajrayana",
+                "label": "فاجرايانا (التبتية)"
+              },
+              {
+                "value": "other",
+                "label": "أخرى"
+              }
+            ]
+          },
+          {
+            "value": "sikhism",
+            "label": "السيخية",
+            "denominations": []
+          },
+          {
+            "value": "jainism",
+            "label": "الجاينية",
+            "denominations": [
+              {
+                "value": "digambara",
+                "label": "ديغامبارا"
+              },
+              {
+                "value": "svetambara",
+                "label": "شفيتامبارا"
+              },
+              {
+                "value": "other",
+                "label": "أخرى"
+              }
+            ]
+          },
+          {
+            "value": "shinto",
+            "label": "الشنتوية",
+            "denominations": []
+          },
+          {
+            "value": "taoism",
+            "label": "الطاوية",
+            "denominations": []
+          },
+          {
+            "value": "confucianism",
+            "label": "الكونفوشيوسية",
+            "denominations": []
+          },
+          {
+            "value": "african-traditional",
+            "label": "الديانات الأفريقية التقليدية",
+            "denominations": []
+          },
+          {
+            "value": "indigenous",
+            "label": "معتقدات أصلية / تقليدية",
+            "denominations": []
+          },
+          {
+            "value": "none",
+            "label": "بدون انتماء ديني",
+            "denominations": []
+          },
+          {
+            "value": "prefer-not",
+            "label": "أفضّل عدم الإجابة",
+            "denominations": []
+          },
+          {
+            "value": "other",
+            "label": "أخرى",
+            "denominations": []
+          }
+        ],
+        "religionPlaceholder": "اختر/ي الديانة",
+        "denominationPlaceholder": "اختر/ي المذهب أو الطائفة (اختياري)",
+        "otherReligion": "اكتب/ي الديانة",
+        "otherDenomination": "اكتب/ي المذهب أو الطائفة",
+        "fieldsHint": "اختر/ي حتى ٣ مجالات.",
         "fields": "مجالات العمل",
         "fieldOptions": [
           {
@@ -2677,10 +3588,13 @@
         "photoHint": "JPG أو PNG، تظهر مع مقولتك عند النشر.",
         "photoTooBig": "يُرجى اختيار صورة JPG أو PNG أقل من ٣ ميجابايت.",
         "consent": "أوافق على ميثاق سلوك الشبكة وعلى استخدام بياناتي لمعالجة طلب الانضمام.",
+        "publishConsent": "أوافق على نشر مقولتي واسمي ووظيفتي ودولتي وصورتي على الموقع.",
         "submit": "إرسال طلب الانضمام",
         "sending": "جارٍ الإرسال…",
         "success": "شكرًا لك، تم استلام طلب انضمامك وسيراجعه فريقنا ويتواصل معك.",
-        "error": "حدث خطأ، يُرجى مراجعة البيانات والمحاولة مرة أخرى."
+        "error": "حدث خطأ، يُرجى مراجعة البيانات والمحاولة مرة أخرى.",
+        "voicesTitle": "أصوات انضمت لصوتنا",
+        "readArticle": "قراءة المقال"
       },
       "members": {
         "meta": {
@@ -2732,6 +3646,7 @@
             ]
           }
         ],
+        "networkMembersTitle": "أعضاء الشبكة",
         "networkTitle": "شبكتنا",
         "networkLead": "صناع سلام وقيادات مجتمعية من المنطقة وخارجها، يتعلّمون ويمارسون ويقودون معًا.",
         "networkCta": "انضم/ي إلى الشبكة"

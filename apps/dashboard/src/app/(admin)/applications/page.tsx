@@ -2,19 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { apiGet } from "@/lib/api";
 import { getDict } from "@/lib/i18n";
+import { appTone, type AppStatus } from "@/lib/status";
 
 export const metadata: Metadata = { title: "Applications" };
 
-type Status = "pending" | "approved" | "rejected";
+type Status = AppStatus;
 type Kind = "member" | "voice";
-type Item = { id: string; kind: Kind; name: string; email: string; country: string; job: string; status: Status; hasCv: boolean; createdAt: string };
+type Item = { id: string; kind: Kind; name: string; email: string; country: string; job: string; status: Status; published: boolean; hasNote: boolean; createdAt: string };
 type Data = { kind: Kind; items: Item[]; counts: Record<Status, number>; pending: Record<Kind, number> };
-
-const statusTone: Record<Status, string> = {
-  pending: "bg-gold/20 text-gold-deep",
-  approved: "bg-sky-tint text-blue-deep",
-  rejected: "bg-danger/10 text-danger",
-};
+const STATUSES: Status[] = ["pending", "review", "hold", "approved", "rejected"];
 
 /**
  * Two kinds of submissions, each with status tabs (owner, 2026-11-14):
@@ -23,7 +19,7 @@ const statusTone: Record<Status, string> = {
 export default async function ApplicationsPage({ searchParams }: { searchParams: Promise<{ status?: string; kind?: string }> }) {
   const { status: rawStatus, kind: rawKind } = await searchParams;
   const kind: Kind = rawKind === "voice" ? "voice" : "member";
-  const status = rawStatus === "approved" || rawStatus === "rejected" || rawStatus === "all" ? rawStatus : "pending";
+  const status = (STATUSES as string[]).includes(rawStatus ?? "") || rawStatus === "all" ? (rawStatus as Status | "all") : "pending";
   const [{ lang, t }, { data, status: code }] = await Promise.all([
     getDict(),
     apiGet<Data>(`/admin/applications?kind=${kind}${status === "all" ? "" : `&status=${status}`}`),
@@ -33,13 +29,8 @@ export default async function ApplicationsPage({ searchParams }: { searchParams:
   const nf = new Intl.NumberFormat(loc);
   const fmt = new Intl.DateTimeFormat(loc, { day: "numeric", month: "short", year: "numeric" });
   const countries = new Intl.DisplayNames([lang], { type: "region" });
-  const total = data ? data.counts.pending + data.counts.approved + data.counts.rejected : 0;
-  const tabs: { key: Status | "all"; n: number }[] = [
-    { key: "pending", n: data?.counts.pending ?? 0 },
-    { key: "approved", n: data?.counts.approved ?? 0 },
-    { key: "rejected", n: data?.counts.rejected ?? 0 },
-    { key: "all", n: total },
-  ];
+  const total = data ? STATUSES.reduce((a, s) => a + data.counts[s], 0) : 0;
+  const tabs: { key: Status | "all"; n: number }[] = [...STATUSES.map((s) => ({ key: s, n: data?.counts[s] ?? 0 })), { key: "all", n: total }];
 
   return (
     <div className="flex flex-col gap-6">
@@ -102,8 +93,10 @@ export default async function ApplicationsPage({ searchParams }: { searchParams:
                 <span className="text-sm text-ink-soft">
                   {countries.of(item.country) ?? item.country} · {fmt.format(new Date(item.createdAt))}
                 </span>
-                <span className={`justify-self-start rounded-bov px-2 py-0.5 text-xs font-semibold sm:justify-self-end ${statusTone[item.status]}`}>
-                  {a.status[item.status]}
+                <span className="flex flex-wrap items-center gap-1.5 justify-self-start sm:justify-self-end">
+                  {item.hasNote && <span title={a.note}>📝</span>}
+                  {item.published && <span className="rounded-bov bg-gold px-2 py-0.5 text-xs font-semibold text-navy">{a.published}</span>}
+                  <span className={`rounded-bov px-2 py-0.5 text-xs font-semibold ${appTone[item.status]}`}>{a.status[item.status]}</span>
                 </span>
               </Link>
             </li>

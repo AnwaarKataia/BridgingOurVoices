@@ -33,6 +33,18 @@ export type SiteContent = {
     copyright: string;
   };
   comingSoon: string;
+  /** Messages shown when a form field is missing or wrong (owner, 2026-11-14). {min} = number of characters. */
+  forms: {
+    summary: string;
+    required: string;
+    email: string;
+    tooShort: string;
+    tooLong: string;
+    choose: string;
+    fieldsMax: string;
+    consent: string;
+    file: string;
+  };
   /** Link to /privacy: footer label, and the sentence + link label shown under the contact and join forms. */
   privacy: { label: string; formNote: string; formLink: string };
 };
@@ -88,6 +100,17 @@ const en: SiteContent = {
     copyright: "© 2026 Bridging Our Voices",
   },
   comingSoon: "Coming soon",
+  forms: {
+    summary: "Please check the highlighted fields:",
+    required: "This field is required.",
+    email: "Please enter a valid email, e.g. name@example.com.",
+    tooShort: "Please write at least {min} characters.",
+    tooLong: "Please shorten this text.",
+    choose: "Please choose an option.",
+    fieldsMax: "Choose up to 3 fields.",
+    consent: "Please tick this box to continue.",
+    file: "Please check the attached file.",
+  },
   privacy: { label: "Privacy policy", formNote: "How we use and protect your data:", formLink: "privacy policy" },
 };
 
@@ -142,6 +165,17 @@ const fr: SiteContent = {
     copyright: "© 2026 Bridging Our Voices",
   },
   comingSoon: "Bientôt",
+  forms: {
+    summary: "Veuillez vérifier les champs signalés :",
+    required: "Ce champ est obligatoire.",
+    email: "Veuillez saisir une adresse e-mail valide, par ex. nom@exemple.com.",
+    tooShort: "Veuillez écrire au moins {min} caractères.",
+    tooLong: "Veuillez raccourcir ce texte.",
+    choose: "Veuillez choisir une option.",
+    fieldsMax: "Choisissez jusqu’à 3 domaines.",
+    consent: "Veuillez cocher cette case pour continuer.",
+    file: "Veuillez vérifier le fichier joint.",
+  },
   privacy: { label: "Politique de confidentialité", formNote: "Comment nous utilisons et protégeons vos données :", formLink: "politique de confidentialité" },
 };
 
@@ -196,6 +230,17 @@ const ar: SiteContent = {
     copyright: "© ٢٠٢٦ Bridging Our Voices",
   },
   comingSoon: "قريبًا",
+  forms: {
+    summary: "يرجى مراجعة الحقول المحددة:",
+    required: "هذا الحقل مطلوب.",
+    email: "يرجى كتابة بريد إلكتروني صحيح، مثل name@example.com.",
+    tooShort: "يرجى كتابة {min} أحرف على الأقل.",
+    tooLong: "يرجى تقصير هذا النص.",
+    choose: "يرجى اختيار أحد الخيارات.",
+    fieldsMax: "اختر/ي ٣ مجالات على الأكثر.",
+    consent: "يرجى وضع علامة في هذا المربع للمتابعة.",
+    file: "يرجى مراجعة الملف المرفق.",
+  },
   privacy: { label: "سياسة الخصوصية", formNote: "كيف نستخدم بياناتك ونحميها:", formLink: "سياسة الخصوصية" },
 };
 

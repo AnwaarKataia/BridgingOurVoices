@@ -52,7 +52,12 @@ export const contactMessages = pgTable(
     topic: text("topic").notNull(),
     message: text("message").notNull(),
     locale: text("locale").notNull().default("en"),
-    status: text("status", { enum: ["new", "read", "replied", "archived"] }).notNull().default("new"),
+    /** new → review (being looked at) / hold (later) → replied → archived. */
+    status: text("status", { enum: ["new", "review", "hold", "replied", "archived"] }).notNull().default("new"),
+    /** Internal note from the team (never shown to the sender). */
+    note: text("note").notNull().default(""),
+    handledBy: uuid("handled_by").references(() => users.id, { onDelete: "set null" }),
+    updatedAt: timestamp("updated_at", { withTimezone: true }),
     createdAt: createdAt(),
   },
   (t) => [index("contact_messages_status_idx").on(t.status)],
@@ -91,7 +96,15 @@ export const applications = pgTable(
     photo: text("photo"),
     cv: text("cv"),
     locale: text("locale").notNull().default("en"),
-    status: text("status", { enum: ["pending", "approved", "rejected"] }).notNull().default("pending"),
+    /** pending (new) → review / hold (later) → approved / rejected. */
+    status: text("status", { enum: ["pending", "review", "hold", "approved", "rejected"] }).notNull().default("pending"),
+    /** Internal note from the team (never shown to the applicant). */
+    note: text("note").notNull().default(""),
+    /** The applicant ticked "may be published" on the form; publishing on the site needs it. */
+    publishConsent: boolean("publish_consent").notNull().default(false),
+    /** Shown on the site: "voice" on the Join page, "member" on Our members. Only when approved + consent. */
+    published: boolean("published").notNull().default(false),
+    publishedAt: timestamp("published_at", { withTimezone: true }),
     reviewedBy: uuid("reviewed_by").references(() => users.id, { onDelete: "set null" }),
     reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
     createdAt: createdAt(),

@@ -36,6 +36,13 @@
       "when": 1794668221136,
       "tag": "0004_young_legion",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794673788932,
+      "tag": "0005_curvy_prism",
+      "breakpoints": true
     }
   ]
 }

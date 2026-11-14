@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import type { Locale } from "@/i18n/config";
 import type { NetworkContent } from "@/content/network";
 import { apiUrl } from "@/lib/site";
 import type { SiteContent } from "@/content/site";
 import { btn } from "../ui";
 import { PrivacyNote } from "../PrivacyNote";
+import { ErrorSummary, FieldError, focusFirst, ReligionFields, serverErrors, validateForm, WorkFields, type FormErrors } from "../forms/FormHelpers";
 
 type Status = "idle" | "sending" | "done" | "error";
 type Props = {
@@ -17,6 +18,8 @@ type Props = {
   form: NetworkContent["membership"]["form"];
   countries: { code: string; name: string }[];
   privacy: SiteContent["privacy"];
+  /** Messages for missing or wrong fields. */
+  forms: SiteContent["forms"];
 };
 
 const MAX_PHOTO = 3 * 1024 * 1024;
@@ -41,10 +44,13 @@ function Label({ text, required }: { text: string; required?: boolean }) {
  * Same personal details as "Add your voice to ours", then: experience summary (max 150 words), CV (PDF,
  * max 4 pages), motivation, activities, organisations they could connect us with (optional), optional photo.
  */
-export function MembershipForm({ locale, join, form, countries, privacy }: Props) {
+export function MembershipForm({ locale, join, form, countries, privacy, forms }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [preview, setPreview] = useState<string | null>(null);
   const [photoError, setPhotoError] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [resetKey, setResetKey] = useState(0);
+  const formRef = useRef<HTMLFormElement>(null);
   const [words, setWords] = useState(0);
   const [cvName, setCvName] = useState("");
   const [cvError, setCvError] = useState(false);
@@ -85,9 +91,15 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
     e.preventDefault();
     const el = e.currentTarget;
     const data = new FormData(el);
-    if (countWords(String(data.get("experience") ?? "")) > MAX_WORDS) {
+    // Every problem at once: browser rules + word limit + CV file
+    const found = validateForm(el, forms, nf);
+    if (countWords(String(data.get("experience") ?? "")) > MAX_WORDS) found.experience = form.experienceTooLong;
+    if (cvError) found.cv = form.cvError;
+    setErrors(found);
+    if (Object.keys(found).length) {
       setStatus("error");
-      setErrorText(form.experienceTooLong);
+      setErrorText("");
+      focusFirst(el, found);
       return;
     }
     data.set("locale", locale);
@@ -100,7 +112,10 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
         const body = (await res.json().catch(() => ({}))) as { errors?: string[] };
         const errs = body.errors ?? [];
         if (errs.includes("cv") || errs.includes("cv_pages")) setCvError(true);
-        setErrorText(errs.includes("cv") || errs.includes("cv_pages") ? form.cvError : errs.includes("experience") ? form.experienceTooLong : join.error);
+        const mapped = serverErrors(errs, forms, { cv: form.cvError, cv_pages: form.cvError, experience: form.experienceTooLong });
+        setErrors(mapped);
+        setErrorText(Object.keys(mapped).length ? "" : join.error);
+        focusFirst(el, mapped);
         setStatus("error");
         return;
       }
@@ -109,6 +124,8 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
       setPreview(null);
       setWords(0);
       setCvName("");
+      setErrors({});
+      setResetKey((k) => k + 1);
     } catch {
       setErrorText(join.error);
       setStatus("error");
@@ -117,6 +134,8 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
 
   return (
     <form
+      ref={formRef}
+      noValidate
       onSubmit={onSubmit}
       className="relative flex flex-col gap-9 rounded-bov border border-t-4 border-line border-t-gold bg-white p-5 sm:p-9"
     >
@@ -126,7 +145,8 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
         <div className="grid gap-x-5 gap-y-[18px] sm:grid-cols-2">
           <label className="flex flex-col gap-2">
             <Label text={join.name} required />
-            <input name="name" required minLength={2} maxLength={120} autoComplete="name" className={`${input} h-12`} />
+            <input name="name" aria-invalid={errors.name ? true : undefined} required minLength={2} maxLength={120} autoComplete="name" className={`${input} h-12`} />
+          <FieldError msg={errors.name} />
           </label>
 
           <fieldset className="m-0 flex min-w-0 flex-col gap-2 border-0 p-0">
@@ -134,16 +154,18 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
             <div className="flex min-h-12 flex-wrap items-center gap-x-5 gap-y-2">
               {join.genders.map((g) => (
                 <label key={g.value} className="flex items-center gap-2 text-[15px] text-ink">
-                  <input type="radio" name="gender" value={g.value} required className="size-[18px] accent-navy" />
+                  <input type="radio" name="gender" aria-invalid={errors.gender ? true : undefined} value={g.value} required className="size-[18px] accent-navy" />
                   {g.label}
                 </label>
               ))}
             </div>
+          <FieldError msg={errors.gender} />
           </fieldset>
 
           <label className="flex flex-col gap-2">
             <Label text={join.job} required />
-            <input name="job" required minLength={2} maxLength={120} autoComplete="organization-title" className={`${input} h-12`} />
+            <input name="job" aria-invalid={errors.job ? true : undefined} required minLength={2} maxLength={120} autoComplete="organization-title" className={`${input} h-12`} />
+          <FieldError msg={errors.job} />
           </label>
 
           <label className="flex flex-col gap-2">
@@ -153,50 +175,31 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
 
           <label className="flex flex-col gap-2">
             <Label text={join.country} required />
-            <select name="country" required defaultValue="" autoComplete="country" className={`${input} h-12`}>
+            <select name="country" aria-invalid={errors.country ? true : undefined} required defaultValue="" autoComplete="country" className={`${input} h-12`}>
               <option value="" disabled>{join.countryPlaceholder}</option>
               {countries.map((c) => (
                 <option key={c.code} value={c.code}>{c.name}</option>
               ))}
             </select>
+          <FieldError msg={errors.country} />
           </label>
 
           <label className="flex flex-col gap-2">
             <Label text={join.email} required />
-            <input name="email" type="email" required maxLength={254} autoComplete="email" dir="ltr" className={`${input} h-12 rtl:text-end`} />
+            <input name="email" aria-invalid={errors.email ? true : undefined} type="email" required maxLength={254} autoComplete="email" dir="ltr" className={`${input} h-12 rtl:text-end`} />
+          <FieldError msg={errors.email} />
           </label>
 
-          <label className="flex flex-col gap-2">
-            <Label text={join.religion} required />
-            <input name="religion" required minLength={2} maxLength={80} className={`${input} h-12`} />
-          </label>
-
-          <label className="flex flex-col gap-2">
-            <Label text={join.subreligion} />
-            <input name="subreligion" maxLength={80} className={`${input} h-12`} />
-          </label>
+          <ReligionFields key={`religion-${resetKey}`} join={join} errors={errors} inputClass={input} Label={Label} />
         </div>
 
-        <fieldset className="m-0 flex min-w-0 flex-col gap-2 border-0 p-0">
-          <legend className="mb-2 p-0"><Label text={join.fields} /></legend>
-          <div className="flex flex-wrap gap-2">
-            {join.fieldOptions.map((f) => (
-              <label
-                key={f.value}
-                className="flex h-10 cursor-pointer items-center rounded-full border border-line-input bg-white px-3.5 text-sm text-ink transition hover:border-navy has-[:checked]:border-navy has-[:checked]:bg-navy has-[:checked]:text-on-dark has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-sky"
-              >
-                <input type="checkbox" name="fields" value={f.value} className="sr-only" />
-                {f.label}
-              </label>
-            ))}
-          </div>
-        </fieldset>
+        <WorkFields key={`fields-${resetKey}`} join={join} error={errors.fields} Label={Label} />
 
         {/* Experience summary: one paragraph of at most 150 words, with a live word count */}
         <label className="flex flex-col gap-2">
           <Label text={form.experience} required />
           <textarea
-            name="experience"
+            name="experience" aria-invalid={errors.experience ? true : undefined}
             required
             minLength={10}
             maxLength={2000}
@@ -211,6 +214,7 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
               {form.wordCount.replace("{count}", nf.format(words)).replace("{max}", nf.format(MAX_WORDS))}
             </span>
           </span>
+        <FieldError msg={errors.experience} />
         </label>
 
         {/* CV: PDF only, up to 4 pages and 5 MB */}
@@ -223,24 +227,27 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
             </label>
             {cvName && <span dir="ltr" className="max-w-full truncate text-sm text-ink">{cvName}</span>}
           </div>
-          <span className={`text-label ${cvError ? "text-danger" : "text-ink-soft"}`}>{cvError ? form.cvError : form.cvHint}</span>
+          <span role={cvError || errors.cv ? "alert" : undefined} className={`text-label ${cvError || errors.cv ? "font-medium text-danger" : "text-ink-soft"}`}>{cvError || errors.cv ? form.cvError : form.cvHint}</span>
         </div>
 
         <label className="flex flex-col gap-2">
           <Label text={form.motivation} required />
-          <textarea name="motivation" required minLength={10} maxLength={2000} rows={4} className={`${input} py-3 leading-relaxed`} />
-        </label>
+          <textarea name="motivation" aria-invalid={errors.motivation ? true : undefined} required minLength={10} maxLength={2000} rows={4} className={`${input} py-3 leading-relaxed`} />
+        <FieldError msg={errors.motivation} />
+          </label>
 
         <label className="flex flex-col gap-2">
           <Label text={form.activities} required />
-          <textarea name="activities" required minLength={10} maxLength={2000} rows={4} className={`${input} py-3 leading-relaxed`} />
-        </label>
+          <textarea name="activities" aria-invalid={errors.activities ? true : undefined} required minLength={10} maxLength={2000} rows={4} className={`${input} py-3 leading-relaxed`} />
+        <FieldError msg={errors.activities} />
+          </label>
 
         <label className="flex flex-col gap-2">
           <Label text={form.connections} />
-          <textarea name="connections" maxLength={2000} rows={3} aria-describedby="connections-hint" className={`${input} py-3 leading-relaxed`} />
+          <textarea name="connections" aria-invalid={errors.connections ? true : undefined} maxLength={2000} rows={3} aria-describedby="connections-hint" className={`${input} py-3 leading-relaxed`} />
           <span id="connections-hint" className="text-label text-ink-soft">{form.connectionsHint}</span>
-        </label>
+        <FieldError msg={errors.connections} />
+          </label>
 
         <div className="flex flex-col gap-2">
           <Label text={join.photo} />
@@ -269,11 +276,18 @@ export function MembershipForm({ locale, join, form, countries, privacy }: Props
       </div>
 
       <div className="flex flex-col gap-5 border-t border-line pt-4">
+        {/* Optional: lets the team publish this on the site from the dashboard */}
         <label className="flex items-start gap-2.5 text-[15px] leading-relaxed text-ink-soft">
-          <input type="checkbox" name="consent" value="yes" required className="mt-1 size-[18px] flex-none accent-navy" />
-          {join.consent}
+          <input type="checkbox" name="publish" value="yes" className="mt-1 size-[18px] flex-none accent-navy" />
+          {form.publishConsent}
         </label>
+        <label className="flex items-start gap-2.5 text-[15px] leading-relaxed text-ink-soft">
+          <input type="checkbox" name="consent" aria-invalid={errors.consent ? true : undefined} value="yes" required className="mt-1 size-[18px] flex-none accent-navy" />
+          {join.consent}
+        <FieldError msg={errors.consent} />
+          </label>
         <PrivacyNote locale={locale} privacy={privacy} />
+        <ErrorSummary errors={errors} form={formRef.current} title={forms.summary} />
         <div className="flex flex-col items-start gap-3">
           <button type="submit" disabled={status === "sending"} className={`${btn.gold} h-[54px] px-[30px] disabled:opacity-60`}>
             {status === "sending" ? join.sending : form.submit}

@@ -5,7 +5,11 @@ const apiUrl = process.env.API_URL ?? process.env.NEXT_PUBLIC_API_URL ?? "http:/
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    return [{ source: "/media/:file", destination: `${apiUrl}/media/:file` }];
+    return [
+      { source: "/media/:file", destination: `${apiUrl}/media/:file` },
+      // Photos of published "Add your voice" statements and members (the API serves them only while published)
+      { source: "/public-photo/:id", destination: `${apiUrl}/public/photo/:id` },
+    ];
   },
   async redirects() {
     return [

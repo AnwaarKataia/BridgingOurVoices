@@ -60,7 +60,7 @@ export default async function ContactPage({ params }: Params) {
       <PageHeader eyebrow={c.header.eyebrow} title={c.header.title} lead={c.header.lead} />
       <section>
         <div className="container-site grid gap-x-[72px] gap-y-12 pt-12 pb-16 md:pt-[72px] md:pb-24 lg:grid-cols-[1.35fr_1fr]">
-          <ContactForm locale={locale} form={c.form} privacy={site.privacy} />
+          <ContactForm locale={locale} form={c.form} privacy={site.privacy} forms={site.forms} />
           <ContactInfo info={c.info} />
         </div>
       </section>
