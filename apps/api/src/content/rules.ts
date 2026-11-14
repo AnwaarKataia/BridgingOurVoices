@@ -67,4 +67,38 @@ export function addMissing(doc: Json, seed: Json): Json {
   return doc;
 }
 
+/**
+ * Field-by-field update when the code's copy changes: `oldSeed` is the copy the document started from,
+ * `newSeed` the code's new copy. A field still equal to `oldSeed` (never edited in the dashboard) takes the
+ * new text; an edited field keeps the dashboard's text. The shape follows `newSeed` (new fields added,
+ * removed fields dropped).
+ */
+export function rebase(doc: Json, oldSeed: Json | undefined, newSeed: Json): Json {
+  if (Array.isArray(newSeed)) {
+    if (!Array.isArray(doc) || doc.length !== newSeed.length) return newSeed;
+    const old = Array.isArray(oldSeed) && oldSeed.length === newSeed.length ? oldSeed : undefined;
+    return newSeed.map((n, i) => rebase(doc[i], old?.[i], n));
+  }
+  if (newSeed !== null && typeof newSeed === "object") {
+    if (doc === null || typeof doc !== "object" || Array.isArray(doc)) return newSeed;
+    const old = oldSeed && typeof oldSeed === "object" && !Array.isArray(oldSeed) ? (oldSeed as Record<string, Json>) : undefined;
+    const d = doc as Record<string, Json>;
+    return Object.fromEntries(Object.entries(newSeed).map(([k, n]) => [k, k in d ? rebase(d[k], old?.[k], n) : n]));
+  }
+  if (typeof doc !== typeof newSeed) return newSeed;
+  // Unedited (still the old copy) → new copy; edited → keep
+  return oldSeed !== undefined && JSON.stringify(doc) === JSON.stringify(oldSeed) ? newSeed : doc;
+}
+
+/** Drops object keys that the seed (the current code) no longer has, so removed fields leave the editor. */
+export function dropRemoved(doc: Json, seed: Json): Json {
+  if (Array.isArray(doc) && Array.isArray(seed)) {
+    return doc.length === seed.length ? doc.map((d, i) => dropRemoved(d, seed[i])) : doc;
+  }
+  if (doc && seed && typeof doc === "object" && typeof seed === "object" && !Array.isArray(doc) && !Array.isArray(seed)) {
+    return Object.fromEntries(Object.entries(doc).filter(([k]) => k in seed).map(([k, v]) => [k, dropRemoved(v, (seed as Record<string, Json>)[k])]));
+  }
+  return doc;
+}
+
 export type { Json };

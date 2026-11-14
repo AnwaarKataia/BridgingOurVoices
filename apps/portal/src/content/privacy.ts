@@ -39,7 +39,7 @@ const en: PrivacyContent = {
     lead: "What we collect through this website, why we need it, how long we keep it, and how you can see, change or delete it.",
   },
   updatedLabel: "Last updated",
-  updated: "6 November 2026",
+  updated: "14 November 2026",
   tocLabel: "On this page",
   sections: sections([
     {
@@ -62,7 +62,7 @@ const en: PrivacyContent = {
           list: [
             "Your name, gender, job title, organisation (optional), country and email address.",
             "Your religion, and your denomination if you choose to give it.",
-            "Your fields of work, your message of support and, if you wish, an article.",
+            "Your fields of work, a summary of your experience (up to 150 words), your CV (PDF), what motivates you to join, and the activities you could carry out with us.",
             "A photo, if you choose to upload one.",
             "The language of the page you used.",
           ],
@@ -94,7 +94,7 @@ const en: PrivacyContent = {
     {
       title: "What we may publish",
       blocks: [
-        { p: "If your application is accepted, we may show your name, role, country, message of support and photo on the “Our members” page. We will only do this after our team has reviewed it and you have agreed. You can ask us to remove it at any time." },
+        { p: "If your application is accepted, we may show your name, role, country, photo and a short summary of your experience on the “Our members” page. We will only do this after our team has reviewed it and you have agreed. You can ask us to remove it at any time. Your CV is only read by our team and is never published." },
       ],
     },
     {
@@ -116,7 +116,7 @@ const en: PrivacyContent = {
           list: [
             "Newsletter: until you unsubscribe.",
             "Contact messages: up to 12 months after our last reply.",
-            "Membership applications: for as long as you are a member. If an application is not accepted, or you withdraw it, we delete it, and any photo, within 6 months.",
+            "Membership applications: for as long as you are a member. If an application is not accepted, or you withdraw it, we delete it, with any photo and CV, within 6 months.",
             "Server logs: for the short period our hosting provider keeps them.",
           ],
         },
@@ -165,7 +165,7 @@ const fr: PrivacyContent = {
     lead: "Ce que nous collectons sur ce site, pourquoi, combien de temps nous le gardons, et comment le consulter, le modifier ou le supprimer.",
   },
   updatedLabel: "Dernière mise à jour",
-  updated: "6 novembre 2026",
+  updated: "14 novembre 2026",
   tocLabel: "Sur cette page",
   sections: sections([
     {
@@ -188,7 +188,7 @@ const fr: PrivacyContent = {
           list: [
             "Votre nom, genre, fonction, organisation (facultatif), pays et adresse e-mail.",
             "Votre religion, et votre confession si vous choisissez de l’indiquer.",
-            "Vos domaines d’action, votre message de soutien et, si vous le souhaitez, un article.",
+            "Vos domaines d’action, un résumé de votre expérience (150 mots maximum), votre CV (PDF), ce qui vous motive à nous rejoindre et les activités que vous pourriez mener avec nous.",
             "Une photo, si vous choisissez d’en ajouter une.",
             "La langue de la page utilisée.",
           ],
@@ -220,7 +220,7 @@ const fr: PrivacyContent = {
     {
       title: "Ce que nous pouvons publier",
       blocks: [
-        { p: "Si votre candidature est acceptée, nous pouvons afficher votre nom, votre fonction, votre pays, votre message de soutien et votre photo sur la page « Nos membres ». Nous ne le faisons qu’après examen par notre équipe et avec votre accord. Vous pouvez demander leur retrait à tout moment." },
+        { p: "Si votre candidature est acceptée, nous pouvons afficher votre nom, votre fonction, votre pays, votre photo et un court résumé de votre expérience sur la page « Nos membres ». Nous ne le faisons qu’après examen par notre équipe et avec votre accord. Vous pouvez demander leur retrait à tout moment. Votre CV n’est lu que par notre équipe et n’est jamais publié." },
       ],
     },
     {
@@ -242,7 +242,7 @@ const fr: PrivacyContent = {
           list: [
             "Newsletter : jusqu’à votre désinscription.",
             "Messages de contact : jusqu’à 12 mois après notre dernière réponse.",
-            "Demandes d’adhésion : tant que vous êtes membre. Si une candidature n’est pas retenue, ou si vous la retirez, nous la supprimons, photo comprise, sous 6 mois.",
+            "Demandes d’adhésion : tant que vous êtes membre. Si une candidature n’est pas retenue, ou si vous la retirez, nous la supprimons, photo et CV compris, sous 6 mois.",
             "Journaux serveur : pendant la courte durée fixée par notre hébergeur.",
           ],
         },
@@ -291,7 +291,7 @@ const ar: PrivacyContent = {
     lead: "ما نجمعه عبر هذا الموقع، ولماذا نحتاجه، وإلى متى نحتفظ به، وكيف يمكنك الاطلاع عليه أو تعديله أو حذفه.",
   },
   updatedLabel: "آخر تحديث",
-  updated: "٦ نوفمبر ٢٠٢٦",
+  updated: "١٤ نوفمبر ٢٠٢٦",
   tocLabel: "في هذه الصفحة",
   sections: sections([
     {
@@ -314,7 +314,7 @@ const ar: PrivacyContent = {
           list: [
             "اسمك، والنوع، والمسمى الوظيفي، والمؤسسة (اختياري)، والدولة، والبريد الإلكتروني.",
             "ديانتك، والمذهب إذا اخترت ذكره.",
-            "مجالات عملك، ومقولتك الداعمة، ومقالًا إذا رغبت.",
+            "مجالات عملك، وملخص خبرتك (حتى ١٥٠ كلمة)، وسيرتك الذاتية (PDF)، وما يدفعك للانضمام إلينا، والأنشطة التي يمكنك تنفيذها معنا.",
             "صورة، إذا اخترت رفعها.",
             "لغة الصفحة التي استخدمتها.",
           ],
@@ -346,7 +346,7 @@ const ar: PrivacyContent = {
     {
       title: "ما قد ننشره",
       blocks: [
-        { p: "إذا قُبل طلبك، قد نعرض اسمك ودورك ودولتك ومقولتك الداعمة وصورتك في صفحة «أعضاؤنا». ولا نفعل ذلك إلا بعد مراجعة فريقنا وبموافقتك، ويمكنك أن تطلب حذفها في أي وقت." },
+        { p: "إذا قُبل طلبك، قد نعرض اسمك ودورك ودولتك وصورتك وملخصًا قصيرًا لخبرتك في صفحة «أعضاؤنا». ولا نفعل ذلك إلا بعد مراجعة فريقنا وبموافقتك، ويمكنك أن تطلب حذفها في أي وقت. أما سيرتك الذاتية فلا يطّلع عليها إلا فريقنا، ولا تُنشر أبدًا." },
       ],
     },
     {
@@ -368,7 +368,7 @@ const ar: PrivacyContent = {
           list: [
             "النشرة البريدية: حتى تلغي اشتراكك.",
             "رسائل التواصل: حتى ١٢ شهرًا بعد آخر رد منا.",
-            "طلبات الانضمام: طوال مدة عضويتك. وإذا لم يُقبل الطلب أو سحبته، نحذفه هو والصورة خلال ٦ أشهر.",
+            "طلبات الانضمام: طوال مدة عضويتك. وإذا لم يُقبل الطلب أو سحبته، نحذفه هو والصورة والسيرة الذاتية خلال ٦ أشهر.",
             "سجلات الخادم: للمدة القصيرة التي تحددها جهة الاستضافة.",
           ],
         },

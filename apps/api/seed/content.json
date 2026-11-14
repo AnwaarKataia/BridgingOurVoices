@@ -2154,10 +2154,10 @@
       "join": {
         "meta": {
           "title": "Add your voice to ours",
-          "description": "Membership of the Bridging Our Voices network is free. Share a few details and a message of support, and our team will contact you."
+          "description": "Membership of the Bridging Our Voices network is free. Share your details, a summary of your experience and your CV, and our team will contact you."
         },
         "title": "Add your voice to ours",
-        "lead": "Membership is free. Share a few details and a message of support, our team will review it and contact you.",
+        "lead": "Membership is free. Share your details, a summary of your experience and your CV, and our team will review your application and contact you.",
         "legend": "Your details",
         "name": "Full name",
         "gender": "Gender",
@@ -2233,11 +2233,19 @@
             "label": "Media"
           }
         ],
-        "quote": "A message of support for the initiative",
-        "article": "Share an article (optional)",
+        "experience": "Summary of your experience",
+        "experienceHint": "One paragraph, up to 150 words.",
+        "wordCount": "{count} / {max} words",
+        "experienceTooLong": "Please keep the summary to 150 words or fewer.",
+        "cv": "Your CV",
+        "cvButton": "Upload CV",
+        "cvHint": "PDF only, up to 4 pages and 5 MB.",
+        "cvError": "Please choose a PDF of up to 4 pages and 5 MB.",
+        "motivation": "What motivates you to join us?",
+        "activities": "Which activities could you carry out with us?",
         "photo": "Your photo (optional)",
         "photoButton": "Upload photo",
-        "photoHint": "JPG or PNG, shown with your message if published.",
+        "photoHint": "JPG or PNG, up to 3 MB.",
         "photoTooBig": "Please choose a JPG or PNG under 3 MB.",
         "consent": "I agree to the network’s code of conduct and to my data being used to process my application.",
         "submit": "Submit application",
@@ -2344,10 +2352,10 @@
       "join": {
         "meta": {
           "title": "Joignez votre voix à la nôtre",
-          "description": "L’adhésion au réseau Bridging Our Voices est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera."
+          "description": "L’adhésion au réseau Bridging Our Voices est gratuite. Partagez vos informations, un résumé de votre expérience et votre CV : notre équipe vous recontactera."
         },
         "title": "Joignez votre voix à la nôtre",
-        "lead": "L’adhésion est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera.",
+        "lead": "L’adhésion est gratuite. Partagez vos informations, un résumé de votre expérience et votre CV : notre équipe examinera votre candidature et vous recontactera.",
         "legend": "Vos informations",
         "name": "Nom complet",
         "gender": "Genre",
@@ -2423,11 +2431,19 @@
             "label": "Médias"
           }
         ],
-        "quote": "Un message de soutien à l’initiative",
-        "article": "Partager un article (facultatif)",
+        "experience": "Résumé de votre expérience",
+        "experienceHint": "Un paragraphe de 150 mots maximum.",
+        "wordCount": "{count} / {max} mots",
+        "experienceTooLong": "Merci de limiter le résumé à 150 mots.",
+        "cv": "Votre CV",
+        "cvButton": "Ajouter votre CV",
+        "cvHint": "PDF uniquement, 4 pages et 5 Mo maximum.",
+        "cvError": "Veuillez choisir un PDF de 4 pages et 5 Mo maximum.",
+        "motivation": "Qu’est-ce qui vous motive à nous rejoindre ?",
+        "activities": "Quelles activités pourriez-vous mener avec nous ?",
         "photo": "Votre photo (facultatif)",
         "photoButton": "Ajouter une photo",
-        "photoHint": "JPG ou PNG, affichée avec votre message en cas de publication.",
+        "photoHint": "JPG ou PNG, 3 Mo maximum.",
         "photoTooBig": "Veuillez choisir un JPG ou PNG de moins de 3 Mo.",
         "consent": "J’accepte le code de conduite du réseau et l’utilisation de mes données pour traiter ma candidature.",
         "submit": "Envoyer ma candidature",
@@ -2534,10 +2550,10 @@
       "join": {
         "meta": {
           "title": "ضم صوتك لصوتنا",
-          "description": "العضوية في شبكة Bridging Our Voices مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك."
+          "description": "العضوية في شبكة Bridging Our Voices مجانية. شاركنا بياناتك وملخص خبرتك وسيرتك الذاتية، وسيتواصل معك فريقنا."
         },
         "title": "ضم صوتك لصوتنا",
-        "lead": "العضوية مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك.",
+        "lead": "العضوية مجانية. شاركنا بياناتك وملخص خبرتك وسيرتك الذاتية، وسيراجع فريقنا طلبك ويتواصل معك.",
         "legend": "بياناتك",
         "name": "الاسم بالكامل",
         "gender": "النوع",
@@ -2613,11 +2629,19 @@
             "label": "الإعلام"
           }
         ],
-        "quote": "مقولة تدعمنا بها",
-        "article": "شارك/ي بمقال (اختياري)",
+        "experience": "ملخص خبرتك",
+        "experienceHint": "فقرة واحدة لا تزيد على ١٥٠ كلمة.",
+        "wordCount": "{count} / {max} كلمة",
+        "experienceTooLong": "يرجى ألا يزيد الملخص على ١٥٠ كلمة.",
+        "cv": "السيرة الذاتية",
+        "cvButton": "رفع السيرة الذاتية",
+        "cvHint": "ملف PDF فقط، لا يزيد على ٤ صفحات و٥ ميجابايت.",
+        "cvError": "يرجى اختيار ملف PDF لا يزيد على ٤ صفحات و٥ ميجابايت.",
+        "motivation": "ما الذي يدفعك للانضمام إلينا؟",
+        "activities": "ما الأنشطة التي يمكنك تنفيذها معنا؟",
         "photo": "صورتك (اختياري)",
         "photoButton": "رفع صورة",
-        "photoHint": "JPG أو PNG، تظهر مع مقولتك عند النشر.",
+        "photoHint": "JPG أو PNG، حتى ٣ ميجابايت.",
         "photoTooBig": "يُرجى اختيار صورة JPG أو PNG أقل من ٣ ميجابايت.",
         "consent": "أوافق على ميثاق سلوك الشبكة وعلى استخدام بياناتي لمعالجة طلب الانضمام.",
         "submit": "إرسال طلب الانضمام",
@@ -2842,7 +2866,7 @@
         "lead": "What we collect through this website, why we need it, how long we keep it, and how you can see, change or delete it."
       },
       "updatedLabel": "Last updated",
-      "updated": "6 November 2026",
+      "updated": "14 November 2026",
       "tocLabel": "On this page",
       "sections": [
         {
@@ -2888,7 +2912,7 @@
               "list": [
                 "Your name, gender, job title, organisation (optional), country and email address.",
                 "Your religion, and your denomination if you choose to give it.",
-                "Your fields of work, your message of support and, if you wish, an article.",
+                "Your fields of work, a summary of your experience (up to 150 words), your CV (PDF), what motivates you to join, and the activities you could carry out with us.",
                 "A photo, if you choose to upload one.",
                 "The language of the page you used."
               ]
@@ -2934,7 +2958,7 @@
           "title": "What we may publish",
           "blocks": [
             {
-              "p": "If your application is accepted, we may show your name, role, country, message of support and photo on the “Our members” page. We will only do this after our team has reviewed it and you have agreed. You can ask us to remove it at any time."
+              "p": "If your application is accepted, we may show your name, role, country, photo and a short summary of your experience on the “Our members” page. We will only do this after our team has reviewed it and you have agreed. You can ask us to remove it at any time. Your CV is only read by our team and is never published."
             }
           ]
         },
@@ -2961,7 +2985,7 @@
               "list": [
                 "Newsletter: until you unsubscribe.",
                 "Contact messages: up to 12 months after our last reply.",
-                "Membership applications: for as long as you are a member. If an application is not accepted, or you withdraw it, we delete it, and any photo, within 6 months.",
+                "Membership applications: for as long as you are a member. If an application is not accepted, or you withdraw it, we delete it, with any photo and CV, within 6 months.",
                 "Server logs: for the short period our hosting provider keeps them."
               ]
             }
@@ -3027,7 +3051,7 @@
         "lead": "Ce que nous collectons sur ce site, pourquoi, combien de temps nous le gardons, et comment le consulter, le modifier ou le supprimer."
       },
       "updatedLabel": "Dernière mise à jour",
-      "updated": "6 novembre 2026",
+      "updated": "14 novembre 2026",
       "tocLabel": "Sur cette page",
       "sections": [
         {
@@ -3073,7 +3097,7 @@
               "list": [
                 "Votre nom, genre, fonction, organisation (facultatif), pays et adresse e-mail.",
                 "Votre religion, et votre confession si vous choisissez de l’indiquer.",
-                "Vos domaines d’action, votre message de soutien et, si vous le souhaitez, un article.",
+                "Vos domaines d’action, un résumé de votre expérience (150 mots maximum), votre CV (PDF), ce qui vous motive à nous rejoindre et les activités que vous pourriez mener avec nous.",
                 "Une photo, si vous choisissez d’en ajouter une.",
                 "La langue de la page utilisée."
               ]
@@ -3119,7 +3143,7 @@
           "title": "Ce que nous pouvons publier",
           "blocks": [
             {
-              "p": "Si votre candidature est acceptée, nous pouvons afficher votre nom, votre fonction, votre pays, votre message de soutien et votre photo sur la page « Nos membres ». Nous ne le faisons qu’après examen par notre équipe et avec votre accord. Vous pouvez demander leur retrait à tout moment."
+              "p": "Si votre candidature est acceptée, nous pouvons afficher votre nom, votre fonction, votre pays, votre photo et un court résumé de votre expérience sur la page « Nos membres ». Nous ne le faisons qu’après examen par notre équipe et avec votre accord. Vous pouvez demander leur retrait à tout moment. Votre CV n’est lu que par notre équipe et n’est jamais publié."
             }
           ]
         },
@@ -3146,7 +3170,7 @@
               "list": [
                 "Newsletter : jusqu’à votre désinscription.",
                 "Messages de contact : jusqu’à 12 mois après notre dernière réponse.",
-                "Demandes d’adhésion : tant que vous êtes membre. Si une candidature n’est pas retenue, ou si vous la retirez, nous la supprimons, photo comprise, sous 6 mois.",
+                "Demandes d’adhésion : tant que vous êtes membre. Si une candidature n’est pas retenue, ou si vous la retirez, nous la supprimons, photo et CV compris, sous 6 mois.",
                 "Journaux serveur : pendant la courte durée fixée par notre hébergeur."
               ]
             }
@@ -3212,7 +3236,7 @@
         "lead": "ما نجمعه عبر هذا الموقع، ولماذا نحتاجه، وإلى متى نحتفظ به، وكيف يمكنك الاطلاع عليه أو تعديله أو حذفه."
       },
       "updatedLabel": "آخر تحديث",
-      "updated": "٦ نوفمبر ٢٠٢٦",
+      "updated": "١٤ نوفمبر ٢٠٢٦",
       "tocLabel": "في هذه الصفحة",
       "sections": [
         {
@@ -3258,7 +3282,7 @@
               "list": [
                 "اسمك، والنوع، والمسمى الوظيفي، والمؤسسة (اختياري)، والدولة، والبريد الإلكتروني.",
                 "ديانتك، والمذهب إذا اخترت ذكره.",
-                "مجالات عملك، ومقولتك الداعمة، ومقالًا إذا رغبت.",
+                "مجالات عملك، وملخص خبرتك (حتى ١٥٠ كلمة)، وسيرتك الذاتية (PDF)، وما يدفعك للانضمام إلينا، والأنشطة التي يمكنك تنفيذها معنا.",
                 "صورة، إذا اخترت رفعها.",
                 "لغة الصفحة التي استخدمتها."
               ]
@@ -3304,7 +3328,7 @@
           "title": "ما قد ننشره",
           "blocks": [
             {
-              "p": "إذا قُبل طلبك، قد نعرض اسمك ودورك ودولتك ومقولتك الداعمة وصورتك في صفحة «أعضاؤنا». ولا نفعل ذلك إلا بعد مراجعة فريقنا وبموافقتك، ويمكنك أن تطلب حذفها في أي وقت."
+              "p": "إذا قُبل طلبك، قد نعرض اسمك ودورك ودولتك وصورتك وملخصًا قصيرًا لخبرتك في صفحة «أعضاؤنا». ولا نفعل ذلك إلا بعد مراجعة فريقنا وبموافقتك، ويمكنك أن تطلب حذفها في أي وقت. أما سيرتك الذاتية فلا يطّلع عليها إلا فريقنا، ولا تُنشر أبدًا."
             }
           ]
         },
@@ -3331,7 +3355,7 @@
               "list": [
                 "النشرة البريدية: حتى تلغي اشتراكك.",
                 "رسائل التواصل: حتى ١٢ شهرًا بعد آخر رد منا.",
-                "طلبات الانضمام: طوال مدة عضويتك. وإذا لم يُقبل الطلب أو سحبته، نحذفه هو والصورة خلال ٦ أشهر.",
+                "طلبات الانضمام: طوال مدة عضويتك. وإذا لم يُقبل الطلب أو سحبته، نحذفه هو والصورة والسيرة الذاتية خلال ٦ أشهر.",
                 "سجلات الخادم: للمدة القصيرة التي تحددها جهة الاستضافة."
               ]
             }

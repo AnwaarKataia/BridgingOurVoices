@@ -29,7 +29,28 @@ export function generateStaticParams() {
 function page(slug: Slug, c: NetworkContent, locale: Locale, site: SiteContent) {
   switch (slug) {
     case "membership":
-      return { title: c.membership.title, lead: c.header.lead, meta: c.membership.meta, body: <Membership membership={c.membership} /> };
+      // Owner, 2026-11-14: the application form also sits on the Membership page, under the three cards
+      return {
+        title: c.membership.title,
+        lead: c.header.lead,
+        meta: c.membership.meta,
+        body: (
+          <>
+            <Membership membership={c.membership} />
+            <section id="apply" aria-labelledby="apply-title" className="bg-sand">
+              <div className="container-site flex flex-col gap-6 py-12 md:py-20">
+                <div className="flex max-w-[760px] flex-col gap-2.5">
+                  <h2 id="apply-title" className="font-display text-h2 font-normal text-ink">{c.join.title}</h2>
+                  <p className="text-body text-ink-soft">{c.join.lead}</p>
+                </div>
+                <div className="max-w-[920px]">
+                  <JoinForm locale={locale} join={c.join} countries={countryOptions(locale)} privacy={site.privacy} />
+                </div>
+              </div>
+            </section>
+          </>
+        ),
+      };
     case "join":
       return {
         title: c.join.title,

@@ -72,10 +72,17 @@ export const applications = pgTable(
     religion: text("religion").notNull(),
     subreligion: text("subreligion").notNull().default(""),
     fields: jsonb("fields").$type<string[]>().notNull().default(sql`'[]'::jsonb`),
-    quote: text("quote").notNull(),
+    /** Old form fields (before 2026-11-14), kept for earlier applications. */
+    quote: text("quote").notNull().default(""),
     article: text("article").notNull().default(""),
-    /** File name in the uploads store, or null. */
+    /** Summary of experience, max 150 words (owner 2026-11-14). */
+    experience: text("experience").notNull().default(""),
+    motivation: text("motivation").notNull().default(""),
+    /** Activities the applicant could carry out with the network. */
+    activities: text("activities").notNull().default(""),
+    /** Private files in apps/api/data/uploads (served only to signed-in dashboard users). */
     photo: text("photo"),
+    cv: text("cv"),
     locale: text("locale").notNull().default("en"),
     status: text("status", { enum: ["pending", "approved", "rejected"] }).notNull().default("pending"),
     reviewedBy: uuid("reviewed_by").references(() => users.id, { onDelete: "set null" }),

@@ -32,8 +32,18 @@ export type NetworkContent = {
     subreligion: string;
     fields: string;
     fieldOptions: { value: string; label: string }[];
-    quote: string;
-    article: string;
+    /** Experience summary (max 150 words, owner 2026-11-14). `wordCount` uses {count} and {max}. */
+    experience: string;
+    experienceHint: string;
+    wordCount: string;
+    experienceTooLong: string;
+    /** CV upload: PDF, max 4 pages and 5 MB (checked again by the API). */
+    cv: string;
+    cvButton: string;
+    cvHint: string;
+    cvError: string;
+    motivation: string;
+    activities: string;
     photo: string;
     photoButton: string;
     photoHint: string;
@@ -109,10 +119,10 @@ const en: NetworkContent = {
   join: {
     meta: {
       title: "Add your voice to ours",
-      description: "Membership of the Bridging Our Voices network is free. Share a few details and a message of support, and our team will contact you.",
+      description: "Membership of the Bridging Our Voices network is free. Share your details, a summary of your experience and your CV, and our team will contact you.",
     },
     title: "Add your voice to ours",
-    lead: "Membership is free. Share a few details and a message of support, our team will review it and contact you.",
+    lead: "Membership is free. Share your details, a summary of your experience and your CV, and our team will review your application and contact you.",
     legend: "Your details",
     name: "Full name",
     gender: "Gender",
@@ -130,11 +140,19 @@ const en: NetworkContent = {
       "Women, Peace & Security", "Youth engagement", "Trauma healing & resilience", "Citizenship & leadership",
       "Education & training", "Research", "Media",
     ]),
-    quote: "A message of support for the initiative",
-    article: "Share an article (optional)",
+    experience: "Summary of your experience",
+    experienceHint: "One paragraph, up to 150 words.",
+    wordCount: "{count} / {max} words",
+    experienceTooLong: "Please keep the summary to 150 words or fewer.",
+    cv: "Your CV",
+    cvButton: "Upload CV",
+    cvHint: "PDF only, up to 4 pages and 5 MB.",
+    cvError: "Please choose a PDF of up to 4 pages and 5 MB.",
+    motivation: "What motivates you to join us?",
+    activities: "Which activities could you carry out with us?",
     photo: "Your photo (optional)",
     photoButton: "Upload photo",
-    photoHint: "JPG or PNG, shown with your message if published.",
+    photoHint: "JPG or PNG, up to 3 MB.",
     photoTooBig: "Please choose a JPG or PNG under 3 MB.",
     consent: "I agree to the network’s code of conduct and to my data being used to process my application.",
     submit: "Submit application",
@@ -239,10 +257,10 @@ const fr: NetworkContent = {
   join: {
     meta: {
       title: "Joignez votre voix à la nôtre",
-      description: "L’adhésion au réseau Bridging Our Voices est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera.",
+      description: "L’adhésion au réseau Bridging Our Voices est gratuite. Partagez vos informations, un résumé de votre expérience et votre CV : notre équipe vous recontactera.",
     },
     title: "Joignez votre voix à la nôtre",
-    lead: "L’adhésion est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera.",
+    lead: "L’adhésion est gratuite. Partagez vos informations, un résumé de votre expérience et votre CV : notre équipe examinera votre candidature et vous recontactera.",
     legend: "Vos informations",
     name: "Nom complet",
     gender: "Genre",
@@ -260,11 +278,19 @@ const fr: NetworkContent = {
       "Femmes, paix et sécurité", "Engagement des jeunes", "Guérison et résilience", "Citoyenneté et leadership",
       "Éducation et formation", "Recherche", "Médias",
     ]),
-    quote: "Un message de soutien à l’initiative",
-    article: "Partager un article (facultatif)",
+    experience: "Résumé de votre expérience",
+    experienceHint: "Un paragraphe de 150 mots maximum.",
+    wordCount: "{count} / {max} mots",
+    experienceTooLong: "Merci de limiter le résumé à 150 mots.",
+    cv: "Votre CV",
+    cvButton: "Ajouter votre CV",
+    cvHint: "PDF uniquement, 4 pages et 5 Mo maximum.",
+    cvError: "Veuillez choisir un PDF de 4 pages et 5 Mo maximum.",
+    motivation: "Qu’est-ce qui vous motive à nous rejoindre ?",
+    activities: "Quelles activités pourriez-vous mener avec nous ?",
     photo: "Votre photo (facultatif)",
     photoButton: "Ajouter une photo",
-    photoHint: "JPG ou PNG, affichée avec votre message en cas de publication.",
+    photoHint: "JPG ou PNG, 3 Mo maximum.",
     photoTooBig: "Veuillez choisir un JPG ou PNG de moins de 3 Mo.",
     consent: "J’accepte le code de conduite du réseau et l’utilisation de mes données pour traiter ma candidature.",
     submit: "Envoyer ma candidature",
@@ -369,10 +395,10 @@ const ar: NetworkContent = {
   join: {
     meta: {
       title: "ضم صوتك لصوتنا",
-      description: "العضوية في شبكة Bridging Our Voices مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك.",
+      description: "العضوية في شبكة Bridging Our Voices مجانية. شاركنا بياناتك وملخص خبرتك وسيرتك الذاتية، وسيتواصل معك فريقنا.",
     },
     title: "ضم صوتك لصوتنا",
-    lead: "العضوية مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك.",
+    lead: "العضوية مجانية. شاركنا بياناتك وملخص خبرتك وسيرتك الذاتية، وسيراجع فريقنا طلبك ويتواصل معك.",
     legend: "بياناتك",
     name: "الاسم بالكامل",
     gender: "النوع",
@@ -390,11 +416,19 @@ const ar: NetworkContent = {
       "المرأة والسلام والأمن", "إشراك الشباب", "التعافي والصمود", "المواطنة والقيادة",
       "التعليم والتدريب", "البحث العلمي", "الإعلام",
     ]),
-    quote: "مقولة تدعمنا بها",
-    article: "شارك/ي بمقال (اختياري)",
+    experience: "ملخص خبرتك",
+    experienceHint: "فقرة واحدة لا تزيد على ١٥٠ كلمة.",
+    wordCount: "{count} / {max} كلمة",
+    experienceTooLong: "يرجى ألا يزيد الملخص على ١٥٠ كلمة.",
+    cv: "السيرة الذاتية",
+    cvButton: "رفع السيرة الذاتية",
+    cvHint: "ملف PDF فقط، لا يزيد على ٤ صفحات و٥ ميجابايت.",
+    cvError: "يرجى اختيار ملف PDF لا يزيد على ٤ صفحات و٥ ميجابايت.",
+    motivation: "ما الذي يدفعك للانضمام إلينا؟",
+    activities: "ما الأنشطة التي يمكنك تنفيذها معنا؟",
     photo: "صورتك (اختياري)",
     photoButton: "رفع صورة",
-    photoHint: "JPG أو PNG، تظهر مع مقولتك عند النشر.",
+    photoHint: "JPG أو PNG، حتى ٣ ميجابايت.",
     photoTooBig: "يُرجى اختيار صورة JPG أو PNG أقل من ٣ ميجابايت.",
     consent: "أوافق على ميثاق سلوك الشبكة وعلى استخدام بياناتي لمعالجة طلب الانضمام.",
     submit: "إرسال طلب الانضمام",

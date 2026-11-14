@@ -73,7 +73,7 @@ A regional, cross-religious and cross-cultural initiative that builds women's ca
 | About ▾ ✅ | `about/[slug]/page.tsx` | `who-we-are` (story + strategic partners) · `vision` (statement) · `mission` (statement) · `goals` (5 strategic objectives) |
 | Activities ▾ ✅ | `activities/[slug]/page.tsx` | `training`: current course with modules (`#course`), flagship interfaith programme, 4 other tracks. `seminars`: 3 seminar cards. `conferences`: featured video + 6 sessions. `fellowship`: apply + 4 benefits |
 | Agenda ✅ | `agenda/page.tsx` | One page (no dropdown in the brand file). 1) Month calendar (`components/agenda/Calendar.tsx`, client): prev/next month, tap a day to list only that day, "Show the whole month". Gold dot = event, sky dot = international day, blue frame = today. The list beside it shows the month's items; date chips are red (deadline), blue (webinar series), navy (event), gold (international day). 2) Featured webinar series card + the full list of upcoming events. 3) "International days": the global UN dates for dialogue and peacebuilding, in two columns (`#international-days`). All dates and copy live in `content/agenda.ts`; international days are stored as month-day and repeat every year on the calendar |
-| Network ▾ ✅ | `network/[slug]/page.tsx` | `membership`: 3 cards (who can join / what you gain / what we ask). `join`: the "Add your voice to ours" application form (see the API section). `members`: 4 team cards with arched portraits (`public/team/*.jpg`, cropped from the banner at the brand file's positions), then the navy "Our network" band with a mosaic and a "Join the network" button |
+| Network ▾ ✅ | `network/[slug]/page.tsx` | `membership`: 3 cards (who can join / what you gain / what we ask). The **application form also sits on this page** under the cards (`#apply`, owner 2026-11-14). `join`: the "Add your voice to ours" application form (see the API section). `members`: 4 team cards with arched portraits (`public/team/*.jpg`, cropped from the banner at the brand file's positions), then the navy "Our network" band with a mosaic and a "Join the network" button |
 | Privacy ✅ (footer link) | `privacy/page.tsx` | Privacy policy, a draft: what each form collects, why, retention, rights. Sticky table of contents + 11 sections. Linked from the footer and from the contact and join forms |
 | Contact us ✅ | `contact/page.tsx` | Two columns: the form on the left, contact info on the right. The form has name, email, subject (5 options) and message, and posts to the API's `/contact`. The info column has the email `b.our.voices@gmail.com` and LinkedIn + Facebook. Phone and address only appear once real values are added to `content/contact.ts` (the brand file has placeholders) |
 
@@ -179,6 +179,9 @@ The language switcher (EN / FR / AR) is in the thin language bar at the top of e
 | GET / POST | `/admin/content/:key/revisions` · `…/revisions/:id/restore` | Signed in. The last 30 versions; restore copies one into the draft (409 if it no longer fits the page) |
 | POST / GET | `/admin/media` | Signed in. Upload one JPG/PNG/WebP up to 5 MB (type checked from the bytes) → `{ path: "/media/<uuid>.<ext>" }` · the latest uploads |
 | GET | `/media/:file` | Public. Uploaded images, cached forever (random file names). The portal and dashboard proxy `/media/*` to it |
+| GET | `/admin/applications?status=` | Signed in. Applications, newest first, plus counts per status (`pending`/`approved`/`rejected`) |
+| GET / PATCH | `/admin/applications/:id` | Signed in. One application · `{ status }` sets the decision, with who and when (`pending` clears it) |
+| GET | `/admin/applications/:id/cv` · `/photo` | Signed in. Private files (`?download=1` to save), never cached |
 
 **Database tables** (`apps/api/src/db/schema.ts`):
 - `users`: email, name, role `admin|editor`, scrypt password hash, disabled, last_login_at.
@@ -214,7 +217,8 @@ pnpm --filter @bov/api user:create -- --email you@example.org --name "Your Name"
 - `website` (honeypot): a hidden field that only bots fill in. When it is filled, the API replies 201 but stores nothing.
 
 **`POST /network/apply`** (multipart form data, code in `apps/api/src/network.ts`):
-- Saves to the `applications` table with `status: "pending"`. The photo is saved in `apps/api/data/uploads/<id>.jpg|png` (local disk; production needs object storage).
+- Saves to the `applications` table with `status: "pending"`.
+- The photo is saved as `apps/api/data/uploads/<id>.jpg|png` and the CV as `<id>-cv.pdf`. **Both are private**: they are not under `/media`, and only signed-in users reach them through `/admin/applications/:id/cv|photo`. Local disk for now; production needs private object storage.
 - Returns 201 when accepted, or 400 with `{ errors: [field…] }`.
 
 Field rules:
@@ -226,8 +230,11 @@ Field rules:
 - `religion`: required.
 - `subreligion`: optional.
 - `fields`: repeated, each value from the 12 fixed fields of work.
-- `quote`: required, 10–600 characters.
-- `article`: optional, up to 10,000 characters.
+- `experience`: required. One paragraph of **at most 150 words** (and 10–2000 characters).
+- `cv`: **required**. A real PDF (the `%PDF-` header, then read with `pdf-lib`) of **1–4 pages** and at most 5 MB. Errors: `cv` (missing or not a PDF) and `cv_pages` (more than 4 pages).
+- `motivation`: required, 10–2000 characters.
+- `activities`: required, 10–2000 characters.
+- The old `quote` / `article` fields were removed on 2026-11-14. Their columns are kept for earlier applications.
 - `photo`: optional, JPG/PNG up to 3MB. The file type is checked from its contents, not the extension.
 - `consent`: must be `yes`.
 - `locale`.
@@ -719,6 +726,44 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
 - **`REVALIDATE_SECRET`:** since the code is public, the development default (`dev-revalidate-secret`) is no longer used in production. Without the variable, the portal's `/api/revalidate` rejects every call, and the API skips the refresh (pages update on the 5-minute timer).
 - `.env.example` for the API, portal and dashboard lists every setting, with no values for secrets.
 
+
+### 2026-11-14: Membership form + applications in the dashboard
+- **The owner asked for the join form on the Membership page, with these changes:**
+  - **Removed:** the message of support and the article.
+  - **Added:**
+    - **an experience summary** (one paragraph of at most 150 words, with a live word counter);
+    - **a CV upload** (PDF, at most 4 pages, required);
+    - **"What motivates you to join us?"**;
+    - **"Which activities could you carry out with us?"**.
+  - The photo stays optional.
+  - The same updated form is also on the Join page, so there is only one version of the form.
+- **API:**
+  - New columns: `experience`, `motivation`, `activities`, `cv` (migration `0003`).
+  - The CV is checked as a real PDF of 1–4 pages and up to 5 MB, using `pdf-lib`. The form now accepts 2 files per request.
+  - New dashboard routes `/admin/applications…` (list + counts, details, decision, private CV and photo).
+- **Dashboard → "طلبات الانضمام":**
+  - Tabs: to review / accepted / rejected / all, with counts.
+  - The details page shows every field. Gender and fields of work appear in the dashboard's language, taken from the site content.
+  - The experience shows its word count.
+  - The CV can be opened or downloaded.
+  - The photo is shown.
+  - Accept, reject, or back to review, with who decided and when.
+  - Applications sent with the old form still show their message and article.
+- **Content sync made field-by-field** (`rebase` in `api/src/content/rules.ts`):
+  - When the code's copy changes, each field nobody edited in the dashboard takes the new text, and each edited field keeps the dashboard's text.
+  - The owner's edit to Mona Lisa's bio (all 3 languages) was kept, while the form's description, introduction and photo hint updated.
+  - The privacy policy was updated (it was never edited).
+- **Privacy policy updated** (last updated 14 November 2026):
+  - It now lists the experience summary, CV, motivation and activities.
+  - "Your CV is only read by our team and is never published".
+  - The CV is deleted with the rejected application.
+- **Tested:**
+  - API: 1-page and 4-page CVs (including an Arabic summary) were accepted. A 5-page CV, a fake PDF, a missing CV, 151 words, and missing motivation or activities were each rejected with the right error.
+  - The files can't be reached through `/media`, and the CV route returns 401 when signed out.
+  - Dashboard (temporary account): the list, the details, the CV (opened inline and downloaded as `CV-<name>.pdf`), the accept action and the counts all work. An invalid status returns 400.
+  - Responsive: the Membership, Join and Privacy pages × 3 languages × 5 widths = 45 checks, all passing. The new fields are present and the old ones are gone.
+  - **All test applications, their files and the test account were deleted.**
+
 ---
 
 ## 9. Open items
@@ -741,7 +786,7 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
 - [ ] **Owner:** sign in with the temporary password, change it in "My account", then delete `apps/api/data/b.our.voices@gmail.com.password.local.txt`.
 - [ ] Dashboard phase 2:
   - Messages inbox + email alert (which address?).
-  - Applications review + publishing to "Our members".
+  - Applications: review is done (2026-11-14). Still to do: publishing accepted members to "Our members", an email to the applicant, and an Excel export.
   - Subscribers list + CSV export.
   - User management (admin).
 - [ ] Dashboard phase 3: agenda and announcement editing, and course/event registration.

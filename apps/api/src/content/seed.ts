@@ -1,8 +1,8 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { and, eq } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
 import { apiRoot, db, schema } from "../db/client.js";
-import { addMissing, type Json } from "./rules.js";
+import { addMissing, dropRemoved, rebase, type Json } from "./rules.js";
 
 export const LOCALES = ["en", "fr", "ar"] as const;
 export type Locale = (typeof LOCALES)[number];
@@ -23,7 +23,8 @@ export async function contentKeys(): Promise<string[]> {
 /**
  * Runs at startup:
  *  - a page/language missing from the database is inserted from the seed (first run);
- *  - an existing one gets any new fields the code added (existing text is never overwritten).
+ *  - when the code's copy changed since the last seed, each field nobody edited in the dashboard takes
+ *    the new text, and each edited field keeps the dashboard's text (see `rebase` in rules.ts).
  */
 export async function syncSeed(log: (msg: string) => void) {
   const seed = await loadSeed();
@@ -39,11 +40,30 @@ export async function syncSeed(log: (msg: string) => void) {
         log(`content: seeded ${key}/${locale}`);
         continue;
       }
-      const published = addMissing(row.published as Json, fresh);
-      const draft = row.draft == null ? null : addMissing(row.draft as Json, fresh);
-      if (JSON.stringify(published) !== JSON.stringify(row.published) || JSON.stringify(draft) !== JSON.stringify(row.draft)) {
+      const [lastSeed] = await db
+        .select({ data: schema.contentRevisions.data })
+        .from(schema.contentRevisions)
+        .where(and(eq(schema.contentRevisions.key, key), eq(schema.contentRevisions.locale, locale), eq(schema.contentRevisions.note, "seed")))
+        .orderBy(desc(schema.contentRevisions.createdAt))
+        .limit(1);
+      // The code's copy changed since the last seed: update every field nobody edited, keep edited ones
+      if (lastSeed && JSON.stringify(fresh) !== JSON.stringify(lastSeed.data)) {
+        const published = rebase(row.published as Json, lastSeed.data as Json, fresh);
+        const draft = row.draft == null ? null : rebase(row.draft as Json, lastSeed.data as Json, fresh);
         await db.update(schema.content).set({ published, draft }).where(where);
-        log(`content: added new fields to ${key}/${locale}`);
+        // The new copy becomes the reference for the next comparison
+        await db.insert(schema.contentRevisions).values({ key, locale, data: fresh, note: "seed" });
+        log(`content: updated ${key}/${locale} from the code (fields edited in the dashboard kept)`);
+        continue;
+      }
+      // No reference copy (older databases): only add new fields and drop removed ones
+      if (!lastSeed) {
+        const published = dropRemoved(addMissing(row.published as Json, fresh), fresh);
+        const draft = row.draft == null ? null : dropRemoved(addMissing(row.draft as Json, fresh), fresh);
+        if (JSON.stringify(published) !== JSON.stringify(row.published) || JSON.stringify(draft) !== JSON.stringify(row.draft)) {
+          await db.update(schema.content).set({ published, draft }).where(where);
+          log(`content: added new fields to ${key}/${locale}`);
+        }
       }
     }
   }

@@ -1,0 +1,91 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { apiGet } from "@/lib/api";
+import { getDict } from "@/lib/i18n";
+
+export const metadata: Metadata = { title: "Applications" };
+
+type Status = "pending" | "approved" | "rejected";
+type Item = { id: string; name: string; email: string; country: string; job: string; status: Status; hasCv: boolean; createdAt: string };
+
+const statusTone: Record<Status, string> = {
+  pending: "bg-gold/20 text-gold-deep",
+  approved: "bg-sky-tint text-blue-deep",
+  rejected: "bg-danger/10 text-danger",
+};
+
+/** Membership applications, by status (pending first). */
+export default async function ApplicationsPage({ searchParams }: { searchParams: Promise<{ status?: string }> }) {
+  const { status: raw } = await searchParams;
+  const status = raw === "approved" || raw === "rejected" || raw === "all" ? raw : "pending";
+  const [{ lang, t }, { data, status: code }] = await Promise.all([
+    getDict(),
+    apiGet<{ items: Item[]; counts: Record<Status, number> }>(`/admin/applications${status === "all" ? "" : `?status=${status}`}`),
+  ]);
+  const a = t.apps;
+  const loc = lang === "ar" ? "ar-EG" : "en-GB";
+  const nf = new Intl.NumberFormat(loc);
+  const fmt = new Intl.DateTimeFormat(loc, { day: "numeric", month: "short", year: "numeric" });
+  const countries = new Intl.DisplayNames([lang], { type: "region" });
+  const total = data ? data.counts.pending + data.counts.approved + data.counts.rejected : 0;
+  const tabs: { key: Status | "all"; n: number }[] = [
+    { key: "pending", n: data?.counts.pending ?? 0 },
+    { key: "approved", n: data?.counts.approved ?? 0 },
+    { key: "rejected", n: data?.counts.rejected ?? 0 },
+    { key: "all", n: total },
+  ];
+
+  return (
+    <div className="flex flex-col gap-6">
+      <div>
+        <p className="eyebrow mb-2 text-gold-deep">{t.nav.applications}</p>
+        <h1 className="font-display text-h2 font-normal">{a.title}</h1>
+        <p className="mt-2 max-w-[720px] text-ink-soft">{a.lead}</p>
+      </div>
+
+      <nav aria-label={a.title}>
+        <ul className="flex flex-wrap gap-2">
+          {tabs.map((tab) => (
+            <li key={tab.key}>
+              <Link
+                href={`/applications?status=${tab.key}`}
+                aria-current={status === tab.key ? "page" : undefined}
+                className={`flex h-10 items-center gap-2 rounded-bov border px-4 text-sm font-semibold ${
+                  status === tab.key ? "border-navy bg-navy text-on-dark" : "border-line bg-white text-ink hover:border-navy"
+                }`}
+              >
+                {a.tabs[tab.key]}
+                <span className="rounded-bov bg-white/20 px-1.5 text-xs">{nf.format(tab.n)}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {!data ? (
+        <p role="alert" className="rounded-bov border border-danger/40 bg-white p-4 text-danger">{code === 503 ? t.apiDown : t.error}</p>
+      ) : data.items.length === 0 ? (
+        <p className="rounded-bov border border-line bg-white p-6 text-ink-soft">{a.empty}</p>
+      ) : (
+        <ul className="flex flex-col divide-y divide-line overflow-hidden rounded-bov border border-line bg-white">
+          {data.items.map((item) => (
+            <li key={item.id}>
+              <Link href={`/applications/${item.id}`} className="grid gap-x-4 gap-y-1 p-4 hover:bg-sand/50 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_auto] sm:items-center">
+                <span className="flex min-w-0 flex-col">
+                  <span className="truncate font-semibold text-ink">{item.name}</span>
+                  <span className="truncate text-sm text-ink-soft">{item.job}</span>
+                </span>
+                <span className="text-sm text-ink-soft">
+                  {countries.of(item.country) ?? item.country} · {fmt.format(new Date(item.createdAt))}
+                </span>
+                <span className={`justify-self-start rounded-bov px-2 py-0.5 text-xs font-semibold sm:justify-self-end ${statusTone[item.status]}`}>
+                  {a.status[item.status]}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}

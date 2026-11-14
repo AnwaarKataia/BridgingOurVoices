@@ -58,7 +58,7 @@ export default async function PrivacyPage({ params }: Params) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", url: pageUrl, name: c.meta.title, inLanguage: locale, dateModified: "2026-11-06", about: { "@id": `${siteUrl}/#organization` } },
+      { "@type": "WebPage", url: pageUrl, name: c.meta.title, inLanguage: locale, dateModified: "2026-11-14", about: { "@id": `${siteUrl}/#organization` } },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -90,7 +90,7 @@ export default async function PrivacyPage({ params }: Params) {
 
           <article className="flex max-w-[760px] flex-col gap-10">
             <p className="text-sm text-ink-soft">
-              {c.updatedLabel}: <time dateTime="2026-11-06">{c.updated}</time>
+              {c.updatedLabel}: <time dateTime="2026-11-14">{c.updated}</time>
             </p>
             {c.sections.map((s) => (
               <section key={s.id} id={s.id} aria-labelledby={`${s.id}-title`} className="flex flex-col gap-4 border-t border-line pt-8 text-body leading-relaxed text-ink-soft">
