@@ -63,7 +63,7 @@ const en: ActivitiesContent = {
   meta: {
     title: "Activities",
     description:
-      "Training programmes, seminars, conferences and a fellowship: four ways for women peacebuilders to learn, connect and lead with Bridging Our Voices.",
+      "Training programmes, seminars, conferences and a fellowship: four ways for peacebuilders and community leaders to learn, connect and lead with Bridging Our Voices.",
   },
   header: {
     eyebrow: "Activities",
@@ -100,13 +100,13 @@ const en: ActivitiesContent = {
     title: "Many faiths, many cultures, one shared table.",
     body: "Women are often the first bridges between families of different faiths and backgrounds. Our interfaith and intercultural dialogue programme gives that everyday bridging structure, skills and recognition.",
     steps: [
-      { num: "01", title: "Encounter", body: "Facilitated dialogue circles that bring women of different faiths and cultures together." },
+      { num: "01", title: "Encounter", body: "Facilitated dialogue circles that bring people of different faiths and cultures together, with women leading the conversation." },
       { num: "02", title: "Understanding", body: "Religious and cultural literacy to replace stereotypes with knowledge." },
       { num: "03", title: "Joint action", body: "Shared community initiatives that turn dialogue into everyday cooperation." },
     ],
     tags: ["#InterfaithDialogue", "#InterculturalDialogue"],
     image: "",
-    photoAlt: "Women of different faiths in dialogue",
+    photoAlt: "People of different faiths in dialogue",
     quote: "“Dialogue begins when we listen to understand, not to reply.”",
   },
   tracks: [
@@ -146,7 +146,7 @@ const en: ActivitiesContent = {
     index: "04",
     eyebrow: "Fellowship",
     title: "The Bridging Our Voices Fellowship",
-    lead: "A year-long fellowship for women already active in their communities: mentoring, accreditation and the support to lead their own dialogue initiative.",
+    lead: "A year-long fellowship for women and men already active in their communities: mentoring, accreditation and the support to lead their own dialogue initiative.",
     cta: "Apply for the fellowship",
     status: "Applications open now",
     benefits: [
@@ -199,13 +199,13 @@ const fr: ActivitiesContent = {
     title: "Plusieurs religions, plusieurs cultures, une même table.",
     body: "Les femmes sont souvent les premiers ponts entre des familles de religions et d’horizons différents. Notre programme de dialogue interreligieux et interculturel donne à ce rôle quotidien une méthode, des compétences et une reconnaissance.",
     steps: [
-      { num: "01", title: "Rencontre", body: "Des cercles de dialogue animés réunissant des femmes de religions et de cultures différentes." },
+      { num: "01", title: "Rencontre", body: "Des cercles de dialogue animés réunissant des personnes de religions et de cultures différentes, où les femmes mènent la conversation." },
       { num: "02", title: "Compréhension", body: "Une culture religieuse et interculturelle pour remplacer les stéréotypes par la connaissance." },
       { num: "03", title: "Action commune", body: "Des initiatives communautaires partagées qui font du dialogue une coopération quotidienne." },
     ],
     tags: ["#InterfaithDialogue", "#InterculturalDialogue"],
     image: "",
-    photoAlt: "Femmes de différentes religions en dialogue",
+    photoAlt: "Personnes de différentes religions en dialogue",
     quote: "« Le dialogue commence quand on écoute pour comprendre, et non pour répondre. »",
   },
   tracks: [
@@ -229,7 +229,7 @@ const fr: ActivitiesContent = {
     index: "03",
     eyebrow: "Congrès",
     title: "Congrès de lancement",
-    lead: "Notre congrès régional et international réunit participantes, partenaires et experts pour partager les pratiques et fixer les priorités.",
+    lead: "Notre congrès régional et international réunit participants et participantes, partenaires et experts pour partager les pratiques et fixer les priorités.",
     playLabel: "Lire la vidéo",
     featured: { image: "", kind: "Discours d’ouverture", title: "Pourquoi la voix des femmes compte dans la consolidation de la paix" },
     sessions: [
@@ -245,11 +245,11 @@ const fr: ActivitiesContent = {
     index: "04",
     eyebrow: "Bourse",
     title: "La bourse Bridging Our Voices",
-    lead: "Une bourse d’un an pour les femmes déjà engagées dans leurs communautés : mentorat, certification et accompagnement pour mener leur propre initiative de dialogue.",
+    lead: "Une bourse d’un an pour les femmes et les hommes déjà engagés dans leurs communautés : mentorat, certification et accompagnement pour mener leur propre initiative de dialogue.",
     cta: "Candidater à la bourse",
     status: "Candidatures ouvertes",
     benefits: [
-      { title: "Mentorat", body: "Un accompagnement individuel par des artisanes de paix expérimentées." },
+      { title: "Mentorat", body: "Un accompagnement individuel par des artisans de la paix expérimentés." },
       { title: "Certification", body: "Un certificat reconnu en dialogue et consolidation de la paix." },
       { title: "Projet communautaire", body: "Un soutien pour concevoir et mener votre propre initiative de dialogue." },
       { title: "Réseau", body: "Des liens durables avec des boursières de la région et d’ailleurs." },
@@ -261,7 +261,7 @@ const ar: ActivitiesContent = {
   meta: {
     title: "الأنشطة",
     description:
-      "برامج تدريبية وندوات ومؤتمرات وزمالة: أربعة طرق للتعلّم والتواصل والقيادة مع مبادرة «أصواتنا جسور» لصانعات السلام.",
+      "برامج تدريبية وندوات ومؤتمرات وزمالة: أربعة طرق للتعلّم والتواصل والقيادة مع مبادرة «أصواتنا جسور» لصناع السلام والقيادات المجتمعية.",
   },
   header: {
     eyebrow: "الأنشطة",
@@ -298,13 +298,13 @@ const ar: ActivitiesContent = {
     title: "أديان كثيرة، وثقافات متعددة، ومائدة واحدة.",
     body: "كثيرًا ما تكون المرأة الجسر الأول بين أسر من أديان وخلفيات مختلفة. يمنح برنامج الحوار بين الأديان والثقافات هذا الدور اليومي منهجيةً ومهاراتٍ واعترافًا.",
     steps: [
-      { num: "٠١", title: "اللقاء", body: "حلقات حوار مُيسَّرة تجمع نساءً من أديان وثقافات مختلفة." },
+      { num: "٠١", title: "اللقاء", body: "حلقات حوار مُيسَّرة تجمع أشخاصًا من أديان وثقافات مختلفة، وتقود فيها النساء الحوار." },
       { num: "٠٢", title: "الفهم", body: "معرفة دينية وثقافية تستبدل الصور النمطية بالمعرفة." },
       { num: "٠٣", title: "العمل المشترك", body: "مبادرات مجتمعية مشتركة تحوّل الحوار إلى تعاون يومي." },
     ],
     tags: ["#InterfaithDialogue", "#InterculturalDialogue"],
     image: "",
-    photoAlt: "نساء من أديان مختلفة في حوار",
+    photoAlt: "أشخاص من أديان مختلفة في حوار",
     quote: "«يبدأ الحوار حين نُصغي لنفهم، لا لنرد.»",
   },
   tracks: [
@@ -319,16 +319,16 @@ const ar: ActivitiesContent = {
     title: "ندوات مفتوحة وندوات أونلاين",
     lead: "جلسات قصيرة ومفتوحة مع ممارسين وباحثين، أونلاين وحضوريًا، بالعربية والإنجليزية.",
     items: [
-      { image: "", meta: "سلسلة ندوات · أونلاين", title: "المرأة والإيمان وصناعة السلام", body: "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان.", cta: "سجّلي ←" },
-      { image: "", meta: "ندوة · حضوري", title: "خطاب الكراهية: من الرصد إلى الرد", body: "دراسات حالة وأدوات للقيادات المجتمعية والمربّين.", cta: "سجّلي ←" },
-      { image: "", meta: "ندوة · أونلاين", title: "المواطنة وصوت المرأة في الشأن العام", body: "كيف تفتح المشاركة المدنية طرقًا نحو القيادة.", cta: "شاهدي التسجيل ←" },
+      { image: "", meta: "سلسلة ندوات · أونلاين", title: "المرأة والإيمان وصناعة السلام", body: "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان.", cta: "سجّل/ي ←" },
+      { image: "", meta: "ندوة · حضوري", title: "خطاب الكراهية: من الرصد إلى الرد", body: "دراسات حالة وأدوات للقيادات المجتمعية والمربّين.", cta: "سجّل/ي ←" },
+      { image: "", meta: "ندوة · أونلاين", title: "المواطنة وصوت المرأة في الشأن العام", body: "كيف تفتح المشاركة المدنية طرقًا نحو القيادة.", cta: "شاهد/ي التسجيل ←" },
     ],
   },
   conferences: {
     index: "03",
     eyebrow: "مؤتمرات",
     title: "مؤتمر الإطلاق",
-    lead: "يجمع مؤتمرنا الإقليمي والدولي المشاركات والشركاء والخبراء لتبادل الممارسات ورسم الأولويات.",
+    lead: "يجمع مؤتمرنا الإقليمي والدولي المشاركين والمشاركات والشركاء والخبراء لتبادل الممارسات ورسم الأولويات.",
     playLabel: "تشغيل الفيديو",
     featured: { image: "", kind: "الكلمة الافتتاحية", title: "لماذا يهمّ صوت المرأة في بناء السلام" },
     sessions: [
@@ -344,11 +344,11 @@ const ar: ActivitiesContent = {
     index: "04",
     eyebrow: "زمالة",
     title: "زمالة «أصواتنا جسور»",
-    lead: "زمالة لمدة عام للنساء الفاعلات في مجتمعاتهن: إرشاد واعتماد ودعم لقيادة مبادرة حوار خاصة بهن.",
-    cta: "قدّمي على الزمالة",
+    lead: "زمالة لمدة عام للنساء والرجال الفاعلين في مجتمعاتهم: إرشاد واعتماد ودعم لقيادة مبادرة حوار خاصة بهم.",
+    cta: "قدّم/ي على الزمالة",
     status: "باب التقديم مفتوح الآن",
     benefits: [
-      { title: "الإرشاد", body: "توجيه فردي من صانعات سلام ذوات خبرة." },
+      { title: "الإرشاد", body: "توجيه فردي من صناع سلام ذوي خبرة." },
       { title: "الاعتماد", body: "شهادة معترف بها في الحوار وبناء السلام." },
       { title: "مشروع مجتمعي", body: "دعم لتصميم وتنفيذ مبادرة حوار خاصة بك." },
       { title: "الشبكة", body: "روابط دائمة مع زميلات من المنطقة وخارجها." },

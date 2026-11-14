@@ -45,7 +45,7 @@ const en: PrivacyContent = {
     {
       title: "Who we are",
       blocks: [
-        { p: "Bridging Our Voices is a women’s platform for dialogue and peacebuilding, led by Dr. Anwaar Kataia (Lead Fellow and Project Manager). We are responsible for the personal data collected through this website." },
+        { p: "Bridging Our Voices is a platform for dialogue and peacebuilding that champions women’s leadership, directed by Dr. Anwaar Kataia (Lead Fellow and Project Manager). We are responsible for the personal data collected through this website." },
         { p: `For any question about your data, write to ${contactEmail}.` },
       ],
     },
@@ -179,7 +179,7 @@ const fr: PrivacyContent = {
     {
       title: "Qui sommes-nous",
       blocks: [
-        { p: "Bridging Our Voices est une plateforme de femmes pour le dialogue et la consolidation de la paix, dirigée par la Dr Anwaar Kataia (Lead Fellow et cheffe de projet). Nous sommes responsables des données personnelles collectées sur ce site." },
+        { p: "Bridging Our Voices est une plateforme de dialogue et de consolidation de la paix qui affirme le leadership des femmes, dirigée par la Dr Anwaar Kataia (Lead Fellow et cheffe de projet). Nous sommes responsables des données personnelles collectées sur ce site." },
         { p: `Pour toute question sur vos données, écrivez à ${contactEmail}.` },
       ],
     },
@@ -313,7 +313,7 @@ const ar: PrivacyContent = {
     {
       title: "من نحن",
       blocks: [
-        { p: "Bridging Our Voices منصة نسائية للحوار وبناء السلام، تقودها د. أنوار قطايا (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع." },
+        { p: "Bridging Our Voices منصة للحوار وبناء السلام تؤكد قدرة المرأة على القيادة، تديرها د. أنوار قطايا (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع." },
         { p: `لأي سؤال عن بياناتك، راسلنا على ${contactEmail}.` },
       ],
     },

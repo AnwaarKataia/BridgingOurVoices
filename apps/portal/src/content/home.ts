@@ -30,12 +30,12 @@ const en: HomeContent = {
   meta: {
     title: "Bridging Our Voices — Women leading dialogue and peacebuilding",
     description:
-      "A regional and international initiative empowering women peacemakers and community leaders across the Arab region and Africa to lead dialogue, conflict resolution and the prevention of violent extremism.",
+      "A regional and international initiative that champions women’s leadership and empowers peacemakers and community leaders across the Arab region and Africa, women and men, to lead dialogue, conflict resolution and the prevention of violent extremism.",
   },
   hero: {
     eyebrow: "Regional & international initiative",
     title: "Women leading dialogue and peacebuilding",
-    lead: "A distinctive regional and international initiative empowering women peacemakers and community leaders, moving them from informal roles into recognised, influential leadership in peacebuilding and interfaith and intercultural dialogue.",
+    lead: "A distinctive regional and international initiative showing that women can lead peacebuilding in many ways, and empowering peacemakers and community leaders, women and men, to move from informal roles into recognised, influential leadership in peacebuilding and interfaith and intercultural dialogue.",
     primary: "Explore our activities",
     secondary: "Contact us",
   },
@@ -90,12 +90,12 @@ const fr: HomeContent = {
   meta: {
     title: "Bridging Our Voices — Les femmes au cœur du dialogue et de la consolidation de la paix",
     description:
-      "Une initiative régionale et internationale qui renforce les femmes artisanes de paix et les leaders communautaires du monde arabe et de l’Afrique pour conduire le dialogue, la résolution des conflits et la prévention de l’extrémisme violent.",
+      "Une initiative régionale et internationale qui affirme le leadership des femmes et renforce les artisans de la paix et les leaders communautaires, femmes et hommes, du monde arabe et de l’Afrique, pour conduire le dialogue, la résolution des conflits et la prévention de l’extrémisme violent.",
   },
   hero: {
     eyebrow: "Initiative régionale et internationale",
     title: "Les femmes au cœur du dialogue et de la consolidation de la paix",
-    lead: "Une initiative régionale et internationale qui renforce les femmes artisanes de paix et les leaders communautaires, pour les faire passer de rôles informels à un leadership reconnu et influent dans la consolidation de la paix et le dialogue interreligieux et interculturel.",
+    lead: "Une initiative régionale et internationale qui montre que les femmes peuvent mener la consolidation de la paix de multiples façons, et qui renforce les artisans de la paix et les leaders communautaires, femmes et hommes, pour les faire passer de rôles informels à un leadership reconnu et influent dans la consolidation de la paix et le dialogue interreligieux et interculturel.",
     primary: "Découvrir nos activités",
     secondary: "Nous contacter",
   },
@@ -122,7 +122,7 @@ const fr: HomeContent = {
   vision: {
     eyebrow: "Notre vision",
     quote:
-      "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme facilitatrices et médiatrices principales dans la résolution des conflits communautaires et le maintien de la paix.",
+      "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme principaux facilitateurs et médiateurs dans la résolution des conflits communautaires et le maintien de la paix.",
     link: "En savoir plus sur nous →",
   },
   pathway: {
@@ -150,14 +150,14 @@ const ar: HomeContent = {
   meta: {
     title: "Bridging Our Voices — المرأة لقيادة الحوار وبناء السلام",
     description:
-      "مبادرة إقليمية ودولية متميزة تهدف إلى تمكين صانعات السلام والقيادات المجتمعية في المنطقة العربية وأفريقيا، ونقلهن إلى قيادات معترف بها في الحوار وحل النزاعات والوقاية من التطرف العنيف.",
+      "مبادرة إقليمية ودولية متميزة تؤكد قدرة المرأة على القيادة، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، في المنطقة العربية وأفريقيا، وتنقلهم إلى قيادات معترف بها في الحوار وحل النزاعات والوقاية من التطرف العنيف.",
   },
   hero: {
     eyebrow: "مبادرة إقليمية ودولية",
     title: "المرأة لقيادة الحوار وبناء السلام",
-    lead: "مبادرة إقليمية ودولية متميزة تهدف إلى تمكين صانعات السلام والقيادات المجتمعية، ونقلهن من أدوار غير رسمية إلى قيادات معترف بها ومؤثرة في بناء السلام والحوار بين الأديان والثقافات.",
-    primary: "تعرّفي على أنشطتنا",
-    secondary: "تواصلي معنا",
+    lead: "مبادرة إقليمية ودولية متميزة تؤكد أن المرأة قادرة على قيادة بناء السلام بصور مختلفة، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، وتنقلهم من أدوار غير رسمية إلى قيادات معترف بها ومؤثرة في بناء السلام والحوار بين الأديان والثقافات.",
+    primary: "تعرّف/ي على أنشطتنا",
+    secondary: "تواصل/ي معنا",
   },
   ticker: {
     label: "آخر الأخبار",
@@ -182,17 +182,17 @@ const ar: HomeContent = {
   vision: {
     eyebrow: "رؤيتنا",
     quote:
-      "إرساء منظومة حوار إقليمية ودولية شاملة، تمتلك فيها النساء والقيادات الشابة سلطة شرعية ومعترفًا بها بوصفهن الميسِّرات والوسيطات الأساسيات في حل النزاعات المجتمعية واستدامة السلام.",
+      "إرساء منظومة حوار إقليمية ودولية شاملة، تمتلك فيها النساء والقيادات الشابة سلطة شرعية ومعترفًا بها بوصفهم الميسّرين والوسطاء الأساسيين في حل النزاعات المجتمعية واستدامة السلام.",
     link: "المزيد عنّا ←",
   },
   pathway: {
     eyebrow: "المسار",
     title: "من صوت مجتمعي إلى قيادة معتمدة",
     steps: [
-      { num: "٠١", title: "تعلّمي", body: "وحدات ثنائية اللغة يقدّمها ممارسون من المنطقة." },
-      { num: "٠٢", title: "مارسي", body: "أديري حلقات حوار حقيقية داخل مجتمعك." },
-      { num: "٠٣", title: "احصلي على الاعتماد", body: "شهادة معترف بها في الحوار وبناء السلام." },
-      { num: "٠٤", title: "قودي", body: "انضمي إلى شبكة دولية ورافقي الدفعة التالية." },
+      { num: "٠١", title: "التعلّم", body: "وحدات ثنائية اللغة يقدّمها ممارسون من المنطقة." },
+      { num: "٠٢", title: "الممارسة", body: "إدارة حلقات حوار حقيقية داخل مجتمعك." },
+      { num: "٠٣", title: "الاعتماد", body: "شهادة معترف بها في الحوار وبناء السلام." },
+      { num: "٠٤", title: "القيادة", body: "الانضمام إلى شبكة دولية ومرافقة الدفعة التالية." },
     ],
   },
   activities: {

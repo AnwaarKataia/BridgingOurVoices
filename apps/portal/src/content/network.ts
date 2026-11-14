@@ -487,7 +487,7 @@ const ar: NetworkContent = {
   members: {
     meta: {
       title: "أعضاؤنا",
-      description: "تعرّفي على قيادة مشروع Bridging Our Voices وفريقه: زميلات كايسيد من مصر والفلبين ونيجيريا وجنوب أفريقيا.",
+      description: "تعرّف/ي على قيادة مشروع Bridging Our Voices وفريقه: زميلات كايسيد من مصر والفلبين ونيجيريا وجنوب أفريقيا.",
     },
     title: "قيادة المشروع وفريق الإدارة",
     people: [
@@ -536,7 +536,7 @@ const ar: NetworkContent = {
     ],
     networkTitle: "شبكتنا",
     networkLead: "صناع سلام وقيادات مجتمعية من المنطقة وخارجها، يتعلّمون ويمارسون ويقودون معًا.",
-    networkCta: "انضمي إلى الشبكة",
+    networkCta: "انضم/ي إلى الشبكة",
   },
 };
 

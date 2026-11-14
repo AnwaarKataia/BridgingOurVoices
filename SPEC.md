@@ -26,6 +26,12 @@
 **Name:** Bridging Our Voices (BOV): Women's Platform for Dialogue and Peacebuilding
 **The project name is never translated.** "Bridging Our Voices" stays in English in every language (header, footer, page titles, Open Graph), as the owner decided on 2026-11-06. The brand file's Arabic name «أصواتنا جسور» only appears where it is part of the Arabic body copy copied from the brand file.
 **Tagline:** Women leading dialogue and peacebuilding
+**Open to everyone (owner's rule, 2026-11-14):** the message is that **women are capable of leading dialogue and peacebuilding, in different ways**. Participation and membership are open to **women and men**.
+- No text on the site may say or suggest that only women can take part, or address women only.
+- Keep: the tagline, "women leading…", and topics about women's role, WPS and the UN days.
+- Describe audiences as "peacebuilders and community leaders, women and men" (AR «صناع السلام والقيادات المجتمعية، نساءً ورجالًا»).
+- In Arabic, buttons and calls to action use the "/ي" form («سجّل/ي»، «انضم/ي»، «تواصل/ي») or a noun («التعلّم»، «القيادة»), never the feminine-only imperative.
+- In French, use inclusive forms («artisans et artisanes», «participants et participantes», «facilitateurs et facilitatrices»).
 
 A regional, cross-religious and cross-cultural initiative that builds women's capacity to lead dialogue. Dialogue is the core mechanism through which women drive conflict analysis, counter violent extremism, and address shared community and environmental issues. Through partnerships with local leaders and institutions, the platform solidifies women's role as key players in decision-making and conflict resolution.
 
@@ -771,6 +777,36 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - Dashboard: the two kinds don't overlap, the CV appears only on membership requests, and the counts are per kind.
   - The Membership, Join, Privacy and Home pages × 3 languages × 5 widths = 60 checks, all passing. The right fields are on each form, and the "Add your voice" title is not in the membership form.
   - **All test submissions, files and the test account were deleted.**
+
+
+### 2026-11-14: Whole site reworded so it is open to everyone
+- **Owner:** nothing on the site should say participation is for women only, or address women only. The idea is that **women can lead this field in different ways**, not that only women take part.
+- **Kept:**
+  - The tagline «المرأة لقيادة الحوار وبناء السلام» and "Women have always mediated…".
+  - The topics about women's role (seminars, events, the "Women in Peacebuilding" track, WPS) and the UN days.
+  - The members' bios, and the fact that the team are KAICIID fellows (زميلات).
+- **Changed in EN / FR / AR (60 phrases):**
+  - **Home:** the description and hero now say the initiative "shows that women can lead peacebuilding in many ways, and empowers peacemakers and community leaders, women and men". Buttons: «تعرّف/ي على أنشطتنا»، «تواصل/ي معنا». The four steps are nouns: «التعلّم، الممارسة، الاعتماد، القيادة».
+  - **About:**
+    - The story and the description: "works with peacebuilders, community leaders and young change-makers, women and men" (no more «الشابات صانعات التغيير»).
+    - The vision in FR/AR is grammatically inclusive («بوصفهم الميسّرين والوسطاء»).
+    - Goal 1: "grassroots actors, especially women". Goal 3: «الميسّرين والميسّرات». Goal 5: "connecting peacebuilders".
+    - The header: «تعرّف/ي علينا».
+  - **Activities:**
+    - Meta: "for peacebuilders and community leaders".
+    - Flagship: circles "bring people of different faiths together, with women leading the conversation" (the photo description too).
+    - Fellowship: "for women and men already active in their communities". Mentoring: «صناع سلام ذوي خبرة».
+    - Conference: «المشاركين والمشاركات».
+    - Buttons: «سجّل/ي»، «شاهد/ي التسجيل»، «قدّم/ي على الزمالة».
+  - **Agenda:** «سجّل/ي الآن»، «أضف/ي إلى تقويم جوجل».
+  - **Contact:** «أرسل/ي رسالتك».
+  - **Network:** «تعرّف/ي على…»، «انضم/ي إلى الشبكة».
+  - **Privacy:** "a platform for dialogue and peacebuilding that champions women’s leadership" (was "a women’s platform").
+- The database updated every page field by field (`rebase`). The owner's edit to Mona Lisa's bio was kept.
+- **Checked:**
+  - A re-scan finds no women-only target wording and no feminine-only imperative left.
+  - 13 pages × 3 languages × 5 widths = 195 checks, all passing.
+  - The build passes.
 
 ---
 

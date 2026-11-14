@@ -329,12 +329,12 @@
     "en": {
       "meta": {
         "title": "Bridging Our Voices — Women leading dialogue and peacebuilding",
-        "description": "A regional and international initiative empowering women peacemakers and community leaders across the Arab region and Africa to lead dialogue, conflict resolution and the prevention of violent extremism."
+        "description": "A regional and international initiative that champions women’s leadership and empowers peacemakers and community leaders across the Arab region and Africa, women and men, to lead dialogue, conflict resolution and the prevention of violent extremism."
       },
       "hero": {
         "eyebrow": "Regional & international initiative",
         "title": "Women leading dialogue and peacebuilding",
-        "lead": "A distinctive regional and international initiative empowering women peacemakers and community leaders, moving them from informal roles into recognised, influential leadership in peacebuilding and interfaith and intercultural dialogue.",
+        "lead": "A distinctive regional and international initiative showing that women can lead peacebuilding in many ways, and empowering peacemakers and community leaders, women and men, to move from informal roles into recognised, influential leadership in peacebuilding and interfaith and intercultural dialogue.",
         "primary": "Explore our activities",
         "secondary": "Contact us"
       },
@@ -424,12 +424,12 @@
     "fr": {
       "meta": {
         "title": "Bridging Our Voices — Les femmes au cœur du dialogue et de la consolidation de la paix",
-        "description": "Une initiative régionale et internationale qui renforce les femmes artisanes de paix et les leaders communautaires du monde arabe et de l’Afrique pour conduire le dialogue, la résolution des conflits et la prévention de l’extrémisme violent."
+        "description": "Une initiative régionale et internationale qui affirme le leadership des femmes et renforce les artisans de la paix et les leaders communautaires, femmes et hommes, du monde arabe et de l’Afrique, pour conduire le dialogue, la résolution des conflits et la prévention de l’extrémisme violent."
       },
       "hero": {
         "eyebrow": "Initiative régionale et internationale",
         "title": "Les femmes au cœur du dialogue et de la consolidation de la paix",
-        "lead": "Une initiative régionale et internationale qui renforce les femmes artisanes de paix et les leaders communautaires, pour les faire passer de rôles informels à un leadership reconnu et influent dans la consolidation de la paix et le dialogue interreligieux et interculturel.",
+        "lead": "Une initiative régionale et internationale qui montre que les femmes peuvent mener la consolidation de la paix de multiples façons, et qui renforce les artisans de la paix et les leaders communautaires, femmes et hommes, pour les faire passer de rôles informels à un leadership reconnu et influent dans la consolidation de la paix et le dialogue interreligieux et interculturel.",
         "primary": "Découvrir nos activités",
         "secondary": "Nous contacter"
       },
@@ -461,7 +461,7 @@
       },
       "vision": {
         "eyebrow": "Notre vision",
-        "quote": "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme facilitatrices et médiatrices principales dans la résolution des conflits communautaires et le maintien de la paix.",
+        "quote": "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme principaux facilitateurs et médiateurs dans la résolution des conflits communautaires et le maintien de la paix.",
         "link": "En savoir plus sur nous →"
       },
       "pathway": {
@@ -519,14 +519,14 @@
     "ar": {
       "meta": {
         "title": "Bridging Our Voices — المرأة لقيادة الحوار وبناء السلام",
-        "description": "مبادرة إقليمية ودولية متميزة تهدف إلى تمكين صانعات السلام والقيادات المجتمعية في المنطقة العربية وأفريقيا، ونقلهن إلى قيادات معترف بها في الحوار وحل النزاعات والوقاية من التطرف العنيف."
+        "description": "مبادرة إقليمية ودولية متميزة تؤكد قدرة المرأة على القيادة، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، في المنطقة العربية وأفريقيا، وتنقلهم إلى قيادات معترف بها في الحوار وحل النزاعات والوقاية من التطرف العنيف."
       },
       "hero": {
         "eyebrow": "مبادرة إقليمية ودولية",
         "title": "المرأة لقيادة الحوار وبناء السلام",
-        "lead": "مبادرة إقليمية ودولية متميزة تهدف إلى تمكين صانعات السلام والقيادات المجتمعية، ونقلهن من أدوار غير رسمية إلى قيادات معترف بها ومؤثرة في بناء السلام والحوار بين الأديان والثقافات.",
-        "primary": "تعرّفي على أنشطتنا",
-        "secondary": "تواصلي معنا"
+        "lead": "مبادرة إقليمية ودولية متميزة تؤكد أن المرأة قادرة على قيادة بناء السلام بصور مختلفة، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، وتنقلهم من أدوار غير رسمية إلى قيادات معترف بها ومؤثرة في بناء السلام والحوار بين الأديان والثقافات.",
+        "primary": "تعرّف/ي على أنشطتنا",
+        "secondary": "تواصل/ي معنا"
       },
       "ticker": {
         "label": "آخر الأخبار",
@@ -556,7 +556,7 @@
       },
       "vision": {
         "eyebrow": "رؤيتنا",
-        "quote": "إرساء منظومة حوار إقليمية ودولية شاملة، تمتلك فيها النساء والقيادات الشابة سلطة شرعية ومعترفًا بها بوصفهن الميسِّرات والوسيطات الأساسيات في حل النزاعات المجتمعية واستدامة السلام.",
+        "quote": "إرساء منظومة حوار إقليمية ودولية شاملة، تمتلك فيها النساء والقيادات الشابة سلطة شرعية ومعترفًا بها بوصفهم الميسّرين والوسطاء الأساسيين في حل النزاعات المجتمعية واستدامة السلام.",
         "link": "المزيد عنّا ←"
       },
       "pathway": {
@@ -565,23 +565,23 @@
         "steps": [
           {
             "num": "٠١",
-            "title": "تعلّمي",
+            "title": "التعلّم",
             "body": "وحدات ثنائية اللغة يقدّمها ممارسون من المنطقة."
           },
           {
             "num": "٠٢",
-            "title": "مارسي",
-            "body": "أديري حلقات حوار حقيقية داخل مجتمعك."
+            "title": "الممارسة",
+            "body": "إدارة حلقات حوار حقيقية داخل مجتمعك."
           },
           {
             "num": "٠٣",
-            "title": "احصلي على الاعتماد",
+            "title": "الاعتماد",
             "body": "شهادة معترف بها في الحوار وبناء السلام."
           },
           {
             "num": "٠٤",
-            "title": "قودي",
-            "body": "انضمي إلى شبكة دولية ورافقي الدفعة التالية."
+            "title": "القيادة",
+            "body": "الانضمام إلى شبكة دولية ومرافقة الدفعة التالية."
           }
         ]
       },
@@ -616,7 +616,7 @@
     "en": {
       "meta": {
         "title": "Who we are",
-        "description": "Bridging Our Voices is a cross-regional, interreligious and intercultural initiative led by KAICIID Fellows alumni, moving women peacebuilders from informal roles to recognised, certified facilitators and mediators."
+        "description": "Bridging Our Voices is a cross-regional, interreligious and intercultural initiative led by KAICIID Fellows alumni. It champions women’s leadership in dialogue and moves peacebuilders and community leaders, women and men, from informal roles to recognised, certified facilitators and mediators."
       },
       "header": {
         "eyebrow": "About",
@@ -627,7 +627,7 @@
         "eyebrow": "Who we are",
         "title": "Women have always mediated. It’s time it was recognised.",
         "paragraphs": [
-          "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It empowers women peacebuilders, community leaders and young female change-makers across the Arab World, Africa and Southeast Asia, transitioning them from informal community observers into recognised, certified facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
+          "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It shows that women can lead dialogue and peacebuilding in many different ways, and works with peacebuilders, community leaders and young change-makers, women and men, across the Arab World, Africa and Southeast Asia, transitioning them from informal community observers into recognised, certified facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
           "Supported by the KAICIID Fellows Alumni Network (KFAN), the project operates in strategic partnership with organisations across three regions and with expert international consultants from South Africa."
         ],
         "partnersLabel": "Strategic partners",
@@ -655,7 +655,7 @@
           {
             "num": "01",
             "title": "Bridge the recognition gap",
-            "body": "Elevate female grassroots actors from informal observers to certified, recognised peace facilitators and mediators."
+            "body": "Elevate grassroots actors, especially women, from informal observers to certified, recognised peace facilitators and mediators."
           },
           {
             "num": "02",
@@ -675,7 +675,7 @@
           {
             "num": "05",
             "title": "Sustain cross-regional collaboration",
-            "body": "Build the permanent “Bridging Our Voices Network” connecting female peacebuilders across Asia, Africa and the Arab region."
+            "body": "Build the permanent “Bridging Our Voices Network” connecting peacebuilders and community leaders across Asia, Africa and the Arab region."
           }
         ]
       }
@@ -683,7 +683,7 @@
     "fr": {
       "meta": {
         "title": "Qui sommes-nous",
-        "description": "Bridging Our Voices est une initiative transrégionale, interreligieuse et interculturelle portée par des anciens fellows du KAICIID, qui fait des femmes artisanes de paix des facilitatrices et médiatrices reconnues et certifiées."
+        "description": "Bridging Our Voices est une initiative transrégionale, interreligieuse et interculturelle portée par des anciens fellows du KAICIID. Elle affirme le leadership des femmes dans le dialogue et fait des artisans et artisanes de paix, femmes et hommes, des facilitateurs et médiateurs reconnus et certifiés."
       },
       "header": {
         "eyebrow": "Qui sommes-nous",
@@ -694,7 +694,7 @@
         "eyebrow": "Qui sommes-nous",
         "title": "Les femmes ont toujours été médiatrices. Il est temps de le reconnaître.",
         "paragraphs": [
-          "« Bridging Our Voices : les femmes au cœur du dialogue et de la consolidation de la paix » est une initiative phare transrégionale, interreligieuse et interculturelle portée par des anciens du Programme international de fellows du KAICIID. Elle renforce les femmes artisanes de paix, les leaders communautaires et les jeunes femmes actrices de changement dans le monde arabe, en Afrique et en Asie du Sud-Est, pour les faire passer d’observatrices informelles à facilitatrices et médiatrices reconnues et certifiées du dialogue interreligieux, de la transformation des conflits et de la cohésion sociale.",
+          "« Bridging Our Voices : les femmes au cœur du dialogue et de la consolidation de la paix » est une initiative phare transrégionale, interreligieuse et interculturelle portée par des anciens du Programme international de fellows du KAICIID. Elle montre que les femmes peuvent conduire le dialogue et la consolidation de la paix de multiples façons, et accompagne artisans de la paix, leaders communautaires et jeunes acteurs de changement, femmes et hommes, dans le monde arabe, en Afrique et en Asie du Sud-Est, pour les faire passer d’observateurs informels à facilitateurs et médiateurs reconnus et certifiés du dialogue interreligieux, de la transformation des conflits et de la cohésion sociale.",
           "Soutenu par le réseau des anciens fellows du KAICIID (KFAN), le projet est mené en partenariat stratégique avec des organisations de trois régions et des consultants internationaux d’Afrique du Sud."
         ],
         "partnersLabel": "Partenaires stratégiques",
@@ -709,7 +709,7 @@
       },
       "vision": {
         "eyebrow": "Notre vision",
-        "text": "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme facilitatrices et médiatrices principales dans la résolution des conflits communautaires et le maintien de la paix."
+        "text": "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme principaux facilitateurs et médiateurs dans la résolution des conflits communautaires et le maintien de la paix."
       },
       "mission": {
         "eyebrow": "Notre mission",
@@ -722,7 +722,7 @@
           {
             "num": "01",
             "title": "Combler le déficit de reconnaissance",
-            "body": "Faire passer les actrices de terrain d’observatrices informelles à facilitatrices et médiatrices de paix certifiées et reconnues."
+            "body": "Faire passer les acteurs et actrices de terrain, en particulier les femmes, d’observateurs informels à facilitateurs et médiateurs de paix certifiés et reconnus."
           },
           {
             "num": "02",
@@ -732,7 +732,7 @@
           {
             "num": "03",
             "title": "Renforcer la résilience et la guérison",
-            "body": "Intégrer pleine conscience, guérison des traumatismes et paix intérieure pour soutenir les facilitatrices en contextes de fort conflit."
+            "body": "Intégrer pleine conscience, guérison des traumatismes et paix intérieure pour soutenir les facilitateurs et facilitatrices en contextes de fort conflit."
           },
           {
             "num": "04",
@@ -742,7 +742,7 @@
           {
             "num": "05",
             "title": "Pérenniser la collaboration transrégionale",
-            "body": "Créer le réseau permanent « Bridging Our Voices » reliant les artisanes de paix d’Asie, d’Afrique et du monde arabe."
+            "body": "Créer le réseau permanent « Bridging Our Voices » reliant les artisans de la paix d’Asie, d’Afrique et du monde arabe."
           }
         ]
       }
@@ -750,18 +750,18 @@
     "ar": {
       "meta": {
         "title": "من نحن",
-        "description": "«أصواتنا جسور» مبادرة رائدة عابرة للأقاليم بين الأديان والثقافات، يقودها خريجو برنامج الزمالة الدولية لكايسيد، تنقل صانعات السلام إلى ميسِّرات ووسيطات معترف بهن ومعتمدات."
+        "description": "«أصواتنا جسور» مبادرة رائدة عابرة للأقاليم بين الأديان والثقافات، يقودها خريجو برنامج الزمالة الدولية لكايسيد، تؤكد قدرة المرأة على قيادة الحوار، وتنقل صناع السلام، نساءً ورجالًا، إلى ميسّرين ووسطاء معترف بهم ومعتمدين."
       },
       "header": {
         "eyebrow": "من نحن",
-        "title": "تعرّفي علينا",
+        "title": "تعرّف/ي علينا",
         "lead": "قصتنا ورؤيتنا ورسالتنا وأهدافنا."
       },
       "who": {
         "eyebrow": "من نحن",
         "title": "لطالما كانت المرأة وسيطة. حان وقت الاعتراف بذلك.",
         "paragraphs": [
-          "«أصواتنا جسور: المرأة لقيادة الحوار وبناء السلام» مبادرة رائدة عابرة للأقاليم، بين الأديان والثقافات، يقودها خريجو برنامج الزمالة الدولية لمركز الملك عبدالله العالمي للحوار (كايسيد). تمكّن المبادرة صانعات السلام والقيادات المجتمعية والشابات صانعات التغيير في العالم العربي وأفريقيا وجنوب شرق آسيا، وتنقلهن من موقع المراقِبات غير الرسميات إلى ميسِّرات ووسيطات معترف بهن ومعتمدات في الحوار بين الأديان وتحويل النزاعات والتماسك الاجتماعي.",
+          "«أصواتنا جسور: المرأة لقيادة الحوار وبناء السلام» مبادرة رائدة عابرة للأقاليم، بين الأديان والثقافات، يقودها خريجو برنامج الزمالة الدولية لمركز الملك عبدالله العالمي للحوار (كايسيد). تؤكد المبادرة قدرة المرأة على قيادة الحوار وبناء السلام بصور مختلفة، وتعمل مع صناع السلام والقيادات المجتمعية وصنّاع التغيير من الشباب، نساءً ورجالًا، في العالم العربي وأفريقيا وجنوب شرق آسيا، وتنقلهم من موقع المراقبين غير الرسميين إلى ميسّرين ووسطاء معترف بهم ومعتمدين في الحوار بين الأديان وتحويل النزاعات والتماسك الاجتماعي.",
           "بدعم من شبكة خريجي زمالة كايسيد (KFAN)، يعمل المشروع بشراكة استراتيجية مع مؤسسات في ثلاثة أقاليم ومع مستشارين دوليين خبراء من جنوب أفريقيا."
         ],
         "partnersLabel": "الشركاء الاستراتيجيون",
@@ -776,7 +776,7 @@
       },
       "vision": {
         "eyebrow": "رؤيتنا",
-        "text": "إرساء منظومة حوار إقليمية ودولية شاملة، تمتلك فيها النساء والقيادات الشابة سلطة شرعية ومعترفًا بها بوصفهن الميسِّرات والوسيطات الأساسيات في حل النزاعات المجتمعية واستدامة السلام."
+        "text": "إرساء منظومة حوار إقليمية ودولية شاملة، تمتلك فيها النساء والقيادات الشابة سلطة شرعية ومعترفًا بها بوصفهم الميسّرين والوسطاء الأساسيين في حل النزاعات المجتمعية واستدامة السلام."
       },
       "mission": {
         "eyebrow": "رسالتنا",
@@ -789,7 +789,7 @@
           {
             "num": "٠١",
             "title": "سدّ فجوة الاعتراف",
-            "body": "الارتقاء بالفاعلات القاعديات من مراقِبات غير رسميات إلى ميسِّرات ووسيطات سلام معتمدات ومعترف بهن."
+            "body": "الارتقاء بالفاعلين القاعديين، ولا سيما النساء، من مراقبين غير رسميين إلى ميسّري ووسطاء سلام معتمدين ومعترف بهم."
           },
           {
             "num": "٠٢",
@@ -799,7 +799,7 @@
           {
             "num": "٠٣",
             "title": "تعزيز الصمود والتعافي",
-            "body": "دمج ممارسات اليقظة الذهنية والتعافي من الصدمات والسلام الداخلي لدعم الميسِّرات العاملات في بيئات شديدة النزاع."
+            "body": "دمج ممارسات اليقظة الذهنية والتعافي من الصدمات والسلام الداخلي لدعم الميسّرين والميسّرات العاملين في بيئات شديدة النزاع."
           },
           {
             "num": "٠٤",
@@ -809,7 +809,7 @@
           {
             "num": "٠٥",
             "title": "استدامة التعاون العابر للأقاليم",
-            "body": "بناء «شبكة أصواتنا جسور» الدائمة التي تربط صانعات السلام في آسيا وأفريقيا والمنطقة العربية."
+            "body": "بناء «شبكة أصواتنا جسور» الدائمة التي تربط صناع السلام في آسيا وأفريقيا والمنطقة العربية."
           }
         ]
       }
@@ -819,7 +819,7 @@
     "en": {
       "meta": {
         "title": "Activities",
-        "description": "Training programmes, seminars, conferences and a fellowship: four ways for women peacebuilders to learn, connect and lead with Bridging Our Voices."
+        "description": "Training programmes, seminars, conferences and a fellowship: four ways for peacebuilders and community leaders to learn, connect and lead with Bridging Our Voices."
       },
       "header": {
         "eyebrow": "Activities",
@@ -885,7 +885,7 @@
           {
             "num": "01",
             "title": "Encounter",
-            "body": "Facilitated dialogue circles that bring women of different faiths and cultures together."
+            "body": "Facilitated dialogue circles that bring people of different faiths and cultures together, with women leading the conversation."
           },
           {
             "num": "02",
@@ -903,7 +903,7 @@
           "#InterculturalDialogue"
         ],
         "image": "",
-        "photoAlt": "Women of different faiths in dialogue",
+        "photoAlt": "People of different faiths in dialogue",
         "quote": "“Dialogue begins when we listen to understand, not to reply.”"
       },
       "tracks": [
@@ -1009,7 +1009,7 @@
         "index": "04",
         "eyebrow": "Fellowship",
         "title": "The Bridging Our Voices Fellowship",
-        "lead": "A year-long fellowship for women already active in their communities: mentoring, accreditation and the support to lead their own dialogue initiative.",
+        "lead": "A year-long fellowship for women and men already active in their communities: mentoring, accreditation and the support to lead their own dialogue initiative.",
         "cta": "Apply for the fellowship",
         "status": "Applications open now",
         "benefits": [
@@ -1101,7 +1101,7 @@
           {
             "num": "01",
             "title": "Rencontre",
-            "body": "Des cercles de dialogue animés réunissant des femmes de religions et de cultures différentes."
+            "body": "Des cercles de dialogue animés réunissant des personnes de religions et de cultures différentes, où les femmes mènent la conversation."
           },
           {
             "num": "02",
@@ -1119,7 +1119,7 @@
           "#InterculturalDialogue"
         ],
         "image": "",
-        "photoAlt": "Femmes de différentes religions en dialogue",
+        "photoAlt": "Personnes de différentes religions en dialogue",
         "quote": "« Le dialogue commence quand on écoute pour comprendre, et non pour répondre. »"
       },
       "tracks": [
@@ -1181,7 +1181,7 @@
         "index": "03",
         "eyebrow": "Congrès",
         "title": "Congrès de lancement",
-        "lead": "Notre congrès régional et international réunit participantes, partenaires et experts pour partager les pratiques et fixer les priorités.",
+        "lead": "Notre congrès régional et international réunit participants et participantes, partenaires et experts pour partager les pratiques et fixer les priorités.",
         "playLabel": "Lire la vidéo",
         "featured": {
           "image": "",
@@ -1225,13 +1225,13 @@
         "index": "04",
         "eyebrow": "Bourse",
         "title": "La bourse Bridging Our Voices",
-        "lead": "Une bourse d’un an pour les femmes déjà engagées dans leurs communautés : mentorat, certification et accompagnement pour mener leur propre initiative de dialogue.",
+        "lead": "Une bourse d’un an pour les femmes et les hommes déjà engagés dans leurs communautés : mentorat, certification et accompagnement pour mener leur propre initiative de dialogue.",
         "cta": "Candidater à la bourse",
         "status": "Candidatures ouvertes",
         "benefits": [
           {
             "title": "Mentorat",
-            "body": "Un accompagnement individuel par des artisanes de paix expérimentées."
+            "body": "Un accompagnement individuel par des artisans de la paix expérimentés."
           },
           {
             "title": "Certification",
@@ -1251,7 +1251,7 @@
     "ar": {
       "meta": {
         "title": "الأنشطة",
-        "description": "برامج تدريبية وندوات ومؤتمرات وزمالة: أربعة طرق للتعلّم والتواصل والقيادة مع مبادرة «أصواتنا جسور» لصانعات السلام."
+        "description": "برامج تدريبية وندوات ومؤتمرات وزمالة: أربعة طرق للتعلّم والتواصل والقيادة مع مبادرة «أصواتنا جسور» لصناع السلام والقيادات المجتمعية."
       },
       "header": {
         "eyebrow": "الأنشطة",
@@ -1317,7 +1317,7 @@
           {
             "num": "٠١",
             "title": "اللقاء",
-            "body": "حلقات حوار مُيسَّرة تجمع نساءً من أديان وثقافات مختلفة."
+            "body": "حلقات حوار مُيسَّرة تجمع أشخاصًا من أديان وثقافات مختلفة، وتقود فيها النساء الحوار."
           },
           {
             "num": "٠٢",
@@ -1335,7 +1335,7 @@
           "#InterculturalDialogue"
         ],
         "image": "",
-        "photoAlt": "نساء من أديان مختلفة في حوار",
+        "photoAlt": "أشخاص من أديان مختلفة في حوار",
         "quote": "«يبدأ الحوار حين نُصغي لنفهم، لا لنرد.»"
       },
       "tracks": [
@@ -1375,21 +1375,21 @@
             "meta": "سلسلة ندوات · أونلاين",
             "title": "المرأة والإيمان وصناعة السلام",
             "body": "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان.",
-            "cta": "سجّلي ←"
+            "cta": "سجّل/ي ←"
           },
           {
             "image": "",
             "meta": "ندوة · حضوري",
             "title": "خطاب الكراهية: من الرصد إلى الرد",
             "body": "دراسات حالة وأدوات للقيادات المجتمعية والمربّين.",
-            "cta": "سجّلي ←"
+            "cta": "سجّل/ي ←"
           },
           {
             "image": "",
             "meta": "ندوة · أونلاين",
             "title": "المواطنة وصوت المرأة في الشأن العام",
             "body": "كيف تفتح المشاركة المدنية طرقًا نحو القيادة.",
-            "cta": "شاهدي التسجيل ←"
+            "cta": "شاهد/ي التسجيل ←"
           }
         ]
       },
@@ -1397,7 +1397,7 @@
         "index": "03",
         "eyebrow": "مؤتمرات",
         "title": "مؤتمر الإطلاق",
-        "lead": "يجمع مؤتمرنا الإقليمي والدولي المشاركات والشركاء والخبراء لتبادل الممارسات ورسم الأولويات.",
+        "lead": "يجمع مؤتمرنا الإقليمي والدولي المشاركين والمشاركات والشركاء والخبراء لتبادل الممارسات ورسم الأولويات.",
         "playLabel": "تشغيل الفيديو",
         "featured": {
           "image": "",
@@ -1441,13 +1441,13 @@
         "index": "04",
         "eyebrow": "زمالة",
         "title": "زمالة «أصواتنا جسور»",
-        "lead": "زمالة لمدة عام للنساء الفاعلات في مجتمعاتهن: إرشاد واعتماد ودعم لقيادة مبادرة حوار خاصة بهن.",
-        "cta": "قدّمي على الزمالة",
+        "lead": "زمالة لمدة عام للنساء والرجال الفاعلين في مجتمعاتهم: إرشاد واعتماد ودعم لقيادة مبادرة حوار خاصة بهم.",
+        "cta": "قدّم/ي على الزمالة",
         "status": "باب التقديم مفتوح الآن",
         "benefits": [
           {
             "title": "الإرشاد",
-            "body": "توجيه فردي من صانعات سلام ذوات خبرة."
+            "body": "توجيه فردي من صناع سلام ذوي خبرة."
           },
           {
             "title": "الاعتماد",
@@ -1920,7 +1920,7 @@
         "kind": "سلسلة ندوات · أونلاين",
         "title": "المرأة والإيمان وصناعة السلام",
         "dates": "من ٢٦ نوفمبر إلى ١٧ ديسمبر",
-        "register": "سجّلي الآن",
+        "register": "سجّل/ي الآن",
         "body": "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان."
       },
       "eventPage": {
@@ -1929,8 +1929,8 @@
         "type": "النوع",
         "sessions": "الحلقات",
         "details": "سيتم إرسال المواعيد وتفاصيل الانضمام للمسجّلين.",
-        "register": "سجّلي الآن",
-        "addToCalendar": "أضيفي إلى تقويم جوجل",
+        "register": "سجّل/ي الآن",
+        "addToCalendar": "أضف/ي إلى تقويم جوجل",
         "back": "العودة إلى الأجندة",
         "others": "فعاليات قادمة أخرى"
       },
@@ -2685,7 +2685,7 @@
       "members": {
         "meta": {
           "title": "أعضاؤنا",
-          "description": "تعرّفي على قيادة مشروع Bridging Our Voices وفريقه: زميلات كايسيد من مصر والفلبين ونيجيريا وجنوب أفريقيا."
+          "description": "تعرّف/ي على قيادة مشروع Bridging Our Voices وفريقه: زميلات كايسيد من مصر والفلبين ونيجيريا وجنوب أفريقيا."
         },
         "title": "قيادة المشروع وفريق الإدارة",
         "people": [
@@ -2734,7 +2734,7 @@
         ],
         "networkTitle": "شبكتنا",
         "networkLead": "صناع سلام وقيادات مجتمعية من المنطقة وخارجها، يتعلّمون ويمارسون ويقودون معًا.",
-        "networkCta": "انضمي إلى الشبكة"
+        "networkCta": "انضم/ي إلى الشبكة"
       }
     }
   },
@@ -2840,12 +2840,12 @@
     "ar": {
       "meta": {
         "title": "تواصل معنا",
-        "description": "لديك سؤال عن برامج Bridging Our Voices أو الشراكات أو الإعلام؟ أرسلي رسالتك وسنعود إليك."
+        "description": "لديك سؤال عن برامج Bridging Our Voices أو الشراكات أو الإعلام؟ أرسل/ي رسالتك وسنعود إليك."
       },
       "header": {
         "eyebrow": "تواصل معنا",
         "title": "يسعدنا تواصلك",
-        "lead": "لديك سؤال عن البرامج أو الشراكات أو الإعلام؟ أرسلي رسالتك وسنعود إليك."
+        "lead": "لديك سؤال عن البرامج أو الشراكات أو الإعلام؟ أرسل/ي رسالتك وسنعود إليك."
       },
       "form": {
         "name": "الاسم بالكامل",
@@ -2907,7 +2907,7 @@
           "title": "Who we are",
           "blocks": [
             {
-              "p": "Bridging Our Voices is a women’s platform for dialogue and peacebuilding, led by Dr. Anwaar Kataia (Lead Fellow and Project Manager). We are responsible for the personal data collected through this website."
+              "p": "Bridging Our Voices is a platform for dialogue and peacebuilding that champions women’s leadership, directed by Dr. Anwaar Kataia (Lead Fellow and Project Manager). We are responsible for the personal data collected through this website."
             },
             {
               "p": "For any question about your data, write to b.our.voices@gmail.com."
@@ -3102,7 +3102,7 @@
           "title": "Qui sommes-nous",
           "blocks": [
             {
-              "p": "Bridging Our Voices est une plateforme de femmes pour le dialogue et la consolidation de la paix, dirigée par la Dr Anwaar Kataia (Lead Fellow et cheffe de projet). Nous sommes responsables des données personnelles collectées sur ce site."
+              "p": "Bridging Our Voices est une plateforme de dialogue et de consolidation de la paix qui affirme le leadership des femmes, dirigée par la Dr Anwaar Kataia (Lead Fellow et cheffe de projet). Nous sommes responsables des données personnelles collectées sur ce site."
             },
             {
               "p": "Pour toute question sur vos données, écrivez à b.our.voices@gmail.com."
@@ -3297,7 +3297,7 @@
           "title": "من نحن",
           "blocks": [
             {
-              "p": "Bridging Our Voices منصة نسائية للحوار وبناء السلام، تقودها د. أنوار قطايا (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع."
+              "p": "Bridging Our Voices منصة للحوار وبناء السلام تؤكد قدرة المرأة على القيادة، تديرها د. أنوار قطايا (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع."
             },
             {
               "p": "لأي سؤال عن بياناتك، راسلنا على b.our.voices@gmail.com."
