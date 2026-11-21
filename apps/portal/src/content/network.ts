@@ -68,8 +68,13 @@ export type NetworkContent = {
     /** At most 3 fields of work (owner, 2026-11-14). */
     fieldsHint: string;
     fieldOptions: { value: string; label: string }[];
+    /** What the person shares (owner, 2026-11-21): a message of support, an article, or both. */
+    contribution: string;
+    contributionPlaceholder: string;
+    contributionOptions: { value: string; label: string }[];
     quote: string;
     article: string;
+    articleHint: string;
     photo: string;
     photoButton: string;
     photoHint: string;
@@ -172,10 +177,10 @@ const en: NetworkContent = {
   join: {
     meta: {
       title: "Add your voice to ours",
-      description: "Membership of the Bridging Our Voices network is free. Share a few details and a message of support, and our team will contact you.",
+      description: "Add your voice to Bridging Our Voices: share a message of support, an article, or both. Our team will review it and contact you.",
     },
     title: "Add your voice to ours",
-    lead: "Membership is free. Share a few details and a message of support; our team will review it and contact you.",
+    lead: "Share a message of support, an article, or both. Our team will review your contribution and contact you.",
     legend: "Your details",
     name: "Full name",
     gender: "Gender",
@@ -199,14 +204,22 @@ const en: NetworkContent = {
       "Women, Peace & Security", "Youth engagement", "Trauma healing & resilience", "Citizenship & leadership",
       "Education & training", "Research", "Media",
     ]),
-    quote: "A message of support for the initiative",
-    article: "Share an article (optional)",
+    contribution: "What would you like to share?",
+    contributionPlaceholder: "Choose…",
+    contributionOptions: [
+      { value: "message", label: "A message of support" },
+      { value: "article", label: "An article" },
+      { value: "both", label: "Both: a message and an article" },
+    ],
+    quote: "Your message of support for the initiative",
+    article: "Your article",
+    articleHint: "At least 50 characters. Paste the text of the article here.",
     photo: "Your photo (optional)",
     photoButton: "Upload photo",
     photoHint: "JPG or PNG, shown with your message if published.",
     photoTooBig: "Please choose a JPG or PNG under 3 MB.",
     consent: "I agree to the network’s code of conduct and to my data being used to process my application.",
-    publishConsent: "I agree that my statement, name, job title, country and photo may be published on the site.",
+    publishConsent: "I agree that my message or article, name, job title, country and photo may be published on the site.",
     submit: "Submit application",
     sending: "Sending…",
     success: "Thank you. Your application has been received; our team will review it and contact you.",
@@ -332,10 +345,10 @@ const fr: NetworkContent = {
   join: {
     meta: {
       title: "Joignez votre voix à la nôtre",
-      description: "L’adhésion au réseau Bridging Our Voices est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera.",
+      description: "Joignez votre voix à Bridging Our Voices : partagez un message de soutien, un article, ou les deux. Notre équipe l’examinera et vous recontactera.",
     },
     title: "Joignez votre voix à la nôtre",
-    lead: "L’adhésion est gratuite. Partagez quelques informations et un message de soutien : notre équipe vous recontactera.",
+    lead: "Partagez un message de soutien, un article, ou les deux. Notre équipe examinera votre contribution et vous recontactera.",
     legend: "Vos informations",
     name: "Nom complet",
     gender: "Genre",
@@ -359,14 +372,22 @@ const fr: NetworkContent = {
       "Femmes, paix et sécurité", "Engagement des jeunes", "Guérison et résilience", "Citoyenneté et leadership",
       "Éducation et formation", "Recherche", "Médias",
     ]),
-    quote: "Un message de soutien à l’initiative",
-    article: "Partager un article (facultatif)",
+    contribution: "Que souhaitez-vous partager ?",
+    contributionPlaceholder: "Choisir…",
+    contributionOptions: [
+      { value: "message", label: "Un message de soutien" },
+      { value: "article", label: "Un article" },
+      { value: "both", label: "Les deux : un message et un article" },
+    ],
+    quote: "Votre message de soutien à l’initiative",
+    article: "Votre article",
+    articleHint: "Au moins 50 caractères. Collez ici le texte de l’article.",
     photo: "Votre photo (facultatif)",
     photoButton: "Ajouter une photo",
     photoHint: "JPG ou PNG, affichée avec votre message en cas de publication.",
     photoTooBig: "Veuillez choisir un JPG ou PNG de moins de 3 Mo.",
     consent: "J’accepte le code de conduite du réseau et l’utilisation de mes données pour traiter ma candidature.",
-    publishConsent: "J’accepte que mon message, mon nom, ma fonction, mon pays et ma photo soient publiés sur le site.",
+    publishConsent: "J’accepte que mon message ou mon article, mon nom, ma fonction, mon pays et ma photo soient publiés sur le site.",
     submit: "Envoyer ma candidature",
     sending: "Envoi…",
     success: "Merci, votre candidature a bien été reçue. Notre équipe l’examinera et vous recontactera.",
@@ -492,10 +513,10 @@ const ar: NetworkContent = {
   join: {
     meta: {
       title: "ضم صوتك لصوتنا",
-      description: "العضوية في شبكة Bridging Our Voices مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك.",
+      description: "ضم صوتك لصوتنا: شاركنا رسالة دعم أو مقالًا أو الاثنين معًا، وسيراجعها فريقنا ويتواصل معك.",
     },
     title: "ضم صوتك لصوتنا",
-    lead: "العضوية مجانية. شاركنا بياناتك ومقولة تدعمنا بها، وسيراجعها فريقنا ويتواصل معك.",
+    lead: "شاركنا رسالة دعم أو مقالًا أو الاثنين معًا، وسيراجع فريقنا مشاركتك ويتواصل معك.",
     legend: "بياناتك",
     name: "الاسم بالكامل",
     gender: "النوع",
@@ -519,14 +540,22 @@ const ar: NetworkContent = {
       "المرأة والسلام والأمن", "إشراك الشباب", "التعافي والصمود", "المواطنة والقيادة",
       "التعليم والتدريب", "البحث العلمي", "الإعلام",
     ]),
-    quote: "مقولة تدعمنا بها",
-    article: "شارك/ي بمقال (اختياري)",
+    contribution: "ماذا تودّ/ين أن تشارك/ي؟",
+    contributionPlaceholder: "اختر/ي…",
+    contributionOptions: [
+      { value: "message", label: "رسالة دعم" },
+      { value: "article", label: "مقال" },
+      { value: "both", label: "الاثنان معًا: رسالة ومقال" },
+    ],
+    quote: "رسالة دعمك للمبادرة",
+    article: "مقالك",
+    articleHint: "٥٠ حرفًا على الأقل. الصق/ي نص المقال هنا.",
     photo: "صورتك (اختياري)",
     photoButton: "رفع صورة",
     photoHint: "JPG أو PNG، تظهر مع مقولتك عند النشر.",
     photoTooBig: "يُرجى اختيار صورة JPG أو PNG أقل من ٣ ميجابايت.",
     consent: "أوافق على ميثاق سلوك الشبكة وعلى استخدام بياناتي لمعالجة طلب الانضمام.",
-    publishConsent: "أوافق على نشر مقولتي واسمي ووظيفتي ودولتي وصورتي على الموقع.",
+    publishConsent: "أوافق على نشر رسالتي أو مقالي واسمي ووظيفتي ودولتي وصورتي على الموقع.",
     submit: "إرسال طلب الانضمام",
     sending: "جارٍ الإرسال…",
     success: "شكرًا لك، تم استلام طلب انضمامك وسيراجعه فريقنا ويتواصل معك.",

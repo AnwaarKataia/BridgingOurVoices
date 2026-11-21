@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { isPublishedLocale, publishedLocales } from "@/i18n/config";
-import { agendaEntry, agendaItems, agendaSlugs, dateLocale, eventHref, getAgendaContent } from "@/content/agenda";
+import { isPublishedLocale, type Locale } from "@/i18n/config";
+import { dateLocale, eventHref, getAgendaContent } from "@/content/agenda";
+import { countryOptions } from "@/content/countries";
+import { eventItems, getEvent, getEvents } from "@/lib/events";
+import { pick } from "@/lib/courses";
+import { ContentImage } from "@/components/ContentImage";
+import { RegisterForm } from "@/components/forms/RegisterForm";
 import { getSiteContent } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
@@ -13,19 +18,26 @@ import { btn } from "@/components/ui";
 
 type Params = { params: Promise<{ locale: string; slug: string }> };
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return publishedLocales.flatMap((locale) => agendaSlugs.map((slug) => ({ locale, slug })));
+/** One event from the dashboard (owner, 2026-11-21): published events, or drafts in the team's preview. */
+async function load(locale: Locale, slug: string) {
+  const ev = await getEvent(slug);
+  if (!ev) return null;
+  return {
+    ev,
+    kind: pick(ev.kind, locale),
+    title: pick(ev.title, locale),
+    place: pick(ev.place, locale),
+    body: pick(ev.body, locale),
+    isos: ev.dates,
+  };
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!isPublishedLocale(locale)) return {};
-  const a = await getAgendaContent(locale);
-  const e = agendaEntry(a, slug);
+  const e = await load(locale, slug);
   if (!e) return {};
-  return pageMetadata(locale, `/agenda/${slug}`, { title: e.title, description: [e.kind, e.place, e.body].filter(Boolean).join(" · ") });
+  return pageMetadata(locale, `/agenda/${slug}`, { title: e.title, description: [e.kind, e.place, e.body].filter(Boolean).join(" · ").slice(0, 158) });
 }
 
 /** Google Calendar "add event" link for an all-day event. */
@@ -41,10 +53,9 @@ function googleCalendarUrl(title: string, iso: string, place: string, details: s
 export default async function AgendaEventPage({ params }: Params) {
   const { locale, slug } = await params;
   if (!isPublishedLocale(locale)) notFound();
-  const a = await getAgendaContent(locale);
-  const e = agendaEntry(a, slug);
+  const e = await load(locale, slug);
   if (!e) notFound();
-  const site = await getSiteContent(locale);
+  const [a, site, events] = await Promise.all([getAgendaContent(locale), getSiteContent(locale), getEvents()]);
   const loc = dateLocale(locale);
   const longDate = (iso: string) =>
     new Intl.DateTimeFormat(loc, { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(new Date(`${iso}T12:00:00`));
@@ -53,9 +64,11 @@ export default async function AgendaEventPage({ params }: Params) {
   const homeLabel = site.nav.find((n) => n.key === "home")?.label ?? site.brandName;
 
   // Other dated items, without this one (the series shows once)
-  const others = agendaItems(a, locale)
-    .filter((item) => item.href !== eventHref(locale, slug) && item.tone !== "deadline")
+  const today = new Date().toISOString().slice(0, 10);
+  const others = eventItems(events, locale)
+    .filter((item) => item.href !== eventHref(locale, slug) && item.tone !== "deadline" && item.iso >= today)
     .filter((item, i, all) => all.findIndex((x) => x.href === item.href) === i);
+  const canRegister = e.ev.registrationOpen && e.ev.tone !== "deadline";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -85,7 +98,7 @@ export default async function AgendaEventPage({ params }: Params) {
   return (
     <PageShell locale={locale} path={`/agenda/${slug}`} current="agenda">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <PageHeader eyebrow={e.kind} title={e.title} lead={e.body} />
+      <PageHeader eyebrow={e.kind} title={e.title} />
       <section>
         <div className="container-site grid grid-cols-1 items-start gap-x-16 gap-y-12 pt-12 pb-16 md:pt-[72px] md:pb-24 lg:grid-cols-[minmax(0,1fr)_400px]">
           <div className="flex flex-col gap-8">
@@ -102,20 +115,45 @@ export default async function AgendaEventPage({ params }: Params) {
                   </ul>
                 </dd>
               </div>
-              <div className="flex flex-col gap-1.5 bg-white p-5">
-                <dt className="eyebrow text-gold-deep">{p.place}</dt>
-                <dd className="text-[17px] font-semibold text-ink">{e.place}</dd>
-              </div>
-              <div className="flex flex-col gap-1.5 bg-white p-5">
-                <dt className="eyebrow text-gold-deep">{p.type}</dt>
-                <dd className="text-[17px] font-semibold text-ink">{e.kind}</dd>
-              </div>
+              {e.ev.time && (
+                <div className="flex flex-col gap-1.5 bg-white p-5 sm:col-span-2">
+                  <dt className="eyebrow text-gold-deep">{p.time}</dt>
+                  <dd className="text-[17px] font-semibold text-ink">{e.ev.time}</dd>
+                </div>
+              )}
+              {e.place && (
+                <div className="flex flex-col gap-1.5 bg-white p-5">
+                  <dt className="eyebrow text-gold-deep">{p.place}</dt>
+                  <dd className="text-[17px] font-semibold text-ink">{e.place}</dd>
+                </div>
+              )}
+              {e.kind && (
+                <div className="flex flex-col gap-1.5 bg-white p-5">
+                  <dt className="eyebrow text-gold-deep">{p.type}</dt>
+                  <dd className="text-[17px] font-semibold text-ink">{e.kind}</dd>
+                </div>
+              )}
             </dl>
 
-            <p className="text-body text-ink-soft">{p.details}</p>
+            {e.ev.image && (
+              <div className="relative aspect-video overflow-hidden rounded-bov border border-line">
+                <ContentImage src={e.ev.image} alt="" sizes="(min-width: 1024px) 700px, 100vw" />
+              </div>
+            )}
+            {e.body
+              .split(/\n+/)
+              .filter(Boolean)
+              .map((para) => (
+                <p key={para} className="m-0 text-body leading-relaxed text-ink-soft">{para}</p>
+              ))}
+            {canRegister && <p className="m-0 text-body text-ink-soft">{p.details}</p>}
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
-              <a href={`/${locale}/contact`} className={btn.gold}>{p.register}</a>
+              {canRegister ? (
+                <a href="#register" className={btn.gold}>{p.register}</a>
+              ) : (
+                e.ev.tone !== "deadline" && <span className="text-sm font-semibold text-danger">{p.closed}</span>
+              )}
               <a
                 href={googleCalendarUrl(e.title, e.isos[0], e.place, `${pageUrl}`)}
                 target="_blank"
@@ -132,6 +170,7 @@ export default async function AgendaEventPage({ params }: Params) {
             </a>
           </div>
 
+          {others.length > 0 && (
           <aside aria-labelledby="others-title" className="flex flex-col gap-4">
             <h2 id="others-title" className="font-display text-h3 font-normal text-ink">{p.others}</h2>
             <ul className="border-t-[1.5px] border-navy">
@@ -145,8 +184,27 @@ export default async function AgendaEventPage({ params }: Params) {
               })}
             </ul>
           </aside>
+          )}
         </div>
       </section>
+      {canRegister && (
+        <section id="register" className="scroll-mt-24 bg-sand" aria-labelledby="register-title">
+          <div className="container-site py-12 md:py-20">
+            <div className="mx-auto flex max-w-[720px] flex-col gap-4">
+              <h2 id="register-title" className="font-display text-h2 font-normal text-ink">{a.register.title}</h2>
+              <p className="m-0 text-ink-soft">{a.register.lead}</p>
+              <RegisterForm
+                locale={locale}
+                endpoint={`/public/events/${slug}/register`}
+                t={a.register}
+                countries={countryOptions(locale)}
+                privacy={site.privacy}
+                forms={site.forms}
+              />
+            </div>
+          </div>
+        </section>
+      )}
     </PageShell>
   );
 }

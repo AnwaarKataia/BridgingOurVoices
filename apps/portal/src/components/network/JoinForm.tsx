@@ -39,6 +39,10 @@ export function JoinForm({ locale, join, countries, privacy, forms }: Props) {
   const [photoError, setPhotoError] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const [resetKey, setResetKey] = useState(0);
+  // message / article / both: each choice opens its own box (owner, 2026-11-21)
+  const [contribution, setContribution] = useState("");
+  const showQuote = contribution === "message" || contribution === "both";
+  const showArticle = contribution === "article" || contribution === "both";
   const formRef = useRef<HTMLFormElement>(null);
   const nf = new Intl.NumberFormat(locale === "ar" ? "ar-EG" : locale);
 
@@ -76,7 +80,7 @@ export function JoinForm({ locale, join, countries, privacy, forms }: Props) {
       const res = await fetch(`${apiUrl}/network/apply`, { method: "POST", body: data });
       if (!res.ok) {
         const body = (await res.json().catch(() => ({}))) as { errors?: string[] };
-        const mapped = serverErrors(body.errors ?? [], forms);
+        const mapped = serverErrors(body.errors ?? [], forms, { contribution: forms.choose });
         setErrors(mapped);
         setStatus("error");
         focusFirst(el, mapped);
@@ -87,6 +91,7 @@ export function JoinForm({ locale, join, countries, privacy, forms }: Props) {
       setPreview(null);
       setErrors({});
       setResetKey((k) => k + 1);
+      setContribution("");
     } catch {
       setStatus("error");
     }
@@ -156,16 +161,39 @@ export function JoinForm({ locale, join, countries, privacy, forms }: Props) {
         <WorkFields key={`fields-${resetKey}`} join={join} error={errors.fields} Label={Label} />
 
         <label className="flex flex-col gap-2">
-          <Label text={join.quote} required />
-          <textarea name="quote" aria-invalid={errors.quote ? true : undefined} required minLength={10} maxLength={600} rows={4} className={`${input} py-3 leading-relaxed`} />
-        <FieldError msg={errors.quote} />
-          </label>
+          <Label text={join.contribution} required />
+          <select
+            name="contribution"
+            required
+            value={contribution}
+            onChange={(e) => setContribution(e.target.value)}
+            aria-invalid={errors.contribution ? true : undefined}
+            className={`${input} h-12`}
+          >
+            <option value="" disabled>{join.contributionPlaceholder}</option>
+            {join.contributionOptions.map((o) => (
+              <option key={o.value} value={o.value}>{o.label}</option>
+            ))}
+          </select>
+          <FieldError msg={errors.contribution} />
+        </label>
 
-        <label className="flex flex-col gap-2">
-          <Label text={join.article} />
-          <textarea name="article" aria-invalid={errors.article ? true : undefined} maxLength={10000} rows={8} className={`${input} py-3 leading-relaxed`} />
-        <FieldError msg={errors.article} />
+        {showQuote && (
+          <label className="flex flex-col gap-2">
+            <Label text={join.quote} required />
+            <textarea name="quote" aria-invalid={errors.quote ? true : undefined} required minLength={10} maxLength={600} rows={4} className={`${input} py-3 leading-relaxed`} />
+            <FieldError msg={errors.quote} />
           </label>
+        )}
+
+        {showArticle && (
+          <label className="flex flex-col gap-2">
+            <Label text={join.article} required />
+            <textarea name="article" aria-invalid={errors.article ? true : undefined} required minLength={50} maxLength={10000} rows={10} className={`${input} py-3 leading-relaxed`} />
+            <span className="text-xs text-ink-soft">{join.articleHint}</span>
+            <FieldError msg={errors.article} />
+          </label>
+        )}
 
         <div className="flex flex-col gap-2">
           <Label text={join.photo} />

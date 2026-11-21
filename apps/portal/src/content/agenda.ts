@@ -47,8 +47,6 @@ export type AgendaContent = {
     monthLabel: string;
     dayLabel: string;
   };
-  /** `image`: event banner ("" = striped placeholder). */
-  featured: { image: string; kind: string; title: string; dates: string; register: string; body: string };
   /** Labels for the event pages (/agenda/[slug]). */
   eventPage: {
     date: string;
@@ -60,11 +58,24 @@ export type AgendaContent = {
     addToCalendar: string;
     back: string;
     others: string;
+    time: string;
+    closed: string;
+  };
+  /** Registration form on event pages (owner, 2026-11-21: every "Register" lands in the dashboard). */
+  register: {
+    title: string;
+    lead: string;
+    name: string;
+    email: string;
+    country: string;
+    countryPlaceholder: string;
+    submit: string;
+    sending: string;
+    success: string;
+    closed: string;
+    error: string;
   };
   upcomingTitle: string;
-  deadline: { kind: string; title: string };
-  seriesPlace: string;
-  events: { kind: string; title: string; place: string }[];
   observances: {
     eyebrow: string;
     title: string;
@@ -73,22 +84,6 @@ export type AgendaContent = {
     items: Observance[];
   };
 };
-
-/** Dates from the brand file. Change them here, the copy follows by position. */
-export const deadlineIso = "2026-11-12";
-export const seriesIsos = ["2026-11-26", "2026-12-03", "2026-12-10", "2026-12-17"];
-export const eventIsos = ["2026-11-14", "2026-11-20", "2026-11-28", "2026-12-05", "2027-01-18"];
-/** Event page slugs (/agenda/[slug]), in the same order as `events`. */
-export const eventSlugs = [
-  "faith-culture-and-the-role-of-women",
-  "conflict-analysis-for-community-leaders",
-  "responding-to-hate-speech-online",
-  "citizenship-leadership-and-womens-participation",
-  "first-cohort-accreditation",
-];
-/** The webinar series has its own page too. */
-export const seriesSlug = "women-faith-and-the-making-of-peace";
-export const agendaSlugs = [seriesSlug, ...eventSlugs];
 
 /**
  * Observance dates and official pages, shared by every language; titles follow by position.
@@ -156,14 +151,6 @@ const en: AgendaContent = {
     monthLabel: "This month",
     dayLabel: "Selected day",
   },
-  featured: {
-    image: "",
-    kind: "Webinar series · Online",
-    title: "Women, faith and the making of peace",
-    dates: "26 Nov to 17 Dec",
-    register: "Register",
-    body: "A four-part series on women’s roles in interreligious peace work.",
-  },
   eventPage: {
     date: "Date",
     place: "Place",
@@ -174,17 +161,23 @@ const en: AgendaContent = {
     addToCalendar: "Add to Google Calendar",
     back: "Back to the agenda",
     others: "Other upcoming events",
+    time: "Time",
+    closed: "Registration is closed.",
+  },
+  register: {
+    title: "Register for this event",
+    lead: "Leave your details and our team will contact you with the next steps.",
+    name: "Full name",
+    email: "Email",
+    country: "Country",
+    countryPlaceholder: "Select…",
+    submit: "Register",
+    sending: "Sending…",
+    success: "Thank you. Your registration has been received; our team will contact you.",
+    closed: "Registration for this event is closed.",
+    error: "Something went wrong. Please check the form and try again.",
   },
   upcomingTitle: "All upcoming events",
-  deadline: { kind: "Deadline", title: "Last day to register for the digital training course" },
-  seriesPlace: "Online",
-  events: [
-    { kind: "Dialogue circle", title: "Faith, culture and the role of women", place: "Online · Arabic & English" },
-    { kind: "Workshop", title: "Conflict analysis for community leaders", place: "Regional hub" },
-    { kind: "Training", title: "Responding to hate speech online", place: "Online" },
-    { kind: "Round table", title: "Citizenship, leadership and women’s participation", place: "To be announced" },
-    { kind: "Ceremony", title: "First cohort accreditation", place: "To be announced" },
-  ],
   observances: {
     eyebrow: "International days",
     title: "Global dates for dialogue and peace",
@@ -243,14 +236,6 @@ const fr: AgendaContent = {
     monthLabel: "Ce mois-ci",
     dayLabel: "Jour sélectionné",
   },
-  featured: {
-    image: "",
-    kind: "Série de webinaires · En ligne",
-    title: "Femmes, foi et construction de la paix",
-    dates: "26 nov. au 17 déc.",
-    register: "S’inscrire",
-    body: "Un cycle en quatre séances sur le rôle des femmes dans la paix interreligieuse.",
-  },
   eventPage: {
     date: "Date",
     place: "Lieu",
@@ -261,17 +246,23 @@ const fr: AgendaContent = {
     addToCalendar: "Ajouter à Google Agenda",
     back: "Retour à l’agenda",
     others: "Autres événements à venir",
+    time: "Horaire",
+    closed: "Les inscriptions sont closes.",
+  },
+  register: {
+    title: "S’inscrire à cet événement",
+    lead: "Laissez vos coordonnées : notre équipe vous contactera pour la suite.",
+    name: "Nom complet",
+    email: "E-mail",
+    country: "Pays",
+    countryPlaceholder: "Sélectionner…",
+    submit: "S’inscrire",
+    sending: "Envoi…",
+    success: "Merci. Votre inscription a bien été reçue ; notre équipe vous contactera.",
+    closed: "Les inscriptions à cet événement sont closes.",
+    error: "Une erreur s’est produite. Vérifiez le formulaire et réessayez.",
   },
   upcomingTitle: "Tous les événements à venir",
-  deadline: { kind: "Date limite", title: "Dernier jour d’inscription à la formation numérique" },
-  seriesPlace: "En ligne",
-  events: [
-    { kind: "Cercle de dialogue", title: "Religion, culture et rôle des femmes", place: "En ligne · arabe et anglais" },
-    { kind: "Atelier", title: "Analyse des conflits pour leaders communautaires", place: "Pôle régional" },
-    { kind: "Formation", title: "Répondre aux discours de haine en ligne", place: "En ligne" },
-    { kind: "Table ronde", title: "Citoyenneté, leadership et participation des femmes", place: "À confirmer" },
-    { kind: "Cérémonie", title: "Certification de la première promotion", place: "À confirmer" },
-  ],
   observances: {
     eyebrow: "Journées internationales",
     title: "Les dates mondiales du dialogue et de la paix",
@@ -330,14 +321,6 @@ const ar: AgendaContent = {
     monthLabel: "هذا الشهر",
     dayLabel: "اليوم المحدد",
   },
-  featured: {
-    image: "",
-    kind: "سلسلة ندوات · أونلاين",
-    title: "المرأة والإيمان وصناعة السلام",
-    dates: "من ٢٦ نوفمبر إلى ١٧ ديسمبر",
-    register: "سجّل/ي الآن",
-    body: "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان.",
-  },
   eventPage: {
     date: "التاريخ",
     place: "المكان",
@@ -348,17 +331,23 @@ const ar: AgendaContent = {
     addToCalendar: "أضف/ي إلى تقويم جوجل",
     back: "العودة إلى الأجندة",
     others: "فعاليات قادمة أخرى",
+    time: "الموعد",
+    closed: "التسجيل مغلق.",
+  },
+  register: {
+    title: "التسجيل في الفعالية",
+    lead: "اترك/ي بياناتك وسيتواصل معك فريقنا بالخطوات التالية.",
+    name: "الاسم الكامل",
+    email: "البريد الإلكتروني",
+    country: "الدولة",
+    countryPlaceholder: "اختر/ي…",
+    submit: "سجّل/ي الآن",
+    sending: "جارٍ الإرسال…",
+    success: "شكرًا لك. وصلنا تسجيلك، وسيتواصل معك فريقنا.",
+    closed: "التسجيل في هذه الفعالية مغلق.",
+    error: "حدث خطأ. يرجى مراجعة النموذج والمحاولة مرة أخرى.",
   },
   upcomingTitle: "كل الفعاليات القادمة",
-  deadline: { kind: "آخر موعد", title: "آخر يوم للتسجيل في الدورة التدريبية الرقمية" },
-  seriesPlace: "أونلاين",
-  events: [
-    { kind: "حلقة حوار", title: "الدين والثقافة ودور المرأة", place: "أونلاين · عربي وإنجليزي" },
-    { kind: "ورشة", title: "تحليل النزاعات للقيادات المجتمعية", place: "المركز الإقليمي" },
-    { kind: "تدريب", title: "الرد على خطاب الكراهية رقميًا", place: "أونلاين" },
-    { kind: "طاولة مستديرة", title: "المواطنة والقيادة ومشاركة المرأة", place: "يُعلن لاحقًا" },
-    { kind: "حفل", title: "اعتماد الدفعة الأولى", place: "يُعلن لاحقًا" },
-  ],
   observances: {
     eyebrow: "الأيام الدولية",
     title: "المواعيد العالمية للحوار والسلام",
@@ -405,43 +394,6 @@ export async function getAgendaContent(locale: Locale): Promise<AgendaContent> {
 
 /** URL of an event page. */
 export const eventHref = (locale: Locale, slug: string) => `/${locale}/agenda/${slug}`;
-
-/**
- * The page's own dated items (deadline, series sessions, events), sorted by date, each linked to its page:
- * the deadline goes to the course on the Training page, the series and events to /agenda/[slug].
- */
-export function agendaItems(a: AgendaContent, locale: Locale): AgendaItem[] {
-  return [
-    { iso: deadlineIso, kind: a.deadline.kind, title: a.deadline.title, tone: "deadline" as const, href: `/${locale}/activities/training#course` },
-    ...seriesIsos.map((iso) => ({
-      iso,
-      kind: a.featured.kind,
-      title: a.featured.title,
-      place: a.seriesPlace,
-      tone: "series" as const,
-      href: eventHref(locale, seriesSlug),
-    })),
-    ...a.events.map((e, i) => ({
-      iso: eventIsos[i],
-      kind: e.kind,
-      title: e.title,
-      place: e.place,
-      tone: "event" as const,
-      href: eventHref(locale, eventSlugs[i]),
-    })),
-  ].sort((x, y) => x.iso.localeCompare(y.iso));
-}
-
-/** Everything an event page needs, or null for an unknown slug. The series lists its four sessions. */
-export function agendaEntry(a: AgendaContent, slug: string) {
-  if (slug === seriesSlug) {
-    return { kind: a.featured.kind, title: a.featured.title, place: a.seriesPlace, body: a.featured.body, isos: seriesIsos, tone: "series" as const };
-  }
-  const i = eventSlugs.indexOf(slug);
-  if (i < 0) return null;
-  const e = a.events[i];
-  return { kind: e.kind, title: e.title, place: e.place, body: undefined, isos: [eventIsos[i]], tone: "event" as const };
-}
 
 /** Date-formatting locale: Arabic uses Egyptian digits, as in the brand file. */
 export function dateLocale(locale: Locale): string {

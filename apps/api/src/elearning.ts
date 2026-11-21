@@ -2,7 +2,7 @@ import type { FastifyInstance, FastifyReply } from "fastify";
 import { and, asc, count, desc, eq, inArray } from "drizzle-orm";
 import { db, schema } from "./db/client.js";
 import { requireUser } from "./auth/session.js";
-import { revalidatePortal } from "./revalidate.js";
+import { isPreviewRequest, revalidatePortal } from "./revalidate.js";
 import type { I18n } from "./db/schema.js";
 
 /**
@@ -411,11 +411,13 @@ export async function elearningRoutes(app: FastifyInstance) {
   /* ---------------- Public (portal) ---------------- */
 
   /** Published courses and webinars (cards). */
-  app.get("/public/courses", async () => {
+  app.get("/public/courses", async (req) => {
+    // Preview (team only): drafts too
+    const preview = isPreviewRequest(req.headers);
     const rows = await db
       .select()
       .from(schema.courses)
-      .where(eq(schema.courses.status, "published"))
+      .where(preview ? undefined : eq(schema.courses.status, "published"))
       .orderBy(asc(schema.courses.sort), desc(schema.courses.publishedAt));
     const mods = await db.select({ courseId: schema.courseModules.courseId, n: count() }).from(schema.courseModules).groupBy(schema.courseModules.courseId);
     return {
@@ -440,7 +442,7 @@ export async function elearningRoutes(app: FastifyInstance) {
     const [c] = await db
       .select({ id: schema.courses.id })
       .from(schema.courses)
-      .where(and(eq(schema.courses.slug, req.params.slug), eq(schema.courses.status, "published")))
+      .where(isPreviewRequest(req.headers) ? eq(schema.courses.slug, req.params.slug) : and(eq(schema.courses.slug, req.params.slug), eq(schema.courses.status, "published")))
       .limit(1);
     if (!c) return reply.code(404).send({ ok: false });
     const full = await fullCourse(c.id);

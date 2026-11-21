@@ -2,12 +2,11 @@
 
 import { useRef, useState, type FormEvent } from "react";
 import type { Locale } from "@/i18n/config";
-import type { ActivitiesContent } from "@/content/activities";
 import type { SiteContent } from "@/content/site";
 import { apiUrl } from "@/lib/site";
 import { btn } from "../ui";
 import { PrivacyNote } from "../PrivacyNote";
-import { ErrorSummary, FieldError, focusFirst, serverErrors, validateForm, type FormErrors } from "../forms/FormHelpers";
+import { ErrorSummary, FieldError, focusFirst, serverErrors, validateForm, type FormErrors } from "./FormHelpers";
 
 type Status = "idle" | "sending" | "done" | "closed" | "error";
 const field =
@@ -16,15 +15,16 @@ const label = "flex flex-col gap-1.5 text-sm font-medium text-ink";
 
 type Props = {
   locale: Locale;
-  slug: string;
-  t: ActivitiesContent["elearning"]["register"];
+  /** API path, e.g. /public/courses/<slug>/register or /public/events/<slug>/register. */
+  endpoint: string;
+  t: { name: string; email: string; country: string; countryPlaceholder: string; submit: string; sending: string; success: string; closed: string; error: string };
   countries: { code: string; name: string }[];
   privacy: SiteContent["privacy"];
   forms: SiteContent["forms"];
 };
 
-/** Registration for a published course (phase 1: the team follows up by email). */
-export function CourseRegisterForm({ locale, slug, t, countries, privacy, forms }: Props) {
+/** Registration for a course or an agenda event; submissions land in the dashboard (Registrations). */
+export function RegisterForm({ locale, endpoint, t, countries, privacy, forms }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<FormErrors>({});
   const formRef = useRef<HTMLFormElement>(null);
@@ -42,7 +42,7 @@ export function CourseRegisterForm({ locale, slug, t, countries, privacy, forms 
     const data = Object.fromEntries(new FormData(el)) as Record<string, string>;
     setStatus("sending");
     try {
-      const res = await fetch(`${apiUrl}/public/courses/${slug}/register`, {
+      const res = await fetch(`${apiUrl}${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...data, locale }),

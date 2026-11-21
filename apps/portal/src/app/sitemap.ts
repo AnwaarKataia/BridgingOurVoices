@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { publishedLocales } from "@/i18n/config";
 import { siteUrl } from "@/lib/site";
-import { agendaSlugs } from "@/content/agenda";
+import { getEvents } from "@/lib/events";
 
 /** Page paths without locale. Add each new page here. */
 const pages: { path: string; priority: number }[] = [
@@ -17,7 +17,6 @@ const pages: { path: string; priority: number }[] = [
   { path: "/activities/e-learning", priority: 0.8 },
   { path: "/activities/news", priority: 0.8 },
   { path: "/agenda", priority: 0.8 },
-  ...agendaSlugs.map((slug) => ({ path: `/agenda/${slug}`, priority: 0.6 })),
   { path: "/network/membership", priority: 0.7 },
   { path: "/network/join", priority: 0.8 },
   { path: "/network/members", priority: 0.7 },
@@ -25,8 +24,10 @@ const pages: { path: string; priority: number }[] = [
   { path: "/privacy", priority: 0.3 },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return pages.flatMap(({ path, priority }) => {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Published agenda events only (the sitemap is never built in preview)
+  const events = (await getEvents()).filter((e) => e.status === "published").map((e) => ({ path: `/agenda/${e.slug}`, priority: 0.6 }));
+  return [...pages, ...events].flatMap(({ path, priority }) => {
     const languages = Object.fromEntries(publishedLocales.map((l) => [l, `${siteUrl}/${l}${path}`]));
     return publishedLocales.map((locale) => ({
       url: `${siteUrl}/${locale}${path}`,

@@ -17,9 +17,14 @@ export function PublishedVoices({ voices, title, readArticle, locale }: { voices
           {voices.map((v) => (
             <li key={v.id}>
               <figure className="flex h-full flex-col gap-4 rounded-bov border border-t-[2.4px] border-line border-t-gold bg-white p-6">
-                <blockquote dir="auto" className="m-0 font-display text-[19px] leading-relaxed text-ink">
-                  “{v.quote}”
-                </blockquote>
+                {v.quote ? (
+                  <blockquote dir="auto" className="m-0 font-display text-[19px] leading-relaxed text-ink">
+                    “{v.quote}”
+                  </blockquote>
+                ) : (
+                  // Article only (no message of support): its opening lines stand in for the quote
+                  <p dir="auto" className="m-0 line-clamp-4 font-display text-[19px] leading-relaxed text-ink">{v.article}</p>
+                )}
                 {v.article && (
                   <details className="text-sm text-ink-soft">
                     <summary className="cursor-pointer font-semibold text-blue hover:text-navy">{readArticle}</summary>

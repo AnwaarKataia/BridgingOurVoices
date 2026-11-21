@@ -1,0 +1,194 @@
+[
+  {
+    "slug": "digital-training-registration-deadline",
+    "tone": "deadline",
+    "dates": [
+      "2026-11-12"
+    ],
+    "kind": {
+      "en": "Deadline",
+      "fr": "Date limite",
+      "ar": "آخر موعد"
+    },
+    "title": {
+      "en": "Last day to register for the digital training course",
+      "fr": "Dernier jour d’inscription à la formation numérique",
+      "ar": "آخر يوم للتسجيل في الدورة التدريبية الرقمية"
+    },
+    "place": {
+      "en": "",
+      "fr": "",
+      "ar": ""
+    },
+    "body": {
+      "en": "",
+      "fr": "",
+      "ar": ""
+    }
+  },
+  {
+    "slug": "women-faith-and-the-making-of-peace",
+    "tone": "series",
+    "dates": [
+      "2026-11-26",
+      "2026-12-03",
+      "2026-12-10",
+      "2026-12-17"
+    ],
+    "kind": {
+      "en": "Webinar series · Online",
+      "fr": "Série de webinaires · En ligne",
+      "ar": "سلسلة ندوات · أونلاين"
+    },
+    "title": {
+      "en": "Women, faith and the making of peace",
+      "fr": "Femmes, foi et construction de la paix",
+      "ar": "المرأة والإيمان وصناعة السلام"
+    },
+    "place": {
+      "en": "Online",
+      "fr": "En ligne",
+      "ar": "أونلاين"
+    },
+    "body": {
+      "en": "A four-part series on women’s roles in interreligious peace work.",
+      "fr": "Un cycle en quatre séances sur le rôle des femmes dans la paix interreligieuse.",
+      "ar": "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان."
+    }
+  },
+  {
+    "slug": "faith-culture-and-the-role-of-women",
+    "tone": "event",
+    "dates": [
+      "2026-11-14"
+    ],
+    "kind": {
+      "en": "Dialogue circle",
+      "fr": "Cercle de dialogue",
+      "ar": "حلقة حوار"
+    },
+    "title": {
+      "en": "Faith, culture and the role of women",
+      "fr": "Religion, culture et rôle des femmes",
+      "ar": "الدين والثقافة ودور المرأة"
+    },
+    "place": {
+      "en": "Online · Arabic & English",
+      "fr": "En ligne · arabe et anglais",
+      "ar": "أونلاين · عربي وإنجليزي"
+    },
+    "body": {
+      "en": "",
+      "fr": "",
+      "ar": ""
+    }
+  },
+  {
+    "slug": "conflict-analysis-for-community-leaders",
+    "tone": "event",
+    "dates": [
+      "2026-11-20"
+    ],
+    "kind": {
+      "en": "Workshop",
+      "fr": "Atelier",
+      "ar": "ورشة"
+    },
+    "title": {
+      "en": "Conflict analysis for community leaders",
+      "fr": "Analyse des conflits pour leaders communautaires",
+      "ar": "تحليل النزاعات للقيادات المجتمعية"
+    },
+    "place": {
+      "en": "Regional hub",
+      "fr": "Pôle régional",
+      "ar": "المركز الإقليمي"
+    },
+    "body": {
+      "en": "",
+      "fr": "",
+      "ar": ""
+    }
+  },
+  {
+    "slug": "responding-to-hate-speech-online",
+    "tone": "event",
+    "dates": [
+      "2026-11-28"
+    ],
+    "kind": {
+      "en": "Training",
+      "fr": "Formation",
+      "ar": "تدريب"
+    },
+    "title": {
+      "en": "Responding to hate speech online",
+      "fr": "Répondre aux discours de haine en ligne",
+      "ar": "الرد على خطاب الكراهية رقميًا"
+    },
+    "place": {
+      "en": "Online",
+      "fr": "En ligne",
+      "ar": "أونلاين"
+    },
+    "body": {
+      "en": "",
+      "fr": "",
+      "ar": ""
+    }
+  },
+  {
+    "slug": "citizenship-leadership-and-womens-participation",
+    "tone": "event",
+    "dates": [
+      "2026-12-05"
+    ],
+    "kind": {
+      "en": "Round table",
+      "fr": "Table ronde",
+      "ar": "طاولة مستديرة"
+    },
+    "title": {
+      "en": "Citizenship, leadership and women’s participation",
+      "fr": "Citoyenneté, leadership et participation des femmes",
+      "ar": "المواطنة والقيادة ومشاركة المرأة"
+    },
+    "place": {
+      "en": "To be announced",
+      "fr": "À confirmer",
+      "ar": "يُعلن لاحقًا"
+    },
+    "body": {
+      "en": "",
+      "fr": "",
+      "ar": ""
+    }
+  },
+  {
+    "slug": "first-cohort-accreditation",
+    "tone": "event",
+    "dates": [
+      "2027-01-18"
+    ],
+    "kind": {
+      "en": "Ceremony",
+      "fr": "Cérémonie",
+      "ar": "حفل"
+    },
+    "title": {
+      "en": "First cohort accreditation",
+      "fr": "Certification de la première promotion",
+      "ar": "اعتماد الدفعة الأولى"
+    },
+    "place": {
+      "en": "To be announced",
+      "fr": "À confirmer",
+      "ar": "يُعلن لاحقًا"
+    },
+    "body": {
+      "en": "",
+      "fr": "",
+      "ar": ""
+    }
+  }
+]

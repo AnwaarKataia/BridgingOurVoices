@@ -19,3 +19,15 @@ export async function revalidatePortal(log: (msg: string) => void) {
     log(`portal revalidate failed: ${(err as Error).message}`);
   }
 }
+
+/**
+ * Preview (owner, 2026-11-21): the team sees hidden sections and draft courses/events on the real site.
+ * The portal sends this same shared secret in `x-preview-secret` while preview mode is on; the dashboard
+ * gets a short-lived signed link from /admin/preview-token to switch it on.
+ */
+export const previewSecret = revalidateSecret;
+
+export function isPreviewRequest(headers: Record<string, string | string[] | undefined>) {
+  const v = headers["x-preview-secret"];
+  return !!previewSecret && typeof v === "string" && v === previewSecret;
+}

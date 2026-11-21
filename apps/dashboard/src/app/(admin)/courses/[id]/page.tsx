@@ -36,6 +36,7 @@ export default async function CoursePage({ params }: { params: Promise<{ id: str
           t={t.courses}
           image={t.content.image}
           error={t.error}
+          previewT={t.preview}
         />
       )}
     </div>

@@ -19,6 +19,8 @@ export type ActivitiesContent = {
     modulesLabel: string;
     modules: { num: string; text: string }[];
     extra: string;
+    /** Link to the news about this programme. */
+    newsLink: string;
   };
   flagship: {
     eyebrow: string;
@@ -57,6 +59,8 @@ export type ActivitiesContent = {
     status: string;
     benefits: { title: string; body: string }[];
   };
+  /** Shown instead of a section the team hasn't switched on yet (owner, 2026-11-21). */
+  soon: { title: string; body: string; cta: string };
   /** E-learning (owner, 2026-11-21): courses and webinars built in the dashboard; "coming soon" until one is published. */
   elearning: {
     index: string;
@@ -120,6 +124,8 @@ export type ActivitiesContent = {
       date: string;
       place: string;
       title: string;
+      /** Anchor on the News page (#id), used by the home page and the ticker. */
+      id: string;
       paragraphs: string[];
       points: string[];
       /** Paragraphs shown after the points. */
@@ -128,6 +134,8 @@ export type ActivitiesContent = {
       images: string[];
       imageAlt: string;
       link: string;
+      /** Optional link to a page of this site (path without language) and its label. */
+      more: { label: string; href: string };
     }[];
   };
 };
@@ -167,6 +175,7 @@ const en: ActivitiesContent = {
       { num: "7", text: "Designing and developing applied community initiatives" },
     ],
     extra: "Live interactive sessions with international experts and specialists",
+    newsLink: "The programme has started: read the news →",
   },
   flagship: {
     eyebrow: "Flagship programme · Interfaith dialogue",
@@ -229,6 +238,7 @@ const en: ActivitiesContent = {
       { title: "Network", body: "Lasting ties with fellows across the region and beyond." },
     ],
   },
+  soon: { title: "Coming soon", body: "We are preparing this programme. Follow our news or subscribe to the newsletter to hear when it opens.", cta: "See our latest news" },
   elearning: {
     "index": "05",
     "eyebrow": "E-learning",
@@ -301,6 +311,7 @@ const en: ActivitiesContent = {
         "date": "19 November 2026",
         "place": "Online",
         "title": "Our online training programme has launched",
+        "id": "training-launch",
         "paragraphs": [
           "On Thursday 19 November 2026, Bridging Our Voices held the opening session of its online training programme, bringing together trainees, women and men, from several Arab countries.",
           "Dr Mohamed El-Wardany, a media academic at Al-Azhar University, gave the opening lecture: “How is religious and cultural conflict managed on social media?”",
@@ -314,12 +325,14 @@ const en: ActivitiesContent = {
           "/news/training-launch-2.jpg"
         ],
         "imageAlt": "Opening session of the Bridging Our Voices online training programme",
-        "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl"
+        "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
+        "more": { "label": "Programme details", "href": "/activities/training#course" }
       },
       {
         "date": "15 November 2026",
         "place": "UNHCR, Alexandria, Egypt",
         "title": "Training workshop for refugees in Alexandria",
+        "id": "unhcr-alexandria",
         "paragraphs": [
           "As part of its work to strengthen peaceful coexistence and build bridges between communities, Bridging Our Voices held an intensive training workshop at the office of the United Nations High Commissioner for Refugees (UNHCR) in Alexandria.",
           "Over three days of active exchange and deep listening, Dr. Anwaar Kataia (initiative coordinator and dialogue and peacebuilding consultant) led training sessions on:"
@@ -343,7 +356,8 @@ const en: ActivitiesContent = {
           "/news/unhcr-alexandria-5.jpg"
         ],
         "imageAlt": "Participants in the Bridging Our Voices training workshop at UNHCR in Alexandria",
-        "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l"
+        "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
+        "more": { "label": "", "href": "" }
       }
     ]
   },
@@ -384,6 +398,7 @@ const fr: ActivitiesContent = {
       { num: "7", text: "Conception et développement d’initiatives communautaires appliquées" },
     ],
     extra: "Rencontres interactives en direct avec des experts internationaux",
+    newsLink: "Le programme a commencé : lire l’actualité →",
   },
   flagship: {
     eyebrow: "Programme phare · Dialogue interreligieux",
@@ -446,6 +461,7 @@ const fr: ActivitiesContent = {
       { title: "Réseau", body: "Des liens durables avec des boursières de la région et d’ailleurs." },
     ],
   },
+  soon: { title: "Bientôt disponible", body: "Nous préparons ce programme. Suivez nos actualités ou abonnez-vous à la newsletter pour savoir quand il ouvrira.", cta: "Voir nos actualités" },
   elearning: {
     "index": "05",
     "eyebrow": "Apprentissage en ligne",
@@ -518,6 +534,7 @@ const fr: ActivitiesContent = {
         "date": "19 novembre 2026",
         "place": "En ligne",
         "title": "Lancement de notre programme de formation en ligne",
+        "id": "training-launch",
         "paragraphs": [
           "Le jeudi 19 novembre 2026, Bridging Our Voices a tenu la séance d’ouverture de son programme de formation en ligne, réunissant des participantes et participants de plusieurs pays arabes.",
           "Le Dr Mohamed El-Wardany, enseignant en médias à l’Université Al-Azhar, a donné la conférence inaugurale : « Comment les conflits religieux et culturels sont-ils gérés sur les réseaux sociaux ? »",
@@ -531,12 +548,14 @@ const fr: ActivitiesContent = {
           "/news/training-launch-2.jpg"
         ],
         "imageAlt": "Séance d’ouverture du programme de formation en ligne de Bridging Our Voices",
-        "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl"
+        "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
+        "more": { "label": "Détails du programme", "href": "/activities/training#course" }
       },
       {
         "date": "15 novembre 2026",
         "place": "HCR, Alexandrie, Égypte",
         "title": "Atelier de formation pour les personnes réfugiées à Alexandrie",
+        "id": "unhcr-alexandria",
         "paragraphs": [
           "Pour renforcer la coexistence pacifique et bâtir des ponts entre les communautés, Bridging Our Voices a organisé un atelier de formation intensif dans les locaux du Haut-Commissariat des Nations unies pour les réfugiés (HCR) à Alexandrie.",
           "Pendant trois jours d’échanges et d’écoute profonde, la Dre Anwaar Kataia (coordinatrice de l’initiative et consultante en dialogue et consolidation de la paix) a animé des séances sur :"
@@ -560,7 +579,8 @@ const fr: ActivitiesContent = {
           "/news/unhcr-alexandria-5.jpg"
         ],
         "imageAlt": "Participants et participantes de l’atelier de Bridging Our Voices au HCR à Alexandrie",
-        "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l"
+        "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
+        "more": { "label": "", "href": "" }
       }
     ]
   },
@@ -601,6 +621,7 @@ const ar: ActivitiesContent = {
       { num: "٧", text: "تصميم وتطوير المبادرات المجتمعية التطبيقية" },
     ],
     extra: "لقاءات تفاعلية مباشرة مع خبراء ومتخصصين دوليين",
+    newsLink: "انطلق البرنامج: اقرأ/ي الخبر ←",
   },
   flagship: {
     eyebrow: "البرنامج الرئيسي · الحوار بين الأديان",
@@ -663,6 +684,7 @@ const ar: ActivitiesContent = {
       { title: "الشبكة", body: "روابط دائمة مع زميلات من المنطقة وخارجها." },
     ],
   },
+  soon: { title: "قريبًا", body: "نُعدّ هذا البرنامج الآن. تابع/ي أخبارنا أو اشترك/ي في النشرة البريدية لتعرف/ي موعد إطلاقه.", cta: "شاهد/ي آخر أخبارنا" },
   elearning: {
     "index": "05",
     "eyebrow": "التعلم الإلكتروني",
@@ -735,6 +757,7 @@ const ar: ActivitiesContent = {
         "date": "١٩ نوفمبر ٢٠٢٦",
         "place": "أونلاين",
         "title": "انطلاق البرنامج التدريبي الإلكتروني",
+        "id": "training-launch",
         "paragraphs": [
           "انطلقت يوم الخميس ١٩ نوفمبر ٢٠٢٦ أولى جلسات البرنامج التدريبي الإلكتروني لمبادرة «أصواتنا جسور»، بمشاركة متدربين ومتدربات من عدة دول عربية.",
           "قدّم المحاضرة الافتتاحية د. محمد الورداني، أستاذ الإعلام بجامعة الأزهر، بعنوان «كيف يُدار الصراع الديني والثقافي على وسائل التواصل الاجتماعي؟».",
@@ -748,12 +771,14 @@ const ar: ActivitiesContent = {
           "/news/training-launch-2.jpg"
         ],
         "imageAlt": "الجلسة الافتتاحية للبرنامج التدريبي الإلكتروني لمبادرة «أصواتنا جسور»",
-        "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl"
+        "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
+        "more": { "label": "تفاصيل البرنامج", "href": "/activities/training#course" }
       },
       {
         "date": "١٥ نوفمبر ٢٠٢٦",
         "place": "المفوضية السامية لشؤون اللاجئين، الإسكندرية، مصر",
         "title": "ورشة تدريبية للوافدين بمحافظة الإسكندرية",
+        "id": "unhcr-alexandria",
         "paragraphs": [
           "في إطار تعزيز مهارات التعايش السلمي وبناء الجسور المجتمعية، أقامت مبادرة «أصواتنا جسور: نساء لقيادة الحوار وبناء السلام» ورشة تدريبية مكثفة بمقر المفوضية السامية للأمم المتحدة لشؤون اللاجئين (UNHCR) بالإسكندرية.",
           "على مدار ٣ أيام من التفاعل المثمر والإنصات العميق، قدّمت د. أنوار قطايه (منسقة المبادرة واستشارية الحوار وبناء السلام) جلسات تدريبية تناولت:"
@@ -777,7 +802,8 @@ const ar: ActivitiesContent = {
           "/news/unhcr-alexandria-5.jpg"
         ],
         "imageAlt": "المشاركون والمشاركات في ورشة «أصواتنا جسور» بمقر المفوضية في الإسكندرية",
-        "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l"
+        "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
+        "more": { "label": "", "href": "" }
       }
     ]
   },

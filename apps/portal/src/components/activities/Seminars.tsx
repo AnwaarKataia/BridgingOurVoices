@@ -2,7 +2,7 @@ import type { ActivitiesContent } from "@/content/activities";
 import { ContentImage } from "../ContentImage";
 
 /** Seminars page body: seminar cards with photo placeholders. */
-export function Seminars({ seminars }: { seminars: ActivitiesContent["seminars"] }) {
+export function Seminars({ seminars, registerHref }: { seminars: ActivitiesContent["seminars"]; registerHref: string }) {
   return (
     <section className="bg-sand">
       <div className="container-site py-12 md:py-20">
@@ -17,7 +17,7 @@ export function Seminars({ seminars }: { seminars: ActivitiesContent["seminars"]
                   <p className="m-0 font-mono text-tag tracking-label text-blue uppercase rtl:font-sans rtl:tracking-normal">{s.meta}</p>
                   <h2 className="font-display text-[1.3125rem] leading-snug font-normal text-ink">{s.title}</h2>
                   <p className="m-0 text-sm leading-relaxed text-ink-soft">{s.body}</p>
-                  <a href="#register" className="mt-auto pt-1.5 text-sm font-semibold text-blue hover:text-navy">{s.cta}</a>
+                  <a href={registerHref} className="mt-auto pt-1.5 text-sm font-semibold text-blue hover:text-navy">{s.cta}</a>
                 </div>
               </article>
             </li>

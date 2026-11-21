@@ -2,12 +2,12 @@ import type { ActivitiesContent } from "@/content/activities";
 import { btn } from "../ui";
 
 /** Fellowship page body: apply button and four benefit cards. */
-export function Fellowship({ fellowship }: { fellowship: ActivitiesContent["fellowship"] }) {
+export function Fellowship({ fellowship, applyHref }: { fellowship: ActivitiesContent["fellowship"]; applyHref: string }) {
   return (
     <section>
       <div className="container-site flex flex-col gap-10 py-12 md:py-20">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <a href="#apply" className={btn.navy}>{fellowship.cta}</a>
+          <a href={applyHref} className={btn.navy}>{fellowship.cta}</a>
           <span className="text-sm font-semibold text-blue">{fellowship.status}</span>
         </div>
 

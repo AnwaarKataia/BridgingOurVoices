@@ -1,6 +1,7 @@
 import type { HomeContent } from "@/content/home";
 
-export function Ticker({ ticker }: { ticker: HomeContent["ticker"] }) {
+/** News ticker; every item opens the News page (owner, 2026-11-21). */
+export function Ticker({ ticker, href }: { ticker: HomeContent["ticker"]; href: string }) {
   // Items are rendered twice so the -50% animation loops seamlessly.
   const loop = [...ticker.items, ...ticker.items];
 
@@ -14,7 +15,9 @@ export function Ticker({ ticker }: { ticker: HomeContent["ticker"] }) {
         <ul className="flex animate-tick gap-12 py-3.5 ps-6 whitespace-nowrap group-hover:[animation-play-state:paused] rtl:animate-tick-rtl motion-reduce:animate-none">
           {loop.map((item, i) => (
             <li key={i} aria-hidden={i >= ticker.items.length} className="flex items-center gap-12 text-[15px] text-ink">
-              {item}
+              <a href={href} tabIndex={i >= ticker.items.length ? -1 : undefined} className="hover:text-blue hover:underline">
+                {item}
+              </a>
               <span aria-hidden className="text-[0.7em] text-gold">◆</span>
             </li>
           ))}

@@ -132,7 +132,7 @@ const reject = (reply: FastifyReply, errors: string[]) => reply.code(400).send({
 
 export async function networkRoutes(app: FastifyInstance) {
   const religions = await loadReligions();
-  /** "Add your voice to ours": statement of support (required) + optional article. */
+  /** "Add your voice to ours": a message of support, an article, or both (owner, 2026-11-21). */
   app.post("/network/apply", async (req, reply) => {
     const parsed = await parse(req);
     if (!parsed) return reply.code(400).send({ ok: false, error: "invalid_upload" });
@@ -141,13 +141,17 @@ export async function networkRoutes(app: FastifyInstance) {
 
     const errors: string[] = [];
     const { f, ext, details } = checkDetails(parsed, errors, religions);
-    if (!len(f("quote"), 10, 600)) errors.push("quote");
-    if (f("article").length > 10000) errors.push("article");
+    const contribution = f("contribution");
+    const wantsQuote = contribution === "message" || contribution === "both";
+    const wantsArticle = contribution === "article" || contribution === "both";
+    if (!wantsQuote && !wantsArticle) errors.push("contribution");
+    if (wantsQuote && !len(f("quote"), 10, 600)) errors.push("quote");
+    if (wantsArticle && !len(f("article"), 50, 10000)) errors.push("article");
     if (errors.length) return reject(reply, errors);
 
     const id = randomUUID();
     const photo = parsed.files.photo && ext ? await saveUpload(`${id}.${ext}`, parsed.files.photo) : null;
-    await addNetworkApplication({ id, kind: "voice", ...details, quote: f("quote"), article: f("article"), photo });
+    await addNetworkApplication({ id, kind: "voice", ...details, quote: wantsQuote ? f("quote") : "", article: wantsArticle ? f("article") : "", photo });
     return reply.code(201).send({ ok: true });
   });
 

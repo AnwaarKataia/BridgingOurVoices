@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState, type ChangeEvent } from "react";
 import type { Dict, Lang } from "@/lib/i18n";
 import { ImageField } from "../content/ImageField";
+import { PreviewButton } from "../PreviewButton";
 
 type L = Dict["courses"];
 type Loc = "ar" | "en" | "fr";
@@ -160,6 +161,7 @@ export function CourseEditor({
   t,
   image,
   error,
+  previewT,
 }: {
   course: Course;
   registrations: Registration[];
@@ -168,6 +170,7 @@ export function CourseEditor({
   t: L;
   image: Dict["content"]["image"];
   error: string;
+  previewT: Dict["preview"];
 }) {
   const router = useRouter();
   const [loc, setLoc] = useState<Loc>(lang === "ar" ? "ar" : "en");
@@ -218,6 +221,7 @@ export function CourseEditor({
             <p className={`mt-1 text-sm font-semibold ${published ? "text-blue-deep" : "text-ink-soft"}`}>{published ? t.publishedNote : t.draftNote}</p>
           </div>
           <div className="flex flex-wrap gap-2">
+            {!published && <PreviewButton portalUrl={portalUrl} path={`/${lang}/e-learning/${saved.slug}`} t={previewT} />}
             {published && (
               <a href={`${portalUrl}/${lang}/e-learning/${saved.slug}`} target="_blank" rel="noopener" className={`${btnLine} inline-flex items-center`}>
                 {t.viewOnSite}

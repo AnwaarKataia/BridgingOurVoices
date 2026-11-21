@@ -3,28 +3,14 @@ import type { Locale } from "@/i18n/config";
 import type { ActivitiesContent } from "@/content/activities";
 import { getCourses, pick } from "@/lib/courses";
 import { ContentImage } from "../ContentImage";
-import { btn } from "../ui";
+import { ComingSoon } from "../ComingSoon";
 
 /** E-learning page body: published course cards, or "coming soon" while nothing is published. */
 export async function ELearning({ e, locale }: { e: ActivitiesContent["elearning"]; locale: Locale }) {
   const courses = await getCourses();
   const nf = new Intl.NumberFormat(locale === "ar" ? "ar-EG" : locale);
 
-  if (!courses.length) {
-    return (
-      <section className="bg-sand">
-        <div className="container-site py-12 md:py-20">
-          <div className="mx-auto flex max-w-[720px] flex-col items-center gap-4 rounded-bov border border-t-[2.4px] border-line border-t-gold bg-white px-6 py-12 text-center md:px-12">
-            <h2 className="font-display text-h2 font-normal text-ink">{e.soonTitle}</h2>
-            <p className="m-0 text-lead leading-relaxed text-ink-soft">{e.soonBody}</p>
-            <Link href={`/${locale}/activities/news`} className={`${btn.outlineDark} mt-2`}>
-              {e.soonCta}
-            </Link>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  if (!courses.length) return <ComingSoon title={e.soonTitle} body={e.soonBody} cta={e.soonCta} href={`/${locale}/activities/news`} />;
 
   return (
     <section className="bg-sand">

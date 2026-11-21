@@ -5,3 +5,26 @@
 [aria-invalid="true"] {
   border-color: var(--color-danger);
 }
+
+/*
+ * Paragraphs are justified (owner, 2026-11-21): straight edges on both sides instead of ragged lines.
+ * In the base layer, so `text-center` / `text-start` utilities still win where a block is centred.
+ * Hyphenation keeps English and French lines from opening wide gaps; Arabic stretches the spaces.
+ */
+@layer base {
+  main p,
+  main blockquote {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  main .text-center p,
+  main p.text-center {
+    text-align: center;
+  }
+  main :lang(en) p,
+  main :lang(fr) p,
+  main p:lang(en),
+  main p:lang(fr) {
+    hyphens: auto;
+  }
+}

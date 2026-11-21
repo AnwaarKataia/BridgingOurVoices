@@ -3,6 +3,7 @@ import Link from "next/link";
 import { apiGet } from "@/lib/api";
 import { getDict } from "@/lib/i18n";
 import { NewCourseButtons } from "@/components/courses/NewCourseButtons";
+import { PreviewButton } from "@/components/PreviewButton";
 
 export const metadata: Metadata = { title: "E-learning" };
 
@@ -36,7 +37,10 @@ export default async function CoursesPage() {
         <p className="mt-2 max-w-[720px] text-ink-soft">{c.lead}</p>
       </div>
 
-      <NewCourseButtons t={{ newCourse: c.newCourse, newWebinar: c.newWebinar, creating: c.creating, error: t.error }} />
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <NewCourseButtons t={{ newCourse: c.newCourse, newWebinar: c.newWebinar, creating: c.creating, error: t.error }} />
+        <PreviewButton portalUrl={process.env.PORTAL_URL ?? "http://localhost:3000"} path={`/${lang}/activities/e-learning`} t={t.preview} />
+      </div>
 
       {!data ? (
         <p role="alert" className="rounded-bov border border-danger/40 bg-white p-4 text-danger">{status === 503 ? t.apiDown : t.error}</p>

@@ -251,3 +251,61 @@ export const courseRegistrations = pgTable(
   },
   (t) => [index("course_registrations_course_idx").on(t.courseId)],
 );
+
+/**
+ * Sections of the site that show "Coming soon" to the public until the team switches them on
+ * (owner, 2026-11-21: undecided programmes stay visible only in the dashboard). Keys: seminars, conferences,
+ * fellowship. A missing row means hidden.
+ */
+export const siteSections = pgTable("site_sections", {
+  key: text("key").primaryKey(),
+  visible: boolean("visible").notNull().default(false),
+  updatedBy: uuid("updated_by").references(() => users.id, { onDelete: "set null" }),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/**
+ * Agenda events (owner, 2026-11-21), managed from the dashboard calendar. Drafts are seen only in the
+ * dashboard (and in preview); the public agenda shows published events and the international days.
+ */
+export const events = pgTable(
+  "events",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    /** Address on the site: /<lang>/agenda/<slug>. */
+    slug: text("slug").notNull().unique(),
+    status: text("status", { enum: ["draft", "published"] }).notNull().default("draft"),
+    /** Calendar colour: event (navy), series (blue, several sessions), deadline (red). */
+    tone: text("tone", { enum: ["event", "series", "deadline"] }).notNull().default("event"),
+    /** One or more dates (YYYY-MM-DD), sorted. */
+    dates: jsonb("dates").$type<string[]>().notNull().default(sql`'[]'::jsonb`),
+    /** Free text, e.g. "18:00–20:00 Cairo time". */
+    time: text("time").notNull().default(""),
+    kind: json("kind").$type<I18n>().notNull(),
+    title: json("title").$type<I18n>().notNull(),
+    body: json("body").$type<I18n>().notNull(),
+    place: json("place").$type<I18n>().notNull(),
+    image: text("image").notNull().default(""),
+    registrationOpen: boolean("registration_open").notNull().default(true),
+    publishedAt: timestamp("published_at", { withTimezone: true }),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("events_status_idx").on(t.status)],
+);
+
+/** "Register" on an agenda event page. */
+export const eventRegistrations = pgTable(
+  "event_registrations",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    eventId: uuid("event_id").notNull().references(() => events.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    email: text("email").notNull(),
+    country: text("country").notNull(),
+    locale: text("locale").notNull().default("en"),
+    status: text("status", { enum: ["new", "accepted", "rejected"] }).notNull().default("new"),
+    createdAt: createdAt(),
+  },
+  (t) => [index("event_registrations_event_idx").on(t.eventId)],
+);

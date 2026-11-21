@@ -79,7 +79,7 @@ A regional, cross-religious and cross-cultural initiative that builds women's ca
 | About ▾ ✅ | `about/[slug]/page.tsx` | `who-we-are` (story + strategic partners) · `vision` (statement) · `mission` (statement) · `goals` (5 strategic objectives) |
 | Activities ▾ ✅ | `activities/[slug]/page.tsx` | `training`: current course with modules (`#course`), flagship interfaith programme, 4 other tracks. `seminars`: 3 seminar cards. `conferences`: featured video + 6 sessions. `fellowship`: apply + 4 benefits. `e-learning`: published course and webinar cards, or «انتظرونا قريبًا» / "Coming soon" while nothing is published. `news`: posts taken from the Facebook page (newest first) |
 | E-learning course ✅ | `e-learning/[slug]/page.tsx` | One published course or webinar (dynamic, from the API). Info list like KAICIID's course pages (type, format, fees, number of units, programme area, duration, learning time, start date, deadline, certificate, languages), image, flyer PDF, "About the course", units with lesson titles, and a registration form (`#register`). A draft or unknown course → 404 |
-| Agenda ✅ | `agenda/page.tsx` | One page (no dropdown in the brand file). 1) Month calendar (`components/agenda/Calendar.tsx`, client): prev/next month, tap a day to list only that day, "Show the whole month". Gold dot = event, sky dot = international day, blue frame = today. The list beside it shows the month's items; date chips are red (deadline), blue (webinar series), navy (event), gold (international day). 2) Featured webinar series card + the full list of upcoming events. 3) "International days": the global UN dates for dialogue and peacebuilding, in two columns (`#international-days`). All dates and copy live in `content/agenda.ts`; international days are stored as month-day and repeat every year on the calendar |
+| Agenda ✅ | `agenda/page.tsx` + `agenda/[slug]/page.tsx` | **Since 2026-11-21 the events come from the dashboard (database); the brand file's sample events are drafts, so the public sees the calendar + international days until events are published.** One page (no dropdown in the brand file). 1) Month calendar (`components/agenda/Calendar.tsx`, client): prev/next month, tap a day to list only that day, "Show the whole month". Gold dot = event, sky dot = international day, blue frame = today. The list beside it shows the month's items; date chips are red (deadline), blue (webinar series), navy (event), gold (international day). 2) Featured webinar series card + the full list of upcoming events. 3) "International days": the global UN dates for dialogue and peacebuilding, in two columns (`#international-days`). All dates and copy live in `content/agenda.ts`; international days are stored as month-day and repeat every year on the calendar |
 | Network ▾ ✅ | `network/[slug]/page.tsx` | `membership`: 3 cards (who can join / what you gain / what we ask). Under the cards: the **membership application form** (`#apply`, `MembershipForm`, its own title "Membership application form" / «استمارة طلب العضوية»; never the "Add your voice to ours" title). `join`: the "Add your voice to ours" form (statement + optional article), unchanged. `members`: 4 team cards with arched portraits (`public/team/*.jpg`, cropped from the banner at the brand file's positions), then the navy "Our network" band with a mosaic and a "Join the network" button |
 | Privacy ✅ (footer link) | `privacy/page.tsx` | Privacy policy, a draft: what each form collects, why, retention, rights. Sticky table of contents + 11 sections. Linked from the footer and from the contact and join forms |
 | Contact us ✅ | `contact/page.tsx` | Two columns: the form on the left, contact info on the right. The form has name, email, subject (5 options) and message, and posts to the API's `/contact`. The info column has the email `b.our.voices@gmail.com` and LinkedIn + Facebook. Phone and address only appear once real values are added to `content/contact.ts` (the brand file has placeholders) |
@@ -942,6 +942,57 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - learner accounts, lesson pages with the video player, "Mark as done" and progress, participants;
   - certificates last.
 
+### 2026-11-21: Undecided content stays hidden; agenda from the dashboard; registrations; preview; news on the home page
+- **Rule (owner):** content that isn't decided yet never shows to the public.
+  - It stays in the dashboard, where the team sees and edits it.
+  - The public sees «قريبًا» / "Coming soon".
+  - Every "Register" opens a registration page whose submissions land in the dashboard database.
+- **Sections switch** (dashboard «ظهور الأقسام», table `site_sections`):
+  - Seminars, Conferences and Fellowship show a "Coming soon" panel until switched on. They are hidden by default, and also when the API can't be reached.
+  - Their sample texts stay editable in «محتوى الموقع ← الأنشطة».
+  - Fellowship "Apply" now leads to the membership form. Seminar "Register" leads to the agenda.
+- **Preview** («معاينة على الموقع» buttons on Sections, E-learning, each course and each event):
+  - The dashboard gets a 2-hour signed link (`/admin/preview-token`), and the portal's `/api/preview` switches Next.js draft mode on for that browser only.
+  - Pages then also show hidden sections and draft courses and events, with a gold "Preview… Exit preview" bar.
+  - The portal sends the shared `REVALIDATE_SECRET` to the API in `x-preview-secret`. It is required in production, and links can only point to this site.
+- **Agenda from the database** (tables `events`, `event_registrations`; dashboard «الأجندة»):
+  - **Dashboard:**
+    - A month calendar. Click a day to add an event, then fill in the title, type, place and details (EN/FR/AR), the time, one or more dates, the look (event / series / deadline), an image, "registration open" and the page address.
+    - "Publish on the site" / "Hide from the site", "Preview" and "Delete", plus a list of all events.
+  - **Brand-file sample events:** the webinar series, 5 events and the 12 November deadline were moved into the database as **drafts** (`apps/api/seed/events.json`, inserted once). The public agenda now shows the calendar and the international days only. Published events appear in the calendar and in "All upcoming events".
+  - **Event pages** (`/[lang]/agenda/[slug]`) are dynamic: published only, or drafts in preview. Each has a registration form (name, email, country; honeypot; 10 per 10 minutes; 409 when closed).
+  - The sitemap lists published events only.
+- **Registrations** (dashboard «التسجيلات»):
+  - Every course and event registration in one list: All / Courses / Events.
+  - Status (new / accepted / rejected), a link to the course or event, and a CSV download (UTF-8, safe against spreadsheet formulas).
+  - The e-learning and agenda forms share one component (`components/forms/RegisterForm.tsx`).
+- **News:**
+  - **Home page:** a "Latest news" section (photo, date, title, first lines, "Read more") right before "Our activities", linking to the item on the News page (`#training-launch`, `#unhcr-alexandria`).
+  - **Ticker:** each item opens the News page.
+  - **Training link, both ways:**
+    - the training-launch news item has a "Programme details" link to the Training page;
+    - the Training course card has "The programme has started: read the news →".
+- **"Add your voice to ours":**
+  - A required choice: message of support, article, or both. Each choice opens its own box.
+  - The API checks the choice: message 10–600 characters, article 50–10,000.
+  - On the site, an article-only voice shows the opening of the article.
+  - The intro and consent texts now say "message or article". The membership form is unchanged.
+- **Typesetting:** paragraphs on the site are justified (straight edges on both sides). English and French use hyphenation. Centred blocks stay centred.
+- **Grammar:**
+  - Vision: "have … authority as **the** primary facilitators…".
+  - Mission: "To equip women and young people with practical skills in …, **and to provide** … platforms…" (it was a dangling "providing").
+  - FR: the same fixes, with inclusive wording.
+- **Tested** with a temporary account, event and submissions, all deleted afterwards:
+  - the sections switch on and off;
+  - the 7 sample events are hidden from the public but visible with the preview secret (and not with a wrong one);
+  - a draft event page → 404;
+  - event creation, bad date → 400, publish, registration, accept, CSV;
+  - closed registration → 409;
+  - preview: a bad token → 401, a good token shows seminars, draft events and the preview bar, and a link to another site is refused;
+  - "Add your voice": no choice, article too short, and "both" without a message are refused; each valid choice is accepted;
+  - responsive: 9 pages × 3 languages × 5 widths;
+  - `pnpm build` passes.
+
 ### 2026-11-21: News page (Activities → News) from the Facebook page
 - **How it works (owner):** the owner sends the link of a post on the Bridging Our Voices Facebook page (facebook.com/Bourvoice). We take the text and photos from it and add the item to the site, so she doesn't have to copy anything.
 - **New page** `/activities/news` («الأخبار» / "News" / "Actualités"), the 5th tab of Activities and in the dropdown and sitemap.
@@ -961,7 +1012,7 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
 
 ## 9. Open items
 - [ ] Agenda:
-  - "Register" goes to the contact page for now. Replace it with a real registration form or link.
+  - Done 2026-11-21: events are managed in the dashboard and "Register" has a real form (registrations in the dashboard).
   - Add a real event banner photo, plus a description for each event (`body` in `agendaEntry`).
   - Confirm the 2026–27 event dates, times and places ("Regional hub", "To be announced").
 - [ ] **Privacy policy (draft): the owner must confirm**
@@ -984,6 +1035,7 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - Subscribers list + CSV export.
   - User management (admin).
 - [ ] Dashboard phase 3: agenda and announcement editing, and course/event registration.
+- [ ] **Owner:** decide the seminars, conferences and fellowship, then switch them on in «ظهور الأقسام»; publish real agenda events.
 - [ ] E-learning:
   - The owner fills the videos and files of «المرأة وبناء السلام» and publishes it.
   - Phase 2: learner accounts, lessons with a video player, "Mark as done", progress.

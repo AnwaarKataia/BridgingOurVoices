@@ -12,6 +12,8 @@ import { Announcement } from "@/components/home/Announcement";
 import { Vision } from "@/components/home/Vision";
 import { Pathway } from "@/components/home/Pathway";
 import { Activities } from "@/components/home/Activities";
+import { LatestNews } from "@/components/home/LatestNews";
+import { getActivitiesContent } from "@/content/activities";
 
 type Params = { params: Promise<{ locale: string }> };
 
@@ -55,10 +57,11 @@ export default async function HomePage({ params }: Params) {
     <PageShell locale={locale} path="" current="home">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero hero={c.hero} activitiesHref={`/${locale}/activities/training`} contactHref={`/${locale}/contact`} />
-      <Ticker ticker={c.ticker} />
+      <Ticker ticker={c.ticker} href={`/${locale}/activities/news`} />
       <Announcement a={c.announcement} detailsHref={`/${locale}/activities/training#course`} primaryHref={`/${locale}/activities/e-learning`} />
       <Vision vision={c.vision} aboutHref={`/${locale}/about/who-we-are`} />
       <Pathway pathway={c.pathway} />
+      <LatestNews locale={locale} labels={c.news} items={(await getActivitiesContent(locale)).news.items} />
       <Activities locale={locale} activities={c.activities} />
     </PageShell>
   );

@@ -14,6 +14,8 @@ import { Conferences } from "@/components/activities/Conferences";
 import { Fellowship } from "@/components/activities/Fellowship";
 import { News } from "@/components/activities/News";
 import { ELearning } from "@/components/activities/ELearning";
+import { ComingSoon } from "@/components/ComingSoon";
+import { hiddenSections } from "@/lib/preview";
 
 /** Activities section: each dropdown item is its own page. Order = tab order. */
 const slugs = ["training", "seminars", "conferences", "fellowship", "e-learning", "news"] as const;
@@ -37,10 +39,10 @@ function page(slug: Slug, c: ActivitiesContent, locale: Locale) {
         title: c.training.title,
         lead: c.header.lead,
         description: clip(c.course.body),
-        body: <Training course={c.course} flagship={c.flagship} tracks={c.tracks} ctaHref={`/${locale}/activities/e-learning`} />,
+        body: <Training course={c.course} flagship={c.flagship} tracks={c.tracks} ctaHref={`/${locale}/activities/e-learning`} newsHref={`/${locale}/activities/news#training-launch`} />,
       };
     case "seminars":
-      return { title: c.seminars.title, lead: c.seminars.lead, description: clip(c.seminars.lead), body: <Seminars seminars={c.seminars} /> };
+      return { title: c.seminars.title, lead: c.seminars.lead, description: clip(c.seminars.lead), body: <Seminars seminars={c.seminars} registerHref={`/${locale}/agenda`} /> };
     case "conferences":
       return {
         title: c.conferences.title,
@@ -53,7 +55,7 @@ function page(slug: Slug, c: ActivitiesContent, locale: Locale) {
         title: c.fellowship.title,
         lead: c.fellowship.lead,
         description: clip(c.fellowship.lead),
-        body: <Fellowship fellowship={c.fellowship} />,
+        body: <Fellowship fellowship={c.fellowship} applyHref={`/${locale}/network/membership#apply`} />,
       };
     case "e-learning":
       return {
@@ -63,7 +65,7 @@ function page(slug: Slug, c: ActivitiesContent, locale: Locale) {
         body: <ELearning e={c.elearning} locale={locale} />,
       };
     case "news":
-      return { title: c.news.title, lead: c.news.lead, description: clip(c.news.lead), body: <News news={c.news} /> };
+      return { title: c.news.title, lead: c.news.lead, description: clip(c.news.lead), body: <News news={c.news} locale={locale} /> };
   }
 }
 
@@ -87,6 +89,9 @@ export default async function ActivitiesSubPage({ params }: Params) {
   const c = await getActivitiesContent(locale);
   const site = await getSiteContent(locale);
   const p = page(slug, c, locale);
+  // Undecided sections show "Coming soon" to the public (switched on in the dashboard; visible in preview)
+  const hidden = await hiddenSections();
+  const isHidden = (slug === "seminars" || slug === "conferences" || slug === "fellowship") && hidden[slug];
   const path = `/activities/${slug}`;
   const pageUrl = `${siteUrl}/${locale}${path}`;
   const tabs = sectionTabs(site, locale, "activities", path);
@@ -119,7 +124,7 @@ export default async function ActivitiesSubPage({ params }: Params) {
     <PageShell locale={locale} path={path} current="activities">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }) }} />
       <PageHeader eyebrow={c.header.eyebrow} title={p.title} lead={p.lead} tabs={tabs} tabsLabel={site.a11y.sectionNav} />
-      {p.body}
+      {isHidden ? <ComingSoon title={c.soon.title} body={c.soon.body} cta={c.soon.cta} href={`/${locale}/activities/news`} /> : p.body}
       <NextPage tabs={tabs} label={site.next} />
     </PageShell>
   );

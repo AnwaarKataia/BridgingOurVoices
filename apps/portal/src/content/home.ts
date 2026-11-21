@@ -24,6 +24,8 @@ export type HomeContent = {
   vision: { eyebrow: string; quote: string; link: string };
   pathway: { eyebrow: string; title: string; steps: { num: string; title: string; body: string }[] };
   activities: { title: string; items: { title: string; body: string; href: string }[] };
+  /** Latest news (owner, 2026-11-21): the newest items of the News page, each linking to it. */
+  news: { title: string; more: string; all: string };
 };
 
 const en: HomeContent = {
@@ -63,7 +65,7 @@ const en: HomeContent = {
   vision: {
     eyebrow: "Our vision",
     quote:
-      "To establish an inclusive regional and international dialogue ecosystem where women and young leaders possess legitimate, recognised authority as primary facilitators and mediators in resolving community conflicts and sustaining peace.",
+      "To establish an inclusive regional and international dialogue ecosystem where women and young leaders have legitimate, recognised authority as the primary facilitators and mediators in resolving community conflicts and sustaining peace.",
     link: "More about us →",
   },
   pathway: {
@@ -85,6 +87,7 @@ const en: HomeContent = {
       { title: "Fellowship", body: "A year of mentoring, accreditation and leadership.", href: "/activities/fellowship" },
     ],
   },
+  news: { title: "Latest news", more: "Read more →", all: "All news →" },
 };
 
 const fr: HomeContent = {
@@ -124,7 +127,7 @@ const fr: HomeContent = {
   vision: {
     eyebrow: "Notre vision",
     quote:
-      "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme principaux facilitateurs et médiateurs dans la résolution des conflits communautaires et le maintien de la paix.",
+      "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue en tant qu’actrices et acteurs principaux de la facilitation et de la médiation pour résoudre les conflits communautaires et maintenir la paix.",
     link: "En savoir plus sur nous →",
   },
   pathway: {
@@ -146,6 +149,7 @@ const fr: HomeContent = {
       { title: "Bourse (Fellowship)", body: "Une année de mentorat, de certification et de leadership.", href: "/activities/fellowship" },
     ],
   },
+  news: { title: "Dernières actualités", more: "Lire la suite →", all: "Toutes les actualités →" },
 };
 
 const ar: HomeContent = {
@@ -207,6 +211,7 @@ const ar: HomeContent = {
       { title: "زمالة", body: "عام من الإرشاد والاعتماد والقيادة.", href: "/activities/fellowship" },
     ],
   },
+  news: { title: "آخر الأخبار", more: "اقرأ/ي المزيد ←", all: "كل الأخبار ←" },
 };
 
 /** Built-in copy: seeds the database and is the fallback when the API can't be reached. */

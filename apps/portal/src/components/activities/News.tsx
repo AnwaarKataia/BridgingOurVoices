@@ -1,15 +1,16 @@
+import type { Locale } from "@/i18n/config";
 import type { ActivitiesContent } from "@/content/activities";
 import { ContentImage } from "../ContentImage";
 
 /** News page body (2026-11-21): one article per post from the Bridging Our Voices Facebook page, newest first. */
-export function News({ news }: { news: ActivitiesContent["news"] }) {
+export function News({ news, locale }: { news: ActivitiesContent["news"]; locale: Locale }) {
   return (
     <section className="bg-sand">
       <div className="container-site flex flex-col gap-8 py-12 md:gap-12 md:py-20">
         {news.items.map((n) => {
           const [cover, ...rest] = n.images.filter(Boolean);
           return (
-            <article key={n.title} className="overflow-hidden rounded-bov border border-line bg-white lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
+            <article key={n.title} id={n.id} className="scroll-mt-28 overflow-hidden rounded-bov border border-line bg-white lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
               <div className="flex flex-col gap-1.5 p-1.5">
                 <div className="bg-stripes-light relative aspect-[3/2] overflow-hidden">
                   {cover && <ContentImage src={cover} alt={n.imageAlt} sizes="(min-width: 1024px) 560px, 100vw" />}
@@ -42,6 +43,11 @@ export function News({ news }: { news: ActivitiesContent["news"] }) {
                 {n.after.map((p) => (
                   <p key={p} className="m-0 leading-relaxed text-ink-soft">{p}</p>
                 ))}
+                {n.more.href && n.more.label && (
+                  <a href={`/${locale}${n.more.href}`} className="mt-1 text-sm font-semibold text-blue hover:text-navy">
+                    {n.more.label} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span>
+                  </a>
+                )}
                 {n.link && (
                   <a href={n.link} target="_blank" rel="noopener noreferrer" className="mt-1 text-sm font-semibold text-blue hover:text-navy">
                     {news.source} <span aria-hidden>↗</span>

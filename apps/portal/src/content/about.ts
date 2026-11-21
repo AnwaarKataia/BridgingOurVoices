@@ -37,11 +37,11 @@ const en: AboutContent = {
   },
   vision: {
     eyebrow: "Our vision",
-    text: "To establish an inclusive regional and international dialogue ecosystem where women and young leaders possess legitimate, recognised authority as primary facilitators and mediators in resolving community conflicts and sustaining peace.",
+    text: "To establish an inclusive regional and international dialogue ecosystem where women and young leaders have legitimate, recognised authority as the primary facilitators and mediators in resolving community conflicts and sustaining peace.",
   },
   mission: {
     eyebrow: "Our mission",
-    text: "To equip women and youth with practical skills in conflict analysis, dialogue facilitation, community mediation, trauma resilience and hate-speech deconstruction, providing documented digital and field platforms that enable them to lead peacebuilding and active citizenship.",
+    text: "To equip women and young people with practical skills in conflict analysis, dialogue facilitation, community mediation, trauma resilience and countering hate speech, and to provide documented digital and field platforms that enable them to lead peacebuilding and active citizenship.",
   },
   goals: {
     eyebrow: "Strategic objectives",
@@ -86,11 +86,11 @@ const fr: AboutContent = {
   },
   vision: {
     eyebrow: "Notre vision",
-    text: "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue comme principaux facilitateurs et médiateurs dans la résolution des conflits communautaires et le maintien de la paix.",
+    text: "Bâtir un écosystème de dialogue régional et international inclusif, où les femmes et les jeunes leaders disposent d’une autorité légitime et reconnue en tant qu’actrices et acteurs principaux de la facilitation et de la médiation pour résoudre les conflits communautaires et maintenir la paix.",
   },
   mission: {
     eyebrow: "Notre mission",
-    text: "Doter les femmes et les jeunes de compétences pratiques en analyse des conflits, facilitation du dialogue, médiation communautaire, résilience face au trauma et déconstruction des discours de haine, grâce à des plateformes numériques et de terrain documentées qui leur permettent de conduire la consolidation de la paix et la citoyenneté active.",
+    text: "Doter les femmes et les jeunes de compétences pratiques en analyse des conflits, facilitation du dialogue, médiation communautaire, résilience face au trauma et déconstruction des discours de haine, et leur offrir des plateformes numériques et de terrain documentées qui leur permettent de conduire la consolidation de la paix et d’exercer une citoyenneté active.",
   },
   goals: {
     eyebrow: "Objectifs stratégiques",

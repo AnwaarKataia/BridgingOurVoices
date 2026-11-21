@@ -11,7 +11,7 @@ import { siteUrl } from "@/lib/site";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { ContentImage } from "@/components/ContentImage";
-import { CourseRegisterForm } from "@/components/activities/CourseRegisterForm";
+import { RegisterForm } from "@/components/forms/RegisterForm";
 import { btn } from "@/components/ui";
 
 /** One published course or webinar (owner, 2026-11-21): details like the KAICIID course pages, units, registration. */
@@ -161,9 +161,9 @@ export default async function CoursePage({ params }: Params) {
             {course.registrationOpen ? (
               <>
                 <p className="m-0 text-ink-soft">{e.register.lead}</p>
-                <CourseRegisterForm
+                <RegisterForm
                   locale={locale}
-                  slug={slug}
+                  endpoint={`/public/courses/${slug}/register`}
                   t={e.register}
                   countries={countryOptions(locale)}
                   privacy={site.privacy}

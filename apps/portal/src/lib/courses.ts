@@ -1,10 +1,9 @@
 import type { Locale } from "@/i18n/config";
-import { apiUrl } from "@/lib/site";
-import { CONTENT_TAG } from "@/lib/content";
+import { apiGetJson } from "@/lib/preview";
 
 /**
- * Published e-learning courses and webinars (owner, 2026-11-21), built in the dashboard. Drafts never reach
- * the site. Cached with the page content and refreshed when the team publishes or edits a published course.
+ * Published e-learning courses and webinars (owner, 2026-11-21), built in the dashboard. Drafts only show in
+ * the team's preview. Cached with the page content and refreshed when the team publishes or edits a published course.
  */
 export type I18n = { en: string; fr: string; ar: string };
 export type CourseKind = "course" | "webinar";
@@ -33,15 +32,7 @@ export type CourseDetail = Omit<CourseCard, "modules"> & {
   modules: { title: I18n; summary: I18n; lessons: { title: I18n; type: "video" | "file" | "text" | "link"; minutes: number }[] }[];
 };
 
-async function get<T>(path: string): Promise<T | null> {
-  try {
-    const res = await fetch(`${apiUrl}${path}`, { next: { revalidate: 300, tags: [CONTENT_TAG] }, signal: AbortSignal.timeout(4000) });
-    if (!res.ok) return null;
-    return (await res.json()) as T;
-  } catch {
-    return null;
-  }
-}
+const get = <T,>(path: string) => apiGetJson<T>(path);
 
 export async function getCourses(): Promise<CourseCard[]> {
   return (await get<{ items: CourseCard[] }>("/public/courses"))?.items ?? [];

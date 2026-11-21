@@ -5,7 +5,7 @@ import { ContentImage } from "../ContentImage";
 type Props = Pick<ActivitiesContent, "course" | "flagship" | "tracks">;
 
 /** Training programmes page body: current course card, flagship interfaith programme, other tracks. */
-export function Training({ course, flagship, tracks, ctaHref }: Props & { ctaHref: string }) {
+export function Training({ course, flagship, tracks, ctaHref, newsHref }: Props & { ctaHref: string; newsHref: string }) {
   return (
     <section>
       <div className="container-site flex flex-col gap-8 py-12 md:gap-10 md:py-20">
@@ -39,7 +39,14 @@ export function Training({ course, flagship, tracks, ctaHref }: Props & { ctaHre
               </ul>
             </div>
 
-            <a href={ctaHref} className={`${btn.gold.replace("whitespace-nowrap", "")} h-auto min-h-[52px] max-w-full self-start py-2.5 text-center`}>{course.cta}</a>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a href={ctaHref} className={`${btn.gold.replace("whitespace-nowrap", "")} h-auto min-h-[52px] max-w-full py-2.5 text-center`}>{course.cta}</a>
+              {course.newsLink && (
+                <a href={newsHref} className="text-[15px] font-semibold text-blue underline underline-offset-4 hover:text-navy">
+                  {course.newsLink}
+                </a>
+              )}
+            </div>
           </div>
 
           <div className="flex flex-col gap-3.5">

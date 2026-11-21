@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { dir, isPublishedLocale } from "@/i18n/config";
-import { agendaItems, dateLocale, eventHref, eventIsos, eventSlugs, getAgendaContent } from "@/content/agenda";
+import { dateLocale, eventHref, getAgendaContent } from "@/content/agenda";
+import { eventItems, getEvents } from "@/lib/events";
+import { pick } from "@/lib/courses";
 import { getSiteContent } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
@@ -22,8 +24,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 export default async function AgendaPage({ params }: Params) {
   const { locale } = await params;
   if (!isPublishedLocale(locale)) notFound();
-  const a = await getAgendaContent(locale);
-  const site = await getSiteContent(locale);
+  const [a, site, events] = await Promise.all([getAgendaContent(locale), getSiteContent(locale), getEvents()]);
+  const items = eventItems(events, locale);
   const loc = dateLocale(locale);
   const homeLabel = site.nav.find((n) => n.key === "home")?.label ?? site.brandName;
   const pageUrl = `${siteUrl}/${locale}/agenda`;
@@ -31,15 +33,17 @@ export default async function AgendaPage({ params }: Params) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      ...a.events.map((e, i) => ({
-        "@type": "Event",
-        name: e.title,
-        startDate: eventIsos[i],
-        inLanguage: locale,
-        location: { "@type": "Place", name: e.place },
-        organizer: { "@id": `${siteUrl}/#organization` },
-        url: `${siteUrl}${eventHref(locale, eventSlugs[i])}`,
-      })),
+      ...events
+        .filter((e) => e.status === "published" && e.tone !== "deadline")
+        .map((e) => ({
+          "@type": e.dates.length > 1 ? "EventSeries" : "Event",
+          name: pick(e.title, locale),
+          startDate: e.dates[0],
+          inLanguage: locale,
+          location: { "@type": "Place", name: pick(e.place, locale) },
+          organizer: { "@id": `${siteUrl}/#organization` },
+          url: `${siteUrl}${eventHref(locale, e.slug)}`,
+        })),
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -60,14 +64,14 @@ export default async function AgendaPage({ params }: Params) {
             loc={loc}
             rtl={dir(locale) === "rtl"}
             labels={a.calendar}
-            items={agendaItems(a, locale)}
+            items={items}
             observances={a.observances.items}
             observanceKind={a.observances.kind}
             initialIso={new Date().toISOString().slice(0, 10)}
           />
         </div>
       </section>
-      <Upcoming a={a} loc={loc} locale={locale} />
+      <Upcoming title={a.upcomingTitle} items={items} loc={loc} />
       <Observances o={a.observances} loc={loc} />
     </PageShell>
   );
