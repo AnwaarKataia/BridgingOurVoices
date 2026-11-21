@@ -63,6 +63,20 @@ export function Training({ course, flagship, tracks, ctaHref, newsHref }: Props 
               <span aria-hidden>+</span>
               <span>{course.extra}</span>
             </p>
+            {course.sessions.length > 0 && (
+              <>
+                <h4 className="eyebrow mt-4 text-tag text-gold-deep">{course.sessionsLabel}</h4>
+                <ol className="border-t border-navy">
+                  {course.sessions.map((x) => (
+                    <li key={x.title} className="flex flex-col gap-1 border-b border-line py-3.5">
+                      <span className="font-mono text-tag tracking-label text-blue uppercase rtl:font-sans rtl:tracking-normal">{x.date}</span>
+                      <a href={newsHref} className="text-base leading-relaxed font-semibold text-ink underline-offset-4 hover:text-blue hover:underline">{x.title}</a>
+                      <span className="text-sm text-ink-soft">{x.by}</span>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            )}
           </div>
         </article>
 

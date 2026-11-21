@@ -57,6 +57,13 @@
       "when": 1795266920846,
       "tag": "0007_flashy_lizard",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1795270204710,
+      "tag": "0008_lumpy_black_tom",
+      "breakpoints": true
     }
   ]
 }

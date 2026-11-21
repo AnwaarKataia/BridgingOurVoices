@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
       { source: "/media/:file", destination: `${apiUrl}/media/:file` },
       // Photos of published "Add your voice" statements and members (the API serves them only while published)
       { source: "/public-photo/:id", destination: `${apiUrl}/public/photo/:id` },
+      // Learner accounts (e-learning phase 2): same-origin, so the learner's cookie belongs to the site
+      { source: "/learn-api/:path*", destination: `${apiUrl}/learn/:path*` },
     ];
   },
   async redirects() {
@@ -18,6 +20,8 @@ const nextConfig: NextConfig = {
       // Section roots open their first page (each dropdown item is its own page)
       { source: "/:locale(en|fr|ar)/about", destination: "/:locale/about/who-we-are", permanent: false },
       { source: "/:locale(en|fr|ar)/activities", destination: "/:locale/activities/training", permanent: false },
+      // The News tab was removed (owner, 2026-11-21): its items live on the Training page
+      { source: "/:locale(en|fr|ar)/activities/news", destination: "/:locale/activities/training#programme-news", permanent: false },
       { source: "/:locale(en|fr|ar)/network", destination: "/:locale/network/membership", permanent: false },
     ];
   },

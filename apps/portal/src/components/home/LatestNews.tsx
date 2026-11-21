@@ -7,18 +7,17 @@ const clip = (s: string, n = 150) => (s.length > n ? `${s.slice(0, n - 1).trimEn
 
 /**
  * Latest news on the home page (owner, 2026-11-21): a photo, the date, the title and a few words for each
- * of the newest items; "Read more" opens the item on the News page.
+ * of the newest items; "Read more" opens the full item on the page it belongs to (e.g. Training programmes).
  */
 export function LatestNews({ locale, labels, items }: { locale: Locale; labels: HomeContent["news"]; items: ActivitiesContent["news"]["items"] }) {
   const news = items.slice(0, 3);
   if (!news.length) return null;
-  const page = `/${locale}/activities/news`;
   return (
-    <section aria-labelledby="latest-news" className="bg-sand">
+    <section id="latest-news" aria-labelledby="latest-news-title" className="scroll-mt-24 bg-sand">
       <div className="container-site flex flex-col gap-8 py-16 md:py-[88px]">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 id="latest-news" className="font-display text-h2 font-normal text-ink">{labels.title}</h2>
-          <a href={page} className="text-[15px] font-semibold text-blue hover:text-navy">{labels.all}</a>
+          <h2 id="latest-news-title" className="font-display text-h2 font-normal text-ink">{labels.title}</h2>
+          <a href={`/${locale}/activities/training#programme-news`} className="text-[15px] font-semibold text-blue hover:text-navy">{labels.all}</a>
         </div>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {news.map((n) => (
@@ -30,7 +29,7 @@ export function LatestNews({ locale, labels, items }: { locale: Locale; labels: 
                 <div className="flex flex-1 flex-col gap-2.5 p-[22px]">
                   <p className="m-0 font-mono text-tag tracking-label text-blue uppercase rtl:font-sans rtl:tracking-normal">{n.date}</p>
                   <h3 className="font-display text-[1.3125rem] leading-snug font-normal text-ink">
-                    <a href={`${page}#${n.id}`} className="after:absolute after:inset-0 hover:text-blue">{n.title}</a>
+                    <a href={`/${locale}${n.href}#${n.id}`} className="after:absolute after:inset-0 hover:text-blue">{n.title}</a>
                   </h3>
                   <p className="m-0 text-sm leading-relaxed text-ink-soft">{clip(n.paragraphs[0] ?? "")}</p>
                   <span aria-hidden className="mt-auto pt-1.5 text-sm font-semibold text-blue">{labels.more}</span>

@@ -6,7 +6,8 @@ import type { I18n } from "./db/schema.js";
  * Starting e-learning content (owner, 2026-11-21), inserted once when there are no courses yet.
  * Everything is a DRAFT: the team fills in videos, files and texts in the dashboard, then publishes.
  *  - "Women and Peacebuilding" (requested by the owner): 5 units, 15 lessons.
- *  - Suggestions: a dialogue-facilitation course and a webinar for the opening lecture of 19 November 2026.
+ * (Owner, 2026-11-21: e-learning is for real self-paced courses, like an LMS. The online Zoom programme and
+ * its lectures belong on the Training programmes page, so no other suggestions are seeded here.)
  */
 type L = [en: string, fr: string, ar: string];
 const t = ([en, fr, ar]: L): I18n => ({ en, fr, ar });
@@ -149,66 +150,6 @@ const seeds: Seed[] = [
             minutes: 30,
           },
           { type: "text", title: ["Final reflection and certificate", "Réflexion finale et certificat", "تأمل ختامي والحصول على الشهادة"], minutes: 15 },
-        ],
-      },
-    ],
-  },
-  {
-    slug: "facilitating-interreligious-dialogue",
-    kind: "course",
-    format: "instructor-led",
-    title: ["Facilitating interreligious and intercultural dialogue", "Faciliter le dialogue interreligieux et interculturel", "تيسير الحوار بين الأديان والثقافات"],
-    summary: [
-      "Suggested course: the skills to plan and facilitate dialogue between people of different faiths and cultures.",
-      "Cours proposé : les compétences pour préparer et animer un dialogue entre personnes de religions et de cultures différentes.",
-      "دورة مقترحة: مهارات التخطيط لحوار بين أشخاص من أديان وثقافات مختلفة وتيسيره.",
-    ],
-    description: ["", "", ""],
-    programmeArea: ["Interreligious dialogue", "Dialogue interreligieux", "الحوار بين الأديان"],
-    duration: ["3 weeks", "3 semaines", "٣ أسابيع"],
-    learningTime: ["About 6 hours", "Environ 6 heures", "حوالي ٦ ساعات"],
-    languages: ["ar"],
-    units: [
-      { title: ["Foundations of dialogue", "Les fondements du dialogue", "أسس الحوار"], lessons: [{ type: "video", title: ["Introduction", "Introduction", "مقدمة"] }] },
-      {
-        title: ["Religious literacy and stereotypes", "Culture religieuse et stéréotypes", "الثقافة الدينية والصور النمطية"],
-        lessons: [{ type: "video", title: ["Introduction", "Introduction", "مقدمة"] }],
-      },
-      {
-        title: ["Designing a dialogue session", "Concevoir une séance de dialogue", "تصميم جلسة حوار"],
-        lessons: [{ type: "file", title: ["Session planning template", "Modèle de planification de séance", "نموذج تخطيط الجلسة"] }],
-      },
-    ],
-  },
-  {
-    slug: "religious-cultural-conflict-social-media",
-    kind: "webinar",
-    format: "live",
-    title: [
-      "How is religious and cultural conflict managed on social media?",
-      "Comment les conflits religieux et culturels sont-ils gérés sur les réseaux sociaux ?",
-      "كيف يُدار الصراع الديني والثقافي على وسائل التواصل الاجتماعي؟",
-    ],
-    summary: [
-      "Opening lecture of the online training programme (19 November 2026) by Dr Mohamed El-Wardany, Al-Azhar University.",
-      "Conférence inaugurale du programme de formation en ligne (19 novembre 2026) par le Dr Mohamed El-Wardany, Université Al-Azhar.",
-      "المحاضرة الافتتاحية للبرنامج التدريبي الإلكتروني (١٩ نوفمبر ٢٠٢٦) للدكتور محمد الورداني، جامعة الأزهر.",
-    ],
-    description: [
-      "Digital narratives, the use of religion in conflict, and how algorithms and echo chambers increase polarisation; how to read content critically, the responsibility of religious and media institutions, and moving from managing conflict to building awareness.",
-      "Les récits numériques, l’instrumentalisation de la religion dans les conflits, et le rôle des algorithmes et des chambres d’écho dans la polarisation ; lire les contenus de façon critique, la responsabilité des institutions religieuses et médiatiques, et passer de la gestion des conflits à la construction de la conscience.",
-      "صناعة الروايات في البيئة الرقمية، وتوظيف الدين في الصراع، ودور الخوارزميات وغرف الصدى في زيادة الاستقطاب؛ وكيفية قراءة المحتوى وكشف أهدافه، ومسؤولية المؤسسات الدينية والإعلامية، والانتقال من إدارة الصراع إلى صناعة الوعي.",
-    ],
-    programmeArea: ["Countering hate speech", "Lutte contre les discours de haine", "مواجهة خطاب الكراهية"],
-    duration: ["1 session", "1 séance", "جلسة واحدة"],
-    learningTime: ["About 2 hours", "Environ 2 heures", "حوالي ساعتين"],
-    languages: ["ar"],
-    units: [
-      {
-        title: ["The lecture", "La conférence", "المحاضرة"],
-        lessons: [
-          { type: "video", title: ["Recording of the lecture", "Enregistrement de la conférence", "تسجيل المحاضرة"], minutes: 90 },
-          { type: "file", title: ["Presentation slides", "Support de présentation", "العرض التقديمي"] },
         ],
       },
     ],

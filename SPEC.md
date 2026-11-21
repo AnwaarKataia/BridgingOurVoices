@@ -77,7 +77,7 @@ A regional, cross-religious and cross-cultural initiative that builds women's ca
 |---|---|---|
 | Home ✅ | `page.tsx` | hero → ticker → banner + announcement → vision → pathway → activities → footer |
 | About ▾ ✅ | `about/[slug]/page.tsx` | `who-we-are` (story + strategic partners) · `vision` (statement) · `mission` (statement) · `goals` (5 strategic objectives) |
-| Activities ▾ ✅ | `activities/[slug]/page.tsx` | `training`: current course with modules (`#course`), flagship interfaith programme, 4 other tracks. `seminars`: 3 seminar cards. `conferences`: featured video + 6 sessions. `fellowship`: apply + 4 benefits. `e-learning`: published course and webinar cards, or «انتظرونا قريبًا» / "Coming soon" while nothing is published. `news`: posts taken from the Facebook page (newest first) |
+| Activities ▾ ✅ | `activities/[slug]/page.tsx` | `training`: current course with modules (`#course`), flagship interfaith programme, 4 other tracks. `seminars`: 3 seminar cards. `conferences`: featured video + 6 sessions. `fellowship`: apply + 4 benefits. `e-learning`: published course and webinar cards, or «انتظرونا قريبًا» / "Coming soon" while nothing is published. News: no tab since 2026-11-21. Items sit on the page they belong to (Training programmes → `#programme-news`), and the home page shows the latest ones briefly |
 | E-learning course ✅ | `e-learning/[slug]/page.tsx` | One published course or webinar (dynamic, from the API). Info list like KAICIID's course pages (type, format, fees, number of units, programme area, duration, learning time, start date, deadline, certificate, languages), image, flyer PDF, "About the course", units with lesson titles, and a registration form (`#register`). A draft or unknown course → 404 |
 | Agenda ✅ | `agenda/page.tsx` + `agenda/[slug]/page.tsx` | **Since 2026-11-21 the events come from the dashboard (database); the brand file's sample events are drafts, so the public sees the calendar + international days until events are published.** One page (no dropdown in the brand file). 1) Month calendar (`components/agenda/Calendar.tsx`, client): prev/next month, tap a day to list only that day, "Show the whole month". Gold dot = event, sky dot = international day, blue frame = today. The list beside it shows the month's items; date chips are red (deadline), blue (webinar series), navy (event), gold (international day). 2) Featured webinar series card + the full list of upcoming events. 3) "International days": the global UN dates for dialogue and peacebuilding, in two columns (`#international-days`). All dates and copy live in `content/agenda.ts`; international days are stored as month-day and repeat every year on the calendar |
 | Network ▾ ✅ | `network/[slug]/page.tsx` | `membership`: 3 cards (who can join / what you gain / what we ask). Under the cards: the **membership application form** (`#apply`, `MembershipForm`, its own title "Membership application form" / «استمارة طلب العضوية»; never the "Add your voice to ours" title). `join`: the "Add your voice to ours" form (statement + optional article), unchanged. `members`: 4 team cards with arched portraits (`public/team/*.jpg`, cropped from the banner at the brand file's positions), then the navy "Our network" band with a mosaic and a "Join the network" button |
@@ -942,6 +942,67 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - learner accounts, lesson pages with the video player, "Mark as done" and progress, participants;
   - certificates last.
 
+### 2026-11-21: E-learning phase 2 (learner accounts, lesson player, progress) + the lecture moves to Seminars
+- **Learner accounts** (tables `learners`, `learner_sessions`, `lesson_progress`; `course_registrations.learner_id`):
+  - Separate from dashboard users: a learner can never reach `/admin`, and a dashboard session can't reach `/learn`.
+  - Sign-up asks for name, email, country and password. The password follows the owner's rule (12+ characters, with letters, numbers and a symbol) and is stored as a scrypt hash. The form has a honeypot and a limit of 5 attempts per 10 minutes.
+  - Sign-in is limited to 5 attempts per minute per email+IP. The session is an httpOnly cookie `bov_learner` that lasts 30 days.
+  - The portal reaches the API through its own `/learn-api/*` rewrite, so the cookie belongs to the site.
+- **Joining a course:**
+  - The «سجّل/ي» section of a published course page now offers "Create an account / Sign in", then "Join this course", then "Go to the course".
+  - Joining creates the course registration, so the dashboard sees it as a participant.
+  - **Access:** "Rejected" in the dashboard removes the learner's access to the lessons, and they can't re-join.
+- **Lesson player** (`/[lang]/learn/course/[slug]`, not indexed):
+  - The unit and lesson list shows ✓ next to done lessons. It opens on the first lesson that isn't done.
+  - Videos play embedded: YouTube in privacy-enhanced mode (`youtube-nocookie.com`), or Vimeo.
+  - PDF lessons open the file. Text lessons show the paragraphs. Link lessons open the link (Zoom etc.). A lesson whose content is missing says it is coming soon.
+  - "Mark as done" (it can be undone) moves on to the next lesson. There are also previous/next buttons and a progress bar.
+  - When every lesson is done, a completion note appears, plus "Certificates will be available soon" if the course gives a certificate.
+  - The team's preview opens the player without an account; the progress buttons are hidden there.
+- **«دوراتي» / "My learning"** (`/[lang]/learn`): the learner's courses with progress bars, and "Sign out". The e-learning page links to it.
+  - The Arabic labels are neutral: «دوراتي» and «اكتملت كل الدروس», not feminine-only forms.
+- **Dashboard → course editor → "Participants"** (renamed from "Registrations"): each participant's lessons done out of the total, with a bar. A note explains that "Rejected" removes access.
+- **Privacy policy:** the "Learner account" section lists the data (password stored as a hash, courses joined, lessons done), why it is collected, and that it is kept until the person asks for the account to be deleted.
+- **Dr El-Wardany's lecture → Seminars (owner):** it is an online seminar, so it moved to Seminars.
+  - The news item's page is now `/activities/seminars`.
+  - The Seminars page shows "Seminars held" with the full item even while the section is hidden, then «المزيد من الندوات قريبًا». The sample seminar cards stay hidden.
+  - "Read more" on the home page, the "Sessions held" line, and "The programme has started: read the news" on the Training card all link there.
+  - The UNHCR workshop stays on Training programmes.
+- **Owner's question about the top banner:** advice given to keep the fellows banner until there are 4–5 events with good photos, then turn it into a slider of events. Not changed.
+- **Tested** with a temporary course, learner and editor, all deleted afterwards:
+  - sign-up: a weak password → 400, a second sign-up with the same email → 409;
+  - without joining: player → 401/403, progress → 403;
+  - join; the player has the content and the video embed; mark done → 1 of 2; «دوراتي» shows it; the dashboard shows the progress;
+  - rejected → player and re-join both 403;
+  - the learner and admin cookies are kept apart (401 both ways); logout; wrong login → 401;
+  - in Arabic in the browser: mark done, then 2 of 2 and the completion note;
+  - responsive: sign-up, sign-in, seminars and training × 3 languages × 5 widths;
+  - `pnpm build` passes.
+- **Next:** certificates (phase 3), and password reset and emails to learners (both need an email service).
+
+### 2026-11-21: News lives where it belongs; e-learning is for real courses only
+- **Owner:** no separate News tab.
+  - The home page shows each news item briefly: a good photo, the date, the title, the first lines, and "Read more".
+  - "Read more" opens the full item on the page it belongs to.
+- **News items** (`activities.news.items`): each has a technical `href` (the page it belongs to) and an `id` (its anchor).
+  - Both current items (the online training launch and the UNHCR workshop in Alexandria) belong to **Training programmes**.
+  - They are shown there in a "Programme news" section (`#programme-news`) under the course card.
+  - The home page "Latest news" links to `/[lang]/activities/training#training-launch` and `#unhcr-alexandria`. "All news" goes to `#programme-news`.
+  - The ticker opens the home page's news section.
+- **Removed:** the Activities → News tab, its dropdown item and its sitemap entry. `/[lang]/activities/news` redirects to `/activities/training#programme-news`.
+- **Training course card:**
+  - new "Sessions held" list (the 19 November opening lecture by Dr Mohamed El-Wardany, Al-Azhar University);
+  - "The programme has started: read the news →" jumps to the programme news on the same page.
+- **E-learning = real self-paced courses, like an LMS.**
+  - The two suggested drafts were removed (database and seed): the dialogue-facilitation course, and the opening-lecture webinar, which belongs to the online Zoom programme on Training programmes.
+  - «المرأة وبناء السلام» stays as a draft.
+- **Checked:**
+  - the links in EN/FR/AR;
+  - the redirect;
+  - the public course list is empty, so the site shows «انتظرونا قريبًا»;
+  - responsive: home, training and e-learning × 3 languages × 5 widths;
+  - `pnpm build` passes.
+
 ### 2026-11-21: Undecided content stays hidden; agenda from the dashboard; registrations; preview; news on the home page
 - **Rule (owner):** content that isn't decided yet never shows to the public.
   - It stays in the dashboard, where the team sees and edits it.
@@ -1038,7 +1099,8 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
 - [ ] **Owner:** decide the seminars, conferences and fellowship, then switch them on in «ظهور الأقسام»; publish real agenda events.
 - [ ] E-learning:
   - The owner fills the videos and files of «المرأة وبناء السلام» and publishes it.
-  - Phase 2: learner accounts, lessons with a video player, "Mark as done", progress.
+  - Phase 2 done (2026-11-21): learner accounts, lesson player, "Mark as done", progress, participants in the dashboard.
+  - Password reset for learners (needs an email service).
   - Phase 3: certificates.
   - Email to registrants (needs an email service).
 - [ ] Dashboard: **colours and logo** (agreed for later: admin only, brand colours with a contrast check and "restore brand colours").

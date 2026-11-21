@@ -57,7 +57,7 @@ export default async function HomePage({ params }: Params) {
     <PageShell locale={locale} path="" current="home">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero hero={c.hero} activitiesHref={`/${locale}/activities/training`} contactHref={`/${locale}/contact`} />
-      <Ticker ticker={c.ticker} href={`/${locale}/activities/news`} />
+      <Ticker ticker={c.ticker} href={`/${locale}#latest-news`} />
       <Announcement a={c.announcement} detailsHref={`/${locale}/activities/training#course`} primaryHref={`/${locale}/activities/e-learning`} />
       <Vision vision={c.vision} aboutHref={`/${locale}/about/who-we-are`} />
       <Pathway pathway={c.pathway} />

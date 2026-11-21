@@ -1,13 +1,29 @@
-import type { Locale } from "@/i18n/config";
 import type { ActivitiesContent } from "@/content/activities";
 import { ContentImage } from "../ContentImage";
 
-/** News page body (2026-11-21): one article per post from the Bridging Our Voices Facebook page, newest first. */
-export function News({ news, locale }: { news: ActivitiesContent["news"]; locale: Locale }) {
+/**
+ * News items of one page (owner, 2026-11-21: no separate News tab), one article per post from the
+ * Bridging Our Voices Facebook page, newest first. The home page's "Read more" links to #<id> here.
+ */
+export function News({
+  news,
+  items,
+  heading,
+}: {
+  news: ActivitiesContent["news"];
+  items: ActivitiesContent["news"]["items"];
+  /** Section heading when the items sit on another page than Training (e.g. Seminars). */
+  heading?: { title: string; lead: string };
+}) {
+  if (!items.length) return null;
   return (
-    <section className="bg-sand">
+    <section id="programme-news" aria-labelledby="programme-news-title" className="scroll-mt-24 bg-sand">
       <div className="container-site flex flex-col gap-8 py-12 md:gap-12 md:py-20">
-        {news.items.map((n) => {
+        <div className="flex flex-col gap-3">
+          <h2 id="programme-news-title" className="font-display text-h2 font-normal text-ink">{heading?.title ?? news.title}</h2>
+          <p className="m-0 max-w-[680px] text-lead text-ink-soft">{heading?.lead ?? news.lead}</p>
+        </div>
+        {items.map((n) => {
           const [cover, ...rest] = n.images.filter(Boolean);
           return (
             <article key={n.title} id={n.id} className="scroll-mt-28 overflow-hidden rounded-bov border border-line bg-white lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
@@ -43,11 +59,6 @@ export function News({ news, locale }: { news: ActivitiesContent["news"]; locale
                 {n.after.map((p) => (
                   <p key={p} className="m-0 leading-relaxed text-ink-soft">{p}</p>
                 ))}
-                {n.more.href && n.more.label && (
-                  <a href={`/${locale}${n.more.href}`} className="mt-1 text-sm font-semibold text-blue hover:text-navy">
-                    {n.more.label} <span aria-hidden className="inline-block rtl:-scale-x-100">→</span>
-                  </a>
-                )}
                 {n.link && (
                   <a href={n.link} target="_blank" rel="noopener noreferrer" className="mt-1 text-sm font-semibold text-blue hover:text-navy">
                     {news.source} <span aria-hidden>↗</span>

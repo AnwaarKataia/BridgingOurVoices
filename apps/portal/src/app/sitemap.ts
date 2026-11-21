@@ -15,7 +15,6 @@ const pages: { path: string; priority: number }[] = [
   { path: "/activities/conferences", priority: 0.8 },
   { path: "/activities/fellowship", priority: 0.8 },
   { path: "/activities/e-learning", priority: 0.8 },
-  { path: "/activities/news", priority: 0.8 },
   { path: "/agenda", priority: 0.8 },
   { path: "/network/membership", priority: 0.7 },
   { path: "/network/join", priority: 0.8 },

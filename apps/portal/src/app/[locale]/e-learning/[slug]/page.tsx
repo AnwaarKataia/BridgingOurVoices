@@ -3,15 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isPublishedLocale, type Locale } from "@/i18n/config";
 import { getActivitiesContent } from "@/content/activities";
-import { getSiteContent } from "@/content/site";
-import { countryOptions } from "@/content/countries";
 import { getCourse, pick } from "@/lib/courses";
 import { pageMetadata } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
 import { ContentImage } from "@/components/ContentImage";
-import { RegisterForm } from "@/components/forms/RegisterForm";
+import { JoinCourse } from "@/components/learn/JoinCourse";
+import { learnerGet } from "@/lib/learn";
+import { isPreview } from "@/lib/preview";
 import { btn } from "@/components/ui";
 
 /** One published course or webinar (owner, 2026-11-21): details like the KAICIID course pages, units, registration. */
@@ -36,7 +36,11 @@ export default async function CoursePage({ params }: Params) {
   const r = await resolve(params);
   if (!r) notFound();
   const { locale, slug, course } = r;
-  const [c, site] = await Promise.all([getActivitiesContent(locale), getSiteContent(locale)]);
+  const [c, status, preview] = await Promise.all([
+    getActivitiesContent(locale),
+    learnerGet<{ joined: boolean; removed: boolean }>(`/courses/${slug}/status`),
+    isPreview(),
+  ]);
   const e = c.elearning;
   const intlLocale = locale === "ar" ? "ar-EG" : locale;
   const nf = new Intl.NumberFormat(intlLocale);
@@ -99,9 +103,9 @@ export default async function CoursePage({ params }: Params) {
                   </div>
                 ))}
               </dl>
-              {course.registrationOpen && (
+              {(course.registrationOpen || status.data?.joined) && (
                 <a href="#register" className={`${btn.gold} w-full`}>
-                  {e.register.submit}
+                  {status.data?.joined ? e.learn.goToCourse : e.learn.join}
                 </a>
               )}
               {course.flyer && (
@@ -158,20 +162,23 @@ export default async function CoursePage({ params }: Params) {
         <div className="container-site py-12 md:py-20">
           <div className="mx-auto flex max-w-[720px] flex-col gap-4">
             <h2 id="register-title" className="font-display text-h2 font-normal text-ink">{e.register.title}</h2>
-            {course.registrationOpen ? (
-              <>
-                <p className="m-0 text-ink-soft">{e.register.lead}</p>
-                <RegisterForm
-                  locale={locale}
-                  endpoint={`/public/courses/${slug}/register`}
-                  t={e.register}
-                  countries={countryOptions(locale)}
-                  privacy={site.privacy}
-                  forms={site.forms}
-                />
-              </>
-            ) : (
-              <p className="m-0 rounded-bov border border-line bg-sand p-5 text-ink">{e.register.closed}</p>
+            <JoinCourse
+              slug={slug}
+              locale={locale}
+              state={{
+                signedIn: status.status !== 401 && status.status !== 503,
+                joined: !!status.data?.joined,
+                removed: !!status.data?.removed,
+                open: course.registrationOpen,
+              }}
+              t={e.learn}
+              closed={e.register.closed}
+            />
+            {preview && (
+              // Team preview: open the lessons without an account
+              <Link href={`/${locale}/learn/course/${slug}`} className="self-start text-sm font-semibold text-blue underline underline-offset-4 hover:text-navy">
+                👁 {e.learn.goToCourse}
+              </Link>
             )}
           </div>
         </div>

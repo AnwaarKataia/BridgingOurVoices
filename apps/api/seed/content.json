@@ -63,10 +63,6 @@
             {
               "label": "E-learning",
               "href": "/activities/e-learning"
-            },
-            {
-              "label": "News",
-              "href": "/activities/news"
             }
           ]
         },
@@ -190,10 +186,6 @@
             {
               "label": "Apprentissage en ligne",
               "href": "/activities/e-learning"
-            },
-            {
-              "label": "Actualités",
-              "href": "/activities/news"
             }
           ]
         },
@@ -317,10 +309,6 @@
             {
               "label": "التعلم الإلكتروني",
               "href": "/activities/e-learning"
-            },
-            {
-              "label": "الأخبار",
-              "href": "/activities/news"
             }
           ]
         },
@@ -951,7 +939,15 @@
           }
         ],
         "extra": "Live interactive sessions with international experts and specialists",
-        "newsLink": "The programme has started: read the news →"
+        "newsLink": "The programme has started: read the news →",
+        "sessionsLabel": "Sessions held",
+        "sessions": [
+          {
+            "date": "19 November 2026",
+            "title": "Opening lecture: How is religious and cultural conflict managed on social media?",
+            "by": "Dr Mohamed El-Wardany, Al-Azhar University"
+          }
+        ]
       },
       "flagship": {
         "eyebrow": "Flagship programme · Interfaith dialogue",
@@ -1012,6 +1008,9 @@
         "index": "02",
         "eyebrow": "Seminars",
         "title": "Open seminars and webinars",
+        "heldTitle": "Seminars held",
+        "heldLead": "Online seminars from our programme.",
+        "moreSoon": "More seminars are coming soon.",
         "lead": "Short, open sessions with practitioners and scholars, online and in person, in Arabic and English.",
         "items": [
           {
@@ -1158,6 +1157,60 @@
           "text": "Text",
           "link": "Live session / link"
         },
+        "learn": {
+          "signupTitle": "Create your learner account",
+          "signupLead": "A free account lets you join our online courses, follow your progress and come back where you left off.",
+          "loginTitle": "Sign in",
+          "loginLead": "Sign in to continue your courses.",
+          "name": "Full name",
+          "email": "Email",
+          "country": "Country",
+          "countryPlaceholder": "Select…",
+          "password": "Password",
+          "passwordHint": "At least 12 characters, with letters, numbers and a symbol (such as ! @ # $).",
+          "submitSignup": "Create account",
+          "submitLogin": "Sign in",
+          "sending": "Please wait…",
+          "haveAccount": "Already have an account? Sign in",
+          "noAccount": "New here? Create a free account",
+          "errors": {
+            "exists": "An account with this email already exists. Please sign in.",
+            "invalid": "Wrong email or password.",
+            "weak": "The password must be at least 12 characters, with letters, numbers and a symbol.",
+            "tooMany": "Too many attempts. Please try again in a few minutes.",
+            "generic": "Something went wrong. Please try again."
+          },
+          "myTitle": "My learning",
+          "myLead": "The courses you have joined and your progress.",
+          "myEmpty": "You haven’t joined a course yet.",
+          "browse": "Browse the courses",
+          "start": "Start the course",
+          "continue": "Continue",
+          "progress": "{done} of {total} lessons done",
+          "signOut": "Sign out",
+          "myLink": "My learning / Sign in",
+          "join": "Join this course",
+          "joining": "Joining…",
+          "joinLead": "Joining is free. Create an account (or sign in) to join the course and follow your progress.",
+          "joinSignup": "Create an account",
+          "joinLogin": "Sign in",
+          "joined": "You have joined this course.",
+          "goToCourse": "Go to the course",
+          "removed": "Your access to this course has been removed. Please contact us.",
+          "lessonOf": "Lesson {n} of {total}",
+          "markDone": "Mark as done",
+          "done": "Done",
+          "undo": "Mark as not done",
+          "prev": "Previous lesson",
+          "next": "Next lesson",
+          "openFile": "Open the file (PDF)",
+          "openLink": "Open the link",
+          "contents": "Course content",
+          "allDone": "Well done: you have completed every lesson.",
+          "certificateSoon": "Certificates will be available soon.",
+          "noVideo": "The video will be added soon.",
+          "noContent": "The content of this lesson will be added soon."
+        },
         "register": {
           "title": "Register for this course",
           "lead": "Leave your details and our team will contact you with the next steps.",
@@ -1175,8 +1228,8 @@
       "news": {
         "index": "06",
         "eyebrow": "News",
-        "title": "News from our activities",
-        "lead": "What has happened recently at Bridging Our Voices, from workshops in the field to our online training programme.",
+        "title": "Programme news",
+        "lead": "Sessions and workshops of our training programme, online and in the field.",
         "source": "See the post on Facebook",
         "photosLabel": "Photos",
         "items": [
@@ -1199,10 +1252,7 @@
             ],
             "imageAlt": "Opening session of the Bridging Our Voices online training programme",
             "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
-            "more": {
-              "label": "Programme details",
-              "href": "/activities/training#course"
-            }
+            "href": "/activities/seminars"
           },
           {
             "date": "15 November 2026",
@@ -1233,10 +1283,7 @@
             ],
             "imageAlt": "Participants in the Bridging Our Voices training workshop at UNHCR in Alexandria",
             "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
-            "more": {
-              "label": "",
-              "href": ""
-            }
+            "href": "/activities/training"
           }
         ]
       }
@@ -1301,7 +1348,15 @@
           }
         ],
         "extra": "Rencontres interactives en direct avec des experts internationaux",
-        "newsLink": "Le programme a commencé : lire l’actualité →"
+        "newsLink": "Le programme a commencé : lire l’actualité →",
+        "sessionsLabel": "Séances tenues",
+        "sessions": [
+          {
+            "date": "19 novembre 2026",
+            "title": "Conférence inaugurale : Comment les conflits religieux et culturels sont-ils gérés sur les réseaux sociaux ?",
+            "by": "Dr Mohamed El-Wardany, Université Al-Azhar"
+          }
+        ]
       },
       "flagship": {
         "eyebrow": "Programme phare · Dialogue interreligieux",
@@ -1362,6 +1417,9 @@
         "index": "02",
         "eyebrow": "Séminaires",
         "title": "Séminaires et webinaires ouverts",
+        "heldTitle": "Séminaires tenus",
+        "heldLead": "Les séminaires en ligne de notre programme.",
+        "moreSoon": "D’autres séminaires arrivent bientôt.",
         "lead": "Des sessions courtes et ouvertes avec praticiens et chercheurs, en ligne et en présentiel, en arabe, anglais et français.",
         "items": [
           {
@@ -1508,6 +1566,60 @@
           "text": "Texte",
           "link": "Séance en direct / lien"
         },
+        "learn": {
+          "signupTitle": "Créer votre compte d’apprenant ou d’apprenante",
+          "signupLead": "Un compte gratuit vous permet de suivre nos cours en ligne, de voir votre progression et de reprendre là où vous vous êtes arrêté·e.",
+          "loginTitle": "Se connecter",
+          "loginLead": "Connectez-vous pour continuer vos cours.",
+          "name": "Nom complet",
+          "email": "E-mail",
+          "country": "Pays",
+          "countryPlaceholder": "Sélectionner…",
+          "password": "Mot de passe",
+          "passwordHint": "Au moins 12 caractères, avec des lettres, des chiffres et un symbole (comme ! @ # $).",
+          "submitSignup": "Créer le compte",
+          "submitLogin": "Se connecter",
+          "sending": "Veuillez patienter…",
+          "haveAccount": "Vous avez déjà un compte ? Connectez-vous",
+          "noAccount": "Nouveau ou nouvelle ? Créez un compte gratuit",
+          "errors": {
+            "exists": "Un compte existe déjà avec cet e-mail. Veuillez vous connecter.",
+            "invalid": "E-mail ou mot de passe incorrect.",
+            "weak": "Le mot de passe doit contenir au moins 12 caractères, avec des lettres, des chiffres et un symbole.",
+            "tooMany": "Trop de tentatives. Réessayez dans quelques minutes.",
+            "generic": "Une erreur s’est produite. Veuillez réessayer."
+          },
+          "myTitle": "Mon apprentissage",
+          "myLead": "Les cours que vous suivez et votre progression.",
+          "myEmpty": "Vous ne suivez encore aucun cours.",
+          "browse": "Voir les cours",
+          "start": "Commencer le cours",
+          "continue": "Continuer",
+          "progress": "Leçons terminées : {done} sur {total}",
+          "signOut": "Se déconnecter",
+          "myLink": "Mon apprentissage / Connexion",
+          "join": "Rejoindre ce cours",
+          "joining": "Inscription…",
+          "joinLead": "L’inscription est gratuite. Créez un compte (ou connectez-vous) pour rejoindre le cours et suivre votre progression.",
+          "joinSignup": "Créer un compte",
+          "joinLogin": "Se connecter",
+          "joined": "Vous suivez ce cours.",
+          "goToCourse": "Accéder au cours",
+          "removed": "Votre accès à ce cours a été retiré. Veuillez nous contacter.",
+          "lessonOf": "Leçon {n} sur {total}",
+          "markDone": "Marquer comme terminée",
+          "done": "Terminée",
+          "undo": "Marquer comme non terminée",
+          "prev": "Leçon précédente",
+          "next": "Leçon suivante",
+          "openFile": "Ouvrir le fichier (PDF)",
+          "openLink": "Ouvrir le lien",
+          "contents": "Contenu du cours",
+          "allDone": "Bravo : vous avez terminé toutes les leçons.",
+          "certificateSoon": "Les certificats seront bientôt disponibles.",
+          "noVideo": "La vidéo sera ajoutée bientôt.",
+          "noContent": "Le contenu de cette leçon sera ajouté bientôt."
+        },
         "register": {
           "title": "S’inscrire à ce cours",
           "lead": "Laissez vos coordonnées : notre équipe vous contactera pour la suite.",
@@ -1525,8 +1637,8 @@
       "news": {
         "index": "06",
         "eyebrow": "Actualités",
-        "title": "Actualités de nos activités",
-        "lead": "Ce qui s’est passé récemment à Bridging Our Voices, des ateliers sur le terrain à notre programme de formation en ligne.",
+        "title": "Actualités du programme",
+        "lead": "Séances et ateliers de notre programme de formation, en ligne et sur le terrain.",
         "source": "Voir la publication sur Facebook",
         "photosLabel": "Photos",
         "items": [
@@ -1549,10 +1661,7 @@
             ],
             "imageAlt": "Séance d’ouverture du programme de formation en ligne de Bridging Our Voices",
             "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
-            "more": {
-              "label": "Détails du programme",
-              "href": "/activities/training#course"
-            }
+            "href": "/activities/seminars"
           },
           {
             "date": "15 novembre 2026",
@@ -1583,10 +1692,7 @@
             ],
             "imageAlt": "Participants et participantes de l’atelier de Bridging Our Voices au HCR à Alexandrie",
             "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
-            "more": {
-              "label": "",
-              "href": ""
-            }
+            "href": "/activities/training"
           }
         ]
       }
@@ -1651,7 +1757,15 @@
           }
         ],
         "extra": "لقاءات تفاعلية مباشرة مع خبراء ومتخصصين دوليين",
-        "newsLink": "انطلق البرنامج: اقرأ/ي الخبر ←"
+        "newsLink": "انطلق البرنامج: اقرأ/ي الخبر ←",
+        "sessionsLabel": "الجلسات المنعقدة",
+        "sessions": [
+          {
+            "date": "١٩ نوفمبر ٢٠٢٦",
+            "title": "المحاضرة الافتتاحية: كيف يُدار الصراع الديني والثقافي على وسائل التواصل الاجتماعي؟",
+            "by": "د. محمد الورداني، جامعة الأزهر"
+          }
+        ]
       },
       "flagship": {
         "eyebrow": "البرنامج الرئيسي · الحوار بين الأديان",
@@ -1712,6 +1826,9 @@
         "index": "02",
         "eyebrow": "ندوات",
         "title": "ندوات مفتوحة وندوات أونلاين",
+        "heldTitle": "ندوات انعقدت",
+        "heldLead": "الندوات الإلكترونية لبرنامجنا.",
+        "moreSoon": "المزيد من الندوات قريبًا.",
         "lead": "جلسات قصيرة ومفتوحة مع ممارسين وباحثين، أونلاين وحضوريًا، بالعربية والإنجليزية.",
         "items": [
           {
@@ -1858,6 +1975,60 @@
           "text": "نص",
           "link": "جلسة مباشرة / رابط"
         },
+        "learn": {
+          "signupTitle": "أنشئ/ي حساب المتعلّم",
+          "signupLead": "الحساب مجاني، ويتيح لك الانضمام إلى دوراتنا الإلكترونية ومتابعة تقدّمك والعودة من حيث توقفت.",
+          "loginTitle": "تسجيل الدخول",
+          "loginLead": "سجّل/ي الدخول لمتابعة دوراتك.",
+          "name": "الاسم الكامل",
+          "email": "البريد الإلكتروني",
+          "country": "الدولة",
+          "countryPlaceholder": "اختر/ي…",
+          "password": "كلمة المرور",
+          "passwordHint": "١٢ حرفًا على الأقل، وتحتوي على حروف وأرقام ورمز (مثل ! @ # $).",
+          "submitSignup": "إنشاء الحساب",
+          "submitLogin": "دخول",
+          "sending": "يرجى الانتظار…",
+          "haveAccount": "لديك حساب؟ سجّل/ي الدخول",
+          "noAccount": "جديد/ة هنا؟ أنشئ/ي حسابًا مجانيًا",
+          "errors": {
+            "exists": "يوجد حساب بهذا البريد الإلكتروني. يرجى تسجيل الدخول.",
+            "invalid": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+            "weak": "يجب أن تكون كلمة المرور ١٢ حرفًا على الأقل، وتحتوي على حروف وأرقام ورمز.",
+            "tooMany": "محاولات كثيرة. يرجى المحاولة بعد بضع دقائق.",
+            "generic": "حدث خطأ. يرجى المحاولة مرة أخرى."
+          },
+          "myTitle": "دوراتي",
+          "myLead": "الدورات التي انضممت إليها وتقدّمك فيها.",
+          "myEmpty": "لم تنضم/ي إلى أي دورة بعد.",
+          "browse": "تصفّح/ي الدورات",
+          "start": "ابدأ/ي الدورة",
+          "continue": "متابعة",
+          "progress": "الدروس المكتملة: {done} من {total}",
+          "signOut": "تسجيل الخروج",
+          "myLink": "دوراتي / تسجيل الدخول",
+          "join": "انضم/ي إلى الدورة",
+          "joining": "جارٍ الانضمام…",
+          "joinLead": "الانضمام مجاني. أنشئ/ي حسابًا (أو سجّل/ي الدخول) للانضمام إلى الدورة ومتابعة تقدّمك.",
+          "joinSignup": "إنشاء حساب",
+          "joinLogin": "تسجيل الدخول",
+          "joined": "أنت منضم/ة إلى هذه الدورة.",
+          "goToCourse": "الذهاب إلى الدورة",
+          "removed": "أُلغي وصولك إلى هذه الدورة. يرجى التواصل معنا.",
+          "lessonOf": "الدرس {n} من {total}",
+          "markDone": "تم الدرس",
+          "done": "مكتمل",
+          "undo": "إلغاء الإكمال",
+          "prev": "الدرس السابق",
+          "next": "الدرس التالي",
+          "openFile": "فتح الملف (PDF)",
+          "openLink": "فتح الرابط",
+          "contents": "محتوى الدورة",
+          "allDone": "رائع: اكتملت كل الدروس.",
+          "certificateSoon": "الشهادات ستتوفر قريبًا.",
+          "noVideo": "سيُضاف الفيديو قريبًا.",
+          "noContent": "سيُضاف محتوى هذا الدرس قريبًا."
+        },
         "register": {
           "title": "التسجيل في الدورة",
           "lead": "اترك/ي بياناتك وسيتواصل معك فريقنا بالخطوات التالية.",
@@ -1875,8 +2046,8 @@
       "news": {
         "index": "06",
         "eyebrow": "الأخبار",
-        "title": "أخبار أنشطتنا",
-        "lead": "آخر ما جرى في «أصواتنا جسور»، من الورش الميدانية إلى برنامجنا التدريبي الإلكتروني.",
+        "title": "أخبار البرنامج",
+        "lead": "جلسات وورش برنامجنا التدريبي، عبر الإنترنت وفي الميدان.",
         "source": "شاهد/ي المنشور على فيسبوك",
         "photosLabel": "الصور",
         "items": [
@@ -1899,10 +2070,7 @@
             ],
             "imageAlt": "الجلسة الافتتاحية للبرنامج التدريبي الإلكتروني لمبادرة «أصواتنا جسور»",
             "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
-            "more": {
-              "label": "تفاصيل البرنامج",
-              "href": "/activities/training#course"
-            }
+            "href": "/activities/seminars"
           },
           {
             "date": "١٥ نوفمبر ٢٠٢٦",
@@ -1933,10 +2101,7 @@
             ],
             "imageAlt": "المشاركون والمشاركات في ورشة «أصواتنا جسور» بمقر المفوضية في الإسكندرية",
             "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
-            "more": {
-              "label": "",
-              "href": ""
-            }
+            "href": "/activities/training"
           }
         ]
       }
@@ -4296,11 +4461,12 @@
               ]
             },
             {
-              "h": "Course registration (e-learning)"
+              "h": "Learner account (e-learning)"
             },
             {
               "list": [
-                "Your name, email address and country, and the course you register for."
+                "Your name, email address and country, and a password (stored only as a secure hash that no one can read).",
+                "The courses you join and the lessons you mark as done."
               ]
             },
             {
@@ -4319,7 +4485,7 @@
               "list": [
                 "Newsletter: to send you news about our programmes and events, because you asked us to.",
                 "Contact form: to answer your message.",
-                "Course registration: to contact you about the course and your participation.",
+                "Learner account: to give you access to the courses you join, keep your progress, and contact you about the course.",
                 "Membership application: to review your application, contact you about it and, if you join, keep you connected to the network. You give your consent when you tick the box before sending."
               ]
             },
@@ -4372,7 +4538,7 @@
               "list": [
                 "Newsletter: until you unsubscribe.",
                 "Contact messages: up to 12 months after our last reply.",
-                "Course registrations: up to 12 months after the course ends.",
+                "Learner accounts and course progress: until you ask us to delete your account.",
                 "Membership applications: for as long as you are a member. If an application is not accepted, or you withdraw it, we delete it, with any photo and CV, within 6 months.",
                 "Server logs: for the short period our hosting provider keeps them."
               ]
@@ -4501,11 +4667,12 @@
               ]
             },
             {
-              "h": "Inscription à un cours (apprentissage en ligne)"
+              "h": "Compte d’apprenant ou d’apprenante (apprentissage en ligne)"
             },
             {
               "list": [
-                "Votre nom, votre adresse e-mail et votre pays, ainsi que le cours auquel vous vous inscrivez."
+                "Votre nom, votre adresse e-mail, votre pays et un mot de passe (conservé uniquement sous forme d’empreinte sécurisée, illisible par quiconque).",
+                "Les cours que vous rejoignez et les leçons que vous marquez comme terminées."
               ]
             },
             {
@@ -4524,7 +4691,7 @@
               "list": [
                 "Newsletter : pour vous envoyer nos actualités sur les programmes et événements, à votre demande.",
                 "Formulaire de contact : pour répondre à votre message.",
-                "Inscription à un cours : pour vous contacter au sujet du cours et de votre participation.",
+                "Compte d’apprenant ou d’apprenante : pour vous donner accès aux cours que vous rejoignez, conserver votre progression et vous contacter au sujet du cours.",
                 "Demande d’adhésion : pour examiner votre candidature, vous contacter à ce sujet et, si vous nous rejoignez, vous relier au réseau. Vous donnez votre consentement en cochant la case avant l’envoi."
               ]
             },
@@ -4577,7 +4744,7 @@
               "list": [
                 "Newsletter : jusqu’à votre désinscription.",
                 "Messages de contact : jusqu’à 12 mois après notre dernière réponse.",
-                "Inscriptions aux cours : jusqu’à 12 mois après la fin du cours.",
+                "Comptes d’apprentissage et progression : jusqu’à ce que vous nous demandiez de supprimer votre compte.",
                 "Demandes d’adhésion : tant que vous êtes membre. Si une candidature n’est pas retenue, ou si vous la retirez, nous la supprimons, photo et CV compris, sous 6 mois.",
                 "Journaux serveur : pendant la courte durée fixée par notre hébergeur."
               ]
@@ -4706,11 +4873,12 @@
               ]
             },
             {
-              "h": "التسجيل في دورة (التعلم الإلكتروني)"
+              "h": "حساب المتعلّم (التعلم الإلكتروني)"
             },
             {
               "list": [
-                "اسمك وبريدك الإلكتروني ودولتك، والدورة التي تسجّل/ين فيها."
+                "اسمك وبريدك الإلكتروني ودولتك، وكلمة مرور (تُحفظ فقط بصيغة مشفّرة لا يمكن لأحد قراءتها).",
+                "الدورات التي تنضم/ين إليها والدروس التي تحدّد/ين أنها اكتملت."
               ]
             },
             {
@@ -4729,7 +4897,7 @@
               "list": [
                 "النشرة البريدية: لنرسل إليك أخبار برامجنا وفعالياتنا، بناءً على طلبك.",
                 "نموذج التواصل: للرد على رسالتك.",
-                "التسجيل في دورة: للتواصل معك بشأن الدورة ومشاركتك فيها.",
+                "حساب المتعلّم: لإتاحة الدورات التي تنضم/ين إليها، وحفظ تقدّمك، والتواصل معك بشأن الدورة.",
                 "طلب الانضمام: لمراجعة طلبك والتواصل معك بشأنه، وإذا انضممت، لربطك بالشبكة. وتعطي موافقتك عندما تضع علامة في المربع قبل الإرسال."
               ]
             },
@@ -4782,7 +4950,7 @@
               "list": [
                 "النشرة البريدية: حتى تلغي اشتراكك.",
                 "رسائل التواصل: حتى ١٢ شهرًا بعد آخر رد منا.",
-                "التسجيل في الدورات: حتى ١٢ شهرًا بعد انتهاء الدورة.",
+                "حسابات المتعلّمين والتقدّم في الدورات: حتى تطلب/ين منا حذف حسابك.",
                 "طلبات الانضمام: طوال مدة عضويتك. وإذا لم يُقبل الطلب أو سحبته، نحذفه هو والصورة والسيرة الذاتية خلال ٦ أشهر.",
                 "سجلات الخادم: للمدة القصيرة التي تحددها جهة الاستضافة."
               ]

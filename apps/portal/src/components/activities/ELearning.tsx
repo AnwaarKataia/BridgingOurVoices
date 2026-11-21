@@ -10,11 +10,14 @@ export async function ELearning({ e, locale }: { e: ActivitiesContent["elearning
   const courses = await getCourses();
   const nf = new Intl.NumberFormat(locale === "ar" ? "ar-EG" : locale);
 
-  if (!courses.length) return <ComingSoon title={e.soonTitle} body={e.soonBody} cta={e.soonCta} href={`/${locale}/activities/news`} />;
+  if (!courses.length) return <ComingSoon title={e.soonTitle} body={e.soonBody} cta={e.soonCta} href={`/${locale}#latest-news`} />;
 
   return (
     <section className="bg-sand">
-      <div className="container-site py-12 md:py-20">
+      <div className="container-site flex flex-col gap-6 py-12 md:py-20">
+        <Link href={`/${locale}/learn`} className="self-end text-sm font-semibold text-blue underline underline-offset-4 hover:text-navy">
+          {e.learn.myLink}
+        </Link>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((c) => (
             <li key={c.slug}>

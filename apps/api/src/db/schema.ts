@@ -242,14 +242,17 @@ export const courseRegistrations = pgTable(
   {
     id: uuid("id").primaryKey().defaultRandom(),
     courseId: uuid("course_id").notNull().references(() => courses.id, { onDelete: "cascade" }),
+    /** The learner account that joined (phase 2, 2026-11-21); null for registrations made before accounts. */
+    learnerId: uuid("learner_id").references(() => learners.id, { onDelete: "cascade" }),
     name: text("name").notNull(),
     email: text("email").notNull(),
     country: text("country").notNull(),
     locale: text("locale").notNull().default("en"),
+    /** new / accepted = can study the course; rejected = access removed by the team. */
     status: text("status", { enum: ["new", "accepted", "rejected"] }).notNull().default("new"),
     createdAt: createdAt(),
   },
-  (t) => [index("course_registrations_course_idx").on(t.courseId)],
+  (t) => [index("course_registrations_course_idx").on(t.courseId), index("course_registrations_learner_idx").on(t.learnerId)],
 );
 
 /**
@@ -308,4 +311,42 @@ export const eventRegistrations = pgTable(
     createdAt: createdAt(),
   },
   (t) => [index("event_registrations_event_idx").on(t.eventId)],
+);
+
+/**
+ * E-learning phase 2 (owner, 2026-11-21): learner accounts on the public site, separate from dashboard users.
+ * A learner joins a course (a course_registrations row), studies its lessons and marks them as done.
+ */
+export const learners = pgTable("learners", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  email: text("email").notNull().unique(),
+  name: text("name").notNull(),
+  country: text("country").notNull(),
+  locale: text("locale").notNull().default("en"),
+  passwordHash: text("password_hash").notNull(),
+  lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
+  createdAt: createdAt(),
+});
+
+/** Learner sessions (cookie bov_learner on the portal). Only the SHA-256 of the token is stored. */
+export const learnerSessions = pgTable(
+  "learner_sessions",
+  {
+    id: text("id").primaryKey(),
+    learnerId: uuid("learner_id").notNull().references(() => learners.id, { onDelete: "cascade" }),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("learner_sessions_learner_idx").on(t.learnerId)],
+);
+
+/** "Mark as done" on a lesson. */
+export const lessonProgress = pgTable(
+  "lesson_progress",
+  {
+    learnerId: uuid("learner_id").notNull().references(() => learners.id, { onDelete: "cascade" }),
+    lessonId: uuid("lesson_id").notNull().references(() => courseLessons.id, { onDelete: "cascade" }),
+    completedAt: timestamp("completed_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.learnerId, t.lessonId] })],
 );

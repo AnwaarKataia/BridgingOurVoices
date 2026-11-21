@@ -19,8 +19,11 @@ export type ActivitiesContent = {
     modulesLabel: string;
     modules: { num: string; text: string }[];
     extra: string;
-    /** Link to the news about this programme. */
+    /** Link to the news about this programme (further down the same page). */
     newsLink: string;
+    /** Sessions held so far in the online programme (owner, 2026-11-21). */
+    sessionsLabel: string;
+    sessions: { date: string; title: string; by: string }[];
   };
   flagship: {
     eyebrow: string;
@@ -39,6 +42,10 @@ export type ActivitiesContent = {
     eyebrow: string;
     title: string;
     lead: string;
+    /** Seminars already held (news items whose page is Seminars), shown even while the section is "coming soon". */
+    heldTitle: string;
+    heldLead: string;
+    moreSoon: string;
     items: { image: string; meta: string; title: string; body: string; cta: string }[];
   };
   conferences: {
@@ -97,6 +104,55 @@ export type ActivitiesContent = {
     contentTitle: string;
     unit: string;
     lessonTypes: { video: string; file: string; text: string; link: string };
+    /** Learner accounts, joining a course and the lesson player (phase 2, 2026-11-21). */
+    learn: {
+      signupTitle: string;
+      signupLead: string;
+      loginTitle: string;
+      loginLead: string;
+      name: string;
+      email: string;
+      country: string;
+      countryPlaceholder: string;
+      password: string;
+      passwordHint: string;
+      submitSignup: string;
+      submitLogin: string;
+      sending: string;
+      haveAccount: string;
+      noAccount: string;
+      errors: { exists: string; invalid: string; weak: string; tooMany: string; generic: string };
+      myTitle: string;
+      myLead: string;
+      myEmpty: string;
+      browse: string;
+      start: string;
+      continue: string;
+      progress: string;
+      signOut: string;
+      myLink: string;
+      join: string;
+      joining: string;
+      joinLead: string;
+      joinSignup: string;
+      joinLogin: string;
+      joined: string;
+      goToCourse: string;
+      removed: string;
+      lessonOf: string;
+      markDone: string;
+      done: string;
+      undo: string;
+      prev: string;
+      next: string;
+      openFile: string;
+      openLink: string;
+      contents: string;
+      allDone: string;
+      certificateSoon: string;
+      noVideo: string;
+      noContent: string;
+    };
     register: {
       title: string;
       lead: string;
@@ -111,7 +167,11 @@ export type ActivitiesContent = {
       error: string;
     };
   };
-  /** News from our activities (owner, 2026-11-21): taken from the Bridging Our Voices Facebook page posts. Newest first. */
+  /**
+   * News from our activities, taken from the Bridging Our Voices Facebook page posts. Newest first.
+   * Owner, 2026-11-21: no separate News tab. Each item lives on the page it belongs to (`href`) and the
+   * home page shows a short version with "Read more" leading there.
+   */
   news: {
     index: string;
     eyebrow: string;
@@ -124,7 +184,7 @@ export type ActivitiesContent = {
       date: string;
       place: string;
       title: string;
-      /** Anchor on the News page (#id), used by the home page and the ticker. */
+      /** Anchor of the item on its page (#id). */
       id: string;
       paragraphs: string[];
       points: string[];
@@ -134,8 +194,8 @@ export type ActivitiesContent = {
       images: string[];
       imageAlt: string;
       link: string;
-      /** Optional link to a page of this site (path without language) and its label. */
-      more: { label: string; href: string };
+      /** The page the item belongs to (path without language), e.g. /activities/training. */
+      href: string;
     }[];
   };
 };
@@ -176,6 +236,14 @@ const en: ActivitiesContent = {
     ],
     extra: "Live interactive sessions with international experts and specialists",
     newsLink: "The programme has started: read the news →",
+    sessionsLabel: "Sessions held",
+    sessions: [
+      {
+        date: "19 November 2026",
+        title: "Opening lecture: How is religious and cultural conflict managed on social media?",
+        by: "Dr Mohamed El-Wardany, Al-Azhar University",
+      },
+    ],
   },
   flagship: {
     eyebrow: "Flagship programme · Interfaith dialogue",
@@ -201,6 +269,9 @@ const en: ActivitiesContent = {
     index: "02",
     eyebrow: "Seminars",
     title: "Open seminars and webinars",
+    heldTitle: "Seminars held",
+    heldLead: "Online seminars from our programme.",
+    moreSoon: "More seminars are coming soon.",
     lead: "Short, open sessions with practitioners and scholars, online and in person, in Arabic and English.",
     items: [
       { image: "", meta: "Webinar series · Online", title: "Women, faith and the making of peace", body: "A four-part series on women’s roles in interreligious peace work.", cta: "Register →" },
@@ -285,6 +356,60 @@ const en: ActivitiesContent = {
       "text": "Text",
       "link": "Live session / link"
     },
+    "learn": {
+      "signupTitle": "Create your learner account",
+      "signupLead": "A free account lets you join our online courses, follow your progress and come back where you left off.",
+      "loginTitle": "Sign in",
+      "loginLead": "Sign in to continue your courses.",
+      "name": "Full name",
+      "email": "Email",
+      "country": "Country",
+      "countryPlaceholder": "Select…",
+      "password": "Password",
+      "passwordHint": "At least 12 characters, with letters, numbers and a symbol (such as ! @ # $).",
+      "submitSignup": "Create account",
+      "submitLogin": "Sign in",
+      "sending": "Please wait…",
+      "haveAccount": "Already have an account? Sign in",
+      "noAccount": "New here? Create a free account",
+      "errors": {
+        "exists": "An account with this email already exists. Please sign in.",
+        "invalid": "Wrong email or password.",
+        "weak": "The password must be at least 12 characters, with letters, numbers and a symbol.",
+        "tooMany": "Too many attempts. Please try again in a few minutes.",
+        "generic": "Something went wrong. Please try again."
+      },
+      "myTitle": "My learning",
+      "myLead": "The courses you have joined and your progress.",
+      "myEmpty": "You haven’t joined a course yet.",
+      "browse": "Browse the courses",
+      "start": "Start the course",
+      "continue": "Continue",
+      "progress": "{done} of {total} lessons done",
+      "signOut": "Sign out",
+      "myLink": "My learning / Sign in",
+      "join": "Join this course",
+      "joining": "Joining…",
+      "joinLead": "Joining is free. Create an account (or sign in) to join the course and follow your progress.",
+      "joinSignup": "Create an account",
+      "joinLogin": "Sign in",
+      "joined": "You have joined this course.",
+      "goToCourse": "Go to the course",
+      "removed": "Your access to this course has been removed. Please contact us.",
+      "lessonOf": "Lesson {n} of {total}",
+      "markDone": "Mark as done",
+      "done": "Done",
+      "undo": "Mark as not done",
+      "prev": "Previous lesson",
+      "next": "Next lesson",
+      "openFile": "Open the file (PDF)",
+      "openLink": "Open the link",
+      "contents": "Course content",
+      "allDone": "Well done: you have completed every lesson.",
+      "certificateSoon": "Certificates will be available soon.",
+      "noVideo": "The video will be added soon.",
+      "noContent": "The content of this lesson will be added soon."
+    },
     "register": {
       "title": "Register for this course",
       "lead": "Leave your details and our team will contact you with the next steps.",
@@ -302,8 +427,8 @@ const en: ActivitiesContent = {
   news: {
     "index": "06",
     "eyebrow": "News",
-    "title": "News from our activities",
-    "lead": "What has happened recently at Bridging Our Voices, from workshops in the field to our online training programme.",
+    "title": "Programme news",
+    "lead": "Sessions and workshops of our training programme, online and in the field.",
     "source": "See the post on Facebook",
     "photosLabel": "Photos",
     "items": [
@@ -326,7 +451,7 @@ const en: ActivitiesContent = {
         ],
         "imageAlt": "Opening session of the Bridging Our Voices online training programme",
         "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
-        "more": { "label": "Programme details", "href": "/activities/training#course" }
+        "href": "/activities/seminars"
       },
       {
         "date": "15 November 2026",
@@ -357,7 +482,7 @@ const en: ActivitiesContent = {
         ],
         "imageAlt": "Participants in the Bridging Our Voices training workshop at UNHCR in Alexandria",
         "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
-        "more": { "label": "", "href": "" }
+        "href": "/activities/training"
       }
     ]
   },
@@ -399,6 +524,14 @@ const fr: ActivitiesContent = {
     ],
     extra: "Rencontres interactives en direct avec des experts internationaux",
     newsLink: "Le programme a commencé : lire l’actualité →",
+    sessionsLabel: "Séances tenues",
+    sessions: [
+      {
+        date: "19 novembre 2026",
+        title: "Conférence inaugurale : Comment les conflits religieux et culturels sont-ils gérés sur les réseaux sociaux ?",
+        by: "Dr Mohamed El-Wardany, Université Al-Azhar",
+      },
+    ],
   },
   flagship: {
     eyebrow: "Programme phare · Dialogue interreligieux",
@@ -424,6 +557,9 @@ const fr: ActivitiesContent = {
     index: "02",
     eyebrow: "Séminaires",
     title: "Séminaires et webinaires ouverts",
+    heldTitle: "Séminaires tenus",
+    heldLead: "Les séminaires en ligne de notre programme.",
+    moreSoon: "D’autres séminaires arrivent bientôt.",
     lead: "Des sessions courtes et ouvertes avec praticiens et chercheurs, en ligne et en présentiel, en arabe, anglais et français.",
     items: [
       { image: "", meta: "Cycle de webinaires · En ligne", title: "Femmes, foi et construction de la paix", body: "Un cycle en quatre séances sur le rôle des femmes dans la paix interreligieuse.", cta: "S’inscrire →" },
@@ -508,6 +644,60 @@ const fr: ActivitiesContent = {
       "text": "Texte",
       "link": "Séance en direct / lien"
     },
+    "learn": {
+      "signupTitle": "Créer votre compte d’apprenant ou d’apprenante",
+      "signupLead": "Un compte gratuit vous permet de suivre nos cours en ligne, de voir votre progression et de reprendre là où vous vous êtes arrêté·e.",
+      "loginTitle": "Se connecter",
+      "loginLead": "Connectez-vous pour continuer vos cours.",
+      "name": "Nom complet",
+      "email": "E-mail",
+      "country": "Pays",
+      "countryPlaceholder": "Sélectionner…",
+      "password": "Mot de passe",
+      "passwordHint": "Au moins 12 caractères, avec des lettres, des chiffres et un symbole (comme ! @ # $).",
+      "submitSignup": "Créer le compte",
+      "submitLogin": "Se connecter",
+      "sending": "Veuillez patienter…",
+      "haveAccount": "Vous avez déjà un compte ? Connectez-vous",
+      "noAccount": "Nouveau ou nouvelle ? Créez un compte gratuit",
+      "errors": {
+        "exists": "Un compte existe déjà avec cet e-mail. Veuillez vous connecter.",
+        "invalid": "E-mail ou mot de passe incorrect.",
+        "weak": "Le mot de passe doit contenir au moins 12 caractères, avec des lettres, des chiffres et un symbole.",
+        "tooMany": "Trop de tentatives. Réessayez dans quelques minutes.",
+        "generic": "Une erreur s’est produite. Veuillez réessayer."
+      },
+      "myTitle": "Mon apprentissage",
+      "myLead": "Les cours que vous suivez et votre progression.",
+      "myEmpty": "Vous ne suivez encore aucun cours.",
+      "browse": "Voir les cours",
+      "start": "Commencer le cours",
+      "continue": "Continuer",
+      "progress": "Leçons terminées : {done} sur {total}",
+      "signOut": "Se déconnecter",
+      "myLink": "Mon apprentissage / Connexion",
+      "join": "Rejoindre ce cours",
+      "joining": "Inscription…",
+      "joinLead": "L’inscription est gratuite. Créez un compte (ou connectez-vous) pour rejoindre le cours et suivre votre progression.",
+      "joinSignup": "Créer un compte",
+      "joinLogin": "Se connecter",
+      "joined": "Vous suivez ce cours.",
+      "goToCourse": "Accéder au cours",
+      "removed": "Votre accès à ce cours a été retiré. Veuillez nous contacter.",
+      "lessonOf": "Leçon {n} sur {total}",
+      "markDone": "Marquer comme terminée",
+      "done": "Terminée",
+      "undo": "Marquer comme non terminée",
+      "prev": "Leçon précédente",
+      "next": "Leçon suivante",
+      "openFile": "Ouvrir le fichier (PDF)",
+      "openLink": "Ouvrir le lien",
+      "contents": "Contenu du cours",
+      "allDone": "Bravo : vous avez terminé toutes les leçons.",
+      "certificateSoon": "Les certificats seront bientôt disponibles.",
+      "noVideo": "La vidéo sera ajoutée bientôt.",
+      "noContent": "Le contenu de cette leçon sera ajouté bientôt."
+    },
     "register": {
       "title": "S’inscrire à ce cours",
       "lead": "Laissez vos coordonnées : notre équipe vous contactera pour la suite.",
@@ -525,8 +715,8 @@ const fr: ActivitiesContent = {
   news: {
     "index": "06",
     "eyebrow": "Actualités",
-    "title": "Actualités de nos activités",
-    "lead": "Ce qui s’est passé récemment à Bridging Our Voices, des ateliers sur le terrain à notre programme de formation en ligne.",
+    "title": "Actualités du programme",
+    "lead": "Séances et ateliers de notre programme de formation, en ligne et sur le terrain.",
     "source": "Voir la publication sur Facebook",
     "photosLabel": "Photos",
     "items": [
@@ -549,7 +739,7 @@ const fr: ActivitiesContent = {
         ],
         "imageAlt": "Séance d’ouverture du programme de formation en ligne de Bridging Our Voices",
         "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
-        "more": { "label": "Détails du programme", "href": "/activities/training#course" }
+        "href": "/activities/seminars"
       },
       {
         "date": "15 novembre 2026",
@@ -580,7 +770,7 @@ const fr: ActivitiesContent = {
         ],
         "imageAlt": "Participants et participantes de l’atelier de Bridging Our Voices au HCR à Alexandrie",
         "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
-        "more": { "label": "", "href": "" }
+        "href": "/activities/training"
       }
     ]
   },
@@ -622,6 +812,14 @@ const ar: ActivitiesContent = {
     ],
     extra: "لقاءات تفاعلية مباشرة مع خبراء ومتخصصين دوليين",
     newsLink: "انطلق البرنامج: اقرأ/ي الخبر ←",
+    sessionsLabel: "الجلسات المنعقدة",
+    sessions: [
+      {
+        date: "١٩ نوفمبر ٢٠٢٦",
+        title: "المحاضرة الافتتاحية: كيف يُدار الصراع الديني والثقافي على وسائل التواصل الاجتماعي؟",
+        by: "د. محمد الورداني، جامعة الأزهر",
+      },
+    ],
   },
   flagship: {
     eyebrow: "البرنامج الرئيسي · الحوار بين الأديان",
@@ -647,6 +845,9 @@ const ar: ActivitiesContent = {
     index: "02",
     eyebrow: "ندوات",
     title: "ندوات مفتوحة وندوات أونلاين",
+    heldTitle: "ندوات انعقدت",
+    heldLead: "الندوات الإلكترونية لبرنامجنا.",
+    moreSoon: "المزيد من الندوات قريبًا.",
     lead: "جلسات قصيرة ومفتوحة مع ممارسين وباحثين، أونلاين وحضوريًا، بالعربية والإنجليزية.",
     items: [
       { image: "", meta: "سلسلة ندوات · أونلاين", title: "المرأة والإيمان وصناعة السلام", body: "سلسلة من أربع حلقات عن دور المرأة في العمل السلمي بين الأديان.", cta: "سجّل/ي ←" },
@@ -731,6 +932,60 @@ const ar: ActivitiesContent = {
       "text": "نص",
       "link": "جلسة مباشرة / رابط"
     },
+    "learn": {
+      "signupTitle": "أنشئ/ي حساب المتعلّم",
+      "signupLead": "الحساب مجاني، ويتيح لك الانضمام إلى دوراتنا الإلكترونية ومتابعة تقدّمك والعودة من حيث توقفت.",
+      "loginTitle": "تسجيل الدخول",
+      "loginLead": "سجّل/ي الدخول لمتابعة دوراتك.",
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "country": "الدولة",
+      "countryPlaceholder": "اختر/ي…",
+      "password": "كلمة المرور",
+      "passwordHint": "١٢ حرفًا على الأقل، وتحتوي على حروف وأرقام ورمز (مثل ! @ # $).",
+      "submitSignup": "إنشاء الحساب",
+      "submitLogin": "دخول",
+      "sending": "يرجى الانتظار…",
+      "haveAccount": "لديك حساب؟ سجّل/ي الدخول",
+      "noAccount": "جديد/ة هنا؟ أنشئ/ي حسابًا مجانيًا",
+      "errors": {
+        "exists": "يوجد حساب بهذا البريد الإلكتروني. يرجى تسجيل الدخول.",
+        "invalid": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+        "weak": "يجب أن تكون كلمة المرور ١٢ حرفًا على الأقل، وتحتوي على حروف وأرقام ورمز.",
+        "tooMany": "محاولات كثيرة. يرجى المحاولة بعد بضع دقائق.",
+        "generic": "حدث خطأ. يرجى المحاولة مرة أخرى."
+      },
+      "myTitle": "دوراتي",
+      "myLead": "الدورات التي انضممت إليها وتقدّمك فيها.",
+      "myEmpty": "لم تنضم/ي إلى أي دورة بعد.",
+      "browse": "تصفّح/ي الدورات",
+      "start": "ابدأ/ي الدورة",
+      "continue": "متابعة",
+      "progress": "الدروس المكتملة: {done} من {total}",
+      "signOut": "تسجيل الخروج",
+      "myLink": "دوراتي / تسجيل الدخول",
+      "join": "انضم/ي إلى الدورة",
+      "joining": "جارٍ الانضمام…",
+      "joinLead": "الانضمام مجاني. أنشئ/ي حسابًا (أو سجّل/ي الدخول) للانضمام إلى الدورة ومتابعة تقدّمك.",
+      "joinSignup": "إنشاء حساب",
+      "joinLogin": "تسجيل الدخول",
+      "joined": "أنت منضم/ة إلى هذه الدورة.",
+      "goToCourse": "الذهاب إلى الدورة",
+      "removed": "أُلغي وصولك إلى هذه الدورة. يرجى التواصل معنا.",
+      "lessonOf": "الدرس {n} من {total}",
+      "markDone": "تم الدرس",
+      "done": "مكتمل",
+      "undo": "إلغاء الإكمال",
+      "prev": "الدرس السابق",
+      "next": "الدرس التالي",
+      "openFile": "فتح الملف (PDF)",
+      "openLink": "فتح الرابط",
+      "contents": "محتوى الدورة",
+      "allDone": "رائع: اكتملت كل الدروس.",
+      "certificateSoon": "الشهادات ستتوفر قريبًا.",
+      "noVideo": "سيُضاف الفيديو قريبًا.",
+      "noContent": "سيُضاف محتوى هذا الدرس قريبًا."
+    },
     "register": {
       "title": "التسجيل في الدورة",
       "lead": "اترك/ي بياناتك وسيتواصل معك فريقنا بالخطوات التالية.",
@@ -748,8 +1003,8 @@ const ar: ActivitiesContent = {
   news: {
     "index": "06",
     "eyebrow": "الأخبار",
-    "title": "أخبار أنشطتنا",
-    "lead": "آخر ما جرى في «أصواتنا جسور»، من الورش الميدانية إلى برنامجنا التدريبي الإلكتروني.",
+    "title": "أخبار البرنامج",
+    "lead": "جلسات وورش برنامجنا التدريبي، عبر الإنترنت وفي الميدان.",
     "source": "شاهد/ي المنشور على فيسبوك",
     "photosLabel": "الصور",
     "items": [
@@ -772,7 +1027,7 @@ const ar: ActivitiesContent = {
         ],
         "imageAlt": "الجلسة الافتتاحية للبرنامج التدريبي الإلكتروني لمبادرة «أصواتنا جسور»",
         "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl",
-        "more": { "label": "تفاصيل البرنامج", "href": "/activities/training#course" }
+        "href": "/activities/seminars"
       },
       {
         "date": "١٥ نوفمبر ٢٠٢٦",
@@ -803,7 +1058,7 @@ const ar: ActivitiesContent = {
         ],
         "imageAlt": "المشاركون والمشاركات في ورشة «أصواتنا جسور» بمقر المفوضية في الإسكندرية",
         "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l",
-        "more": { "label": "", "href": "" }
+        "href": "/activities/training"
       }
     ]
   },

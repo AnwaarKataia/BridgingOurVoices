@@ -34,7 +34,17 @@ export type Course = {
   flyer: string;
   modules: Unit[];
 };
-export type Registration = { id: string; name: string; email: string; country: string; locale: string; status: "new" | "accepted" | "rejected"; createdAt: string };
+export type Registration = {
+  id: string;
+  name: string;
+  email: string;
+  country: string;
+  locale: string;
+  status: "new" | "accepted" | "rejected";
+  createdAt: string;
+  /** Learner account progress (phase 2); null for registrations made before accounts. */
+  progress: { done: number; total: number } | null;
+};
 
 const LOCS: Loc[] = ["ar", "en", "fr"];
 const input =
@@ -530,6 +540,7 @@ function Registrations({ items, lang, t, error }: { items: Registration[]; lang:
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const fmt = new Intl.DateTimeFormat(lang === "ar" ? "ar-EG" : "en-GB", { day: "numeric", month: "short", year: "numeric" });
   const countries = new Intl.DisplayNames([lang], { type: "region" });
+  const nf = new Intl.NumberFormat(lang === "ar" ? "ar-EG" : "en-GB");
   if (!items.length) return <p className="rounded-bov border border-line bg-white p-5 text-ink-soft">{t.regEmpty}</p>;
 
   async function setStatus(id: string, status: Registration["status"]) {
@@ -547,8 +558,20 @@ function Registrations({ items, lang, t, error }: { items: Registration[]; lang:
               <span className="truncate font-semibold text-ink">{r.name}</span>
               <a href={`mailto:${r.email}`} dir="ltr" className="truncate text-sm text-blue hover:text-navy">{r.email}</a>
             </span>
-            <span className="text-sm text-ink-soft">
-              {countries.of(r.country) ?? r.country} · {fmt.format(new Date(r.createdAt))}
+            <span className="flex flex-col gap-1 text-sm text-ink-soft">
+              <span>
+                {countries.of(r.country) ?? r.country} · {fmt.format(new Date(r.createdAt))}
+              </span>
+              {r.progress ? (
+                <span className="flex items-center gap-2">
+                  <span className="h-1.5 w-20 overflow-hidden rounded-full bg-sand" aria-hidden>
+                    <span className="block h-full bg-gold" style={{ width: `${r.progress.total ? Math.round((r.progress.done / r.progress.total) * 100) : 0}%` }} />
+                  </span>
+                  {t.regProgress.replace("{done}", nf.format(r.progress.done)).replace("{total}", nf.format(r.progress.total))}
+                </span>
+              ) : (
+                <span className="text-xs">{t.regNoAccount}</span>
+              )}
             </span>
             <span>
               <label htmlFor={`rs-${r.id}`} className="sr-only">{t.regCols.status}</label>
@@ -561,6 +584,7 @@ function Registrations({ items, lang, t, error }: { items: Registration[]; lang:
           </li>
         ))}
       </ul>
+      <p className="m-0 text-xs text-ink-soft">{t.regHint}</p>
       <Status msg={msg} />
     </div>
   );

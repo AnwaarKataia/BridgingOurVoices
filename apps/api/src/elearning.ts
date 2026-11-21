@@ -4,6 +4,7 @@ import { db, schema } from "./db/client.js";
 import { requireUser } from "./auth/session.js";
 import { isPreviewRequest, revalidatePortal } from "./revalidate.js";
 import type { I18n } from "./db/schema.js";
+import { progressOf } from "./learn.js";
 
 /**
  * E-learning (owner, 2026-11-21): courses and webinars with units and lessons, built in the dashboard.
@@ -382,11 +383,14 @@ export async function elearningRoutes(app: FastifyInstance) {
   /* Registrations */
   app.get<{ Params: { id: string } }>("/admin/courses/:id/registrations", { preHandler: requireUser }, async (req, reply) => {
     if (!ID.test(req.params.id)) return reply.code(404).send({ ok: false });
-    const items = await db
+    const rows = await db
       .select()
       .from(schema.courseRegistrations)
       .where(eq(schema.courseRegistrations.courseId, req.params.id))
       .orderBy(desc(schema.courseRegistrations.createdAt));
+    // Participants with an account: lessons done out of the course's lessons (phase 2)
+    const items = [];
+    for (const r of rows) items.push({ ...r, progress: r.learnerId ? await progressOf(r.learnerId, r.courseId) : null });
     return { ok: true, items };
   });
 
