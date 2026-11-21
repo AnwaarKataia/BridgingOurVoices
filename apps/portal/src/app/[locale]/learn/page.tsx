@@ -70,6 +70,9 @@ export default async function MyLearningPage({ params }: Params) {
             </ul>
           )}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link href={`/${locale}/learn/people/${me.data.learner.id}`} className="text-sm font-semibold text-blue underline underline-offset-4 hover:text-navy">
+              👁 {t.study.viewProfile}
+            </Link>
             <Link href={`/${locale}/learn/profile`} className="text-sm font-semibold text-blue underline underline-offset-4 hover:text-navy">
               {t.study.profileLink}
             </Link>

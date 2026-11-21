@@ -10,12 +10,15 @@ export function RegistrationStatus({
   id,
   type,
   status,
+  learnerId,
   t,
 }: {
   id: string;
   type: "course" | "event";
   status: Status;
-  t: { label: string; status: Record<Status, string>; error: string };
+  /** Course participants with an account: "View page" in the list opens their page. */
+  learnerId?: string | null;
+  t: { label: string; status: Record<Status, string>; error: string; viewPage: string };
 }) {
   const router = useRouter();
   const [error, setError] = useState("");
@@ -38,12 +41,19 @@ export function RegistrationStatus({
       <select
         id={`rs-${id}`}
         value={status}
-        onChange={(e) => change(e.target.value as Status)}
+        onChange={(e) => {
+          if (e.target.value === "view") {
+            if (learnerId) router.push(`/learners/${learnerId}`);
+            return;
+          }
+          change(e.target.value as Status);
+        }}
         className="h-10 rounded-bov border border-line-input bg-white px-3 text-[15px] text-ink focus:border-sky focus:outline-2 focus:outline-sky"
       >
         {(["new", "accepted", "rejected"] as const).map((s) => (
           <option key={s} value={s}>{t.status[s]}</option>
         ))}
+        {learnerId && <option value="view">👁 {t.viewPage}</option>}
       </select>
       <span role="alert" className="text-sm text-danger empty:hidden">{error}</span>
     </span>

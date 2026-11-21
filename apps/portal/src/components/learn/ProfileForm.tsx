@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import type { ActivitiesContent } from "@/content/activities";
 import type { Profile } from "@/lib/learn";
 import { btn } from "../ui";
+import { PhotoField } from "./PhotoField";
 
 const field =
   "w-full rounded-bov border border-line-input bg-white px-3.5 text-[15px] text-ink transition focus:border-sky focus:outline-2 focus:outline-sky";
@@ -40,6 +41,7 @@ export function ProfileForm({ profile, countries, t }: { profile: Profile; count
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-[18px] rounded-bov border border-t-[2.4px] border-line border-t-gold bg-white p-5 sm:p-8">
+      <PhotoField id={profile.id} name={profile.name} hasPhoto={profile.hasPhoto} t={st} />
       <label className={label}>
         {t.name}
         <input name="name" defaultValue={profile.name} required minLength={2} maxLength={120} autoComplete="name" className={`${field} h-12`} />

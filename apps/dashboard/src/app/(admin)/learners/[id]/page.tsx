@@ -18,6 +18,7 @@ type Data = {
     org: string;
     bio: string;
     showProfile: boolean;
+    hasPhoto: boolean;
     createdAt: string;
     lastLoginAt: string | null;
   };
@@ -65,10 +66,20 @@ export default async function LearnerPage({ params }: { params: Promise<{ id: st
       <Link href="/registrations?type=course" className="self-start text-sm font-semibold text-blue hover:text-navy">
         {lang === "ar" ? "→" : "←"} {L.back}
       </Link>
-      <div>
-        <p className="eyebrow mb-2 text-gold-deep">{L.title}</p>
-        <h1 className="font-display text-h2 font-normal" dir="auto">{l.name}</h1>
-        <p className={`mt-1 text-sm font-semibold ${l.showProfile ? "text-blue-deep" : "text-ink-soft"}`}>{l.showProfile ? L.visible : L.hidden}</p>
+      <div className="flex flex-wrap items-center gap-5">
+        <span className="relative flex size-24 flex-none items-center justify-center overflow-hidden rounded-full border-[1.6px] border-gold bg-navy font-display text-2xl text-on-dark">
+          {l.hasPhoto ? (
+            // eslint-disable-next-line @next/next/no-img-element -- private photo through the dashboard's /api proxy
+            <img src={`/api/admin/learners/${l.id}/photo`} alt="" className="absolute inset-0 size-full object-cover" />
+          ) : (
+            l.name.slice(0, 1).toUpperCase()
+          )}
+        </span>
+        <div>
+          <p className="eyebrow mb-2 text-gold-deep">{L.title}</p>
+          <h1 className="font-display text-h2 font-normal" dir="auto">{l.name}</h1>
+          <p className={`mt-1 text-sm font-semibold ${l.showProfile ? "text-blue-deep" : "text-ink-soft"}`}>{l.showProfile ? L.visible : L.hidden}</p>
+        </div>
       </div>
 
       <dl className="m-0 grid gap-px overflow-hidden rounded-bov border border-line bg-line sm:grid-cols-2">

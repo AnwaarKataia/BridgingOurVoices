@@ -1,17 +1,20 @@
 import Link from "next/link";
 import { locales, localeLabels, publishedLocales, type Locale } from "@/i18n/config";
 import type { SiteContent } from "@/content/site";
+import { AccountLink } from "./AccountLink";
 
 type Props = { locale: Locale; path: string; site: SiteContent };
 
 /**
  * Thin bar above the main header (scrolls away; only the main header is sticky).
- * At its end: a language icon and the EN · FR · AR switcher. The project name is not translated, so it is not repeated here.
+ * At its start: the sign-in link (2026-11-21). At its end: a language icon and the EN · FR · AR switcher.
+ * The project name is not translated, so it is not repeated here.
  */
 export function LanguageBar({ locale, path, site }: Props) {
   return (
     <div className="border-b border-navy-line/40 bg-navy-deep">
-      <div className="container-site flex h-10 items-center justify-end">
+      <div className="container-site flex h-10 items-center justify-between gap-3">
+        <AccountLink locale={locale} signIn={site.account.signIn} />
         <div role="group" aria-label={site.a11y.language} className="flex items-center gap-1.5">
           <svg aria-hidden viewBox="0 0 24 24" className="size-4 text-gold" fill="none" stroke="currentColor" strokeWidth="1.6">
             <circle cx="12" cy="12" r="9" />

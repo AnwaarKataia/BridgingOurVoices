@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import type { FastifyInstance } from "fastify";
 import { and, count, eq, isNull } from "drizzle-orm";
 import { db, schema } from "../db/client.js";
@@ -40,6 +41,30 @@ export async function authRoutes(app: FastifyInstance) {
       await startSession(reply, user.id, req.headers["user-agent"]);
       await db.update(schema.users).set({ lastLoginAt: new Date() }).where(eq(schema.users.id, user.id));
       return { ok: true, user: publicUser(user) };
+    },
+  );
+
+  /**
+   * One-time link from the website's sign-in (owner, 2026-11-21): the dashboard posts the token here
+   * (through its own /api address) and gets its session cookie. Valid once, for 60 seconds.
+   */
+  app.post<{ Body: { token: string } }>(
+    "/auth/handoff",
+    {
+      config: { rateLimit: { max: 10, timeWindow: "1 minute" } },
+      schema: {
+        body: { type: "object", required: ["token"], properties: { token: { type: "string", minLength: 20, maxLength: 200 } }, additionalProperties: false },
+      },
+    },
+    async (req, reply) => {
+      const id = createHash("sha256").update(req.body.token).digest("hex");
+      const [row] = await db.delete(schema.loginHandoffs).where(eq(schema.loginHandoffs.id, id)).returning();
+      if (!row || row.expiresAt < new Date()) return reply.code(400).send({ ok: false, error: "expired" });
+      const [user] = await db.select().from(schema.users).where(eq(schema.users.id, row.userId)).limit(1);
+      if (!user || user.disabled) return reply.code(400).send({ ok: false, error: "expired" });
+      await startSession(reply, user.id, req.headers["user-agent"]);
+      await db.update(schema.users).set({ lastLoginAt: new Date() }).where(eq(schema.users.id, user.id));
+      return { ok: true };
     },
   );
 

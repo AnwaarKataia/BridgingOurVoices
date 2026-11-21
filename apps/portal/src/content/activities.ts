@@ -191,6 +191,13 @@ export type ActivitiesContent = {
         save: string;
         saved: string;
         personBack: string;
+        photo: string;
+        photoHint: string;
+        uploadPhoto: string;
+        changePhoto: string;
+        removePhoto: string;
+        photoError: string;
+        viewProfile: string;
       };
       /** Forgot password (owner, 2026-11-21: every account type can recover access). */
       forgot: {
@@ -422,7 +429,7 @@ const en: ActivitiesContent = {
       "signupTitle": "Create your learner account",
       "signupLead": "A free account lets you join our online courses, follow your progress and come back where you left off.",
       "loginTitle": "Sign in",
-      "loginLead": "Sign in to continue your courses.",
+      "loginLead": "One sign-in for everyone: participants go to their courses, and the team goes to the dashboard.",
       "name": "Full name",
       "email": "Email",
       "country": "Country",
@@ -508,7 +515,7 @@ const en: ActivitiesContent = {
         "showProfile": "Show my profile to the other participants of my courses",
         "save": "Save",
         "saved": "Saved.",
-        "personBack": "Back to the participants"
+        "personBack": "Back to the participants", "photo": "Profile photo", "photoHint": "JPG or PNG, up to 3 MB. Shown with your profile.", "uploadPhoto": "Upload a photo", "changePhoto": "Change photo", "removePhoto": "Remove photo", "photoError": "Please choose a JPG or PNG under 3 MB.", "viewProfile": "View my profile page"
       },
       "forgot": {
         "link": "Forgot your password?",
@@ -769,7 +776,7 @@ const fr: ActivitiesContent = {
       "signupTitle": "Créer votre compte d’apprenant ou d’apprenante",
       "signupLead": "Un compte gratuit vous permet de suivre nos cours en ligne, de voir votre progression et de reprendre là où vous vous êtes arrêté·e.",
       "loginTitle": "Se connecter",
-      "loginLead": "Connectez-vous pour continuer vos cours.",
+      "loginLead": "Une seule connexion pour tous : les participants accèdent à leurs cours, et l’équipe au tableau de bord.",
       "name": "Nom complet",
       "email": "E-mail",
       "country": "Pays",
@@ -855,7 +862,7 @@ const fr: ActivitiesContent = {
         "showProfile": "Afficher mon profil aux autres participants de mes cours",
         "save": "Enregistrer",
         "saved": "Enregistré.",
-        "personBack": "Retour aux participants"
+        "personBack": "Retour aux participants", "photo": "Photo de profil", "photoHint": "JPG ou PNG, jusqu’à 3 Mo. Affichée avec votre profil.", "uploadPhoto": "Ajouter une photo", "changePhoto": "Changer la photo", "removePhoto": "Retirer la photo", "photoError": "Veuillez choisir un JPG ou PNG de moins de 3 Mo.", "viewProfile": "Voir ma page de profil"
       },
       "forgot": {
         "link": "Mot de passe oublié ?",
@@ -1116,7 +1123,7 @@ const ar: ActivitiesContent = {
       "signupTitle": "أنشئ/ي حساب المتعلّم",
       "signupLead": "الحساب مجاني، ويتيح لك الانضمام إلى دوراتنا الإلكترونية ومتابعة تقدّمك والعودة من حيث توقفت.",
       "loginTitle": "تسجيل الدخول",
-      "loginLead": "سجّل/ي الدخول لمتابعة دوراتك.",
+      "loginLead": "دخول واحد للجميع: المشاركون يدخلون إلى دوراتهم، وفريق العمل إلى لوحة التحكم.",
       "name": "الاسم الكامل",
       "email": "البريد الإلكتروني",
       "country": "الدولة",
@@ -1202,7 +1209,7 @@ const ar: ActivitiesContent = {
         "showProfile": "اعرض ملفي لباقي المشاركين في دوراتي",
         "save": "حفظ",
         "saved": "تم الحفظ.",
-        "personBack": "العودة إلى المشاركين"
+        "personBack": "العودة إلى المشاركين", "photo": "الصورة الشخصية", "photoHint": "JPG أو PNG، حتى ٣ ميجابايت. تظهر مع ملفك.", "uploadPhoto": "رفع صورة", "changePhoto": "تغيير الصورة", "removePhoto": "إزالة الصورة", "photoError": "يرجى اختيار صورة JPG أو PNG أقل من ٣ ميجابايت.", "viewProfile": "عرض صفحتي الشخصية"
       },
       "forgot": {
         "link": "نسيت كلمة المرور؟",

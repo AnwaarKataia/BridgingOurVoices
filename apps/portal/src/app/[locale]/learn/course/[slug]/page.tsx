@@ -8,6 +8,7 @@ import { learnerGet, type Participant, type PlayerCourse } from "@/lib/learn";
 import { PageShell } from "@/components/PageShell";
 import { LessonGate } from "@/components/learn/LessonGate";
 import { QuizForm } from "@/components/learn/QuizForm";
+import { Avatar } from "@/components/learn/Avatar";
 
 /**
  * The course player (e-learning, 2026-11-21): the learner's name and links to their profile and the
@@ -26,7 +27,7 @@ export default async function CoursePlayerPage({ params, searchParams }: Params)
   if (!isPublishedLocale(rawLocale) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) notFound();
   const locale = rawLocale as Locale;
   const { lesson: lessonId, quiz: quizId, tab } = await searchParams;
-  const res = await learnerGet<{ course: PlayerCourse; learner: { name: string } | null }>(`/courses/${slug}`);
+  const res = await learnerGet<{ course: PlayerCourse; learner: { id: string; name: string } | null }>(`/courses/${slug}`);
   const here = `/${locale}/learn/course/${slug}`;
   if (res.status === 401) redirect(`/${locale}/learn/login?next=${encodeURIComponent(here)}`);
   if (res.status === 403) redirect(`/${locale}/e-learning/${slug}`);
@@ -92,6 +93,7 @@ export default async function CoursePlayerPage({ params, searchParams }: Params)
             {learner && (
               <span className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                 <span className="font-semibold text-on-dark">{st.hello.replace("{name}", learner.name)}</span>
+                <Link href={`/${locale}/learn/people/${learner.id}?from=${slug}`} className="text-on-dark-soft underline underline-offset-4 hover:text-gold">{st.viewProfile}</Link>
                 <Link href={`/${locale}/learn/profile`} className="text-on-dark-soft underline underline-offset-4 hover:text-gold">{st.profileLink}</Link>
                 <Link href={`${here}?tab=people`} className="text-on-dark-soft underline underline-offset-4 hover:text-gold">{st.people}</Link>
               </span>
@@ -156,8 +158,11 @@ export default async function CoursePlayerPage({ params, searchParams }: Params)
                   {people.map((p) => (
                     <li key={p.id}>
                       <Link href={`/${locale}/learn/people/${p.id}?from=${slug}`} className="flex h-full flex-col gap-1 rounded-bov border border-line p-4 hover:border-navy">
-                        <span className="font-semibold text-ink">
-                          {p.name} {p.me && <span className="font-normal text-ink-soft">{st.you}</span>}
+                        <span className="flex items-center gap-3">
+                          <Avatar id={p.id} name={p.name} hasPhoto={p.hasPhoto} size={44} />
+                          <span className="font-semibold text-ink">
+                            {p.name} {p.me && <span className="font-normal text-ink-soft">{st.you}</span>}
+                          </span>
                         </span>
                         {(p.job || p.org) && <span className="text-sm text-ink-soft">{[p.job, p.org].filter(Boolean).join(" · ")}</span>}
                         <span className="text-sm text-ink-soft">{countries.of(p.country) ?? p.country}</span>

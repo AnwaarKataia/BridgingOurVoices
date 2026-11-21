@@ -331,6 +331,8 @@ export const learners = pgTable("learners", {
   org: text("org").notNull().default(""),
   bio: text("bio").notNull().default(""),
   showProfile: boolean("show_profile").notNull().default(true),
+  /** Profile photo (private file in apps/api/data/uploads/learners; shown like the profile). */
+  photo: text("photo"),
   lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
   createdAt: createdAt(),
 });
@@ -428,3 +430,15 @@ export const quizAttempts = pgTable(
   },
   (t) => [index("quiz_attempts_learner_idx").on(t.learnerId, t.moduleId)],
 );
+
+/**
+ * One sign-in for the whole site (owner, 2026-11-21): when a team member signs in on the website, the API
+ * gives a one-time link (60 seconds) that opens a dashboard session on the dashboard's own address.
+ * Only the SHA-256 of the token is stored.
+ */
+export const loginHandoffs = pgTable("login_handoffs", {
+  id: text("id").primaryKey(),
+  userId: uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  createdAt: createdAt(),
+});

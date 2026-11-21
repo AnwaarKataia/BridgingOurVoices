@@ -705,7 +705,7 @@ function Registrations({ items, lang, t, error }: { items: Registration[]; lang:
     <div className="flex flex-col gap-2">
       <ul className="flex flex-col divide-y divide-line overflow-hidden rounded-bov border border-line bg-white">
         {items.map((r) => (
-          <li key={r.id} className="grid gap-x-4 gap-y-1 p-4 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_auto] sm:items-center">
+          <li key={r.id} className="grid gap-x-4 gap-y-1 p-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_auto] md:items-center">
             <span className="flex min-w-0 flex-col">
               {r.learnerId ? (
                 <a href={`/learners/${r.learnerId}`} className="truncate font-semibold text-ink underline-offset-4 hover:text-blue hover:underline">{r.name}</a>
@@ -731,10 +731,23 @@ function Registrations({ items, lang, t, error }: { items: Registration[]; lang:
             </span>
             <span>
               <label htmlFor={`rs-${r.id}`} className="sr-only">{t.regCols.status}</label>
-              <select id={`rs-${r.id}`} value={r.status} onChange={(e) => setStatus(r.id, e.target.value as Registration["status"])} className={`${input} h-10 w-auto py-0`}>
+              {/* Status, plus "View page" (owner, 2026-11-21): opens the participant's page (photo, details, progress, quizzes) */}
+              <select
+                id={`rs-${r.id}`}
+                value={r.status}
+                onChange={(e) => {
+                  if (e.target.value === "view") {
+                    if (r.learnerId) router.push(`/learners/${r.learnerId}`);
+                    return;
+                  }
+                  setStatus(r.id, e.target.value as Registration["status"]);
+                }}
+                className={`${input} h-10 w-auto py-0`}
+              >
                 {(["new", "accepted", "rejected"] as const).map((s) => (
                   <option key={s} value={s}>{t.regStatus[s]}</option>
                 ))}
+                {r.learnerId && <option value="view">👁 {t.viewPage}</option>}
               </select>
             </span>
           </li>

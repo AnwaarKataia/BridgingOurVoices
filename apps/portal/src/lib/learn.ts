@@ -9,7 +9,7 @@ import type { I18n } from "@/lib/courses";
  */
 export const LEARNER_COOKIE = "bov_learner";
 
-export type Learner = { name: string; email: string; country: string };
+export type Learner = { id: string; name: string; email: string; country: string; hasPhoto: boolean };
 export type LessonType = "video" | "file" | "text" | "link";
 export type PlayerLesson = {
   id: string;
@@ -40,8 +40,8 @@ export type PlayerCourse = {
   progress: { done: number; total: number };
   modules: { id: string; title: I18n; summary: I18n; lessons: PlayerLesson[]; quiz: PlayerQuiz | null }[];
 };
-export type Participant = { id: string; name: string; country: string; job: string; org: string; bio: string; me: boolean };
-export type Profile = { id: string; name: string; email: string; country: string; job: string; org: string; bio: string; showProfile: boolean };
+export type Participant = { id: string; name: string; country: string; job: string; org: string; bio: string; me: boolean; hasPhoto: boolean; email?: string };
+export type Profile = { id: string; name: string; email: string; country: string; job: string; org: string; bio: string; showProfile: boolean; hasPhoto: boolean };
 export type MyCourse = { slug: string; kind: "course" | "webinar"; title: I18n; image: string; certificate: boolean; progress: { done: number; total: number } };
 
 export async function learnerGet<T>(path: string): Promise<{ status: number; data: T | null }> {

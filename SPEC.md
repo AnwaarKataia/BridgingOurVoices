@@ -942,6 +942,36 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - learner accounts, lesson pages with the video player, "Mark as done" and progress, participants;
   - certificates last.
 
+### 2026-11-21: «عرض الصفحة» for each participant; participants open their own page
+- **Dashboard (corrected the same day, owner):** «عرض الصفحة» / "View page" is an **item inside the status list**, not a separate button. The list holds «قيد الموافقة» (renamed from «جديد») / «مقبول» / «مرفوض» / «👁 عرض الصفحة», in the course's "Participants" and in "Registrations". Choosing it opens `/learners/[id]` (photo, details, progress, quiz results) without changing the status. The progress line says "Steps completed" because quizzes count as steps.
+- **Top bar after sign-in:** a signed-in participant sees **their photo (or initials) and their email** at the top of every page, opening their own page. Their email also shows on their own page, and only there; others never see it. Checked at 320/375/768/1280 in EN/FR/AR with no overflow.
+- **Website:** a participant can open their own page (as others see it) from «دوراتي» («👁 عرض صفحتي الشخصية»), from the course player header, and from «ملفي الشخصي».
+- **Checked:** the dashboard course page has the button for each participant (3); typecheck and `pnpm build` pass.
+
+### 2026-11-21: One sign-in on the website (team → dashboard, participants → their page) + profile photo
+- **Owner:**
+  - A sign-in link at the top of the website.
+  - One form for everyone: if the email and password belong to the team (dashboard account), they go to the dashboard; a participant goes to their own page and the content kept for signed-in learners.
+  - A participant's profile has a photo and a page they can view.
+- **Top bar:** «تسجيل الدخول» / "Sign in" / « Connexion » sits at the start of the thin language bar, with a person icon. It becomes «دوراتي» / "My learning" once a participant is signed in. This is checked in the browser, so pages stay cached.
+- **One sign-in** (`POST /learn/signin`, behind `/[lang]/learn/login`):
+  - Team accounts are checked first. A team member gets a **one-time link** (SHA-256 stored in `login_handoffs`, valid once for 60 seconds) to `DASHBOARD_URL/handoff`.
+  - There the dashboard exchanges it (`POST /auth/handoff`) for its own session cookie, removes the token from the address bar and opens the overview. An expired or used link offers the normal sign-in.
+  - Participants are signed in on the website and go on (to "My learning" or the page they came from).
+  - Same limits as the other sign-ins (5 per minute per email+IP); a wrong password → one message for both kinds.
+- **Profile photo:**
+  - «ملفي الشخصي» has upload / change / remove (JPG or PNG, up to 3 MB; the real file type is checked). It is stored privately in `apps/api/data/uploads` (`learner-<id>`).
+  - The photo is served only under the profile rule (self, or a shared course and the profile shown), and in the dashboard.
+  - Shown on the participant's page, in the participants list, and on the dashboard participant page; initials when there's no photo.
+  - «👁 عرض صفحتي الشخصية» on the profile page opens the participant's own page as others see it.
+- **Tested** with temporary accounts, deleted afterwards:
+  - team sign-in → link → dashboard session; the same link again → 400; no learner cookie for the team;
+  - learner sign-in → learner cookie; wrong → 401; a learner cookie doesn't open the dashboard;
+  - photo: a non-image → 400; upload and own photo 200 (image/png); no session → 401; a learner without a shared course → 404; the team → 200; remove;
+  - pages and the top bar link;
+  - responsive: home, sign-in and training × 3 languages × 5 widths (no overflow, the link stays on one line);
+  - `pnpm build` passes.
+
 ### 2026-11-21: E-learning: real completion, unit quizzes, learner profiles, participants in the dashboard
 - **Owner:**
   - Show the learner's name, and give each learner a profile page that others can see.

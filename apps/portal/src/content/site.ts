@@ -33,6 +33,8 @@ export type SiteContent = {
     copyright: string;
   };
   comingSoon: string;
+  /** Sign-in link in the top bar (owner, 2026-11-21): one sign-in for participants and the team. */
+  account: { signIn: string; myLearning: string };
   /** Messages shown when a form field is missing or wrong (owner, 2026-11-14). {min} = number of characters. */
   forms: {
     summary: string;
@@ -101,6 +103,7 @@ const en: SiteContent = {
     copyright: "© 2026 Bridging Our Voices",
   },
   comingSoon: "Coming soon",
+  account: { signIn: "Sign in", myLearning: "My learning" },
   forms: {
     summary: "Please check the highlighted fields:",
     required: "This field is required.",
@@ -167,6 +170,7 @@ const fr: SiteContent = {
     copyright: "© 2026 Bridging Our Voices",
   },
   comingSoon: "Bientôt",
+  account: { signIn: "Connexion", myLearning: "Mon apprentissage" },
   forms: {
     summary: "Veuillez vérifier les champs signalés :",
     required: "Ce champ est obligatoire.",
@@ -233,6 +237,7 @@ const ar: SiteContent = {
     copyright: "© ٢٠٢٦ Bridging Our Voices",
   },
   comingSoon: "قريبًا",
+  account: { signIn: "تسجيل الدخول", myLearning: "دوراتي" },
   forms: {
     summary: "يرجى مراجعة الحقول المحددة:",
     required: "هذا الحقل مطلوب.",

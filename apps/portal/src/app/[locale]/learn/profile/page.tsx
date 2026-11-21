@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { isPublishedLocale } from "@/i18n/config";
 import { getActivitiesContent } from "@/content/activities";
@@ -25,7 +26,11 @@ export default async function ProfilePage({ params }: Params) {
       <PageHeader eyebrow={res.data.profile.name} title={t.study.profileTitle} lead={t.study.profileLead} />
       <section className="bg-sand">
         <div className="container-site py-12 md:py-20">
-          <div className="mx-auto max-w-[640px]">
+          <div className="mx-auto flex max-w-[640px] flex-col gap-4">
+            {/* The learner's own page, as other participants see it */}
+            <Link href={`/${locale}/learn/people/${res.data.profile.id}`} className="self-start text-sm font-semibold text-blue underline underline-offset-4 hover:text-navy">
+              👁 {t.study.viewProfile}
+            </Link>
             <ProfileForm profile={res.data.profile} countries={countryOptions(locale)} t={t} />
           </div>
         </div>

@@ -89,7 +89,7 @@ export default async function RegistrationsPage({ searchParams }: { searchParams
                   {countries.of(i.country) ?? i.country} · {fmt.format(new Date(i.createdAt))}
                 </span>
               </span>
-              <RegistrationStatus id={i.id} type={i.type} status={i.status} t={{ label: r.statusLabel, status: r.status, error: t.error }} />
+              <RegistrationStatus id={i.id} type={i.type} status={i.status} learnerId={i.learnerId} t={{ label: r.statusLabel, status: r.status, error: t.error, viewPage: r.viewPage }} />
             </li>
           ))}
         </ul>

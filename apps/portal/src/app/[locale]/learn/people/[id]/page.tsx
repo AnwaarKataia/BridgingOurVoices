@@ -6,6 +6,7 @@ import { getActivitiesContent } from "@/content/activities";
 import { learnerGet, type Participant } from "@/lib/learn";
 import { PageShell } from "@/components/PageShell";
 import { PageHeader } from "@/components/PageHeader";
+import { Avatar } from "@/components/learn/Avatar";
 
 /**
  * A participant's profile (owner, 2026-11-21): visible to learners who share a course with them, and only if
@@ -37,7 +38,18 @@ export default async function PersonPage({ params, searchParams }: Params) {
             {st.personBack}
           </Link>
           <article className="flex max-w-[760px] flex-col gap-4 rounded-bov border border-t-[2.4px] border-line border-t-gold bg-white p-6 md:p-8">
-            <p className="m-0 text-sm text-ink-soft">{countries.of(p.country) ?? p.country}</p>
+            <div className="flex items-center gap-4">
+              <Avatar id={p.id} name={p.name} hasPhoto={p.hasPhoto} size={96} />
+              <div className="flex flex-col gap-1">
+                <p className="m-0 font-display text-xl text-ink">{p.name}</p>
+                {(p.job || p.org) && <p className="m-0 text-sm text-ink-soft">{[p.job, p.org].filter(Boolean).join(" · ")}</p>}
+                <p className="m-0 text-sm text-ink-soft">{countries.of(p.country) ?? p.country}</p>
+                {/* The participant's own email, on their own page only (others never see it) */}
+                {p.me && p.email && (
+                  <p dir="ltr" className="m-0 text-sm text-ink-soft rtl:text-end">{p.email}</p>
+                )}
+              </div>
+            </div>
             {p.bio &&
               p.bio
                 .split(/\n+/)

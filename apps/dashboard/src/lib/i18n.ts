@@ -299,7 +299,8 @@ const ar = {
     noLessons: "لا توجد دروس في هذه الوحدة.",
     missing: "ينقص المحتوى",
     regEmpty: "لا يوجد مشاركون بعد.",
-    regProgress: "الدروس المكتملة: {done} من {total}",
+    regProgress: "الخطوات المكتملة: {done} من {total}",
+    viewPage: "عرض الصفحة",
     regNoAccount: "سجّل قبل تفعيل الحسابات",
     regHint: "«مرفوض» يلغي وصول المشارك/ة إلى دروس الدورة.",
     quiz: {
@@ -316,7 +317,7 @@ const ar = {
       removeConfirm: "سيتم حذف هذا السؤال. متابعة؟",
       noCorrect: "اختر/ي الإجابة الصحيحة.",
     },
-    regStatus: { new: "جديد", accepted: "مقبول", rejected: "مرفوض" },
+    regStatus: { new: "قيد الموافقة", accepted: "مقبول", rejected: "مرفوض" },
     regCols: { name: "الاسم", email: "البريد الإلكتروني", country: "الدولة", date: "التاريخ", status: "الحالة" },
   },
   preview: {
@@ -378,8 +379,9 @@ const ar = {
     empty: "لا توجد تسجيلات بعد.",
     types: { all: "الكل", course: "الدورات", event: "الفعاليات" },
     export: "تنزيل Excel (CSV)",
-    status: { new: "جديد", accepted: "مقبول", rejected: "مرفوض" },
+    status: { new: "قيد الموافقة", accepted: "مقبول", rejected: "مرفوض" },
     statusLabel: "الحالة",
+    viewPage: "عرض الصفحة",
   },
   forgot: {
     link: "نسيت كلمة المرور؟",
@@ -712,7 +714,8 @@ const en: typeof ar = {
     noLessons: "No lessons in this unit.",
     missing: "Content missing",
     regEmpty: "No participants yet.",
-    regProgress: "Lessons done: {done} of {total}",
+    regProgress: "Steps completed: {done} of {total}",
+    viewPage: "View page",
     regNoAccount: "Registered before learner accounts",
     regHint: "“Rejected” removes the participant’s access to the course lessons.",
     quiz: {
@@ -729,7 +732,7 @@ const en: typeof ar = {
       removeConfirm: "This question will be deleted. Continue?",
       noCorrect: "Choose the correct answer.",
     },
-    regStatus: { new: "New", accepted: "Accepted", rejected: "Rejected" },
+    regStatus: { new: "Pending approval", accepted: "Accepted", rejected: "Rejected" },
     regCols: { name: "Name", email: "Email", country: "Country", date: "Date", status: "Status" },
   },
   preview: {
@@ -791,8 +794,9 @@ const en: typeof ar = {
     empty: "No registrations yet.",
     types: { all: "All", course: "Courses", event: "Events" },
     export: "Download Excel (CSV)",
-    status: { new: "New", accepted: "Accepted", rejected: "Rejected" },
+    status: { new: "Pending approval", accepted: "Accepted", rejected: "Rejected" },
     statusLabel: "Status",
+    viewPage: "View page",
   },
   forgot: {
     link: "Forgot your password?",

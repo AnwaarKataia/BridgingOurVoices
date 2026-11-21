@@ -42,13 +42,15 @@ export function LearnerAuthForm({ mode, locale, next, t, countries, privacy, for
     const data = Object.fromEntries(new FormData(el)) as Record<string, string>;
     setBusy(true);
     try {
-      const res = await fetch(`/learn-api/${signup ? "signup" : "login"}`, {
+      // Sign-in checks team accounts too: the team goes on to the dashboard (owner, 2026-11-21)
+      const res = await fetch(`/learn-api/${signup ? "signup" : "signin"}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(signup ? { ...data, locale } : { email: data.email, password: data.password }),
       });
       if (res.ok) {
-        window.location.href = next;
+        const body = (await res.json().catch(() => ({}))) as { kind?: string; redirect?: string };
+        window.location.href = body.kind === "team" && body.redirect ? body.redirect : next;
         return;
       }
       const body = (await res.json().catch(() => ({}))) as { error?: string; errors?: string[] };

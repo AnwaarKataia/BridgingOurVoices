@@ -4,6 +4,12 @@ import { and, asc, count, eq, gt, inArray, lt, ne } from "drizzle-orm";
 import { db, schema } from "./db/client.js";
 import { dummyHash, hashPassword, passwordProblem, verifyPassword } from "./auth/password.js";
 import { isPreviewRequest } from "./revalidate.js";
+import { createReadStream } from "node:fs";
+import { stat, unlink } from "node:fs/promises";
+import { join } from "node:path";
+import { dataDir } from "./db/client.js";
+import { saveUpload } from "./store.js";
+import { imageType } from "./network.js";
 import { requireUser } from "./auth/session.js";
 
 /**
@@ -18,6 +24,24 @@ const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const ID = /^[0-9a-f-]{36}$/;
 const isEmail = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s) && s.length <= 254;
 const hashToken = (token: string) => createHash("sha256").update(token).digest("hex");
+const PHOTO_MAX = 3 * 1024 * 1024;
+const dashboardUrl = (process.env.DASHBOARD_URL ?? "http://localhost:3002").replace(/\/$/, "");
+
+async function sendPhoto(reply: FastifyReply, file: string) {
+  if (!/^learner-[0-9a-f-]{36}\.(jpg|png)$/.test(file)) return reply.code(404).send();
+  const path = join(dataDir, "uploads", file);
+  try {
+    await stat(path);
+  } catch {
+    return reply.code(404).send();
+  }
+  return reply
+    .header("Content-Type", file.endsWith(".png") ? "image/png" : "image/jpeg")
+    .header("Cache-Control", "private, no-store")
+    .header("X-Content-Type-Options", "nosniff")
+    .send(createReadStream(path));
+}
+
 const cookieOptions = () => ({ path: "/", httpOnly: true, sameSite: "lax" as const, secure: process.env.NODE_ENV === "production" });
 
 type Learner = typeof schema.learners.$inferSelect;
@@ -52,7 +76,7 @@ async function requireLearner(req: FastifyRequest, reply: FastifyReply) {
   if (!req.learner) return reply.code(401).send({ ok: false, error: "unauthorized" });
 }
 
-const publicLearner = (l: Learner) => ({ name: l.name, email: l.email, country: l.country, id: l.id });
+const publicLearner = (l: Learner) => ({ name: l.name, email: l.email, country: l.country, id: l.id, hasPhoto: !!l.photo });
 
 /** The learner's registration for a course, if any (rejected = access removed by the team). */
 async function enrolment(learnerId: string, courseId: string) {
@@ -230,7 +254,7 @@ export async function learnRoutes(app: FastifyInstance) {
     const state = await courseState(c.id, learner?.id ?? null);
     return {
       ok: true,
-      learner: learner ? { name: learner.name } : null,
+      learner: learner ? { id: learner.id, name: learner.name } : null,
       course: {
         slug: c.slug,
         kind: c.kind,
@@ -399,6 +423,7 @@ export async function learnRoutes(app: FastifyInstance) {
         org: l.org,
         bio: l.bio,
         showProfile: l.showProfile,
+        hasPhoto: !!l.photo,
         createdAt: l.createdAt,
         lastLoginAt: l.lastLoginAt,
       },
@@ -406,10 +431,105 @@ export async function learnRoutes(app: FastifyInstance) {
     };
   });
 
+  /* ---------------- Profile photo (owner, 2026-11-21) ---------------- */
+
+  /** Upload or replace the learner's photo (JPG or PNG, up to 3 MB; the real type is checked). */
+  app.post("/learn/profile/photo", { preHandler: requireLearner, config: { rateLimit: { max: 20, timeWindow: "10 minutes" } } }, async (req, reply) => {
+    let part;
+    try {
+      part = await req.file({ limits: { fileSize: PHOTO_MAX, files: 1 } });
+    } catch {
+      return reply.code(400).send({ ok: false, error: "no_file" });
+    }
+    if (!part) return reply.code(400).send({ ok: false, error: "no_file" });
+    let buf: Buffer;
+    try {
+      buf = await part.toBuffer();
+    } catch {
+      return reply.code(413).send({ ok: false, error: "too_big" });
+    }
+    const ext = imageType(buf);
+    if (!ext) return reply.code(400).send({ ok: false, error: "not_image" });
+    const l = req.learner!;
+    const file = `learner-${l.id}.${ext}`;
+    if (l.photo && l.photo !== file) await unlink(join(dataDir, "uploads", l.photo)).catch(() => undefined);
+    await saveUpload(file, buf);
+    await db.update(schema.learners).set({ photo: file }).where(eq(schema.learners.id, l.id));
+    return reply.code(201).send({ ok: true });
+  });
+
+  app.delete("/learn/profile/photo", { preHandler: requireLearner }, async (req) => {
+    const l = req.learner!;
+    if (l.photo) await unlink(join(dataDir, "uploads", l.photo)).catch(() => undefined);
+    await db.update(schema.learners).set({ photo: null }).where(eq(schema.learners.id, l.id));
+    return { ok: true };
+  });
+
+  /** A participant's photo, under the same rule as their profile (self, or a shared course and shown). */
+  app.get<{ Params: { id: string } }>("/learn/people/:id/photo", { preHandler: requireLearner }, async (req, reply) => {
+    if (!ID.test(req.params.id)) return reply.code(404).send();
+    const [l] = await db.select().from(schema.learners).where(eq(schema.learners.id, req.params.id)).limit(1);
+    if (!l?.photo || !(await canSeeProfile(req.learner!.id, l))) return reply.code(404).send();
+    return sendPhoto(reply, l.photo);
+  });
+
+  /** Dashboard: a participant's photo. */
+  app.get<{ Params: { id: string } }>("/admin/learners/:id/photo", { preHandler: requireUser }, async (req, reply) => {
+    if (!ID.test(req.params.id)) return reply.code(404).send();
+    const [l] = await db.select({ photo: schema.learners.photo }).from(schema.learners).where(eq(schema.learners.id, req.params.id)).limit(1);
+    if (!l?.photo) return reply.code(404).send();
+    return sendPhoto(reply, l.photo);
+  });
+
+  /* ---------------- One sign-in for the website (owner, 2026-11-21) ---------------- */
+
+  /**
+   * The website's sign-in form: a team account (dashboard user) gets a one-time link to the dashboard;
+   * a learner account is signed in on the website. Team accounts are checked first.
+   */
+  app.post<{ Body: { email: string; password: string } }>(
+    "/learn/signin",
+    {
+      config: {
+        rateLimit: {
+          max: 5,
+          timeWindow: "1 minute",
+          hook: "preHandler",
+          keyGenerator: (req) => `signin|${String((req.body as { email?: string })?.email ?? "").toLowerCase()}|${req.ip}`,
+        },
+      },
+      schema: {
+        body: {
+          type: "object",
+          required: ["email", "password"],
+          properties: { email: { type: "string", maxLength: 254 }, password: { type: "string", minLength: 1, maxLength: 200 } },
+          additionalProperties: false,
+        },
+      },
+    },
+    async (req, reply) => {
+      const email = req.body.email.trim().toLowerCase();
+      const [user] = await db.select().from(schema.users).where(eq(schema.users.email, email)).limit(1);
+      const teamOk = await verifyPassword(req.body.password, user?.passwordHash ?? dummyHash);
+      if (user && teamOk && !user.disabled) {
+        const token = randomBytes(32).toString("base64url");
+        await db.delete(schema.loginHandoffs).where(lt(schema.loginHandoffs.expiresAt, new Date()));
+        await db.insert(schema.loginHandoffs).values({ id: hashToken(token), userId: user.id, expiresAt: new Date(Date.now() + 60 * 1000) });
+        return { ok: true, kind: "team", redirect: `${dashboardUrl}/handoff?token=${token}` };
+      }
+      const [l] = await db.select().from(schema.learners).where(eq(schema.learners.email, email)).limit(1);
+      const learnerOk = await verifyPassword(req.body.password, l?.passwordHash ?? dummyHash);
+      if (!l || !learnerOk) return reply.code(401).send({ ok: false, error: "invalid" });
+      await db.update(schema.learners).set({ lastLoginAt: new Date() }).where(eq(schema.learners.id, l.id));
+      await startLearnerSession(reply, l.id);
+      return { ok: true, kind: "learner" };
+    },
+  );
+
   /* ---------------- Profile and participants (owner, 2026-11-21) ---------------- */
 
-  const profileOf = (l: Learner) => ({ id: l.id, name: l.name, email: l.email, country: l.country, job: l.job, org: l.org, bio: l.bio, showProfile: l.showProfile });
-  const publicProfile = (l: Pick<Learner, "id" | "name" | "country" | "job" | "org" | "bio">) => ({ id: l.id, name: l.name, country: l.country, job: l.job, org: l.org, bio: l.bio });
+  const profileOf = (l: Learner) => ({ id: l.id, name: l.name, email: l.email, country: l.country, job: l.job, org: l.org, bio: l.bio, showProfile: l.showProfile, hasPhoto: !!l.photo });
+  const publicProfile = (l: Pick<Learner, "id" | "name" | "country" | "job" | "org" | "bio" | "photo">) => ({ id: l.id, name: l.name, country: l.country, job: l.job, org: l.org, bio: l.bio, hasPhoto: !!l.photo });
 
   app.get("/learn/profile", { preHandler: requireLearner }, async (req) => ({ ok: true, profile: profileOf(req.learner!) }));
 
@@ -471,19 +591,23 @@ export async function learnRoutes(app: FastifyInstance) {
     return { ok: true, items: items.map((l) => ({ ...publicProfile(l), bio: l.bio.slice(0, 160), me: l.id === req.learner!.id })) };
   });
 
+  /** Self, or (profile shown and) a course in common. */
+  async function canSeeProfile(viewerId: string, l: Learner) {
+    if (l.id === viewerId) return true;
+    if (!l.showProfile) return false;
+    const mine = new Set(await joinedCourses(viewerId));
+    return (await joinedCourses(l.id)).some((id) => mine.has(id));
+  }
+
   /** One participant's profile: for learners who share a course with them (and only if they show it). */
   app.get<{ Params: { id: string } }>("/learn/people/:id", { preHandler: requireLearner }, async (req, reply) => {
     if (!ID.test(req.params.id)) return reply.code(404).send({ ok: false });
     const [l] = await db.select().from(schema.learners).where(eq(schema.learners.id, req.params.id)).limit(1);
     if (!l) return reply.code(404).send({ ok: false });
     const me = req.learner!;
-    if (l.id !== me.id) {
-      if (!l.showProfile) return reply.code(404).send({ ok: false });
-      const mine = new Set(await joinedCourses(me.id));
-      const shared = (await joinedCourses(l.id)).filter((id) => mine.has(id));
-      if (!shared.length) return reply.code(404).send({ ok: false });
-    }
-    return { ok: true, profile: { ...publicProfile(l), me: l.id === me.id } };
+    if (!(await canSeeProfile(me.id, l))) return reply.code(404).send({ ok: false });
+    // The email only on one's own page
+    return { ok: true, profile: { ...publicProfile(l), me: l.id === me.id, ...(l.id === me.id ? { email: l.email } : {}) } };
   });
 }
 
