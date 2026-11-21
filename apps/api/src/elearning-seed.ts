@@ -1,5 +1,8 @@
-import { count } from "drizzle-orm";
-import { db, schema } from "./db/client.js";
+import { randomUUID } from "node:crypto";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { asc, count, eq } from "drizzle-orm";
+import { apiRoot, db, schema } from "./db/client.js";
 import type { I18n } from "./db/schema.js";
 
 /**
@@ -189,5 +192,55 @@ export async function seedCourses(log: (m: string) => void) {
       }
     }
     log(`e-learning: seeded draft "${c.title[0]}"`);
+    await applyCourseContent(course.id, c.slug, log);
   }
+}
+
+/**
+ * Written course content (owner, 2026-11-21), kept with the code in apps/api/seed/courses/<slug>.json so it
+ * survives a fresh database. Applied unit by unit (matched by position): the unit title, summary and pass mark,
+ * each lesson's type, title, text and length, and the unit quiz (its questions are replaced).
+ */
+type ContentFile = {
+  units: {
+    sort: number;
+    title?: I18n;
+    summary?: I18n;
+    passMark?: number;
+    lessons?: { sort: number; type: Lesson["type"]; minutes: number; title: I18n; body: I18n }[];
+    questions?: { text: I18n; options: I18n[]; correct: number }[];
+  }[];
+};
+
+export async function applyCourseContent(courseId: string, slug: string, log: (m: string) => void) {
+  let file: ContentFile;
+  try {
+    file = JSON.parse(await readFile(join(apiRoot, "seed", "courses", `${slug}.json`), "utf8")) as ContentFile;
+  } catch {
+    return;
+  }
+  const modules = await db.select().from(schema.courseModules).where(eq(schema.courseModules.courseId, courseId)).orderBy(asc(schema.courseModules.sort));
+  for (const u of file.units) {
+    const m = modules[u.sort];
+    if (!m) continue;
+    await db
+      .update(schema.courseModules)
+      .set({ ...(u.title ? { title: u.title } : {}), ...(u.summary ? { summary: u.summary } : {}), ...(u.passMark !== undefined ? { passMark: u.passMark } : {}) })
+      .where(eq(schema.courseModules.id, m.id));
+    const lessons = await db.select().from(schema.courseLessons).where(eq(schema.courseLessons.moduleId, m.id)).orderBy(asc(schema.courseLessons.sort));
+    for (const l of u.lessons ?? []) {
+      const existing = lessons[l.sort];
+      const values = { type: l.type, title: l.title, body: l.body, minutes: l.minutes };
+      if (existing) await db.update(schema.courseLessons).set(values).where(eq(schema.courseLessons.id, existing.id));
+      else await db.insert(schema.courseLessons).values({ moduleId: m.id, sort: l.sort, ...values });
+    }
+    if (u.questions) {
+      await db.delete(schema.quizQuestions).where(eq(schema.quizQuestions.moduleId, m.id));
+      for (const [i, q] of u.questions.entries()) {
+        const options = q.options.map((text) => ({ id: randomUUID(), text }));
+        await db.insert(schema.quizQuestions).values({ moduleId: m.id, sort: i, text: q.text, options, correct: options[q.correct].id });
+      }
+    }
+  }
+  log(`e-learning: written content applied to "${slug}" (${file.units.length} unit(s))`);
 }

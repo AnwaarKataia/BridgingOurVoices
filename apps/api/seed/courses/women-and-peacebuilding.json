@@ -1,0 +1,1220 @@
+{
+  "_note": "Course content written for the owner (2026-11-21): five units, 15 lessons, five quizzes. Draft until published in the dashboard. Lessons are text for now (unit 4 lesson 3 is the live Zoom session: add the link in the dashboard); a lesson can become a video later in the dashboard.",
+  "units": [
+    {
+      "sort": 0,
+      "summary": {
+        "en": "What the Women, Peace and Security agenda is, where it comes from, and how it is put into practice in the Arab region and Africa.",
+        "fr": "Ce qu’est l’agenda Femmes, paix et sécurité, d’où il vient et comment il est mis en œuvre dans le monde arabe et en Afrique.",
+        "ar": "ما هي أجندة المرأة والسلام والأمن، ومن أين جاءت، وكيف تُطبَّق في المنطقة العربية وأفريقيا."
+      },
+      "passMark": 70,
+      "lessons": [
+        {
+          "sort": 0,
+          "type": "text",
+          "minutes": 6,
+          "title": {
+            "en": "Welcome and course overview",
+            "fr": "Bienvenue et présentation du cours",
+            "ar": "ترحيب وتعريف بالدورة"
+          },
+          "body": {
+            "en": "Welcome to “Women and Peacebuilding”, an online course by Bridging Our Voices.\nWomen have long calmed disputes, kept families and neighbourhoods together and helped communities rebuild after conflict, often without a title or recognition. This course looks at that work: the international commitments behind it, the roles women play in peace processes and in daily community life, and the practical skills that make dialogue and mediation work. The course is open to everyone, women and men, who wants to support women’s leadership in dialogue and peacebuilding.\nWhat you will learn. By the end of the course you will be able to:\n• explain the Women, Peace and Security agenda and Security Council Resolution 1325;\n• describe the roles women play in preventing conflict, mediating and rebuilding;\n• analyse a local conflict with attention to how it affects women and men differently;\n• prepare and facilitate a dialogue circle;\n• design a small peace initiative for your own community.\nHow the course works.\n• There are five units. Each unit has short lessons and ends with a quiz.\n• Lessons open one after another. Read each text to the end, or watch each video to the end, then press “Mark as done”.\n• To open the next unit, you need at least 70% in the unit quiz. You can try again as many times as you need.\n• The course is self-paced and your progress is saved, so you can stop and come back at any time.\n• Complete “My profile” and visit “Participants” to get to know the other people taking the course with you.\nWe are glad you are here. Let’s begin.",
+            "fr": "Bienvenue dans « Les femmes et la consolidation de la paix », un cours en ligne de Bridging Our Voices.\nDepuis toujours, les femmes apaisent les conflits, maintiennent les liens dans les familles et les quartiers et aident les communautés à se reconstruire après un conflit, souvent sans titre ni reconnaissance. Ce cours s’intéresse à ce travail : les engagements internationaux qui le fondent, les rôles des femmes dans les processus de paix et dans la vie quotidienne des communautés, et les compétences pratiques qui font réussir le dialogue et la médiation. Il est ouvert à toutes et à tous, femmes et hommes, qui souhaitent soutenir le leadership des femmes dans le dialogue et la consolidation de la paix.\nCe que vous apprendrez. À la fin du cours, vous serez capable de :\n• expliquer l’agenda Femmes, paix et sécurité et la résolution 1325 du Conseil de sécurité ;\n• décrire les rôles des femmes dans la prévention des conflits, la médiation et la reconstruction ;\n• analyser un conflit local en tenant compte de ses effets différents sur les femmes et les hommes ;\n• préparer et animer un cercle de dialogue ;\n• concevoir une petite initiative de paix pour votre communauté.\nComment fonctionne le cours.\n• Le cours compte cinq modules. Chaque module comprend de courtes leçons et se termine par un quiz.\n• Les leçons s’ouvrent l’une après l’autre. Lisez chaque texte jusqu’au bout, ou regardez chaque vidéo jusqu’à la fin, puis cliquez sur « Marquer comme terminée ».\n• Pour ouvrir le module suivant, il faut obtenir au moins 70 % au quiz du module. Vous pouvez réessayer autant de fois que nécessaire.\n• Le cours se suit à votre rythme et votre progression est enregistrée : vous pouvez vous arrêter et revenir à tout moment.\n• Complétez « Mon profil » et consultez « Participants » pour faire connaissance avec les personnes qui suivent le cours avec vous.\nNous sommes heureux de vous accueillir. Commençons.",
+            "ar": "مرحبًا بك في دورة «المرأة وبناء السلام»، إحدى الدورات الإلكترونية لمبادرة «أصواتنا جسور».\nلطالما أسهمت النساء في تهدئة الخلافات، والحفاظ على تماسك الأسر والأحياء، ومساعدة المجتمعات على النهوض بعد النزاعات، وغالبًا دون لقب أو اعتراف. تتناول هذه الدورة هذا الدور: الالتزامات الدولية التي تستند إليه، وأدوار المرأة في عمليات السلام وفي الحياة اليومية للمجتمع، والمهارات العملية التي تُنجح الحوار والوساطة. والدورة مفتوحة للجميع، نساءً ورجالًا، ممن يرغبون في دعم قيادة المرأة للحوار وبناء السلام.\nماذا ستتعلّم/ين؟ في نهاية الدورة ستكون/ين قادرًا/ة على:\n• شرح أجندة المرأة والسلام والأمن وقرار مجلس الأمن ١٣٢٥؛\n• وصف أدوار المرأة في منع النزاعات والوساطة وإعادة البناء؛\n• تحليل نزاع محلي مع مراعاة اختلاف أثره على النساء والرجال؛\n• التحضير لحلقة حوار وتيسيرها؛\n• تصميم مبادرة سلام صغيرة في مجتمعك.\nكيف تسير الدورة؟\n• تتكون الدورة من خمس وحدات، في كل وحدة دروس قصيرة وتنتهي باختبار.\n• تُفتح الدروس واحدًا تلو الآخر. اقرأ/ي كل نص حتى آخره، أو شاهد/ي كل فيديو حتى نهايته، ثم اضغط/ي «تم الدرس».\n• لفتح الوحدة التالية تحتاج/ين إلى ٧٠٪ على الأقل في اختبار الوحدة، ويمكنك إعادة المحاولة كلما احتجت/ِ.\n• الدورة ذاتية التعلّم ويُحفظ تقدّمك، فيمكنك التوقف والعودة في أي وقت.\n• أكمل/ي «ملفي الشخصي» وزر/زوري صفحة «المشاركون» للتعرّف على من يدرسون معك.\nسعداء بانضمامك. لنبدأ."
+          }
+        },
+        {
+          "sort": 1,
+          "type": "text",
+          "minutes": 20,
+          "title": {
+            "en": "Security Council Resolution 1325 and the resolutions that followed",
+            "fr": "La résolution 1325 du Conseil de sécurité et les résolutions suivantes",
+            "ar": "قرار مجلس الأمن ١٣٢٥ والقرارات التي تلته"
+          },
+          "body": {
+            "en": "What is the Women, Peace and Security agenda?\nThe Women, Peace and Security (WPS) agenda is a set of commitments, adopted by the United Nations Security Council, that recognise two things: conflict affects women and girls in particular ways, and peace is more likely to last when women take part in building it. The agenda starts with Resolution 1325.\nResolution 1325 (2000)\nOn 31 October 2000 the Security Council unanimously adopted Resolution 1325. For the first time, the Council’s main body for international peace and security stated that women are not only victims of war but also actors for peace. The resolution calls on states and all parties to conflict to increase women’s participation in decisions on peace and security, to protect women and girls from violence, especially sexual violence, and to take women’s needs into account during repatriation, resettlement and reconstruction.\nThe four pillars\nThe commitments of Resolution 1325 are usually grouped into four pillars:\n• Participation: women take part, on equal terms, in peace negotiations, mediation, peacekeeping and decision-making at every level.\n• Protection: women and girls are protected from gender-based violence, and their rights are respected during and after conflict.\n• Prevention: conflict and violence against women are prevented, including by addressing their causes and ending impunity.\n• Relief and recovery: humanitarian aid and reconstruction meet the specific needs of women and girls and involve them.\nThe resolutions that followed\nThe Security Council has since adopted further resolutions that build on Resolution 1325. Together they form the WPS agenda:\n• Resolution 1820 (2008): recognises that sexual violence can be used as a tactic of war and can threaten international peace and security.\n• Resolution 1888 (2009): creates the post of Special Representative of the Secretary-General on Sexual Violence in Conflict.\n• Resolution 1889 (2009): focuses on women’s participation after conflict and asks for indicators to measure progress.\n• Resolution 1960 (2010): sets up monitoring and reporting on conflict-related sexual violence.\n• Resolutions 2106 and 2122 (2013): stress accountability for sexual violence and strengthen women’s participation and the role of women’s civil society.\n• Resolution 2242 (2015): links the agenda to preventing violent extremism and counter-terrorism.\n• Resolutions 2467 and 2493 (2019): call for a survivor-centred approach and for the full implementation of all WPS commitments.\nWhy women’s participation matters\nResearch reviewed in the UN Women Global Study on Resolution 1325 (2015) found that when women take part in a peace process, the resulting agreement is more likely to last: one analysis found it is 35% more likely to last at least fifteen years. Women often bring issues such as access to services, justice and reconciliation to the table, and they help agreements reach whole communities.\nFrom paper to practice: National Action Plans\nResolutions only change lives when they are applied. Many countries therefore adopt a National Action Plan (NAP) on Women, Peace and Security: a government plan that sets goals, responsibilities, a budget and ways to measure progress. More than one hundred countries have adopted such plans, and regional organisations have their own plans too. In the next lesson we look at the Arab region and Africa.\nTo reflect: which of the four pillars do you see most clearly in your own community, and which one is missing?",
+            "fr": "Qu’est-ce que l’agenda Femmes, paix et sécurité ?\nL’agenda Femmes, paix et sécurité (FPS) est un ensemble d’engagements adoptés par le Conseil de sécurité des Nations unies. Il reconnaît deux choses : les conflits touchent les femmes et les filles de manière particulière, et la paix a plus de chances de durer lorsque les femmes participent à sa construction. L’agenda commence avec la résolution 1325.\nLa résolution 1325 (2000)\nLe 31 octobre 2000, le Conseil de sécurité a adopté à l’unanimité la résolution 1325. Pour la première fois, l’organe principal chargé de la paix et de la sécurité internationales affirmait que les femmes ne sont pas seulement des victimes de la guerre, mais aussi des actrices de la paix. La résolution appelle les États et toutes les parties aux conflits à accroître la participation des femmes aux décisions de paix et de sécurité, à protéger les femmes et les filles contre la violence, en particulier sexuelle, et à tenir compte des besoins des femmes lors du rapatriement, de la réinstallation et de la reconstruction.\nLes quatre piliers\nLes engagements de la résolution 1325 sont généralement regroupés en quatre piliers :\n• Participation : les femmes participent, sur un pied d’égalité, aux négociations de paix, à la médiation, au maintien de la paix et à la prise de décision à tous les niveaux.\n• Protection : les femmes et les filles sont protégées contre la violence fondée sur le genre, et leurs droits sont respectés pendant et après les conflits.\n• Prévention : les conflits et la violence contre les femmes sont prévenus, notamment en s’attaquant à leurs causes et en mettant fin à l’impunité.\n• Secours et relèvement : l’aide humanitaire et la reconstruction répondent aux besoins particuliers des femmes et des filles et les associent.\nLes résolutions suivantes\nDepuis, le Conseil de sécurité a adopté d’autres résolutions qui prolongent la résolution 1325. Ensemble, elles forment l’agenda FPS :\n• Résolution 1820 (2008) : reconnaît que la violence sexuelle peut être utilisée comme tactique de guerre et menacer la paix et la sécurité internationales.\n• Résolution 1888 (2009) : crée le poste de Représentante spéciale du Secrétaire général chargée de la question des violences sexuelles commises en période de conflit.\n• Résolution 1889 (2009) : porte sur la participation des femmes après les conflits et demande des indicateurs pour mesurer les progrès.\n• Résolution 1960 (2010) : met en place un dispositif de suivi et de communication de l’information sur les violences sexuelles liées aux conflits.\n• Résolutions 2106 et 2122 (2013) : insistent sur la responsabilité pour les violences sexuelles et renforcent la participation des femmes et le rôle de la société civile féminine.\n• Résolution 2242 (2015) : relie l’agenda à la prévention de l’extrémisme violent et à la lutte contre le terrorisme.\n• Résolutions 2467 et 2493 (2019) : appellent à une approche centrée sur les survivantes et survivants et à la mise en œuvre complète de tous les engagements FPS.\nPourquoi la participation des femmes compte\nLes recherches réunies dans l’Étude mondiale d’ONU Femmes sur la résolution 1325 (2015) montrent que, lorsque les femmes participent à un processus de paix, l’accord obtenu a plus de chances de durer : selon une analyse, il a 35 % de chances supplémentaires de durer au moins quinze ans. Les femmes mettent souvent sur la table des questions comme l’accès aux services, la justice et la réconciliation, et elles aident les accords à atteindre l’ensemble des communautés.\nDu texte à la pratique : les plans d’action nationaux\nLes résolutions ne changent la vie des gens que si elles sont appliquées. C’est pourquoi de nombreux pays adoptent un plan d’action national (PAN) sur les femmes, la paix et la sécurité : un plan gouvernemental qui fixe des objectifs, des responsabilités, un budget et des moyens de mesurer les progrès. Plus de cent pays ont adopté de tels plans, et des organisations régionales ont aussi les leurs. Dans la leçon suivante, nous regardons le monde arabe et l’Afrique.\nPour réfléchir : lequel des quatre piliers voyez-vous le plus clairement dans votre communauté, et lequel manque ?",
+            "ar": "ما هي أجندة المرأة والسلام والأمن؟\nأجندة المرأة والسلام والأمن مجموعة من الالتزامات التي اعتمدها مجلس الأمن التابع للأمم المتحدة، وهي تعترف بأمرين: أن النزاعات تؤثر على النساء والفتيات بطرق خاصة، وأن السلام يكون أكثر استدامة عندما تشارك النساء في صنعه. وتبدأ هذه الأجندة بالقرار ١٣٢٥.\nالقرار ١٣٢٥ (٢٠٠٠)\nفي ٣١ أكتوبر ٢٠٠٠ اعتمد مجلس الأمن بالإجماع القرار ١٣٢٥. ولأول مرة أكد الجهاز الرئيسي المسؤول عن السلم والأمن الدوليين أن النساء لسن ضحايا للحرب فقط، بل فاعلات في صنع السلام. ويدعو القرار الدول وجميع أطراف النزاع إلى زيادة مشاركة النساء في قرارات السلام والأمن، وحماية النساء والفتيات من العنف، ولا سيما العنف الجنسي، ومراعاة احتياجات النساء في مراحل العودة وإعادة التوطين وإعادة الإعمار.\nالركائز الأربع\nتُجمَع التزامات القرار ١٣٢٥ عادةً في أربع ركائز:\n• المشاركة: أن تشارك النساء على قدم المساواة في مفاوضات السلام والوساطة وحفظ السلام وصنع القرار على جميع المستويات.\n• الحماية: أن تُحمى النساء والفتيات من العنف القائم على النوع الاجتماعي، وأن تُحترم حقوقهن أثناء النزاع وبعده.\n• الوقاية: أن تُمنع النزاعات والعنف ضد المرأة، بما في ذلك معالجة أسبابها وإنهاء الإفلات من العقاب.\n• الإغاثة والتعافي: أن تلبي المساعدات الإنسانية وإعادة الإعمار الاحتياجات الخاصة للنساء والفتيات وأن تُشركهن.\nالقرارات التي تلته\nاعتمد مجلس الأمن بعد ذلك قرارات أخرى تبني على القرار ١٣٢٥، وتشكّل معه أجندة المرأة والسلام والأمن:\n• القرار ١٨٢٠ (٢٠٠٨): يعترف بأن العنف الجنسي قد يُستخدم أسلوبًا من أساليب الحرب، وقد يهدد السلم والأمن الدوليين.\n• القرار ١٨٨٨ (٢٠٠٩): يُنشئ منصب الممثل/ة الخاص/ة للأمين العام المعني/ة بالعنف الجنسي في حالات النزاع.\n• القرار ١٨٨٩ (٢٠٠٩): يركز على مشاركة المرأة بعد انتهاء النزاع، ويطلب مؤشرات لقياس التقدم.\n• القرار ١٩٦٠ (٢٠١٠): يُنشئ ترتيبات للرصد والإبلاغ عن العنف الجنسي المرتبط بالنزاعات.\n• القراران ٢١٠٦ و٢١٢٢ (٢٠١٣): يؤكدان المساءلة عن العنف الجنسي، ويعززان مشاركة المرأة ودور المجتمع المدني النسائي.\n• القرار ٢٢٤٢ (٢٠١٥): يربط الأجندة بمنع التطرف العنيف ومكافحة الإرهاب.\n• القراران ٢٤٦٧ و٢٤٩٣ (٢٠١٩): يدعوان إلى نهج يتمحور حول الناجين والناجيات، وإلى التنفيذ الكامل لجميع التزامات الأجندة.\nلماذا تهم مشاركة المرأة؟\nتُظهر الأبحاث التي جمعتها الدراسة العالمية لهيئة الأمم المتحدة للمرأة حول القرار ١٣٢٥ (٢٠١٥) أن مشاركة النساء في عملية السلام تزيد من فرص استمرار الاتفاق الناتج عنها؛ فقد وجد أحد التحليلات أن احتمال استمراره خمسة عشر عامًا على الأقل يزيد بنسبة ٣٥٪. وكثيرًا ما تطرح النساء قضايا مثل الوصول إلى الخدمات والعدالة والمصالحة، ويساعدن على أن تصل الاتفاقات إلى المجتمعات كلها.\nمن النص إلى التطبيق: خطط العمل الوطنية\nلا تغيّر القرارات حياة الناس إلا إذا طُبِّقت. لذلك تعتمد دول كثيرة خطة عمل وطنية بشأن المرأة والسلام والأمن، وهي خطة حكومية تحدد الأهداف والمسؤوليات والميزانية وطرق قياس التقدم. وقد اعتمدت أكثر من مئة دولة مثل هذه الخطط، كما أن للمنظمات الإقليمية خططها الخاصة. وفي الدرس التالي ننظر إلى المنطقة العربية وأفريقيا.\nللتأمل: أي الركائز الأربع تراها/ينها بوضوح في مجتمعك، وأيها غائبة؟"
+          }
+        },
+        {
+          "sort": 2,
+          "type": "text",
+          "minutes": 15,
+          "title": {
+            "en": "Reading: the WPS agenda in the Arab region and Africa",
+            "fr": "Lecture : l’agenda FPS dans le monde arabe et en Afrique",
+            "ar": "قراءة: أجندة المرأة والسلام والأمن في المنطقة العربية وأفريقيا"
+          },
+          "body": {
+            "en": "The Women, Peace and Security agenda is global, but it is put into practice by governments, regional organisations and civil society close to the people concerned. Here is how it has taken shape in the two regions this course focuses on.\nIn the Arab region\nThe League of Arab States adopted a regional strategy on the protection of Arab women in peace and security, followed by a Regional Action Plan for implementing Resolution 1325. These texts encourage member states to protect women and girls affected by conflict and displacement, and to involve women in preventing conflict and in peacebuilding.\nAt national level, Iraq became the first country in the Arab region to adopt a National Action Plan on Resolution 1325, in 2014. Other countries in the region have since adopted plans of their own. Many of them face similar challenges: armed conflict and occupation, large numbers of refugees and displaced people, and the spread of violent extremism and hate speech, including online.\nIn Africa\nThe African Union has made Women, Peace and Security a continental priority. In 2014 it appointed a Special Envoy on Women, Peace and Security. In 2017 it launched FemWise-Africa, the Network of African Women in Conflict Prevention and Mediation, which trains women mediators and connects them with peace processes. In 2018 it adopted a Continental Results Framework to track how member states carry out their WPS commitments.\nSeveral African countries have adopted National Action Plans, among them Nigeria, which adopted its first plan in 2013. Women’s organisations across the continent work as early-warning networks, mediators in local disputes and voices for survivors.\nWhat these experiences have in common\n• Plans matter, but implementation depends on budgets, data and political will.\n• Local women’s groups and religious and community leaders are often the first to see tensions rising, and the first to calm them.\n• Formal peace talks still include few women, while informal community peace work relies on them heavily. Closing this gap is one of the aims of Bridging Our Voices.\nTo reflect: does your country have a National Action Plan on Women, Peace and Security? If you don’t know, find out, and note one commitment in it that matters to your community. If there is no plan, what would you want it to include?",
+            "fr": "L’agenda Femmes, paix et sécurité est mondial, mais il est mis en œuvre par les gouvernements, les organisations régionales et la société civile, au plus près des personnes concernées. Voici comment il a pris forme dans les deux régions sur lesquelles porte ce cours.\nDans le monde arabe\nLa Ligue des États arabes a adopté une stratégie régionale sur la protection des femmes arabes dans le domaine de la paix et de la sécurité, puis un plan d’action régional pour la mise en œuvre de la résolution 1325. Ces textes encouragent les États membres à protéger les femmes et les filles touchées par les conflits et les déplacements, et à associer les femmes à la prévention des conflits et à la consolidation de la paix.\nAu niveau national, l’Irak a été le premier pays de la région à adopter un plan d’action national sur la résolution 1325, en 2014. D’autres pays de la région ont depuis adopté leurs propres plans. Beaucoup font face à des défis comparables : conflits armés et occupation, grand nombre de personnes réfugiées et déplacées, montée de l’extrémisme violent et des discours de haine, y compris en ligne.\nEn Afrique\nL’Union africaine a fait des femmes, de la paix et de la sécurité une priorité continentale. En 2014, elle a nommé une Envoyée spéciale pour les femmes, la paix et la sécurité. En 2017, elle a lancé FemWise-Africa, le Réseau des femmes africaines pour la prévention des conflits et la médiation, qui forme des médiatrices et les relie aux processus de paix. En 2018, elle a adopté un Cadre continental de résultats pour suivre la mise en œuvre des engagements FPS par les États membres.\nPlusieurs pays africains ont adopté des plans d’action nationaux, dont le Nigeria, qui a adopté son premier plan en 2013. Partout sur le continent, des organisations de femmes jouent le rôle de réseaux d’alerte précoce, de médiatrices dans les conflits locaux et de porte-voix des survivantes et survivants.\nCe que ces expériences ont en commun\n• Les plans comptent, mais leur mise en œuvre dépend des budgets, des données et de la volonté politique.\n• Les groupes de femmes et les responsables religieux et communautaires sont souvent les premiers à voir monter les tensions, et les premiers à les apaiser.\n• Les négociations de paix officielles comptent encore peu de femmes, alors que le travail de paix informel dans les communautés repose largement sur elles. Réduire cet écart est l’un des objectifs de Bridging Our Voices.\nPour réfléchir : votre pays a-t-il un plan d’action national sur les femmes, la paix et la sécurité ? Si vous ne le savez pas, renseignez-vous et notez un engagement qui compte pour votre communauté. S’il n’y a pas de plan, que voudriez-vous qu’il contienne ?",
+            "ar": "أجندة المرأة والسلام والأمن عالمية، لكن تطبيقها يقع على عاتق الحكومات والمنظمات الإقليمية والمجتمع المدني، الأقرب إلى الناس المعنيين. وفيما يلي كيف تشكّلت في المنطقتين اللتين تركز عليهما هذه الدورة.\nفي المنطقة العربية\nاعتمدت جامعة الدول العربية استراتيجية إقليمية لحماية المرأة العربية في مجال السلم والأمن، ثم خطة عمل إقليمية لتنفيذ القرار ١٣٢٥. وتشجع هذه الوثائق الدول الأعضاء على حماية النساء والفتيات المتأثرات بالنزاعات والنزوح، وعلى إشراك النساء في منع النزاعات وبناء السلام.\nوعلى المستوى الوطني، كان العراق أول دولة في المنطقة العربية تعتمد خطة عمل وطنية لتنفيذ القرار ١٣٢٥، وذلك في عام ٢٠١٤. واعتمدت دول أخرى في المنطقة خططها منذ ذلك الحين. ويواجه كثير منها تحديات متشابهة: النزاعات المسلحة والاحتلال، وأعداد كبيرة من اللاجئين والنازحين، وانتشار التطرف العنيف وخطاب الكراهية، بما في ذلك على الإنترنت.\nفي أفريقيا\nجعل الاتحاد الأفريقي قضية المرأة والسلام والأمن أولوية على مستوى القارة. ففي عام ٢٠١٤ عيّن مبعوثة خاصة للمرأة والسلام والأمن. وفي عام ٢٠١٧ أطلق شبكة «فيم وايز أفريقيا» (FemWise-Africa)، شبكة النساء الأفريقيات في منع النزاعات والوساطة، التي تدرّب الوسيطات وتربطهن بعمليات السلام. وفي عام ٢٠١٨ اعتمد إطارًا قاريًا للنتائج لمتابعة تنفيذ الدول الأعضاء لالتزاماتها في هذا المجال.\nواعتمدت دول أفريقية عدة خطط عمل وطنية، منها نيجيريا التي اعتمدت خطتها الأولى عام ٢٠١٣. وفي أنحاء القارة تعمل منظمات نسائية شبكاتٍ للإنذار المبكر، ووسيطاتٍ في النزاعات المحلية، وصوتًا للناجين والناجيات.\nما الذي تشترك فيه هذه التجارب؟\n• للخطط أهميتها، لكن تنفيذها يعتمد على الميزانيات والبيانات والإرادة السياسية.\n• كثيرًا ما تكون المجموعات النسائية والقيادات الدينية والمجتمعية أول من يلاحظ تصاعد التوتر، وأول من يهدّئه.\n• لا تزال مشاركة النساء في مفاوضات السلام الرسمية محدودة، بينما يعتمد العمل المجتمعي غير الرسمي من أجل السلام عليهن اعتمادًا كبيرًا. وسدّ هذه الفجوة أحد أهداف مبادرة «أصواتنا جسور».\nللتأمل: هل لدى بلدك خطة عمل وطنية بشأن المرأة والسلام والأمن؟ إن لم تكن/تكوني تعرف/ين، فابحث/ي عنها ودوّن/ي التزامًا واحدًا فيها يهم مجتمعك. وإن لم تكن هناك خطة، فماذا تودّ/ين أن تتضمن؟"
+          }
+        }
+      ],
+      "questions": [
+        {
+          "text": {
+            "en": "In which year did the Security Council adopt Resolution 1325?",
+            "fr": "En quelle année le Conseil de sécurité a-t-il adopté la résolution 1325 ?",
+            "ar": "في أي عام اعتمد مجلس الأمن القرار ١٣٢٥؟"
+          },
+          "options": [
+            {
+              "en": "1995",
+              "fr": "1995",
+              "ar": "١٩٩٥"
+            },
+            {
+              "en": "2000",
+              "fr": "2000",
+              "ar": "٢٠٠٠"
+            },
+            {
+              "en": "2008",
+              "fr": "2008",
+              "ar": "٢٠٠٨"
+            },
+            {
+              "en": "2015",
+              "fr": "2015",
+              "ar": "٢٠١٥"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "What did Resolution 1325 recognise for the first time?",
+            "fr": "Qu’a reconnu la résolution 1325 pour la première fois ?",
+            "ar": "ما الذي اعترف به القرار ١٣٢٥ لأول مرة؟"
+          },
+          "options": [
+            {
+              "en": "That women are only victims of war",
+              "fr": "Que les femmes sont seulement des victimes de la guerre",
+              "ar": "أن النساء ضحايا للحرب فقط"
+            },
+            {
+              "en": "That women are also actors for peace, not only victims of war",
+              "fr": "Que les femmes sont aussi des actrices de la paix, pas seulement des victimes de la guerre",
+              "ar": "أن النساء فاعلات في صنع السلام وليس ضحايا للحرب فقط"
+            },
+            {
+              "en": "That peace talks should include only governments",
+              "fr": "Que les négociations de paix ne doivent réunir que les gouvernements",
+              "ar": "أن مفاوضات السلام يجب أن تقتصر على الحكومات"
+            },
+            {
+              "en": "That conflict affects everyone in the same way",
+              "fr": "Que les conflits touchent tout le monde de la même façon",
+              "ar": "أن النزاع يؤثر على الجميع بالطريقة نفسها"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "Which of these is NOT one of the four pillars of Resolution 1325?",
+            "fr": "Lequel de ces éléments n’est PAS l’un des quatre piliers de la résolution 1325 ?",
+            "ar": "أيٌّ مما يلي ليس من الركائز الأربع للقرار ١٣٢٥؟"
+          },
+          "options": [
+            {
+              "en": "Participation",
+              "fr": "Participation",
+              "ar": "المشاركة"
+            },
+            {
+              "en": "Protection",
+              "fr": "Protection",
+              "ar": "الحماية"
+            },
+            {
+              "en": "Economic sanctions",
+              "fr": "Sanctions économiques",
+              "ar": "العقوبات الاقتصادية"
+            },
+            {
+              "en": "Relief and recovery",
+              "fr": "Secours et relèvement",
+              "ar": "الإغاثة والتعافي"
+            }
+          ],
+          "correct": 2
+        },
+        {
+          "text": {
+            "en": "What does Resolution 1820 (2008) mainly address?",
+            "fr": "Sur quoi porte principalement la résolution 1820 (2008) ?",
+            "ar": "ما الموضوع الرئيسي للقرار ١٨٢٠ (٢٠٠٨)؟"
+          },
+          "options": [
+            {
+              "en": "Climate change and security",
+              "fr": "Le changement climatique et la sécurité",
+              "ar": "تغيّر المناخ والأمن"
+            },
+            {
+              "en": "Sexual violence used as a tactic of war",
+              "fr": "La violence sexuelle utilisée comme tactique de guerre",
+              "ar": "العنف الجنسي بوصفه أسلوبًا من أساليب الحرب"
+            },
+            {
+              "en": "Women’s participation in elections",
+              "fr": "La participation des femmes aux élections",
+              "ar": "مشاركة المرأة في الانتخابات"
+            },
+            {
+              "en": "Trade between countries in conflict",
+              "fr": "Le commerce entre pays en conflit",
+              "ar": "التجارة بين الدول المتنازعة"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "Resolution 2242 (2015) links the WPS agenda to:",
+            "fr": "La résolution 2242 (2015) relie l’agenda FPS à :",
+            "ar": "يربط القرار ٢٢٤٢ (٢٠١٥) أجندة المرأة والسلام والأمن بـ:"
+          },
+          "options": [
+            {
+              "en": "Preventing violent extremism and counter-terrorism",
+              "fr": "La prévention de l’extrémisme violent et la lutte contre le terrorisme",
+              "ar": "منع التطرف العنيف ومكافحة الإرهاب"
+            },
+            {
+              "en": "Public health",
+              "fr": "La santé publique",
+              "ar": "الصحة العامة"
+            },
+            {
+              "en": "Sport and culture",
+              "fr": "Le sport et la culture",
+              "ar": "الرياضة والثقافة"
+            },
+            {
+              "en": "Tourism",
+              "fr": "Le tourisme",
+              "ar": "السياحة"
+            }
+          ],
+          "correct": 0
+        },
+        {
+          "text": {
+            "en": "What is a National Action Plan (NAP) on Women, Peace and Security?",
+            "fr": "Qu’est-ce qu’un plan d’action national (PAN) sur les femmes, la paix et la sécurité ?",
+            "ar": "ما هي خطة العمل الوطنية بشأن المرأة والسلام والأمن؟"
+          },
+          "options": [
+            {
+              "en": "A Security Council resolution",
+              "fr": "Une résolution du Conseil de sécurité",
+              "ar": "قرار صادر عن مجلس الأمن"
+            },
+            {
+              "en": "A government plan with goals, responsibilities, a budget and ways to measure progress",
+              "fr": "Un plan gouvernemental avec des objectifs, des responsabilités, un budget et des moyens de mesurer les progrès",
+              "ar": "خطة حكومية تحدد الأهداف والمسؤوليات والميزانية وطرق قياس التقدم"
+            },
+            {
+              "en": "A peace agreement between two countries",
+              "fr": "Un accord de paix entre deux pays",
+              "ar": "اتفاق سلام بين دولتين"
+            },
+            {
+              "en": "A report written by the United Nations",
+              "fr": "Un rapport rédigé par les Nations unies",
+              "ar": "تقرير تكتبه الأمم المتحدة"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "What is FemWise-Africa?",
+            "fr": "Qu’est-ce que FemWise-Africa ?",
+            "ar": "ما هي شبكة «فيم وايز أفريقيا» (FemWise-Africa)؟"
+          },
+          "options": [
+            {
+              "en": "A UN court for war crimes",
+              "fr": "Un tribunal de l’ONU pour les crimes de guerre",
+              "ar": "محكمة أممية لجرائم الحرب"
+            },
+            {
+              "en": "A fund for reconstruction",
+              "fr": "Un fonds pour la reconstruction",
+              "ar": "صندوق لإعادة الإعمار"
+            },
+            {
+              "en": "The African Union’s network of women in conflict prevention and mediation",
+              "fr": "Le réseau de l’Union africaine des femmes pour la prévention des conflits et la médiation",
+              "ar": "شبكة الاتحاد الأفريقي للنساء في منع النزاعات والوساطة"
+            },
+            {
+              "en": "A news agency",
+              "fr": "Une agence de presse",
+              "ar": "وكالة أنباء"
+            }
+          ],
+          "correct": 2
+        }
+      ],
+      "title": {
+        "en": "Introduction: the Women, Peace and Security agenda",
+        "fr": "Introduction : l’agenda Femmes, paix et sécurité",
+        "ar": "مدخل: أجندة المرأة والسلام والأمن"
+      }
+    },
+    {
+      "sort": 1,
+      "title": {
+        "en": "Women’s roles in building peace",
+        "fr": "Les rôles des femmes dans la construction de la paix",
+        "ar": "أدوار المرأة في بناء السلام"
+      },
+      "summary": {
+        "en": "How women build peace in families and communities, in religious and community leadership, and in well-known peace movements from Africa and the Arab region.",
+        "fr": "Comment les femmes construisent la paix dans les familles et les communautés, dans le leadership religieux et communautaire, et dans des mouvements de paix connus d’Afrique et du monde arabe.",
+        "ar": "كيف تبني النساء السلام في الأسرة والمجتمع، وفي القيادة الدينية والمجتمعية، وفي حركات سلام معروفة من أفريقيا والمنطقة العربية."
+      },
+      "passMark": 70,
+      "lessons": [
+        {
+          "sort": 0,
+          "type": "text",
+          "minutes": 15,
+          "title": {
+            "en": "Women as informal mediators in families and communities",
+            "fr": "Les femmes, médiatrices informelles dans les familles et les communautés",
+            "ar": "المرأة وسيطةً غير رسمية في الأسرة والمجتمع"
+          },
+          "body": {
+            "en": "Long before a dispute reaches a court, a council or a peace table, it is often handled at home, in the street or at the market. In many communities women are the first to step in.\nEveryday mediation\nWomen settle quarrels between relatives and neighbours, calm tensions over land, water, inheritance or marriage, and keep contact open between families or groups that have stopped speaking. They carry messages, arrange meetings, and find the moment when a conversation becomes possible again. This is mediation, even when nobody calls it that.\nWhy women are often trusted\n• They know the community well: who is related to whom, who is struggling, where anger is building.\n• They can reach spaces that others cannot, such as homes, women’s gatherings and family circles.\n• They are often seen as less threatening than armed or political actors, so both sides may agree to talk to them.\n• They notice early signs of violence and can raise the alarm before it spreads.\nThe limits they face\n• Their work is rarely recognised, recorded or paid.\n• They may face pressure or danger when they speak up.\n• When talks become formal, they are often left out, and the knowledge they hold is lost.\nFrom informal to recognised\nInformal mediation becomes stronger when it is documented, supported by training, connected to networks and linked to local authorities and leaders. That is the path Bridging Our Voices supports: from community voice to recognised leader.\nTo reflect: think of a woman in your family or community who has calmed a dispute. What did she do, and why did people listen to her?",
+            "fr": "Bien avant qu’un différend n’arrive devant un tribunal, un conseil ou une table de négociation, il se règle souvent à la maison, dans la rue ou au marché. Dans beaucoup de communautés, les femmes sont les premières à intervenir.\nLa médiation au quotidien\nLes femmes règlent des querelles entre proches et voisins, apaisent des tensions autour de la terre, de l’eau, de l’héritage ou du mariage, et maintiennent le contact entre des familles ou des groupes qui ne se parlent plus. Elles transmettent des messages, organisent des rencontres et trouvent le moment où le dialogue redevient possible. C’est de la médiation, même quand personne ne l’appelle ainsi.\nPourquoi on leur fait souvent confiance\n• Elles connaissent bien la communauté : qui est lié à qui, qui est en difficulté, où la colère monte.\n• Elles accèdent à des espaces que d’autres ne peuvent pas atteindre : les maisons, les réunions de femmes, les cercles familiaux.\n• Elles sont souvent perçues comme moins menaçantes que les acteurs armés ou politiques, si bien que les deux parties acceptent de leur parler.\n• Elles remarquent les premiers signes de violence et peuvent alerter avant qu’elle ne s’étende.\nLes limites auxquelles elles font face\n• Leur travail est rarement reconnu, consigné ou rémunéré.\n• Elles peuvent subir des pressions ou des dangers lorsqu’elles prennent la parole.\n• Quand les discussions deviennent officielles, elles en sont souvent écartées, et leur savoir se perd.\nDe l’informel à la reconnaissance\nLa médiation informelle se renforce lorsqu’elle est documentée, soutenue par des formations, reliée à des réseaux et aux autorités et responsables locaux. C’est le chemin que soutient Bridging Our Voices : de la voix communautaire au leadership reconnu.\nPour réfléchir : pensez à une femme de votre famille ou de votre communauté qui a apaisé un conflit. Qu’a-t-elle fait, et pourquoi les gens l’ont-ils écoutée ?",
+            "ar": "قبل أن يصل الخلاف إلى محكمة أو مجلس أو طاولة مفاوضات بوقت طويل، كثيرًا ما يُعالَج في البيت أو الشارع أو السوق. وفي مجتمعات كثيرة تكون النساء أول من يتدخل.\nالوساطة اليومية\nتحلّ النساء الخلافات بين الأقارب والجيران، ويهدّئن التوتر حول الأرض أو المياه أو الميراث أو الزواج، ويُبقين باب التواصل مفتوحًا بين أسر أو جماعات توقفت عن الحديث. ينقلن الرسائل، ويرتّبن اللقاءات، ويعرفن اللحظة التي يصبح فيها الحوار ممكنًا من جديد. هذه وساطة، حتى وإن لم يسمّها أحد كذلك.\nلماذا يثق الناس بهن غالبًا؟\n• يعرفن المجتمع جيدًا: من يرتبط بمن، ومن يعاني، وأين يتصاعد الغضب.\n• يصلن إلى أماكن لا يصل إليها غيرهن، مثل البيوت وتجمعات النساء والدوائر العائلية.\n• يُنظر إليهن غالبًا على أنهن أقل تهديدًا من الأطراف المسلحة أو السياسية، فيقبل الطرفان الحديث معهن.\n• يلاحظن العلامات الأولى للعنف ويستطعن التنبيه قبل أن ينتشر.\nالحدود التي يواجهنها\n• نادرًا ما يُعترف بعملهن أو يُوثَّق أو يُؤجَر.\n• قد يتعرضن للضغط أو الخطر عندما يرفعن أصواتهن.\n• عندما تصبح المحادثات رسمية يُستبعدن غالبًا، فتضيع المعرفة التي يحملنها.\nمن غير الرسمي إلى المعترف به\nتقوى الوساطة غير الرسمية عندما تُوثَّق، ويدعمها التدريب، وترتبط بالشبكات وبالسلطات والقيادات المحلية. وهذا هو المسار الذي تدعمه مبادرة «أصواتنا جسور»: من صوت المجتمع إلى قيادة معترف بها.\nللتأمل: فكّر/ي في امرأة من أسرتك أو مجتمعك هدّأت خلافًا. ماذا فعلت، ولماذا استمع إليها الناس؟"
+          }
+        },
+        {
+          "sort": 1,
+          "type": "text",
+          "minutes": 15,
+          "title": {
+            "en": "Women in religious and community leadership",
+            "fr": "Les femmes dans le leadership religieux et communautaire",
+            "ar": "المرأة في القيادة الدينية والمجتمعية"
+          },
+          "body": {
+            "en": "Religion and community traditions shape how people understand conflict and peace. Women who hold religious or community roles can therefore have a strong influence on whether tensions grow or calm down.\nWho they are\nWomen religious scholars and teachers, preachers and spiritual guides, members of religious orders, leaders of women’s associations, heads of local committees, teachers and youth workers. In some countries women are trained officially as religious guides; in Morocco, for example, the state has trained women religious guides, known as murshidat, since the mid-2000s to teach and counsel in mosques and communities.\nWhat they bring to peace\n• Trusted voices: people listen to faith and community leaders, especially in times of fear.\n• Answers to hate: women religious leaders can use their tradition’s texts and values to challenge hate speech and extremist messages.\n• Care for survivors: they accompany families who have lost relatives and survivors of violence, often in ways that formal services cannot.\n• Bridges between faiths: women from different religions often meet more easily around shared concerns such as children, health and safety, which opens the way to interreligious dialogue.\nWorking together with men\nWomen’s leadership is stronger when male religious and community leaders support it. Many successful initiatives pair women and men leaders, so that messages of peace reach every part of the community and women’s roles are seen as legitimate.\nChallenges\nWomen may be excluded from formal religious positions or councils, and their voices may be questioned. Building alliances, documenting their work and training them in mediation help to overcome these obstacles.\nTo reflect: which women leaders, religious or community, are listened to in your community? How could they and male leaders work together for peace?",
+            "fr": "La religion et les traditions communautaires façonnent la manière dont les gens comprennent le conflit et la paix. Les femmes qui exercent des fonctions religieuses ou communautaires peuvent donc beaucoup influencer l’escalade ou l’apaisement des tensions.\nQui sont-elles ?\nDes savantes et enseignantes religieuses, des prédicatrices et guides spirituelles, des religieuses, des responsables d’associations de femmes, des présidentes de comités locaux, des enseignantes et animatrices de jeunesse. Dans certains pays, des femmes sont formées officiellement comme guides religieuses ; au Maroc, par exemple, l’État forme depuis le milieu des années 2000 des guides religieuses, les mourchidates, qui enseignent et conseillent dans les mosquées et les communautés.\nCe qu’elles apportent à la paix\n• Des voix de confiance : les gens écoutent les responsables religieux et communautaires, surtout en période de peur.\n• Des réponses à la haine : les femmes responsables religieuses peuvent s’appuyer sur les textes et les valeurs de leur tradition pour contrer les discours de haine et les messages extrémistes.\n• L’accompagnement des survivantes et survivants : elles soutiennent les familles endeuillées et les personnes ayant subi des violences, souvent là où les services officiels n’arrivent pas.\n• Des ponts entre les religions : des femmes de confessions différentes se rencontrent souvent plus facilement autour de préoccupations communes comme les enfants, la santé ou la sécurité, ce qui ouvre la voie au dialogue interreligieux.\nTravailler avec les hommes\nLe leadership des femmes est plus fort lorsque les responsables religieux et communautaires masculins le soutiennent. Beaucoup d’initiatives réussies associent des femmes et des hommes leaders, pour que les messages de paix atteignent toute la communauté et que le rôle des femmes soit reconnu comme légitime.\nLes défis\nLes femmes peuvent être exclues des fonctions ou des conseils religieux officiels, et leur parole peut être contestée. Construire des alliances, documenter leur travail et les former à la médiation aident à surmonter ces obstacles.\nPour réfléchir : quelles femmes leaders, religieuses ou communautaires, sont écoutées dans votre communauté ? Comment pourraient-elles travailler pour la paix avec les responsables masculins ?",
+            "ar": "يشكّل الدين والتقاليد المجتمعية الطريقة التي يفهم بها الناس النزاع والسلام. لذلك يمكن للنساء اللواتي يشغلن أدوارًا دينية أو مجتمعية أن يؤثرن تأثيرًا كبيرًا في تصاعد التوتر أو تهدئته.\nمن هن؟\nعالمات ومعلمات في الشأن الديني، وواعظات ومرشدات روحيات، وراهبات، ورئيسات جمعيات نسائية، ورئيسات لجان محلية، ومعلمات وعاملات مع الشباب. وفي بعض الدول تُدرَّب النساء رسميًا مرشداتٍ دينيات؛ ففي المغرب مثلًا تُدرّب الدولة منذ منتصف العقد الأول من الألفية «المرشدات» اللواتي يعلّمن ويقدّمن الإرشاد في المساجد والمجتمعات.\nما الذي يقدّمنه للسلام؟\n• أصوات موثوقة: يستمع الناس إلى القيادات الدينية والمجتمعية، خاصة في أوقات الخوف.\n• ردود على الكراهية: تستطيع القيادات الدينية النسائية أن تستند إلى نصوص تقاليدها وقيمها لمواجهة خطاب الكراهية والرسائل المتطرفة.\n• رعاية الناجين والناجيات: يرافقن الأسر التي فقدت أحباءها ومن تعرّضوا للعنف، كثيرًا حيث لا تصل الخدمات الرسمية.\n• جسور بين الأديان: كثيرًا ما تلتقي نساء من أديان مختلفة بسهولة أكبر حول هموم مشتركة مثل الأطفال والصحة والأمان، فيُفتح الطريق للحوار بين الأديان.\nالعمل مع الرجال\nتقوى قيادة المرأة عندما يدعمها القادة الدينيون والمجتمعيون من الرجال. وكثير من المبادرات الناجحة تجمع قيادات من النساء والرجال معًا، لتصل رسائل السلام إلى كل فئات المجتمع ويُنظر إلى دور المرأة على أنه مشروع.\nالتحديات\nقد تُستبعد النساء من المناصب والمجالس الدينية الرسمية، وقد يُشكَّك في أصواتهن. ويساعد بناء التحالفات وتوثيق عملهن وتدريبهن على الوساطة في تجاوز هذه العقبات.\nللتأمل: من هن القيادات النسائية، الدينية أو المجتمعية، اللواتي يُستمع إليهن في مجتمعك؟ وكيف يمكن أن يعملن مع القيادات من الرجال من أجل السلام؟"
+          }
+        },
+        {
+          "sort": 2,
+          "type": "text",
+          "minutes": 20,
+          "title": {
+            "en": "Case studies from Africa and the Arab region",
+            "fr": "Études de cas d’Afrique et du monde arabe",
+            "ar": "دراسات حالة من أفريقيا والمنطقة العربية"
+          },
+          "body": {
+            "en": "These three examples show women building peace in very different settings. As you read, notice what they did, who they worked with and why it made a difference.\n1. Liberia: women who pushed for peace (2003)\nDuring Liberia’s civil war, Christian and Muslim women came together in the Women of Liberia Mass Action for Peace. Dressed in white, they held daily sit-ins and prayers in public, and met the president and rebel leaders to demand peace talks. When talks were held in Accra, Ghana, women surrounded the venue and refused to let the delegates leave until progress was made. A peace agreement was signed in August 2003. One of the movement’s leaders, Leymah Gbowee, received the Nobel Peace Prize in 2011, together with Ellen Johnson Sirleaf of Liberia and Tawakkol Karman of Yemen.\nWhat made it work: unity across religions, peaceful and visible action, and steady pressure on the people with power.\n2. Wajir, Kenya: from a market quarrel to a peace committee (1990s)\nIn the early 1990s Wajir, in north-eastern Kenya, suffered violent clashes between clans. Women, including Dekha Ibrahim Abdi, began by making sure that women from every clan could trade safely at the market. Their effort grew into a wider group that brought together elders, religious leaders, youth, officials and security forces: the Wajir Peace and Development Committee. It became a model for local peace committees elsewhere in Kenya.\nWhat made it work: starting from a concrete, shared need; involving everyone with influence; and creating a lasting structure.\n3. Morocco: women religious guides (since 2006)\nMorocco trains women religious guides, the murshidat, alongside men. They teach, listen to families, counsel young people and explain religion in ways that reject violence and extremism. Their presence also shows that women can hold recognised religious roles.\nWhat made it work: official recognition, solid training and closeness to the community.\nTo reflect: which of these three examples is closest to your own community? Which idea could you adapt, and with whom?",
+            "fr": "Ces trois exemples montrent des femmes qui construisent la paix dans des contextes très différents. En lisant, observez ce qu’elles ont fait, avec qui elles ont travaillé et pourquoi cela a changé les choses.\n1. Libéria : des femmes qui ont imposé la paix (2003)\nPendant la guerre civile au Libéria, des femmes chrétiennes et musulmanes se sont unies dans le mouvement Women of Liberia Mass Action for Peace. Vêtues de blanc, elles ont tenu chaque jour des sit-in et des prières en public, et rencontré le président et les chefs rebelles pour exiger des négociations. Lorsque les pourparlers ont eu lieu à Accra, au Ghana, des femmes ont encerclé le lieu des discussions et refusé de laisser partir les délégués tant qu’aucun progrès n’était fait. Un accord de paix a été signé en août 2003. L’une des responsables du mouvement, Leymah Gbowee, a reçu le prix Nobel de la paix en 2011, avec Ellen Johnson Sirleaf, du Libéria, et Tawakkol Karman, du Yémen.\nCe qui a fonctionné : l’unité entre religions, une action pacifique et visible, et une pression constante sur ceux qui détenaient le pouvoir.\n2. Wajir, Kenya : d’une querelle de marché à un comité de paix (années 1990)\nAu début des années 1990, Wajir, au nord-est du Kenya, a connu de violents affrontements entre clans. Des femmes, dont Dekha Ibrahim Abdi, ont commencé par faire en sorte que les femmes de tous les clans puissent commercer en sécurité au marché. Leur initiative s’est élargie à un groupe réunissant anciens, responsables religieux, jeunes, autorités et forces de sécurité : le Wajir Peace and Development Committee. Il est devenu un modèle pour les comités de paix locaux ailleurs au Kenya.\nCe qui a fonctionné : partir d’un besoin concret et partagé, associer toutes les personnes influentes et créer une structure durable.\n3. Maroc : des guides religieuses (depuis 2006)\nLe Maroc forme des guides religieuses, les mourchidates, aux côtés des hommes. Elles enseignent, écoutent les familles, conseillent les jeunes et expliquent la religion d’une manière qui rejette la violence et l’extrémisme. Leur présence montre aussi que des femmes peuvent occuper des fonctions religieuses reconnues.\nCe qui a fonctionné : la reconnaissance officielle, une formation solide et la proximité avec la communauté.\nPour réfléchir : lequel de ces trois exemples est le plus proche de votre communauté ? Quelle idée pourriez-vous adapter, et avec qui ?",
+            "ar": "تُظهر هذه الأمثلة الثلاثة نساءً يبنين السلام في سياقات مختلفة جدًا. وأنت تقرأ/ين، لاحظ/ي ماذا فعلن، ومع من عملن، ولماذا أحدث ذلك فرقًا.\n١. ليبيريا: نساء دفعن نحو السلام (٢٠٠٣)\nخلال الحرب الأهلية في ليبيريا اجتمعت نساء مسيحيات ومسلمات في حركة «العمل الجماهيري لنساء ليبيريا من أجل السلام». ارتدين الأبيض، ونظّمن يوميًا اعتصامات وصلوات علنية، والتقين الرئيس وقادة المتمردين للمطالبة بمفاوضات سلام. وعندما عُقدت المحادثات في أكرا بغانا، أحاطت النساء بمكان التفاوض ورفضن السماح للمفاوضين بالمغادرة قبل تحقيق تقدم. ووُقّع اتفاق السلام في أغسطس ٢٠٠٣. ونالت إحدى قائدات الحركة، ليما غبوي، جائزة نوبل للسلام عام ٢٠١١، مع إلين جونسون سيرليف من ليبيريا وتوكل كرمان من اليمن.\nسرّ النجاح: الوحدة بين الأديان، والعمل السلمي الظاهر، والضغط المستمر على أصحاب السلطة.\n٢. وجير في كينيا: من خلاف في السوق إلى لجنة سلام (تسعينيات القرن العشرين)\nفي أوائل التسعينيات شهدت منطقة وجير في شمال شرق كينيا اشتباكات عنيفة بين العشائر. فبدأت نساء، منهن ديكا إبراهيم عبدي، بضمان أن تتمكن نساء كل العشائر من التجارة بأمان في السوق. ثم اتسعت مبادرتهن لتصبح مجموعة تجمع الشيوخ والقيادات الدينية والشباب والمسؤولين وقوات الأمن: «لجنة وجير للسلام والتنمية». وأصبحت نموذجًا للجان السلام المحلية في مناطق أخرى من كينيا.\nسرّ النجاح: البدء من حاجة ملموسة مشتركة، وإشراك كل أصحاب التأثير، وإنشاء بنية دائمة.\n٣. المغرب: المرشدات الدينيات (منذ ٢٠٠٦)\nيدرّب المغرب مرشدات دينيات إلى جانب المرشدين. يعلّمن، ويستمعن إلى الأسر، ويقدّمن الإرشاد للشباب، ويشرحن الدين بطريقة ترفض العنف والتطرف. ويؤكد حضورهن أيضًا أن النساء قادرات على شغل أدوار دينية معترف بها.\nسرّ النجاح: الاعتراف الرسمي، والتدريب المتين، والقرب من المجتمع.\nللتأمل: أي هذه الأمثلة الثلاثة أقرب إلى مجتمعك؟ وأي فكرة يمكنك تكييفها، ومع من؟"
+          }
+        }
+      ],
+      "questions": [
+        {
+          "text": {
+            "en": "Why are women often trusted as informal mediators?",
+            "fr": "Pourquoi fait-on souvent confiance aux femmes comme médiatrices informelles ?",
+            "ar": "لماذا يثق الناس غالبًا بالنساء وسيطاتٍ غير رسميات؟"
+          },
+          "options": [
+            {
+              "en": "Because they hold official positions",
+              "fr": "Parce qu’elles occupent des postes officiels",
+              "ar": "لأنهن يشغلن مناصب رسمية"
+            },
+            {
+              "en": "Because they know the community well and can reach places others cannot",
+              "fr": "Parce qu’elles connaissent bien la communauté et accèdent à des espaces que d’autres n’atteignent pas",
+              "ar": "لأنهن يعرفن المجتمع جيدًا ويصلن إلى أماكن لا يصل إليها غيرهن"
+            },
+            {
+              "en": "Because they are paid for it",
+              "fr": "Parce qu’elles sont payées pour cela",
+              "ar": "لأنهن يتقاضين أجرًا على ذلك"
+            },
+            {
+              "en": "Because the law requires it",
+              "fr": "Parce que la loi l’exige",
+              "ar": "لأن القانون يفرض ذلك"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "Which of these is a common limit on women’s informal mediation?",
+            "fr": "Laquelle de ces limites touche souvent la médiation informelle des femmes ?",
+            "ar": "أيٌّ مما يلي من الحدود الشائعة التي تواجه وساطة النساء غير الرسمية؟"
+          },
+          "options": [
+            {
+              "en": "It is rarely recognised or recorded, and women are often left out of formal talks",
+              "fr": "Elle est rarement reconnue ou consignée, et les femmes sont souvent écartées des discussions officielles",
+              "ar": "نادرًا ما يُعترف بها أو تُوثَّق، وكثيرًا ما تُستبعد النساء من المحادثات الرسمية"
+            },
+            {
+              "en": "It always replaces the courts",
+              "fr": "Elle remplace toujours les tribunaux",
+              "ar": "تحلّ دائمًا محل المحاكم"
+            },
+            {
+              "en": "It only happens in cities",
+              "fr": "Elle n’existe que dans les villes",
+              "ar": "لا تحدث إلا في المدن"
+            },
+            {
+              "en": "It is too well funded",
+              "fr": "Elle est trop bien financée",
+              "ar": "تحظى بتمويل زائد"
+            }
+          ],
+          "correct": 0
+        },
+        {
+          "text": {
+            "en": "How can women religious leaders help counter hate speech?",
+            "fr": "Comment les femmes responsables religieuses peuvent-elles aider à contrer les discours de haine ?",
+            "ar": "كيف يمكن للقيادات الدينية النسائية المساعدة في مواجهة خطاب الكراهية؟"
+          },
+          "options": [
+            {
+              "en": "By avoiding religious topics",
+              "fr": "En évitant les sujets religieux",
+              "ar": "بتجنّب الموضوعات الدينية"
+            },
+            {
+              "en": "By using their tradition’s texts and values to challenge it",
+              "fr": "En s’appuyant sur les textes et les valeurs de leur tradition pour le contester",
+              "ar": "بالاستناد إلى نصوص تقاليدهن وقيمها للرد عليه"
+            },
+            {
+              "en": "By staying silent",
+              "fr": "En restant silencieuses",
+              "ar": "بالتزام الصمت"
+            },
+            {
+              "en": "By asking the police to act alone",
+              "fr": "En laissant la police agir seule",
+              "ar": "بترك الأمر للشرطة وحدها"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "In Liberia in 2003, the Women of Liberia Mass Action for Peace brought together:",
+            "fr": "Au Libéria, en 2003, le mouvement Women of Liberia Mass Action for Peace réunissait :",
+            "ar": "جمعت حركة «العمل الجماهيري لنساء ليبيريا من أجل السلام» عام ٢٠٠٣:"
+          },
+          "options": [
+            {
+              "en": "Only government officials",
+              "fr": "Seulement des responsables gouvernementaux",
+              "ar": "المسؤولين الحكوميين فقط"
+            },
+            {
+              "en": "Christian and Muslim women",
+              "fr": "Des femmes chrétiennes et musulmanes",
+              "ar": "نساء مسيحيات ومسلمات"
+            },
+            {
+              "en": "Foreign soldiers",
+              "fr": "Des soldats étrangers",
+              "ar": "جنودًا أجانب"
+            },
+            {
+              "en": "Business leaders only",
+              "fr": "Uniquement des chefs d’entreprise",
+              "ar": "رجال أعمال فقط"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "The Wajir peace initiative in Kenya started from:",
+            "fr": "L’initiative de paix de Wajir, au Kenya, est partie de :",
+            "ar": "بدأت مبادرة السلام في وجير بكينيا من:"
+          },
+          "options": [
+            {
+              "en": "An international conference",
+              "fr": "Une conférence internationale",
+              "ar": "مؤتمر دولي"
+            },
+            {
+              "en": "Women making sure women from every clan could trade safely at the market",
+              "fr": "Des femmes qui ont veillé à ce que les femmes de tous les clans puissent commercer en sécurité au marché",
+              "ar": "نساء ضمِنّ أن تتمكن نساء كل العشائر من التجارة بأمان في السوق"
+            },
+            {
+              "en": "A court ruling",
+              "fr": "Une décision de justice",
+              "ar": "حكم قضائي"
+            },
+            {
+              "en": "A television programme",
+              "fr": "Une émission de télévision",
+              "ar": "برنامج تلفزيوني"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "Why do many successful peace initiatives pair women and men leaders?",
+            "fr": "Pourquoi beaucoup d’initiatives de paix réussies associent-elles des femmes et des hommes leaders ?",
+            "ar": "لماذا تجمع كثير من مبادرات السلام الناجحة بين قيادات من النساء والرجال؟"
+          },
+          "options": [
+            {
+              "en": "So that messages of peace reach the whole community and women’s roles are seen as legitimate",
+              "fr": "Pour que les messages de paix atteignent toute la communauté et que le rôle des femmes soit reconnu comme légitime",
+              "ar": "لتصل رسائل السلام إلى المجتمع كله ويُنظر إلى دور المرأة على أنه مشروع"
+            },
+            {
+              "en": "Because women cannot lead alone",
+              "fr": "Parce que les femmes ne peuvent pas diriger seules",
+              "ar": "لأن النساء لا يستطعن القيادة وحدهن"
+            },
+            {
+              "en": "To reduce costs",
+              "fr": "Pour réduire les coûts",
+              "ar": "لتقليل التكاليف"
+            },
+            {
+              "en": "Because it is required by Resolution 1325",
+              "fr": "Parce que la résolution 1325 l’impose",
+              "ar": "لأن القرار ١٣٢٥ يفرض ذلك"
+            }
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "sort": 2,
+      "title": {
+        "en": "Gender-sensitive conflict analysis",
+        "fr": "Analyse des conflits sensible au genre",
+        "ar": "تحليل النزاعات من منظور النوع الاجتماعي"
+      },
+      "summary": {
+        "en": "Simple tools to understand a conflict (its causes, actors and dynamics) and to see how it affects women and men differently, applied to a conflict in your own community.",
+        "fr": "Des outils simples pour comprendre un conflit (ses causes, ses acteurs et sa dynamique) et voir comment il touche différemment les femmes et les hommes, appliqués à un conflit de votre communauté.",
+        "ar": "أدوات بسيطة لفهم النزاع (أسبابه وأطرافه وديناميكياته) ورؤية اختلاف أثره على النساء والرجال، مع تطبيقها على نزاع في مجتمعك."
+      },
+      "passMark": 70,
+      "lessons": [
+        {
+          "sort": 0,
+          "type": "text",
+          "minutes": 20,
+          "title": {
+            "en": "Tools for analysing conflict: actors, causes, dynamics",
+            "fr": "Outils d’analyse des conflits : acteurs, causes, dynamiques",
+            "ar": "أدوات تحليل النزاع: الأطراف والأسباب والديناميكيات"
+          },
+          "body": {
+            "en": "Before trying to resolve a conflict, we need to understand it. Conflict analysis is a careful look at a conflict so that our actions help, and do not make things worse. It asks four questions.\n1. The context: where and when is this happening? What is the history, and what is the political, economic and social situation?\n2. The causes:\n• Root causes are deep and long-lasting, such as inequality, exclusion, competition over land or water, or old injustices.\n• Proximate causes make tension grow, such as unemployment, rumours or hate speech.\n• Triggers are the events that make violence break out, such as an incident, an arrest or an election.\n3. The actors: who is involved or affected? For each actor, ask:\n• Position: what do they say they want?\n• Interests: why do they want it?\n• Needs: what do they need to feel safe, respected and secure?\nNeeds are often shared by both sides, which is where solutions can start.\n4. The dynamics: how is the conflict changing? Is it getting worse or calmer? What could change it?\nThree useful tools\n• The conflict tree: draw a tree. The roots are the causes, the trunk is the core problem, and the branches are the effects. It helps a group separate causes from consequences.\n• The actor map: draw circles for each actor, their size showing their power, and lines for their relationships (close, broken, in conflict, with influence).\n• Connectors and dividers: list what divides people (fears, symbols, rumours) and what still connects them (markets, schools, shared values, family ties). Peace work should weaken dividers and strengthen connectors. This idea comes from the “Do No Harm” approach.\nTo reflect: think of a recent tension in your community. Can you name one root cause, one trigger and one connector?",
+            "fr": "Avant de chercher à résoudre un conflit, il faut le comprendre. L’analyse de conflit est un examen attentif d’un conflit, pour que nos actions aident au lieu d’aggraver la situation. Elle pose quatre questions.\n1. Le contexte : où et quand cela se passe-t-il ? Quelle est l’histoire, et quelle est la situation politique, économique et sociale ?\n2. Les causes :\n• Les causes profondes sont anciennes et durables : inégalités, exclusion, concurrence pour la terre ou l’eau, injustices passées.\n• Les causes immédiates font monter la tension : chômage, rumeurs, discours de haine.\n• Les déclencheurs sont les événements qui font éclater la violence : un incident, une arrestation, une élection.\n3. Les acteurs : qui est impliqué ou touché ? Pour chaque acteur, demandez-vous :\n• Sa position : que dit-il vouloir ?\n• Ses intérêts : pourquoi le veut-il ?\n• Ses besoins : de quoi a-t-il besoin pour se sentir en sécurité et respecté ?\nLes besoins sont souvent partagés par les deux camps, et c’est là que les solutions peuvent commencer.\n4. La dynamique : comment le conflit évolue-t-il ? S’aggrave-t-il ou s’apaise-t-il ? Qu’est-ce qui pourrait le faire changer ?\nTrois outils utiles\n• L’arbre à problèmes : dessinez un arbre. Les racines sont les causes, le tronc est le problème central, les branches sont les effets. Il aide un groupe à distinguer les causes des conséquences.\n• La carte des acteurs : dessinez un cercle par acteur, de taille proportionnelle à son pouvoir, et des lignes pour leurs relations (proches, rompues, en conflit, d’influence).\n• Ce qui relie et ce qui divise : listez ce qui divise les gens (peurs, symboles, rumeurs) et ce qui les relie encore (marchés, écoles, valeurs communes, liens familiaux). Le travail de paix doit affaiblir ce qui divise et renforcer ce qui relie. Cette idée vient de l’approche « Ne pas nuire » (Do No Harm).\nPour réfléchir : pensez à une tension récente dans votre communauté. Pouvez-vous citer une cause profonde, un déclencheur et un élément qui relie ?",
+            "ar": "قبل محاولة حلّ النزاع علينا أن نفهمه. وتحليل النزاع نظرة متأنية إليه، حتى تساعد أفعالنا ولا تزيد الأمور سوءًا. ويطرح أربعة أسئلة.\n١. السياق: أين ومتى يحدث هذا؟ ما تاريخه، وما الوضع السياسي والاقتصادي والاجتماعي؟\n٢. الأسباب:\n• الأسباب الجذرية عميقة وطويلة الأمد، مثل عدم المساواة والإقصاء والتنافس على الأرض أو المياه أو مظالم قديمة.\n• الأسباب المباشرة تزيد التوتر، مثل البطالة والشائعات وخطاب الكراهية.\n• المُحفِّزات أحداث تُشعل العنف، مثل حادثة أو اعتقال أو انتخابات.\n٣. الأطراف: من المعنيون بالنزاع أو المتأثرون به؟ اسأل/ي عن كل طرف:\n• الموقف: ماذا يقول إنه يريد؟\n• المصالح: لماذا يريد ذلك؟\n• الاحتياجات: ماذا يحتاج ليشعر بالأمان والاحترام؟\nوكثيرًا ما تكون الاحتياجات مشتركة بين الطرفين، ومن هنا يمكن أن تبدأ الحلول.\n٤. الديناميكيات: كيف يتغير النزاع؟ هل يتصاعد أم يهدأ؟ وما الذي قد يغيّره؟\nثلاث أدوات مفيدة\n• شجرة النزاع: ارسم/ي شجرة؛ جذورها الأسباب، وجذعها المشكلة الأساسية، وفروعها الآثار. تساعد المجموعة على التمييز بين الأسباب والنتائج.\n• خريطة الأطراف: ارسم/ي دائرة لكل طرف، يدل حجمها على قوته، وخطوطًا لعلاقاتهم (قريبة، مقطوعة، متنازعة، ذات تأثير).\n• الروابط والفواصل: اكتب/ي ما يفرّق الناس (المخاوف، الرموز، الشائعات) وما لا يزال يجمعهم (الأسواق، المدارس، القيم المشتركة، صلات القرابة). وعلى العمل من أجل السلام أن يُضعف الفواصل ويقوّي الروابط. وتأتي هذه الفكرة من نهج «عدم الإضرار».\nللتأمل: فكّر/ي في توتر حديث في مجتمعك. هل تستطيع/ين تسمية سبب جذري واحد، ومحفّز واحد، ورابط واحد؟"
+          }
+        },
+        {
+          "sort": 1,
+          "type": "text",
+          "minutes": 15,
+          "title": {
+            "en": "How conflict affects women and men differently",
+            "fr": "Comment les conflits touchent différemment les femmes et les hommes",
+            "ar": "كيف يؤثر النزاع على النساء والرجال بشكل مختلف"
+          },
+          "body": {
+            "en": "Conflict harms everyone, but not in the same way. A gender-sensitive analysis looks at how roles, expectations and power between women and men shape what people suffer, what they need and what they can do for peace.\nCommon patterns\n• Men and boys are more often killed in fighting, detained, or pressured to join armed groups. Men can also be survivors of sexual violence, which is rarely reported.\n• Women and girls face sexual and gender-based violence, displacement, early or forced marriage, and the loss of education and income. Many become heads of their households and carry the care of children, the elderly and the wounded.\n• Women can also take part in violence, as fighters or supporters, and they can resist it. Seeing women only as victims hides their roles as actors.\n• Age, disability, displacement, religion, ethnicity and poverty change these experiences. A displaced young widow and an older man with a disability face very different risks.\nQuestions for a gender analysis\nAdd these questions to the tools from the previous lesson:\n• Who does what? How has the conflict changed the work and roles of women and men?\n• Who has access to, and control over, resources such as land, money, aid and information?\n• Who takes decisions, in the family, the community and in peace talks? Who is missing?\n• Who is at risk of which kind of violence, and where?\n• What do women and men each see as the solution? Have both been asked?\nWhy it matters\nIf only some voices are heard, the analysis is incomplete and responses can fail or even do harm, for example aid distributed where women cannot safely go, or peace talks that ignore the needs of families of the missing. Listening separately to women and men, and to young and older people, gives a truer picture.\nTo reflect: in a conflict you know, what is one risk that women face and men do not, and one that men face and women do not?",
+            "fr": "Les conflits font du mal à tout le monde, mais pas de la même manière. Une analyse sensible au genre examine comment les rôles, les attentes et les rapports de pouvoir entre femmes et hommes déterminent ce que les gens subissent, ce dont ils ont besoin et ce qu’ils peuvent faire pour la paix.\nDes tendances fréquentes\n• Les hommes et les garçons sont plus souvent tués dans les combats, détenus ou poussés à rejoindre des groupes armés. Les hommes peuvent aussi subir des violences sexuelles, rarement signalées.\n• Les femmes et les filles subissent des violences sexuelles et fondées sur le genre, des déplacements, des mariages précoces ou forcés, et la perte de leur éducation et de leurs revenus. Beaucoup deviennent cheffes de famille et prennent en charge les enfants, les personnes âgées et les blessés.\n• Les femmes peuvent aussi participer à la violence, comme combattantes ou soutiens, et elles peuvent y résister. Ne les voir que comme victimes cache leur rôle d’actrices.\n• L’âge, le handicap, le déplacement, la religion, l’origine et la pauvreté modifient ces expériences. Une jeune veuve déplacée et un homme âgé en situation de handicap courent des risques très différents.\nQuestions pour une analyse de genre\nAjoutez ces questions aux outils de la leçon précédente :\n• Qui fait quoi ? Comment le conflit a-t-il changé le travail et les rôles des femmes et des hommes ?\n• Qui a accès aux ressources (terre, argent, aide, information) et qui les contrôle ?\n• Qui prend les décisions, dans la famille, la communauté et les négociations de paix ? Qui est absent ?\n• Qui est exposé à quel type de violence, et où ?\n• Quelle solution les femmes et les hommes voient-ils chacun ? Les a-t-on interrogés tous les deux ?\nPourquoi c’est important\nSi seules certaines voix sont entendues, l’analyse est incomplète et les réponses peuvent échouer, voire nuire : par exemple une aide distribuée là où les femmes ne peuvent pas aller en sécurité, ou des négociations qui ignorent les besoins des familles de personnes disparues. Écouter séparément les femmes et les hommes, les jeunes et les plus âgés, donne une image plus juste.\nPour réfléchir : dans un conflit que vous connaissez, citez un risque que courent les femmes et pas les hommes, et un risque que courent les hommes et pas les femmes.",
+            "ar": "يؤذي النزاع الجميع، لكن ليس بالطريقة نفسها. ويبحث التحليل المراعي للنوع الاجتماعي في كيف تحدد الأدوار والتوقعات وعلاقات القوة بين النساء والرجال ما يعانيه الناس، وما يحتاجونه، وما يستطيعون فعله من أجل السلام.\nأنماط شائعة\n• يتعرض الرجال والفتيان أكثر للقتل في المعارك والاحتجاز والضغط للانضمام إلى الجماعات المسلحة. وقد يكون الرجال أيضًا ناجين من العنف الجنسي، وهو أمر نادرًا ما يُبلَّغ عنه.\n• تواجه النساء والفتيات العنف الجنسي والقائم على النوع الاجتماعي، والنزوح، والزواج المبكر أو القسري، وفقدان التعليم والدخل. وتصبح كثيرات منهن معيلات لأسرهن، ويتحملن رعاية الأطفال وكبار السن والجرحى.\n• قد تشارك النساء أيضًا في العنف، مقاتلاتٍ أو داعمات، وقد يقاومنه. والنظر إليهن بوصفهن ضحايا فقط يُخفي أدوارهن فاعلاتٍ.\n• يغيّر العمر والإعاقة والنزوح والدين والانتماء والفقر هذه التجارب. فالأرملة الشابة النازحة والرجل المسن ذو الإعاقة يواجهان مخاطر مختلفة تمامًا.\nأسئلة لتحليل النوع الاجتماعي\nأضف/أضيفي هذه الأسئلة إلى أدوات الدرس السابق:\n• من يفعل ماذا؟ وكيف غيّر النزاع عمل النساء والرجال وأدوارهم؟\n• من يصل إلى الموارد مثل الأرض والمال والمساعدات والمعلومات، ومن يتحكم فيها؟\n• من يتخذ القرارات في الأسرة والمجتمع ومفاوضات السلام؟ ومن الغائب؟\n• من المعرّض لأي نوع من العنف، وأين؟\n• ما الحل الذي تراه النساء، وما الذي يراه الرجال؟ وهل سُئل الطرفان؟\nلماذا يهم ذلك؟\nإذا سُمعت بعض الأصوات فقط يكون التحليل ناقصًا، وقد تفشل الاستجابة أو تُحدث ضررًا، مثل توزيع مساعدات في أماكن لا تستطيع النساء الوصول إليها بأمان، أو مفاوضات تتجاهل احتياجات أسر المفقودين. والاستماع إلى النساء والرجال، والشباب وكبار السن، كلٌّ على حدة، يعطي صورة أصدق.\nللتأمل: في نزاع تعرفه/ينه، ما خطر واحد تواجهه النساء ولا يواجهه الرجال، وخطر واحد يواجهه الرجال ولا تواجهه النساء؟"
+          }
+        },
+        {
+          "sort": 2,
+          "type": "text",
+          "minutes": 40,
+          "title": {
+            "en": "Exercise: map a conflict in your community",
+            "fr": "Exercice : cartographier un conflit dans votre communauté",
+            "ar": "تمرين: ارسم/ي خريطة لنزاع في مجتمعك"
+          },
+          "body": {
+            "en": "Now apply what you have learned to a real situation. You will need a sheet of paper (or a notebook) and about 40 minutes. Keep your work: you will use it in Unit 5 to design your initiative.\nChoose a conflict\nPick a tension or dispute in your community that you know well, such as a quarrel between families, a dispute over land or water, tension between groups, or hate speech online. Choose something you can safely think and talk about. Do not use real names if that could put anyone at risk.\nStep 1: draw the conflict tree (10 minutes)\nWrite the core problem on the trunk. Write the causes on the roots: at least two root causes and one trigger. Write the effects on the branches, including effects on women and on men.\nStep 2: map the actors (10 minutes)\nDraw a circle for each actor: individuals, groups, institutions, religious and community leaders, women’s groups, youth. Make powerful actors bigger. Draw lines for their relationships. Next to two or three key actors, write their position, interests and needs.\nStep 3: add the gender lens (10 minutes)\nAnswer in a few words: Who is affected most, and how? Who takes the decisions? Which women or groups of women already play a role, even an informal one? Whose voice is missing?\nStep 4: connectors and dividers (5 minutes)\nList three things that divide people and three things that still connect them.\nStep 5: one first idea (5 minutes)\nWrite one small action that could strengthen a connector or give a missing voice a place. Keep it realistic: something you or your group could start within a month.\nWhen you have finished, keep your sheet safe and mark this lesson as done.",
+            "fr": "Appliquez maintenant ce que vous avez appris à une situation réelle. Il vous faut une feuille (ou un cahier) et environ 40 minutes. Gardez votre travail : vous l’utiliserez dans le module 5 pour concevoir votre initiative.\nChoisissez un conflit\nChoisissez une tension ou un différend que vous connaissez bien dans votre communauté : une querelle entre familles, un litige sur la terre ou l’eau, des tensions entre groupes, des discours de haine en ligne. Choisissez un sujet dont vous pouvez parler sans danger. N’utilisez pas de vrais noms si cela peut mettre quelqu’un en danger.\nÉtape 1 : dessinez l’arbre à problèmes (10 minutes)\nÉcrivez le problème central sur le tronc. Écrivez les causes sur les racines : au moins deux causes profondes et un déclencheur. Écrivez les effets sur les branches, y compris les effets sur les femmes et sur les hommes.\nÉtape 2 : cartographiez les acteurs (10 minutes)\nDessinez un cercle par acteur : personnes, groupes, institutions, responsables religieux et communautaires, groupes de femmes, jeunes. Faites les acteurs puissants plus grands. Tracez des lignes pour leurs relations. À côté de deux ou trois acteurs clés, notez leur position, leurs intérêts et leurs besoins.\nÉtape 3 : ajoutez le regard de genre (10 minutes)\nRépondez en quelques mots : qui est le plus touché, et comment ? Qui prend les décisions ? Quelles femmes ou quels groupes de femmes jouent déjà un rôle, même informel ? Quelle voix manque ?\nÉtape 4 : ce qui relie et ce qui divise (5 minutes)\nListez trois choses qui divisent les gens et trois choses qui les relient encore.\nÉtape 5 : une première idée (5 minutes)\nÉcrivez une petite action qui pourrait renforcer un élément qui relie ou donner une place à une voix absente. Restez réaliste : quelque chose que vous ou votre groupe pourriez lancer dans le mois.\nUne fois terminé, conservez votre feuille et marquez cette leçon comme terminée.",
+            "ar": "طبّق/ي الآن ما تعلمته على موقف حقيقي. ستحتاج/ين إلى ورقة (أو دفتر) وحوالي ٤٠ دقيقة. احتفظ/ي بعملك، فستستخدمه/ينه في الوحدة الخامسة لتصميم مبادرتك.\nاختر/اختاري نزاعًا\nاختر/اختاري توترًا أو خلافًا تعرفه/ينه جيدًا في مجتمعك، مثل خلاف بين أسر، أو نزاع على أرض أو مياه، أو توتر بين جماعات، أو خطاب كراهية على الإنترنت. اختر/اختاري موضوعًا يمكنك التفكير والحديث فيه بأمان، ولا تستخدم/ي أسماء حقيقية إذا كان ذلك قد يعرّض أحدًا للخطر.\nالخطوة الأولى: ارسم/ي شجرة النزاع (١٠ دقائق)\nاكتب/ي المشكلة الأساسية على الجذع، والأسباب على الجذور: سببين جذريين على الأقل ومحفّزًا واحدًا. واكتب/ي الآثار على الفروع، بما فيها الآثار على النساء والرجال.\nالخطوة الثانية: ارسم/ي خريطة الأطراف (١٠ دقائق)\nارسم/ي دائرة لكل طرف: أفراد، جماعات، مؤسسات، قيادات دينية ومجتمعية، مجموعات نسائية، شباب. اجعل/ي الأطراف الأقوى أكبر، وارسم/ي خطوطًا لعلاقاتهم. وبجانب طرفين أو ثلاثة رئيسيين اكتب/ي الموقف والمصالح والاحتياجات.\nالخطوة الثالثة: أضف/أضيفي منظور النوع الاجتماعي (١٠ دقائق)\nأجب/أجيبي باختصار: من الأكثر تأثرًا، وكيف؟ من يتخذ القرارات؟ أي النساء أو المجموعات النسائية تؤدي دورًا بالفعل، ولو غير رسمي؟ وأي صوت غائب؟\nالخطوة الرابعة: الروابط والفواصل (٥ دقائق)\nاكتب/ي ثلاثة أمور تفرّق الناس وثلاثة أمور لا تزال تجمعهم.\nالخطوة الخامسة: فكرة أولى (٥ دقائق)\nاكتب/ي عملًا صغيرًا واحدًا يمكن أن يقوّي رابطًا أو يمنح صوتًا غائبًا مكانه. كن/كوني واقعيًا/ة: شيئًا يمكنك أنت أو مجموعتك البدء به خلال شهر.\nعندما تنتهي/ين احتفظ/ي بورقتك، ثم حدّد/ي هذا الدرس مكتملًا."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "text": {
+            "en": "In a conflict tree, what do the roots represent?",
+            "fr": "Dans l’arbre à problèmes, que représentent les racines ?",
+            "ar": "في شجرة النزاع، ماذا تمثل الجذور؟"
+          },
+          "options": [
+            {
+              "en": "The effects of the conflict",
+              "fr": "Les effets du conflit",
+              "ar": "آثار النزاع"
+            },
+            {
+              "en": "The causes of the conflict",
+              "fr": "Les causes du conflit",
+              "ar": "أسباب النزاع"
+            },
+            {
+              "en": "The people involved",
+              "fr": "Les personnes impliquées",
+              "ar": "الأشخاص المعنيين"
+            },
+            {
+              "en": "The solutions",
+              "fr": "Les solutions",
+              "ar": "الحلول"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "An arrest that suddenly makes violence break out is an example of:",
+            "fr": "Une arrestation qui fait soudain éclater la violence est un exemple de :",
+            "ar": "اعتقال يُشعل العنف فجأة هو مثال على:"
+          },
+          "options": [
+            {
+              "en": "A root cause",
+              "fr": "Une cause profonde",
+              "ar": "سبب جذري"
+            },
+            {
+              "en": "A connector",
+              "fr": "Un élément qui relie",
+              "ar": "رابط"
+            },
+            {
+              "en": "A trigger",
+              "fr": "Un déclencheur",
+              "ar": "محفّز"
+            },
+            {
+              "en": "A need",
+              "fr": "Un besoin",
+              "ar": "احتياج"
+            }
+          ],
+          "correct": 2
+        },
+        {
+          "text": {
+            "en": "What is the difference between a position and an interest?",
+            "fr": "Quelle est la différence entre une position et un intérêt ?",
+            "ar": "ما الفرق بين الموقف والمصلحة؟"
+          },
+          "options": [
+            {
+              "en": "A position is what someone says they want; an interest is why they want it",
+              "fr": "La position est ce que quelqu’un dit vouloir ; l’intérêt est la raison pour laquelle il le veut",
+              "ar": "الموقف هو ما يقول الشخص إنه يريده، والمصلحة هي سبب إرادته له"
+            },
+            {
+              "en": "There is no difference",
+              "fr": "Il n’y a aucune différence",
+              "ar": "لا فرق بينهما"
+            },
+            {
+              "en": "An interest is always about money",
+              "fr": "Un intérêt concerne toujours l’argent",
+              "ar": "المصلحة تتعلق دائمًا بالمال"
+            },
+            {
+              "en": "A position is decided by a court",
+              "fr": "Une position est fixée par un tribunal",
+              "ar": "الموقف تحدده المحكمة"
+            }
+          ],
+          "correct": 0
+        },
+        {
+          "text": {
+            "en": "According to the “Do No Harm” idea, peace work should:",
+            "fr": "Selon l’approche « Ne pas nuire », le travail de paix doit :",
+            "ar": "وفق نهج «عدم الإضرار»، يجب أن يعمل العمل من أجل السلام على:"
+          },
+          "options": [
+            {
+              "en": "Strengthen dividers",
+              "fr": "Renforcer ce qui divise",
+              "ar": "تقوية الفواصل"
+            },
+            {
+              "en": "Weaken dividers and strengthen connectors",
+              "fr": "Affaiblir ce qui divise et renforcer ce qui relie",
+              "ar": "إضعاف الفواصل وتقوية الروابط"
+            },
+            {
+              "en": "Avoid talking to any actor",
+              "fr": "Éviter de parler à tout acteur",
+              "ar": "تجنّب الحديث مع أي طرف"
+            },
+            {
+              "en": "Focus only on the strongest actor",
+              "fr": "Se concentrer uniquement sur l’acteur le plus fort",
+              "ar": "التركيز على الطرف الأقوى فقط"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "Which statement reflects a gender-sensitive analysis?",
+            "fr": "Quelle affirmation reflète une analyse sensible au genre ?",
+            "ar": "أي عبارة تعكس تحليلًا مراعيًا للنوع الاجتماعي؟"
+          },
+          "options": [
+            {
+              "en": "Conflict affects everyone in exactly the same way",
+              "fr": "Les conflits touchent tout le monde exactement de la même façon",
+              "ar": "يؤثر النزاع على الجميع بالطريقة نفسها تمامًا"
+            },
+            {
+              "en": "Women are only victims and never actors",
+              "fr": "Les femmes sont seulement des victimes, jamais des actrices",
+              "ar": "النساء ضحايا فقط ولسن فاعلات أبدًا"
+            },
+            {
+              "en": "Women and men can face different risks and needs, and both should be heard",
+              "fr": "Les femmes et les hommes peuvent avoir des risques et des besoins différents, et les deux doivent être entendus",
+              "ar": "قد تختلف المخاطر والاحتياجات بين النساء والرجال، ويجب الاستماع إلى الطرفين"
+            },
+            {
+              "en": "Only men take part in conflict",
+              "fr": "Seuls les hommes participent aux conflits",
+              "ar": "الرجال وحدهم يشاركون في النزاع"
+            }
+          ],
+          "correct": 2
+        },
+        {
+          "text": {
+            "en": "Why should aid planners ask women where it is safe to go?",
+            "fr": "Pourquoi les responsables de l’aide doivent-ils demander aux femmes où elles peuvent aller en sécurité ?",
+            "ar": "لماذا ينبغي لمخططي المساعدات أن يسألوا النساء عن الأماكن الآمنة لهن؟"
+          },
+          "options": [
+            {
+              "en": "Because aid given where women cannot safely go may fail or even cause harm",
+              "fr": "Parce qu’une aide distribuée là où les femmes ne peuvent pas aller en sécurité peut échouer, voire nuire",
+              "ar": "لأن المساعدات التي تُوزَّع حيث لا تستطيع النساء الوصول بأمان قد تفشل أو تُحدث ضررًا"
+            },
+            {
+              "en": "Because women decide all aid budgets",
+              "fr": "Parce que les femmes décident de tous les budgets d’aide",
+              "ar": "لأن النساء يقرّرن كل ميزانيات المساعدات"
+            },
+            {
+              "en": "Because men do not need aid",
+              "fr": "Parce que les hommes n’ont pas besoin d’aide",
+              "ar": "لأن الرجال لا يحتاجون إلى مساعدات"
+            },
+            {
+              "en": "It is not necessary",
+              "fr": "Ce n’est pas nécessaire",
+              "ar": "ليس ذلك ضروريًا"
+            }
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "sort": 3,
+      "title": {
+        "en": "Dialogue and community mediation skills",
+        "fr": "Compétences en dialogue et médiation communautaire",
+        "ar": "مهارات الحوار والوساطة المجتمعية"
+      },
+      "summary": {
+        "en": "The core skills of a facilitator: listening deeply, communicating without blame, and preparing and leading a dialogue circle, then practising with others in a live session.",
+        "fr": "Les compétences de base d’un facilitateur ou d’une facilitatrice : écouter en profondeur, communiquer sans accuser, préparer et animer un cercle de dialogue, puis s’exercer avec d’autres lors d’une séance en direct.",
+        "ar": "المهارات الأساسية للميسّر/ة: الإصغاء العميق، والتواصل دون لوم، والتحضير لحلقة حوار وإدارتها، ثم التدرّب مع الآخرين في جلسة مباشرة."
+      },
+      "passMark": 70,
+      "lessons": [
+        {
+          "sort": 0,
+          "type": "text",
+          "minutes": 20,
+          "title": {
+            "en": "Deep listening and effective communication",
+            "fr": "Écoute profonde et communication efficace",
+            "ar": "الإصغاء العميق والتواصل الفعّال"
+          },
+          "body": {
+            "en": "In dialogue and mediation, listening is the main skill. People in conflict rarely feel heard. When they do, anger often falls and they become more ready to listen in turn.\nWhat deep listening means\nDeep listening means giving the other person your full attention, trying to understand their experience and feelings, and not preparing your answer while they speak. It does not mean agreeing with everything; it means showing that you understand.\nListening techniques\n• Attention: face the person, keep appropriate eye contact, put your phone away, and let silences happen.\n• Open questions: ask questions that start with “what”, “how” or “tell me about…”, rather than questions that can be answered with yes or no.\n• Paraphrasing: repeat in your own words what you heard, for example “So you feel that your family was not consulted.”\n• Reflecting feelings: name the emotion you notice, for example “It sounds like this has been very painful for you.”\n• Summarising: at the end, bring together the main points so everyone knows they have been understood.\nCommunicating without blame\nWhen you speak, especially as a facilitator, describe what you see and feel rather than accusing. A simple form is: “When… I feel… because… I would like…”. For example: “When people interrupt each other, I worry that some voices are not heard. Could we let each person finish?”\nCommon mistakes to avoid\n• Interrupting, or finishing the other person’s sentences.\n• Giving advice or solutions too early.\n• Judging, mocking or comparing (“that is nothing compared to…”).\n• Taking sides, even through small signs such as nodding only to one party.\nCulture and gender\nWays of showing respect differ: eye contact, distance, tone and who speaks first. Women may speak less in mixed groups; a good facilitator notices this and creates space, for example by giving everyone a turn.\nTo practise: today, in one conversation, use only open questions and paraphrasing for five minutes. What changed?",
+            "fr": "Dans le dialogue et la médiation, l’écoute est la compétence principale. Les personnes en conflit se sentent rarement entendues. Quand elles le sont, la colère retombe souvent et elles deviennent plus disposées à écouter à leur tour.\nCe qu’est l’écoute profonde\nÉcouter en profondeur, c’est accorder toute son attention à l’autre, chercher à comprendre ce qu’il vit et ressent, sans préparer sa réponse pendant qu’il parle. Ce n’est pas être d’accord avec tout ; c’est montrer qu’on a compris.\nTechniques d’écoute\n• L’attention : se tourner vers la personne, garder un contact visuel approprié, ranger son téléphone et accepter les silences.\n• Les questions ouvertes : poser des questions qui commencent par « que », « comment » ou « parlez-moi de… », plutôt que des questions fermées.\n• La reformulation : redire avec ses propres mots ce qu’on a entendu, par exemple « Vous avez donc le sentiment que votre famille n’a pas été consultée. »\n• Le reflet des émotions : nommer l’émotion perçue, par exemple « On dirait que cela a été très douloureux pour vous. »\n• La synthèse : à la fin, rassembler les points principaux pour que chacun sache qu’il a été compris.\nCommuniquer sans accuser\nLorsque vous parlez, surtout comme facilitateur ou facilitatrice, décrivez ce que vous voyez et ressentez au lieu d’accuser. Une forme simple : « Quand… je ressens… parce que… j’aimerais… ». Par exemple : « Quand les gens se coupent la parole, je crains que certaines voix ne soient pas entendues. Pourrions-nous laisser chacun terminer ? »\nErreurs fréquentes à éviter\n• Interrompre ou finir les phrases de l’autre.\n• Donner des conseils ou des solutions trop tôt.\n• Juger, se moquer ou comparer (« ce n’est rien à côté de… »).\n• Prendre parti, même par de petits signes comme hocher la tête pour une seule partie.\nCulture et genre\nLes manières de montrer du respect varient : contact visuel, distance, ton, ordre de prise de parole. Les femmes peuvent parler moins dans les groupes mixtes ; un bon facilitateur ou une bonne facilitatrice le remarque et crée de l’espace, par exemple en donnant un tour de parole à chacun.\nPour s’exercer : aujourd’hui, dans une conversation, n’utilisez que des questions ouvertes et la reformulation pendant cinq minutes. Qu’est-ce qui a changé ?",
+            "ar": "في الحوار والوساطة يكون الإصغاء هو المهارة الأساسية. فنادرًا ما يشعر أطراف النزاع بأن أحدًا يسمعهم، وعندما يشعرون بذلك يخفّ الغضب غالبًا ويصبحون أكثر استعدادًا للاستماع بدورهم.\nما معنى الإصغاء العميق؟\nأن تمنح/ي الشخص الآخر انتباهك الكامل، وتحاول/ين فهم تجربته ومشاعره، دون أن تُعدّ/ي ردّك وهو يتكلم. وهذا لا يعني الموافقة على كل شيء، بل إظهار أنك فهمت.\nتقنيات الإصغاء\n• الانتباه: التوجه نحو الشخص، والتواصل البصري المناسب، وإبعاد الهاتف، وتقبّل لحظات الصمت.\n• الأسئلة المفتوحة: أسئلة تبدأ بـ«ماذا» و«كيف» و«حدّثني عن…»، بدل الأسئلة التي يُجاب عنها بنعم أو لا.\n• إعادة الصياغة: إعادة ما سمعته بكلماتك، مثل: «إذن تشعر بأن أسرتك لم تُستشَر».\n• عكس المشاعر: تسمية الشعور الذي تلاحظه/ينه، مثل: «يبدو أن هذا كان مؤلمًا جدًا لك».\n• التلخيص: جمع النقاط الرئيسية في النهاية ليعرف الجميع أنهم فُهموا.\nالتواصل دون لوم\nعندما تتحدث/ين، خاصة بصفتك ميسّرًا/ة، صِف/ي ما تراه/ينه وتشعر/ين به بدل الاتهام. وصيغة بسيطة لذلك: «عندما… أشعر… لأن… وأودّ…». مثال: «عندما يقاطع الناس بعضهم أخشى ألا تُسمع بعض الأصوات. هل يمكن أن نترك كل شخص يُكمل حديثه؟»\nأخطاء شائعة يجب تجنّبها\n• المقاطعة أو إكمال جمل الآخرين.\n• تقديم النصائح أو الحلول مبكرًا.\n• الحكم أو السخرية أو المقارنة («هذا لا شيء مقارنة بـ…»).\n• الانحياز، ولو بإشارات صغيرة مثل الإيماء لطرف واحد فقط.\nالثقافة والنوع الاجتماعي\nتختلف طرق إظهار الاحترام: التواصل البصري، والمسافة، ونبرة الصوت، ومن يتكلم أولًا. وقد تتحدث النساء أقل في المجموعات المختلطة، والميسّر/ة الجيد/ة يلاحظ ذلك ويفسح المجال، مثلًا بإعطاء كل شخص دوره في الحديث.\nللتدرّب: اليوم، في حديث واحد، استخدم/ي الأسئلة المفتوحة وإعادة الصياغة فقط لمدة خمس دقائق. ما الذي تغيّر؟"
+          }
+        },
+        {
+          "sort": 1,
+          "type": "text",
+          "minutes": 25,
+          "title": {
+            "en": "Facilitating a dialogue circle step by step",
+            "fr": "Animer un cercle de dialogue, étape par étape",
+            "ar": "تيسير حلقة حوار خطوة بخطوة"
+          },
+          "body": {
+            "en": "A dialogue circle brings people with different views or experiences together to listen to each other and understand each other better. Its aim is not to win an argument or to decide who is right.\nDialogue, debate and mediation\n• Debate: each side tries to win.\n• Dialogue: people try to understand each other; no decision is needed.\n• Mediation: a neutral person helps the parties reach an agreement on a specific dispute.\nDialogue often prepares the ground for mediation.\nBefore the circle\n• Purpose: write one clear sentence on why you are meeting.\n• Participants: invite a balanced group (women and men, young and older, different groups concerned). Eight to fifteen people is a good size.\n• Place: choose a neutral, safe and accessible place, at a time when women can attend.\n• Team: if you can, work with a co-facilitator from a different background.\n• Safety: think about risks for participants and how to handle them. If the topic could put people in danger, do not go ahead without advice.\nDuring the circle\n1. Welcome: thank people for coming, explain the purpose and how long it will last.\n2. Ground agreements: agree together, for example: one person speaks at a time; speak from your own experience; respect confidentiality; it is fine to pass.\n3. Opening round: each person answers a gentle question, such as “What brings you here today?”\n4. Sharing experiences: invite people to tell how the issue affects them. Listen, paraphrase, and make sure every voice is heard.\n5. Deepening: ask questions that look for shared needs and hopes, for example “What would make you feel safe?” or “What do we want for our children?”\n6. Closing round: each person shares one thing they heard or learned, and one hope.\nWhen things get difficult\nIf emotions run high, slow down, acknowledge the feeling, remind the group of the agreements or take a short break. Never force anyone to speak or to reconcile.\nAfter the circle\nThank participants, keep what was shared confidential, and agree on any follow-up: another meeting, a small joint action, or connecting people with support services.\nTo reflect: which step would be the hardest for you, and how could you prepare for it?",
+            "fr": "Un cercle de dialogue réunit des personnes aux points de vue ou aux expériences différents pour qu’elles s’écoutent et se comprennent mieux. Son but n’est pas de gagner un débat ni de décider qui a raison.\nDialogue, débat et médiation\n• Débat : chaque camp cherche à gagner.\n• Dialogue : les personnes cherchent à se comprendre ; aucune décision n’est nécessaire.\n• Médiation : une personne neutre aide les parties à parvenir à un accord sur un différend précis.\nLe dialogue prépare souvent le terrain à la médiation.\nAvant le cercle\n• L’objectif : écrivez une phrase claire sur la raison de la rencontre.\n• Les participants : invitez un groupe équilibré (femmes et hommes, jeunes et plus âgés, groupes concernés). Huit à quinze personnes est une bonne taille.\n• Le lieu : choisissez un lieu neutre, sûr et accessible, à un horaire où les femmes peuvent venir.\n• L’équipe : si possible, travaillez avec un co-facilitateur ou une co-facilitatrice d’un autre milieu.\n• La sécurité : réfléchissez aux risques pour les participants et à la façon d’y répondre. Si le sujet peut mettre des personnes en danger, ne vous lancez pas sans conseil.\nPendant le cercle\n1. L’accueil : remerciez les personnes d’être venues, expliquez l’objectif et la durée.\n2. Les règles communes : convenez ensemble, par exemple : une personne parle à la fois ; on parle de sa propre expérience ; on respecte la confidentialité ; on a le droit de passer son tour.\n3. Le tour d’ouverture : chacun répond à une question simple, comme « Qu’est-ce qui vous amène aujourd’hui ? »\n4. Le partage d’expériences : invitez chacun à dire comment la question le touche. Écoutez, reformulez et veillez à ce que chaque voix soit entendue.\n5. L’approfondissement : posez des questions qui font apparaître les besoins et les espoirs communs, par exemple « Qu’est-ce qui vous ferait vous sentir en sécurité ? » ou « Que voulons-nous pour nos enfants ? »\n6. Le tour de clôture : chacun partage une chose entendue ou apprise, et un espoir.\nQuand cela devient difficile\nSi les émotions montent, ralentissez, reconnaissez le sentiment, rappelez les règles communes ou faites une courte pause. Ne forcez jamais quelqu’un à parler ou à se réconcilier.\nAprès le cercle\nRemerciez les participants, gardez confidentiel ce qui a été partagé et convenez d’une suite éventuelle : une autre rencontre, une petite action commune, ou une orientation vers des services de soutien.\nPour réfléchir : quelle étape serait la plus difficile pour vous, et comment pourriez-vous vous y préparer ?",
+            "ar": "تجمع حلقة الحوار أشخاصًا مختلفين في آرائهم أو تجاربهم ليستمعوا إلى بعضهم ويفهموا بعضهم أكثر. وهدفها ليس الفوز في نقاش أو تحديد من على حق.\nالحوار والمناظرة والوساطة\n• المناظرة: يحاول كل طرف أن يفوز.\n• الحوار: يحاول الناس فهم بعضهم، ولا حاجة إلى قرار.\n• الوساطة: يساعد شخص محايد الأطراف على الوصول إلى اتفاق بشأن خلاف محدد.\nوكثيرًا ما يمهّد الحوار الطريق للوساطة.\nقبل الحلقة\n• الهدف: اكتب/ي جملة واحدة واضحة عن سبب اللقاء.\n• المشاركون: ادعُ/ادعي مجموعة متوازنة (نساء ورجال، شباب وكبار، والجماعات المعنية). والعدد المناسب من ثمانية إلى خمسة عشر شخصًا.\n• المكان: اختر/اختاري مكانًا محايدًا وآمنًا وسهل الوصول، في وقت تستطيع فيه النساء الحضور.\n• الفريق: إن أمكن، اعمل/ي مع ميسّر/ة مشارك/ة من خلفية مختلفة.\n• الأمان: فكّر/ي في المخاطر على المشاركين وكيفية التعامل معها. وإذا كان الموضوع قد يعرّض أحدًا للخطر فلا تبدأ/ي دون استشارة.\nأثناء الحلقة\n١. الترحيب: اشكر/ي الحضور، واشرح/ي الهدف والمدة.\n٢. الاتفاقات الأساسية: اتفقوا معًا، مثلًا: يتكلم شخص واحد في كل مرة؛ يتحدث كلٌّ عن تجربته؛ نحترم السرية؛ يحق لأي شخص ألا يتكلم.\n٣. جولة الافتتاح: يجيب كل شخص عن سؤال بسيط، مثل: «ما الذي أتى بك اليوم؟»\n٤. تبادل التجارب: ادعُ/ادعي كل شخص ليحكي كيف تؤثر القضية عليه. استمع/ي، وأعِد/أعيدي الصياغة، وتأكد/ي أن كل صوت مسموع.\n٥. التعمّق: اطرح/ي أسئلة تكشف الاحتياجات والآمال المشتركة، مثل: «ما الذي يجعلك تشعر/ين بالأمان؟» أو «ماذا نريد لأطفالنا؟»\n٦. جولة الختام: يشارك كل شخص شيئًا سمعه أو تعلّمه، وأملًا واحدًا.\nعندما تصبح الأمور صعبة\nإذا ارتفعت المشاعر فتمهّل/ي، واعترف/ي بالشعور، وذكّر/ي المجموعة بالاتفاقات، أو خذوا استراحة قصيرة. ولا تُجبر/ي أحدًا أبدًا على الكلام أو على المصالحة.\nبعد الحلقة\nاشكر/ي المشاركين، وحافظ/ي على سرية ما قيل، واتفقوا على أي متابعة: لقاء آخر، أو عمل مشترك صغير، أو توجيه الناس إلى خدمات الدعم.\nللتأمل: أي خطوة ستكون الأصعب عليك، وكيف يمكنك الاستعداد لها؟"
+          }
+        },
+        {
+          "sort": 2,
+          "type": "link",
+          "minutes": 60,
+          "title": {
+            "en": "Live session: practice with a facilitator (Zoom)",
+            "fr": "Séance en direct : pratique avec un facilitateur ou une facilitatrice (Zoom)",
+            "ar": "جلسة مباشرة: تدريب عملي مع ميسّر/ة (Zoom)"
+          },
+          "body": {
+            "en": "In this live session you practise what you learned in this unit with a facilitator from the Bridging Our Voices team and other participants.\nWhat happens in the session\n• A short review of listening techniques and the steps of a dialogue circle.\n• Role-play in small groups: you take turns as facilitator, participant and observer in a dialogue circle on a realistic community tension.\n• Feedback from the observers and the facilitator, then a discussion of what worked and what was hard.\nHow to prepare\n• Re-read the two previous lessons.\n• Bring your conflict map from Unit 3: it can give ideas for the role-play (without real names).\n• Join from a quiet place, with your camera on if you can.\nThe date and the Zoom link are shared here by the team. Open the link at the time of the session; you can mark this lesson as done after taking part.",
+            "fr": "Dans cette séance en direct, vous mettez en pratique ce que vous avez appris dans ce module avec un facilitateur ou une facilitatrice de l’équipe Bridging Our Voices et d’autres participants.\nDéroulement de la séance\n• Un bref rappel des techniques d’écoute et des étapes d’un cercle de dialogue.\n• Des jeux de rôle en petits groupes : chacun joue tour à tour le rôle de facilitateur, de participant et d’observateur dans un cercle de dialogue sur une tension communautaire réaliste.\n• Les retours des observateurs et de l’animateur, puis une discussion sur ce qui a fonctionné et ce qui a été difficile.\nComment vous préparer\n• Relisez les deux leçons précédentes.\n• Apportez votre carte du conflit du module 3 : elle peut donner des idées pour le jeu de rôle (sans vrais noms).\n• Connectez-vous depuis un endroit calme, avec votre caméra si possible.\nLa date et le lien Zoom sont communiqués ici par l’équipe. Ouvrez le lien à l’heure de la séance ; vous pourrez marquer cette leçon comme terminée après y avoir participé.",
+            "ar": "في هذه الجلسة المباشرة تتدرّب/ين على ما تعلمته في هذه الوحدة مع ميسّر/ة من فريق «أصواتنا جسور» ومشاركين آخرين.\nماذا يحدث في الجلسة؟\n• مراجعة قصيرة لتقنيات الإصغاء وخطوات حلقة الحوار.\n• لعب أدوار في مجموعات صغيرة: يتناوب كل شخص على دور الميسّر/ة والمشارك/ة والمراقب/ة في حلقة حوار حول توتر مجتمعي واقعي.\n• ملاحظات المراقبين والميسّر/ة، ثم نقاش حول ما نجح وما كان صعبًا.\nكيف تستعد/ين؟\n• أعِد/أعيدي قراءة الدرسين السابقين.\n• أحضِر/ي خريطة النزاع من الوحدة الثالثة، فقد تعطي أفكارًا للعب الأدوار (دون أسماء حقيقية).\n• انضم/ي من مكان هادئ، مع تشغيل الكاميرا إن أمكن.\nيضع الفريق هنا موعد الجلسة ورابط Zoom. افتح/ي الرابط في موعد الجلسة، ويمكنك تحديد هذا الدرس مكتملًا بعد المشاركة."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "text": {
+            "en": "What is the main aim of a dialogue circle?",
+            "fr": "Quel est le but principal d’un cercle de dialogue ?",
+            "ar": "ما الهدف الرئيسي لحلقة الحوار؟"
+          },
+          "options": [
+            {
+              "en": "To decide who is right",
+              "fr": "Décider qui a raison",
+              "ar": "تحديد من على حق"
+            },
+            {
+              "en": "To win the argument",
+              "fr": "Gagner le débat",
+              "ar": "الفوز في النقاش"
+            },
+            {
+              "en": "To help people listen to and understand each other",
+              "fr": "Aider les personnes à s’écouter et à se comprendre",
+              "ar": "مساعدة الناس على الاستماع إلى بعضهم وفهم بعضهم"
+            },
+            {
+              "en": "To sign a legal agreement",
+              "fr": "Signer un accord juridique",
+              "ar": "توقيع اتفاق قانوني"
+            }
+          ],
+          "correct": 2
+        },
+        {
+          "text": {
+            "en": "“So you feel that your family was not consulted.” This is an example of:",
+            "fr": "« Vous avez donc le sentiment que votre famille n’a pas été consultée. » C’est un exemple de :",
+            "ar": "«إذن تشعر بأن أسرتك لم تُستشَر». هذا مثال على:"
+          },
+          "options": [
+            {
+              "en": "Paraphrasing",
+              "fr": "Reformulation",
+              "ar": "إعادة الصياغة"
+            },
+            {
+              "en": "Giving advice",
+              "fr": "Conseil",
+              "ar": "تقديم النصيحة"
+            },
+            {
+              "en": "Judging",
+              "fr": "Jugement",
+              "ar": "إصدار الحكم"
+            },
+            {
+              "en": "Interrupting",
+              "fr": "Interruption",
+              "ar": "المقاطعة"
+            }
+          ],
+          "correct": 0
+        },
+        {
+          "text": {
+            "en": "Which of these is an open question?",
+            "fr": "Laquelle de ces questions est ouverte ?",
+            "ar": "أيٌّ مما يلي سؤال مفتوح؟"
+          },
+          "options": [
+            {
+              "en": "Did you go to the meeting?",
+              "fr": "Êtes-vous allé à la réunion ?",
+              "ar": "هل ذهبت إلى الاجتماع؟"
+            },
+            {
+              "en": "Are you angry?",
+              "fr": "Êtes-vous en colère ?",
+              "ar": "هل أنت غاضب/ة؟"
+            },
+            {
+              "en": "How has this situation affected your family?",
+              "fr": "Comment cette situation a-t-elle touché votre famille ?",
+              "ar": "كيف أثّر هذا الوضع على أسرتك؟"
+            },
+            {
+              "en": "Is it true?",
+              "fr": "Est-ce vrai ?",
+              "ar": "هل هذا صحيح؟"
+            }
+          ],
+          "correct": 2
+        },
+        {
+          "text": {
+            "en": "What is the difference between dialogue and mediation?",
+            "fr": "Quelle est la différence entre le dialogue et la médiation ?",
+            "ar": "ما الفرق بين الحوار والوساطة؟"
+          },
+          "options": [
+            {
+              "en": "There is no difference",
+              "fr": "Il n’y en a pas",
+              "ar": "لا فرق بينهما"
+            },
+            {
+              "en": "Dialogue seeks understanding; mediation helps parties reach an agreement on a specific dispute",
+              "fr": "Le dialogue cherche la compréhension ; la médiation aide les parties à s’accorder sur un différend précis",
+              "ar": "الحوار يسعى إلى الفهم، والوساطة تساعد الأطراف على الوصول إلى اتفاق بشأن خلاف محدد"
+            },
+            {
+              "en": "Mediation is always done in court",
+              "fr": "La médiation se fait toujours au tribunal",
+              "ar": "الوساطة تتم دائمًا في المحكمة"
+            },
+            {
+              "en": "Dialogue needs a vote at the end",
+              "fr": "Le dialogue exige un vote à la fin",
+              "ar": "الحوار يتطلب تصويتًا في النهاية"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "When planning a dialogue circle, why choose the time and place carefully?",
+            "fr": "Pourquoi choisir avec soin l’heure et le lieu d’un cercle de dialogue ?",
+            "ar": "لماذا يجب اختيار موعد حلقة الحوار ومكانها بعناية؟"
+          },
+          "options": [
+            {
+              "en": "So that it is neutral, safe and accessible, and women can attend",
+              "fr": "Pour qu’il soit neutre, sûr et accessible, et que les femmes puissent venir",
+              "ar": "ليكون محايدًا وآمنًا وسهل الوصول، وتستطيع النساء الحضور"
+            },
+            {
+              "en": "So that it looks impressive",
+              "fr": "Pour qu’il soit impressionnant",
+              "ar": "ليبدو مبهرًا"
+            },
+            {
+              "en": "So that only leaders can come",
+              "fr": "Pour que seuls les responsables puissent venir",
+              "ar": "ليحضر القادة فقط"
+            },
+            {
+              "en": "It does not matter",
+              "fr": "Cela n’a pas d’importance",
+              "ar": "لا يهم ذلك"
+            }
+          ],
+          "correct": 0
+        },
+        {
+          "text": {
+            "en": "If emotions run high during a circle, the facilitator should:",
+            "fr": "Si les émotions montent pendant un cercle, le facilitateur ou la facilitatrice doit :",
+            "ar": "إذا ارتفعت المشاعر أثناء الحلقة، على الميسّر/ة أن:"
+          },
+          "options": [
+            {
+              "en": "Force people to reconcile at once",
+              "fr": "Forcer les personnes à se réconcilier immédiatement",
+              "ar": "يُجبر الناس على المصالحة فورًا"
+            },
+            {
+              "en": "Slow down, acknowledge the feeling, recall the agreements or take a short break",
+              "fr": "Ralentir, reconnaître le sentiment, rappeler les règles ou faire une courte pause",
+              "ar": "يتمهّل، ويعترف بالشعور، ويذكّر بالاتفاقات أو يأخذ استراحة قصيرة"
+            },
+            {
+              "en": "Take the side of the calmer person",
+              "fr": "Prendre le parti de la personne la plus calme",
+              "ar": "ينحاز إلى الشخص الأهدأ"
+            },
+            {
+              "en": "End the circle and never meet again",
+              "fr": "Arrêter le cercle et ne plus jamais se réunir",
+              "ar": "يُنهي الحلقة ولا يجتمعوا أبدًا"
+            }
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "sort": 4,
+      "title": {
+        "en": "From learning to action",
+        "fr": "De l’apprentissage à l’action",
+        "ar": "من التعلّم إلى العمل"
+      },
+      "summary": {
+        "en": "Turn what you have learned into a small, realistic peace initiative for your community, plan it step by step, and reflect on your journey.",
+        "fr": "Transformez ce que vous avez appris en une petite initiative de paix réaliste pour votre communauté, planifiez-la étape par étape et faites le bilan de votre parcours.",
+        "ar": "حوّل/ي ما تعلمته إلى مبادرة سلام صغيرة وواقعية لمجتمعك، وخطّط/ي لها خطوة بخطوة، وتأمّل/ي رحلتك."
+      },
+      "passMark": 70,
+      "lessons": [
+        {
+          "sort": 0,
+          "type": "text",
+          "minutes": 20,
+          "title": {
+            "en": "Designing a local peace initiative",
+            "fr": "Concevoir une initiative de paix locale",
+            "ar": "تصميم مبادرة سلام محلية"
+          },
+          "body": {
+            "en": "Peace grows from many small actions. A local peace initiative is a concrete activity, led by people in a community, that reduces tension, rebuilds relationships or gives excluded voices a place. Start small: a successful small initiative builds trust and can grow.\nExamples\n• A monthly dialogue circle between young women and men from two neighbourhoods.\n• A joint activity, such as cleaning a shared space or a cultural day, that brings divided groups together.\n• A group of women and religious leaders who respond together to rumours and hate speech online.\n• Visits to families affected by violence, with referral to support services.\nSeven questions to design your initiative\n1. The problem: which problem from your conflict map (Unit 3) will you address? Be specific.\n2. The change: what do you want to be different after six months? Write one clear goal.\n3. The people: who will take part, and who will benefit? Make sure women and young people have real roles, not only as audience.\n4. The partners: who can help or open doors, such as community or religious leaders, local authorities, schools or associations?\n5. The activities: what exactly will you do, where and how often?\n6. The risks: what could go wrong or cause harm, and how will you prevent it? Think of safety, especially for women, and of the Do No Harm idea: does your initiative strengthen connectors?\n7. The signs of change: how will you know it is working? Choose two or three simple signs, such as the number of people taking part, the number of women speaking, or fewer incidents reported.\nKeep it realistic\nUse the resources you already have: your time, your networks, a free meeting place. Start with a first step you can take within a month.\nIn the next lesson you will write your plan using a simple template.",
+            "fr": "La paix naît de nombreuses petites actions. Une initiative de paix locale est une activité concrète, menée par des membres d’une communauté, qui réduit les tensions, reconstruit les relations ou donne une place aux voix exclues. Commencez petit : une petite initiative réussie crée la confiance et peut grandir.\nExemples\n• Un cercle de dialogue mensuel entre jeunes femmes et jeunes hommes de deux quartiers.\n• Une activité commune, comme le nettoyage d’un espace partagé ou une journée culturelle, qui rapproche des groupes divisés.\n• Un groupe de femmes et de responsables religieux qui répondent ensemble aux rumeurs et aux discours de haine en ligne.\n• Des visites aux familles touchées par la violence, avec une orientation vers des services de soutien.\nSept questions pour concevoir votre initiative\n1. Le problème : quel problème de votre carte du conflit (module 3) allez-vous traiter ? Soyez précis.\n2. Le changement : qu’est-ce qui doit être différent dans six mois ? Écrivez un objectif clair.\n3. Les personnes : qui participera, et qui en bénéficiera ? Veillez à ce que les femmes et les jeunes aient de vrais rôles, pas seulement celui de public.\n4. Les partenaires : qui peut aider ou ouvrir des portes, comme des responsables communautaires ou religieux, des autorités locales, des écoles ou des associations ?\n5. Les activités : que ferez-vous exactement, où et à quelle fréquence ?\n6. Les risques : qu’est-ce qui pourrait mal tourner ou nuire, et comment l’éviter ? Pensez à la sécurité, en particulier celle des femmes, et à l’approche « Ne pas nuire » : votre initiative renforce-t-elle ce qui relie ?\n7. Les signes de changement : comment saurez-vous que cela fonctionne ? Choisissez deux ou trois signes simples, comme le nombre de participants, le nombre de femmes qui prennent la parole ou moins d’incidents signalés.\nRestez réaliste\nUtilisez les ressources dont vous disposez déjà : votre temps, vos réseaux, un lieu de réunion gratuit. Commencez par une première étape réalisable dans le mois.\nDans la leçon suivante, vous écrirez votre plan à l’aide d’un modèle simple.",
+            "ar": "ينمو السلام من أعمال صغيرة كثيرة. والمبادرة المحلية للسلام نشاط ملموس يقوده أفراد من المجتمع، يخفف التوتر أو يعيد بناء العلاقات أو يمنح الأصوات المستبعدة مكانها. ابدأ/ابدئي صغيرًا: فالمبادرة الصغيرة الناجحة تبني الثقة ويمكن أن تكبر.\nأمثلة\n• حلقة حوار شهرية بين شابات وشباب من حيّين.\n• نشاط مشترك، مثل تنظيف مكان عام أو يوم ثقافي، يقرّب بين جماعات متباعدة.\n• مجموعة من النساء والقيادات الدينية ترد معًا على الشائعات وخطاب الكراهية على الإنترنت.\n• زيارات للأسر المتأثرة بالعنف مع توجيهها إلى خدمات الدعم.\nسبعة أسئلة لتصميم مبادرتك\n١. المشكلة: أي مشكلة من خريطة النزاع (الوحدة الثالثة) ستعالجها/ينها؟ كن/كوني محددًا/ة.\n٢. التغيير: ما الذي تريد/ين أن يكون مختلفًا بعد ستة أشهر؟ اكتب/ي هدفًا واحدًا واضحًا.\n٣. الناس: من سيشارك، ومن سيستفيد؟ تأكد/ي أن للنساء والشباب أدوارًا حقيقية، لا مجرد الحضور.\n٤. الشركاء: من يستطيع المساعدة أو فتح الأبواب، مثل القيادات المجتمعية والدينية، والسلطات المحلية، والمدارس، والجمعيات؟\n٥. الأنشطة: ماذا ستفعل/ين بالضبط، وأين، وكم مرة؟\n٦. المخاطر: ما الذي قد يسوء أو يُحدث ضررًا، وكيف ستتجنّبه/ينه؟ فكّر/ي في الأمان، خاصة أمان النساء، وفي نهج «عدم الإضرار»: هل تقوّي مبادرتك الروابط؟\n٧. علامات التغيير: كيف ستعرف/ين أنها تنجح؟ اختر/اختاري علامتين أو ثلاثًا بسيطة، مثل عدد المشاركين، أو عدد النساء اللواتي يتحدثن، أو انخفاض الحوادث المبلّغ عنها.\nكن/كوني واقعيًا/ة\nاستخدم/ي الموارد المتاحة لديك: وقتك، وشبكة علاقاتك، ومكان لقاء مجاني. وابدأ/ابدئي بخطوة أولى يمكنك القيام بها خلال شهر.\nفي الدرس التالي ستكتب/ين خطتك باستخدام نموذج بسيط."
+          }
+        },
+        {
+          "sort": 1,
+          "type": "text",
+          "minutes": 30,
+          "title": {
+            "en": "Template: your community initiative plan",
+            "fr": "Modèle : le plan de votre initiative communautaire",
+            "ar": "نموذج: خطة مبادرتك المجتمعية"
+          },
+          "body": {
+            "en": "Copy the headings below onto a sheet or into a document, and fill them in for your own initiative. A few lines for each heading are enough. Keep your plan: you can share it with the Bridging Our Voices team or with your future partners.\n1. Name of the initiative: a short name that people will remember.\n2. The problem: in two or three sentences, the situation you want to change (from your conflict map).\n3. The goal: what will be different after six months?\n4. Participants and beneficiaries: who takes part, and who benefits? How many women, men and young people?\n5. Partners: who will you work with, and what will each partner do?\n6. Activities and timeline: list the activities in order, with a date or month for each.\n• Month 1: …\n• Month 2: …\n• Months 3 to 6: …\n7. Resources: what do you need (place, materials, transport, small budget), and where will it come from?\n8. Risks and how to prevent them: two or three risks, and what you will do about each one. Include participants’ safety.\n9. Signs of change: two or three simple signs and how you will record them (an attendance list, short notes after each meeting, a few stories of change).\n10. Your first step: the very first thing you will do, and when.\nCheck your plan\n• Is the goal clear and realistic?\n• Do women and young people have real roles?\n• Could anything in the plan cause harm? Have you dealt with it?\n• Can you start within a month with what you already have?\nWhen your plan is ready, mark this lesson as done.",
+            "fr": "Recopiez les titres ci-dessous sur une feuille ou dans un document et remplissez-les pour votre initiative. Quelques lignes par titre suffisent. Gardez votre plan : vous pourrez le partager avec l’équipe de Bridging Our Voices ou avec vos futurs partenaires.\n1. Nom de l’initiative : un nom court dont on se souvient.\n2. Le problème : en deux ou trois phrases, la situation que vous voulez changer (à partir de votre carte du conflit).\n3. L’objectif : qu’est-ce qui sera différent dans six mois ?\n4. Participants et bénéficiaires : qui participe, et qui en bénéficie ? Combien de femmes, d’hommes et de jeunes ?\n5. Partenaires : avec qui travaillerez-vous, et que fera chaque partenaire ?\n6. Activités et calendrier : listez les activités dans l’ordre, avec une date ou un mois pour chacune.\n• Mois 1 : …\n• Mois 2 : …\n• Mois 3 à 6 : …\n7. Ressources : de quoi avez-vous besoin (lieu, matériel, transport, petit budget), et d’où viendra-t-il ?\n8. Risques et prévention : deux ou trois risques, et ce que vous ferez pour chacun. Pensez à la sécurité des participants.\n9. Signes de changement : deux ou trois signes simples et la façon de les noter (liste de présence, notes après chaque rencontre, quelques récits de changement).\n10. Votre première étape : la toute première chose que vous ferez, et quand.\nVérifiez votre plan\n• L’objectif est-il clair et réaliste ?\n• Les femmes et les jeunes ont-ils de vrais rôles ?\n• Un élément du plan pourrait-il nuire ? L’avez-vous traité ?\n• Pouvez-vous commencer dans le mois avec ce que vous avez déjà ?\nQuand votre plan est prêt, marquez cette leçon comme terminée.",
+            "ar": "انسخ/ي العناوين التالية على ورقة أو في مستند، واملأها/يها لمبادرتك. تكفي أسطر قليلة لكل عنوان. واحتفظ/ي بخطتك، فيمكنك مشاركتها مع فريق «أصواتنا جسور» أو مع شركائك في المستقبل.\n١. اسم المبادرة: اسم قصير يسهل تذكّره.\n٢. المشكلة: في جملتين أو ثلاث، الوضع الذي تريد/ين تغييره (من خريطة النزاع).\n٣. الهدف: ما الذي سيكون مختلفًا بعد ستة أشهر؟\n٤. المشاركون والمستفيدون: من يشارك، ومن يستفيد؟ كم عدد النساء والرجال والشباب؟\n٥. الشركاء: مع من ستعمل/ين، وماذا سيفعل كل شريك؟\n٦. الأنشطة والجدول الزمني: اكتب/ي الأنشطة بالترتيب، مع تاريخ أو شهر لكل منها.\n• الشهر الأول: …\n• الشهر الثاني: …\n• من الشهر الثالث إلى السادس: …\n٧. الموارد: ماذا تحتاج/ين (مكان، أدوات، مواصلات، ميزانية صغيرة)، ومن أين ستأتي؟\n٨. المخاطر وطرق الوقاية منها: خطران أو ثلاثة، وما ستفعله/ينه لكل منها. ولا تنسَ/تنسي أمان المشاركين.\n٩. علامات التغيير: علامتان أو ثلاث بسيطة، وكيف ستسجّلها/ينها (قائمة حضور، ملاحظات قصيرة بعد كل لقاء، بعض قصص التغيير).\n١٠. خطوتك الأولى: أول شيء ستفعله/ينه بالضبط، ومتى.\nراجع/ي خطتك\n• هل الهدف واضح وواقعي؟\n• هل للنساء والشباب أدوار حقيقية؟\n• هل في الخطة ما قد يُحدث ضررًا؟ وهل عالجته/يه؟\n• هل يمكنك البدء خلال شهر بما لديك بالفعل؟\nعندما تصبح خطتك جاهزة، حدّد/ي هذا الدرس مكتملًا."
+          }
+        },
+        {
+          "sort": 2,
+          "type": "text",
+          "minutes": 15,
+          "title": {
+            "en": "Final reflection and next steps",
+            "fr": "Bilan final et prochaines étapes",
+            "ar": "تأمل ختامي والخطوات التالية"
+          },
+          "body": {
+            "en": "You have reached the last lesson of “Women and Peacebuilding”. Take a few minutes to look back on what you have learned.\nQuestions for reflection\n• What is the most important idea you are taking away from this course?\n• What has changed in the way you see women’s roles in dialogue and peacebuilding?\n• Which skill will you use first: listening, analysing a conflict, facilitating dialogue or planning an initiative?\n• Who will you share what you learned with?\nWrite your answers down. In a few months, read them again and see how far you have come.\nYour certificate\nOnce you have finished all the lessons and passed the five unit quizzes, your course is complete. Certificates of completion are being prepared and will be available on the site soon.\nStaying connected\nBridging Our Voices is building a network of peacebuilders and community leaders, women and men, across the Arab region, Africa and beyond. If you would like to keep learning, share your initiative and support others, you can apply to join the network from the “Membership” page of the site.\nThank you for taking this course, and for the work you do for peace in your community.",
+            "fr": "Vous êtes arrivé à la dernière leçon de « Les femmes et la consolidation de la paix ». Prenez quelques minutes pour revenir sur ce que vous avez appris.\nQuestions pour le bilan\n• Quelle est l’idée la plus importante que vous retenez de ce cours ?\n• Qu’est-ce qui a changé dans votre regard sur le rôle des femmes dans le dialogue et la consolidation de la paix ?\n• Quelle compétence utiliserez-vous en premier : l’écoute, l’analyse d’un conflit, l’animation du dialogue ou la planification d’une initiative ?\n• Avec qui partagerez-vous ce que vous avez appris ?\nNotez vos réponses. Dans quelques mois, relisez-les pour voir le chemin parcouru.\nVotre certificat\nUne fois toutes les leçons terminées et les cinq quiz réussis, votre cours est achevé. Les certificats de réussite sont en préparation et seront bientôt disponibles sur le site.\nRester en lien\nBridging Our Voices construit un réseau d’artisans et d’artisanes de la paix et de leaders communautaires, femmes et hommes, dans le monde arabe, en Afrique et au-delà. Si vous souhaitez continuer à apprendre, partager votre initiative et soutenir d’autres personnes, vous pouvez demander à rejoindre le réseau depuis la page « Adhésion » du site.\nMerci d’avoir suivi ce cours, et merci pour votre engagement en faveur de la paix dans votre communauté.",
+            "ar": "وصلت إلى الدرس الأخير من دورة «المرأة وبناء السلام». خذ/ي بضع دقائق لتستعيد/ي ما تعلمته.\nأسئلة للتأمل\n• ما أهم فكرة تخرج/ين بها من هذه الدورة؟\n• ما الذي تغيّر في نظرتك إلى أدوار المرأة في الحوار وبناء السلام؟\n• أي مهارة ستستخدمها/ينها أولًا: الإصغاء، أم تحليل النزاع، أم تيسير الحوار، أم تخطيط مبادرة؟\n• مع من ستشارك/ين ما تعلمته؟\nاكتب/ي إجاباتك، واقرأها/يها مرة أخرى بعد بضعة أشهر لترى/ي كم تقدّمت.\nشهادتك\nعندما تُكمل/ين كل الدروس وتنجح/ين في اختبارات الوحدات الخمس تكون الدورة قد اكتملت. ويجري الآن إعداد شهادات الإتمام، وستتوفر على الموقع قريبًا.\nلنبقَ على تواصل\nتبني مبادرة «أصواتنا جسور» شبكة من صناع السلام والقيادات المجتمعية، نساءً ورجالًا، في المنطقة العربية وأفريقيا وخارجهما. وإذا أردت أن تواصل/ي التعلم وتشارك/ي مبادرتك وتدعم/ي الآخرين، يمكنك التقدّم للانضمام إلى الشبكة من صفحة «العضوية» في الموقع.\nشكرًا لك على متابعة هذه الدورة، وعلى ما تبذله/ينه من أجل السلام في مجتمعك."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "text": {
+            "en": "What is a local peace initiative?",
+            "fr": "Qu’est-ce qu’une initiative de paix locale ?",
+            "ar": "ما المبادرة المحلية للسلام؟"
+          },
+          "options": [
+            {
+              "en": "A concrete activity led by people in a community that reduces tension or rebuilds relationships",
+              "fr": "Une activité concrète menée par des membres d’une communauté pour réduire les tensions ou reconstruire les relations",
+              "ar": "نشاط ملموس يقوده أفراد من المجتمع لتخفيف التوتر أو إعادة بناء العلاقات"
+            },
+            {
+              "en": "A national law",
+              "fr": "Une loi nationale",
+              "ar": "قانون وطني"
+            },
+            {
+              "en": "A UN resolution",
+              "fr": "Une résolution de l’ONU",
+              "ar": "قرار للأمم المتحدة"
+            },
+            {
+              "en": "A military operation",
+              "fr": "Une opération militaire",
+              "ar": "عملية عسكرية"
+            }
+          ],
+          "correct": 0
+        },
+        {
+          "text": {
+            "en": "Why is it a good idea to start small?",
+            "fr": "Pourquoi est-il judicieux de commencer petit ?",
+            "ar": "لماذا يُستحسن البدء بمبادرة صغيرة؟"
+          },
+          "options": [
+            {
+              "en": "Because small initiatives never need partners",
+              "fr": "Parce que les petites initiatives n’ont jamais besoin de partenaires",
+              "ar": "لأن المبادرات الصغيرة لا تحتاج أبدًا إلى شركاء"
+            },
+            {
+              "en": "Because a successful small initiative builds trust and can grow",
+              "fr": "Parce qu’une petite initiative réussie crée la confiance et peut grandir",
+              "ar": "لأن المبادرة الصغيرة الناجحة تبني الثقة ويمكن أن تكبر"
+            },
+            {
+              "en": "Because big initiatives are forbidden",
+              "fr": "Parce que les grandes initiatives sont interdites",
+              "ar": "لأن المبادرات الكبيرة ممنوعة"
+            },
+            {
+              "en": "Because small initiatives have no risks",
+              "fr": "Parce que les petites initiatives n’ont aucun risque",
+              "ar": "لأن المبادرات الصغيرة بلا مخاطر"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "Which of these is a good “sign of change” to track?",
+            "fr": "Lequel de ces éléments est un bon « signe de changement » à suivre ?",
+            "ar": "أيٌّ مما يلي «علامة تغيير» جيدة للمتابعة؟"
+          },
+          "options": [
+            {
+              "en": "The colour of the meeting room",
+              "fr": "La couleur de la salle de réunion",
+              "ar": "لون قاعة الاجتماع"
+            },
+            {
+              "en": "The number of women who speak in meetings",
+              "fr": "Le nombre de femmes qui prennent la parole lors des réunions",
+              "ar": "عدد النساء اللواتي يتحدثن في اللقاءات"
+            },
+            {
+              "en": "The price of the snacks",
+              "fr": "Le prix des collations",
+              "ar": "سعر الضيافة"
+            },
+            {
+              "en": "The length of the plan",
+              "fr": "La longueur du plan",
+              "ar": "طول الخطة"
+            }
+          ],
+          "correct": 1
+        },
+        {
+          "text": {
+            "en": "When planning, why think about risks and “Do No Harm”?",
+            "fr": "Pourquoi penser aux risques et à l’approche « Ne pas nuire » lors de la planification ?",
+            "ar": "لماذا يجب التفكير في المخاطر ونهج «عدم الإضرار» عند التخطيط؟"
+          },
+          "options": [
+            {
+              "en": "To make sure the initiative does not create new tensions or put participants, especially women, in danger",
+              "fr": "Pour éviter que l’initiative crée de nouvelles tensions ou mette en danger les participants, en particulier les femmes",
+              "ar": "حتى لا تخلق المبادرة توترات جديدة أو تعرّض المشاركين، خاصة النساء، للخطر"
+            },
+            {
+              "en": "Because donors require long reports",
+              "fr": "Parce que les bailleurs exigent de longs rapports",
+              "ar": "لأن الجهات المانحة تطلب تقارير طويلة"
+            },
+            {
+              "en": "It is not necessary for small initiatives",
+              "fr": "Ce n’est pas nécessaire pour les petites initiatives",
+              "ar": "ليس ضروريًا للمبادرات الصغيرة"
+            },
+            {
+              "en": "To find reasons to cancel the initiative",
+              "fr": "Pour trouver des raisons d’annuler l’initiative",
+              "ar": "لإيجاد أسباب لإلغاء المبادرة"
+            }
+          ],
+          "correct": 0
+        },
+        {
+          "text": {
+            "en": "In a good initiative plan, women and young people should:",
+            "fr": "Dans un bon plan d’initiative, les femmes et les jeunes doivent :",
+            "ar": "في خطة المبادرة الجيدة، يجب أن يكون للنساء والشباب:"
+          },
+          "options": [
+            {
+              "en": "Only be in the audience",
+              "fr": "Être seulement dans le public",
+              "ar": "دور الحضور فقط"
+            },
+            {
+              "en": "Have real roles in the initiative",
+              "fr": "Avoir de vrais rôles dans l’initiative",
+              "ar": "أدوار حقيقية في المبادرة"
+            },
+            {
+              "en": "Be left out to keep things simple",
+              "fr": "Être tenus à l’écart pour simplifier",
+              "ar": "الاستبعاد لتبسيط الأمور"
+            },
+            {
+              "en": "Only be asked at the end",
+              "fr": "Être consultés seulement à la fin",
+              "ar": "أن يُسألوا في النهاية فقط"
+            }
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ]
+}

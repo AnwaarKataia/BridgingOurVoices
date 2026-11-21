@@ -942,8 +942,47 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - learner accounts, lesson pages with the video player, "Mark as done" and progress, participants;
   - certificates last.
 
+### 2026-11-21: Test publishing ended; «المرأة وبناء السلام» written (all 5 units)
+- **Test ended (owner):** «المرأة وبناء السلام» is a draft again and Conferences is hidden; visitors see «قريبًا» in all 3 languages, and the course page is 404 for them. All test accounts are deleted, including the owner's own test learner, the "Layout Test" learner and the helper editor. Only the owner's account remains.
+- **Who sees a participant's page (wording):** the dashboard and profile texts now say it plainly: participants of the same course (if shown) and the team, never other visitors.
+- **Real course content, Unit 1 (owner: "write real content, Unit 1 first"):** «مدخل: أجندة المرأة والسلام والأمن» / "Introduction: the Women, Peace and Security agenda", EN/FR/AR.
+  - Lesson 1, "Welcome and course overview" (text, 6 min): aims, the five learning outcomes, and how the course works (lessons in order, read or watch to the end, 70% to open the next unit, self-paced, profile and participants).
+  - Lesson 2, "Resolution 1325 and the resolutions that followed" (text, 20 min):
+    - what the WPS agenda is;
+    - Resolution 1325 (adopted unanimously on 31 October 2000) and its four pillars (participation, protection, prevention, relief and recovery);
+    - the follow-up resolutions 1820, 1888, 1889, 1960, 2106, 2122, 2242, 2467 and 2493;
+    - why women's participation matters (UN Women Global Study 2015: agreements 35% more likely to last 15+ years);
+    - National Action Plans (100+ countries);
+    - a reflection question.
+  - Lesson 3, "Reading: the WPS agenda in the Arab region and Africa" (text, 15 min):
+    - the League of Arab States' regional strategy and action plan; Iraq the first Arab NAP (2014);
+    - the African Union's Special Envoy (2014), FemWise-Africa (2017) and the Continental Results Framework (2018); Nigeria's first NAP (2013);
+    - common lessons and a reflection task.
+  - Unit quiz: 7 multiple-choice questions, pass mark 70% (5 of 7).
+- **Kept with the code:** the content is in `apps/api/seed/courses/women-and-peacebuilding.json`. `applyCourseContent` writes it into the course (matched by unit and lesson position) and runs on a fresh database too. Lessons are text for now; a lesson can become a video later in the dashboard.
+- **Units 2–5 written the same day (owner: "continue"), EN/FR/AR.** The whole course now has 5 units, 15 lessons (about 4,600 English words) and 30 quiz questions, pass mark 70% in every unit.
+  - **Unit 2, «أدوار المرأة في بناء السلام» / "Women’s roles in building peace":** renamed from «الطرق المختلفة…» because the owner removed «بصور مختلفة» elsewhere.
+    - Women as informal mediators.
+    - Women in religious and community leadership, including Morocco’s murshidat.
+    - Case studies: Liberia’s Mass Action for Peace (2003), the Wajir Peace and Development Committee in Kenya, and the Moroccan murshidat.
+  - **Unit 3, gender-sensitive conflict analysis:**
+    - Context, causes (root, proximate, triggers), actors (positions, interests, needs) and dynamics.
+    - The conflict tree, actor map, and connectors and dividers (Do No Harm).
+    - How conflict affects women and men differently, with gender-analysis questions.
+    - A 40-minute exercise: map a conflict in your community.
+  - **Unit 4, dialogue and mediation skills:**
+    - Deep listening (open questions, paraphrasing, reflecting feelings, summarising, "When… I feel…").
+    - Facilitating a dialogue circle step by step (dialogue, debate and mediation; before, during and after; difficult moments).
+    - The live Zoom practice session (a link lesson: the team adds the date and link in the dashboard).
+  - **Unit 5, from learning to action:**
+    - Designing a local initiative (seven questions).
+    - A 10-heading plan template.
+    - Final reflection, the certificate (coming soon) and joining the network.
+- **Unit titles** are now also applied from the content file (`applyCourseContent`).
+
 ### 2026-11-21: «عرض الصفحة» for each participant; participants open their own page
 - **Dashboard (corrected the same day, owner):** «عرض الصفحة» / "View page" is an **item inside the status list**, not a separate button. The list holds «قيد الموافقة» (renamed from «جديد») / «مقبول» / «مرفوض» / «👁 عرض الصفحة», in the course's "Participants" and in "Registrations". Choosing it opens `/learners/[id]` (photo, details, progress, quiz results) without changing the status. The progress line says "Steps completed" because quizzes count as steps.
+- **Who sees a participant's page (owner, confirmed):** only the participants of the same course, if the page is shown, plus the team in the dashboard (always, with the email). Never other site visitors or participants of other courses. The dashboard and profile texts now say this plainly.
 - **Top bar after sign-in:** a signed-in participant sees **their photo (or initials) and their email** at the top of every page, opening their own page. Their email also shows on their own page, and only there; others never see it. Checked at 320/375/768/1280 in EN/FR/AR with no overflow.
 - **Website:** a participant can open their own page (as others see it) from «دوراتي» («👁 عرض صفحتي الشخصية»), from the course player header, and from «ملفي الشخصي».
 - **Checked:** the dashboard course page has the button for each participant (3); typecheck and `pnpm build` pass.
