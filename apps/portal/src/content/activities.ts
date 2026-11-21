@@ -116,6 +116,8 @@ export type ActivitiesContent = {
       countryPlaceholder: string;
       password: string;
       passwordHint: string;
+      showPassword: string;
+      hidePassword: string;
       submitSignup: string;
       submitLogin: string;
       sending: string;
@@ -152,6 +154,44 @@ export type ActivitiesContent = {
       certificateSoon: string;
       noVideo: string;
       noContent: string;
+      /** Player rules, unit quizzes, profile and participants (owner, 2026-11-21). */
+      study: {
+        hello: string;
+        profileLink: string;
+        people: string;
+        peopleLead: string;
+        peopleEmpty: string;
+        you: string;
+        watchToEnd: string;
+        readToEnd: string;
+        openFirst: string;
+        openLinkFirst: string;
+        waitFor: string;
+        locked: string;
+        lockedUnit: string;
+        quizTitle: string;
+        quizLead: string;
+        quizLocked: string;
+        submit: string;
+        answerAll: string;
+        result: string;
+        passed: string;
+        failed: string;
+        retry: string;
+        wrong: string;
+        passedBefore: string;
+        nextUnit: string;
+        profileTitle: string;
+        profileLead: string;
+        job: string;
+        org: string;
+        bio: string;
+        bioHint: string;
+        showProfile: string;
+        save: string;
+        saved: string;
+        personBack: string;
+      };
       /** Forgot password (owner, 2026-11-21: every account type can recover access). */
       forgot: {
         link: string;
@@ -199,6 +239,9 @@ export type ActivitiesContent = {
     /** Label of the link to the original post. */
     source: string;
     photosLabel: string;
+    /** Open / close the full story inside its card (owner, 2026-11-21: news sits at the top of its page). */
+    readMore: string;
+    readLess: string;
     items: {
       date: string;
       place: string;
@@ -386,6 +429,8 @@ const en: ActivitiesContent = {
       "countryPlaceholder": "Select…",
       "password": "Password",
       "passwordHint": "At least 12 characters, with letters, numbers and a symbol (such as ! @ # $).",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
       "submitSignup": "Create account",
       "submitLogin": "Sign in",
       "sending": "Please wait…",
@@ -404,7 +449,7 @@ const en: ActivitiesContent = {
       "browse": "Browse the courses",
       "start": "Start the course",
       "continue": "Continue",
-      "progress": "{done} of {total} lessons done",
+      "progress": "Completed: {done} of {total} steps",
       "signOut": "Sign out",
       "myLink": "My learning / Sign in",
       "join": "Join this course",
@@ -428,6 +473,43 @@ const en: ActivitiesContent = {
       "certificateSoon": "Certificates will be available soon.",
       "noVideo": "The video will be added soon.",
       "noContent": "The content of this lesson will be added soon.",
+      "study": {
+        "hello": "Hello, {name}",
+        "profileLink": "My profile",
+        "people": "Participants",
+        "peopleLead": "The people taking this course with you. Open a profile to get to know them.",
+        "peopleEmpty": "No other participants show their profile yet.",
+        "you": "(you)",
+        "watchToEnd": "Watch the video to the end to turn on “Mark as done”.",
+        "readToEnd": "Read the lesson to the end to turn on “Mark as done”.",
+        "openFirst": "Open the file to turn on “Mark as done”.",
+        "openLinkFirst": "Open the link to turn on “Mark as done”.",
+        "waitFor": "You can mark this lesson as done in {time}.",
+        "locked": "This lesson opens once you finish the previous one.",
+        "lockedUnit": "This unit opens once you pass the previous unit’s quiz.",
+        "quizTitle": "Unit quiz",
+        "quizLead": "Answer every question. Pass mark: {mark}%.",
+        "quizLocked": "The quiz opens once you finish this unit’s lessons.",
+        "submit": "Submit answers",
+        "answerAll": "Please answer every question.",
+        "result": "Your score: {score} of {total} ({percent}%)",
+        "passed": "Well done, you passed. The next unit is now open.",
+        "failed": "You haven’t reached the pass mark ({mark}%) yet. Review the lessons and try again.",
+        "retry": "Try again",
+        "wrong": "Incorrect answer",
+        "passedBefore": "You passed this quiz: {score} of {total}.",
+        "nextUnit": "Go to the next unit",
+        "profileTitle": "My profile",
+        "profileLead": "What you write here is shown to the other participants of your courses, so you can get to know each other.",
+        "job": "Job title",
+        "org": "Organisation",
+        "bio": "About me",
+        "bioHint": "A few lines about you and your work (up to 1,500 characters).",
+        "showProfile": "Show my profile to the other participants of my courses",
+        "save": "Save",
+        "saved": "Saved.",
+        "personBack": "Back to the participants"
+      },
       "forgot": {
         "link": "Forgot your password?",
         "title": "Forgot your password",
@@ -467,6 +549,8 @@ const en: ActivitiesContent = {
     "title": "Programme news",
     "lead": "Sessions and workshops of our training programme, online and in the field.",
     "source": "See the post on Facebook",
+    "readMore": "Read the full story",
+    "readLess": "Show less",
     "photosLabel": "Photos",
     "items": [
       {
@@ -692,6 +776,8 @@ const fr: ActivitiesContent = {
       "countryPlaceholder": "Sélectionner…",
       "password": "Mot de passe",
       "passwordHint": "Au moins 12 caractères, avec des lettres, des chiffres et un symbole (comme ! @ # $).",
+      "showPassword": "Afficher le mot de passe",
+      "hidePassword": "Masquer le mot de passe",
       "submitSignup": "Créer le compte",
       "submitLogin": "Se connecter",
       "sending": "Veuillez patienter…",
@@ -710,7 +796,7 @@ const fr: ActivitiesContent = {
       "browse": "Voir les cours",
       "start": "Commencer le cours",
       "continue": "Continuer",
-      "progress": "Leçons terminées : {done} sur {total}",
+      "progress": "Étapes terminées : {done} sur {total}",
       "signOut": "Se déconnecter",
       "myLink": "Mon apprentissage / Connexion",
       "join": "Rejoindre ce cours",
@@ -734,6 +820,43 @@ const fr: ActivitiesContent = {
       "certificateSoon": "Les certificats seront bientôt disponibles.",
       "noVideo": "La vidéo sera ajoutée bientôt.",
       "noContent": "Le contenu de cette leçon sera ajouté bientôt.",
+      "study": {
+        "hello": "Bonjour, {name}",
+        "profileLink": "Mon profil",
+        "people": "Participants",
+        "peopleLead": "Les personnes qui suivent ce cours avec vous. Ouvrez un profil pour faire connaissance.",
+        "peopleEmpty": "Aucun autre participant n’affiche encore son profil.",
+        "you": "(vous)",
+        "watchToEnd": "Regardez la vidéo jusqu’au bout pour activer « Marquer comme terminée ».",
+        "readToEnd": "Lisez la leçon jusqu’au bout pour activer « Marquer comme terminée ».",
+        "openFirst": "Ouvrez le fichier pour activer « Marquer comme terminée ».",
+        "openLinkFirst": "Ouvrez le lien pour activer « Marquer comme terminée ».",
+        "waitFor": "Vous pourrez marquer cette leçon comme terminée dans {time}.",
+        "locked": "Cette leçon s’ouvre une fois la précédente terminée.",
+        "lockedUnit": "Ce module s’ouvre une fois le quiz du module précédent réussi.",
+        "quizTitle": "Quiz du module",
+        "quizLead": "Répondez à toutes les questions. Note de réussite : {mark} %.",
+        "quizLocked": "Le quiz s’ouvre une fois les leçons de ce module terminées.",
+        "submit": "Envoyer les réponses",
+        "answerAll": "Veuillez répondre à toutes les questions.",
+        "result": "Votre score : {score} sur {total} ({percent} %)",
+        "passed": "Bravo, vous avez réussi. Le module suivant est ouvert.",
+        "failed": "Vous n’avez pas encore atteint la note de réussite ({mark} %). Revoyez les leçons et réessayez.",
+        "retry": "Réessayer",
+        "wrong": "Réponse incorrecte",
+        "passedBefore": "Vous avez réussi ce quiz : {score} sur {total}.",
+        "nextUnit": "Aller au module suivant",
+        "profileTitle": "Mon profil",
+        "profileLead": "Ce que vous écrivez ici est visible par les autres participants et participantes de vos cours, pour faire connaissance.",
+        "job": "Fonction",
+        "org": "Organisation",
+        "bio": "À propos de moi",
+        "bioHint": "Quelques lignes sur vous et votre travail (jusqu’à 1 500 caractères).",
+        "showProfile": "Afficher mon profil aux autres participants de mes cours",
+        "save": "Enregistrer",
+        "saved": "Enregistré.",
+        "personBack": "Retour aux participants"
+      },
       "forgot": {
         "link": "Mot de passe oublié ?",
         "title": "Mot de passe oublié",
@@ -773,6 +896,8 @@ const fr: ActivitiesContent = {
     "title": "Actualités du programme",
     "lead": "Séances et ateliers de notre programme de formation, en ligne et sur le terrain.",
     "source": "Voir la publication sur Facebook",
+    "readMore": "Lire l’article complet",
+    "readLess": "Réduire",
     "photosLabel": "Photos",
     "items": [
       {
@@ -998,6 +1123,8 @@ const ar: ActivitiesContent = {
       "countryPlaceholder": "اختر/ي…",
       "password": "كلمة المرور",
       "passwordHint": "١٢ حرفًا على الأقل، وتحتوي على حروف وأرقام ورمز (مثل ! @ # $).",
+      "showPassword": "إظهار كلمة المرور",
+      "hidePassword": "إخفاء كلمة المرور",
       "submitSignup": "إنشاء الحساب",
       "submitLogin": "دخول",
       "sending": "يرجى الانتظار…",
@@ -1016,7 +1143,7 @@ const ar: ActivitiesContent = {
       "browse": "تصفّح/ي الدورات",
       "start": "ابدأ/ي الدورة",
       "continue": "متابعة",
-      "progress": "الدروس المكتملة: {done} من {total}",
+      "progress": "الخطوات المكتملة: {done} من {total}",
       "signOut": "تسجيل الخروج",
       "myLink": "دوراتي / تسجيل الدخول",
       "join": "انضم/ي إلى الدورة",
@@ -1040,6 +1167,43 @@ const ar: ActivitiesContent = {
       "certificateSoon": "الشهادات ستتوفر قريبًا.",
       "noVideo": "سيُضاف الفيديو قريبًا.",
       "noContent": "سيُضاف محتوى هذا الدرس قريبًا.",
+      "study": {
+        "hello": "مرحبًا، {name}",
+        "profileLink": "ملفي الشخصي",
+        "people": "المشاركون",
+        "peopleLead": "المشاركون والمشاركات معك في هذه الدورة. افتح/ي أي ملف للتعرّف عليهم.",
+        "peopleEmpty": "لا يعرض أي مشارك آخر ملفه بعد.",
+        "you": "(أنت)",
+        "watchToEnd": "شاهد/ي الفيديو حتى نهايته لتفعيل «تم الدرس».",
+        "readToEnd": "اقرأ/ي الدرس حتى آخره لتفعيل «تم الدرس».",
+        "openFirst": "افتح/ي الملف لتفعيل «تم الدرس».",
+        "openLinkFirst": "افتح/ي الرابط لتفعيل «تم الدرس».",
+        "waitFor": "يمكنك تحديد هذا الدرس مكتملًا بعد {time}.",
+        "locked": "يُفتح هذا الدرس بعد إكمال الدرس السابق.",
+        "lockedUnit": "تُفتح هذه الوحدة بعد النجاح في اختبار الوحدة السابقة.",
+        "quizTitle": "اختبار الوحدة",
+        "quizLead": "أجب/أجيبي عن كل الأسئلة. درجة النجاح: {mark}٪.",
+        "quizLocked": "يُفتح الاختبار بعد إكمال دروس هذه الوحدة.",
+        "submit": "إرسال الإجابات",
+        "answerAll": "يرجى الإجابة عن كل الأسئلة.",
+        "result": "نتيجتك: {score} من {total} ({percent}٪)",
+        "passed": "رائع، نجحت في الاختبار. الوحدة التالية مفتوحة الآن.",
+        "failed": "لم تصل/ي بعد إلى درجة النجاح ({mark}٪). راجع/ي الدروس وحاول/ي مرة أخرى.",
+        "retry": "إعادة المحاولة",
+        "wrong": "إجابة غير صحيحة",
+        "passedBefore": "نجحت في هذا الاختبار: {score} من {total}.",
+        "nextUnit": "الانتقال إلى الوحدة التالية",
+        "profileTitle": "ملفي الشخصي",
+        "profileLead": "ما تكتبه/ينه هنا يظهر لباقي المشاركين والمشاركات في دوراتك، للتعارف فيما بينكم.",
+        "job": "الوظيفة",
+        "org": "الجهة",
+        "bio": "نبذة عني",
+        "bioHint": "بضعة أسطر عنك وعن عملك (حتى ١٥٠٠ حرف).",
+        "showProfile": "اعرض ملفي لباقي المشاركين في دوراتي",
+        "save": "حفظ",
+        "saved": "تم الحفظ.",
+        "personBack": "العودة إلى المشاركين"
+      },
       "forgot": {
         "link": "نسيت كلمة المرور؟",
         "title": "نسيت كلمة المرور",
@@ -1079,6 +1243,8 @@ const ar: ActivitiesContent = {
     "title": "أخبار البرنامج",
     "lead": "جلسات وورش برنامجنا التدريبي، عبر الإنترنت وفي الميدان.",
     "source": "شاهد/ي المنشور على فيسبوك",
+    "readMore": "اقرأ/ي الخبر كاملًا",
+    "readLess": "عرض أقل",
     "photosLabel": "الصور",
     "items": [
       {

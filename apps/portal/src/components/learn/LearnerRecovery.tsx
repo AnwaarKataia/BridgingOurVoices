@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 import type { Locale } from "@/i18n/config";
 import type { ActivitiesContent } from "@/content/activities";
 import { btn } from "../ui";
+import { PasswordInput } from "../forms/PasswordInput";
 
 type T = ActivitiesContent["elearning"]["learn"];
 const field =
@@ -85,12 +86,12 @@ export function LearnerResetForm({ locale, token, t }: { locale: Locale; token: 
     <form onSubmit={onSubmit} className={card}>
       <label className="flex flex-col gap-1.5 text-sm font-medium text-ink">
         {t.forgot.newPassword}
-        <input name="password" type="password" required minLength={12} maxLength={200} autoComplete="new-password" dir="ltr" className={field} />
+        <PasswordInput name="password" required minLength={12} maxLength={200} autoComplete="new-password" className={field} showLabel={t.showPassword} hideLabel={t.hidePassword} />
         <span className="text-xs font-normal text-ink-soft">{t.passwordHint}</span>
       </label>
       <label className="flex flex-col gap-1.5 text-sm font-medium text-ink">
         {t.forgot.confirm}
-        <input name="confirm" type="password" required minLength={12} maxLength={200} autoComplete="new-password" dir="ltr" className={field} />
+        <PasswordInput name="confirm" required minLength={12} maxLength={200} autoComplete="new-password" className={field} showLabel={t.showPassword} hideLabel={t.hidePassword} />
       </label>
       <p role="alert" className="m-0 text-sm text-danger empty:hidden">{error}</p>
       <button type="submit" disabled={state === "saving"} className={`${btn.navy} h-[50px] self-start px-7 text-[15px] disabled:opacity-60`}>

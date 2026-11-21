@@ -11,7 +11,8 @@ type Loc = "ar" | "en" | "fr";
 export type I18n = Record<Loc, string>;
 type LessonType = "video" | "file" | "text" | "link";
 export type Lesson = { id: string; sort: number; type: LessonType; title: I18n; body: I18n; videoUrl: string; fileUrl: string; linkUrl: string; minutes: number };
-export type Unit = { id: string; sort: number; title: I18n; summary: I18n; lessons: Lesson[] };
+export type Question = { id: string; sort: number; text: I18n; options: { id: string; text: I18n }[]; correct: string };
+export type Unit = { id: string; sort: number; title: I18n; summary: I18n; passMark: number; lessons: Lesson[]; questions: Question[] };
 export type Course = {
   id: string;
   slug: string;
@@ -44,6 +45,7 @@ export type Registration = {
   createdAt: string;
   /** Learner account progress (phase 2); null for registrations made before accounts. */
   progress: { done: number; total: number } | null;
+  learnerId: string | null;
 };
 
 const LOCS: Loc[] = ["ar", "en", "fr"];
@@ -448,7 +450,157 @@ function UnitCard({ unit, index, total, loc, lang, t, error }: { unit: Unit; ind
           + {t.addLesson}
         </button>
       </div>
+
+      <QuizEditor unit={unit} loc={loc} nf={nf} t={t} error={error} />
     </article>
+  );
+}
+
+/** Unit quiz (owner, 2026-11-21): pass mark + multiple-choice questions with one correct answer each. */
+function QuizEditor({ unit, loc, nf, t, error }: { unit: Unit; loc: Loc; nf: Intl.NumberFormat; t: L; error: string }) {
+  const router = useRouter();
+  const q = t.quiz;
+  const [passMark, setPassMark] = useState(unit.passMark);
+  const [savedMark, setSavedMark] = useState(unit.passMark);
+  const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
+
+  async function act(url: string, method: string, body?: unknown, after?: () => void) {
+    setMsg(null);
+    const r = await send(url, method, body);
+    if (r.ok) {
+      after?.();
+      router.refresh();
+    } else setMsg({ ok: false, text: error });
+  }
+
+  return (
+    <section className="flex flex-col gap-3 rounded-bov border border-gold/50 bg-paper p-4" aria-label={q.title}>
+      <h4 className="font-display text-lg font-normal">📝 {q.title}</h4>
+      <p className="m-0 text-xs text-ink-soft">{q.hint}</p>
+      <div className="flex flex-wrap items-end gap-2">
+        <label className="flex flex-col gap-1.5 text-sm font-semibold text-ink">
+          {q.passMark}
+          <input
+            type="number"
+            min={0}
+            max={100}
+            value={passMark}
+            onChange={(e) => setPassMark(Math.max(0, Math.min(100, Number(e.target.value) || 0)))}
+            className={`${input} h-10 w-28`}
+          />
+        </label>
+        <button
+          type="button"
+          disabled={passMark === savedMark}
+          onClick={() => act(`/api/admin/modules/${unit.id}`, "PATCH", { passMark }, () => { setSavedMark(passMark); setMsg({ ok: true, text: t.saved }); })}
+          className={btnPrimary}
+        >
+          {t.save}
+        </button>
+        <Status msg={msg} />
+      </div>
+      <ol className="flex flex-col gap-3">
+        {unit.questions.length === 0 && <li className="text-sm text-ink-soft">{q.none}</li>}
+        {unit.questions.map((question, i) => (
+          <QuestionCard key={question.id} question={question} index={i} total={unit.questions.length} loc={loc} nf={nf} t={t} error={error} />
+        ))}
+      </ol>
+      <button type="button" onClick={() => act(`/api/admin/modules/${unit.id}/questions`, "POST")} className={`${btnLine} self-start`}>
+        + {q.add}
+      </button>
+    </section>
+  );
+}
+
+function QuestionCard({ question, index, total, loc, nf, t, error }: { question: Question; index: number; total: number; loc: Loc; nf: Intl.NumberFormat; t: L; error: string }) {
+  const router = useRouter();
+  const q = t.quiz;
+  const pick = (x: Question) => ({ text: x.text, options: x.options, correct: x.correct });
+  const [saved, setSaved] = useState(() => pick(question));
+  const [v, setV] = useState(() => pick(question));
+  const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
+  const dirty = JSON.stringify(v) !== JSON.stringify(saved);
+  const dir = loc === "ar" ? "rtl" : "ltr";
+  const id = `q-${question.id}`;
+
+  async function act(method: string, body?: unknown, after?: () => void) {
+    setMsg(null);
+    const r = await send(`/api/admin/questions/${question.id}`, method, body);
+    if (r.ok) {
+      after?.();
+      router.refresh();
+    } else setMsg({ ok: false, text: r.status === 400 ? t.saveError : error });
+  }
+
+  return (
+    <li className="flex flex-col gap-3 rounded-bov border border-line bg-white p-4">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <span className="text-sm font-semibold text-ink">
+          {q.question} {nf.format(index + 1)}
+        </span>
+        <div className="flex flex-wrap gap-1.5">
+          <button type="button" aria-label={t.moveUp} title={t.moveUp} disabled={index === 0} onClick={() => act("PATCH", { move: -1 })} className={btnLine}>↑</button>
+          <button type="button" aria-label={t.moveDown} title={t.moveDown} disabled={index === total - 1} onClick={() => act("PATCH", { move: 1 })} className={btnLine}>↓</button>
+          <button type="button" onClick={() => confirm(q.removeConfirm) && act("DELETE")} className={btnDanger}>{t.remove}</button>
+        </div>
+      </div>
+      <I18nField id={`${id}-t`} label={q.question} value={v.text} loc={loc} rows={2} onChange={(text) => setV({ ...v, text })} />
+      <fieldset className="flex flex-col gap-2">
+        <legend className="mb-1 text-sm font-semibold text-ink">
+          {q.option} · <span className="font-normal text-ink-soft">◉ = {q.correct}</span>
+        </legend>
+        {v.options.map((o, oi) => (
+          <div key={o.id} className="flex items-center gap-2">
+            <input
+              type="radio"
+              name={`${id}-correct`}
+              checked={v.correct === o.id}
+              onChange={() => setV({ ...v, correct: o.id })}
+              aria-label={`${q.correct}: ${q.option} ${nf.format(oi + 1)}`}
+              className="size-4 flex-none accent-navy"
+            />
+            <input
+              dir={dir}
+              lang={loc}
+              aria-label={`${q.option} ${nf.format(oi + 1)} · ${loc.toUpperCase()}`}
+              value={o.text[loc]}
+              onChange={(e) => setV({ ...v, options: v.options.map((x) => (x.id === o.id ? { ...x, text: { ...x.text, [loc]: e.target.value } } : x)) })}
+              className={`${input} h-10 ${v.correct === o.id ? "border-navy" : ""}`}
+            />
+            {v.options.length > 2 && (
+              <button
+                type="button"
+                aria-label={q.removeOption}
+                title={q.removeOption}
+                onClick={() => {
+                  const options = v.options.filter((x) => x.id !== o.id);
+                  setV({ ...v, options, correct: v.correct === o.id ? options[0].id : v.correct });
+                }}
+                className={btnLine}
+              >
+                ✕
+              </button>
+            )}
+          </div>
+        ))}
+        {v.options.length < 6 && (
+          <button
+            type="button"
+            onClick={() => setV({ ...v, options: [...v.options, { id: crypto.randomUUID(), text: { en: "", fr: "", ar: "" } }] })}
+            className={`${btnLine} self-start`}
+          >
+            + {q.addOption}
+          </button>
+        )}
+      </fieldset>
+      <div className="flex flex-wrap items-center gap-3">
+        <button type="button" disabled={!dirty} onClick={() => act("PATCH", v, () => { setSaved(v); setMsg({ ok: true, text: t.saved }); })} className={btnPrimary}>
+          {t.save}
+        </button>
+        {dirty && <span className="text-sm font-semibold text-gold-deep">{t.unsaved}</span>}
+        <Status msg={msg} />
+      </div>
+    </li>
   );
 }
 
@@ -555,7 +707,11 @@ function Registrations({ items, lang, t, error }: { items: Registration[]; lang:
         {items.map((r) => (
           <li key={r.id} className="grid gap-x-4 gap-y-1 p-4 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_auto] sm:items-center">
             <span className="flex min-w-0 flex-col">
-              <span className="truncate font-semibold text-ink">{r.name}</span>
+              {r.learnerId ? (
+                <a href={`/learners/${r.learnerId}`} className="truncate font-semibold text-ink underline-offset-4 hover:text-blue hover:underline">{r.name}</a>
+              ) : (
+                <span className="truncate font-semibold text-ink">{r.name}</span>
+              )}
               <a href={`mailto:${r.email}`} dir="ltr" className="truncate text-sm text-blue hover:text-navy">{r.email}</a>
             </span>
             <span className="flex flex-col gap-1 text-sm text-ink-soft">

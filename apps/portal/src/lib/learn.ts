@@ -11,14 +11,37 @@ export const LEARNER_COOKIE = "bov_learner";
 
 export type Learner = { name: string; email: string; country: string };
 export type LessonType = "video" | "file" | "text" | "link";
-export type PlayerLesson = { id: string; type: LessonType; title: I18n; body: I18n; videoUrl: string; fileUrl: string; linkUrl: string; minutes: number; done: boolean };
+export type PlayerLesson = {
+  id: string;
+  type: LessonType;
+  title: I18n;
+  body: I18n;
+  videoUrl: string;
+  fileUrl: string;
+  linkUrl: string;
+  minutes: number;
+  done: boolean;
+  /** Opens once the previous step is finished (owner, 2026-11-21). */
+  locked: boolean;
+  /** Seconds still needed on the lesson before "Mark as done". */
+  waitSeconds: number;
+};
+export type PlayerQuiz = {
+  passMark: number;
+  locked: boolean;
+  best: { score: number; total: number; passed: boolean } | null;
+  questions: { id: string; text: I18n; options: { id: string; text: I18n }[] }[];
+};
 export type PlayerCourse = {
   slug: string;
   kind: "course" | "webinar";
   title: I18n;
   certificate: boolean;
-  modules: { id: string; title: I18n; summary: I18n; lessons: PlayerLesson[] }[];
+  progress: { done: number; total: number };
+  modules: { id: string; title: I18n; summary: I18n; lessons: PlayerLesson[]; quiz: PlayerQuiz | null }[];
 };
+export type Participant = { id: string; name: string; country: string; job: string; org: string; bio: string; me: boolean };
+export type Profile = { id: string; name: string; email: string; country: string; job: string; org: string; bio: string; showProfile: boolean };
 export type MyCourse = { slug: string; kind: "course" | "webinar"; title: I18n; image: string; certificate: boolean; progress: { done: number; total: number } };
 
 export async function learnerGet<T>(path: string): Promise<{ status: number; data: T | null }> {

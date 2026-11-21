@@ -30,6 +30,8 @@ export default async function ResetPage({ searchParams }: { searchParams: Promis
             mismatch: f.mismatch,
             tooMany: f.tooMany,
             error: t.error,
+            showPassword: t.showPassword,
+            hidePassword: t.hidePassword,
             weak: { length: t.account.errors.weak_length, letter: t.account.errors.weak_letter, number: t.account.errors.weak_number, symbol: t.account.errors.weak_symbol },
           }}
         />

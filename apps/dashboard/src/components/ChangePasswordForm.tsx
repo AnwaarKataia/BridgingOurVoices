@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { PasswordInput } from "./PasswordInput";
 import type { Dict } from "@/lib/i18n";
 
 type Labels = Dict["account"];
@@ -18,7 +19,7 @@ function ruleProblem(pw: string): ErrorKey | null {
   return null;
 }
 
-export function ChangePasswordForm({ t }: { t: Labels }) {
+export function ChangePasswordForm({ t, eye }: { t: Labels; eye: { show: string; hide: string } }) {
   const [status, setStatus] = useState<"idle" | "saving" | "done">("idle");
   const [error, setError] = useState<ErrorKey | null>(null);
 
@@ -57,24 +58,24 @@ export function ChangePasswordForm({ t }: { t: Labels }) {
     <form onSubmit={onSubmit} className="flex flex-col gap-4" onChange={() => status === "done" && setStatus("idle")}>
       <label className="flex flex-col gap-1.5 text-sm font-medium">
         {t.current}
-        <input name="current" type="password" required autoComplete="current-password" dir="ltr" className={`${field} rtl:text-end`} />
+        <PasswordInput name="current" required autoComplete="current-password" className={field} showLabel={eye.show} hideLabel={eye.hide} />
       </label>
       <label className="flex flex-col gap-1.5 text-sm font-medium">
         {t.next}
-        <input
+        <PasswordInput
           name="next"
-          type="password"
           required
           minLength={12}
           autoComplete="new-password"
-          dir="ltr"
           aria-describedby="pw-rule"
-          className={`${field} rtl:text-end`}
+          className={field}
+          showLabel={eye.show}
+          hideLabel={eye.hide}
         />
       </label>
       <label className="flex flex-col gap-1.5 text-sm font-medium">
         {t.confirm}
-        <input name="confirm" type="password" required minLength={12} autoComplete="new-password" dir="ltr" className={`${field} rtl:text-end`} />
+        <PasswordInput name="confirm" required minLength={12} autoComplete="new-password" className={field} showLabel={eye.show} hideLabel={eye.hide} />
       </label>
       <p id="pw-rule" className="m-0 text-[13px] text-ink-soft">{t.rule}</p>
       <p role="alert" className="m-0 text-sm text-danger empty:hidden">{error ? t.errors[error] : ""}</p>

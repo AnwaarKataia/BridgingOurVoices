@@ -69,7 +69,12 @@ export default async function MyLearningPage({ params }: Params) {
               })}
             </ul>
           )}
-          <LearnerSignOut label={t.signOut} to={`/${locale}/activities/e-learning`} />
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link href={`/${locale}/learn/profile`} className="text-sm font-semibold text-blue underline underline-offset-4 hover:text-navy">
+              {t.study.profileLink}
+            </Link>
+            <LearnerSignOut label={t.signOut} to={`/${locale}/activities/e-learning`} />
+          </div>
         </div>
       </section>
     </PageShell>

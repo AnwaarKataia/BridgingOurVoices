@@ -942,6 +942,72 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - learner accounts, lesson pages with the video player, "Mark as done" and progress, participants;
   - certificates last.
 
+### 2026-11-21: E-learning: real completion, unit quizzes, learner profiles, participants in the dashboard
+- **Owner:**
+  - Show the learner's name, and give each learner a profile page that others can see.
+  - «تم الدرس» must not be a shortcut: texts are read to the end, and videos are watched to the end without skipping ahead.
+  - Every unit gets a multiple-choice quiz with a pass mark. **Pass mark 70% (confirmed by the owner)**, editable per unit; a learner below it retries before going on.
+  - The dashboard shows who joined, with their details and pages.
+- **Order (API `courseState`):** steps run in order.
+  - Each lesson opens when the previous one is done (🔒 until then).
+  - A unit's quiz opens when its lessons are done.
+  - The next unit opens only after the quiz is **passed**.
+  - The team's preview has nothing locked.
+- **«تم الدرس» rules:**
+  - **In the player** (`LessonGate`, `WatchedVideo`):
+    - **video:** the YouTube (privacy-enhanced) or Vimeo player tracks the furthest point watched. Jumping ahead of it sends the viewer back (going back is fine). The button turns on only after the video reaches its end.
+    - **text:** on when the end of the lesson has been on screen.
+    - **file / link:** on once opened.
+    - A hint under the button says what is missing.
+  - **In the API** (can't be bypassed): the lesson must be unlocked and opened (`/learn/lessons/:id/open`, table `lesson_opens`), and at least **half of the lesson's length in minutes** must have passed since it was opened. Otherwise 409 `too_soon` with the seconds left, and the player shows a countdown.
+- **Unit quizzes:**
+  - **Tables:** `quiz_questions` (per unit: text, 2–6 options and one correct option, EN/FR/AR), `quiz_attempts`, and `course_modules.pass_mark` (default 70).
+  - **Dashboard → course → each unit → "Unit quiz":** the pass mark, then add, edit, reorder and delete questions; the correct answer is chosen with a radio button. No questions means no quiz.
+  - **Grading on the server:** the correct options never reach the browser. The learner sees the score, pass or fail, and which questions were wrong (never the right answers), with "Try again" and "Go to the next unit". Every answer is required, and there's a limit of 20 submissions per 10 minutes.
+  - **Progress** counts lessons and quizzes ("Completed: x of y steps").
+- **Learner profile and participants:**
+  - **Profile:** the player header says «مرحبًا، [name]» with links to «ملفي الشخصي» and «المشاركون». `/[lang]/learn/profile` edits the name, country, job, organisation, "about me" (up to 1,500 characters), and whether other participants see the profile (on by default).
+  - **Participants:** «المشاركون» lists the people taking the same course, and `/[lang]/learn/people/[id]` is one person's profile.
+  - **Who sees it:** only learners who share a course with that person, and never their email. Hidden profiles don't appear. These pages are not indexed.
+- **Dashboard participants:**
+  - A participant's name (in the course's "Participants" and in "Registrations") opens `/learners/[id]`.
+  - That page shows email, country, job, organisation, about, account dates, whether the profile is visible, and each course with its status, progress, and per-unit lessons done plus quiz result (passed or not, best score, attempts).
+- **Privacy policy:** now also covers quiz results and the profile visible to co-participants (can be hidden).
+- **Tested** with a temporary course and learners, all deleted afterwards:
+  - the lesson order;
+  - «تم الدرس» before opening → `not_opened`, on a locked lesson → `locked`, too early → `too_soon` with 30 s left (it works after 31 s);
+  - quiz: locked before the lessons, an unanswered question rejected, 1 of 2 at a 100% mark fails and only the wrong question is named, the next unit stays locked; 2 of 2 passes and unlocks it; no correct answers in any response;
+  - profiles: not visible without a shared course, visible after joining (without email), hidden when switched off;
+  - the dashboard learner data;
+  - in the browser (Arabic): the greeting and links, 🔒 marks, a short text turns the button on, and the video lesson keeps it off with «شاهد/ي الفيديو حتى نهايته»;
+  - responsive: player, profile and My learning × 3 languages × 5 widths;
+  - `pnpm build` passes.
+
+### 2026-11-21: Eye button on password fields
+- **Owner:** an eye button that shows or hides the password.
+- **Where:** every password field:
+  - **dashboard:** sign-in, "My account" (current / new / confirm), new password after "forgot password";
+  - **site:** learner sign-up, sign-in, new password.
+- **How:** `PasswordInput` (`apps/dashboard/src/components/` and `apps/portal/src/components/forms/`).
+  - The eye sits at the end of the field (right in English, left in Arabic) and becomes a crossed eye while the password is shown.
+  - It is reachable by keyboard, with a spoken label in each language ("Show password" / «إظهار كلمة المرور»…).
+  - Autocorrect and spell-check are off.
+- **Checked** in Arabic in the browser (the password shows and hides, the label changes, the button is on the left). `pnpm build` passes.
+
+### 2026-11-21: News at the top of its page as cards; clearer menu arrows
+- **Owner:** a page's news must be visible at the top, not at the bottom, and laid out neatly when there are several programmes or items.
+  - On **Training programmes** and **Seminars**, the news now comes right under the page title, as a grid of cards: photo, date and place, title, first lines.
+  - "Read the full story" («اقرأ/ي الخبر كاملًا») opens the card across the full width, with the photo beside the text, every paragraph, the points, the other photos and the Facebook link. "Show less" closes it.
+  - Arriving from the home page's "Read more" (`#training-launch`, `#unhcr-alexandria`) opens that card automatically (`OpenFromHash`).
+  - The programme card and the rest of the page follow underneath.
+- **Menu:** the dropdown marker in the navbar is now a clear gold chevron (it was a tiny ▾ that looked like a dot). It turns over while the menu is open.
+- **Checked:** the hash opens the right card across the full width; responsive (home, training, seminars × 3 languages × 5 widths, no header overflow or wrapped menu items); `pnpm build` passes.
+
+### 2026-11-21: Paragraphs use "Justify Low" (no hyphens)
+- **Owner:** no marks at the ends of lines. She meant the hyphens that split English and French words. She wants Word's "Justify Low": the text is justified on both sides, the last line of each paragraph starts from the text's own side (left in English and French, right in Arabic), and no word is ever split.
+- `apps/portal/src/app/globals.css`: `text-align: justify`, `text-align-last: start`, `hyphens: manual` (no automatic hyphenation), `text-justify: inter-word`. Centred blocks stay centred.
+- **Note:** browsers stretch the spaces between words, and don't stretch Arabic letters (kashida) the way Word does. So narrow columns can show slightly wider gaps between words.
+
 ### 2026-11-21: Forgot password for every account type + the initiative's description reworded
 - **Rule (owner):** anyone who creates an account on the site must be able to recover it by email. This applies to dashboard accounts and learner accounts, and to any future account type.
 - **Learners:**
@@ -1079,7 +1145,7 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - The API checks the choice: message 10–600 characters, article 50–10,000.
   - On the site, an article-only voice shows the opening of the article.
   - The intro and consent texts now say "message or article". The membership form is unchanged.
-- **Typesetting:** paragraphs on the site are justified (straight edges on both sides). English and French use hyphenation. Centred blocks stay centred.
+- **Typesetting:** paragraphs on the site are justified (straight edges on both sides). Centred blocks stay centred. *(Changed the same day: hyphenation removed, see "Justify Low" below.)*
 - **Grammar:**
   - Vision: "have … authority as **the** primary facilitators…".
   - Mission: "To equip women and young people with practical skills in …, **and to provide** … platforms…" (it was a dangling "providing").

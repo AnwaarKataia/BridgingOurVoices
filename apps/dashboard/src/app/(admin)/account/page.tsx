@@ -33,7 +33,7 @@ export default async function AccountPage() {
 
       <section aria-labelledby="pw-title" className="rounded-bov border border-t-[2.4px] border-line border-t-gold bg-white p-5 sm:p-7">
         <h2 id="pw-title" className="mb-5 font-display text-h3 font-normal">{t.account.changeTitle}</h2>
-        <ChangePasswordForm t={t.account} />
+        <ChangePasswordForm t={t.account} eye={{ show: t.showPassword, hide: t.hidePassword }} />
       </section>
     </div>
   );

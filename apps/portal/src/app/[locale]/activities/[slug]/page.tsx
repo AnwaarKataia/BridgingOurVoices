@@ -41,8 +41,9 @@ function page(slug: Slug, c: ActivitiesContent, locale: Locale) {
         description: clip(c.course.body),
         body: (
           <>
-            <Training course={c.course} flagship={c.flagship} tracks={c.tracks} ctaHref={`/${locale}/activities/e-learning`} newsHref={`/${locale}/activities/seminars#training-launch`} />
+            {/* The programme's news first (owner, 2026-11-21), then the programme itself */}
             <News news={c.news} items={c.news.items.filter((n) => n.href === "/activities/training")} />
+            <Training course={c.course} flagship={c.flagship} tracks={c.tracks} ctaHref={`/${locale}/activities/e-learning`} newsHref={`/${locale}/activities/seminars#training-launch`} />
           </>
         ),
       };

@@ -67,7 +67,12 @@ export function SiteHeader({ locale, current, site }: Props) {
                     }`}
                   >
                     {item.label}
-                    {item.children && <span aria-hidden className="ms-1 text-[0.7em] text-gold">▾</span>}
+                    {item.children && (
+                      // Clear dropdown arrow (owner, 2026-11-21); turns over while the menu is open
+                      <svg aria-hidden viewBox="0 0 12 12" className="ms-1.5 inline-block size-3 align-[-1px] text-gold transition-transform group-focus-within:rotate-180 group-hover:rotate-180">
+                        <path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
                   </a>
 
                   {item.children && (

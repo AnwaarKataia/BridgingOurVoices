@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import type { FastifyInstance, FastifyReply } from "fastify";
 import { and, asc, count, desc, eq, inArray } from "drizzle-orm";
 import { db, schema } from "./db/client.js";
@@ -68,7 +69,21 @@ async function fullCourse(id: string) {
         .where(inArray(schema.courseLessons.moduleId, modules.map((m) => m.id)))
         .orderBy(asc(schema.courseLessons.sort))
     : [];
-  return { ...course, modules: modules.map((m) => ({ ...m, lessons: lessons.filter((l) => l.moduleId === m.id) })) };
+  const questions = modules.length
+    ? await db
+        .select()
+        .from(schema.quizQuestions)
+        .where(inArray(schema.quizQuestions.moduleId, modules.map((m) => m.id)))
+        .orderBy(asc(schema.quizQuestions.sort))
+    : [];
+  return {
+    ...course,
+    modules: modules.map((m) => ({
+      ...m,
+      lessons: lessons.filter((l) => l.moduleId === m.id),
+      questions: questions.filter((q) => q.moduleId === m.id),
+    })),
+  };
 }
 
 /** Swap an item with its neighbour (dir -1 = up, 1 = down) inside its list. */
@@ -264,7 +279,7 @@ export async function elearningRoutes(app: FastifyInstance) {
     return reply.code(201).send({ ok: true, id: row.id });
   });
 
-  app.patch<{ Params: { id: string }; Body: { title?: unknown; summary?: unknown; move?: number } }>("/admin/modules/:id", { preHandler: requireUser }, async (req, reply) => {
+  app.patch<{ Params: { id: string }; Body: { title?: unknown; summary?: unknown; move?: number; passMark?: unknown } }>("/admin/modules/:id", { preHandler: requireUser }, async (req, reply) => {
     if (!ID.test(req.params.id)) return reply.code(404).send({ ok: false });
     const [m] = await db.select().from(schema.courseModules).where(eq(schema.courseModules.id, req.params.id)).limit(1);
     if (!m) return reply.code(404).send({ ok: false });
@@ -284,6 +299,11 @@ export async function elearningRoutes(app: FastifyInstance) {
       if (!v) return bad(reply, "summary");
       next.summary = v;
     }
+    if ("passMark" in b) {
+      const v = Number(b.passMark);
+      if (!Number.isInteger(v) || v < 0 || v > 100) return bad(reply, "passMark");
+      next.passMark = v;
+    }
     if (Object.keys(next).length) await db.update(schema.courseModules).set(next).where(eq(schema.courseModules.id, m.id));
     await touch(m.courseId, (m2) => req.log.warn(m2));
     return { ok: true };
@@ -294,6 +314,77 @@ export async function elearningRoutes(app: FastifyInstance) {
     const done = await db.delete(schema.courseModules).where(eq(schema.courseModules.id, req.params.id)).returning({ courseId: schema.courseModules.courseId });
     if (!done.length) return reply.code(404).send({ ok: false });
     await touch(done[0].courseId, (m) => req.log.warn(m));
+    return { ok: true };
+  });
+
+  /* Unit quiz questions (owner, 2026-11-21): multiple choice, one correct option */
+  app.post<{ Params: { id: string } }>("/admin/modules/:id/questions", { preHandler: requireUser }, async (req, reply) => {
+    if (!ID.test(req.params.id)) return reply.code(404).send({ ok: false });
+    const [m] = await db.select().from(schema.courseModules).where(eq(schema.courseModules.id, req.params.id)).limit(1);
+    if (!m) return reply.code(404).send({ ok: false });
+    const [last] = await db
+      .select({ sort: schema.quizQuestions.sort })
+      .from(schema.quizQuestions)
+      .where(eq(schema.quizQuestions.moduleId, m.id))
+      .orderBy(desc(schema.quizQuestions.sort))
+      .limit(1);
+    const options = [randomUUID(), randomUUID()].map((id) => ({ id, text: emptyI18n() }));
+    const [row] = await db
+      .insert(schema.quizQuestions)
+      .values({ moduleId: m.id, sort: (last?.sort ?? -1) + 1, text: emptyI18n(), options, correct: options[0].id })
+      .returning({ id: schema.quizQuestions.id });
+    await touch(m.courseId, (msg) => req.log.warn(msg));
+    return reply.code(201).send({ ok: true, id: row.id });
+  });
+
+  app.patch<{ Params: { id: string }; Body: { text?: unknown; options?: unknown; correct?: unknown; move?: number } }>(
+    "/admin/questions/:id",
+    { preHandler: requireUser },
+    async (req, reply) => {
+      if (!ID.test(req.params.id)) return reply.code(404).send({ ok: false });
+      const [q] = await db.select().from(schema.quizQuestions).where(eq(schema.quizQuestions.id, req.params.id)).limit(1);
+      if (!q) return reply.code(404).send({ ok: false });
+      const b = req.body ?? {};
+      if (b.move === -1 || b.move === 1) {
+        const siblings = await db.select().from(schema.quizQuestions).where(eq(schema.quizQuestions.moduleId, q.moduleId));
+        await move(siblings, q.id, b.move, (id, sort) => db.update(schema.quizQuestions).set({ sort }).where(eq(schema.quizQuestions.id, id)));
+      }
+      const next: Partial<typeof schema.quizQuestions.$inferInsert> = {};
+      if ("text" in b) {
+        const v = i18n(b.text, 1000);
+        if (!v) return bad(reply, "text");
+        next.text = v;
+      }
+      let options = q.options;
+      if ("options" in b) {
+        if (!Array.isArray(b.options) || b.options.length < 2 || b.options.length > 6) return bad(reply, "options");
+        const out: { id: string; text: I18n }[] = [];
+        for (const o of b.options as { id?: unknown; text?: unknown }[]) {
+          const text = i18n(o?.text, 300);
+          const id = typeof o?.id === "string" && ID.test(o.id) ? o.id : randomUUID();
+          if (!text || out.some((x) => x.id === id)) return bad(reply, "options");
+          out.push({ id, text });
+        }
+        options = out;
+        next.options = out;
+      }
+      if ("correct" in b) {
+        if (typeof b.correct !== "string" || !options.some((o) => o.id === b.correct)) return bad(reply, "correct");
+        next.correct = b.correct;
+      } else if (next.options && !options.some((o) => o.id === q.correct)) {
+        next.correct = options[0].id;
+      }
+      if (Object.keys(next).length) await db.update(schema.quizQuestions).set(next).where(eq(schema.quizQuestions.id, q.id));
+      const [m] = await db.select({ courseId: schema.courseModules.courseId }).from(schema.courseModules).where(eq(schema.courseModules.id, q.moduleId)).limit(1);
+      if (m) await touch(m.courseId, (msg) => req.log.warn(msg));
+      return { ok: true };
+    },
+  );
+
+  app.delete<{ Params: { id: string } }>("/admin/questions/:id", { preHandler: requireUser }, async (req, reply) => {
+    if (!ID.test(req.params.id)) return reply.code(404).send({ ok: false });
+    const done = await db.delete(schema.quizQuestions).where(eq(schema.quizQuestions.id, req.params.id)).returning({ moduleId: schema.quizQuestions.moduleId });
+    if (!done.length) return reply.code(404).send({ ok: false });
     return { ok: true };
   });
 
@@ -460,6 +551,7 @@ export async function elearningRoutes(app: FastifyInstance) {
           title: m.title,
           summary: m.summary,
           lessons: m.lessons.map((l) => ({ title: l.title, type: l.type, minutes: l.minutes })),
+          quiz: m.questions.length > 0,
         })),
       },
     };

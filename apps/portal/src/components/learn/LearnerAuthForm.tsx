@@ -7,6 +7,7 @@ import type { SiteContent } from "@/content/site";
 import { btn } from "../ui";
 import { PrivacyNote } from "../PrivacyNote";
 import { ErrorSummary, FieldError, focusFirst, validateForm, type FormErrors } from "../forms/FormHelpers";
+import { PasswordInput } from "../forms/PasswordInput";
 
 type Props = {
   mode: "signup" | "login";
@@ -98,16 +99,16 @@ export function LearnerAuthForm({ mode, locale, next, t, countries, privacy, for
       )}
       <label className={label}>
         {t.password}
-        <input
+        <PasswordInput
           name="password"
-          type="password"
           aria-invalid={errors.password ? true : undefined}
           required
           minLength={signup ? 12 : 1}
           maxLength={200}
           autoComplete={signup ? "new-password" : "current-password"}
-          dir="ltr"
           className={`${field} h-12`}
+          showLabel={t.showPassword}
+          hideLabel={t.hidePassword}
         />
         {signup && <span className="text-xs font-normal text-ink-soft">{t.passwordHint}</span>}
         <FieldError msg={errors.password} />

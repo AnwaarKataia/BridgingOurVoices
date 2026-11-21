@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
+import { PasswordInput } from "./PasswordInput";
 
 type Labels = {
   next: string;
@@ -17,6 +18,8 @@ type Labels = {
   tooMany: string;
   error: string;
   weak: { length: string; letter: string; number: string; symbol: string };
+  showPassword: string;
+  hidePassword: string;
 };
 
 const field =
@@ -64,12 +67,12 @@ export function ResetForm({ token, t }: { token: string; t: Labels }) {
     <form onSubmit={onSubmit} className="flex flex-col gap-4">
       <label className="flex flex-col gap-1.5 text-sm font-medium">
         {t.next}
-        <input name="password" type="password" required minLength={12} maxLength={200} autoComplete="new-password" dir="ltr" className={`${field} rtl:text-end`} />
+        <PasswordInput name="password" required minLength={12} maxLength={200} autoComplete="new-password" className={field} showLabel={t.showPassword} hideLabel={t.hidePassword} />
         <span className="text-xs font-normal text-ink-soft">{t.rule}</span>
       </label>
       <label className="flex flex-col gap-1.5 text-sm font-medium">
         {t.confirm}
-        <input name="confirm" type="password" required minLength={12} maxLength={200} autoComplete="new-password" dir="ltr" className={`${field} rtl:text-end`} />
+        <PasswordInput name="confirm" required minLength={12} maxLength={200} autoComplete="new-password" className={field} showLabel={t.showPassword} hideLabel={t.hidePassword} />
       </label>
       <p role="alert" className="m-0 text-sm text-danger empty:hidden">{error}</p>
       <button

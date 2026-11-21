@@ -7,24 +7,23 @@
 }
 
 /*
- * Paragraphs are justified (owner, 2026-11-21): straight edges on both sides instead of ragged lines.
- * In the base layer, so `text-center` / `text-start` utilities still win where a block is centred.
- * Hyphenation keeps English and French lines from opening wide gaps; Arabic stretches the spaces.
+ * Paragraphs use "Justify Low" (owner, 2026-11-21, as in Word): straight edges on both sides, the last line
+ * starts from the text's own side (left in English and French, right in Arabic), and words are never split
+ * with a hyphen at the end of a line. In the base layer, so `text-center` utilities still win.
  */
 @layer base {
   main p,
   main blockquote {
     text-align: justify;
+    text-align-last: start;
     text-justify: inter-word;
+    hyphens: manual;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
   main .text-center p,
   main p.text-center {
     text-align: center;
-  }
-  main :lang(en) p,
-  main :lang(fr) p,
-  main p:lang(en),
-  main p:lang(fr) {
-    hyphens: auto;
+    text-align-last: center;
   }
 }

@@ -18,6 +18,7 @@ type Reg = {
   locale: string;
   status: "new" | "accepted" | "rejected";
   createdAt: string;
+  learnerId: string | null;
 };
 
 /** Every registration from the site (owner, 2026-11-21): online courses and agenda events. */
@@ -73,7 +74,11 @@ export default async function RegistrationsPage({ searchParams }: { searchParams
           {items.map((i) => (
             <li key={i.id} className="grid gap-x-4 gap-y-1 p-4 md:grid-cols-[minmax(0,2fr)_minmax(0,2fr)_auto] md:items-center">
               <span className="flex min-w-0 flex-col">
-                <span className="truncate font-semibold text-ink">{i.name}</span>
+                {i.learnerId ? (
+                  <Link href={`/learners/${i.learnerId}`} className="truncate font-semibold text-ink underline-offset-4 hover:text-blue hover:underline">{i.name}</Link>
+                ) : (
+                  <span className="truncate font-semibold text-ink">{i.name}</span>
+                )}
                 <a href={`mailto:${i.email}`} dir="ltr" className="truncate text-sm text-blue hover:text-navy md:text-start rtl:text-end">{i.email}</a>
               </span>
               <span className="flex min-w-0 flex-col text-sm">

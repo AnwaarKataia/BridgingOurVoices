@@ -78,6 +78,13 @@
       "when": 1795274304917,
       "tag": "0010_greedy_exodus",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1795276388112,
+      "tag": "0011_smooth_sugar_man",
+      "breakpoints": true
     }
   ]
 }

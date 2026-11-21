@@ -2,8 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
+import { PasswordInput } from "./PasswordInput";
 
-type Labels = { email: string; password: string; submit: string; signingIn: string; invalid: string; tooMany: string; error: string };
+type Labels = { email: string; password: string; submit: string; signingIn: string; invalid: string; tooMany: string; error: string; showPassword: string; hidePassword: string };
 
 const field =
   "h-12 w-full rounded-bov border border-line-input bg-white px-3.5 text-[15px] text-ink transition focus:border-sky focus:outline-2 focus:outline-sky";
@@ -45,7 +46,7 @@ export function LoginForm({ t }: { t: Labels }) {
       </label>
       <label className="flex flex-col gap-1.5 text-sm font-medium">
         {t.password}
-        <input name="password" type="password" required autoComplete="current-password" dir="ltr" className={`${field} rtl:text-end`} />
+        <PasswordInput name="password" required autoComplete="current-password" className={field} showLabel={t.showPassword} hideLabel={t.hidePassword} />
       </label>
       <p role="alert" className="m-0 text-sm text-danger empty:hidden">{error}</p>
       <button

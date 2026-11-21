@@ -213,6 +213,8 @@ export async function eventRoutes(app: FastifyInstance) {
     locale: string;
     status: "new" | "accepted" | "rejected";
     createdAt: Date;
+    /** Course registrations made with a learner account (profile page in the dashboard). */
+    learnerId: string | null;
   };
 
   async function allRegistrations(): Promise<Reg[]> {
@@ -225,10 +227,10 @@ export async function eventRoutes(app: FastifyInstance) {
       .from(schema.eventRegistrations)
       .innerJoin(schema.events, eq(schema.eventRegistrations.eventId, schema.events.id));
     return [
-      ...c.map(({ r, title }) => ({ ...r, type: "course" as const, itemId: r.courseId, item: title })),
-      ...e.map(({ r, title }) => ({ ...r, type: "event" as const, itemId: r.eventId, item: title })),
+      ...c.map(({ r, title }) => ({ ...r, type: "course" as const, itemId: r.courseId, item: title, learnerId: r.learnerId })),
+      ...e.map(({ r, title }) => ({ ...r, type: "event" as const, itemId: r.eventId, item: title, learnerId: null as string | null })),
     ]
-      .map(({ id, type, itemId, item, name, email, country, locale, status, createdAt }) => ({ id, type, itemId, item, name, email, country, locale, status, createdAt }))
+      .map(({ id, type, itemId, item, name, email, country, locale, status, createdAt, learnerId }) => ({ id, type, itemId, item, name, email, country, locale, status, createdAt, learnerId }))
       .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
   }
 

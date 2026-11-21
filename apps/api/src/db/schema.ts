@@ -214,6 +214,8 @@ export const courseModules = pgTable(
     sort: integer("sort").notNull().default(0),
     title: json("title").$type<I18n>().notNull(),
     summary: json("summary").$type<I18n>().notNull(),
+    /** Unit quiz pass mark in % (owner, 2026-11-21). The quiz exists when the unit has questions. */
+    passMark: integer("pass_mark").notNull().default(70),
   },
   (t) => [index("course_modules_course_idx").on(t.courseId)],
 );
@@ -324,6 +326,11 @@ export const learners = pgTable("learners", {
   country: text("country").notNull(),
   locale: text("locale").notNull().default("en"),
   passwordHash: text("password_hash").notNull(),
+  /** Profile page (owner, 2026-11-21), shown to the other participants of the same courses. */
+  job: text("job").notNull().default(""),
+  org: text("org").notNull().default(""),
+  bio: text("bio").notNull().default(""),
+  showProfile: boolean("show_profile").notNull().default(true),
   lastLoginAt: timestamp("last_login_at", { withTimezone: true }),
   createdAt: createdAt(),
 });
@@ -376,4 +383,48 @@ export const learnerPasswordResets = pgTable(
     createdAt: createdAt(),
   },
   (t) => [index("learner_password_resets_learner_idx").on(t.learnerId)],
+);
+
+/** When a learner first opened a lesson: "Mark as done" needs time spent on it (owner, 2026-11-21). */
+export const lessonOpens = pgTable(
+  "lesson_opens",
+  {
+    learnerId: uuid("learner_id").notNull().references(() => learners.id, { onDelete: "cascade" }),
+    lessonId: uuid("lesson_id").notNull().references(() => courseLessons.id, { onDelete: "cascade" }),
+    openedAt: timestamp("opened_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.learnerId, t.lessonId] })],
+);
+
+/**
+ * Unit quizzes (owner, 2026-11-21): multiple-choice questions, one correct option each. The correct option
+ * never leaves the API; learners get their score and must reach the unit's pass mark to go on.
+ */
+export type QuizOption = { id: string; text: I18n };
+export const quizQuestions = pgTable(
+  "quiz_questions",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    moduleId: uuid("module_id").notNull().references(() => courseModules.id, { onDelete: "cascade" }),
+    sort: integer("sort").notNull().default(0),
+    text: json("text").$type<I18n>().notNull(),
+    options: jsonb("options").$type<QuizOption[]>().notNull().default(sql`'[]'::jsonb`),
+    correct: text("correct").notNull().default(""),
+  },
+  (t) => [index("quiz_questions_module_idx").on(t.moduleId)],
+);
+
+export const quizAttempts = pgTable(
+  "quiz_attempts",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    learnerId: uuid("learner_id").notNull().references(() => learners.id, { onDelete: "cascade" }),
+    moduleId: uuid("module_id").notNull().references(() => courseModules.id, { onDelete: "cascade" }),
+    score: integer("score").notNull(),
+    total: integer("total").notNull(),
+    passed: boolean("passed").notNull(),
+    answers: jsonb("answers").$type<Record<string, string>>().notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("quiz_attempts_learner_idx").on(t.learnerId, t.moduleId)],
 );
