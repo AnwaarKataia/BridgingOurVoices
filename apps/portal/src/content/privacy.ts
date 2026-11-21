@@ -39,13 +39,13 @@ const en: PrivacyContent = {
     lead: "What we collect through this website, why we need it, how long we keep it, and how you can see, change or delete it.",
   },
   updatedLabel: "Last updated",
-  updated: "14 November 2026",
+  updated: "21 November 2026",
   tocLabel: "On this page",
   sections: sections([
     {
       title: "Who we are",
       blocks: [
-        { p: "Bridging Our Voices is a platform for dialogue and peacebuilding that champions women’s leadership, directed by Dr. Anwaar Kataia (Lead Fellow and Project Manager). We are responsible for the personal data collected through this website." },
+        { p: "Bridging Our Voices, directed by Dr. Anwaar Kataia (Lead Fellow and Project Manager), is a platform for dialogue and peacebuilding that champions women’s leadership. We are responsible for the personal data collected through this website." },
         { p: `For any question about your data, write to ${contactEmail}.` },
       ],
     },
@@ -75,6 +75,8 @@ const en: PrivacyContent = {
             "A photo, if you choose to upload one.",
           ],
         },
+        { h: "Course registration (e-learning)" },
+        { list: ["Your name, email address and country, and the course you register for."] },
         { h: "When you visit the site" },
         { p: "This website does not use advertising or tracking cookies, and it does not use analytics tools. Like every website, our hosting provider may record technical information (such as your IP address and browser) in server logs, to keep the site secure and working." },
       ],
@@ -86,6 +88,7 @@ const en: PrivacyContent = {
           list: [
             "Newsletter: to send you news about our programmes and events, because you asked us to.",
             "Contact form: to answer your message.",
+            "Course registration: to contact you about the course and your participation.",
             "Membership application: to review your application, contact you about it and, if you join, keep you connected to the network. You give your consent when you tick the box before sending.",
           ],
         },
@@ -95,7 +98,7 @@ const en: PrivacyContent = {
     {
       title: "Religion and other sensitive information",
       blocks: [
-        { p: "The membership form asks for your religion and gender. This is sensitive information. We ask for it only because our network is built on interreligious and intercultural dialogue, and we want to keep it diverse and balanced." },
+        { p: "The membership and “Add your voice to ours” forms ask for your religion and gender. This is sensitive information. We ask for it only because our network is built on interreligious and intercultural dialogue, and we want to keep it diverse and balanced." },
         { p: "Only our team sees this information. We use it to review applications, and we never publish it." },
       ],
     },
@@ -124,6 +127,7 @@ const en: PrivacyContent = {
           list: [
             "Newsletter: until you unsubscribe.",
             "Contact messages: up to 12 months after our last reply.",
+            "Course registrations: up to 12 months after the course ends.",
             "Membership applications: for as long as you are a member. If an application is not accepted, or you withdraw it, we delete it, with any photo and CV, within 6 months.",
             "Server logs: for the short period our hosting provider keeps them.",
           ],
@@ -173,7 +177,7 @@ const fr: PrivacyContent = {
     lead: "Ce que nous collectons sur ce site, pourquoi, combien de temps nous le gardons, et comment le consulter, le modifier ou le supprimer.",
   },
   updatedLabel: "Dernière mise à jour",
-  updated: "14 novembre 2026",
+  updated: "21 novembre 2026",
   tocLabel: "Sur cette page",
   sections: sections([
     {
@@ -209,6 +213,8 @@ const fr: PrivacyContent = {
             "Une photo, si vous choisissez d’en ajouter une.",
           ],
         },
+        { h: "Inscription à un cours (apprentissage en ligne)" },
+        { list: ["Votre nom, votre adresse e-mail et votre pays, ainsi que le cours auquel vous vous inscrivez."] },
         { h: "Lorsque vous visitez le site" },
         { p: "Ce site n’utilise ni cookies publicitaires ou de suivi, ni outils d’analyse d’audience. Comme pour tout site, notre hébergeur peut enregistrer des informations techniques (adresse IP, navigateur) dans des journaux serveur, pour assurer la sécurité et le bon fonctionnement du site." },
       ],
@@ -220,6 +226,7 @@ const fr: PrivacyContent = {
           list: [
             "Newsletter : pour vous envoyer nos actualités sur les programmes et événements, à votre demande.",
             "Formulaire de contact : pour répondre à votre message.",
+            "Inscription à un cours : pour vous contacter au sujet du cours et de votre participation.",
             "Demande d’adhésion : pour examiner votre candidature, vous contacter à ce sujet et, si vous nous rejoignez, vous relier au réseau. Vous donnez votre consentement en cochant la case avant l’envoi.",
           ],
         },
@@ -258,6 +265,7 @@ const fr: PrivacyContent = {
           list: [
             "Newsletter : jusqu’à votre désinscription.",
             "Messages de contact : jusqu’à 12 mois après notre dernière réponse.",
+            "Inscriptions aux cours : jusqu’à 12 mois après la fin du cours.",
             "Demandes d’adhésion : tant que vous êtes membre. Si une candidature n’est pas retenue, ou si vous la retirez, nous la supprimons, photo et CV compris, sous 6 mois.",
             "Journaux serveur : pendant la courte durée fixée par notre hébergeur.",
           ],
@@ -307,13 +315,13 @@ const ar: PrivacyContent = {
     lead: "ما نجمعه عبر هذا الموقع، ولماذا نحتاجه، وإلى متى نحتفظ به، وكيف يمكنك الاطلاع عليه أو تعديله أو حذفه.",
   },
   updatedLabel: "آخر تحديث",
-  updated: "١٤ نوفمبر ٢٠٢٦",
+  updated: "٢١ نوفمبر ٢٠٢٦",
   tocLabel: "في هذه الصفحة",
   sections: sections([
     {
       title: "من نحن",
       blocks: [
-        { p: "Bridging Our Voices منصة للحوار وبناء السلام تؤكد قدرة المرأة على القيادة، تديرها د. أنوار قطايا (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع." },
+        { p: "Bridging Our Voices منصة للحوار وبناء السلام تؤكد قدرة المرأة على القيادة، تديرها د. أنوار قطايه (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع." },
         { p: `لأي سؤال عن بياناتك، راسلنا على ${contactEmail}.` },
       ],
     },
@@ -343,6 +351,8 @@ const ar: PrivacyContent = {
             "صورة، إذا اخترت رفعها.",
           ],
         },
+        { h: "التسجيل في دورة (التعلم الإلكتروني)" },
+        { list: ["اسمك وبريدك الإلكتروني ودولتك، والدورة التي تسجّل/ين فيها."] },
         { h: "عند زيارتك للموقع" },
         { p: "لا يستخدم هذا الموقع ملفات تعريف ارتباط (كوكيز) إعلانية أو للتتبع، ولا أدوات لتحليل الزيارات. وكأي موقع، قد تسجّل جهة الاستضافة معلومات تقنية (مثل عنوان IP ونوع المتصفح) في سجلات الخادم، لحماية الموقع وضمان عمله." },
       ],
@@ -354,6 +364,7 @@ const ar: PrivacyContent = {
           list: [
             "النشرة البريدية: لنرسل إليك أخبار برامجنا وفعالياتنا، بناءً على طلبك.",
             "نموذج التواصل: للرد على رسالتك.",
+            "التسجيل في دورة: للتواصل معك بشأن الدورة ومشاركتك فيها.",
             "طلب الانضمام: لمراجعة طلبك والتواصل معك بشأنه، وإذا انضممت، لربطك بالشبكة. وتعطي موافقتك عندما تضع علامة في المربع قبل الإرسال.",
           ],
         },
@@ -392,6 +403,7 @@ const ar: PrivacyContent = {
           list: [
             "النشرة البريدية: حتى تلغي اشتراكك.",
             "رسائل التواصل: حتى ١٢ شهرًا بعد آخر رد منا.",
+            "التسجيل في الدورات: حتى ١٢ شهرًا بعد انتهاء الدورة.",
             "طلبات الانضمام: طوال مدة عضويتك. وإذا لم يُقبل الطلب أو سحبته، نحذفه هو والصورة والسيرة الذاتية خلال ٦ أشهر.",
             "سجلات الخادم: للمدة القصيرة التي تحددها جهة الاستضافة.",
           ],

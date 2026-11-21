@@ -2,7 +2,7 @@ import type { HomeContent } from "@/content/home";
 import { ContentImage } from "../ContentImage";
 import { btn, textLink } from "../ui";
 
-export function Announcement({ a, detailsHref }: { a: HomeContent["announcement"]; detailsHref: string }) {
+export function Announcement({ a, detailsHref, primaryHref }: { a: HomeContent["announcement"]; detailsHref: string; primaryHref: string }) {
   return (
     <section id="announcement" className="pt-[72px] pb-6" aria-labelledby="announcement-title">
       <div className="container-site">
@@ -32,7 +32,7 @@ export function Announcement({ a, detailsHref }: { a: HomeContent["announcement"
         </ul>
 
         <div className="flex flex-wrap items-center gap-6">
-          <a href="#register" className={btn.navy}>{a.primary}</a>
+          <a href={primaryHref} className={`${btn.navy.replace("whitespace-nowrap", "")} h-auto min-h-[52px] max-w-full py-2.5 text-center`}>{a.primary}</a>
           <a href={detailsHref} className={textLink}>{a.secondary}</a>
         </div>
       </div>

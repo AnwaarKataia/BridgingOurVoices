@@ -125,7 +125,7 @@ const en: NetworkContent = {
         items: [
           "Peacebuilders and community leaders",
           "Religious leaders and interfaith dialogue practitioners",
-          "Leaders aged 30 and over who have started working in peacebuilding and have experience in it",
+          "Leaders aged 30 and over with experience in peacebuilding",
           "Trainers, researchers and partner organisations",
         ],
       },
@@ -166,7 +166,7 @@ const en: NetworkContent = {
       photoHint: "JPG or PNG, up to 3 MB.",
       publishConsent: "If my application is accepted, I agree that my name, job title, country, photo and a short summary of my experience may appear on the “Our members” page.",
       submit: "Send application",
-      success: "Thank you, your application has been received. Our team will review it and contact you.",
+      success: "Thank you. Your application has been received; our team will review it and contact you.",
     },
   },
   join: {
@@ -175,7 +175,7 @@ const en: NetworkContent = {
       description: "Membership of the Bridging Our Voices network is free. Share a few details and a message of support, and our team will contact you.",
     },
     title: "Add your voice to ours",
-    lead: "Membership is free. Share a few details and a message of support, our team will review it and contact you.",
+    lead: "Membership is free. Share a few details and a message of support; our team will review it and contact you.",
     legend: "Your details",
     name: "Full name",
     gender: "Gender",
@@ -209,8 +209,8 @@ const en: NetworkContent = {
     publishConsent: "I agree that my statement, name, job title, country and photo may be published on the site.",
     submit: "Submit application",
     sending: "Sending…",
-    success: "Thank you, your application has been received. Our team will review it and contact you.",
-    error: "Something went wrong, please check the form and try again.",
+    success: "Thank you. Your application has been received; our team will review it and contact you.",
+    error: "Something went wrong. Please check the form and try again.",
     voicesTitle: "Voices that joined ours",
     readArticle: "Read the article",
   },
@@ -229,7 +229,7 @@ const en: NetworkContent = {
         bio: [
           "KAICIID International Fellow and faculty member at Al-Azhar University.",
           "PhD researcher in Political & Strategic Studies and National Security; Diploma in Political Communication (Cairo University); National Defense College Fellow.",
-          "15+ years as expert trainer and consultant; trained ~4,000 religious and community leaders; led regional UNESCO / Arab League projects reaching 500k+ beneficiaries.",
+          "15+ years as an expert trainer and consultant; trained ~4,000 religious and community leaders; led regional UNESCO / Arab League projects reaching 500k+ beneficiaries.",
         ],
       },
       {
@@ -259,7 +259,7 @@ const en: NetworkContent = {
         country: "South Africa",
         bio: [
           "KAICIID Fellow; co-founder of Mindfulness Africa and Peace & Healing Circles South Africa.",
-          "Former human-rights lawyer with 20+ years training magistrates and prosecutors in compassion, resilience and values-based decision-making.",
+          "Former human-rights lawyer with 20+ years of training magistrates and prosecutors in compassion, resilience and values-based decision-making.",
           "Certified trainer (Stanford Applied Compassion Academy, UN UPEACE); Tibetan Buddhist representative, Cape Town Interfaith Initiative.",
         ],
       },
@@ -543,7 +543,7 @@ const ar: NetworkContent = {
     people: [
       {
         image: photos.anwaar,
-        name: "د. أنوار قطايا",
+        name: "د. أنوار قطايه",
         role: "المنسقة العامة للمشروع والزميلة الرئيسية",
         country: "مصر",
         bio: [

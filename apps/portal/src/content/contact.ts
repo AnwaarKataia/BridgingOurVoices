@@ -60,8 +60,8 @@ const en: ContactContent = {
     message: "Message",
     submit: "Send message",
     sending: "Sending…",
-    success: "Thank you, your message has been sent. We’ll get back to you soon.",
-    error: "Something went wrong, please try again or email us directly.",
+    success: "Thank you. Your message has been sent, and we’ll get back to you soon.",
+    error: "Something went wrong. Please try again or email us directly.",
   },
   info: { emailLabel: "Email", phoneLabel: "Phone", addressLabel: "Address", followLabel: "Follow us" },
 };

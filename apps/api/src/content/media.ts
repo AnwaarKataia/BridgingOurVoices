@@ -13,24 +13,27 @@ import { requireUser } from "../auth/session.js";
  * The portal and dashboard proxy /media/* to the API, so pages use the same path everywhere.
  */
 const MEDIA_MAX = 5 * 1024 * 1024;
+/** PDFs (course materials and flyers, 2026-11-21) may be larger than images. */
+const PDF_MAX = 15 * 1024 * 1024;
 const mediaDir = join(dataDir, "media");
-const FILE_NAME = /^[a-f0-9-]{36}\.(jpg|png|webp)$/;
-const MIME = { jpg: "image/jpeg", png: "image/png", webp: "image/webp" } as const;
+const FILE_NAME = /^[a-f0-9-]{36}\.(jpg|png|webp|pdf)$/;
+const MIME = { jpg: "image/jpeg", png: "image/png", webp: "image/webp", pdf: "application/pdf" } as const;
 
 /** Detects the real type from the first bytes (the file name and browser type are not trusted). */
 function imageKind(buf: Buffer): keyof typeof MIME | null {
   if (buf.length > 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) return "jpg";
   if (buf.length > 8 && buf.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) return "png";
   if (buf.length > 12 && buf.subarray(0, 4).toString("ascii") === "RIFF" && buf.subarray(8, 12).toString("ascii") === "WEBP") return "webp";
+  if (buf.length > 5 && buf.subarray(0, 5).toString("latin1") === "%PDF-") return "pdf";
   return null;
 }
 
 export async function mediaRoutes(app: FastifyInstance) {
-  /** Upload one image (JPG, PNG or WebP, up to 5 MB). Returns its path for an "image" field. */
+  /** Upload one image (JPG, PNG or WebP, up to 5 MB) or PDF (up to 15 MB). Returns its path. */
   app.post("/admin/media", { preHandler: requireUser }, async (req, reply) => {
     let part;
     try {
-      part = await req.file({ limits: { fileSize: MEDIA_MAX, files: 1 } });
+      part = await req.file({ limits: { fileSize: PDF_MAX, files: 1 } });
     } catch {
       return reply.code(400).send({ ok: false, error: "no_file" });
     }
@@ -43,6 +46,8 @@ export async function mediaRoutes(app: FastifyInstance) {
     }
     const kind = imageKind(buf);
     if (!kind) return reply.code(400).send({ ok: false, error: "not_image" });
+    // Images up to 5 MB, PDFs up to 15 MB
+    if (kind !== "pdf" && buf.length > MEDIA_MAX) return reply.code(413).send({ ok: false, error: "too_big" });
 
     const id = randomUUID();
     const file = `${id}.${kind}`;

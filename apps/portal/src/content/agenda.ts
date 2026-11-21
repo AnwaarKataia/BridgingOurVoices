@@ -138,12 +138,12 @@ const en: AgendaContent = {
   meta: {
     title: "Agenda",
     description:
-      "Upcoming Bridging Our Voices events: dialogue circles, workshops, trainings and ceremonies, plus the international days for dialogue and peace.",
+      "Upcoming Bridging Our Voices events: dialogue circles, workshops, training sessions and ceremonies, plus the international days for dialogue and peace.",
   },
   header: {
     eyebrow: "Agenda",
     title: "Upcoming events",
-    lead: "Dialogue circles, workshops, trainings and ceremonies, online and across the region.",
+    lead: "Dialogue circles, workshops, training sessions and ceremonies, online and across the region.",
   },
   calendar: {
     prev: "Previous month",

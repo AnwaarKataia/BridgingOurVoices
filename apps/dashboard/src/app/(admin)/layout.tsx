@@ -17,6 +17,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   const nav: NavEntry[] = [
     { href: "/", label: t.nav.overview, ready: true },
     { href: "/content", label: t.content.nav, ready: true },
+    { href: "/courses", label: t.courses.nav, ready: true },
     { href: "/messages", label: t.nav.messages, ready: true },
     { href: "/applications", label: t.nav.applications, ready: true },
     { href: "/subscribers", label: t.nav.subscribers, ready: true },

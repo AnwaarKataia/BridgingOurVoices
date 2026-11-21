@@ -15,14 +15,14 @@ const en: AboutContent = {
   meta: {
     title: "Who we are",
     description:
-      "Bridging Our Voices is a cross-regional, interreligious and intercultural initiative led by KAICIID Fellows alumni. It champions women’s leadership in dialogue and moves peacebuilders and community leaders, women and men, from informal roles to recognised, certified facilitators and mediators.",
+      "Bridging Our Voices is a cross-regional, interreligious and intercultural initiative led by KAICIID Fellows alumni. It champions women’s leadership in dialogue and helps peacebuilders and community leaders, women and men, move from informal roles to recognised roles as certified facilitators and mediators.",
   },
   header: { eyebrow: "About", title: "Who we are", lead: "Our story, vision, mission and goals." },
   who: {
     eyebrow: "Who we are",
     title: "Women have always mediated. It’s time it was recognised.",
     paragraphs: [
-      "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It shows that women can lead dialogue and peacebuilding in many different ways, and works with peacebuilders, community leaders and young change-makers, women and men, across the Arab World, Africa and Southeast Asia, transitioning them from informal community observers into recognised, certified facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
+      "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It shows that women can lead dialogue and peacebuilding in many different ways, and works with peacebuilders, community leaders and young change-makers, women and men, across the Arab World, Africa and Southeast Asia, helping them move from informal community roles to recognised, certified roles as facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
       "Supported by the KAICIID Fellows Alumni Network (KFAN), the project operates in strategic partnership with organisations across three regions and with expert international consultants from South Africa.",
     ],
     partnersLabel: "Strategic partners",
@@ -48,7 +48,7 @@ const en: AboutContent = {
     title: "Five objectives guide our work",
     items: [
       { num: "01", title: "Bridge the recognition gap", body: "Elevate grassroots actors, especially women, from informal observers to certified, recognised peace facilitators and mediators." },
-      { num: "02", title: "Develop technical competencies", body: "Provide specialised training in conflict analysis, early warning, interreligious dialogue facilitation and counter-hate speech." },
+      { num: "02", title: "Develop technical competencies", body: "Provide specialised training in conflict analysis, early warning, interreligious dialogue facilitation and countering hate speech." },
       { num: "03", title: "Strengthen resilience & healing", body: "Integrate mindfulness, trauma healing and inner-peace practices to sustain facilitators working in high-conflict settings." },
       { num: "04", title: "Institutionalise youth engagement", body: "Empower refugee, displaced and student youth to actively lead community dialogue and social integration." },
       { num: "05", title: "Sustain cross-regional collaboration", body: "Build the permanent “Bridging Our Voices Network” connecting peacebuilders and community leaders across Asia, Africa and the Arab region." },

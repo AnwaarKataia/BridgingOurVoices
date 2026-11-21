@@ -161,3 +161,93 @@ export const media = pgTable("media", {
 
 export type User = typeof users.$inferSelect;
 export type Role = User["role"];
+
+/**
+ * E-learning (owner, 2026-11-21): online courses and webinars built in the dashboard. A course is hidden
+ * from the public until published (the site shows "coming soon" meanwhile).
+ * Text fields hold the three languages: { en, fr, ar }.
+ */
+export type I18n = { en: string; fr: string; ar: string };
+
+export const courses = pgTable(
+  "courses",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    /** Address on the site: /<lang>/e-learning/<slug>. */
+    slug: text("slug").notNull().unique(),
+    /** course = e-learning course · webinar = online seminar. */
+    kind: text("kind", { enum: ["course", "webinar"] }).notNull().default("course"),
+    status: text("status", { enum: ["draft", "published"] }).notNull().default("draft"),
+    title: json("title").$type<I18n>().notNull(),
+    summary: json("summary").$type<I18n>().notNull(),
+    description: json("description").$type<I18n>().notNull(),
+    /** self-paced · instructor-led · live (webinars). */
+    format: text("format", { enum: ["self-paced", "instructor-led", "live"] }).notNull().default("self-paced"),
+    programmeArea: json("programme_area").$type<I18n>().notNull(),
+    duration: json("duration").$type<I18n>().notNull(),
+    learningTime: json("learning_time").$type<I18n>().notNull(),
+    fees: json("fees").$type<I18n>().notNull(),
+    /** Languages the course is taught in: "ar", "en", "fr". */
+    languages: jsonb("languages").$type<string[]>().notNull().default(sql`'[]'::jsonb`),
+    startDate: text("start_date"),
+    deadline: text("deadline"),
+    certificate: boolean("certificate").notNull().default(true),
+    /** Site image path ("" = striped placeholder) and course flyer (PDF in the media store). */
+    image: text("image").notNull().default(""),
+    flyer: text("flyer").notNull().default(""),
+    /** Registrations open on the published course page. */
+    registrationOpen: boolean("registration_open").notNull().default(true),
+    sort: integer("sort").notNull().default(0),
+    publishedAt: timestamp("published_at", { withTimezone: true }),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("courses_status_idx").on(t.status)],
+);
+
+/** Units of a course, in order. */
+export const courseModules = pgTable(
+  "course_modules",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    courseId: uuid("course_id").notNull().references(() => courses.id, { onDelete: "cascade" }),
+    sort: integer("sort").notNull().default(0),
+    title: json("title").$type<I18n>().notNull(),
+    summary: json("summary").$type<I18n>().notNull(),
+  },
+  (t) => [index("course_modules_course_idx").on(t.courseId)],
+);
+
+/** Lessons of a unit: a video (YouTube / Vimeo link), a file (PDF), a text, or an external link. */
+export const courseLessons = pgTable(
+  "course_lessons",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    moduleId: uuid("module_id").notNull().references(() => courseModules.id, { onDelete: "cascade" }),
+    sort: integer("sort").notNull().default(0),
+    type: text("type", { enum: ["video", "file", "text", "link"] }).notNull().default("video"),
+    title: json("title").$type<I18n>().notNull(),
+    body: json("body").$type<I18n>().notNull(),
+    videoUrl: text("video_url").notNull().default(""),
+    fileUrl: text("file_url").notNull().default(""),
+    linkUrl: text("link_url").notNull().default(""),
+    minutes: integer("minutes").notNull().default(0),
+  },
+  (t) => [index("course_lessons_module_idx").on(t.moduleId)],
+);
+
+/** "Register" on a published course page (phase 1: the team follows up; learner accounts come later). */
+export const courseRegistrations = pgTable(
+  "course_registrations",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    courseId: uuid("course_id").notNull().references(() => courses.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    email: text("email").notNull(),
+    country: text("country").notNull(),
+    locale: text("locale").notNull().default("en"),
+    status: text("status", { enum: ["new", "accepted", "rejected"] }).notNull().default("new"),
+    createdAt: createdAt(),
+  },
+  (t) => [index("course_registrations_course_idx").on(t.courseId)],
+);

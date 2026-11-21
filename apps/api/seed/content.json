@@ -59,6 +59,14 @@
             {
               "label": "Fellowship",
               "href": "/activities/fellowship"
+            },
+            {
+              "label": "E-learning",
+              "href": "/activities/e-learning"
+            },
+            {
+              "label": "News",
+              "href": "/activities/news"
             }
           ]
         },
@@ -97,8 +105,8 @@
         "newsletter": "Newsletter",
         "emailPlaceholder": "Your email",
         "subscribe": "Subscribe",
-        "subscribed": "Thank you, you're subscribed.",
-        "error": "Something went wrong, please try again.",
+        "subscribed": "Thank you! You’re now subscribed.",
+        "error": "Something went wrong. Please try again.",
         "copyright": "© 2026 Bridging Our Voices"
       },
       "comingSoon": "Coming soon",
@@ -178,6 +186,14 @@
             {
               "label": "Bourse (Fellowship)",
               "href": "/activities/fellowship"
+            },
+            {
+              "label": "Apprentissage en ligne",
+              "href": "/activities/e-learning"
+            },
+            {
+              "label": "Actualités",
+              "href": "/activities/news"
             }
           ]
         },
@@ -297,6 +313,14 @@
             {
               "label": "زمالة",
               "href": "/activities/fellowship"
+            },
+            {
+              "label": "التعلم الإلكتروني",
+              "href": "/activities/e-learning"
+            },
+            {
+              "label": "الأخبار",
+              "href": "/activities/news"
             }
           ]
         },
@@ -374,15 +398,16 @@
       "ticker": {
         "label": "Latest",
         "items": [
-          "Registration open: first Arabic-language cohort of our digital training, deadline 12 Nov 2026",
-          "Officially launching Bridging Our Voices: Women Leading Dialogue and Peacebuilding",
-          "Free one-month course on Zoom · certificate of participation",
+          "Our online training programme has launched: opening lecture by Dr Mohamed El-Wardany (Al-Azhar University) on religious and cultural conflict on social media",
+          "A three-day training workshop for refugees in Alexandria, held at UNHCR, and the launch of the Bridging Our Voices Network for Dialogue and Coexistence",
+          "The official launch of Bridging Our Voices: Women Leading Dialogue and Peacebuilding",
+          "Registration for our online training programme (Arabic and English cohorts) is now closed — thank you to all applicants",
           "Join the Bridging Our Voices network of peacebuilders"
         ]
       },
       "announcement": {
-        "badge": "Registration open",
-        "deadline": "Deadline: 12 November 2026",
+        "badge": "Registration closed",
+        "deadline": "Registration closed on 12 November 2026",
         "title": "First Arabic-language cohort of our digital training course",
         "body": "A complete digital training programme delivered entirely in Arabic over Zoom for one full month, giving participants core skills and practical tools in dialogue facilitation, community mediation, diversity management and conflict transformation.",
         "chips": [
@@ -392,7 +417,7 @@
           "Ages 25+",
           "Certificate"
         ],
-        "primary": "Register now",
+        "primary": "Discover e-learning",
         "secondary": "Programme details →",
         "image": "/banner-fellows.png",
         "bannerAlt": "Bridging Our Voices fellows from the Philippines, Nigeria, South Africa and Egypt, with partner logos"
@@ -433,7 +458,7 @@
         "items": [
           {
             "title": "Training programmes",
-            "body": "Accredited learning tracks, led by interfaith dialogue.",
+            "body": "Accredited learning tracks grounded in interfaith dialogue.",
             "href": "/activities/training"
           },
           {
@@ -469,15 +494,16 @@
       "ticker": {
         "label": "À la une",
         "items": [
-          "Inscriptions ouvertes : première promotion en arabe de notre formation numérique, date limite 12 nov. 2026",
+          "Lancement de notre programme de formation en ligne : conférence inaugurale du Dr Mohamed El-Wardany (Université Al-Azhar) sur les conflits religieux et culturels sur les réseaux sociaux",
+          "Atelier de formation de trois jours pour les personnes réfugiées à Alexandrie, au HCR, et lancement du réseau Bridging Our Voices pour le dialogue et la coexistence",
           "Lancement officiel de Bridging Our Voices",
-          "Formation gratuite d’un mois sur Zoom · certificat de participation",
+          "Les inscriptions à notre programme de formation en ligne (promotions arabe et anglaise) sont closes — merci à toutes les personnes candidates",
           "Rejoignez le réseau d’artisans de la paix Bridging Our Voices"
         ]
       },
       "announcement": {
-        "badge": "Inscriptions ouvertes",
-        "deadline": "Date limite : 12 novembre 2026",
+        "badge": "Inscriptions closes",
+        "deadline": "Inscriptions closes le 12 novembre 2026",
         "title": "Première promotion en arabe de notre formation numérique",
         "body": "Un programme de formation numérique complet, entièrement en arabe sur Zoom pendant un mois, qui donne aux participants les compétences de base et des outils pratiques en facilitation du dialogue, médiation communautaire, gestion de la diversité et transformation des conflits.",
         "chips": [
@@ -487,7 +513,7 @@
           "25 ans et plus",
           "Certificat"
         ],
-        "primary": "S’inscrire",
+        "primary": "Découvrir l’apprentissage en ligne",
         "secondary": "Détails du programme →",
         "image": "/banner-fellows.png",
         "bannerAlt": "Fellows de Bridging Our Voices (Philippines, Nigeria, Afrique du Sud, Égypte) et logos des partenaires"
@@ -564,16 +590,17 @@
       "ticker": {
         "label": "آخر الأخبار",
         "items": [
-          "فتح باب التسجيل في الدفعة الأولى باللغة العربية من دوراتنا التدريبية الرقمية، آخر موعد ١٢ نوفمبر ٢٠٢٦",
+          "انطلاق البرنامج التدريبي الإلكتروني: محاضرة افتتاحية للدكتور محمد الورداني (جامعة الأزهر) بعنوان «كيف يُدار الصراع الديني والثقافي على وسائل التواصل الاجتماعي؟»",
+          "ورشة تدريبية لمدة ٣ أيام للوافدين بمحافظة الإسكندرية بمقر المفوضية السامية للأمم المتحدة لشؤون اللاجئين، وتدشين «شبكة أصواتنا جسور للحوار والتعايش»",
           "الإطلاق الرسمي لمبادرة «أصواتنا جسور: المرأة لقيادة الحوار وبناء السلام»",
-          "دورة مجانية لمدة شهر عبر Zoom · شهادة مشاركة معتمدة",
+          "أُغلق باب التسجيل في البرنامج التدريبي الإلكتروني (الدفعتان العربية والإنجليزية) — شكرًا لكل من تقدّم",
           "انضم/ي إلى شبكة «أصواتنا جسور» لصناع السلام"
         ]
       },
       "announcement": {
-        "badge": "التسجيل مفتوح",
-        "deadline": "آخر موعد للتسجيل: ١٢ نوفمبر ٢٠٢٦",
-        "title": "فتح باب التسجيل في الدفعة الأولى باللغة العربية من دوراتنا التدريبية الرقمية",
+        "badge": "التسجيل مغلق",
+        "deadline": "أُغلق باب التسجيل في ١٢ نوفمبر ٢٠٢٦",
+        "title": "الدفعة الأولى باللغة العربية من دوراتنا التدريبية الرقمية",
         "body": "برنامج تدريبي رقمي متكامل يُقدَّم بالكامل باللغة العربية عبر منصة Zoom على مدار شهر كامل، يهدف إلى تزويد المشاركين بالمهارات الأساسية والأدوات العملية في التيسير الحواري، والوساطة المجتمعية، وإدارة التنوع، وتفكيك النزاعات.",
         "chips": [
           "مجاني بالكامل",
@@ -582,7 +609,7 @@
           "من سن ٢٥ عامًا",
           "شهادة مشاركة"
         ],
-        "primary": "سجّل/ي الآن",
+        "primary": "اكتشف/ي التعلم الإلكتروني",
         "secondary": "تفاصيل البرنامج ←",
         "image": "/banner-fellows.png",
         "bannerAlt": "زميلات «أصواتنا جسور» من الفلبين ونيجيريا وجنوب أفريقيا ومصر، مع شعارات الشركاء"
@@ -649,7 +676,7 @@
     "en": {
       "meta": {
         "title": "Who we are",
-        "description": "Bridging Our Voices is a cross-regional, interreligious and intercultural initiative led by KAICIID Fellows alumni. It champions women’s leadership in dialogue and moves peacebuilders and community leaders, women and men, from informal roles to recognised, certified facilitators and mediators."
+        "description": "Bridging Our Voices is a cross-regional, interreligious and intercultural initiative led by KAICIID Fellows alumni. It champions women’s leadership in dialogue and helps peacebuilders and community leaders, women and men, move from informal roles to recognised roles as certified facilitators and mediators."
       },
       "header": {
         "eyebrow": "About",
@@ -660,7 +687,7 @@
         "eyebrow": "Who we are",
         "title": "Women have always mediated. It’s time it was recognised.",
         "paragraphs": [
-          "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It shows that women can lead dialogue and peacebuilding in many different ways, and works with peacebuilders, community leaders and young change-makers, women and men, across the Arab World, Africa and Southeast Asia, transitioning them from informal community observers into recognised, certified facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
+          "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It shows that women can lead dialogue and peacebuilding in many different ways, and works with peacebuilders, community leaders and young change-makers, women and men, across the Arab World, Africa and Southeast Asia, helping them move from informal community roles to recognised, certified roles as facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
           "Supported by the KAICIID Fellows Alumni Network (KFAN), the project operates in strategic partnership with organisations across three regions and with expert international consultants from South Africa."
         ],
         "partnersLabel": "Strategic partners",
@@ -693,7 +720,7 @@
           {
             "num": "02",
             "title": "Develop technical competencies",
-            "body": "Provide specialised training in conflict analysis, early warning, interreligious dialogue facilitation and counter-hate speech."
+            "body": "Provide specialised training in conflict analysis, early warning, interreligious dialogue facilitation and countering hate speech."
           },
           {
             "num": "03",
@@ -857,7 +884,7 @@
       "header": {
         "eyebrow": "Activities",
         "title": "How we build peace leaders",
-        "lead": "Training programmes, seminars, conferences and a fellowship, four ways to learn, connect and lead."
+        "lead": "Training programmes, seminars, conferences and a fellowship: four ways to learn, connect and lead."
       },
       "training": {
         "index": "01",
@@ -865,18 +892,18 @@
         "title": "Accredited training in dialogue and peacebuilding"
       },
       "course": {
-        "badge": "Current programme",
-        "deadline": "Deadline: 12 November 2026",
+        "badge": "Registration closed",
+        "deadline": "Registration closed on 12 November 2026",
         "title": "Bridging Our Voices: Women Leading Dialogue and Peacebuilding",
         "body": "A complete digital training programme delivered entirely in Arabic over Zoom for one full month, giving participants core skills and practical tools in dialogue facilitation, community mediation, diversity management and conflict transformation.",
-        "eligibility": "Open to everyone aged 25 and over, no previous peacebuilding experience required.",
+        "eligibility": "Open to everyone aged 25 and over; no previous peacebuilding experience is required.",
         "whyTitle": "Why take part",
         "why": [
           "Completely free online training",
           "Certificate of participation from the initiative on meeting the attendance requirement",
           "Regional and international networking, and membership of the Bridging Our Voices network of peacebuilders"
         ],
-        "cta": "Register now",
+        "cta": "Discover e-learning",
         "modulesLabel": "Core modules",
         "modules": [
           {
@@ -1044,7 +1071,7 @@
         "title": "The Bridging Our Voices Fellowship",
         "lead": "A year-long fellowship for women and men already active in their communities: mentoring, accreditation and the support to lead their own dialogue initiative.",
         "cta": "Apply for the fellowship",
-        "status": "Applications open now",
+        "status": "Applications are now open",
         "benefits": [
           {
             "title": "Mentoring",
@@ -1063,6 +1090,124 @@
             "body": "Lasting ties with fellows across the region and beyond."
           }
         ]
+      },
+      "elearning": {
+        "index": "05",
+        "eyebrow": "E-learning",
+        "title": "E-learning",
+        "lead": "Online courses and webinars: self-paced courses and live sessions on dialogue and peacebuilding, open to everyone, women and men.",
+        "soonTitle": "Coming soon",
+        "soonBody": "Our first online courses, starting with “Women and Peacebuilding”, are being prepared. Follow our news or subscribe to the newsletter to hear when registration opens.",
+        "soonCta": "See our latest news",
+        "kinds": {
+          "course": "Online course",
+          "webinar": "Webinar"
+        },
+        "formats": {
+          "self-paced": "Self-paced",
+          "instructor-led": "Instructor-led",
+          "live": "Live online"
+        },
+        "units": "Units: {n}",
+        "certificate": "Certificate",
+        "view": "View the course →",
+        "back": "All courses",
+        "info": {
+          "type": "Type",
+          "format": "Format",
+          "fees": "Fees",
+          "units": "Number of units",
+          "programmeArea": "Programme area",
+          "duration": "Duration",
+          "learningTime": "Learning time",
+          "startDate": "Start date",
+          "deadline": "Registration deadline",
+          "certificate": "Certificate",
+          "languages": "Languages",
+          "yes": "Yes",
+          "no": "No"
+        },
+        "flyer": "Download the course flyer (PDF)",
+        "aboutTitle": "About the course",
+        "contentTitle": "Course content",
+        "unit": "Unit {n}",
+        "lessonTypes": {
+          "video": "Video",
+          "file": "Reading",
+          "text": "Text",
+          "link": "Live session / link"
+        },
+        "register": {
+          "title": "Register for this course",
+          "lead": "Leave your details and our team will contact you with the next steps.",
+          "name": "Full name",
+          "email": "Email",
+          "country": "Country",
+          "countryPlaceholder": "Select…",
+          "submit": "Register",
+          "sending": "Sending…",
+          "success": "Thank you. Your registration has been received; our team will contact you.",
+          "closed": "Registration for this course is closed.",
+          "error": "Something went wrong. Please check the form and try again."
+        }
+      },
+      "news": {
+        "index": "06",
+        "eyebrow": "News",
+        "title": "News from our activities",
+        "lead": "What has happened recently at Bridging Our Voices, from workshops in the field to our online training programme.",
+        "source": "See the post on Facebook",
+        "photosLabel": "Photos",
+        "items": [
+          {
+            "date": "19 November 2026",
+            "place": "Online",
+            "title": "Our online training programme has launched",
+            "paragraphs": [
+              "On Thursday 19 November 2026, Bridging Our Voices held the opening session of its online training programme, bringing together trainees, women and men, from several Arab countries.",
+              "Dr Mohamed El-Wardany, a media academic at Al-Azhar University, gave the opening lecture: “How is religious and cultural conflict managed on social media?”",
+              "The lecture examined digital narratives, the use of religion in conflict, and the role of algorithms and echo chambers in increasing polarisation. Participants discussed how to assess content and its aims critically, the responsibilities of religious and media institutions, and strategies for moving from managing conflict to building awareness.",
+              "This session begins a shared learning journey to strengthen dialogue, build peace, counter hate speech and prepare participants to create positive content that respects diversity."
+            ],
+            "points": [],
+            "after": [],
+            "images": [
+              "/news/training-launch-1.jpg",
+              "/news/training-launch-2.jpg"
+            ],
+            "imageAlt": "Opening session of the Bridging Our Voices online training programme",
+            "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl"
+          },
+          {
+            "date": "15 November 2026",
+            "place": "UNHCR, Alexandria, Egypt",
+            "title": "Training workshop for refugees in Alexandria",
+            "paragraphs": [
+              "As part of its work to strengthen peaceful coexistence and build bridges between communities, Bridging Our Voices held an intensive training workshop at the office of the United Nations High Commissioner for Refugees (UNHCR) in Alexandria.",
+              "Over three days of active exchange and deep listening, Dr. Anwaar Kataia (initiative coordinator and dialogue and peacebuilding consultant) led training sessions on:"
+            ],
+            "points": [
+              "Concepts of dialogue, accepting others, and building safe spaces for trust",
+              "Understanding differences and transforming community conflicts",
+              "Strengthening the role of young women and women leaders in peacebuilding",
+              "Preventing hate speech and violent extremism in diverse communities"
+            ],
+            "after": [
+              "Mr Sameh Nassim (development, training and community peace consultant) also led a workshop on “Designing and developing community initiatives”, to turn dialogue ideas into practical initiatives with lasting impact.",
+              "Participants gave lively, outstanding presentations, and the workshop saw the launch of the “Bridging Our Voices Network for Dialogue and Coexistence”. The Sudanese Al-Tahaddi Educational Foundation in Alexandria presented the trainers with a shield of appreciation.",
+              "Our thanks go to our partners at UNHCR and to every participant."
+            ],
+            "images": [
+              "/news/unhcr-alexandria-1.jpg",
+              "/news/unhcr-alexandria-2.jpg",
+              "/news/unhcr-alexandria-3.jpg",
+              "/news/unhcr-alexandria-4.jpg",
+              "/news/unhcr-alexandria-5.jpg"
+            ],
+            "imageAlt": "Participants in the Bridging Our Voices training workshop at UNHCR in Alexandria",
+            "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l"
+          }
+        ]
       }
     },
     "fr": {
@@ -1073,7 +1218,7 @@
       "header": {
         "eyebrow": "Activités",
         "title": "Comment nous formons des leaders de la paix",
-        "lead": "Programmes de formation, séminaires, congrès et bourse, quatre manières d’apprendre, de se relier et de diriger."
+        "lead": "Programmes de formation, séminaires, congrès et bourse : quatre manières d’apprendre, de se relier et de diriger."
       },
       "training": {
         "index": "01",
@@ -1081,8 +1226,8 @@
         "title": "Formations certifiantes en dialogue et consolidation de la paix"
       },
       "course": {
-        "badge": "Programme en cours",
-        "deadline": "Date limite : 12 novembre 2026",
+        "badge": "Inscriptions closes",
+        "deadline": "Inscriptions closes le 12 novembre 2026",
         "title": "Bridging Our Voices : les femmes au cœur du dialogue et de la consolidation de la paix",
         "body": "Un programme de formation numérique complet, entièrement en arabe sur Zoom pendant un mois, qui donne aux participants les compétences de base et des outils pratiques en facilitation du dialogue, médiation communautaire, gestion de la diversité et transformation des conflits.",
         "eligibility": "Ouvert à toutes et tous à partir de 25 ans, aucune expérience préalable en consolidation de la paix requise.",
@@ -1092,7 +1237,7 @@
           "Certificat de participation délivré par l’initiative selon le taux de présence requis",
           "Mise en réseau régionale et internationale et adhésion au réseau d’artisans de la paix Bridging Our Voices"
         ],
-        "cta": "S’inscrire",
+        "cta": "Découvrir l’apprentissage en ligne",
         "modulesLabel": "Modules principaux",
         "modules": [
           {
@@ -1279,6 +1424,124 @@
             "body": "Des liens durables avec des boursières de la région et d’ailleurs."
           }
         ]
+      },
+      "elearning": {
+        "index": "05",
+        "eyebrow": "Apprentissage en ligne",
+        "title": "Apprentissage en ligne",
+        "lead": "Cours en ligne et webinaires : des cours à suivre à son rythme et des séances en direct sur le dialogue et la consolidation de la paix, ouverts à toutes et tous.",
+        "soonTitle": "Bientôt disponible",
+        "soonBody": "Nos premiers cours en ligne, à commencer par « Les femmes et la consolidation de la paix », sont en préparation. Suivez nos actualités ou abonnez-vous à la newsletter pour savoir quand les inscriptions ouvriront.",
+        "soonCta": "Voir nos actualités",
+        "kinds": {
+          "course": "Cours en ligne",
+          "webinar": "Webinaire"
+        },
+        "formats": {
+          "self-paced": "À votre rythme",
+          "instructor-led": "Avec formateur ou formatrice",
+          "live": "En direct en ligne"
+        },
+        "units": "Modules : {n}",
+        "certificate": "Certificat",
+        "view": "Voir le cours →",
+        "back": "Tous les cours",
+        "info": {
+          "type": "Type",
+          "format": "Format",
+          "fees": "Frais",
+          "units": "Nombre de modules",
+          "programmeArea": "Domaine du programme",
+          "duration": "Durée",
+          "learningTime": "Temps d’apprentissage",
+          "startDate": "Date de début",
+          "deadline": "Date limite d’inscription",
+          "certificate": "Certificat",
+          "languages": "Langues",
+          "yes": "Oui",
+          "no": "Non"
+        },
+        "flyer": "Télécharger la brochure du cours (PDF)",
+        "aboutTitle": "À propos du cours",
+        "contentTitle": "Contenu du cours",
+        "unit": "Module {n}",
+        "lessonTypes": {
+          "video": "Vidéo",
+          "file": "Lecture",
+          "text": "Texte",
+          "link": "Séance en direct / lien"
+        },
+        "register": {
+          "title": "S’inscrire à ce cours",
+          "lead": "Laissez vos coordonnées : notre équipe vous contactera pour la suite.",
+          "name": "Nom complet",
+          "email": "E-mail",
+          "country": "Pays",
+          "countryPlaceholder": "Sélectionner…",
+          "submit": "S’inscrire",
+          "sending": "Envoi…",
+          "success": "Merci. Votre inscription a bien été reçue ; notre équipe vous contactera.",
+          "closed": "Les inscriptions à ce cours sont closes.",
+          "error": "Une erreur s’est produite. Vérifiez le formulaire et réessayez."
+        }
+      },
+      "news": {
+        "index": "06",
+        "eyebrow": "Actualités",
+        "title": "Actualités de nos activités",
+        "lead": "Ce qui s’est passé récemment à Bridging Our Voices, des ateliers sur le terrain à notre programme de formation en ligne.",
+        "source": "Voir la publication sur Facebook",
+        "photosLabel": "Photos",
+        "items": [
+          {
+            "date": "19 novembre 2026",
+            "place": "En ligne",
+            "title": "Lancement de notre programme de formation en ligne",
+            "paragraphs": [
+              "Le jeudi 19 novembre 2026, Bridging Our Voices a tenu la séance d’ouverture de son programme de formation en ligne, réunissant des participantes et participants de plusieurs pays arabes.",
+              "Le Dr Mohamed El-Wardany, enseignant en médias à l’Université Al-Azhar, a donné la conférence inaugurale : « Comment les conflits religieux et culturels sont-ils gérés sur les réseaux sociaux ? »",
+              "La conférence a abordé les récits numériques, l’instrumentalisation de la religion dans les conflits, et le rôle des algorithmes et des chambres d’écho dans la polarisation. Les échanges ont porté sur la lecture critique des contenus et de leurs objectifs, la responsabilité des institutions religieuses et médiatiques, et les stratégies pour passer de la gestion des conflits à la construction de la conscience.",
+              "Cette séance ouvre un parcours d’apprentissage commun pour renforcer le dialogue, construire la paix, lutter contre les discours de haine et préparer les participants et participantes à créer des contenus positifs qui respectent la diversité."
+            ],
+            "points": [],
+            "after": [],
+            "images": [
+              "/news/training-launch-1.jpg",
+              "/news/training-launch-2.jpg"
+            ],
+            "imageAlt": "Séance d’ouverture du programme de formation en ligne de Bridging Our Voices",
+            "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl"
+          },
+          {
+            "date": "15 novembre 2026",
+            "place": "HCR, Alexandrie, Égypte",
+            "title": "Atelier de formation pour les personnes réfugiées à Alexandrie",
+            "paragraphs": [
+              "Pour renforcer la coexistence pacifique et bâtir des ponts entre les communautés, Bridging Our Voices a organisé un atelier de formation intensif dans les locaux du Haut-Commissariat des Nations unies pour les réfugiés (HCR) à Alexandrie.",
+              "Pendant trois jours d’échanges et d’écoute profonde, la Dre Anwaar Kataia (coordinatrice de l’initiative et consultante en dialogue et consolidation de la paix) a animé des séances sur :"
+            ],
+            "points": [
+              "Les notions de dialogue, l’acceptation de l’autre et la création d’espaces sûrs de confiance",
+              "La compréhension des différences et la transformation des conflits communautaires",
+              "Le rôle des jeunes femmes et des femmes leaders dans la consolidation de la paix",
+              "La prévention des discours de haine et de l’extrémisme violent dans les sociétés diverses"
+            ],
+            "after": [
+              "M. Sameh Nassim (consultant en développement, formation et paix communautaire) a également animé un atelier « Concevoir et développer des initiatives communautaires », pour transformer les idées de dialogue en initiatives concrètes à l’impact durable.",
+              "Les participants et participantes ont présenté des travaux remarquables, et l’atelier a vu le lancement du « Réseau Bridging Our Voices pour le dialogue et la coexistence ». La Fondation éducative soudanaise Al-Tahaddi d’Alexandrie a remis aux formateurs un trophée de reconnaissance.",
+              "Merci à nos partenaires du HCR et à toutes les personnes participantes."
+            ],
+            "images": [
+              "/news/unhcr-alexandria-1.jpg",
+              "/news/unhcr-alexandria-2.jpg",
+              "/news/unhcr-alexandria-3.jpg",
+              "/news/unhcr-alexandria-4.jpg",
+              "/news/unhcr-alexandria-5.jpg"
+            ],
+            "imageAlt": "Participants et participantes de l’atelier de Bridging Our Voices au HCR à Alexandrie",
+            "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l"
+          }
+        ]
       }
     },
     "ar": {
@@ -1297,8 +1560,8 @@
         "title": "تدريب معتمد في الحوار وبناء السلام"
       },
       "course": {
-        "badge": "البرنامج الحالي",
-        "deadline": "آخر موعد للتسجيل: ١٢ نوفمبر ٢٠٢٦",
+        "badge": "التسجيل مغلق",
+        "deadline": "أُغلق باب التسجيل في ١٢ نوفمبر ٢٠٢٦",
         "title": "«أصواتنا جسور: نساء لقيادة الحوار وبناء السلام»",
         "body": "برنامج تدريبي رقمي متكامل يُقدَّم بالكامل باللغة العربية عبر منصة Zoom على مدار شهر كامل، يهدف إلى تزويد المشاركين بالمهارات الأساسية والأدوات العملية في التيسير الحواري، والوساطة المجتمعية، وإدارة التنوع، وتفكيك النزاعات.",
         "eligibility": "الدورة مفتوحة لجميع المهتمين (من سن ٢٥ عامًا فأكثر) دون اشتراط خبرة سابقة في بناء السلام.",
@@ -1308,7 +1571,7 @@
           "شهادة مشاركة معتمدة من المبادرة عند استكمال نسبة الحضور المطلوبة",
           "فرصة للتشبيك الإقليمي والدولي والانضمام لشبكة «أصواتنا جسور» لصناع السلام"
         ],
-        "cta": "سجّل/ي الآن",
+        "cta": "اكتشف/ي التعلم الإلكتروني",
         "modulesLabel": "المحاور الرئيسية",
         "modules": [
           {
@@ -1495,6 +1758,124 @@
             "body": "روابط دائمة مع زميلات من المنطقة وخارجها."
           }
         ]
+      },
+      "elearning": {
+        "index": "05",
+        "eyebrow": "التعلم الإلكتروني",
+        "title": "التعلم الإلكتروني",
+        "lead": "دورات وندوات إلكترونية: دورات ذاتية التعلّم وجلسات مباشرة في الحوار وبناء السلام، مفتوحة للجميع، نساءً ورجالًا.",
+        "soonTitle": "انتظرونا قريبًا",
+        "soonBody": "نُعدّ الآن أولى دوراتنا الإلكترونية، وفي مقدمتها دورة «المرأة وبناء السلام». تابع/ي أخبارنا أو اشترك/ي في النشرة البريدية لتعرف/ي موعد فتح باب التسجيل.",
+        "soonCta": "شاهد/ي آخر أخبارنا",
+        "kinds": {
+          "course": "دورة إلكترونية",
+          "webinar": "ندوة إلكترونية"
+        },
+        "formats": {
+          "self-paced": "ذاتية التعلّم",
+          "instructor-led": "بإشراف مدرب/ة",
+          "live": "مباشرة عبر الإنترنت"
+        },
+        "units": "الوحدات: {n}",
+        "certificate": "شهادة",
+        "view": "عرض الدورة ←",
+        "back": "كل الدورات",
+        "info": {
+          "type": "النوع",
+          "format": "الشكل",
+          "fees": "الرسوم",
+          "units": "عدد الوحدات",
+          "programmeArea": "مجال البرنامج",
+          "duration": "المدة",
+          "learningTime": "وقت التعلّم",
+          "startDate": "تاريخ البدء",
+          "deadline": "آخر موعد للتسجيل",
+          "certificate": "شهادة",
+          "languages": "اللغات",
+          "yes": "نعم",
+          "no": "لا"
+        },
+        "flyer": "تحميل إعلان الدورة (PDF)",
+        "aboutTitle": "عن الدورة",
+        "contentTitle": "محتوى الدورة",
+        "unit": "الوحدة {n}",
+        "lessonTypes": {
+          "video": "فيديو",
+          "file": "قراءة",
+          "text": "نص",
+          "link": "جلسة مباشرة / رابط"
+        },
+        "register": {
+          "title": "التسجيل في الدورة",
+          "lead": "اترك/ي بياناتك وسيتواصل معك فريقنا بالخطوات التالية.",
+          "name": "الاسم الكامل",
+          "email": "البريد الإلكتروني",
+          "country": "الدولة",
+          "countryPlaceholder": "اختر/ي…",
+          "submit": "سجّل/ي الآن",
+          "sending": "جارٍ الإرسال…",
+          "success": "شكرًا لك. وصلنا تسجيلك، وسيتواصل معك فريقنا.",
+          "closed": "التسجيل في هذه الدورة مغلق.",
+          "error": "حدث خطأ. يرجى مراجعة النموذج والمحاولة مرة أخرى."
+        }
+      },
+      "news": {
+        "index": "06",
+        "eyebrow": "الأخبار",
+        "title": "أخبار أنشطتنا",
+        "lead": "آخر ما جرى في «أصواتنا جسور»، من الورش الميدانية إلى برنامجنا التدريبي الإلكتروني.",
+        "source": "شاهد/ي المنشور على فيسبوك",
+        "photosLabel": "الصور",
+        "items": [
+          {
+            "date": "١٩ نوفمبر ٢٠٢٦",
+            "place": "أونلاين",
+            "title": "انطلاق البرنامج التدريبي الإلكتروني",
+            "paragraphs": [
+              "انطلقت يوم الخميس ١٩ نوفمبر ٢٠٢٦ أولى جلسات البرنامج التدريبي الإلكتروني لمبادرة «أصواتنا جسور»، بمشاركة متدربين ومتدربات من عدة دول عربية.",
+              "قدّم المحاضرة الافتتاحية د. محمد الورداني، أستاذ الإعلام بجامعة الأزهر، بعنوان «كيف يُدار الصراع الديني والثقافي على وسائل التواصل الاجتماعي؟».",
+              "تناولت المحاضرة صناعة الروايات في البيئة الرقمية، وتوظيف الدين في الصراع، ودور الخوارزميات وغرف الصدى في زيادة الاستقطاب. كما ناقش المشاركون والمشاركات كيفية قراءة المحتوى وكشف أهدافه، ومسؤولية المؤسسات الدينية والإعلامية، واستراتيجيات الانتقال من إدارة الصراع إلى صناعة الوعي.",
+              "بهذه الجلسة نبدأ رحلة تعلّم مشتركة لتعزيز الحوار وبناء السلام ومواجهة خطاب الكراهية، وإعداد كوادر قادرة على صناعة محتوى إيجابي يحترم التنوع."
+            ],
+            "points": [],
+            "after": [],
+            "images": [
+              "/news/training-launch-1.jpg",
+              "/news/training-launch-2.jpg"
+            ],
+            "imageAlt": "الجلسة الافتتاحية للبرنامج التدريبي الإلكتروني لمبادرة «أصواتنا جسور»",
+            "link": "https://www.facebook.com/Bourvoice/posts/pfbid04qTkNdGkicyqkrUiipE2sn5MCVh57qcFCMSJdJz8H71PFvHfVLTT5GpdYSqRctEhl"
+          },
+          {
+            "date": "١٥ نوفمبر ٢٠٢٦",
+            "place": "المفوضية السامية لشؤون اللاجئين، الإسكندرية، مصر",
+            "title": "ورشة تدريبية للوافدين بمحافظة الإسكندرية",
+            "paragraphs": [
+              "في إطار تعزيز مهارات التعايش السلمي وبناء الجسور المجتمعية، أقامت مبادرة «أصواتنا جسور: نساء لقيادة الحوار وبناء السلام» ورشة تدريبية مكثفة بمقر المفوضية السامية للأمم المتحدة لشؤون اللاجئين (UNHCR) بالإسكندرية.",
+              "على مدار ٣ أيام من التفاعل المثمر والإنصات العميق، قدّمت د. أنوار قطايه (منسقة المبادرة واستشارية الحوار وبناء السلام) جلسات تدريبية تناولت:"
+            ],
+            "points": [
+              "مفاهيم الحوار، وقبول الآخر، وبناء المساحات الآمنة للثقة",
+              "مهارات فهم الاختلافات وتفكيك الصراعات المجتمعية",
+              "تفعيل دور الشابات والرائدات في بناء السلام",
+              "الوقاية من خطاب الكراهية والتطرف العنيف في المجتمعات المتنوعة"
+            ],
+            "after": [
+              "وشارك في التدريب الأستاذ سامح نسيم (استشاري التنمية والتدريب وأنشطة السلام المجتمعي) بورشة عمل «تصميم وتطوير المبادرات المجتمعية»، لتحويل الأفكار والرؤى الحوارية إلى مبادرات ميدانية تطبيقية ذات أثر مستدام.",
+              "شهدت الورشة تفاعلًا رائعًا وعروضًا متميزة قدّمها المشاركون والمشاركات، إلى جانب تدشين «شبكة أصواتنا جسور للحوار والتعايش». وقدّمت مؤسسة التحدي التعليمية التربوية السودانية بالإسكندرية درع شكر وتقدير للمحاضرين.",
+              "كل الشكر لشركائنا في المفوضية السامية لشؤون اللاجئين، ولجميع المشاركين والمشاركات."
+            ],
+            "images": [
+              "/news/unhcr-alexandria-1.jpg",
+              "/news/unhcr-alexandria-2.jpg",
+              "/news/unhcr-alexandria-3.jpg",
+              "/news/unhcr-alexandria-4.jpg",
+              "/news/unhcr-alexandria-5.jpg"
+            ],
+            "imageAlt": "المشاركون والمشاركات في ورشة «أصواتنا جسور» بمقر المفوضية في الإسكندرية",
+            "link": "https://www.facebook.com/Bourvoice/posts/pfbid02UhbAa1tDSfvV5VLyvdgcVLWi65sWY8s94jkdDUhjqkgwHGLocHmK4xuGErSXdxG2l"
+          }
+        ]
       }
     }
   },
@@ -1502,12 +1883,12 @@
     "en": {
       "meta": {
         "title": "Agenda",
-        "description": "Upcoming Bridging Our Voices events: dialogue circles, workshops, trainings and ceremonies, plus the international days for dialogue and peace."
+        "description": "Upcoming Bridging Our Voices events: dialogue circles, workshops, training sessions and ceremonies, plus the international days for dialogue and peace."
       },
       "header": {
         "eyebrow": "Agenda",
         "title": "Upcoming events",
-        "lead": "Dialogue circles, workshops, trainings and ceremonies, online and across the region."
+        "lead": "Dialogue circles, workshops, training sessions and ceremonies, online and across the region."
       },
       "calendar": {
         "prev": "Previous month",
@@ -2160,7 +2541,7 @@
             "items": [
               "Peacebuilders and community leaders",
               "Religious leaders and interfaith dialogue practitioners",
-              "Leaders aged 30 and over who have started working in peacebuilding and have experience in it",
+              "Leaders aged 30 and over with experience in peacebuilding",
               "Trainers, researchers and partner organisations"
             ]
           },
@@ -2201,7 +2582,7 @@
           "photoHint": "JPG or PNG, up to 3 MB.",
           "publishConsent": "If my application is accepted, I agree that my name, job title, country, photo and a short summary of my experience may appear on the “Our members” page.",
           "submit": "Send application",
-          "success": "Thank you, your application has been received. Our team will review it and contact you."
+          "success": "Thank you. Your application has been received; our team will review it and contact you."
         }
       },
       "join": {
@@ -2210,7 +2591,7 @@
           "description": "Membership of the Bridging Our Voices network is free. Share a few details and a message of support, and our team will contact you."
         },
         "title": "Add your voice to ours",
-        "lead": "Membership is free. Share a few details and a message of support, our team will review it and contact you.",
+        "lead": "Membership is free. Share a few details and a message of support; our team will review it and contact you.",
         "legend": "Your details",
         "name": "Full name",
         "gender": "Gender",
@@ -2585,8 +2966,8 @@
         "publishConsent": "I agree that my statement, name, job title, country and photo may be published on the site.",
         "submit": "Submit application",
         "sending": "Sending…",
-        "success": "Thank you, your application has been received. Our team will review it and contact you.",
-        "error": "Something went wrong, please check the form and try again.",
+        "success": "Thank you. Your application has been received; our team will review it and contact you.",
+        "error": "Something went wrong. Please check the form and try again.",
         "voicesTitle": "Voices that joined ours",
         "readArticle": "Read the article"
       },
@@ -2605,7 +2986,7 @@
             "bio": [
               "KAICIID International Fellow and faculty member at Al-Azhar University.",
               "PhD researcher in Political & Strategic Studies and National Security; Diploma in Political Communication (Cairo University); National Defense College Fellow.",
-              "15+ years as expert trainer and consultant; trained ~4,000 religious and community leaders; led regional UNESCO / Arab League projects reaching 500k+ beneficiaries."
+              "15+ years as an expert trainer and consultant; trained ~4,000 religious and community leaders; led regional UNESCO / Arab League projects reaching 500k+ beneficiaries."
             ]
           },
           {
@@ -2635,7 +3016,7 @@
             "country": "South Africa",
             "bio": [
               "KAICIID Fellow; co-founder of Mindfulness Africa and Peace & Healing Circles South Africa.",
-              "Former human-rights lawyer with 20+ years training magistrates and prosecutors in compassion, resilience and values-based decision-making.",
+              "Former human-rights lawyer with 20+ years of training magistrates and prosecutors in compassion, resilience and values-based decision-making.",
               "Certified trainer (Stanford Applied Compassion Academy, UN UPEACE); Tibetan Buddhist representative, Cape Town Interfaith Initiative."
             ]
           }
@@ -3605,7 +3986,7 @@
         "people": [
           {
             "image": "/team/anwaar-kataia.jpg",
-            "name": "د. أنوار قطايا",
+            "name": "د. أنوار قطايه",
             "role": "المنسقة العامة للمشروع والزميلة الرئيسية",
             "country": "مصر",
             "bio": [
@@ -3693,8 +4074,8 @@
         "message": "Message",
         "submit": "Send message",
         "sending": "Sending…",
-        "success": "Thank you, your message has been sent. We’ll get back to you soon.",
-        "error": "Something went wrong, please try again or email us directly."
+        "success": "Thank you. Your message has been sent, and we’ll get back to you soon.",
+        "error": "Something went wrong. Please try again or email us directly."
       },
       "info": {
         "emailLabel": "Email",
@@ -3814,7 +4195,7 @@
         "lead": "What we collect through this website, why we need it, how long we keep it, and how you can see, change or delete it."
       },
       "updatedLabel": "Last updated",
-      "updated": "14 November 2026",
+      "updated": "21 November 2026",
       "tocLabel": "On this page",
       "sections": [
         {
@@ -3822,7 +4203,7 @@
           "title": "Who we are",
           "blocks": [
             {
-              "p": "Bridging Our Voices is a platform for dialogue and peacebuilding that champions women’s leadership, directed by Dr. Anwaar Kataia (Lead Fellow and Project Manager). We are responsible for the personal data collected through this website."
+              "p": "Bridging Our Voices, directed by Dr. Anwaar Kataia (Lead Fellow and Project Manager), is a platform for dialogue and peacebuilding that champions women’s leadership. We are responsible for the personal data collected through this website."
             },
             {
               "p": "For any question about your data, write to b.our.voices@gmail.com."
@@ -3876,6 +4257,14 @@
               ]
             },
             {
+              "h": "Course registration (e-learning)"
+            },
+            {
+              "list": [
+                "Your name, email address and country, and the course you register for."
+              ]
+            },
+            {
               "h": "When you visit the site"
             },
             {
@@ -3891,6 +4280,7 @@
               "list": [
                 "Newsletter: to send you news about our programmes and events, because you asked us to.",
                 "Contact form: to answer your message.",
+                "Course registration: to contact you about the course and your participation.",
                 "Membership application: to review your application, contact you about it and, if you join, keep you connected to the network. You give your consent when you tick the box before sending."
               ]
             },
@@ -3904,7 +4294,7 @@
           "title": "Religion and other sensitive information",
           "blocks": [
             {
-              "p": "The membership form asks for your religion and gender. This is sensitive information. We ask for it only because our network is built on interreligious and intercultural dialogue, and we want to keep it diverse and balanced."
+              "p": "The membership and “Add your voice to ours” forms ask for your religion and gender. This is sensitive information. We ask for it only because our network is built on interreligious and intercultural dialogue, and we want to keep it diverse and balanced."
             },
             {
               "p": "Only our team sees this information. We use it to review applications, and we never publish it."
@@ -3943,6 +4333,7 @@
               "list": [
                 "Newsletter: until you unsubscribe.",
                 "Contact messages: up to 12 months after our last reply.",
+                "Course registrations: up to 12 months after the course ends.",
                 "Membership applications: for as long as you are a member. If an application is not accepted, or you withdraw it, we delete it, with any photo and CV, within 6 months.",
                 "Server logs: for the short period our hosting provider keeps them."
               ]
@@ -4009,7 +4400,7 @@
         "lead": "Ce que nous collectons sur ce site, pourquoi, combien de temps nous le gardons, et comment le consulter, le modifier ou le supprimer."
       },
       "updatedLabel": "Dernière mise à jour",
-      "updated": "14 novembre 2026",
+      "updated": "21 novembre 2026",
       "tocLabel": "Sur cette page",
       "sections": [
         {
@@ -4071,6 +4462,14 @@
               ]
             },
             {
+              "h": "Inscription à un cours (apprentissage en ligne)"
+            },
+            {
+              "list": [
+                "Votre nom, votre adresse e-mail et votre pays, ainsi que le cours auquel vous vous inscrivez."
+              ]
+            },
+            {
               "h": "Lorsque vous visitez le site"
             },
             {
@@ -4086,6 +4485,7 @@
               "list": [
                 "Newsletter : pour vous envoyer nos actualités sur les programmes et événements, à votre demande.",
                 "Formulaire de contact : pour répondre à votre message.",
+                "Inscription à un cours : pour vous contacter au sujet du cours et de votre participation.",
                 "Demande d’adhésion : pour examiner votre candidature, vous contacter à ce sujet et, si vous nous rejoignez, vous relier au réseau. Vous donnez votre consentement en cochant la case avant l’envoi."
               ]
             },
@@ -4138,6 +4538,7 @@
               "list": [
                 "Newsletter : jusqu’à votre désinscription.",
                 "Messages de contact : jusqu’à 12 mois après notre dernière réponse.",
+                "Inscriptions aux cours : jusqu’à 12 mois après la fin du cours.",
                 "Demandes d’adhésion : tant que vous êtes membre. Si une candidature n’est pas retenue, ou si vous la retirez, nous la supprimons, photo et CV compris, sous 6 mois.",
                 "Journaux serveur : pendant la courte durée fixée par notre hébergeur."
               ]
@@ -4204,7 +4605,7 @@
         "lead": "ما نجمعه عبر هذا الموقع، ولماذا نحتاجه، وإلى متى نحتفظ به، وكيف يمكنك الاطلاع عليه أو تعديله أو حذفه."
       },
       "updatedLabel": "آخر تحديث",
-      "updated": "١٤ نوفمبر ٢٠٢٦",
+      "updated": "٢١ نوفمبر ٢٠٢٦",
       "tocLabel": "في هذه الصفحة",
       "sections": [
         {
@@ -4212,7 +4613,7 @@
           "title": "من نحن",
           "blocks": [
             {
-              "p": "Bridging Our Voices منصة للحوار وبناء السلام تؤكد قدرة المرأة على القيادة، تديرها د. أنوار قطايا (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع."
+              "p": "Bridging Our Voices منصة للحوار وبناء السلام تؤكد قدرة المرأة على القيادة، تديرها د. أنوار قطايه (الزميلة الرئيسية ومديرة المشروع). نحن المسؤولون عن البيانات الشخصية التي تُجمع عبر هذا الموقع."
             },
             {
               "p": "لأي سؤال عن بياناتك، راسلنا على b.our.voices@gmail.com."
@@ -4266,6 +4667,14 @@
               ]
             },
             {
+              "h": "التسجيل في دورة (التعلم الإلكتروني)"
+            },
+            {
+              "list": [
+                "اسمك وبريدك الإلكتروني ودولتك، والدورة التي تسجّل/ين فيها."
+              ]
+            },
+            {
               "h": "عند زيارتك للموقع"
             },
             {
@@ -4281,6 +4690,7 @@
               "list": [
                 "النشرة البريدية: لنرسل إليك أخبار برامجنا وفعالياتنا، بناءً على طلبك.",
                 "نموذج التواصل: للرد على رسالتك.",
+                "التسجيل في دورة: للتواصل معك بشأن الدورة ومشاركتك فيها.",
                 "طلب الانضمام: لمراجعة طلبك والتواصل معك بشأنه، وإذا انضممت، لربطك بالشبكة. وتعطي موافقتك عندما تضع علامة في المربع قبل الإرسال."
               ]
             },
@@ -4333,6 +4743,7 @@
               "list": [
                 "النشرة البريدية: حتى تلغي اشتراكك.",
                 "رسائل التواصل: حتى ١٢ شهرًا بعد آخر رد منا.",
+                "التسجيل في الدورات: حتى ١٢ شهرًا بعد انتهاء الدورة.",
                 "طلبات الانضمام: طوال مدة عضويتك. وإذا لم يُقبل الطلب أو سحبته، نحذفه هو والصورة والسيرة الذاتية خلال ٦ أشهر.",
                 "سجلات الخادم: للمدة القصيرة التي تحددها جهة الاستضافة."
               ]

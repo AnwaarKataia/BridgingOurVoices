@@ -12,9 +12,11 @@ import { Training } from "@/components/activities/Training";
 import { Seminars } from "@/components/activities/Seminars";
 import { Conferences } from "@/components/activities/Conferences";
 import { Fellowship } from "@/components/activities/Fellowship";
+import { News } from "@/components/activities/News";
+import { ELearning } from "@/components/activities/ELearning";
 
 /** Activities section: each dropdown item is its own page. Order = tab order. */
-const slugs = ["training", "seminars", "conferences", "fellowship"] as const;
+const slugs = ["training", "seminars", "conferences", "fellowship", "e-learning", "news"] as const;
 type Slug = (typeof slugs)[number];
 
 type Params = { params: Promise<{ locale: string; slug: string }> };
@@ -28,14 +30,14 @@ export function generateStaticParams() {
 const clip = (s: string, n = 158) => (s.length > n ? `${s.slice(0, n - 1).trimEnd()}…` : s);
 
 /** Title, lead, description and body for one Activities page. */
-function page(slug: Slug, c: ActivitiesContent) {
+function page(slug: Slug, c: ActivitiesContent, locale: Locale) {
   switch (slug) {
     case "training":
       return {
         title: c.training.title,
         lead: c.header.lead,
         description: clip(c.course.body),
-        body: <Training course={c.course} flagship={c.flagship} tracks={c.tracks} />,
+        body: <Training course={c.course} flagship={c.flagship} tracks={c.tracks} ctaHref={`/${locale}/activities/e-learning`} />,
       };
     case "seminars":
       return { title: c.seminars.title, lead: c.seminars.lead, description: clip(c.seminars.lead), body: <Seminars seminars={c.seminars} /> };
@@ -53,6 +55,15 @@ function page(slug: Slug, c: ActivitiesContent) {
         description: clip(c.fellowship.lead),
         body: <Fellowship fellowship={c.fellowship} />,
       };
+    case "e-learning":
+      return {
+        title: c.elearning.title,
+        lead: c.elearning.lead,
+        description: clip(c.elearning.lead),
+        body: <ELearning e={c.elearning} locale={locale} />,
+      };
+    case "news":
+      return { title: c.news.title, lead: c.news.lead, description: clip(c.news.lead), body: <News news={c.news} /> };
   }
 }
 
@@ -65,7 +76,7 @@ async function resolve(params: Params["params"]) {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const r = await resolve(params);
   if (!r) return {};
-  const p = page(r.slug, await getActivitiesContent(r.locale));
+  const p = page(r.slug, await getActivitiesContent(r.locale), r.locale);
   return pageMetadata(r.locale, `/activities/${r.slug}`, { title: p.title, description: p.description });
 }
 
@@ -75,7 +86,7 @@ export default async function ActivitiesSubPage({ params }: Params) {
   const { locale, slug } = r;
   const c = await getActivitiesContent(locale);
   const site = await getSiteContent(locale);
-  const p = page(slug, c);
+  const p = page(slug, c, locale);
   const path = `/activities/${slug}`;
   const pageUrl = `${siteUrl}/${locale}${path}`;
   const tabs = sectionTabs(site, locale, "activities", path);

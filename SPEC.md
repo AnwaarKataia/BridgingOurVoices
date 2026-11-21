@@ -77,7 +77,8 @@ A regional, cross-religious and cross-cultural initiative that builds women's ca
 |---|---|---|
 | Home ✅ | `page.tsx` | hero → ticker → banner + announcement → vision → pathway → activities → footer |
 | About ▾ ✅ | `about/[slug]/page.tsx` | `who-we-are` (story + strategic partners) · `vision` (statement) · `mission` (statement) · `goals` (5 strategic objectives) |
-| Activities ▾ ✅ | `activities/[slug]/page.tsx` | `training`: current course with modules (`#course`), flagship interfaith programme, 4 other tracks. `seminars`: 3 seminar cards. `conferences`: featured video + 6 sessions. `fellowship`: apply + 4 benefits |
+| Activities ▾ ✅ | `activities/[slug]/page.tsx` | `training`: current course with modules (`#course`), flagship interfaith programme, 4 other tracks. `seminars`: 3 seminar cards. `conferences`: featured video + 6 sessions. `fellowship`: apply + 4 benefits. `e-learning`: published course and webinar cards, or «انتظرونا قريبًا» / "Coming soon" while nothing is published. `news`: posts taken from the Facebook page (newest first) |
+| E-learning course ✅ | `e-learning/[slug]/page.tsx` | One published course or webinar (dynamic, from the API). Info list like KAICIID's course pages (type, format, fees, number of units, programme area, duration, learning time, start date, deadline, certificate, languages), image, flyer PDF, "About the course", units with lesson titles, and a registration form (`#register`). A draft or unknown course → 404 |
 | Agenda ✅ | `agenda/page.tsx` | One page (no dropdown in the brand file). 1) Month calendar (`components/agenda/Calendar.tsx`, client): prev/next month, tap a day to list only that day, "Show the whole month". Gold dot = event, sky dot = international day, blue frame = today. The list beside it shows the month's items; date chips are red (deadline), blue (webinar series), navy (event), gold (international day). 2) Featured webinar series card + the full list of upcoming events. 3) "International days": the global UN dates for dialogue and peacebuilding, in two columns (`#international-days`). All dates and copy live in `content/agenda.ts`; international days are stored as month-day and repeat every year on the calendar |
 | Network ▾ ✅ | `network/[slug]/page.tsx` | `membership`: 3 cards (who can join / what you gain / what we ask). Under the cards: the **membership application form** (`#apply`, `MembershipForm`, its own title "Membership application form" / «استمارة طلب العضوية»; never the "Add your voice to ours" title). `join`: the "Add your voice to ours" form (statement + optional article), unchanged. `members`: 4 team cards with arched portraits (`public/team/*.jpg`, cropped from the banner at the brand file's positions), then the navy "Our network" band with a mosaic and a "Join the network" button |
 | Privacy ✅ (footer link) | `privacy/page.tsx` | Privacy policy, a draft: what each form collects, why, retention, rights. Sticky table of contents + 11 sections. Linked from the footer and from the contact and join forms |
@@ -563,7 +564,7 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
 
 ### 2026-11-06: Member names follow the banner
 - **The owner decided that member names use the banner spelling**, not the brand file's Members section:
-  - "Dr. Anwaar Kataia" (AR «د. أنوار قطايا») replaces "Dr. Anwaar Othman (Kataya)".
+  - "Dr. Anwaar Kataia" (AR «د. أنوار قطايه», spelling confirmed by the owner 2026-11-21) replaces "Dr. Anwaar Othman (Kataya)".
   - "Mona Lisa D. Pangan" (AR «منى ليزا د. بانجان») replaces "Mona Lisa P. Diller".
 - Updated in `content/network.ts` for EN/FR/AR. The photo descriptions and the JSON-LD `Person` entries use the same names.
 - **Rule:** when a name differs between the brand file's sections, the banner (`assets/banner-fellows.png`) wins.
@@ -862,6 +863,100 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - Responsive: the site's Join, Members, Membership and Contact pages × 3 languages × 5 widths (90 checks). The dashboard pages were checked at 320/768/1280.
   - The owner's own test submission ("Add your voice", 14 November) was **kept**.
 
+### 2026-11-21: Digital training registration closed + news ticker + English proofreading
+- **Registration closed** (owner: "very important"). In all 3 languages, the home announcement and the Training page show:
+  - the badge "Registration closed";
+  - "Registration closed on 12 November 2026";
+  - a "Discover e-learning" button instead of "Apply".
+  - The AR announcement title no longer says «فتح باب التسجيل».
+- **News ticker:** two new items (EN/FR/AR):
+  - the launch of the online training programme (opening lecture by Dr Mohamed El-Wardany, Al-Azhar University, 19 November 2026);
+  - the closing of registration (Arabic and English cohorts).
+  - The UNHCR news item is still waiting for the owner's details.
+- **English proofreading rule:** EN text must be grammatically consistent:
+  - subject–verb and singular/plural agreement;
+  - no comma splices (use "." or ";");
+  - one sentence structure across a list.
+  - A first pass was done over every page (home, about, activities, agenda, network, contact, privacy, forms). FR got the same fix where it shared the error.
+  - Texts the owner has already edited in the dashboard keep her version.
+- **E-learning:** see the entry "E-learning phase 1" below.
+
+### 2026-11-21: E-learning phase 1 (courses and webinars built in the dashboard)
+- **What the owner asked for** (modelled on the KAICIID e-learning pages):
+  - E-courses and e-webinars under «الأنشطة».
+  - A course page with image, type, fees, number of units, programme area, duration, learning time, start date, deadline, certificate, an Apply button and a flyer.
+  - Units with lessons, where videos are YouTube/Vimeo links.
+  - The public sees «انتظرونا قريبًا» until a course is published.
+  - Learner accounts, "Mark as done", progress and certificates come in later phases.
+- **Database** (migration `0006`): `courses`, `course_modules` (units), `course_lessons`, `course_registrations`. Text fields hold `{ en, fr, ar }`.
+- **API** (`apps/api/src/elearning.ts`):
+  - **Dashboard routes** (signed-in): list/create/edit/delete courses; add/edit/move/delete units and lessons; registrations and their status.
+  - **Checks:**
+    - video links must be YouTube or Vimeo;
+    - files must be PDFs uploaded to `/media` (PDF up to 15 MB, images still 5 MB);
+    - other links must be https;
+    - dates must be YYYY-MM-DD;
+    - the page address (slug) must be unique (409).
+  - Publishing, unpublishing and any edit to a published course refresh the site within seconds.
+  - **Public routes:**
+    - `GET /public/courses` and `GET /public/courses/:slug`: published only, with lesson titles (no video links: lesson content is for registered learners later).
+    - `POST /public/courses/:slug/register`: name, email, country; honeypot; 10 per 10 minutes; 409 when registration is closed.
+- **Starting content** (`apps/api/src/elearning-seed.ts`, inserted once when there are no courses), all **drafts**:
+  - «المرأة وبناء السلام» / "Women and Peacebuilding": 5 units, 15 lessons in EN/FR/AR. The units are:
+    - the WPS agenda and Resolution 1325;
+    - the many ways women lead peace;
+    - gender-sensitive conflict analysis;
+    - dialogue and community mediation;
+    - from learning to action, with a certificate.
+  - Two suggestions:
+    - "Facilitating interreligious and intercultural dialogue" (course);
+    - the opening-lecture webinar "How is religious and cultural conflict managed on social media?".
+- **Dashboard** «التعليم الإلكتروني» (`/courses`):
+  - A list with status (draft/published) and counts, plus "New course" and "New webinar" buttons.
+  - Each course has an editor (`/courses/[id]`):
+    - an editing-language switch (AR/EN/FR);
+    - all the details;
+    - an image (upload) and a flyer (PDF upload);
+    - "Publish on the site" / "Hide from the site", plus "View the course page";
+    - units and lessons: add, edit, move up/down, delete;
+    - lesson types: video link, PDF file, text, link (Zoom etc.). A "Content missing" tag shows where a video or file is still needed;
+    - the registrations list with status (new/accepted/rejected);
+    - "Delete course".
+- **Site:**
+  - Activities → «التعلم الإلكتروني» (`/activities/e-learning`, tab, dropdown, sitemap) shows the published cards or «انتظرونا قريبًا».
+  - The course page is at `/[lang]/e-learning/[slug]`.
+  - The "Discover e-learning" buttons (home announcement, Training page) lead here.
+  - The privacy policy now covers course registration: what is collected, why, and that it is kept up to 12 months after the course ends.
+- **Grammar:** counts use "Units: 3" / «الوحدات: ٣» (never "1 units" or «٢ وحدات»). Lesson lengths use the language's own plural forms («دقيقتان»، «٥ دقائق»، «١٢ دقيقة»).
+- **Tested** with a temporary account and a temporary course, all deleted afterwards:
+  - login, 401 without a session;
+  - the wrong date format, a taken slug, a non-YouTube/Vimeo link and a bad email are refused;
+  - unit reordering, PDF flyer upload;
+  - registering on a draft → 404;
+  - after publishing, the course appears on the site and its title changes there within seconds; the public data doesn't include video links;
+  - registration through the site form (and its error messages in AR);
+  - unpublishing brings back «انتظرونا قريبًا»;
+  - responsive: e-learning, course, news, training and privacy pages × 3 languages × 5 widths. Long buttons now wrap at 320px.
+  - `pnpm build` passes.
+- **Next phases:**
+  - learner accounts, lesson pages with the video player, "Mark as done" and progress, participants;
+  - certificates last.
+
+### 2026-11-21: News page (Activities → News) from the Facebook page
+- **How it works (owner):** the owner sends the link of a post on the Bridging Our Voices Facebook page (facebook.com/Bourvoice). We take the text and photos from it and add the item to the site, so she doesn't have to copy anything.
+- **New page** `/activities/news` («الأخبار» / "News" / "Actualités"), the 5th tab of Activities and in the dropdown and sitemap.
+  - Each item shows:
+    - a cover photo and a strip of extra photos;
+    - the date and place, then the title;
+    - the paragraphs, a bullet list and closing paragraphs;
+    - a "See the post on Facebook" link.
+  - Newest first. The text comes in EN/FR/AR (content `activities.news`, editable in the dashboard). Photos are in `apps/portal/public/news/`.
+- **First items:**
+  - Launch of the online training programme (19 November 2026, opening lecture by Dr Mohamed El-Wardany).
+  - The 3-day training workshop for refugees at UNHCR in Alexandria (15 November 2026, launch of the "Bridging Our Voices Network for Dialogue and Coexistence"). This item was also added to the news ticker.
+- **Responsive:** checked at 320/375/768/1024/1280 in EN/FR/AR, with no horizontal scroll.
+- **Later option:** pull posts from the Facebook page automatically. This needs a Meta app and a page access token from the owner.
+
 ---
 
 ## 9. Open items
@@ -889,6 +984,11 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - Subscribers list + CSV export.
   - User management (admin).
 - [ ] Dashboard phase 3: agenda and announcement editing, and course/event registration.
+- [ ] E-learning:
+  - The owner fills the videos and files of «المرأة وبناء السلام» and publishes it.
+  - Phase 2: learner accounts, lessons with a video player, "Mark as done", progress.
+  - Phase 3: certificates.
+  - Email to registrants (needs an email service).
 - [ ] Dashboard: **colours and logo** (agreed for later: admin only, brand colours with a contrast check and "restore brand colours").
 - [ ] Content editor, later:
   - Agenda dates and event slugs are still in code (`eventIsos`, `seriesIsos`), so only the agenda's text is editable now.
