@@ -64,6 +64,20 @@
       "when": 1795270204710,
       "tag": "0008_lumpy_black_tom",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1795272381362,
+      "tag": "0009_romantic_rattler",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1795274304917,
+      "tag": "0010_greedy_exodus",
+      "breakpoints": true
     }
   ]
 }

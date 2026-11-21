@@ -942,6 +942,47 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
   - learner accounts, lesson pages with the video player, "Mark as done" and progress, participants;
   - certificates last.
 
+### 2026-11-21: Forgot password for every account type + the initiative's description reworded
+- **Rule (owner):** anyone who creates an account on the site must be able to recover it by email. This applies to dashboard accounts and learner accounts, and to any future account type.
+- **Learners:**
+  - The sign-in page has «نسيت كلمة المرور؟». It opens `/[lang]/learn/forgot`, which emails a link to `/[lang]/learn/reset?token=…`. The email is in the language of the page the learner used.
+  - The same protections as the dashboard: same answer for every email, the SHA-256 of the token stored (table `learner_password_resets`), one use and 1 hour, 3 requests per 15 minutes, the owner's password rule, and every learner session ends after the reset.
+  - A learner link can't reset a dashboard account (and vice versa).
+  - The emails go out through the same mail setup (`SMTP_*`; locally saved to `apps/api/data/outbox`).
+- **Wording (owner):**
+  - Home hero: «مبادرة إقليمية تعمل على تعزيز دور المرأة وقيادتها للحوار وبناء السلام، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، وتنقلهم…» (EN "A regional initiative that strengthens women’s role and leadership in dialogue and peacebuilding, and empowers…", FR the same meaning).
+  - «متميزة» / "distinctive" and «بصور مختلفة» / "in many different ways" were removed, including from About → Who we are. The AR meta description no longer says «متميزة».
+- **Tested** with a temporary learner, deleted afterwards along with the outbox:
+  - unknown email → same answer and no email;
+  - the email in French with the right link;
+  - a weak password, a reused link, and a learner link on the dashboard are refused;
+  - the old session and old password stop working, the new one works;
+  - responsive: forgot, reset, sign-in and home × 3 languages × 5 widths;
+  - `pnpm build` passes.
+
+### 2026-11-21: Forgot password for the dashboard (reset by email)
+- **Owner:** if she forgets her password, she can get back in through her email.
+- **How it works:**
+  - On the sign-in page, «نسيت كلمة المرور؟» opens `/forgot`. You enter your email and get a link `/reset?token=…`, then choose a new password twice (owner's rule: 12+ characters, with letters, numbers and symbols).
+  - After that, every session of the account is signed out, so you sign in again with the new password.
+  - The email is in Arabic and English, Arabic first when the dashboard is in Arabic.
+- **Security:**
+  - The answer is the same whether or not an email has an account.
+  - Only the SHA-256 of the token is stored (table `password_resets`). A link works once and for 1 hour, and a new request cancels older links.
+  - Limits: 3 requests per 15 minutes per IP+email, and 10 reset tries per 15 minutes.
+  - Disabled accounts can't reset. The reset page sends no referrer, so the token doesn't leak to other sites.
+- **Email sending** (`apps/api/src/mail.ts`, nodemailer):
+  - Through SMTP when `SMTP_HOST` is set: `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`, plus `DASHBOARD_URL` for the link (see `apps/api/.env.example`).
+  - **Locally without SMTP**, the email is saved to `apps/api/data/outbox/` (not uploaded, never in the logs). In production without SMTP nothing is sent.
+- **Owner to do for real emails:** turn on 2-Step Verification for b.our.voices@gmail.com, create an **App password** (Google account → Security → App passwords), and put it in `SMTP_PASS` on the server. It never goes into the code or the chat.
+- **Tested** with a temporary account, deleted afterwards along with the outbox:
+  - an unknown email gets the same answer and no email;
+  - the email has both languages and the link;
+  - a weak password, a wrong token, and the same link used twice are all refused;
+  - after the reset, the old session and the old password stop working and the new one works;
+  - the 4th request in 15 minutes → 429;
+  - `pnpm build` passes.
+
 ### 2026-11-21: E-learning phase 2 (learner accounts, lesson player, progress) + the lecture moves to Seminars
 - **Learner accounts** (tables `learners`, `learner_sessions`, `lesson_progress`; `course_registrations.learner_id`):
   - Separate from dashboard users: a learner can never reach `/admin`, and a dashboard session can't reach `/learn`.
@@ -1088,6 +1129,7 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
 - [ ] Add the About and Activities components (page header with tabs, partner tags, statement, numbered list, course card, flagship panel, track cards, seminar cards, session list, benefit cards, language bar) to the plain-HTML catalogue `design-system/index.html` + `components.css`. Their tokens are already in `tokens.css`.
 - [ ] Decide whether `/` should send Arabic-speaking visitors to `/ar` automatically (based on browser language). It currently always goes to `/en`.
 - [ ] Link "Register now" to the real registration form (registration endpoint in the API)
+- [ ] **Owner:** create a Gmail App password and set the SMTP_* values on the server so "forgot password" emails are really sent (locally they go to apps/api/data/outbox).
 - [ ] **Owner:** sign in with the temporary password, change it in "My account", then delete `apps/api/data/b.our.voices@gmail.com.password.local.txt`.
 - [ ] Dashboard phase 2:
   - Messages inbox + email alert (which address?).
@@ -1100,7 +1142,7 @@ The plain-HTML catalogue (`design-system/index.html`) is the visual reference fo
 - [ ] E-learning:
   - The owner fills the videos and files of «المرأة وبناء السلام» and publishes it.
   - Phase 2 done (2026-11-21): learner accounts, lesson player, "Mark as done", progress, participants in the dashboard.
-  - Password reset for learners (needs an email service).
+  - Password reset for learners: done 2026-11-21 (real sending needs the SMTP settings).
   - Phase 3: certificates.
   - Email to registrants (needs an email service).
 - [ ] Dashboard: **colours and logo** (agreed for later: admin only, brand colours with a contrast check and "restore brand colours").

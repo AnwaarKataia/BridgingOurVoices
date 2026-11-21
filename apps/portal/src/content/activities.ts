@@ -152,6 +152,25 @@ export type ActivitiesContent = {
       certificateSoon: string;
       noVideo: string;
       noContent: string;
+      /** Forgot password (owner, 2026-11-21: every account type can recover access). */
+      forgot: {
+        link: string;
+        title: string;
+        lead: string;
+        submit: string;
+        sent: string;
+        back: string;
+        resetTitle: string;
+        resetLead: string;
+        newPassword: string;
+        confirm: string;
+        save: string;
+        done: string;
+        signIn: string;
+        expired: string;
+        newLink: string;
+        mismatch: string;
+      };
     };
     register: {
       title: string;
@@ -408,7 +427,25 @@ const en: ActivitiesContent = {
       "allDone": "Well done: you have completed every lesson.",
       "certificateSoon": "Certificates will be available soon.",
       "noVideo": "The video will be added soon.",
-      "noContent": "The content of this lesson will be added soon."
+      "noContent": "The content of this lesson will be added soon.",
+      "forgot": {
+        "link": "Forgot your password?",
+        "title": "Forgot your password",
+        "lead": "Enter the email of your learner account and we’ll send you a link to choose a new password.",
+        "submit": "Send the link",
+        "sent": "If this email has a learner account, you’ll receive a message within a few minutes with a link that works once, for one hour. Please check your spam folder too.",
+        "back": "Back to sign in",
+        "resetTitle": "Choose a new password",
+        "resetLead": "Type your new password twice.",
+        "newPassword": "New password",
+        "confirm": "Confirm new password",
+        "save": "Save password",
+        "done": "Your password has been changed. Sign in with your new password.",
+        "signIn": "Sign in",
+        "expired": "This link is invalid or has expired. Please ask for a new one.",
+        "newLink": "Ask for a new link",
+        "mismatch": "The two passwords don’t match."
+      }
     },
     "register": {
       "title": "Register for this course",
@@ -696,7 +733,25 @@ const fr: ActivitiesContent = {
       "allDone": "Bravo : vous avez terminé toutes les leçons.",
       "certificateSoon": "Les certificats seront bientôt disponibles.",
       "noVideo": "La vidéo sera ajoutée bientôt.",
-      "noContent": "Le contenu de cette leçon sera ajouté bientôt."
+      "noContent": "Le contenu de cette leçon sera ajouté bientôt.",
+      "forgot": {
+        "link": "Mot de passe oublié ?",
+        "title": "Mot de passe oublié",
+        "lead": "Saisissez l’e-mail de votre compte d’apprentissage : nous vous enverrons un lien pour choisir un nouveau mot de passe.",
+        "submit": "Envoyer le lien",
+        "sent": "Si cet e-mail correspond à un compte, vous recevrez dans quelques minutes un message avec un lien valable une heure, une seule fois. Pensez à vérifier vos courriers indésirables.",
+        "back": "Retour à la connexion",
+        "resetTitle": "Choisir un nouveau mot de passe",
+        "resetLead": "Saisissez deux fois votre nouveau mot de passe.",
+        "newPassword": "Nouveau mot de passe",
+        "confirm": "Confirmer le nouveau mot de passe",
+        "save": "Enregistrer le mot de passe",
+        "done": "Votre mot de passe a été modifié. Connectez-vous avec votre nouveau mot de passe.",
+        "signIn": "Se connecter",
+        "expired": "Ce lien n’est pas valide ou a expiré. Veuillez en demander un nouveau.",
+        "newLink": "Demander un nouveau lien",
+        "mismatch": "Les deux mots de passe ne correspondent pas."
+      }
     },
     "register": {
       "title": "S’inscrire à ce cours",
@@ -984,7 +1039,25 @@ const ar: ActivitiesContent = {
       "allDone": "رائع: اكتملت كل الدروس.",
       "certificateSoon": "الشهادات ستتوفر قريبًا.",
       "noVideo": "سيُضاف الفيديو قريبًا.",
-      "noContent": "سيُضاف محتوى هذا الدرس قريبًا."
+      "noContent": "سيُضاف محتوى هذا الدرس قريبًا.",
+      "forgot": {
+        "link": "نسيت كلمة المرور؟",
+        "title": "نسيت كلمة المرور",
+        "lead": "اكتب/ي البريد الإلكتروني لحساب المتعلّم وسنرسل إليه رابطًا لاختيار كلمة مرور جديدة.",
+        "submit": "إرسال الرابط",
+        "sent": "إذا كان لهذا البريد حساب متعلّم فستصلك رسالة خلال دقائق، فيها رابط صالح لمدة ساعة ولمرة واحدة. تحقّق/ي من مجلد الرسائل غير المرغوب فيها أيضًا.",
+        "back": "العودة لتسجيل الدخول",
+        "resetTitle": "اختيار كلمة مرور جديدة",
+        "resetLead": "اكتب/ي كلمة المرور الجديدة مرتين.",
+        "newPassword": "كلمة المرور الجديدة",
+        "confirm": "تأكيد كلمة المرور الجديدة",
+        "save": "حفظ كلمة المرور",
+        "done": "تم تغيير كلمة المرور. سجّل/ي الدخول بكلمة المرور الجديدة.",
+        "signIn": "تسجيل الدخول",
+        "expired": "هذا الرابط غير صالح أو انتهت صلاحيته. اطلب/ي رابطًا جديدًا.",
+        "newLink": "طلب رابط جديد",
+        "mismatch": "كلمتا المرور غير متطابقتين."
+      }
     },
     "register": {
       "title": "التسجيل في الدورة",

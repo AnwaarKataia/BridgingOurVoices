@@ -22,7 +22,7 @@ const en: AboutContent = {
     eyebrow: "Who we are",
     title: "Women have always mediated. It’s time it was recognised.",
     paragraphs: [
-      "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It shows that women can lead dialogue and peacebuilding in many different ways, and works with peacebuilders, community leaders and young change-makers, women and men, across the Arab World, Africa and Southeast Asia, helping them move from informal community roles to recognised, certified roles as facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
+      "“Bridging Our Voices: Women Leading Dialogue and Peacebuilding” is a flagship cross-regional, interreligious and intercultural initiative led by alumni of the KAICIID International Fellows Programme. It strengthens women’s role and leadership in dialogue and peacebuilding, and works with peacebuilders, community leaders and young change-makers, women and men, across the Arab World, Africa and Southeast Asia, helping them move from informal community roles to recognised, certified roles as facilitators and mediators in interreligious dialogue, conflict transformation and social cohesion.",
       "Supported by the KAICIID Fellows Alumni Network (KFAN), the project operates in strategic partnership with organisations across three regions and with expert international consultants from South Africa.",
     ],
     partnersLabel: "Strategic partners",
@@ -71,7 +71,7 @@ const fr: AboutContent = {
     eyebrow: "Qui sommes-nous",
     title: "Les femmes ont toujours été médiatrices. Il est temps de le reconnaître.",
     paragraphs: [
-      "« Bridging Our Voices : les femmes au cœur du dialogue et de la consolidation de la paix » est une initiative phare transrégionale, interreligieuse et interculturelle portée par des anciens du Programme international de fellows du KAICIID. Elle montre que les femmes peuvent conduire le dialogue et la consolidation de la paix de multiples façons, et accompagne artisans de la paix, leaders communautaires et jeunes acteurs de changement, femmes et hommes, dans le monde arabe, en Afrique et en Asie du Sud-Est, pour les faire passer d’observateurs informels à facilitateurs et médiateurs reconnus et certifiés du dialogue interreligieux, de la transformation des conflits et de la cohésion sociale.",
+      "« Bridging Our Voices : les femmes au cœur du dialogue et de la consolidation de la paix » est une initiative phare transrégionale, interreligieuse et interculturelle portée par des anciens du Programme international de fellows du KAICIID. Elle renforce le rôle des femmes et leur leadership dans le dialogue et la consolidation de la paix, et accompagne artisans de la paix, leaders communautaires et jeunes acteurs de changement, femmes et hommes, dans le monde arabe, en Afrique et en Asie du Sud-Est, pour les faire passer d’observateurs informels à facilitateurs et médiateurs reconnus et certifiés du dialogue interreligieux, de la transformation des conflits et de la cohésion sociale.",
       "Soutenu par le réseau des anciens fellows du KAICIID (KFAN), le projet est mené en partenariat stratégique avec des organisations de trois régions et des consultants internationaux d’Afrique du Sud.",
     ],
     partnersLabel: "Partenaires stratégiques",
@@ -116,7 +116,7 @@ const ar: AboutContent = {
     eyebrow: "من نحن",
     title: "لطالما كانت المرأة وسيطة. حان وقت الاعتراف بذلك.",
     paragraphs: [
-      "«أصواتنا جسور: المرأة لقيادة الحوار وبناء السلام» مبادرة رائدة عابرة للأقاليم، بين الأديان والثقافات، يقودها خريجو برنامج الزمالة الدولية لمركز الملك عبدالله العالمي للحوار (كايسيد). تؤكد المبادرة قدرة المرأة على قيادة الحوار وبناء السلام بصور مختلفة، وتعمل مع صناع السلام والقيادات المجتمعية وصنّاع التغيير من الشباب، نساءً ورجالًا، في العالم العربي وأفريقيا وجنوب شرق آسيا، وتنقلهم من موقع المراقبين غير الرسميين إلى ميسّرين ووسطاء معترف بهم ومعتمدين في الحوار بين الأديان وتحويل النزاعات والتماسك الاجتماعي.",
+      "«أصواتنا جسور: المرأة لقيادة الحوار وبناء السلام» مبادرة رائدة عابرة للأقاليم، بين الأديان والثقافات، يقودها خريجو برنامج الزمالة الدولية لمركز الملك عبدالله العالمي للحوار (كايسيد). تعمل المبادرة على تعزيز دور المرأة وقيادتها للحوار وبناء السلام، وتعمل مع صناع السلام والقيادات المجتمعية وصنّاع التغيير من الشباب، نساءً ورجالًا، في العالم العربي وأفريقيا وجنوب شرق آسيا، وتنقلهم من موقع المراقبين غير الرسميين إلى ميسّرين ووسطاء معترف بهم ومعتمدين في الحوار بين الأديان وتحويل النزاعات والتماسك الاجتماعي.",
       "بدعم من شبكة خريجي زمالة كايسيد (KFAN)، يعمل المشروع بشراكة استراتيجية مع مؤسسات في ثلاثة أقاليم ومع مستشارين دوليين خبراء من جنوب أفريقيا.",
     ],
     partnersLabel: "الشركاء الاستراتيجيون",

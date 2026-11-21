@@ -350,3 +350,30 @@ export const lessonProgress = pgTable(
   },
   (t) => [primaryKey({ columns: [t.learnerId, t.lessonId] })],
 );
+
+/**
+ * "Forgot password" links for dashboard accounts (owner, 2026-11-21). Only the SHA-256 of the token is
+ * stored; a link works once and for 1 hour.
+ */
+export const passwordResets = pgTable(
+  "password_resets",
+  {
+    id: text("id").primaryKey(),
+    userId: uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("password_resets_user_idx").on(t.userId)],
+);
+
+/** "Forgot password" links for learner accounts (owner, 2026-11-21: every account type can recover access). */
+export const learnerPasswordResets = pgTable(
+  "learner_password_resets",
+  {
+    id: text("id").primaryKey(),
+    learnerId: uuid("learner_id").notNull().references(() => learners.id, { onDelete: "cascade" }),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("learner_password_resets_learner_idx").on(t.learnerId)],
+);

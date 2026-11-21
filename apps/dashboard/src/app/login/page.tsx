@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/api";
 import { getDict } from "@/lib/i18n";
@@ -30,6 +31,9 @@ export default async function LoginPage() {
             <h1 className="mb-1.5 font-display text-h3 font-normal">{t.signInTitle}</h1>
             <p className="mb-6 text-sm text-ink-soft">{t.signInLead}</p>
             <LoginForm t={t} />
+            <Link href="/forgot" className="mt-4 inline-block text-sm font-semibold text-blue hover:text-navy">
+              {t.forgot.link}
+            </Link>
           </div>
         </div>
       </main>

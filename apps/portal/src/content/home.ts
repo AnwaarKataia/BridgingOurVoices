@@ -37,7 +37,7 @@ const en: HomeContent = {
   hero: {
     eyebrow: "Regional & international initiative",
     title: "Women leading dialogue and peacebuilding",
-    lead: "A distinctive regional and international initiative showing that women can lead peacebuilding in many ways, and empowering peacemakers and community leaders, women and men, to move from informal roles into recognised, influential leadership in peacebuilding and interfaith and intercultural dialogue.",
+    lead: "A regional initiative that strengthens women’s role and leadership in dialogue and peacebuilding, and empowers peacemakers and community leaders, women and men, to move from informal roles into recognised, influential leadership in peacebuilding and interfaith and intercultural dialogue.",
     primary: "Explore our activities",
     secondary: "Contact us",
   },
@@ -99,7 +99,7 @@ const fr: HomeContent = {
   hero: {
     eyebrow: "Initiative régionale et internationale",
     title: "Les femmes au cœur du dialogue et de la consolidation de la paix",
-    lead: "Une initiative régionale et internationale qui montre que les femmes peuvent mener la consolidation de la paix de multiples façons, et qui renforce les artisans de la paix et les leaders communautaires, femmes et hommes, pour les faire passer de rôles informels à un leadership reconnu et influent dans la consolidation de la paix et le dialogue interreligieux et interculturel.",
+    lead: "Une initiative régionale qui renforce le rôle des femmes et leur leadership dans le dialogue et la consolidation de la paix, et qui accompagne les artisans et artisanes de la paix et les leaders communautaires, femmes et hommes, pour les faire passer de rôles informels à un leadership reconnu et influent dans la consolidation de la paix et le dialogue interreligieux et interculturel.",
     primary: "Découvrir nos activités",
     secondary: "Nous contacter",
   },
@@ -156,12 +156,12 @@ const ar: HomeContent = {
   meta: {
     title: "Bridging Our Voices — المرأة لقيادة الحوار وبناء السلام",
     description:
-      "مبادرة إقليمية ودولية متميزة تؤكد قدرة المرأة على القيادة، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، في المنطقة العربية وأفريقيا، وتنقلهم إلى قيادات معترف بها في الحوار وحل النزاعات والوقاية من التطرف العنيف.",
+      "مبادرة إقليمية ودولية تؤكد قدرة المرأة على القيادة، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، في المنطقة العربية وأفريقيا، وتنقلهم إلى قيادات معترف بها في الحوار وحل النزاعات والوقاية من التطرف العنيف.",
   },
   hero: {
     eyebrow: "مبادرة إقليمية ودولية",
     title: "المرأة لقيادة الحوار وبناء السلام",
-    lead: "مبادرة إقليمية ودولية متميزة تؤكد أن المرأة قادرة على قيادة بناء السلام بصور مختلفة، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، وتنقلهم من أدوار غير رسمية إلى قيادات معترف بها ومؤثرة في بناء السلام والحوار بين الأديان والثقافات.",
+    lead: "مبادرة إقليمية تعمل على تعزيز دور المرأة وقيادتها للحوار وبناء السلام، وتمكّن صناع السلام والقيادات المجتمعية، نساءً ورجالًا، وتنقلهم من أدوار غير رسمية إلى قيادات معترف بها ومؤثرة في بناء السلام والحوار بين الأديان والثقافات.",
     primary: "تعرّف/ي على أنشطتنا",
     secondary: "تواصل/ي معنا",
   },
